@@ -5,6 +5,6 @@ topnav:
 
   items:
     - title: Что нового
-      url: /whats_new
+      url: /whats_new.html
     - title: Справочник API
       external_url: https://api.evotor.ru/docs/
