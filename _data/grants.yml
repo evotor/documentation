@@ -1,0 +1,28 @@
+CASH_OPERATIONS_SELL:	Все действия продажи, кроме дополнительных (CASH_OPERATIONS_SELL_ADDITIONAL_*).
+CASH_OPERATIONS_SELL_ADDITIONAL_CHANGE_ZERO_PRICE:	Редактирование цены товаров, в карточке которых нулевая цена продажи.
+CASH_OPERATIONS_SELL_ADDITIONAL_POSITION_DISCOUNT:	Начисление скидки на позицию в соответствии с настройками приложения.
+CASH_OPERATIONS_SELL_ADDITIONAL_DOCUMENT_DISCOUNT:	Начисление скидки на документ в соответствии с настройками приложения.
+CASH_OPERATIONS_SELL_ADDITIONAL_REGISTER_POSITION_FREE:	Кнопка добавления по свободной цене.
+CASH_OPERATIONS_PAYBACK:	Создание документов возврата от покупателя покупателя, на основании документа продажи.
+CASH_OPERATIONS_PAYBACK_BY_SUM:	Создание документов возврата от покупателя, без документа основания.
+CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_CHANGE_PRICE:	Редактирование цены товаров, возвращаемых без основания. Цена продажи товара в карточке отлична от нуля.
+CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_CHANGE_ZERO_PRICE:	Редактирование цены товаров, возвращаемых без основания. Цена продажи товара в карточке равна нулю.
+CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_POSITION_DISCOUNT:	Начисление скидки на позицию в возврате без основания. Ограничения по скидкам, указанные в настройках приложения, не действуют.
+CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_DOCUMENT_DISCOUNT:	Начисление скидки на документ возврата без основания. Ограничения по скидкам, указанные в настройках приложения, не действуют.
+CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_REGISTER_POSITION_FREE:	Кнопка добавления по свободной цене.
+CASH_OPERATIONS_CASH_DRAWER_CASH_INCOME:	Соответствующая кнопка в операции (`Activity`) "Денежный ящик".
+CASH_OPERATIONS_CASH_DRAWER_CASH_OUTCOME:	Соответствующая кнопка в операции (`Activity`) "Денежный ящик".
+CASH_REPORTS_X_REPORT:	Соответствующая кнопка в операции (`Activity`) "Кассовые отчёты".
+CASH_REPORTS_Z_REPORT:	Соответствующая кнопка в операции (`Activity`) "Кассовые отчёты".
+MANAGEMENT_REPORTS_STOCK_REPORT:	Управленческий отчёт "Товарные остатки в ценах реализации".
+MANAGEMENT_REPORTS_PROCUREMENT_REPORT:	Управленческие отчёт "Отчёт по закупкам".
+MANAGEMENT_REPORTS_SALES_REPORT:	Управленческие отчёт "Отчёт по продажам".
+MANAGEMENT_REPORTS_CONSOLIDATED_SALES_REPORT:	Управленческие отчёт "Сводный отчёт по продажам".
+MANAGEMENT_REPORTS_GROSS_PROFIT_REPORT:	Управленческие отчёт "Отчёт по валовой прибыли".
+MANAGEMENT_REPORTS_COMMODITIES_MOVEMENTS_REPORT:	Управленческие отчёт "Движения товаров".
+MANAGEMENT_REPORTS_ALCOHOL_REPORT:	Управленческие отчёт "Алкогольный отчёт".
+DOCUMENTS_JOURNAL:	Журнал документов.
+OPERATIONS_JOURNAL:	Журнал операций.
+SERVICE_EXCHANGE:	Доступ к сервису обмена.
+SETTINGS_MENU:	Доступ к настройкам.
+APPLICATIONS_MERCHANDISER:	Приложение товароведа.

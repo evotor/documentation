@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Раздел содержит требования к плитке приложения, а также информацию о том как добвить плитку на главный экран смарт-терминала.">
+<meta name="keywords" content=" sample">
+<title>Плитка приложения на главном экране смарт-терминала | Документация Эвотор</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-orange.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="Поиск...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Плитка приложения на главном экране смарт-терминала">{title}</a></li>',
+                    noResultsText: 'Ничего не найдено',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle"> </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">О платформе Эвотор</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_introduction.html">Введение</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_glossary.html">Термины и определения</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Интеграция с платформой</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_release_notes.html">История изменений API и SDK</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_evotor_rest_api_calls.html">Запросы к облаку Эвотор</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_outgoing_calls_protocol.html">Запросы к стороннему сервису</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_applications.html">Приложения для смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_documents.html">Документы смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Примеры реализации</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">SDK смарт-терминала</a>
+        <ul>
+            
+            
+            
+            <li class="active"><a href="doc_smart_terminal_native.html">Главный экран смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_webview.html">Права доступа</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_logging.html">Логирование данных</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Публикация приложения</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Продажа</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_legal_scheme.html">Юридическая схема</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_applications_tariffs.html">Тарифы приложений</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_conditions.html">Условия</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_marketing.html">Продвижение</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">FAQ</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+    </li>
+</ul>
+</div>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+    <!-- Content Column -->
+    <div class="col-md-9">
+        <div class="post-header">
+   <h1 class="post-title-main">Плитка приложения на главном экране смарт-терминала</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Раздел содержит требования к плитке приложения, а также информацию о том как добвить плитку на главный экран смарт-терминала.</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+  <p>Вы можете интегрировать своё приложение в существующий процесс смарт-терминала, например, продажу или работу с оборудованием, или добавить плитку приложения на главный экран. Плиток может быть несколько, если приложение реализует независимые действия, например, плитки “Продать товар” и “Вернуть товар”.</p>
+
+<h3 id="Требования">Требования</h3>
+
+<p>Добавляйте плитку если:</p>
+<ul>
+  <li>у приложения есть свой интерфейс;</li>
+  <li>приложение реализует полезное действие и / или предоставляет сотруднику магазина доступ к аналитической информации.</li>
+</ul>
+
+<p>Вы можете изменять следующие параметры плитки:</p>
+<ul>
+  <li>
+    <p><strong>Цвет</strong>. Может быть любым, пока на его фоне отчётливо отображаются символы и иконка.</p>
+
+    <blockquote>
+      <p>Как правило цвет плитки делают таким же как и цвет главных кнопок в интерфейсе приложения.</p>
+    </blockquote>
+  </li>
+  <li><strong>Название</strong>. Может быть названием приложения или полезного действия, например, “Продажи за неделю”. Плитка отображает до 20 символов. Остальные символы скрываются под многоточием.</li>
+  <li><strong>Иконка</strong>. Иконка должна быть квадратной – 64 dpi. Требуется обеспечить набор иконок в трёх разрешениях: 96, 192, 256px.</li>
+</ul>
+
+<h3 id="Нативное-приложение">Нативное приложение</h3>
+
+<p>Чтобы добавить плитку нативного приложения на главный экран смарт-терминала, в манифесте приложения, измените соответствующий элемент <code class="highlighter-rouge">&lt;Activity&gt;</code> следующим образом:</p>
+<pre><code class="language-1xml">&lt;activity
+    android:name=".someActivity"
+    android:icon="@drawable/icon"
+    android:label="Example tile"
+    &gt;
+    &lt;meta-data
+        android:name="ru.evotor.launcher.BACKGROUND_COLOR"
+        android:value="#133788" /&gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name="android.intent.action.MAIN" /&gt;
+        &lt;category android:name="android.intent.category.EVOTOR" /&gt;
+    &lt;/intent-filter&gt;
+&lt;/activity&gt;
+</code></pre>
+<p>где:</p>
+<ul>
+  <li>Атрибут <code class="highlighter-rouge">android:name</code> задаёт название соответствующего элемента <code class="highlighter-rouge">Activity</code>.</li>
+  <li>Атрибут <code class="highlighter-rouge">android:icon</code> задаёт расположение иконки, которая отображается на плитке.</li>
+  <li>Атрибут <code class="highlighter-rouge">android:label</code> название плитки.</li>
+  <li>Необязательный тег <code class="highlighter-rouge">&lt;meta-data&gt;</code>, содержит атрибуты:
+    <ul>
+      <li><code class="highlighter-rouge">android:name</code> – задаёт цвет иконки.</li>
+      <li><code class="highlighter-rouge">android:value</code> – содержит цвет иконки в шестнадцатиричной кодировке.</li>
+    </ul>
+  </li>
+  <li>Интент фильтр содержит соответствующие элементы action (<code class="highlighter-rouge">android:name="android.intent.action.MAIN"</code>) и category (<code class="highlighter-rouge">android:name="android.intent.category.EVOTOR"</code>).</li>
+</ul>
+
+<h3 id="Вебвью-приложение">Вебвью приложение</h3>
+
+<p>Чтобы добавить плитку вебвью приложения на главный экран смарт-терминала, в файле <em>client.yaml</em>, модифицируйте список <code class="highlighter-rouge">views</code> следующим образом:</p>
+<pre><code class="language-yaml1">views:
+  - name: Example
+    header: "Заголовок окна"
+    launcher_label: "Название приложения для плитки"
+    launcher_icon_96: client/views/example/icon-96.png
+    launcher_icon_192: client/views/example/icon-192.png
+    launcher_icon_256: client/views/example/icon-256.png
+    launcher_color: #133788
+    source: client/views/example/view.html
+    scripts:
+      - no-script
+    styles:
+      - "*.css"
+</code></pre>
+<p>где:</p>
+<ul>
+  <li><code class="highlighter-rouge">name</code> – задаёт название элемента списка <code class="highlighter-rouge">views</code>.</li>
+  <li><code class="highlighter-rouge">header</code> – задаёт заголовок окна, которое открывается по нажатию на плитку.</li>
+  <li><code class="highlighter-rouge">launcher_label</code> – задаёт название плитки.</li>
+  <li><code class="highlighter-rouge">launcher_icon_96</code> – задаёт путь к иконке в разрешении 96 х 96 пикселей. Иконка копируется в папку drawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
+  <li><code class="highlighter-rouge">launcher_icon_192</code> – задаёт путь к иконке в разрешении 192 х 192 пикселя. Иконка копируется в папку xxdrawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
+  <li><code class="highlighter-rouge">launcher_icon_256</code> – задаёт путь к иконке в разрешении 256 х 256 пикселей. Иконка копируется в папку xxxdrawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
+  <li><code class="highlighter-rouge">launcher_color</code> – задаёт цвет плитки в шестнадцатиричной кодировке.</li>
+  <li><code class="highlighter-rouge">source</code> – задаёт полный путь к html-файлу, который открывается по нажатию на плитку.</li>
+  <li><code class="highlighter-rouge">scripts</code> – задаёт список подключаемых скриптов.</li>
+  <li><code class="highlighter-rouge">styles</code> – задаёт список подключаемых стилей.</li>
+</ul>
+
+
+    <div class="tags">
+        
+    </div>
+
+    
+
+</div>
+
+<hr class="shaded"/>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+</html>

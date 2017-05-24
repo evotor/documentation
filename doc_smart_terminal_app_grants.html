@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Раздел содержит информацию о процессе разработки вебвью приложения для смарт-терминала.">
+<meta name="keywords" content=" sample">
+<title>Разработка вебвью приложения для смарт-терминала | Документация Эвотор</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-orange.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="Поиск...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Разработка вебвью приложения для смарт-терминала">{title}</a></li>',
+                    noResultsText: 'Ничего не найдено',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle"> </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">О платформе Эвотор</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_introduction.html">Введение</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_glossary.html">Термины и определения</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Интеграция с платформой</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_release_notes.html">История изменений API и SDK</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_evotor_rest_api_calls.html">Запросы к облаку Эвотор</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_outgoing_calls_protocol.html">Запросы к стороннему сервису</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_applications.html">Приложения для смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_documents.html">Документы смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Примеры реализации</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">SDK смарт-терминала</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_smart_terminal_app_tile.html">Главный экран смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="doc_smart_terminal_app_grants.html">Права доступа</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_logging.html">Логирование данных</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Публикация приложения</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Продажа</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_legal_scheme.html">Юридическая схема</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_applications_tariffs.html">Тарифы приложений</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_conditions.html">Условия</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_marketing.html">Продвижение</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">FAQ</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+    </li>
+</ul>
+</div>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+    <!-- Content Column -->
+    <div class="col-md-9">
+        <div class="post-header">
+   <h1 class="post-title-main">Разработка вебвью приложения для смарт-терминала</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Раздел содержит информацию о процессе разработки вебвью приложения для смарт-терминала.</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+  <p>Вы можете наделить приложение различными правами (grants), в зависимости от роли пользователя смарт-терминала. Таким образом, кассиру или администратору будут доступны разные функции приложения.</p>
+
+<h3 id="Нативное-приложение">Нативное приложение</h3>
+
+<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) необходимыми правами, выполните следующие действия:</p>
+
+<ol>
+  <li>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, где <Название> – имя требуемого плагина, демона или экрана.</Название></li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code> укажите массив строк с правами следующим образом:</p>
+
+    <pre><code class="language-1xml"> &lt;resources&gt;
+ &lt;string-array name="&lt;Название&gt;_grants"&gt;
+     &lt;item&gt;CASH_OPERATIONS_SELL&lt;/item&gt;
+     &lt;item&gt;CASH_OPERATIONS_PAYBACK &lt;/item&gt;
+ &lt;/string-array&gt;
+ &lt;/resources&gt;
+</code></pre>
+  </li>
+  <li>В манифесте приложения, для соответствующего элемента <code class="highlighter-rouge">activity</code>, добавьте элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:
+    <pre><code class="language-1xml"> &lt;meta-data android:name="ru.evotor.launcher.GRANTS" android:resource="@array/&lt;Название&gt;_grants" /&gt;
+</code></pre>
+  </li>
+</ol>
+
+<h3 id="Вебвью-приложение">Вебвью приложение</h3>
+
+<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) необходимыми правами, выполните следующие действия:</p>
+<ol>
+  <li>
+    <p>В файле <code class="highlighter-rouge">client.yaml</code> добавьте список <code class="highlighter-rouge">grants</code> требуемых прав для соответствующего элемента (демона, плагина или экрана):</p>
+
+    <pre><code class="language-1yaml"> - name: &lt;Название&gt;
+   header: "&lt;Заголовок экрана&gt;"
+   launcher-label: "&lt;Название плитики&gt;"
+   launcher-icon: client/views/example-loader/icon.png
+   launcher-color: #133788
+   source: client/views/example-loader/view.html
+   scripts:
+     - no-script
+   styles:
+     - "*.css"
+   grants:
+     - CASH_OPERATIONS_SELL
+     - CASH_OPERATIONS_PAYBACK
+</code></pre>
+  </li>
+  <li>
+    <p>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, где <Название> – значение параметра `name` в файле `client.yaml`, который содержит массив строк с правами, перечисленными в списке `grants`:</Название></p>
+
+    <pre><code class="language-1xml"> &lt;resources&gt;
+ &lt;string-array name="&lt;Название&gt;_grants"&gt;
+     &lt;item&gt;CASH_OPERATIONS_SELL&lt;/item&gt;
+     &lt;item&gt;CASH_OPERATIONS_PAYBACK &lt;/item&gt;
+ &lt;/string-array&gt;
+ &lt;/resources&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>Убедитесь, что в созданном манифесте приложения, для соответствующего элемента <code class="highlighter-rouge">activity</code> добавлен элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:</p>
+    <pre><code class="language-1xml"> &lt;meta-data android:name="ru.evotor.launcher.GRANTS" android:resource="@array/&lt;Название&gt;_grants" /&gt;
+</code></pre>
+  </li>
+</ol>
+
+<h3 id="Список-прав">Список прав</h3>
+
+<p>В таблице ниже представлены права, которыми вы можете наделить компоненты приложения. Права требуется указывать в списке в виде <Значение><Постфикс></Постфикс></Значение></p>
+
+<table>
+  <tr>
+    <th>Значение </th>
+    <th>Постфикс</th>
+    <th>Описание</th>
+  </tr>
+  <tr>
+    <td rowspan="5">CASH_OPERATIONS_SELL</td>
+    <td></td>
+    <td>Все действия продажи, кроме дополнительных (_ADDITIONAL_*).<br /></td>
+  </tr>
+  <tr>
+    <td>_ADDITIONAL_CHANGE_ZERO_PRICE</td>
+    <td>Редактирование цены товаров, в карточке которых нулевая цена продажи.</td>
+  </tr>
+  <tr>
+    <td>_ADDITIONAL_POSITION_DISCOUNT</td>
+    <td>Начисление скидки на позицию в соответствии с настройками приложения.</td>
+  </tr>
+  <tr>
+    <td>_ADDITIONAL_DOCUMENT_DISCOUNT</td>
+    <td>Начисление скидки на документ в соответствии с настройками приложения.</td>
+  </tr>
+  <tr>
+    <td>_ADDITIONAL_REGISTER_POSITION_FREE</td>
+    <td>Кнопка добавления по свободной цене.</td>
+  </tr>
+  <tr>
+    <td rowspan="7">CASH_OPERATIONS_SELL_PAYBACK</td>
+    <td></td>
+    <td>Создание документов возврата от покупателя покупателя, на основании документа продажи.</td>
+  </tr>
+  <tr>
+    <td>_BY_SUM</td>
+    <td>Создание документов возврата от покупателя, без документа основания.</td>
+  </tr>
+  <tr>
+    <td>_BY_SUM_ADDITIONAL_CHANGE_PRICE</td>
+    <td>Редактирование цены товаров, возвращаемых без основания. Цена продажи товара в карточке отлична от нуля.</td>
+  </tr>
+  <tr>
+    <td>_BY_SUM_ADDITIONAL_CHANGE_ZERO_PRICE</td>
+    <td>Редактирование цены товаров, возвращаемых без основания. Цена продажи товара в карточке равна нулю.</td>
+  </tr>
+  <tr>
+    <td>_BY_SUM_ADDITIONAL_POSITION_DISCOUNT</td>
+    <td>Начисление скидки на позицию в возврате без основания. Ограничения по скидкам, указанные в настройках приложения, не действуют.</td>
+  </tr>
+  <tr>
+    <td>_BY_SUM_ADDITIONAL_DOCUMENT_DISCOUNT</td>
+    <td>Начисление скидки на документ возврата без основания. Ограничения по скидкам, указанные в настройках приложения, не действуют.</td>
+  </tr>
+  <tr>
+    <td>_BY_SUM_ADDITIONAL_REGISTER_POSITION_FREE</td>
+    <td>Кнопка добавления по свободной цене.</td>
+  </tr>
+  <tr>
+    <td rowspan="2">CASH_OPERATIONS_CASH_DRAWER</td>
+    <td>_CASH_INCOME</td>
+    <td>Соответствующая кнопка в активности (Activity) «Денежный ящик».</td>
+  </tr>
+  <tr>
+    <td>_CASH_OUTCOME</td>
+    <td>Соответствующая кнопка в активности (Activity) «Денежный ящик».</td>
+  </tr>
+  <tr>
+    <td rowspan="2">CASH_REPORTS</td>
+    <td>_X_REPORT</td>
+    <td>Соответствующая кнопка в активности (Activity) «Кассовые отчёты».</td>
+  </tr>
+  <tr>
+    <td>_Z_REPORT</td>
+    <td>Соответствующая кнопка в активности (Activity) «Кассовые отчёты».</td>
+  </tr>
+  <tr>
+    <td rowspan="7">MANAGEMENT_REPORTS</td>
+    <td>_STOCK_REPORT</td>
+    <td>Управленческий отчёт "Товарные остатки в ценах реализации".</td>
+  </tr>
+  <tr>
+    <td>_PROCUREMENT_REPORT</td>
+    <td>Управленческие отчёт "Отчёт по закупкам".</td>
+  </tr>
+  <tr>
+    <td>_SALES_REPORT</td>
+    <td>Управленческие отчёт "Отчёт по продажам".</td>
+  </tr>
+  <tr>
+    <td>_CONSOLIDATED_SALES_REPORT</td>
+    <td>Управленческие отчёт "Сводный отчёт по продажам".</td>
+  </tr>
+  <tr>
+    <td>_GROSS_PROFIT_REPORT</td>
+    <td>Управленческие отчёт "Отчёт по валовой прибыли".</td>
+  </tr>
+  <tr>
+    <td>_COMMODITIES_MOVEMENTS_REPORT</td>
+    <td>Управленческие отчёт "Движения товаров".</td>
+  </tr>
+  <tr>
+    <td>_ALCOHOL_REPORT</td>
+    <td>Управленческие отчёт "Алкогольный отчёт".</td>
+  </tr>
+  <tr>
+    <td>DOCUMENTS_JOURNAL</td>
+    <td></td>
+    <td>Журнал документов.</td>
+  </tr>
+  <tr>
+    <td>OPERATIONS_JOURNAL</td>
+    <td></td>
+    <td>Журнал операций.</td>
+  </tr>
+  <tr>
+    <td>SERVICE_EXCHANGE</td>
+    <td></td>
+    <td>Доступ к сервису обмена.</td>
+  </tr>
+  <tr>
+    <td>SETTINGS_MENU</td>
+    <td></td>
+    <td>Доступ к настройкам.</td>
+  </tr>
+  <tr>
+    <td>APPLICATIONS_MERCHANDISER</td>
+    <td></td>
+    <td>Приложение товароведа.</td>
+  </tr>
+</table>
+
+
+    <div class="tags">
+        
+    </div>
+
+    
+
+</div>
+
+<hr class="shaded"/>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product:
+  version:
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage
+      output: pdf
+      type: frontmatter
+#################################################
+#             О платформе Эвотор               #
+###############################################
+  - title: О платформе Эвотор
+    output: web, pdf
+    folderitems:
+
+    - title: Введение
+      url: /doc_introduction.html
+      output: web, pdf
+
+    - title: Тестирование приложения
+      url: /doc_application_test.html
+      output: web, pdf
+
+    - title: Термины и определения
+      url: /doc_glossary.html
+      output: web, pdf
+########################################################
+#                    Эвотор API                       #
+#######################################################
+
+  - title: Эвотор API
+    output: web, pdf
+
+    folderitems:
+#    - title: Об Эвотор API
+#      url: /doc_Evotor_API_about.html
+#      output: web, pdf
+
+    - title: Авторизация
+      url: /doc_authorization.html
+      output: web, pdf
+
+    - title: Примеры запросов
+      url: /doc_example_calls.html
+      output: web, pdf
+
+    - title: Приложения для смарт-терминала
+      url: /doc_smart_terminal_applications.html
+      output: web, pdf
+
+    - title: Документы смарт-терминала
+      url: /doc_smart_terminal_documents.html
+      output: web, pdf
+
+    - title: Возвращаемые ошибки
+      url: /doc_errors_returned.html
+      output: web, pdf
+
+###############################################################
+#               SDK смарт-терминала                         #
+###############################################################
+
+  - title: SDK смарт-терминала
+    output: web, pdf
+    folderitems:
+
+#    - title: Манифест приложения
+#      url: /doc_app_manifest.html
+#      output: web
+
+    - title: Плитка приложения на главном экране смарт-терминала
+      url: /doc_smart_terminal_app_tile.html
+      output: web
+
+    - title: Права приложения
+      url: /doc_smart_terminal_app_grants.html
+      output: web
+
+#    - title: Проксирование HTTP-запросов
+#      url: /doc_cloud_proxy.html
+#      output: web
+
+    - title: Users API
+      url: /doc_smart_terminal_users_api.html
+      output: web
+
+    - title: Inventory API
+      url: /doc_smart_terminal_inventory_api.html
+      output: web
+
+      subfolders:
+        - title: Работа с оборудованием
+          output: web
+          subfolderitems:
+
+            - title: Подключение оборудования
+              url: /doc_integration_library_connection.html
+              output: web
+
+            - title: Сканер штрихкодов
+              url: /doc_barcode_scanner.html
+              output: web
+
+            - title: Принтер чеков
+              url: /doc_bill_printer.html
+              output: web
+
+            - title: Весы
+              url: /doc_scales.html
+              output: web
+
+#    - title: Включение режима разработчика
+#      url: /doc_developer_mode.html
+#      output: web
+
+    - title: Логирование
+      url: /doc_logging.html
+      output: web
+#############################################################
+#            Примеры реализации                             #
+#############################################################
+
+  - title: Примеры реализации
+    output: web, pdf
+
+    folderitems:
+    - title: Облачная товароучётная система
+      url: /doc_cloud_systems_integration.html
+      output: web, pdf
+
+    - title: IFrame на странице приложения
+      url: /doc_iframe_within_application_page.html
+      output: web, pdf
+
+    - title: Приложение для смарт-терминала
+      url: /doc_smart_terminal_application.html
+      output: web, pdf
+
+    - title: Интеграция с 1С
+      url: /doc_1C_integration.html
+      output: web, pdf
+
+    - title: Создание JS-приложения с помощью шаблона
+      url: /doc_JS_template_integration.html
+      output: web, pdf
+
+###############################################################
+#                    Биллинг                                  #
+###############################################################
+
+  - title: Биллинг
+    output: web, pdf
+    folderitems:
+
+    - title: О биллинге
+      url: /doc_about_billing.html
+      output: web
+
+    - title: Тарифы
+      url: /doc_tariffs.html
+      output: web
+
+###############################################################
+#               Публикация приложения                         #
+###############################################################
+
+  - title: Публикация приложения
+    output: web, pdf
+    folderitems:
+
+#    - title: Модели биллинга
+#      url: /doc_billing_models.html
+#      output: web
+
+    - title: Приёмочное тестирование
+      url: /doc_acceptance_testing.html
+      output: web
+
+###############################################################
+#                      FAQ                                    #
+###############################################################
+
+  - title: FAQ
+    output: web, pdf
+    folderitems:
+    - title: Часто задаваемые вопросы
+      url: /doc_faq.html
+      output: web
