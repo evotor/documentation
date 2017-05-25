@@ -5,6 +5,7 @@ summary: "Раздел содержит пошаговое описание об
 sidebar: evotordoc_sidebar
 permalink: doc_cloud_proxy.html
 folder: evotordoc/smart_terminal_SDK
+published: false
 ---
 
 ### Создание списка разрешённых URL
@@ -28,23 +29,23 @@ folder: evotordoc/smart_terminal_SDK
 
 #### Пример кода для отправки сообщения из Java-приложения
 
-{% highlight java %}
+``` java
 DefaultHttpClient hc = new DefaultHttpClient();
 ResponseHandler response = new BasicResponseHandler();
 HttpGet http = new HttpGet("http://site.ru/api.php?login=user1&psw=1234");
 //получаем ответ от сервера
 String response = (String) hc.execute(http, response);
-{% endhighlight %}
+```
 
 
 #### Пример кода для отправки сообщения из JS-приложения
 
-{% highlight JavaScript %}
+``` JavaScript
 var req = new XMLHttpRequest();
 req.open("GET", "example/data.txt", false);
 req.send(null);
 console.log(req.responseText);
-{% endhighlight %}
+```
 
 ### Шаг 2. Терминал передаёт сообщение в облако
 
