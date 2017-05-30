@@ -100,6 +100,34 @@ entries:
       url: /doc_smart_terminal_inventory_api.html
       output: web
 
+#    - title: Storage API
+#      url: /doc_storage_api.html
+#      output: web
+
+#    - title: Схемы и дополнительные поля товаров
+#      url: /doc_product_extras.html.html
+#      output: web
+
+#      subfolders:
+#        - title: Драйвера для оборудования
+#          output: web
+#          subfolderitems:
+#            - title: Подготовка к разработке
+#              url: /doc_drivers_library_connection.html
+#              output: web
+#
+#            - title: SDK для денежных ящиков
+#              url: /doc_drivers_cashdrawer.html
+#              output: web
+#
+#            - title: SDK для банковских терминалов
+#              url: /doc_drivers_pinpads.html
+#              output: web
+#
+#            - title: SDK для весов
+#              url: /doc_drivers_scales.html
+#              output: web
+#
       subfolders:
         - title: Работа с оборудованием
           output: web

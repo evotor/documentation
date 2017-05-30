@@ -7,7 +7,9 @@ permalink: doc_app_manifest.html
 folder: smart_terminal_SDK
 ---
 
-### Манифест java-приложения
+### Манифест Java-приложения
+
+Ниже приведён манифет приложения, которое вы можете собрать воспользовавшись [шаблоном]().
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?><manifest package="com.example.name.name">
@@ -48,6 +50,8 @@ folder: smart_terminal_SDK
 ```
 
 ### Манифест JS-приложения
+
+
 
 ``` yaml
 version: 1

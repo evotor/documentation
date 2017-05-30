@@ -25,20 +25,11 @@ published: false
 
 ### Шаг 1. Приложение отправляет HTTP-сообщение
 
-Приложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. При этом, вы можете применять различные библиотеки или воспользоваться любым удобным способом отправки сообщения (см. примеры).
+Приложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. Вы можете воспользоваться любым удобным способом отправки сообщения.
 
-#### Пример кода для отправки сообщения из Java-приложения
+Например, для отправки HTTP-сообщения из Java-приложения вы можете использовать [библиотеку OkHttp](http://square.github.io/okhttp/) или способ, описанный на [developer.android.com](https://developer.android.com/training/basics/network-ops/connecting.html).
 
-``` java
-DefaultHttpClient hc = new DefaultHttpClient();
-ResponseHandler response = new BasicResponseHandler();
-HttpGet http = new HttpGet("http://site.ru/api.php?login=user1&psw=1234");
-//получаем ответ от сервера
-String response = (String) hc.execute(http, response);
-```
-
-
-#### Пример кода для отправки сообщения из JS-приложения
+Из JS-приложения вы можете отправить сообщение следующим образом:
 
 ``` JavaScript
 var req = new XMLHttpRequest();
@@ -50,18 +41,7 @@ console.log(req.responseText);
 ### Шаг 2. Терминал передаёт сообщение в облако
 
 Терминал перехватывает сообщение и передаёт его в облако Эвотор. На этом этапе в сообщение добавляются служебные заголовки:
-* `X-Device-ID`
-* `X-Device-IMEI`
-* `X-User-ID`
-* `X-Signed-Url`
-* `X-Shop-UUID`
-* `X-Device-Salt`
-* `X-Device-Algorithm`
-* `X-Device-Date`
-* `X-Secret-Device-ID`
-* `X-OAuth-Client-ID`
-* `X-Device-UUID`
-* `X-Evotor-*`
+* `X-*`
 * `Expect`
 * `Host`
 * `Transfer-Encoding`
@@ -74,9 +54,9 @@ console.log(req.responseText);
 
 Заголовки, которые добавляет облако:
 
-* `X-Evotor-Store-Uuid` -- содержит идентификатор магазина в формате uuid4, к которому привязан терминал.
+* `X-Evotor-Store-Uuid` – содержит идентификатор магазина в формате uuid4, к которому привязан терминал.
 * `X-Evotor-Device-UUID` – содержит идентификатор устройства в формате uuid4, полученный по запросу к `/api/v1/inventories/devices`.
-* `Authorization` -- содержит токен пользователя. Токен необходим для bearer-авторизации.
+* `Authorization` – содержит токен пользователя. Токен необходим для bearer-авторизации.
 
 Сторонний сервер получает сообщение от облака Эвотор и определяет отправителя с помощью заголовка Authorization.
 
@@ -84,8 +64,6 @@ console.log(req.responseText);
 
 Ответ стороннего сервиса передаётся приложению в обратном порядке.
 
-При этом, облако Эвотор добавляет в ответ заголовок `X-Market-request`. Заголовок определяет дошёл запрос до адресата или нет.
-
 Ответы стороннего сервиса должны содержать объекты:
-  * `status` -- содержит HTTP-код состояния.
-  * `body` -- содержит тело запроса.
+  * `status` – содержит HTTP-код состояния.
+  * `body` – содержит тело запроса.
