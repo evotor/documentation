@@ -462,7 +462,7 @@ $('#toc').on('click', 'a', function() {
 
 <ol>
   <li>В колбэке <code class="highlighter-rouge">onCreate()</code> или при запуске операции (<code class="highlighter-rouge">activity</code>) инициализируйте класс <code class="highlighter-rouge">ru.evotor.devices.commons.DeviceServiceConnector</code>:</li>
-</ol>
+
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">DeviceServiceConnector</span><span class="o">.</span><span class="na">startInitConnections</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">());</span>
     </code></pre></figure>
@@ -474,7 +474,6 @@ $('#toc').on('click', 'a', function() {
 Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения.</div>
 </div>
 
-<ol>
   <li>
     <p>Вызовите метод <code class="highlighter-rouge">DeviceServiceConnector.getScalesService()</code>.</p>
 
