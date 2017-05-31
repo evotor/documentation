@@ -9,43 +9,7 @@ folder: smart_terminal_SDK
 
 ### Добавление, изменение, удаление позиций в чеке
 
-Вы можете взаимодействовать с чеком: добавлять, изменять или удалять позиции. Для этого необходимо подписаться на события:
-* добавления;
-* замены;
-* редактирования;
-* удаления.
-
-
-*Чтобы подписаться на события:*
-
-1. Создайте службу, например `MyIntegrationService`, которая наследует классу `IntegrationService`. В колбэке `onCreate` службы, зарегистрируйте процессор `BeforePositionsEditedEventProcessor` (процессор наследует классу `ActionProcessor`).
-    ~~~ java
-    public class MyIntegrationService extends IntegrationService {
-        @Override
-        public void onCreate() {
-            registerProcessor(new BeforePositionsEditedEventProcessor() {
-                @Override
-                public void call(BeforePositionsEditedEvent beforePositionsEditedEvent, Callback callback) {
-                       });
-                    }
-                }
-    ~~~
-2. Объявите службу в манифесте приложения:
-    ~~~ xml
-    <service
-            android:name=".MyIntegrationService"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-                <action android:name="evo.v2.receipt.sell.beforePositionsEdited" />
-            </intent-filter>
-    </service>
-    ~~~
-
-В метод `call` процессора приходит событие `beforePositionsEditedEvent` и объект для возврата результата `callback`.
-
-Событие `beforePositionsEditedEvent` сообщает об изменении чека и содержит список изменений:
+Вы можете взаимодействовать с чеком: добавлять, изменять и удалять позиции. Для этого требуется подписаться на событие редактирования позиций (`beforePositionsEditedEvent`), которое сообщает об изменении чека и содержит список изменений:
 
 ~~~ java
 public class BeforePositionsEditedEvent {
@@ -87,8 +51,149 @@ public class BeforePositionsEditedEvent {
 }
 ~~~
 
-**Я не знаю куда и в каком виде воткнуть эти изменения:** возможные изменения:
-https://github.com/xcam/integration-library/tree/extra_api/app/src/main/java/ru/evotor/framework/core/action/event/receipt/changes/position
+#### Список изменений
+
+Изменение сообщает о том, что будет добавлена позиция:
+
+~~~ java
+data class PositionAdd(val position: Position) : IPositionChange {
+
+    override fun toBundle(): Bundle {
+        return Bundle().apply {
+            putBundle(
+                    PositionMapper.KEY_POSITION,
+                    PositionMapper.toBundle(position)
+            )
+        }
+    }
+
+    override fun getPositionUuid(): String? {
+        return position.uuid
+    }
+
+    override fun getType(): IChange.Type {
+        return IChange.Type.POSITION_ADD
+    }
+
+    companion object {
+        @JvmStatic
+        fun from(bundle: Bundle?): PositionAdd? {
+            bundle ?: return null
+
+            return PositionAdd(
+                    PositionMapper.from(
+                            bundle.getBundle(PositionMapper.KEY_POSITION)
+                    ) ?: return null
+            )
+        }
+    }
+}
+~~~
+
+Изменение сообщает том, что позиция будет отредактирована:
+
+~~~ java
+data class PositionEdit(val position: Position) : IPositionChange {
+
+    override fun toBundle(): Bundle {
+        return Bundle().apply {
+            putBundle(
+                    PositionMapper.KEY_POSITION,
+                    PositionMapper.toBundle(position)
+            )
+        }
+    }
+
+    override fun getPositionUuid(): String? {
+        return position.uuid
+    }
+
+    override fun getType(): IChange.Type {
+        return IChange.Type.POSITION_EDIT
+    }
+
+    companion object {
+        @JvmStatic
+        fun from(bundle: Bundle?): PositionEdit? {
+            bundle ?: return null
+
+            return PositionEdit(
+                    PositionMapper.from(bundle.getBundle(PositionMapper.KEY_POSITION)) ?: return null
+            )
+        }
+    }
+}
+~~~
+
+Изменение сообщает том, что позиция будет удалена:
+
+~~~ java
+data class PositionRemove(
+        private val positionUuid: String
+) : IPositionChange {
+
+    override fun toBundle(): Bundle {
+        return Bundle().apply {
+            putString(
+                    KEY_POSITION_UUID,
+                    positionUuid
+            )
+        }
+    }
+
+    override fun getPositionUuid(): String? {
+        return positionUuid
+    }
+
+    override fun getType(): IChange.Type {
+        return IChange.Type.POSITION_REMOVE
+    }
+
+    companion object {
+        const val KEY_POSITION_UUID = "positionUuid"
+
+        @JvmStatic
+        fun from(bundle: Bundle?): PositionRemove? {
+            bundle ?: return null
+
+            return PositionRemove(
+                    bundle.getString(KEY_POSITION_UUID) ?: return null
+            )
+        }
+    }
+}
+~~~
+
+#### Подписка на событие
+
+1. Создайте службу, например `MyIntegrationService`, которая наследует класс `IntegrationService`. В колбэке `onCreate` службы, зарегистрируйте процессор `BeforePositionsEditedEventProcessor` (процессор наследует класс `ActionProcessor`).
+    ~~~ java
+    public class MyIntegrationService extends IntegrationService {
+        @Override
+        public void onCreate() {
+            registerProcessor(new BeforePositionsEditedEventProcessor() {
+                @Override
+                public void call(BeforePositionsEditedEvent beforePositionsEditedEvent, Callback callback) {
+                       });
+                    }
+                }
+    ~~~
+2. Объявите службу в манифесте приложения:
+    ~~~ xml
+    <service
+            android:name=".MyIntegrationService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="evo.v2.receipt.sell.beforePositionsEdited" />
+            </intent-filter>
+    </service>
+    ~~~
+
+В метод `call` процессора приходит событие `beforePositionsEditedEvent` и объект для возврата результата `callback`.
+
+
 
 В ответ изменения могут вернуть результат со списком дополнительных изменений:
 
@@ -163,12 +268,12 @@ callback.startActivity(new Intent(MyIntegrationService.this, MainActivity.class)
 Ваша операция должна вызвать метод
 `setIntegrationResult`.
 
-Например, так:
+Например:
 ~~~ java
 setIntegrationResult(new BeforePositionsEditedEventResult(BeforePositionsEditedEventResult.Result.OK, changes));
 ~~~
 
-Класс `BeforePositionsEditedEventActivity` задан так:
+Класс `BeforePositionsEditedEventActivity` задан как:
 ~~~ java
 public class BeforePositionsEditedEventActivity extends IntegrationActivity {
     public void setIntegrationResult(BeforePositionsEditedEventResult result) {
