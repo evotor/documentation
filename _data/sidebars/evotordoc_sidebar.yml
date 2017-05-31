@@ -37,15 +37,15 @@ entries:
       url: /doc_glossary.html
       output: web, pdf
 ########################################################
-#                    Эвотор API                       #
+#                    Облако Эвотор                     #
 #######################################################
 
-  - title: Эвотор API
+  - title: Облако Эвотор
     output: web, pdf
 
     folderitems:
-#    - title: Об Эвотор API
-#      url: /doc_Evotor_API_about.html
+#    - title: Об Облаке Эвотор
+#      url: /doc_evotor_api_about.html
 #      output: web, pdf
 
     - title: Авторизация
@@ -76,16 +76,24 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Включение режима разработчика
+      url: /doc_developer_mode.html
+      output: web
+
+    - title: Отладка приложения
+      url: /doc_logging.html
+      output: web
+
 #    - title: Манифест приложения
 #      url: /doc_app_manifest.html
 #      output: web
 
-    - title: Плитка приложения на главном экране смарт-терминала
-      url: /doc_smart_terminal_app_tile.html
-      output: web
-
     - title: Права приложения
       url: /doc_smart_terminal_app_grants.html
+      output: web
+
+    - title: Плитка приложения на главном экране смарт-терминала
+      url: /doc_smart_terminal_app_tile.html
       output: web
 
 #    - title: Проксирование HTTP-запросов
@@ -100,35 +108,38 @@ entries:
       url: /doc_smart_terminal_inventory_api.html
       output: web
 
-#    - title: Storage API
-#      url: /doc_storage_api.html
-#      output: web
+    - title: Storage API
+      url: /doc_storage_api.html
+      output: web
+
+    - title: Работа с чеками
+      url: /doc_receipt_interactions.html
+      output: web
 
 #    - title: Схемы и дополнительные поля товаров
 #      url: /doc_product_extras.html.html
 #      output: web
 
-#      subfolders:
-#        - title: Драйвера для оборудования
-#          output: web
-#          subfolderitems:
-#            - title: Подготовка к разработке
-#              url: /doc_drivers_library_connection.html
-#              output: web
-#
-#            - title: SDK для денежных ящиков
-#              url: /doc_drivers_cashdrawer.html
-#              output: web
-#
-#            - title: SDK для банковских терминалов
-#              url: /doc_drivers_pinpads.html
-#              output: web
-#
-#            - title: SDK для весов
-#              url: /doc_drivers_scales.html
-#              output: web
-#
       subfolders:
+        - title: Драйвера для оборудования
+          output: web
+          subfolderitems:
+            - title: Подготовка к разработке
+              url: /doc_drivers_library_connection.html
+              output: web
+
+            - title: SDK для денежных ящиков
+              url: /doc_drivers_cashdrawer.html
+              output: web
+
+            - title: SDK для банковских терминалов
+              url: /doc_drivers_pinpads.html
+              output: web
+
+            - title: SDK для весов
+              url: /doc_drivers_scales.html
+              output: web
+
         - title: Работа с оборудованием
           output: web
           subfolderitems:
@@ -149,13 +160,6 @@ entries:
               url: /doc_scales.html
               output: web
 
-#    - title: Включение режима разработчика
-#      url: /doc_developer_mode.html
-#      output: web
-
-    - title: Логирование
-      url: /doc_logging.html
-      output: web
 #############################################################
 #            Примеры реализации                             #
 #############################################################
@@ -204,17 +208,17 @@ entries:
 #               Публикация приложения                         #
 ###############################################################
 
-  - title: Публикация приложения
-    output: web, pdf
-    folderitems:
+#  - title: Публикация приложения
+#    output: web, pdf
+#    folderitems:
 
 #    - title: Модели биллинга
 #      url: /doc_billing_models.html
 #      output: web
 
-    - title: Приёмочное тестирование
-      url: /doc_acceptance_testing.html
-      output: web
+#    - title: Приёмочное тестирование
+#      url: /doc_acceptance_testing.html
+#      output: web
 
 ###############################################################
 #                      FAQ                                    #

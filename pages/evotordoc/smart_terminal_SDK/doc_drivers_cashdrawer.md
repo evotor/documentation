@@ -13,7 +13,7 @@ folder: smart_terminal_SDK
 
 Пример объявленного сервиса:
 
-``` xml
+{% highlight xml %}
 <service
     android:name="ru.mycompany.drivers.MyDeviceService"
     android:enabled="true"
@@ -40,7 +40,7 @@ folder: smart_terminal_SDK
         android:name="device_categories"
         android:value="CASHDRAWER" />
 </service>
-```
+{% endhighlight %}
 
 Где:
 
@@ -50,21 +50,21 @@ folder: smart_terminal_SDK
 
 `INTENT_FILTER_DRIVER_MANAGER` – используется для драйверов, требующих подключения USB- оборудования. Помимо `Intent filter` в `meta-data` необходимо указать характеристики `VendorID` и `ProductID` целевого устройства (десятичными числами):
 
-``` xml
+{% highlight xml %}
 <meta-data
     android:name="usb_device"
     android:value="VID_1659PID_8963" />
-```
-{% include tip.html content="Можно указать несколько устройств: `"VID_1659PID_8963|VID_123PID_456|VID_1659PID_8964"`." %}
+{% endhighlight %}
+{% include tip.html content="Можно указать несколько устройств: `VID_1659PID_8963|VID_123PID_456|VID_1659PID_8964`." %}
 
 Экземпляр драйвера будет автоматически создан/удалён при подключении/отключении указанного оборудования к смарт-терминалу. При наличии нескольких подходящих драйверов, пользователю будет предложен выбор.
 
 **INTENT_FILTER_VIRTUAL_DRIVER_MANAGER** – используется для драйверов, не требующих подключения USB-оборудования (сетевое, bluetooth и др.). В `meta-data` необходимо указать, что драйвер является виртуальным:
-``` xml
+{% highlight xml %}
 <meta-data
     android:name="virtual_device"
     android:value="true" />
-```
+{% endhighlight %}
 
 {% include important.html content="Экземпляр такого драйвера пользователь может создать исключительно вручную через настройки оборудования. В этом случае, все работы по подключению к нужному устройству берёт на себя производитель драйвера." %}
 
@@ -73,16 +73,16 @@ folder: smart_terminal_SDK
 
 Чтобы устройство было распознано как денежный ящик, используйте `Intent filter`:
 
-``` xml
+{% highlight xml %}
 INTENT_FILTER_CASH_DRAWER
-```
+{% endhighlight %}
 Вместе с этим необходимо указать в meta-data категорию устройства:
-``` xml
+{% highlight xml %}
 <meta-data
     android:name="device_categories"
     android:value="CASHDRAWER" />
-```
-{% include tip.html content="Можно указать сразу несколько ролей устройству: `"SCALES|PRICEPRINTER|CASHDRAWER"`(весы | принтер чеков | денежный ящик)." %}
+{% endhighlight %}
+{% include tip.html content="Можно указать сразу несколько ролей устройству: `SCALES|PRICEPRINTER|CASHDRAWER`(весы | принтер чеков | денежный ящик)." %}
 
 
 ### Присвоение картинки для драйвера
@@ -98,16 +98,16 @@ INTENT_FILTER_CASH_DRAWER
 
 Можно задать `activity` настроек:
 
-``` xml
+{% highlight xml %}
 <meta-data
     android:name="settings_activity"
     android:value="ru.mycompany.drivers.MySettingsActivity" />
-```
+{% endhighlight %}
 Указанная `activity` должна находиться в текущем `package` и будет вызвана при первом подключении устройства или при выборе устройства в меню настроек оборудования.
 
 Версия драйвера (`versionCode` и `versionName`) берётся из `build.gradle`:
 
-``` java
+{% highlight java %}
 defaultConfig {
     applicationId "ru.mycompany.drivers.mycashdrawer"
     minSdkVersion 22
@@ -115,7 +115,7 @@ defaultConfig {
     versionCode 2
     versionName "1.0.1"
 }
-```
+{% endhighlight %}
 
 {% include important.html content="MinSdkVersion должна быть не выше версии 22." %}
 
@@ -131,7 +131,7 @@ defaultConfig {
 для `INTENT_FILTER_CASHDRAWER` – класс наследник `ru.evotor.devices.drivers.ICashDrawerDriverService.Stub`;
 
 Пример:
-``` java
+{% highlight java %}
 public class MyDeviceService extends Service {
 
     private final Map<Integer, MyDevice> instances = new HashMap<>();
@@ -166,7 +166,7 @@ public class MyDeviceService extends Service {
         instances.remove(instanceId);
     }
 }
-```
+{% endhighlight %}
 В этом же сервисе можно определить `Map` для хранения списка нескольких активных экземпляров драйверов, т.к. обращаться к нему придётся из всех указанных Stub'ов.
 
 
@@ -187,7 +187,7 @@ public class MyDeviceService extends Service {
 
 ` IUsbDriverManagerService.Stub` – класс для управления драйверами usb-устройств: подключение и отключение устройств происходят здесь. Требуется реализовать методы `addUsbDevice` и `destroy`.
 
-``` java
+{% highlight java %}
 import ru.evotor.devices.drivers.IUsbDriverManagerService;
 
 public class MyDriverManagerStub extends IUsbDriverManagerService.Stub {
@@ -208,7 +208,7 @@ public class MyDriverManagerStub extends IUsbDriverManagerService.Stub {
         myDeviceService.destroy(instanceId);
     }
 }
-```
+{% endhighlight %}
 Метод `addUsbDevice` в `IUsbDriverManagerService` принимает на вход:
 
 - `UsbDevice`, для которого он создан;
@@ -223,7 +223,7 @@ public class MyDriverManagerStub extends IUsbDriverManagerService.Stub {
 
 подключение и отключение устройств происходят здесь. Требуется реализовать методы `addNewVirtualDevice`, `recreateNewVirtualDevice` и `destroy`.
 
-``` java
+{% highlight java %}
 import ru.evotor.devices.drivers.IVirtualDriverManagerService;
 
 public class MyDriverManagerStub extends IVirtualDriverManagerService.Stub {
@@ -250,7 +250,7 @@ public class MyDriverManagerStub extends IVirtualDriverManagerService.Stub {
         myDeviceService.destroy(instanceId);
     }
 }
-```
+{% endhighlight %}
 `addNewVirtualDevice` возвращает номер экземпляра драйвера внутри приложения. По этому номеру происходит обращение к конкретному драйверу.
 
 Метод `recreateNewVirtualDevice` принимает на вход номер экземпляра драйвера внутри приложения.
@@ -265,7 +265,7 @@ public class MyDriverManagerStub extends IVirtualDriverManagerService.Stub {
 
 `ICashDrawerDriverService.Stub` – класс для работы с конкретными экземплярами денежных ящиков.
 
-``` java
+{% highlight java %}
 public class MyCashDrawerStub extends ICashDrawerDriverService.Stub {
 
     private MyDeviceService myDeviceService;
@@ -279,7 +279,7 @@ public class MyCashDrawerStub extends ICashDrawerDriverService.Stub {
         myDeviceService.getCashDrawer(instanceId).openCashDrawer();
     }
 }
-```
+{% endhighlight %}
 Метод `openCashDrawer` принимает на вход номер экземпляра драйвера и открывает указанный денежный ящик.
 
 
@@ -289,7 +289,7 @@ public class MyCashDrawerStub extends ICashDrawerDriverService.Stub {
 
 Пример для денежного ящика с USB-подключением:
 
-``` java
+{% highlight java %}
 import ru.evotor.devices.drivers.cashdrawer.ICashDrawer;
 public class MyDevice implements ICashDrawer {
 
@@ -305,7 +305,7 @@ public class MyDevice implements ICashDrawer {
         //TODO Ваш код открытия денежного ящика
     }
 }
-```
+{% endhighlight %}
 Для устройств других категорий реализуйте соответствующие интерфейсы:
 
 Весы – `ru.evotor.devices.drivers.cashdrawer.IScales`;

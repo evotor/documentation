@@ -11,26 +11,23 @@ folder: smart_terminal_SDK
 
 1. В колбэке `onCreate()` или при запуске операции (`activity`) инициализируйте класс `ru.evotor.devices.commons.DeviceServiceConnector`:
 
-    {% highlight java %}
-    DeviceServiceConnector.startInitConnections(getApplicationContext());
-    {% endhighlight %}
-    Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку.
+    `DeviceServiceConnector.startInitConnections(getApplicationContext());`
 
-    {% include tip.html content="Воспользуйтесь методом `addConnectionWrapper`, чтобы получить событие об успешном подключении. <br/><br/>
+    Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку
 
-    Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения." %}
+    {% include tip.html content="Воспользуйтесь методом `addConnectionWrapper`, чтобы получить событие об успешном подключении. Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения." %}
 
 2. Вызовите метод `DeviceServiceConnector.getScalesService()`.
 
     Метод не может быть `null` и в случае успеха возвращает объект `ru.evotor.devices.commons.IScalesServiceWrapper`.
 
     Метод может вернуть следующие исключения (`exception`):
-    * `ru.evotor.devices.commons.exception.ServiceNotConnectedException` возвращается в результате серии неудачных попыток подключиться к принтеру.
+    * `ru.evotor.devices.commons.exception.ServiceNotConnectedException` возвращается в результате серии неудачных попыток подключиться к весам.
     * `ru.evotor.devices.commons.exception.DeviceServiceException` – наследованое исключение.
 
 3. С помощью метода `Weight getWeight(int deviceId)`, объекта `ru.evotor.devices.commons.IScalesService`, вы можете получить вес товара `Weight`.
 
-    где:
+    Где:
 
     `deviceId` – указывает устройство, для которого вызывается метод.
 
