@@ -1,0 +1,340 @@
+[
+
+
+
+
+{
+"title": "Модели биллинга",
+"tags": "",
+"keywords": "sample",
+"url": "doc_billing_models.html",
+"summary": "Раздел содержит описание моделей биллинга, которые вы можете реализовать с помощью Эвотора."
+}
+,
+
+
+
+{
+"title": "Интеграция с 1С",
+"tags": "",
+"keywords": "sample",
+"url": "doc_1C_integration.html",
+"summary": "Раздел содержит информацию об интеграции с 1С"
+}
+,
+
+
+
+{
+"title": "Приёмочное тестирование приложения",
+"tags": "",
+"keywords": "sample",
+"url": "doc_acceptance_testing.html",
+"summary": "Раздел содержит информацию о проверках, которые мы выполняем перед размещением приложения в Магазине приложений."
+}
+,
+
+
+
+{
+"title": "Тестирование приложения",
+"tags": "",
+"keywords": "sample",
+"url": "doc_application_test.html",
+"summary": "This is just a sample topic..."
+}
+,
+
+
+
+{
+"title": "Подписка",
+"tags": "",
+"keywords": "sample",
+"url": "doc_applications_tariffs.html",
+"summary": "Раздел содержит информацию тарифах."
+}
+,
+
+
+
+{
+"title": "Облачная товароучётная система",
+"tags": "",
+"keywords": "sample",
+"url": "doc_cloud_systems_integration.html",
+"summary": "Раздел содержит информацию об интеграции с облачной товароучётной системой."
+}
+,
+
+
+
+{
+"title": "Условия",
+"tags": "",
+"keywords": "sample",
+"url": "doc_conditions.html",
+"summary": "Раздел содержит информацию об условиях работы с Эвотором"
+}
+,
+
+
+
+{
+"title": "Возвращаемые ошибки",
+"tags": "",
+"keywords": "sample",
+"url": "doc_errors_returned.html",
+"summary": "Раздел содержит информацию о возвращаемых ошибках"
+}
+,
+
+
+
+{
+"title": "Запросы REST API Эвотор",
+"tags": "",
+"keywords": "sample",
+"url": "doc_evotor_rest_api_calls.html",
+"summary": "Раздел содержит информацию о запросах, которые вы можете отправлять в REST API Эвотор"
+}
+,
+
+
+
+{
+"title": "Часто задаваемые вопросы",
+"tags": "",
+"keywords": "frequently asked questions, FAQ, question and answer, collapsible sections, expand, collapse",
+"url": "doc_faq.html",
+"summary": "Раздел содержит ответы на часто задаваемые вопросы."
+}
+,
+
+
+
+{
+"title": "Термины и определения",
+"tags": "",
+"keywords": "sample",
+"url": "doc_glossary.html",
+"summary": "В этом разделе вы найдёте глоссарий терминов, которые встречаются в нашей документации."
+}
+,
+
+
+
+{
+"title": "IFrame на странице приложения",
+"tags": "",
+"keywords": "IFrame",
+"url": "doc_iframe_within_application_page.html",
+"summary": "Краткая инструкция по добавлению фрейма в настройки приложения"
+}
+,
+
+
+
+{
+"title": "Введение",
+"tags": "",
+"keywords": "sample",
+"url": "doc_introduction.html",
+"summary": "Раздел содержит вводную информацию для работы с нашей документацией."
+}
+,
+
+
+
+{
+"title": "Юридическая схема",
+"tags": "",
+"keywords": "sample",
+"url": "doc_legal_scheme.html",
+"summary": "Раздел содержит информацию описание юридического взаимодействия с Эвотором"
+}
+,
+
+
+
+{
+"title": "Продвижение",
+"tags": "",
+"keywords": "sample",
+"url": "doc_marketing.html",
+"summary": "Раздел содержит информацию продвижении вашего приложения в магазине приложений."
+}
+,
+
+
+
+{
+"title": "Запросы к стороннему сервису",
+"tags": "",
+"keywords": "sample",
+"url": "doc_outgoing_calls_protocol.html",
+"summary": "Раздел содержит информацию о запросах Эвотора к стороннему сервису."
+}
+,
+
+
+
+{
+"title": "Изменения API и SDK",
+"tags": "",
+"keywords": "sample",
+"url": "doc_release_notes.html",
+"summary": "Тут релиз ноты"
+}
+,
+
+
+
+{
+"title": "Разработка JS-приложения для смарт-терминала",
+"tags": "",
+"keywords": "sample",
+"url": "doc_smart_terminal_app_grants.html",
+"summary": "Раздел содержит информацию о процессе разработки JS-приложения для смарт-терминала."
+}
+,
+
+
+
+{
+"title": "Плитка приложения на главном экране смарт-терминала",
+"tags": "",
+"keywords": "sample",
+"url": "doc_smart_terminal_app_tile.html",
+"summary": "Раздел содержит требования к плитке приложения, а также информацию о том как добвить плитку на главный экран смарт-терминала."
+}
+,
+
+
+
+{
+"title": "Приложение для смарт-терминала",
+"tags": "",
+"keywords": "sample",
+"url": "doc_smart_terminal_application.html",
+"summary": "Раздел содержит информацию, которая потребуется при разработке приложения для терминала."
+}
+,
+
+
+
+{
+"title": "Приложение для смарт-терминала",
+"tags": "",
+"keywords": "sample",
+"url": "doc_smart_terminal_applications.html",
+"summary": "Раздел содержит общую информацию о приложениях для смарт-терминала."
+}
+,
+
+
+
+{
+"title": "Документы смарт-терминала",
+"tags": "",
+"keywords": "sample",
+"url": "doc_smart_terminal_documents.html",
+"summary": "Раздел содержит список документов, которые формирует смарт-терминал."
+}
+,
+
+
+
+
+
+{
+"title": "Введение",
+"tags": "",
+"keywords": "sample homepage",
+"url": "index.html",
+"summary": "Этот раздел содержит вводную информацию для работы с нашей документацией."
+}
+,
+
+
+
+{
+"title": "Scroll layout",
+"tags": "special_layouts",
+"keywords": "json, scrolling, scrollto, jquery plugin",
+"url": "jsmydoc_scroll.html",
+"summary": "This page demonstrates how you the integration of a script called ScrollTo, which is used here to link definitions of a JSON code sample to a list of definitions for that particular term. The scenario here is that the JSON blocks are really long, with extensive nesting and subnesting, which makes it difficult for tables below the JSON to adequately explain the term in a usable way."
+}
+,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+"title": "Sample post",
+"tags": "newsgetting_started",
+"keywords": "",
+"url": "samplepost.html",
+"summary": "This is some summary frontmatter for my sample post."
+}
+,
+
+
+{
+"title": "Welcome to Jekyll!",
+"tags": "news",
+"keywords": "",
+"url": "myupdate.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "Test post from last year",
+"tags": "news",
+"keywords": "",
+"url": "test-post-from-last-year.html",
+"summary": ""
+}
+
+
+
+]

@@ -11,7 +11,7 @@ folder: smart_terminal_SDK
 
 Вы можете взаимодействовать с чеком: добавлять, изменять и удалять позиции. Для этого требуется подписаться на событие редактирования позиций (`beforePositionsEditedEvent`), которое сообщает об изменении чека и содержит список изменений:
 
-~~~ java
+{% highlight java %}
 public class BeforePositionsEditedEvent {
     private static final String TAG = "PositionsEditedEvent";
 
@@ -49,13 +49,13 @@ public class BeforePositionsEditedEvent {
         return changes;
     }
 }
-~~~
+{% endhighlight %}
 
 #### Список изменений
 
 Изменение сообщает о том, что будет добавлена позиция:
 
-~~~ java
+{% highlight java %}
 data class PositionAdd(val position: Position) : IPositionChange {
 
     override fun toBundle(): Bundle {
@@ -88,11 +88,11 @@ data class PositionAdd(val position: Position) : IPositionChange {
         }
     }
 }
-~~~
+{% endhighlight %}
 
 Изменение сообщает том, что позиция будет отредактирована:
 
-~~~ java
+{% highlight java %}
 data class PositionEdit(val position: Position) : IPositionChange {
 
     override fun toBundle(): Bundle {
@@ -123,11 +123,11 @@ data class PositionEdit(val position: Position) : IPositionChange {
         }
     }
 }
-~~~
+{% endhighlight %}
 
 Изменение сообщает том, что позиция будет удалена:
 
-~~~ java
+{% highlight java %}
 data class PositionRemove(
         private val positionUuid: String
 ) : IPositionChange {
@@ -162,12 +162,12 @@ data class PositionRemove(
         }
     }
 }
-~~~
+{% endhighlight %}
 
 #### Подписка на событие
 
 1. Создайте службу, например `MyIntegrationService`, которая наследует класс `IntegrationService`. В колбэке `onCreate` службы, зарегистрируйте процессор `BeforePositionsEditedEventProcessor` (процессор наследует класс `ActionProcessor`).
-    ~~~ java
+    {% highlight java %}
     public class MyIntegrationService extends IntegrationService {
         @Override
         public void onCreate() {
@@ -177,9 +177,9 @@ data class PositionRemove(
                        });
                     }
                 }
-    ~~~
+    {% endhighlight %}
 2. Объявите службу в манифесте приложения:
-    ~~~ xml
+    {% highlight java %}
     <service
             android:name=".MyIntegrationService"
             android:enabled="true"
@@ -189,7 +189,7 @@ data class PositionRemove(
                 <action android:name="evo.v2.receipt.sell.beforePositionsEdited" />
             </intent-filter>
     </service>
-    ~~~
+    {% endhighlight %}
 
 В метод `call` процессора приходит событие `beforePositionsEditedEvent` и объект для возврата результата `callback`.
 
@@ -197,7 +197,7 @@ data class PositionRemove(
 
 В ответ изменения могут вернуть результат со списком дополнительных изменений:
 
-~~~ java
+{% highlight java %}
 public class BeforePositionsEditedEventResult {
 
     private static final String KEY_RESULT = "result";
@@ -252,29 +252,29 @@ public class BeforePositionsEditedEventResult {
         UNKNOWN;
     }
 }
-~~~
+{% endhighlight %}
 
 Чтобы вернуть результат, используйте метод:
-~~~ java
+{% highlight java %}
 callback.onResult(beforePositionsEditedEventResult.toBundle())
-~~~
+{% endhighlight %}
 
 
 Если приложению для возврата результата необходимо взаимодействие с пользователем, запустите операцию (`Activity`), которая наследует класс `BeforePositionsEditedEventActivity`:
-~~~ java
+{% highlight java %}
 callback.startActivity(new Intent(MyIntegrationService.this, MainActivity.class));
-~~~
+{% endhighlight %}
 
 Ваша операция должна вызвать метод
 `setIntegrationResult`.
 
 Например:
-~~~ java
+{% highlight java %}
 setIntegrationResult(new BeforePositionsEditedEventResult(BeforePositionsEditedEventResult.Result.OK, changes));
-~~~
+{% endhighlight %}
 
 Класс `BeforePositionsEditedEventActivity` задан как:
-~~~ java
+{% highlight java %}
 public class BeforePositionsEditedEventActivity extends IntegrationActivity {
     public void setIntegrationResult(BeforePositionsEditedEventResult result) {
         setIntegrationResult(result == null ? null : result.toBundle());
@@ -284,4 +284,4 @@ public class BeforePositionsEditedEventActivity extends IntegrationActivity {
         return BeforePositionsEditedEvent.create(getSourceBundle());
     }
 }
-~~~
+{% endhighlight %}
