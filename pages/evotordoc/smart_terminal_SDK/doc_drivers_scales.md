@@ -7,7 +7,7 @@ permalink: doc_drivers_scales.html
 folder: smart_terminal_SDK
 ---
 
-### Определение внешнего сервиса в AndroidManifest.xml.
+### Определение внешнего сервиса в AndroidManifest.xml
 
 Укажите хотя бы один `Intent filter`: `INTENT_FILTER_DRIVER_MANAGER` или `INTENT_FILTER_VIRTUAL_DRIVER_MANAGER`.
 
@@ -172,7 +172,7 @@ public class MyDeviceService extends Service {
 В этом же сервисе можно определить `Map` для хранения списка нескольких активных экземпляров драйверов, т.к. обращаться к нему придётся из всех указанных Stub'ов.
 
 
-### Описание указанных Binder'ов.
+### Описание указанных Binder'ов
 
 Если нельзя выполнить действие, например, взвесить для метода getWeight, используйте один из типов `Exception` с легкочитаемым описанием для всех методов.
 
@@ -305,7 +305,7 @@ public class MyScalesStub extends IScalesDriverService.Stub {
 
 
 
-## Описание класса для работы с оборудованием.
+### Описание класса для работы с оборудованием
 
 Пример для USB-весов:
 
@@ -345,6 +345,6 @@ public class MyDevice implements IScales {
 
 
 
-### Завершение работы.
+### Завершение работы
 
 Загрузите приложение на смарт-терминал, чтобы работать с драйвером.

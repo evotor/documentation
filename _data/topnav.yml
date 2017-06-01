@@ -8,3 +8,5 @@ topnav:
       url: /whats_new.html
     - title: Справочник API
       external_url: https://api.evotor.ru/docs/
+    - title: SDK смарт-терминала
+      url: /doc_developer_mode.html
