@@ -116,6 +116,10 @@ entries:
       url: /doc_receipt_interactions.html
       output: web
 
+    - title: Скидки
+      url: /doc_discounts.html
+      output: web
+
 #    - title: Схемы и дополнительные поля товаров
 #      url: /doc_product_extras.html.html
 #      output: web
