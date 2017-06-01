@@ -13,8 +13,8 @@ folder: smart_terminal_SDK
 
 #### Подписка на событие
 
-1. Создайте службу, например `MyDiscountService`, которая наследует класс `IntegrationService`. В колбэке `onCreate` службы, зарегистрируйте процессор `ReceiptDiscountEventProcessor`.
-    ``` java
+1. Создайте службу, например `MyDiscountService`, которая наследует класс `IntegrationService`. В методе `onCreate` службы, зарегистрируйте процессор `ReceiptDiscountEventProcessor`.
+    {% highlight java %}
     public class MyDiscountService extends IntegrationService {
 
         @Override
@@ -25,17 +25,14 @@ folder: smart_terminal_SDK
                     new ReceiptDiscountEventProcessor() {
                         @Override
                         public void call(ReceiptDiscountEvent positionsDiscountEvent, Callback callback) {
-                            try {
-                            } catch (RemoteException exc) {
-                                exc.printStackTrace();
-                            }
+
                         }
                     });
         }
     }
-    ```
+    {% endhighlight %}
 2. Объявите службу в манифесте приложения:
-    ``` xml
+    {% highlight xml %}
     <service
             android:name="MyDiscountService"
             android:enabled="true"
@@ -44,16 +41,20 @@ folder: smart_terminal_SDK
                 <action android:name="evo.v2.receipt.sell.receiptDiscount" />
             </intent-filter>
     </service>
-    ```
+    {% endhighlight %}
 
 В метод `call` процессора приходит событие `positionsDiscountEvent` и объект для возврата результата `callback`.
 
 Чтобы вернуть результат, используйте метод:
-``` java
-callback.onResult(
+{% highlight java %}
+try {callback.onResult(
         new ReceiptDiscountEventResult(
-                ReceiptDiscountEventResult.Result.OK,
-                new BigDecimal(0.5)
-        ).toBundle()
-)
-```
+        ReceiptDiscountEventResult.Result.OK,
+        new BigDecimal(0.5)
+        ).toBundle())
+    }
+        catch (RemoteException exc) {
+                exc.printStackTrace();
+            }
+
+{% endhighlight %}

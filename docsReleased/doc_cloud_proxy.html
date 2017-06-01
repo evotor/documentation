@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит пошаговое описание обмена сообщениями между приложением и сторонним сервисом">
 <meta name="keywords" content=" sample">
-<title>Встраивание приложения | Документация Эвотор</title>
+<title>Проксирование HTTP-запросов к стороннему сервису | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -125,7 +125,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Встраивание приложения">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Проксирование HTTP-запросов к стороннему сервису">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -273,6 +273,13 @@
             
             
             
+            <li class="active"><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
             
             
@@ -295,6 +302,13 @@
             
             
             <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_discounts.html">Скидки</a></li>
             
             
             
@@ -464,7 +478,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Встраивание приложения</h1>
+   <h1 class="post-title-main">Проксирование HTTP-запросов к стороннему сервису</h1>
 </div>
 
 
@@ -503,26 +517,82 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Встроенное приложение</p>
+  <!-- ### Создание списка разрешённых URL -->
 
-<p>вы можете вызвать интерфейс своего приложения если подпишетесь на необходимые события.</p>
+<!-- Чтобы приложение могло обмениваться сообщениями со сторонним сервисом, в настройках приложения на сайте разработчиков, требуется указать список разрешённых URL: -->
 
-<p>отдельное приложение и встроенное приложение</p>
+<!-- 1. На сайте разработчиков выберите приложение, для которого требуется указать список разрешённых URL. -->
+<!-- 2. На вкладке **Интеграция**, установите флажок **ФЛАЖОК** и укажите список URL, к которым может обращаться приложение. -->
 
-<p>В отличие от отдельного приложения, у встроенного приложения нет плитки, которая отображается на главном экране смарт-терминала. Приложение отображает интерфейс в зависимости от событий на смарт-терминале. События возникают при различных действиях на смарт-терминале и определяют какая функциональность доступна приложению в тот или иной момент.</p>
+<p><!-- Примеры: -->
+  <!-- * `http://example\.com/document.*\.jsp\?wildcard=\*&param=value.*`; -->
+  <!-- * `https://another\.host\.com/document.*\.jsp`; -->
+  <!-- * `https://another\.host\.com/.*`. --></p>
 
-<p>На схеме изображена карта функционала, на которой показано когда возникает событие и доступ к каким функциям приложение получает при подписке на него.</p>
+<!-- После создания списка, обмен сообщениями происходит по описанному ниже процессу. -->
 
-<p>Приложению требуется подписаться на</p>
+<h3 id="Шаг-1-Приложение-отправляет-http-сообщение">Шаг 1. Приложение отправляет HTTP-сообщение</h3>
 
-<h3 id="Как-подписаться-на-события-в-java-приложении">Как подписаться на события в Java-приложении</h3>
-<p>А здесь про android manifest.</p>
+<p>Приложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. Вы можете воспользоваться любым удобным способом отправки сообщения.</p>
 
-<h3 id="Как-подписаться-на-события-в-js-приложении">Как подписаться на события в JS-приложении</h3>
+<h4 id="java-приложение">Java-приложение</h4>
+<p>Для отправки HTTP-сообщения из Java-приложения вы можете, например, использовать <a href="http://square.github.io/okhttp/">библиотеку OkHttp</a> или способ, описанный на <a href="https://developer.android.com/training/basics/network-ops/connecting.html">developer.android.com</a>.</p>
 
-<p>Здесь про client.yaml</p>
+<h4 id="js-приложение">JS-приложение</h4>
 
-<p>Действия, события а так же функционал, доступ к которому даёт то или иное событие, приведены в таблице ниже.</p>
+<p>В <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code> требуется указать элемент <code class="highlighter-rouge">internet</code>:</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">capabilities</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">internet</span></code></pre></figure>
+
+<p>Из JS-приложения вы можете отправить сообщение следующим образом:</p>
+
+<h3 id="Шаг-2-Смарт-терминал-передаёт-сообщение-в-облако">Шаг 2. Смарт-терминал передаёт сообщение в облако</h3>
+
+<p>Терминал перехватывает сообщение и передаёт его в облако Эвотор. На этом этапе в сообщение добавляются служебные заголовки:</p>
+<ul>
+  <li><code class="highlighter-rouge">X-Device-ID</code></li>
+  <li><code class="highlighter-rouge">X-Device-IMEI</code></li>
+  <li><code class="highlighter-rouge">X-User-ID</code></li>
+  <li><code class="highlighter-rouge">X-Signed-Url</code></li>
+  <li><code class="highlighter-rouge">X-Shop-UUID</code></li>
+  <li><code class="highlighter-rouge">X-Device-Salt</code></li>
+  <li><code class="highlighter-rouge">X-Device-Algorithm</code></li>
+  <li><code class="highlighter-rouge">X-Device-Date</code></li>
+  <li><code class="highlighter-rouge">X-Secret-Device-ID</code></li>
+  <li><code class="highlighter-rouge">X-OAuth-Client-ID</code></li>
+  <li><code class="highlighter-rouge">X-Device-UUID</code></li>
+  <li><code class="highlighter-rouge">X-Evotor-*</code></li>
+  <li><code class="highlighter-rouge">Expect</code></li>
+  <li><code class="highlighter-rouge">Host</code></li>
+  <li><code class="highlighter-rouge">Transfer-Encoding</code></li>
+</ul>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Убедитесь, что ваше приложение не использует перечисленные заголовки. В противном случае, смарт-терминал перезапишет их содержимое.</div>
+
+<h3 id="Шаг-3-Облако-передаёт-сообщение-адресату">Шаг 3. Облако передаёт сообщение адресату</h3>
+
+<p>Облако удаляет служебные заголовки, добавляет свои заголовки и передаёт сообщение адресату.</p>
+
+<p>Заголовки, которые добавляет облако:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">X-Evotor-Store-Uuid</code> – содержит идентификатор магазина в формате uuid4, к которому привязан терминал.</li>
+  <li><code class="highlighter-rouge">X-Evotor-Device-UUID</code> – содержит идентификатор устройства в формате uuid4, полученный по запросу к <code class="highlighter-rouge">/api/v1/inventories/devices</code>.</li>
+  <li><code class="highlighter-rouge">Authorization</code> – содержит токен пользователя. Токен необходим для bearer-авторизации.</li>
+</ul>
+
+<p>Сторонний сервер получает сообщение от облака Эвотор и определяет отправителя с помощью заголовка Authorization.</p>
+
+<h4 id="Шаг-4-Ответ-стороннего-сервиса">Шаг 4. Ответ стороннего сервиса</h4>
+
+<p>Ответ стороннего сервиса передаётся приложению в обратном порядке.</p>
+
+<p>Ответы стороннего сервиса должны содержать объекты:</p>
+<ul>
+  <li><code class="highlighter-rouge">status</code> – содержит HTTP-код состояния.</li>
+  <li><code class="highlighter-rouge">body</code> – содержит тело запроса.</li>
+</ul>
 
 
     <div class="tags">

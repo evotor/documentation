@@ -3,7 +3,7 @@ title: Встраивание приложения
 keywords: sample
 summary: "Раздел содержит пошаговое описание обмена сообщениями между приложением и сторонним сервисом"
 sidebar: evotordoc_sidebar
-permalink: doc_cloud_proxy.html
+permalink: doc_integrated_app_points.html
 folder: evotordoc/smart_terminal_SDK
 ---
 

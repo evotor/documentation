@@ -96,9 +96,9 @@ entries:
       url: /doc_smart_terminal_app_tile.html
       output: web
 
-#    - title: Проксирование HTTP-запросов
-#      url: /doc_cloud_proxy.html
-#      output: web
+    - title: Проксирование HTTP-запросов
+      url: /doc_cloud_proxy.html
+      output: web
 
     - title: Users API
       url: /doc_smart_terminal_users_api.html
