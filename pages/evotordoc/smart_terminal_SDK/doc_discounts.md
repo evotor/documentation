@@ -14,7 +14,7 @@ folder: smart_terminal_SDK
 #### Подписка на событие
 
 1. Создайте службу, например `MyDiscountService`, которая наследует класс `IntegrationService`. В колбэке `onCreate` службы, зарегистрируйте процессор `ReceiptDiscountEventProcessor`.
-    {% highlight java %}
+    ``` java
     public class MyDiscountService extends IntegrationService {
 
         @Override
@@ -33,9 +33,9 @@ folder: smart_terminal_SDK
                     });
         }
     }
-    {% endhighlight %}
+    ```
 2. Объявите службу в манифесте приложения:
-    {% highlight java %}
+    ``` xml
     <service
             android:name="MyDiscountService"
             android:enabled="true"
@@ -44,16 +44,16 @@ folder: smart_terminal_SDK
                 <action android:name="evo.v2.receipt.sell.receiptDiscount" />
             </intent-filter>
     </service>
-    {% endhighlight %}
+    ```
 
 В метод `call` процессора приходит событие `positionsDiscountEvent` и объект для возврата результата `callback`.
 
 Чтобы вернуть результат, используйте метод:
-{% highlight java %}
+``` java
 callback.onResult(
         new ReceiptDiscountEventResult(
                 ReceiptDiscountEventResult.Result.OK,
                 new BigDecimal(0.5)
         ).toBundle()
 )
-{% endhighlight %}
+```
