@@ -5,7 +5,7 @@ summary: "Раздел содержит пошаговое описание об
 sidebar: evotordoc_sidebar
 permalink: doc_cloud_proxy.html
 folder: evotordoc/smart_terminal_SDK
-published: false
+published: true
 ---
 
 <!-- ### Создание списка разрешённых URL -->
@@ -27,26 +27,42 @@ published: false
 
 Приложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. Вы можете воспользоваться любым удобным способом отправки сообщения.
 
-Например, для отправки HTTP-сообщения из Java-приложения вы можете использовать [библиотеку OkHttp](http://square.github.io/okhttp/) или способ, описанный на [developer.android.com](https://developer.android.com/training/basics/network-ops/connecting.html).
+#### Java-приложение
+Для отправки HTTP-сообщения из Java-приложения вы можете, например, использовать [библиотеку OkHttp](http://square.github.io/okhttp/) или способ, описанный на [developer.android.com](https://developer.android.com/training/basics/network-ops/connecting.html).
 
-Из JS-приложения вы можете отправить сообщение следующим образом:
+#### JS-приложение
 
-``` JavaScript
-var req = new XMLHttpRequest();
-req.open("GET", "example/data.txt", false);
-req.send(null);
-console.log(req.responseText);
-```
+В `client.yaml`, в списке `capabilities` требуется указать элемент `internet`:
+
+{% highlight yaml %}
+capabilities:
+  - internet
+{% endhighlight %}
+
+<!-- Из JS-приложения вы можете отправить сообщение следующим образом: -->
+
 
 ### Шаг 2. Смарт-терминал передаёт сообщение в облако
 
-Терминал перехватывает сообщение и передаёт его в облако Эвотор. На этом этапе в сообщение добавляются служебные заголовки:
-* `X-*`
+Терминал перехватывает сообщение и передаёт его в облако Эвотор.
+
+{% include note.html content="Убедитесь, что ваше приложение не использует перечисленные ниже заголовки. В противном случае, смарт-терминал перезапишет их содержимое." %}
+
+* `X-Device-ID`
+* `X-Device-IMEI`
+* `X-User-ID`
+* `X-Signed-Url`
+* `X-Shop-UUID`
+* `X-Device-Salt`
+* `X-Device-Algorithm`
+* `X-Device-Date`
+* `X-Secret-Device-ID`
+* `X-OAuth-Client-ID`
+* `X-Device-UUID`
+* `X-Evotor-*`
 * `Expect`
 * `Host`
 * `Transfer-Encoding`
-
-{% include note.html content="Убедитесь, что ваше приложение не использует перечисленные заголовки. В противном случае, смарт-терминал перезапишет их содержимое." %}
 
 ### Шаг 3. Облако передаёт сообщение адресату
 
