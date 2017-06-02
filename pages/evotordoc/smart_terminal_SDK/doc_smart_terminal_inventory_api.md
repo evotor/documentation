@@ -10,9 +10,9 @@ published: true
 
 ### Inventory API смарт-терминала
 
-С помощью Inventory API вы можете получать как основную, так и дополнительную информацию о товарах.
+С помощью Inventory API вы можете получать как основную, так и дополнительную информацию о товарах, в том числе список всех штрихкодов товара.
 
-Users API смарт-терминала включает в себя:
+Inventory API смарт-терминала включает в себя:
 
 * URI контента `val BASE_URI = Uri.parse("content://ru.evotor.evotorpos.inventory")`:
 
@@ -20,7 +20,7 @@ Users API смарт-терминала включает в себя:
 
 * Таблицу данных товара `ProductTable`:
 
-    {% highlight java %}
+    ``` java
     object ProductTable {
         val URI = Uri.withAppendedPath(InventoryApi.BASE_URI, "Commodity")
 
@@ -40,11 +40,11 @@ Users API смарт-терминала включает в себя:
         const val ROW_TARE_VOLUME = "TARE_VOLUME"
         const val ROW_TAX_NUMBER = "TAX_NUMBER"
     }
-    {% endhighlight %}
+    ```
 
 * Таблицу дополнительных полей `ProductsFieldTable`:
 
-    {% highlight java %}
+    ``` java
     object FieldTable {
         val URI = Uri.withAppendedPath(InventoryApi.BASE_URI, "Field")
 
@@ -57,11 +57,11 @@ Users API смарт-терминала включает в себя:
         const val TYPE_TEXT_FIELD = 1
         const val TYPE_DICTIONARY = 2
     }
-    {% endhighlight %}
+    ```
 
 * Таблицу значений дополнительных полей товаров `ProductsExtraTable`:
 
-    {% highlight java %}
+    ``` java
     object ProductExtraTable {
         @JvmField val URI = Uri.withAppendedPath(InventoryApi.BASE_URI, "CommodityExtra")
 
@@ -72,7 +72,7 @@ Users API смарт-терминала включает в себя:
         const val ROW_FIELD_VALUE = "FIELD_VALUE"
         const val ROW_DATA = "DATA"
     }
-    {% endhighlight %}
+    ```
 
 Схема отношения данных в таблицах.
 
@@ -80,10 +80,30 @@ Users API смарт-терминала включает в себя:
 
 ### Примеры запросов к Inventory API
 
+Получить все штрихкоды товара:
+
+``` java
+fun getAllBarcodesForProduct(context: Context, productUuid: String): List<String> {
+    val barcodesList = ArrayList<String>()
+    val cursor: Cursor? = context.contentResolver.query(
+            Uri.withAppendedPath(BarcodeTable.URI, productUuid),
+            null, null, null, null)
+    if (cursor != null) {
+        if (cursor.moveToFirst()) {
+            do {
+                val barcode: String = cursor.getString(cursor.getColumnIndex(BarcodeTable.ROW_BARCODE))
+                barcodesList.add(barcode)
+            } while (cursor.moveToNext())
+        }
+    }
+    return barcodesList
+}
+```
+
 Получить данные товара:
 
 
-{% highlight java %}
+``` java
 fun getProductByUuid(context: Context, uuid: String): ProductItem? {
   context.contentResolver
       .query(Uri.withAppendedPath(ProductTable.URI, uuid), null, null, null, null)
@@ -125,11 +145,11 @@ fun getProductByUuid(context: Context, uuid: String): ProductItem? {
           }
   return null
 }
-{% endhighlight %}
+```
 
-Сделать возможные дополнительные поля:
+Получить возможные дополнительные поля:
 
-{% highlight java %}
+``` java
 fun getField(context: Context, fieldUuid: String): Field? {
     context.contentResolver
             .query(FieldTable.URI, null, "${FieldTable.ROW_FIELD_UUID} = ?", arrayOf(fieldUuid), null)
@@ -149,11 +169,11 @@ fun getField(context: Context, fieldUuid: String): Field? {
 
     return null
 }
-{% endhighlight %}
+```
 
 Получить значения дополнительных полей товара:
 
-{% highlight java %}
+``` java
 fun getProductExtras(context: Context, productUuid: String): List<ProductExtra> {
     val result = ArrayList<ProductExtra>()
     context.contentResolver
@@ -173,4 +193,4 @@ fun getProductExtras(context: Context, productUuid: String): List<ProductExtra> 
             }
     return result
 }
-{% endhighlight %}
+```
