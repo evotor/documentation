@@ -193,7 +193,7 @@
         
     
     <li>
-        <a href="#">Эвотор API</a>
+        <a href="#">Облако Эвотор</a>
         <ul>
             
             
@@ -241,7 +241,14 @@
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            <li><a href="doc_developer_mode.html">Включение режима разработчика</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_logging.html">Отладка приложения</a></li>
             
             
             
@@ -249,6 +256,13 @@
             
             
             <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
             
             
             
@@ -263,6 +277,53 @@
             
             
             <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_storage_api.html">Storage API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Драйвера для оборудования</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_drivers_library_connection.html">Подготовка к разработке</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_cashdrawer.html">SDK для денежных ящиков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_pinpads.html">SDK для банковских терминалов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_scales.html">SDK для весов</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -296,13 +357,6 @@
                     
                 </ul>
             </li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -368,21 +422,6 @@
             
             
             <li><a href="doc_tariffs.html">Тарифы</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">Публикация приложения</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
             
             
             
@@ -458,46 +497,11 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="Манифест-java-приложения">Манифест java-приложения</h3>
+  <p>В корневой папке вашего приложения (Java или JS) должен находиться файл манифест приложения – <a href="https://developer.android.com/guide/topics/manifest/manifest-intro.html?hl=ru">AndroidManifest.xml</a>.</p>
 
-<div class="language-xml highlighter-rouge"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><span class="nt">&lt;manifest</span> <span class="na">package=</span><span class="s">"com.example.name.name"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;application</span> <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span> <span class="na">android:allowBackup=</span><span class="s">"true"</span> <span class="na">android:theme=</span><span class="s">"@style/AppTheme"</span> <span class="na">android:label=</span><span class="s">"@string/generated_app_name"</span> <span class="na">tools:replace=</span><span class="s">"android:label"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;meta-data</span> <span class="na">android:value=</span><span class="s">"ApllicationUUID"</span> <span class="na">android:name=</span><span class="s">"app_uuid"</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;activity</span> <span class="na">android:icon=</span><span class="s">"@mipmap/hello_sales_view_icon"</span> <span class="na">android:label=</span><span class="s">"Hello"</span> <span class="na">android:name=</span><span class="s">".HELLO_SALES_VIEW"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;intent-filter</span> <span class="na">android:priority=</span><span class="s">"90"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.SALES_SCREEN"</span><span class="nt">/&gt;</span>
-      <span class="nt">&lt;/intent-filter&gt;</span>
-      <span class="nt">&lt;meta-data</span> <span class="na">android:value=</span><span class="s">"@color/hello_sales_view_launcher_color"</span> <span class="na">android:name=</span><span class="s">"ru.evotor.sales_screen.BACKGROUND_COLOR"</span><span class="nt">/&gt;</span>
-      <span class="nt">&lt;meta-data</span> <span class="na">android:resource=</span><span class="s">"@array/hello_sales_view_grants"</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/activity&gt;</span>
-    <span class="nt">&lt;activity</span> <span class="na">android:icon=</span><span class="s">"@mipmap/world_sales_view_icon"</span> <span class="na">android:label=</span><span class="s">"World"</span> <span class="na">android:name=</span><span class="s">".WORLD_SALES_VIEW"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;intent-filter</span> <span class="na">android:priority=</span><span class="s">"90"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.SALES_SCREEN"</span><span class="nt">/&gt;</span>
-      <span class="nt">&lt;/intent-filter&gt;</span>
-      <span class="nt">&lt;meta-data</span> <span class="na">android:value=</span><span class="s">"@color/world_sales_view_launcher_color"</span> <span class="na">android:name=</span><span class="s">"ru.evotor.sales_screen.BACKGROUND_COLOR"</span><span class="nt">/&gt;</span>
-      <span class="nt">&lt;meta-data</span> <span class="na">android:resource=</span><span class="s">"@array/world_sales_view_grants"</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/activity&gt;</span>
-    <span class="nt">&lt;service</span> <span class="na">android:enabled=</span><span class="s">"true"</span> <span class="na">android:name=</span><span class="s">".UIPluginServiceImplementation"</span> <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;intent-filter&gt;</span>
-        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.EVOTOR"</span><span class="nt">/&gt;</span>
-      <span class="nt">&lt;/intent-filter&gt;</span>
-    <span class="nt">&lt;/service&gt;</span>
-    <span class="nt">&lt;service</span> <span class="na">android:enabled=</span><span class="s">"true"</span> <span class="na">android:name=</span><span class="s">".DaemonServiceImplementation"</span> <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;intent-filter&gt;</span>
-        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.EVOTOR"</span><span class="nt">/&gt;</span>
-      <span class="nt">&lt;/intent-filter&gt;</span>
-    <span class="nt">&lt;/service&gt;</span>
-  <span class="nt">&lt;/application&gt;</span>
-<span class="nt">&lt;/manifest&gt;</span>
-</div>
+<p>Если манифест Java-приложения вы создаёте сами, то манифест JS-приложения генерируется автоматически на основе файла client.yaml, размещённого по адресу <code class="highlighter-rouge">app\src\main\assets</code>.</p>
 
-<h3 id="Манифест-js-приложения">Манифест JS-приложения</h3>
+<h3 id="Пример-файла-clientyaml">Пример файла <code class="highlighter-rouge">client.yaml</code></h3>
 
 <div class="language-yaml highlighter-rouge"><span class="na">version</span><span class="pi">:</span> <span class="s">1</span>
 <span class="na">versionName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.0.0"</span>
@@ -506,6 +510,18 @@ $('#toc').on('click', 'a', function() {
 <span class="na">appName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ApplicationName"</span>
 <span class="na">appUUID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ApllicationUUID"</span>
 
+<span class="na">capabilities</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">internet</span>
+  <span class="pi">-</span> <span class="s">barcode-scanner</span>
+  <span class="pi">-</span> <span class="s">storage</span>
+<span class="na">daemons</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">check</span>
+    <span class="na">events</span><span class="pi">:</span>
+    <span class="na">behavior</span><span class="pi">:</span> <span class="s">check-daemon.js</span>
+<span class="na">plugins</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">discount</span>
+    <span class="na">moments</span><span class="pi">:</span>
+    <span class="na">behavior</span><span class="pi">:</span> <span class="s">receipt-fixed.js</span>
 <span class="na">views</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">hello_sales_view</span> <span class="c1"># Запрещено использовать верхний регистр и ,-*&amp;^%$# и т.д</span>
     <span class="na">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Hello</span><span class="nv"> </span><span class="s">header"</span>
@@ -522,30 +538,16 @@ $('#toc').on('click', 'a', function() {
       <span class="pi">-</span> <span class="s">no-script</span>
     <span class="na">styles</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">world_sales_view</span> <span class="c1"># Запрещено использовать верхний регистр и ,-*&amp;^%$# и т.д</span>
-    <span class="na">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">World</span><span class="nv"> </span><span class="s">header"</span>
-    <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">World"</span>
-    <span class="na">color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#0000CD"</span>
-    <span class="na">icon_96</span><span class="pi">:</span> <span class="s">icons/icon-96.png</span>
-    <span class="na">icon_192</span><span class="pi">:</span> <span class="s">icons/icon-192.png</span>
-    <span class="na">icon_256</span><span class="pi">:</span> <span class="s">icons/icon-256.png</span>
-    <span class="na">source</span><span class="pi">:</span> <span class="s">views/view.html</span>
-    <span class="na">point</span><span class="pi">:</span> <span class="s">SALES_SCREEN</span> <span class="c1"># Variants are MAIN_SCREEN and SALES_SCREEN</span>
-    <span class="na">grants</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
-    <span class="na">scripts</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">no-script</span>
-    <span class="na">styles</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
 </div>
 
-<p>Где:
-version: 2 — Код версии приложения (инкремент этого параметра значит, что приложение изменилось и его необходимо обновить на терминалах)
-versionName: “1.0.1” — Версия приложения (версия служит просто для отображения пользователю, можно писать что угодно)</p>
-
-<p>packageName: org.example.myApp — Имя пакета (используйте правила соглашения об именовании – https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html)
-appName: “testApp” — Отображаемое пользователю имя приложения
-appUUID: “2e6dc4b8-fdac-48c1-8a1a-ade402863947” — UUID приложения (его можно посмотреть в адресной строке приложения на dev.evotor.ru в личном кабинете разработчика)</p>
+<p>Где:</p>
+<ul>
+  <li><code class="highlighter-rouge">version</code> – код версии приложения. При обновлении приложения возрастает на единицу. Увеличение версии сообщает смарт-терминалам о необходимости обновить приложение.</li>
+  <li><code class="highlighter-rouge">versionName</code> – версия приложения, которая отображается в интерфейсе, может содержать любое значение. Версию требуется указывать в кавычках.</li>
+  <li><code class="highlighter-rouge">packageName</code> – имя пакета согласно <a href="https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html">правилам об именовании</a>. Пример: <code class="highlighter-rouge">org.example.myApp</code>.</li>
+  <li><code class="highlighter-rouge">appName</code> – имя приложение, которое отображается в интерфейсе. Имя приложения требуется указывать в кавычках, поле поддерживает только латинские буквы и цифры.</li>
+  <li><code class="highlighter-rouge">appUUID</code> – идентификатор приложения в формате uuid4. Отображается  в адресной строке приложения на dev.evotor.ru в личном кабинете разработчика)</li>
+</ul>
 
 <p>iconColor: “#0f70b7” — Цвет иконки приложения интеграции на терминале Evotor, если она размещена на рабочем столе (см. описание views, чтобы поместить иконку приложения на главный экран терминала)</p>
 

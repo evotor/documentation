@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+    </script>
+<!-- End Google Tag Manager -->
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -78,6 +82,10 @@
 
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4CBFKS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container topnavlinks">
@@ -597,7 +605,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Получить данные товара:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="nf">getProductByUuid</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">uuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">ProductItem</span><span class="o">?</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><span class="n">fun</span> <span class="nf">getProductByUuid</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">uuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">ProductItem</span><span class="o">?</span> <span class="o">{</span>
   <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span>
       <span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">URI</span><span class="o">,</span> <span class="n">uuid</span><span class="o">),</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">)</span>
           <span class="o">?.</span><span class="na">let</span> <span class="o">{</span> <span class="n">cursor</span> <span class="o">-&gt;</span>
@@ -637,11 +645,12 @@ $('#toc').on('click', 'a', function() {
               <span class="o">}</span>
           <span class="o">}</span>
   <span class="k">return</span> <span class="kc">null</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</div>
 
-<p>Сделать возможные дополнительные поля:</p>
+<p>Получить возможные дополнительные поля:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="nf">getField</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">fieldUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">Field</span><span class="o">?</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><span class="n">fun</span> <span class="nf">getField</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">fieldUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">Field</span><span class="o">?</span> <span class="o">{</span>
     <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span>
             <span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">FieldTable</span><span class="o">.</span><span class="na">URI</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="s">"${FieldTable.ROW_FIELD_UUID} = ?"</span><span class="o">,</span> <span class="n">arrayOf</span><span class="o">(</span><span class="n">fieldUuid</span><span class="o">),</span> <span class="kc">null</span><span class="o">)</span>
             <span class="o">?.</span><span class="na">let</span> <span class="o">{</span> <span class="n">cursor</span> <span class="o">-&gt;</span>
@@ -659,11 +668,12 @@ $('#toc').on('click', 'a', function() {
             <span class="o">}</span>
 
     <span class="k">return</span> <span class="kc">null</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</div>
 
 <p>Получить значения дополнительных полей товара:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="nf">getProductExtras</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">productUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ProductExtra</span><span class="o">&gt;</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><span class="n">fun</span> <span class="nf">getProductExtras</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">productUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ProductExtra</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="n">val</span> <span class="n">result</span> <span class="o">=</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ProductExtra</span><span class="o">&gt;()</span>
     <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span>
             <span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">ProductExtraTable</span><span class="o">.</span><span class="na">URI</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="s">"${ProductExtraTable.ROW_PRODUCT_UUID} = ?"</span><span class="o">,</span> <span class="n">arrayOf</span><span class="o">(</span><span class="n">productUuid</span><span class="o">),</span> <span class="kc">null</span><span class="o">)</span>
@@ -681,8 +691,8 @@ $('#toc').on('click', 'a', function() {
                 <span class="o">}</span>
             <span class="o">}</span>
     <span class="k">return</span> <span class="n">result</span>
-<span class="o">}</span></code></pre></figure>
-
+<span class="o">}</span>
+</div>
 
 
     <div class="tags">
