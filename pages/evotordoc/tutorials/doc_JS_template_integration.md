@@ -25,7 +25,6 @@ published: true
         }
         dependencies {
             ...
-            classpath group: 'com.github.evotor', name: 'template-plugin', version: 'v1.0.7'
         }
     }
 
@@ -41,7 +40,6 @@ published: true
 
     ```1
     dependencies {
-            compile 'com.github.evotor:template-plugin:v1.0.7'
     }
     ```
 

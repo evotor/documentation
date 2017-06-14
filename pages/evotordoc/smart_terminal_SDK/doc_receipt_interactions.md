@@ -1,7 +1,7 @@
 ---
-title: Запуск приложения по событию
+title: Работа с чеком
 keywords: sample
-summary:
+summary: Раздел содержит информацию о том, какие события может использовать приложение, чтобы работать с чеком, например, добавлять или удаляться позиции из чека.
 sidebar: evotordoc_sidebar
 permalink: doc_receipt_interactions.html
 folder: smart_terminal_SDK
@@ -10,14 +10,14 @@ folder: smart_terminal_SDK
 Кроме плитки на главном экране или иконки на экране оплаты смарт-терминала, приложение можно запускать автоматически при получении соответствующего события. Для этого требуется подписать приложение на получение событий.
 
 В зависимости от типа события подписку можно оформить одним из двух способов:
-* [Используйте службу](###-Получение-событий-о-намерении-изменения-чека), если хотите получать события намерении изменения чека. В этом случае, приложение сможет взаимодействовать с чеком: добавлять, изменять и удалять позиции. События приходят как при продаже, так и при возврате товара.
-* [Зарегистрируйте приёмник широковещательных сообщений](###-Получение-событий-об-открытии-чека-обновлении-базы-продуктов-или-результате-изменения-чека), если хотите получать сообщения об открытии чека, обновлении базы продуктов или результате изменения чека. Приложение не может взаимодействовать с чеком при получении этих сообщений, но они могут понадобиться, например, для ведения статистики. События приходят как при продаже, так и при возврате товара.
+* Используйте службу, если хотите получать события намерении изменения чека. В этом случае, смарт-терминал ждёт ответа от приложения и оно может взаимодействовать с чеком: добавлять, изменять и удалять позиции. События приходят как при продаже, так и при возврате товара.
+* Зарегистрируйте приёмник широковещательных сообщений, если хотите получать сообщения об открытии чека, обновлении базы продуктов или результате изменения чека. В этом случае смарт-терминал не ждёт ответа от приложения и оно не может взаимодействовать с чеком. Такие события могут понадобиться, например, для ведения статистики. События приходят как при продаже, так и при возврате товара.
 
-### Получение событий о намерении изменения чека
+### Использование службы и получение событий о намерении изменения чека
 
 1. Создайте службу, например `MyIntegrationService`, которая наследует класс `IntegrationService`. В колбэке `onCreate` службы, зарегистрируйте процессор `BeforePositionsEditedEventProcessor` (процессор наследует класс `ActionProcessor`).
 
-   ``` java
+   {% highlight java %}
     public class MyIntegrationService extends IntegrationService {
         @Override
         public void onCreate() {
@@ -27,10 +27,10 @@ folder: smart_terminal_SDK
                        });
                     }
                 }
-    ```
+    {% endhighlight %}
 
 2. Объявите службу в манифесте приложения:
-    ``` xml
+    {% highlight xml %}
     <service
             android:name=".MyIntegrationService"
             android:enabled="true"
@@ -40,15 +40,15 @@ folder: smart_terminal_SDK
                 <action android:name="evo.v2.receipt.sell.beforePositionsEdited" />
             </intent-filter>
     </service>
-    ```
+    {% endhighlight %}
 
-В метод `call` процессора приходит событие [`beforePositionsEditedEvent`](#### Описание события `BeforePositionsEditedEvent`) и объект для возврата результата `callback`.
+В метод `call` процессора приходит событие `beforePositionsEditedEvent` и объект для возврата результата `callback`.
 
 
 
-В ответ изменения могут вернуть результат со списком дополнительных изменений:
+В ответ приложение возвращает результат со списком возможных изменений:
 
-``` java
+{% highlight java %}
 public class BeforePositionsEditedEventResult {
 
     private static final String KEY_RESULT = "result";
@@ -103,28 +103,28 @@ public class BeforePositionsEditedEventResult {
         UNKNOWN;
     }
 }
-```
+{% endhighlight %}
 
 Чтобы вернуть результат, используйте метод:
-``` java
+{% highlight java %}
 callback.onResult(beforePositionsEditedEventResult.toBundle())
-```
+{% endhighlight %}
 
 
 Если приложению для возврата результата необходимо взаимодействие с пользователем, запустите операцию (`Activity`), которая наследует класс `BeforePositionsEditedEventActivity`:
-``` java
+{% highlight java %}
 callback.startActivity(new Intent(MyIntegrationService.this, MainActivity.class));
-```
+{% endhighlight %}
 
 Ваша операция должна вызвать метод `setIntegrationResult`.
 
 Например:
-``` java
+{% highlight java %}
 setIntegrationResult(new BeforePositionsEditedEventResult(BeforePositionsEditedEventResult.Result.OK, changes));
-```
+{% endhighlight %}
 
 Класс `BeforePositionsEditedEventActivity` задан как:
-``` java
+{% highlight java %}
 public class BeforePositionsEditedEventActivity extends IntegrationActivity {
     public void setIntegrationResult(BeforePositionsEditedEventResult result) {
         setIntegrationResult(result == null ? null : result.toBundle());
@@ -134,13 +134,13 @@ public class BeforePositionsEditedEventActivity extends IntegrationActivity {
         return BeforePositionsEditedEvent.create(getSourceBundle());
     }
 }
-```
+{% endhighlight %}
 
 #### Описание события `BeforePositionsEditedEvent`
 
 О намерении изменения чека сообщает событие `beforePositionsEditedEvent`:
 
-``` java
+{% highlight java %}
 public class BeforePositionsEditedEvent {
     private static final String TAG = "PositionsEditedEvent";
 
@@ -192,13 +192,13 @@ public class BeforePositionsEditedEvent {
         return changes;
     }
 }
-```
+{% endhighlight %}
 
 #### Список возможных изменений
 
 Изменение сообщает о том, что будет добавлена позиция:
 
-``` java
+{% highlight java %}
 data class PositionAdd(val position: Position) : IPositionChange {
 
     override fun toBundle(): Bundle {
@@ -231,11 +231,11 @@ data class PositionAdd(val position: Position) : IPositionChange {
         }
     }
 }
-```
+{% endhighlight %}
 
 Изменение сообщает том, что позиция будет отредактирована:
 
-``` java
+{% highlight java %}
 data class PositionEdit(val position: Position) : IPositionChange {
 
     override fun toBundle(): Bundle {
@@ -266,11 +266,11 @@ data class PositionEdit(val position: Position) : IPositionChange {
         }
     }
 }
-```
+{% endhighlight %}
 
 Изменение сообщает том, что позиция будет удалена:
 
-``` java
+{% highlight java %}
 data class PositionRemove(
         private val positionUuid: String
 ) : IPositionChange {
@@ -305,13 +305,13 @@ data class PositionRemove(
         }
     }
 }
-```
+{% endhighlight %}
 
 ### Получение событий об открытии чека, обновлении базы продуктов или результате изменения чека
 
-Чтобы получать сообщения о результате изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:
+Смарт терминал не ждёт ответ от приложения на широковещательные сообщения. Чтобы получать сообщения о результате изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:
 
-``` java
+{% highlight java %}
 package ru.evotor.consumer.consumer;
 
 import android.content.BroadcastReceiver;
@@ -328,11 +328,11 @@ public class AddPositionBroadcastReceiver extends BroadcastReceiver {
         Toast.makeText(context, "UUID: " + new PositionAddedEvent(intent.getExtras()).getReceiptUuid(), Toast.LENGTH_LONG).show();
     }
 }
-```
+{% endhighlight %}
 
 Объявите приёмник в манифесте приложения:
 
-``` xml
+{% highlight xml %}
 <receiver
         android:name=".AddPositionBroadcastReceiver"
         android:enabled="true"
@@ -342,23 +342,23 @@ public class AddPositionBroadcastReceiver extends BroadcastReceiver {
             <category android:name="android.intent.category.DEFAULT" />
         </intent-filter>
     </receiver>
-```
+{% endhighlight %}
 
 #### Сообщения о результатах изменения чека
 
-При добавлении позиции приходит сообщение:
+При открытии чека (продажи или возврата) приходит сообщение:
 
-``` java
+{% highlight java %}
 public interface ReceiptOpenedEvent {
     String BROADCAST_ACTION_SELL_RECEIPT = "evotor.intent.action.receipt.sell.OPENED";
     String BROADCAST_ACTION_PAYBACK_RECEIPT = "evotor.intent.action.receipt.payback.OPENED";
     String KEY_UUID = "uuid";
 }
-```
+{% endhighlight %}
 
 При добавлении позиции приходит сообщение:
 
-``` java
+{% highlight java %}
 public class PositionAddedEvent extends PositionEvent {
     public static final String BROADCAST_ACTION_SELL_RECEIPT = "evotor.intent.action.receipt.sell.POSITION_ADDED";
     public static final String BROADCAST_ACTION_PAYBACK_RECEIPT = "evotor.intent.action.receipt.payback.POSITION_ADDED";
@@ -371,11 +371,11 @@ public class PositionAddedEvent extends PositionEvent {
         super(receiptUuid, position);
     }
 }
-```
+{% endhighlight %}
 
 При изменении позиции приходит сообщение:
 
-``` java
+{% highlight java %}
 public class PositionEditedEvent extends PositionEvent {
     public static final String BROADCAST_ACTION_SELL_RECEIPT = "evotor.intent.action.receipt.sell.POSITION_EDITED";
     public static final String BROADCAST_ACTION_PAYBACK_RECEIPT = "evotor.intent.action.receipt.payback.POSITION_EDITED";
@@ -388,11 +388,11 @@ public class PositionEditedEvent extends PositionEvent {
         super(receiptUuid, position);
     }
 }
-```
+{% endhighlight %}
 
 При удалении позиции приходит сообщение:
 
-``` java
+{% highlight java %}
 public class PositionRemovedEvent extends PositionEvent {
     public static final String BROADCAST_ACTION_SELL_RECEIPT = "evotor.intent.action.receipt.sell.POSITION_REMOVED";
     public static final String BROADCAST_ACTION_PAYBACK_RECEIPT = "evotor.intent.action.receipt.payback.POSITION_REMOVED";
@@ -405,11 +405,11 @@ public class PositionRemovedEvent extends PositionEvent {
         super(receiptUuid, position);
     }
 }
-```
+{% endhighlight %}
 
 При обновлении базы товаров приходит сообщение:
 
-``` java
+{% highlight java %}
 public class PositionRemovedEvent extends PositionEvent {
     public static final String BROADCAST_ACTION_PRODUCTS_UPDATED = "evotor.intent.action.inventory.PRODUCTS_UPDATED";
 
@@ -421,4 +421,4 @@ public class PositionRemovedEvent extends PositionEvent {
         super(receiptUuid, position);
     }
 }
-```
+{% endhighlight %}

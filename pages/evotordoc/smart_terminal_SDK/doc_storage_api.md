@@ -11,7 +11,7 @@ folder: smart_terminal_SDK
 
 ### Подготовка к работе
 
-В файле `client.yaml` укажите:
+Убедитесь, чтоб файл `client.yaml` содержит:
 
 {% highlight yaml %}
 capabilities:
