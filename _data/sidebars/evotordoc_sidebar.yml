@@ -84,9 +84,9 @@ entries:
       url: /doc_logging.html
       output: web
 
-#    - title: Манифест приложения
-#      url: /doc_app_manifest.html
-#      output: web
+    - title: Манифест приложения
+      url: /doc_app_manifest.html
+      output: web
 
     - title: Права приложения
       url: /doc_smart_terminal_app_grants.html
@@ -108,8 +108,16 @@ entries:
       url: /doc_smart_terminal_inventory_api.html
       output: web
 
+    - title: Receipt API
+      url: /doc_smart_terminal_receipt_api.html
+      output: web
+
     - title: Storage API
       url: /doc_storage_api.html
+      output: web
+
+    - title: Создание чека в приложении
+      url: /doc_receipt_creation.html
       output: web
 
     - title: Работа с чеками
