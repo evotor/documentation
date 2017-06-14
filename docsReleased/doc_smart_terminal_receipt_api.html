@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Troubleshooting pages | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит описание Receipt API смарт-терминала.">
+<meta name="keywords" content=" sample">
+<title>Receipt API | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Troubleshooting pages">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Receipt API">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -309,7 +309,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            <li class="active"><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
             
             
             
@@ -507,13 +507,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Troubleshooting pages</h1>
+   <h1 class="post-title-main">Receipt API</h1>
 </div>
 
 
 
 <div class="post-content">
 
+   
+    <div class="summary">Раздел содержит описание Receipt API смарт-терминала.</div>
    
 
     
@@ -544,166 +546,82 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>The following pages and posts are tagged with <button type="button" style="cursor: default" class="btn btn-default navbar-btn">troubleshooting</button></p>
-<table><thead><tr><th>Title</th><th>Type</th><th>Excerpt</th></tr></thead>
-    <tbody>
-    
-  
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
+  <h3 id="receipt-api-смарт-терминала">Receipt API смарт-терминала</h3>
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+<p>Используйте Receipt API чтобы с помощью штрихкода получать информацию о позициях для добавления в чек.</p>
 
-   </tbody>
-</table>
+<p>Receipt API смарт-терминала включает в себя:</p>
 
+<ul>
+  <li>
+    <p>URI контента <code class="highlighter-rouge">val BASE_URI = Uri.parse("content://ru.evotor.receipt")</code>:</p>
+
+    <p>Данные хранятся локально и синхронизируются с облаком Эвотор каждые четыре часа.</p>
+  </li>
+  <li>
+    <p>Таблицу позиций, которые можно добавить в чек <code class="highlighter-rouge">PositionTable</code>:</p>
+
+    <div class="language-java highlighter-rouge">  <span class="n">object</span> <span class="n">PositionTable</span> <span class="o">{</span>
+      <span class="n">val</span> <span class="n">URI</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">ReceiptApi</span><span class="o">.</span><span class="na">BASE_URI</span><span class="o">,</span> <span class="s">"Position"</span><span class="o">)</span>
+
+      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRODUCT_UUID</span> <span class="o">=</span> <span class="s">"PRODUCT_UUID"</span>
+      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRODUCT_CODE</span> <span class="o">=</span> <span class="s">"PRODUCT_CODE"</span>
+      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRODUCT_TYPE</span> <span class="o">=</span> <span class="s">"PRODUCT_TYPE"</span>
+      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_NAME</span> <span class="o">=</span> <span class="s">"NAME"</span>
+      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_MEASURE_NAME</span> <span class="o">=</span> <span class="s">"MEASURE_NAME"</span>
+      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_MEASURE_PRECISION</span> <span class="o">=</span> <span class="s">"MEASURE_PRECISION"</span>
+      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRICE</span> <span class="o">=</span> <span class="s">"PRICE"</span>
+      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_BARCODE</span> <span class="o">=</span> <span class="s">"BARCODE"</span>
+      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_QUANTITY</span> <span class="o">=</span> <span class="s">"QUANTITY"</span>
+      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_ALCOHOL_BY_VOLUME</span> <span class="o">=</span> <span class="s">"ALCOHOL_BY_VOLUME"</span>
+      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_ALCOHOL_PRODUCT_KIND_CODE</span> <span class="o">=</span> <span class="s">"ALCOHOL_PRODUCT_KIND_CODE"</span>
+      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_TARE_VOLUME</span> <span class="o">=</span> <span class="s">"TARE_VOLUME"</span>
+  <span class="o">}</span>
+    </div>
+  </li>
+</ul>
+
+<h3 id="Примеры-запросов-к-receipt-api">Примеры запросов к Receipt API</h3>
+
+<p>Получить по штрихкоду позицию для добавления в чек:</p>
+
+<div class="language-java highlighter-rouge"><span class="n">fun</span> <span class="nf">getPositionsByBarcode</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">barcode:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span> <span class="o">{</span>
+        <span class="n">val</span> <span class="n">positionsList</span> <span class="o">=</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;()</span>
+
+        <span class="n">val</span> <span class="nl">cursor:</span> <span class="n">Cursor</span><span class="o">?</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span><span class="o">.</span><span class="na">query</span><span class="o">(</span>
+                <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">PositionTable</span><span class="o">.</span><span class="na">URI</span><span class="o">,</span> <span class="n">barcode</span><span class="o">),</span>
+                <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">)</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">moveToFirst</span><span class="o">())</span> <span class="o">{</span>
+                <span class="k">do</span> <span class="o">{</span>
+                    <span class="n">val</span> <span class="nl">position:</span> <span class="n">Position</span> <span class="o">=</span> <span class="n">Position</span><span class="o">(</span>
+                            <span class="kc">null</span><span class="o">,</span>
+                            <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">PositionTable</span><span class="o">.</span><span class="na">ROW_PRODUCT_UUID</span><span class="o">)),</span>
+                            <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">PositionTable</span><span class="o">.</span><span class="na">ROW_PRODUCT_CODE</span><span class="o">)),</span>
+                            <span class="n">ProductType</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">PositionTable</span><span class="o">.</span><span class="na">ROW_PRODUCT_TYPE</span><span class="o">))),</span>
+                            <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">PositionTable</span><span class="o">.</span><span class="na">ROW_NAME</span><span class="o">)),</span>
+                            <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">PositionTable</span><span class="o">.</span><span class="na">ROW_MEASURE_NAME</span><span class="o">)),</span>
+                            <span class="n">cursor</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">PositionTable</span><span class="o">.</span><span class="na">ROW_MEASURE_PRECISION</span><span class="o">)),</span>
+                            <span class="n">BigDecimal</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">PositionTable</span><span class="o">.</span><span class="na">ROW_PRICE</span><span class="o">))).</span><span class="na">divide</span><span class="o">(</span><span class="n">BigDecimal</span><span class="o">(</span><span class="mi">100</span><span class="o">)),</span>
+                            <span class="n">BigDecimal</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">PositionTable</span><span class="o">.</span><span class="na">ROW_PRICE</span><span class="o">))).</span><span class="na">divide</span><span class="o">(</span><span class="n">BigDecimal</span><span class="o">(</span><span class="mi">100</span><span class="o">)),</span>
+                            <span class="n">BigDecimal</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">PositionTable</span><span class="o">.</span><span class="na">ROW_QUANTITY</span><span class="o">))).</span><span class="na">divide</span><span class="o">(</span><span class="n">BigDecimal</span><span class="o">(</span><span class="mi">1000</span><span class="o">)),</span>
+                            <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">PositionTable</span><span class="o">.</span><span class="na">ROW_BARCODE</span><span class="o">)),</span>
+                            <span class="kc">null</span><span class="o">,</span>
+                            <span class="n">BigDecimal</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">PositionTable</span><span class="o">.</span><span class="na">ROW_ALCOHOL_BY_VOLUME</span><span class="o">))).</span><span class="na">divide</span><span class="o">(</span><span class="n">BigDecimal</span><span class="o">(</span><span class="mi">1000</span><span class="o">)),</span>
+                            <span class="n">cursor</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">PositionTable</span><span class="o">.</span><span class="na">ROW_ALCOHOL_PRODUCT_KIND_CODE</span><span class="o">)),</span>
+                            <span class="n">BigDecimal</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">PositionTable</span><span class="o">.</span><span class="na">ROW_TARE_VOLUME</span><span class="o">))).</span><span class="na">divide</span><span class="o">(</span><span class="n">BigDecimal</span><span class="o">(</span><span class="mi">1000</span><span class="o">)),</span>
+                            <span class="kc">null</span><span class="o">,</span>
+                            <span class="kc">null</span>
+                    <span class="o">)</span>
+                    <span class="n">positionsList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">position</span><span class="o">)</span>
+                <span class="o">}</span> <span class="k">while</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">moveToNext</span><span class="o">())</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">positionsList</span>
+    <span class="o">}</span>
+</div>
 
 
     <div class="tags">

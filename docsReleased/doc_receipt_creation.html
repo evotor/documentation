@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Troubleshooting pages | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты.">
+<meta name="keywords" content=" sample">
+<title>Создание чека в приложении | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Troubleshooting pages">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Создание чека в приложении">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -323,7 +323,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+            <li class="active"><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
             
             
             
@@ -507,13 +507,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Troubleshooting pages</h1>
+   <h1 class="post-title-main">Создание чека в приложении</h1>
 </div>
 
 
 
 <div class="post-content">
 
+   
+    <div class="summary">Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты.</div>
    
 
     
@@ -544,166 +546,49 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>The following pages and posts are tagged with <button type="button" style="cursor: default" class="btn btn-default navbar-btn">troubleshooting</button></p>
-<table><thead><tr><th>Title</th><th>Type</th><th>Excerpt</th></tr></thead>
-    <tbody>
-    
-  
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
+  <p>Чтобы передать сформированный чек:</p>
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+<ol>
+  <li>Составьте список позиций, который требуется добавить в чек, наполните список</li>
+</ol>
 
-   </tbody>
-</table>
+<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">openReceipt</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">List</span><span class="o">&lt;</span><span class="n">PositionAdd</span><span class="o">&gt;</span> <span class="n">positionAddList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
 
+            <span class="n">JSONObject</span> <span class="n">extra</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+    </code></pre></figure>
+
+<p>Где:</p>
+
+<p><code class="highlighter-rouge">List&lt;PositionAdd&gt; positionAddList = new ArrayList&lt;&gt;()</code>– список позиций. Как добавить позицию в чек смотрите в <strong>Списке возможных изменений</strong>, в разделе <a href="./doc_receipt_interactions.html"><strong>Работа с чеком</strong></a>.</p>
+
+<p><code class="highlighter-rouge">JSONObject extra = new JSONObject();</code>– добавляет дополнительные данные к чеку. Данные доступны только вашему приложению. Не создавайте этот объект, если приложение не добавляет дополнительные поля к чеку.</p>
+
+<ol>
+  <li>Создайте команду открытия чека и вызовите метод <code class="highlighter-rouge">.process</code></li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="k">new</span> <span class="n">OpenSellReceiptCommand</span><span class="o">(</span><span class="n">positionAddList</span><span class="o">,</span> <span class="k">new</span> <span class="n">SetExtra</span><span class="o">(</span><span class="n">object</span><span class="o">)).</span><span class="na">process</span><span class="o">(</span>
+                        <span class="n">activity</span><span class="o">,</span>
+                        <span class="k">new</span> <span class="nf">IntegrationManagerCallback</span><span class="o">()</span> <span class="o">{</span>
+                            <span class="nd">@Override</span>
+                            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">IntegrationManagerFuture</span> <span class="n">integrationManagerFuture</span><span class="o">)</span> <span class="o">{</span>
+                                <span class="k">try</span> <span class="o">{</span>
+                                    <span class="n">IntegrationManagerFuture</span><span class="o">.</span><span class="na">Result</span> <span class="n">result</span> <span class="o">=</span> <span class="n">integrationManagerFuture</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
+                                    <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getType</span><span class="o">()</span> <span class="o">==</span> <span class="n">IntegrationManagerFuture</span><span class="o">.</span><span class="na">Result</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">OK</span><span class="o">)</span> <span class="o">{</span>
+                                        <span class="n">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="s">"evotor.intent.action.payment.SELL"</span><span class="o">));</span>
+                                    <span class="o">}</span>
+                                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IntegrationException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                                <span class="o">}</span>
+                            <span class="o">}</span>
+                        <span class="o">});</span></code></pre></figure>
+
+<p>Где:</p>
+
+<p><code class="highlighter-rouge">new SetExtra(extra)</code>– задаёт дополнительные данные чека. Если дополнительных данных нет указывайте <code class="highlighter-rouge">null</code>.</p>
 
 
     <div class="tags">

@@ -1,7 +1,7 @@
 ---
 title: Работа с чеком
 keywords: sample
-summary: Раздел содержит информацию о том, какие события может использовать приложение, чтобы работать с чеком, например, добавлять или удаляться позиции из чека.
+summary: Раздел содержит информацию о том, какие события может использовать приложение, чтобы работать с чеком, например, добавлять или удалять позиции из чека.
 sidebar: evotordoc_sidebar
 permalink: doc_receipt_interactions.html
 folder: smart_terminal_SDK
@@ -23,10 +23,10 @@ folder: smart_terminal_SDK
         public void onCreate() {
             registerProcessor(new BeforePositionsEditedEventProcessor() {
                 @Override
-                public void call(BeforePositionsEditedEvent beforePositionsEditedEvent, Callback callback) {
-                       });
-                    }
-                }
+                public void call(BeforePositionsEditedEvent beforePositionsEditedEvent, Callback callback)
+            });
+        }
+    }
     {% endhighlight %}
 
 2. Объявите службу в манифесте приложения:

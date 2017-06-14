@@ -20,7 +20,7 @@ Inventory API смарт-терминала включает в себя:
 
 * Таблицу данных товара `ProductTable`:
 
-    ``` java
+    {% highlight java %}
     object ProductTable {
         val URI = Uri.withAppendedPath(InventoryApi.BASE_URI, "Commodity")
 
@@ -40,11 +40,11 @@ Inventory API смарт-терминала включает в себя:
         const val ROW_TARE_VOLUME = "TARE_VOLUME"
         const val ROW_TAX_NUMBER = "TAX_NUMBER"
     }
-    ```
+    {% endhighlight %}
 
 * Таблицу дополнительных полей `ProductsFieldTable`:
 
-    ``` java
+    {% highlight java %}
     object FieldTable {
         val URI = Uri.withAppendedPath(InventoryApi.BASE_URI, "Field")
 
@@ -57,11 +57,11 @@ Inventory API смарт-терминала включает в себя:
         const val TYPE_TEXT_FIELD = 1
         const val TYPE_DICTIONARY = 2
     }
-    ```
+    {% endhighlight %}
 
 * Таблицу значений дополнительных полей товаров `ProductsExtraTable`:
 
-    ``` java
+    {% highlight java %}
     object ProductExtraTable {
         @JvmField val URI = Uri.withAppendedPath(InventoryApi.BASE_URI, "CommodityExtra")
 
@@ -72,7 +72,7 @@ Inventory API смарт-терминала включает в себя:
         const val ROW_FIELD_VALUE = "FIELD_VALUE"
         const val ROW_DATA = "DATA"
     }
-    ```
+    {% endhighlight %}
 
 Схема отношения данных в таблицах.
 
@@ -82,7 +82,7 @@ Inventory API смарт-терминала включает в себя:
 
 Получить все штрихкоды товара:
 
-``` java
+{% highlight java %}
 fun getAllBarcodesForProduct(context: Context, productUuid: String): List<String> {
     val barcodesList = ArrayList<String>()
     val cursor: Cursor? = context.contentResolver.query(
@@ -98,12 +98,12 @@ fun getAllBarcodesForProduct(context: Context, productUuid: String): List<String
     }
     return barcodesList
 }
-```
+{% endhighlight %}
 
 Получить данные товара:
 
 
-``` java
+{% highlight java %}
 fun getProductByUuid(context: Context, uuid: String): ProductItem? {
   context.contentResolver
       .query(Uri.withAppendedPath(ProductTable.URI, uuid), null, null, null, null)
@@ -145,11 +145,11 @@ fun getProductByUuid(context: Context, uuid: String): ProductItem? {
           }
   return null
 }
-```
+{% endhighlight %}
 
 Получить возможные дополнительные поля:
 
-``` java
+{% highlight java %}
 fun getField(context: Context, fieldUuid: String): Field? {
     context.contentResolver
             .query(FieldTable.URI, null, "${FieldTable.ROW_FIELD_UUID} = ?", arrayOf(fieldUuid), null)
@@ -169,11 +169,11 @@ fun getField(context: Context, fieldUuid: String): Field? {
 
     return null
 }
-```
+{% endhighlight %}
 
 Получить значения дополнительных полей товара:
 
-``` java
+{% highlight java %}
 fun getProductExtras(context: Context, productUuid: String): List<ProductExtra> {
     val result = ArrayList<ProductExtra>()
     context.contentResolver
@@ -193,4 +193,4 @@ fun getProductExtras(context: Context, productUuid: String): List<ProductExtra> 
             }
     return result
 }
-```
+{% endhighlight %}
