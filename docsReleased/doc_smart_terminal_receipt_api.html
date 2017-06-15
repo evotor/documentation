@@ -560,32 +560,32 @@ $('#toc').on('click', 'a', function() {
   </li>
   <li>
     <p>Таблицу позиций, которые можно добавить в чек <code class="highlighter-rouge">PositionTable</code>:</p>
-
-    <div class="language-java highlighter-rouge">  <span class="n">object</span> <span class="n">PositionTable</span> <span class="o">{</span>
-      <span class="n">val</span> <span class="n">URI</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">ReceiptApi</span><span class="o">.</span><span class="na">BASE_URI</span><span class="o">,</span> <span class="s">"Position"</span><span class="o">)</span>
-
-      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRODUCT_UUID</span> <span class="o">=</span> <span class="s">"PRODUCT_UUID"</span>
-      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRODUCT_CODE</span> <span class="o">=</span> <span class="s">"PRODUCT_CODE"</span>
-      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRODUCT_TYPE</span> <span class="o">=</span> <span class="s">"PRODUCT_TYPE"</span>
-      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_NAME</span> <span class="o">=</span> <span class="s">"NAME"</span>
-      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_MEASURE_NAME</span> <span class="o">=</span> <span class="s">"MEASURE_NAME"</span>
-      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_MEASURE_PRECISION</span> <span class="o">=</span> <span class="s">"MEASURE_PRECISION"</span>
-      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRICE</span> <span class="o">=</span> <span class="s">"PRICE"</span>
-      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_BARCODE</span> <span class="o">=</span> <span class="s">"BARCODE"</span>
-      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_QUANTITY</span> <span class="o">=</span> <span class="s">"QUANTITY"</span>
-      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_ALCOHOL_BY_VOLUME</span> <span class="o">=</span> <span class="s">"ALCOHOL_BY_VOLUME"</span>
-      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_ALCOHOL_PRODUCT_KIND_CODE</span> <span class="o">=</span> <span class="s">"ALCOHOL_PRODUCT_KIND_CODE"</span>
-      <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_TARE_VOLUME</span> <span class="o">=</span> <span class="s">"TARE_VOLUME"</span>
-  <span class="o">}</span>
-    </div>
   </li>
 </ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">object</span> <span class="n">PositionTable</span> <span class="o">{</span>
+        <span class="n">val</span> <span class="n">URI</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">ReceiptApi</span><span class="o">.</span><span class="na">BASE_URI</span><span class="o">,</span> <span class="s">"Position"</span><span class="o">)</span>
+
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRODUCT_UUID</span> <span class="o">=</span> <span class="s">"PRODUCT_UUID"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRODUCT_CODE</span> <span class="o">=</span> <span class="s">"PRODUCT_CODE"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRODUCT_TYPE</span> <span class="o">=</span> <span class="s">"PRODUCT_TYPE"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_NAME</span> <span class="o">=</span> <span class="s">"NAME"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_MEASURE_NAME</span> <span class="o">=</span> <span class="s">"MEASURE_NAME"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_MEASURE_PRECISION</span> <span class="o">=</span> <span class="s">"MEASURE_PRECISION"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRICE</span> <span class="o">=</span> <span class="s">"PRICE"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_BARCODE</span> <span class="o">=</span> <span class="s">"BARCODE"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_QUANTITY</span> <span class="o">=</span> <span class="s">"QUANTITY"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_ALCOHOL_BY_VOLUME</span> <span class="o">=</span> <span class="s">"ALCOHOL_BY_VOLUME"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_ALCOHOL_PRODUCT_KIND_CODE</span> <span class="o">=</span> <span class="s">"ALCOHOL_PRODUCT_KIND_CODE"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_TARE_VOLUME</span> <span class="o">=</span> <span class="s">"TARE_VOLUME"</span>
+    <span class="o">}</span>
+    </code></pre></figure>
 
 <h3 id="Примеры-запросов-к-receipt-api">Примеры запросов к Receipt API</h3>
 
 <p>Получить по штрихкоду позицию для добавления в чек:</p>
 
-<div class="language-java highlighter-rouge"><span class="n">fun</span> <span class="nf">getPositionsByBarcode</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">barcode:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span> <span class="o">{</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="nf">getPositionsByBarcode</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">barcode:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span> <span class="o">{</span>
         <span class="n">val</span> <span class="n">positionsList</span> <span class="o">=</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;()</span>
 
         <span class="n">val</span> <span class="nl">cursor:</span> <span class="n">Cursor</span><span class="o">?</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span><span class="o">.</span><span class="na">query</span><span class="o">(</span>
@@ -620,8 +620,8 @@ $('#toc').on('click', 'a', function() {
         <span class="o">}</span>
 
         <span class="k">return</span> <span class="n">positionsList</span>
-    <span class="o">}</span>
-</div>
+    <span class="o">}</span></code></pre></figure>
+
 
 
     <div class="tags">

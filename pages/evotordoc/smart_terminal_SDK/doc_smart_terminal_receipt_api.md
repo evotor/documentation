@@ -20,7 +20,7 @@ Receipt API смарт-терминала включает в себя:
 
 * Таблицу позиций, которые можно добавить в чек `PositionTable`:
 
-    ``` java
+    {% highlight java %}
     object PositionTable {
         val URI = Uri.withAppendedPath(ReceiptApi.BASE_URI, "Position")
 
@@ -37,14 +37,14 @@ Receipt API смарт-терминала включает в себя:
         const val ROW_ALCOHOL_PRODUCT_KIND_CODE = "ALCOHOL_PRODUCT_KIND_CODE"
         const val ROW_TARE_VOLUME = "TARE_VOLUME"
     }
-    ```
+    {% endhighlight %}
 
 ### Примеры запросов к Receipt API
 
 Получить по штрихкоду позицию для добавления в чек:
 
 
-``` java
+{% highlight java %}
 fun getPositionsByBarcode(context: Context, barcode: String): List<Position> {
         val positionsList = ArrayList<Position>()
 
@@ -81,4 +81,4 @@ fun getPositionsByBarcode(context: Context, barcode: String): List<Position> {
 
         return positionsList
     }
-```
+{% endhighlight %}
