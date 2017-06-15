@@ -91,12 +91,12 @@ views:
 
 #### Список daemons
 
-Список демонов (js-скриптов), которые использует приложение. Храните демоны в папке `app\assets\daemons`.
+Список демонов (js-скриптов), которые использует приложение. Демонам доступна функциональность логирования (`logger`) и хранения данных (`storage`) Храните демоны в папке `app\assets\daemons`.
 
 С помощью демонов приложение можно подписать на широковещательные сообщения, которые рассылает смарт-терминал. Широковещательные сообщения рассылаются после применения изменений, смарт-терминал не ждёт ответа от приложений.
 Параметры элемента списка:
 * `name` – в параметре требуется указать имя демона. Имя может содержать только латинские буквы, цифры и символ "\_"
-* `events` – параметр, который содержит список событий, запускающих демон. При получении события, демон должен вызвать соответствующий метод:
+* `events` – параметр, который содержит список событий, запускающих демон. Каждое событие вызывает соответствующий метод, в аргументе которого передаются данные о событии:
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -112,67 +112,67 @@ views:
   </tr>
   <tr>
     <td class="tg-031e"><code>evotor.intent.action.receipt.sell.OPENED</code></td>
-    <td class="tg-031e"><code>onSellReceiptOpened</code></td>
+    <td class="tg-031e"><code>onSellReceiptOpened(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-031e"><code>evotor.intent.action.receipt.payback.OPENED</code></td>
-    <td class="tg-031e"><code>onPaybackReceiptOpened</code></td>
+    <td class="tg-031e"><code>onPaybackReceiptOpened(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-031e"><code>evotor.intent.action.receipt.sell.CLEARED</code></td>
-    <td class="tg-031e"><code>onSellReceiptCleared</code></td>
+    <td class="tg-031e"><code>onSellReceiptCleared(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-031e"><code>evotor.intent.action.receipt.payback.CLEARED</code></td>
-    <td class="tg-031e"><code>onPaybackReceiptCleared</code></td>
+    <td class="tg-031e"><code>onPaybackReceiptCleared(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.receipt.sell.RECEIPT_CLOSED</code></td>
-    <td class="tg-yw4l"><code>onSellReceiptClosed</code></td>
+    <td class="tg-yw4l"><code>onSellReceiptClosed(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-031e"><code>evotor.intent.action.receipt.payback.RECEIPT_CLOSED</code></td>
-    <td class="tg-031e"><code>onPaybackReceiptClosed</code></td>
+    <td class="tg-031e"><code>onPaybackReceiptClosed(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-031e"><code>evotor.intent.action.cashDrawer.OPEN</code></td>
-    <td class="tg-031e"><code>onCashDrawerOpened</code></td>
+    <td class="tg-031e"><code>onCashDrawerOpened(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.cashOperation.IN</code></td>
-    <td class="tg-yw4l"><code>onCashIn</code></td>
+    <td class="tg-yw4l"><code>onCashIn(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.cashOperation.CASH_OUT</code></td>
-    <td class="tg-yw4l"><code>onCashOut</code></td>
+    <td class="tg-yw4l"><code>onCashOut(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.inventory.CARD_OPEN</code></td>
-    <td class="tg-yw4l"><code>onInventoryCardOpened</code></td>
+    <td class="tg-yw4l"><code>onInventoryCardOpened(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.receipt.sell.POSITION_ADDED</code></td>
-    <td class="tg-yw4l"><code>onSellReceiptPositionAdded</code></td>
+    <td class="tg-yw4l"><code>onSellReceiptPositionAdded(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.receipt.payback.POSITION_ADDED</code></td>
-    <td class="tg-yw4l"><code>onPaybackReceiptPositionAdded</code></td>
+    <td class="tg-yw4l"><code>onPaybackReceiptPositionAdded(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.receipt.sell.POSITION_EDITED</code></td>
-    <td class="tg-yw4l"><code>onSellReceiptPositionEdited</code></td>
+    <td class="tg-yw4l"><code>onSellReceiptPositionEdited(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.receipt.payback.POSITION_EDITED</code></td>
-    <td class="tg-yw4l"><code>onPaybackReceiptPositionEdited</code></td>
+    <td class="tg-yw4l"><code>onPaybackReceiptPositionEdited(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.receipt.sell.POSITION_REMOVED</code></td>
-    <td class="tg-yw4l"><code>onSellReceiptPositionRemoved</code></td>
+    <td class="tg-yw4l"><code>onSellReceiptPositionRemoved(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.receipt.payback.POSITION_REMOVED</code></td>
-    <td class="tg-yw4l"><code>onPaybackReceiptPositionRemoved</code></td>
+    <td class="tg-yw4l"><code>onPaybackReceiptPositionRemoved(actionData)</code></td>
   </tr>
 </table></div>
 
