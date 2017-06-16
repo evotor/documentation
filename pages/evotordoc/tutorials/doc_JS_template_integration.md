@@ -25,7 +25,7 @@ published: true
         }
         dependencies {
             ...
-            classpath group: 'com.github.evotor', name: 'template-plugin', version: 'v1.1.3'
+            classpath group: 'com.github.evotor', name: 'template-plugin', version: 'v1.1.4'
         }
     }
 
@@ -37,11 +37,11 @@ published: true
       }
    ```
 
-4. В файле `build.gradle` приложения добавьте зависимость:
+3. В файле `build.gradle` приложения добавьте зависимость:
 
     ```1
     dependencies {
-            compile 'com.github.evotor:template-plugin:v1.1.3'
+            compile 'com.github.evotor:template-plugin:v1.1.4'
     }
     ```
 
@@ -51,6 +51,6 @@ published: true
     apply plugin: 'ru.evotor.webbasedapplication'
     ```
 
-5. Соберите apk.
+4. Соберите apk.
 
    Необходимые данные загружаются автоматически из нашего репозитория.
