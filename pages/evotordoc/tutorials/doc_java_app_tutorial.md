@@ -85,8 +85,8 @@ folder: smart_terminal_SDK
 * Широковещательные сообщения, на которые ответ приложения не требуется.
 
 Чтобы приложение получало события:
-1. В вашем проекте создайте службу, например `MyIntegrationService`.
-{}
+1. Cоздайте службу, например `MyIntegrationService`.
+{% highlight java %}
     public class MyIntegrationService extends IntegrationService {
 
 
@@ -110,3 +110,17 @@ folder: smart_terminal_SDK
             return map;
         }
     }
+{% endhighlight %}
+2. Объявите службу в манифесте приложения:
+{% highlight xml %}
+        <service
+            android:name=".MyLittleService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="evo.v2.receipt.sell.beforePositionsEdited" />
+            </intent-filter>
+        </service>
+{% endhighlight %}
