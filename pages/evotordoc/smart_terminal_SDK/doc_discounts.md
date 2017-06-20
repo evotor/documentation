@@ -9,11 +9,18 @@ folder: smart_terminal_SDK
 
 ### Скидки
 
-Вы можете рассчитывать скидки и передавать их в смарт-терминала. Для этого требуется подписаться на событие `ReceiptDiscountEvent`, которое сообщает о возможности начисления скидки.
+Эвотор позволяет рассчитывать и передавать скидки.
+Для этого:
+1. Подпишитесь на событие `ReceiptDiscountEvent`.
+2. Получите результат, которое сообщает о возможности начисления скидки.
 
 #### Подписка на событие
 
-1. Создайте службу, например `MyDiscountService`, которая наследует класс `IntegrationService`. В методе `onCreate` службы, зарегистрируйте процессор `ReceiptDiscountEventProcessor`.
+`ReceiptDiscountEvent`сообщает о возможности начислить скидку.
+
+1. Создайте службу, которая наследует класс `IntegrationService`, например `MyDiscountService`. 
+2. Зарегистрируйте процессор `ReceiptDiscountEventProcessor` в методе `onCreate` службы `MyDiscountService`.
+
     {% highlight java %}
     public class MyDiscountService extends IntegrationService {
 
@@ -31,7 +38,15 @@ folder: smart_terminal_SDK
         }
     }
     {% endhighlight %}
-2. Объявите службу в манифесте приложения:
+
+где:
+`call` - метод получения событий и объектов.
+`positionsDiscountEvent` -  событие N. //уточнить
+`callback`- объект возврата результата.
+
+
+3. Объявите службу в манифесте приложения:
+
     {% highlight xml %}
     <service
             android:name="MyDiscountService"
@@ -43,9 +58,12 @@ folder: smart_terminal_SDK
     </service>
     {% endhighlight %}
 
-В метод `call` процессора приходит событие `positionsDiscountEvent` и объект для возврата результата `callback`.
 
-Чтобы вернуть результат, используйте метод:
+
+#### Получение результата 
+
+Запрашиваем результат `ReceiptDiscountEventResult` и //BigDecimal уточнить
+
 {% highlight java %}
 try {callback.onResult(
         new ReceiptDiscountEventResult(
