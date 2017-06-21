@@ -200,6 +200,10 @@ entries:
       url: /doc_JS_template_integration.html
       output: web, pdf
 
+    - title: Разработка Java-приложения
+      url: /doc_java_app_tutorial.html
+      output: web, pdf
+
 ###############################################################
 #                    Биллинг                                  #
 ###############################################################
