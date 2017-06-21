@@ -1,5 +1,5 @@
 ---
-title: Работа с чеком
+title: Разработка Java-приложения
 keywords: sample
 summary: Раздел содержит инструкцию по созданию простого java-приложения для смарт-терминала. На разных этапах приложение обладает разными функциями. Так итоговое приложение сможет: показывать экран приложения по нажатию на плитку на главном экране смарт-терминала, получать информацию о том, что в чек добавлен определённый товар, выводить экран с предложением добавить к этому товару ещё один, получать информацию о закрытии чека и записывать сообщение об этом в лог.
 sidebar: evotordoc_sidebar
@@ -12,15 +12,16 @@ folder: smart_terminal_SDK
 Перед разработкой приложения убедитесь что:
 * На смарт-терминале установлена прошивка версии 2.4.0 или выше.
 * Версия приложения Evotor POS, установленного на смарт-терминале, 6.8.0 или выше.
-* Для приложения указан соответствующий разработчик на сайте [developer.evotor.ru](https://developer.evotor.ru)
+* Для приложения включён [режим разработчика](./doc_developer_mode.html).
 * Вы можете подключиться к смарт-терминалу с помощью adb для отладки приложения.
+    <!-- {% include tip.html content="Разрабатывайте приложение в Android Studio, чтобы избежать возможных накладок." %} -->
 
 
 ### Подключение библиотеки integration-library.
 
-Все зависимости, необходимые для разработки Java-приложения, хранятся в библиотеке integration-library.
+В библиотеке integration-library хранятся зависимости, необходимые для разработки Java-приложения.
 
-Для разработки приложения подключите библиотеку к своему проекту:
+Подключите библиотеку к своему проекту:
 
 1. В файле `build.gradle` проекта укажите:
 
@@ -33,7 +34,7 @@ folder: smart_terminal_SDK
     }
    ```
 
-2. В файле `build.gradle` приложения, в зависимости добавьте библиотеку integration-library:
+2. В файле `build.gradle` приложения, добавьте библиотеку integration-library в зависимости:
 
     ```1
     dependencies {
@@ -44,20 +45,24 @@ folder: smart_terminal_SDK
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:25.3.1'
-    compile group: 'com.github.evotor', name: 'integration-library', version: 'v0.3.15', changing: true
     testCompile 'junit:junit:4.12'
+    compile group: 'com.github.evotor', name: 'integration-library', version: 'v0.3.15', changing: true
     }
     ```
+
     {% include note.html content="Убедитесь, что в зависимости указана [актуальная версия библиотеки](https://github.com/xcam/integration-library/)." %}
 
 ### Пример 1. Добавление плитки приложения на главный экран смарт-терминала
 
-Вы можете вызывать интерфейс своего приложения по нажатию на плитку, расположенную на главном экране смарт-терминала.
+Используйте плитку, расположенную на главном экране смарт-терминала, чтобы вызвать своё приложение.
 
 Чтобы добавить плитку приложения на главный экран:
 1. Добавьте в приложение новую операцию (элемент `<activity>`).
-    Например,
-2. В элементе `<activity>` укажите элементы `<meta-data>` и `<intent-filter>`.
+
+    В Android Studio операцию можно добавить так: File>New>Activity.
+
+2. В файле `AndroidManifest.xml`, в элементе `<activity>` укажите элементы `<meta-data>` и `<intent-filter>`.
+
     {% highlight xml %}
          <activity
             android:name=".MainActivity"
@@ -74,21 +79,23 @@ folder: smart_terminal_SDK
             </intent-filter>
         </activity>
     {% endhighlight %}
+
 3. Соберите и установите приложение на смарт-терминал.
 
-    Полученное приложение добавит на главный экран терминала плитку, по которой открывается экран MainActivity.
+    Скачать пример приложения вы можете из [нашего репозитория](https://github.io/evotor/).
 
-### Пример 2. Получение сообщений от терминала
+### Пример 2. Получение сообщений от терминала и изменение чека
 
 Терминал рассылает сообщения двух типов:
 * События, на которые требуется ответ приложения.
 * Широковещательные сообщения, на которые ответ приложения не требуется.
 
-Чтобы приложение получало события:
-1. Cоздайте службу, например `MyIntegrationService`.
-{% highlight java %}
-    public class MyIntegrationService extends IntegrationService {
+Чтобы запустить приложение при получении определённого события (например, при добавлении товара в чек):
 
+1. Cоздайте службу, например `MyIntegrationService`.
+
+    {% highlight java %}
+    public class MyIntegrationService extends IntegrationService {
 
         @Nullable
         @Override
@@ -110,11 +117,13 @@ folder: smart_terminal_SDK
             return map;
         }
     }
-{% endhighlight %}
+    {% endhighlight %}
+
 2. Объявите службу в манифесте приложения:
-{% highlight xml %}
+
+    {% highlight xml %}
         <service
-            android:name=".MyLittleService"
+            android:name=".MyIntegrationService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -123,4 +132,173 @@ folder: smart_terminal_SDK
                 <action android:name="evo.v2.receipt.sell.beforePositionsEdited" />
             </intent-filter>
         </service>
-{% endhighlight %}
+    {% endhighlight %}
+
+    Скачать пример приложения вы можете из [нашего репозитория](https://github.io/evotor/).
+
+### Пример 3. Изменение чека
+
+Если приложение подписано на события, оно может взаимодействовать с чеком: добавлять, изменять или удалять позиции.
+
+Изменим приложение таким образом, чтобы при добавлении в чек кофе, открывался экран, с предложением сотруднику добавить в чек сахар:
+
+1. В приложение из второго примера, добавим следующую операцию :
+
+    {% highlight java %}
+    public class SugarSuggestionActivity extends IntegrationAppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sugar_suggestion);
+
+        findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                List<IPositionChange> changes = new ArrayList<>();
+                changes.add(new PositionAdd(
+                        Position.Builder.newInstance(
+                                UUID.randomUUID().toString(),
+                                null,
+                                "Сахар",
+                                "шт",
+                                0,
+                                new BigDecimal(3),
+                                BigDecimal.ONE
+                        ).build()
+                ));
+
+                setIntegrationResult(new BeforePositionsEditedEventResult(changes, null));
+                finish();
+            }
+        });
+
+        findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+}
+    {% endhighlight %}
+
+    Операция  открывает диалоговое окно, с помощью которого кассир может добавить сахар в чек. В качестве примера, можете использовать следующий код диалогового окна:
+
+    {% highlight xml %}
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="<Id пакета вашего приложения>.SugarSuggestionActivity">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавить сахарку?" />
+
+        <Button
+            android:id="@+id/buttonYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Да, конечно" />
+
+        <Button
+            android:id="@+id/buttonNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Нет, спасибо" />
+
+
+    </LinearLayout>
+    {% endhighlight %}
+
+2. Объявим операцию в манифесте приложения:
+
+    {% highlight xml %}
+
+    <activity android:name=".SugarSuggestionActivity"></activity>
+
+    {% endhighlight %}
+
+3. Изменим службу `MyIntegrationService` следующим образом:
+
+    {% highlight java %}
+        public class MyIntegrationService extends IntegrationService {
+
+
+        @Nullable
+        @Override
+        protected Map<String, ActionProcessor> createProcessors() {
+            Map<String, ActionProcessor> map = new HashMap<>();
+
+            map.put(BeforePositionsEditedEvent.NAME_SELL_RECEIPT, new BeforePositionsEditedEventProcessor() {
+                @Override
+                public void call(@NonNull String action, @NonNull BeforePositionsEditedEvent beforePositionsEditedEvent, @NonNull Callback callback) {
+                   boolean hasCoffee = false;
+                    for (IPositionChange change : beforePositionsEditedEvent.getChanges()) {
+                        if (change instanceof PositionAdd) {
+                            Position position = ((PositionAdd) change).getPosition();
+                            if (position.getName().equals("Кофе")) {
+                                hasCoffee = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    try {
+                        if (!hasCoffee) {
+                            callback.skip();
+                        } else {
+                            callback.startActivity(new Intent(getApplicationContext(), SugarSuggestionActivity.class));
+                        }
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            return map;
+        }
+    }
+    {% endhighlight %}
+
+    Скачать пример приложения вы можете из [нашего репозитория](https://github.io/evotor/).
+
+### Пример 4. Логирование
+
+Смарт-терминал не требует ответа на широковещательные сообщения, поэтому вы можете использовать приёмники сообщений (`BroadcastReceiver`) для логирования в приложении.
+
+Изменим приложение из третьего примера так, чтобы оно логировало сообщение о добавлении позиции в чек:
+
+1. Добавим `BroadcastReceiver`:
+
+    {% highlight java %}
+    public class MyIntegrationReceiver extends BroadcastReceiver {
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Log.d("MyIntegrationReceiver", intent.getAction());
+        }
+    }
+    {% endhighlight %}
+
+2. Объявим `BroadcastReceiver` в манифесте приложения :
+
+    {% highlight xml %}
+    <receiver
+        android:name=".MyIntegrationReceiver"
+        android:enabled="true"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="evotor.intent.action.receipt.sell.POSITION_ADDED" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </receiver>
+    {% endhighlight %}
+
+    Скачать пример приложения вы можете из [нашего репозитория](https://github.io/evotor/)
