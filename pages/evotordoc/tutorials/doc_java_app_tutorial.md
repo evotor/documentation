@@ -82,7 +82,7 @@ folder: smart_terminal_SDK
 
 3. Соберите и установите приложение на смарт-терминал.
 
-    Скачать пример приложения вы можете из [нашего репозитория](https://github.io/evotor/).
+    Скачать пример приложения вы можете из [нашего репозитория](https://github.com/evotor/documentation/blob/master/_examples/MyFirstJavaApp-1.0.zip).
 
 ### Пример 2. Получение сообщений от терминала и изменение чека
 
@@ -134,7 +134,7 @@ folder: smart_terminal_SDK
         </service>
     {% endhighlight %}
 
-    Скачать пример приложения вы можете из [нашего репозитория](https://github.io/evotor/).
+    Скачать пример приложения вы можете из [нашего репозитория](https://github.com/evotor/documentation/blob/master/_examples/MyFirstJavaApp-2.0.zip).
 
 ### Пример 3. Изменение чека
 
@@ -267,7 +267,7 @@ folder: smart_terminal_SDK
     }
     {% endhighlight %}
 
-    Скачать пример приложения вы можете из [нашего репозитория](https://github.io/evotor/).
+    Скачать пример приложения вы можете из [нашего репозитория](https://github.com/evotor/documentation/blob/master/_examples/MyFirstJavaApp-2.2.zip).
 
 ### Пример 4. Логирование
 
@@ -301,4 +301,4 @@ folder: smart_terminal_SDK
     </receiver>
     {% endhighlight %}
 
-    Скачать пример приложения вы можете из [нашего репозитория](https://github.io/evotor/)
+    Скачать пример приложения вы можете из [нашего репозитория](https://github.com/evotor/documentation/blob/master/_examples/MyFirstJavaApp-2.3.zip)
