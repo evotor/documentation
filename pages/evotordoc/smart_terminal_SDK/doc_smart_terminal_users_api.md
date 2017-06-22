@@ -22,43 +22,45 @@ Users API смарт-терминала включает в себя:
 
 * Таблицу пользователей `UsersTable`:
 
-{% highlight java %}
-object UsersTable {
-val URI = Uri.withAppendedPath(UsersContentProviderContract.BASE_URI, "users")
-val URI_AUTHENTICATED = Uri.withAppendedPath(URI, "authenticated")
+  ```java
 
-val ROW_USER_UUID = "USER_UUID"
-val ROW_USER_SECOND_NAME = "USER_SECOND_NAME"
-val ROW_USER_FIRST_NAME = "USER_FIRST_NAME"
-val ROW_USER_PHONE = "USER_PHONE"
-val ROW_USER_PIN = "USER_PIN"
-val ROW_ROLE_UUID = "ROLE_UUID"
-val ROW_ROLE_TITLE = "ROLE_TITLE"
-}
-{% endhighlight %}
+  object UsersTable {
+  val URI = Uri.withAppendedPath(UsersContentProviderContract.BASE_URI, "users")
+  val URI_AUTHENTICATED = Uri.withAppendedPath(URI, "authenticated")
+
+  val ROW_USER_UUID = "USER_UUID"
+  val ROW_USER_SECOND_NAME = "USER_SECOND_NAME"
+  val ROW_USER_FIRST_NAME = "USER_FIRST_NAME"
+  val ROW_USER_PHONE = "USER_PHONE"
+  val ROW_USER_PIN = "USER_PIN"
+  val ROW_ROLE_UUID = "ROLE_UUID"
+  val ROW_ROLE_TITLE = "ROLE_TITLE"
+  }
+
+  ```
 
 * Таблицу ролей `RolesTable`:
 
-{% highlight java %}
-object RolesTable {
-URI = Uri.withAppendedPath(UsersContentProviderContract.BASE_URI, "roles")
+  ```java
+  object RolesTable {
+  URI = Uri.withAppendedPath(UsersContentProviderContract.BASE_URI, "roles")
 
-val ROW_UUID = "UUID"
-val ROW_TITLE = "TITLE"
-}
-{% endhighlight %}
+  val ROW_UUID = "UUID"
+  val ROW_TITLE = "TITLE"
+  }
+  ```
 
 * Таблицу прав `GrantsTable`:
 
-{% highlight java %}
-object GrantsTable {
-val URI = Uri.withAppendedPath(UsersContentProviderContract.BASE_URI, "grants")
-val URI_GRANTS_OF_AUTHENTICATED_USER = Uri.withAppendedPath(URI, "authenticated")
+  ```java
+  object GrantsTable {
+  val URI = Uri.withAppendedPath(UsersContentProviderContract.BASE_URI, "grants")
+  val URI_GRANTS_OF_AUTHENTICATED_USER = Uri.withAppendedPath(URI, "authenticated")
 
-val ROW_ROLE_UUID = "ROLE_UUID"
-val ROW_TITLE = "TITLE"
-}
-{% endhighlight %}
+  val ROW_ROLE_UUID = "ROLE_UUID"
+  val ROW_TITLE = "TITLE"
+  }
+  ```
 
 
 Схема отношения данных в таблицах.
@@ -69,7 +71,7 @@ val ROW_TITLE = "TITLE"
 
 Работа с данными пользователей:
 
-    {% highlight java %}
+```java
     fun createUser(cursor: Cursor): User {
             return User(
                     uuid = cursor.getString(cursor.getColumnIndex(UsersTable.ROW_USER_UUID)),
@@ -118,11 +120,11 @@ val ROW_TITLE = "TITLE"
             return null
         }
 
-    {% endhighlight %}
+```
 
 Работа с правами:
 
-     {% highlight java %}
+```java
     fun createGrant(cursor: Cursor): Grant {
          return Grant(
                 title = cursor.getString(cursor.getColumnIndex(GrantsTable.ROW_TITLE)),
@@ -166,4 +168,4 @@ val ROW_TITLE = "TITLE"
                         }
                     }
     }
-    {% endhighlight %}
+```
