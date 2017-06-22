@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит информацию о возвращаемых ошибках"
 sidebar: evotordoc_sidebar
 permalink: doc_errors_returned.html
+tags: [Облако Эвотор]
 folder: evotordoc/evotor_integration
 ---
 

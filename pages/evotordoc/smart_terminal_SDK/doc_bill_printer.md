@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит информацию о том, как приложение может работать с принтером чеков."
 sidebar: evotordoc_sidebar
 permalink: doc_bill_printer.html
+tags: [Java, Терминал, Оборудование, Чеки]
 folder: smart_terminal_SDK
 ---
 
@@ -11,23 +12,24 @@ folder: smart_terminal_SDK
 
 1. В колбэке `onCreate()` или при запуске операции (`activity`) инициализируйте класс `ru.evotor.devices.commons.DeviceServiceConnector`:
 
-    {% highlight java %}
-    DeviceServiceConnector.startInitConnections(getApplicationContext());
-    {% endhighlight %}
+   ```java
+   DeviceServiceConnector.startInitConnections(getApplicationContext());
+   ```
 
-    Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку.
+   Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку.
 
-    {% include tip.html content="Воспользуйтесь методом `addConnectionWrapper`, чтобы получить событие об успешном подключении. <br/><br/>
+   {% include tip.html content="Воспользуйтесь методом `addConnectionWrapper`, чтобы получить событие об успешном подключении. <br/><br/>
 
-    Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения." %}
+   Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения." %}
 
 2. Вызовите метод `DeviceServiceConnector.getPrinterService()`.
 
     Метод не может быть `null` и в случае успеха возвращает объект `ru.evotor.devices.commons.IPrinterServiceWrapper`.
 
     Метод может вернуть следующие исключения (`exception`):
-    * `ru.evotor.devices.commons.exception.ServiceNotConnectedException` возвращается в результате серии неудачных попыток подключиться к принтеру.
-    * `ru.evotor.devices.commons.exception.DeviceServiceException` – наследованое исключение.
+
+      * `ru.evotor.devices.commons.exception.ServiceNotConnectedException` возвращается в результате серии неудачных попыток подключиться к принтеру.
+      * `ru.evotor.devices.commons.exception.DeviceServiceException` – наследованое исключение.
 
 3. Вы можете вызвать следующие методы объекта `ru.evotor.devices.commons.IPrinterService`:
 
@@ -44,6 +46,7 @@ folder: smart_terminal_SDK
 4. Передайте данные в печать с помощью метода `printDocument(int deviceId, in PrinterDocument printerDocument)`.
 
     Аргумент `PrinterDocument` содержит список элементов печати `IPrintable`:
+    
     * Тексты – `ru.evotor.devices.commons.printer.printable.PrintableText`;
     * Штрихкоды – `ru.evotor.devices.commons.printer.printable.PrintableBarcode`;
     * Картинки – `ru.evotor.devices.commons.printer.printable.PrintableImage`.
@@ -54,7 +57,7 @@ folder: smart_terminal_SDK
 
 Код для печати сообщения на чеке:
 
-{% highlight java %}
+```java
 try {
   DeviceServiceConnector.getPrinterService().printDocument(
     DEFAULT_DEVICE_INDEX_UNSET,
@@ -66,4 +69,4 @@ try {
 } catch (DeviceServiceException exc) {
 
 }
-{% endhighlight %}
+```

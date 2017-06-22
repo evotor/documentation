@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит общую информацию о биллинге пользователей Эвотор. "
 sidebar: evotordoc_sidebar
 permalink: doc_about_billing.html
+tags: [Биллинг]
 folder: evotordoc/billing
 ---
 

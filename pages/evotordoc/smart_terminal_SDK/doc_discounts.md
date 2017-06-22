@@ -4,6 +4,7 @@ keywords: sample
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_discounts.html
+tags: [Терминал, Java, Чеки]
 folder: smart_terminal_SDK
 ---
 

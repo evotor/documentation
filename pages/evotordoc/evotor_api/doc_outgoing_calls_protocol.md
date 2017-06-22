@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит информацию о запросах Эвотора к стороннему сервису."
 sidebar: evotordoc_sidebar
 permalink: doc_outgoing_calls_protocol.html
+tags: [Облако Эвотор, Товары]
 folder: evotordoc/evotor_integration
 ---
 
@@ -18,6 +19,7 @@ folder: evotordoc/evotor_integration
 * Получать и передавать номенклатуру.
 
 ### Авторизация
+
 В зависимости от способа авторизации в стороннем сервисе, запросы облака Эвотор могут содержать заголовок `Authorization` с типом `Basic` или `Bearer`:
 
 * Для авторизации с типом `Basic`, в Эвотор требуется предоставить имя пользователя и пароль.
@@ -29,9 +31,11 @@ folder: evotordoc/evotor_integration
 Сторонний веб-сервис также может обращаться в облако Эвотор за дополнительной информацией. Ключ для авторизации таких запросов, облако Эвотор отправляет на адрес `http://<веб-адрес стороннего сервиса>/api/v1/user/token`. Подробнее, см. раздел **Авторизация** на странице [REST API облака Эвотор](https://dev.evotor.r1nat.com/evotor-cloud-rest-api/).
 
 ### Пример POST-запроса
+
 Проверить данные учётной записи.
 Запрос:
-```curl
+
+```
 -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: Basic RXhhbXBsZXBhc3N3b3Jk' -d '{"userUuid":"01-000000000000001","username":"<Имя учётной записи>","password":"<пароль учётной записи>","customField":"любое значение"}' 'https://partner.org/api/v1/user/verify'
 ```
 
@@ -49,7 +53,7 @@ folder: evotordoc/evotor_integration
 Передать список магазинов в сторонний сервис.
 Запрос:
 
-```curl
+```
 -X PUT --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: <пользовательсский токен>' -d '[{"uuid": "string", "name": "string", "address": "string"}]' 'https://partner.org/api/v1/inventories/stores'
 ```
 
@@ -63,5 +67,6 @@ folder: evotordoc/evotor_integration
   }
 ]
 ```
+
 ### Справочник API
-Ознакомиться и испробовать запросы к REST API облака Эвотор вы можете на сайте https://api.evotor.ru/docs в разделе **Протокол исходящих запросов**.
+Ознакомиться с запросами к REST API облака Эвотор вы можете на сайте https://api.evotor.ru/docs в разделе **Протокол исходящих запросов**.

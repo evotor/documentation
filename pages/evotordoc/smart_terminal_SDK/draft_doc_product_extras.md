@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит описание описание API смарт-терминала для работы со схемами и дополнительными полями товаров."
 sidebar: evotordoc_sidebar
 permalink: doc_product_extras.html
+tags: [Терминал, Java, JavaScript, Товары]
 folder: evotordoc/smart_terminal_SDK
 published: false
 ---

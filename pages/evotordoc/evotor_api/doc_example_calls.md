@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит примеры запросов к Эвотор API и вебхуков облака Эвотор."
 sidebar: evotordoc_sidebar
 permalink: doc_example_calls.html
+tags: [Облако Эвотор, Товары]
 folder: evotordoc/evotor_about
 ---
 
@@ -15,18 +16,22 @@ folder: evotordoc/evotor_about
 
 * искать магазины, сотрудников и смарт терминалы пользователя платформы;
 * в рамках выбранного магазина:
-    * получать и передавать информацию о продуктах;
-    * удалять продукты;
-    * получать документы смарт-терминалов.
+
+  * получать и передавать информацию о продуктах;
+  * удалять продукты;
+  * получать документы смарт-терминалов.
 
 #### Пример GET-запроса к облаку Эвотор
 
 Получить список всех магазинов пользователя:
-```curl
+
+```
 -X GET --header 'Accept: application/json' --header 'X-Authorization: <токен приложения>' --header 'Content-Type: application/json' 'https://api.evotor.ru/api/v1/inventories/stores/search'
 ```
+
 Ответ:
-{% highlight JSON %}
+
+```JSON
 [
   {
     "uuid": "string",
@@ -41,14 +46,17 @@ folder: evotordoc/evotor_about
     "code": null
   }
 ]
-{% endhighlight %}
+```
+
 #### Пример POST-запроса
+
 Создать новый товар в определённом магазине:
-```curl
+
+```
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Authorization: <токен приложения>' -d '[{"uuid":"n1e2w3-t4ov5qr6","code":"","barCodes":[],"alcoCodes":[],"name":"Новый товар","price":0,"quantity":0,"costPrice":0,"measureName":"","tax":"NO_VAT","allowToSell":false,"description":"","articleNumber":"","parentUuid":"","group":false,"type":"NORMAL","alcoholByVolume":0,"alcoholProductKindCode":0,"tareVolume":0}]' 'https://api.evotor.ru/api/v1/inventories/stores/storeUuid-123456/products'
 ```
 
-```curl
+```
 no content
 ```
 
@@ -70,37 +78,38 @@ no content
 #### Пример вебкука-запроса
 
 Проверить данные учётной записи:
-```curl
+
+```
 -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: Basic <токен стороннего сервиса>' -d '{"userUuid":"01-000000000000001","username":"<Имя учётной записи>","password":"<пароль учётной записи>","customField":"любое значение"}' 'https://partner.org/api/v1/user/verify'
 ```
 
 Ответ:
 
-{% highlight JSON %}
+```JSON
 {
   "userUuid": "01-000000000000001",
   "hasBilling": false,
   "token": "пользовательский токен"
 }
-{% endhighlight %}
+```
 
 #### Пример вебхука-уведомления
 Передать список магазинов в сторонний сервис:
 
-```curl
+```
 -X PUT --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: <пользовательсский токен>' -d '[{"uuid": "string", "name": "string", "address": "string"}]' 'https://partner.org/api/v1/inventories/stores'
 ```
 
 Ответ:
 
-{% highlight JSON %}
+```JSON
 [
   {
     "uuid": "string",
     "parentId": "string",
   }
 ]
-{% endhighlight %}
+```
 
 
 ### Справочник API

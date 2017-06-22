@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит список документов, которые формирует смарт-терминал."
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_documents.html
+tags: [Облако Эвотор, Терминал, Чеки]
 folder: evotordoc/evotor_integration
 ---
 

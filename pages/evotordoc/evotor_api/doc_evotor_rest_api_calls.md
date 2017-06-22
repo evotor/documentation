@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит информацию о запросах, которые вы можете отправлять в REST API Эвотор"
 sidebar: evotordoc_sidebar
 permalink: doc_evotor_rest_api_calls.html
+tags: [Облако Эвотор, Товары]
 folder: evotordoc/evotor_integration
 ---
 
@@ -19,10 +20,12 @@ folder: evotordoc/evotor_integration
 
 ### Авторизация
 Все запросы к REST API облака Эвотор, должны содержать HTTP-заголовок `x-Authorization`, в котором требуется указать *ключ авторизации*. Ключ авторизации можно получить одним из следующих способов:
+
 * В GET-параметре `token` веб-адреса iframe-приложения:
-```curl
-https://partner.org/#/?uid=01-000000000011111&token=string
-```
+
+  ```
+  https://partner.org/#/?uid=01-000000000011111&token=string
+  ```
 
 ![Токен для интеграции с 1с](images/iframe_token.png)
 
@@ -34,10 +37,13 @@ https://partner.org/#/?uid=01-000000000011111&token=string
 
 ### Пример GET-запроса к облаку Эвотор
 Получить список всех магазинов пользователя:
-```curl
+
+```
 -X GET --header 'Accept: application/json' --header 'X-Authorization: <ключ авторизации>' --header 'Content-Type: application/json' 'https://api.evotor.ru/api/v1/inventories/stores/search'
 ```
+
 Ответ:
+
 ```JSON
 [
   {
@@ -54,17 +60,20 @@ https://partner.org/#/?uid=01-000000000011111&token=string
   }
 ]
 ```
+
 ### Пример POST-запроса
+
 Создать новый товар в определённом магазине:
-```curl
+
+```
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Authorization: <токен>' -d '[{"uuid":"n1e2w3-t4ov5qr6","code":"","barCodes":[],"alcoCodes":[],"name":"Новый товар","price":0,"quantity":0,"costPrice":0,"measureName":"","tax":"NO_VAT","allowToSell":false,"description":"","articleNumber":"","parentUuid":"","group":false,"type":"NORMAL","alcoholByVolume":0,"alcoholProductKindCode":0,"tareVolume":0}]' 'https://api.evotor.ru/api/v1/inventories/stores/storeUuid-123456/products'
 ```
 
-```curl
+```
 no cotent
 ```
 
-При создании товаров в ответ приходит пустое сообщение. Код ответа в случае удачного добавления -- 200.
+При создании товаров в ответ приходит пустое сообщение. Код ответа в случае удачного добавления – 200.
 
 ### Справочник API
-Ознакомиться и попробовать запросы к REST API облака Эвотор вы можете на сайте https://api.evotor.ru/docs в разделе **REST API облака Эвотор**.
+Ознакомиться c запросами к REST API облака Эвотор вы можете на сайте https://api.evotor.ru/docs в разделе **REST API облака Эвотор**.

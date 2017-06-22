@@ -4,6 +4,7 @@ keywords: sample
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_storage_api.html
+tags: [Java, JavaScript, Терминал]
 folder: smart_terminal_SDK
 ---
 
@@ -13,24 +14,25 @@ folder: smart_terminal_SDK
 
 Убедитесь, чтоб файл `client.yaml` содержит:
 
-{% highlight yaml %}
+```yaml
 capabilities:
     - storage
-{% endhighlight %}
+```
 
 ### Функции для работы со Storage API
 
 #### Вызов объекта для работы с API.
 
-{% highlight javascript %}
+```javascript
 var storage = require('storage')
-{% endhighlight %}
+```
 
 #### Сохранение данных
 
-{% highlight javascript %}
+```javascript
 storage.set(<ключ>, <значение>)
-{% endhighlight %}
+```
+
 Содержит строковые переменные `<ключ>` и `<значение>`.
 
 Возвращает `true` или `false`, в зависимости от успешности сохранения.
@@ -39,9 +41,9 @@ storage.set(<ключ>, <значение>)
 
 #### Получение данных
 
-{% highlight javascript %}
+```javascript
 storage.get(<ключ>)
-{% endhighlight %}
+```
 
 Содержит строковую переменную `<ключ>`.
 

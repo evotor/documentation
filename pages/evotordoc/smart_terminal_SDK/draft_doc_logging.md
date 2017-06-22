@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит информацию о доступе к логам приложений."
 sidebar: evotordoc_sidebar
 permalink: doc_logging.html
+tags: [Терминал, JavaScript, Java]
 folder: smart_terminal_SDK
 published: true
 ---
@@ -17,9 +18,9 @@ published: true
 
 Используйте функцию объекта `logger` для записи событий JS-приложений:
 
-{% highlight javascript %}
+```javascript
     logger.log(String)
-{% endhighlight %}
+```
 
 Функция отображает в `logcat` значение `String`.
 

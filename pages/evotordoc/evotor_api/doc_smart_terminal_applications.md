@@ -4,6 +4,7 @@ keywords: sample
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_applications.html
+tags: [Терминал, Облако Эвотор]
 folder: evotordoc/evotor_api
 ---
 

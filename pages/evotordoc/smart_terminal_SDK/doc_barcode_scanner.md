@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит инструкцию о том, как подготовить приложение для получения данных от сканера штрихкодов."
 sidebar: evotordoc_sidebar
 permalink: doc_barcode_scanner.html
+tags: [Java, Терминал, Оборудование]
 folder: evotordoc/smart_terminal_SDK
 ---
 
@@ -15,28 +16,28 @@ folder: evotordoc/smart_terminal_SDK
 
 2. Объявите класс `BarcodeBroadcastReceiver`:
 
-    {% highlight java %}
-    BarcodeBroadcastReceiver mBarcodeBroadcastReceiver = new BarcodeBroadcastReceiver() {
+   ```java
+   BarcodeBroadcastReceiver mBarcodeBroadcastReceiver = new BarcodeBroadcastReceiver() {
 
-        @Override
-        public void onReceiveBarcode(String barcode) {
-            // Переменная barcode содержит считанный штрихкод.
-        }
-    };
-    {% endhighlight %}
+       @Override
+       public void onReceiveBarcode(String barcode) {
+           // Переменная barcode содержит считанный штрихкод.
+       }
+   };
+   ```
 
 3. В операции (`Activity`) или фрагменте (`Fragment`) запускайте и останавливайте подписку `BarcodeBroadcastReceiver` :
 
-    {% highlight java %}
-        @Override
-        protected void onPause() {
-            super.onPause();
-            unregisterReceiver(mBarcodeBroadcastReceiver);
-        }
-        @Override
-        protected void onResume() {
-            super.onResume();
-            registerReceiver(mBarcodeBroadcastReceiver, BarcodeBroadcastReceiver.BARCODE_INTENT_FILTER, BarcodeBroadcastReceiver.SENDER_PERMISSION, null);
-        }
-    }
-    {% endhighlight %}
+   ```java
+       @Override
+       protected void onPause() {
+           super.onPause();
+           unregisterReceiver(mBarcodeBroadcastReceiver);
+       }
+       @Override
+       protected void onResume() {
+           super.onResume();
+           registerReceiver(mBarcodeBroadcastReceiver, BarcodeBroadcastReceiver.BARCODE_INTENT_FILTER, BarcodeBroadcastReceiver.SENDER_PERMISSION, null);
+       }
+   }
+   ```

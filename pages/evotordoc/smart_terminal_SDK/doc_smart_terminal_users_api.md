@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит описание Users API смарт-терминала."
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_users_api.html
+tags: [JavaScript, Java, Терминал]
 folder: smart_terminal_SDK
 published: true
 ---
@@ -23,7 +24,6 @@ Users API смарт-терминала включает в себя:
 * Таблицу пользователей `UsersTable`:
 
   ```java
-
   object UsersTable {
   val URI = Uri.withAppendedPath(UsersContentProviderContract.BASE_URI, "users")
   val URI_AUTHENTICATED = Uri.withAppendedPath(URI, "authenticated")
@@ -36,7 +36,6 @@ Users API смарт-терминала включает в себя:
   val ROW_ROLE_UUID = "ROLE_UUID"
   val ROW_ROLE_TITLE = "ROLE_TITLE"
   }
-
   ```
 
 * Таблицу ролей `RolesTable`:

@@ -4,6 +4,7 @@ keywords: sample
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_scales.html
+tags: [Java, Терминал, Оборудование]
 folder: smart_terminal_SDK
 ---
 
@@ -35,11 +36,11 @@ folder: smart_terminal_SDK
 
     `Weight` – вес товара, заданный в виде:
 
-{% highlight java %}
-    private final BigDecimal weightInGrams;//вес товара в граммах, возвращённый весами.
-    // поддерживали ли весы флаг стабильности при последнем взвешивании
-    private final boolean supportStable;//Указывает был установлен флаг стабильности при последнем взвешивании или нет.
-    private final boolean stable;//Указывает стабильность последнего взвешивания.
-{% endhighlight %}
+   ```java
+   private final BigDecimal weightInGrams;//вес товара в граммах, возвращённый весами.
+   // поддерживали ли весы флаг стабильности при последнем взвешивании
+   private final boolean supportStable;//Указывает был установлен флаг стабильности при последнем взвешивании или нет.
+   private final boolean stable;//Указывает стабильность последнего взвешивания.
+   ```
 
 Метод может вернуть наследованное исключение `ru.evotor.devices.commons.exception.DeviceServiceException`.

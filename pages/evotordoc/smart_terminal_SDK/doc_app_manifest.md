@@ -4,6 +4,7 @@ keywords: sample
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_app_manifest.html
+tags: [JavaScript, Терминал]
 folder: smart_terminal_SDK
 ---
 

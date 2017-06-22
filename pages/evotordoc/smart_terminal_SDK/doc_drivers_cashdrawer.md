@@ -4,6 +4,7 @@ keywords: sample
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_drivers_cashdrawer.html
+tags: [Терминал, Java, Оборудование]
 folder: smart_terminal_SDK
 ---
 

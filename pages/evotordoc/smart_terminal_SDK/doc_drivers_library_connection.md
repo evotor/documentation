@@ -4,6 +4,7 @@ keywords: sample
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_drivers_library_connection.html
+tags: [Терминал, Java, Оборудование]
 folder: smart_terminal_SDK
 ---
 
@@ -11,7 +12,7 @@ folder: smart_terminal_SDK
 
 Добавьте ссылку на репозиторий на репозиторий `jitpack` в `build.gradle` проекта.
 
-```g
+```
      allprojects {
 repositories {
     jcenter()
@@ -22,10 +23,10 @@ repositories {
 
 В модуле `build.gradle` добавьте зависимость и укажите точную версию:
 
-```g
+```
     dependencies {
     compile 'com.github.evotor:device-drivers:v2.0.1+'
     }
 ```
 
-{% include note.html content="Все имена констант указаны из `ru.evotor.devices.drivers.Constants`."%}
+{% include note.html content="Все имена констант указаны из `ru.evotor.devices.drivers.Constants`." %}

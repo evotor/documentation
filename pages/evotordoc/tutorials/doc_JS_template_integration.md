@@ -4,6 +4,7 @@ keywords: sample
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_JS_template_integration.html
+tags: [JavaScript, Терминал]
 folder: evotordoc\tutorials
 published: true
 ---
@@ -17,39 +18,39 @@ published: true
 1. Создайте новый проект в Android Studio.
 2. В файле `build.gradle` проекта укажите:
 
-    ```1
-    buildscript {
-        repositories {
-            jcenter()
-            maven { url 'https://jitpack.io' }
-        }
-        dependencies {
-            ...
-            classpath group: 'com.github.evotor', name: 'template-plugin', version: 'v1.1.4'
-        }
-    }
+   ```
+   buildscript {
+       repositories {
+           jcenter()
+           maven { url 'https://jitpack.io' }
+       }
+       dependencies {
+           ...
+           classpath group: 'com.github.evotor', name: 'template-plugin', version: 'v1.1.4'
+       }
+   }
 
-    allprojects {
-        repositories {
-          ...
-          maven { url 'https://jitpack.io' }
-        }
-      }
+   allprojects {
+       repositories {
+         ...
+         maven { url 'https://jitpack.io' }
+       }
+     }
    ```
 
 3. В файле `build.gradle` приложения добавьте зависимость:
 
-    ```1
-    dependencies {
-            compile 'com.github.evotor:template-plugin:v1.1.4'
-    }
-    ```
+   ```
+   dependencies {
+           compile 'com.github.evotor:template-plugin:v1.1.4'
+   }
+   ```
 
-    и подключите плагин:
+   и подключите плагин:
 
-    ```1
-    apply plugin: 'ru.evotor.webbasedapplication'
-    ```
+   ```
+   apply plugin: 'ru.evotor.webbasedapplication'
+   ```
 
 4. Соберите apk.
 

@@ -4,6 +4,7 @@ keywords: IFrame
 summary: "Краткая инструкция по добавлению фрейма в настройки приложения"
 sidebar: evotordoc_sidebar
 permalink: doc_iframe_within_application_page.html
+tags: [Облако Эвотор]
 folder: evotordoc/evotor_tutorials
 ---
 

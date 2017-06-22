@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит пошаговое описание обмена сообщениями между приложением и сторонним сервисом"
 sidebar: evotordoc_sidebar
 permalink: doc_integrated_app_points.html
+tags: [Java, JavaScript, Терминал]
 folder: evotordoc/smart_terminal_SDK
 ---
 

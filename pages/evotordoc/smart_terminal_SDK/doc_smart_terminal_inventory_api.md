@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит описание Inventory API смарт-терминала."
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_inventory_api.html
+tags: [Терминал, Java, Товары]
 folder: smart_terminal_SDK
 published: true
 ---
@@ -20,59 +21,59 @@ Inventory API смарт-терминала включает в себя:
 
 * Таблицу данных товара `ProductTable`:
 
-    {% highlight java %}
-    object ProductTable {
-        val URI = Uri.withAppendedPath(InventoryApi.BASE_URI, "Commodity")
+  ```java
+  object ProductTable {
+      val URI = Uri.withAppendedPath(InventoryApi.BASE_URI, "Commodity")
 
-        const val ROW_UUID = "UUID"
-        const val ROW_CODE = "CODE"
-        const val ROW_TYPE = "TYPE"
-        const val ROW_PARENT_UUID = "PARENT_UUID"
-        const val ROW_IS_GROUP = "IS_GROUP"
-        const val ROW_NAME = "NAME"
-        const val ROW_DESCRIPTION = "DESCRIPTION"
-        const val ROW_PRICE_OUT = "PRICE_OUT"
-        const val ROW_QUANTITY = "QUANTITY"
-        const val ROW_MEASURE_NAME = "MEASURE_NAME"
-        const val ROW_MEASURE_PRECISION = "MEASURE_PRECISION"
-        const val ROW_ALCOHOL_BY_VOLUME = "ALCOHOL_BY_VOLUME"
-        const val ROW_ALCOHOL_PRODUCT_KIND_CODE = "ALCOHOL_PRODUCT_KIND_CODE"
-        const val ROW_TARE_VOLUME = "TARE_VOLUME"
-        const val ROW_TAX_NUMBER = "TAX_NUMBER"
-    }
-    {% endhighlight %}
+      const val ROW_UUID = "UUID"
+      const val ROW_CODE = "CODE"
+      const val ROW_TYPE = "TYPE"
+      const val ROW_PARENT_UUID = "PARENT_UUID"
+      const val ROW_IS_GROUP = "IS_GROUP"
+      const val ROW_NAME = "NAME"
+      const val ROW_DESCRIPTION = "DESCRIPTION"
+      const val ROW_PRICE_OUT = "PRICE_OUT"
+      const val ROW_QUANTITY = "QUANTITY"
+      const val ROW_MEASURE_NAME = "MEASURE_NAME"
+      const val ROW_MEASURE_PRECISION = "MEASURE_PRECISION"
+      const val ROW_ALCOHOL_BY_VOLUME = "ALCOHOL_BY_VOLUME"
+      const val ROW_ALCOHOL_PRODUCT_KIND_CODE = "ALCOHOL_PRODUCT_KIND_CODE"
+      const val ROW_TARE_VOLUME = "TARE_VOLUME"
+      const val ROW_TAX_NUMBER = "TAX_NUMBER"
+  }
+  ```
 
 * Таблицу дополнительных полей `ProductsFieldTable`:
 
-    {% highlight java %}
-    object FieldTable {
-        val URI = Uri.withAppendedPath(InventoryApi.BASE_URI, "Field")
+  ```java
+  object FieldTable {
+      val URI = Uri.withAppendedPath(InventoryApi.BASE_URI, "Field")
 
-        const val ROW_NAME = "NAME"
-        const val ROW_FIELD_UUID = "FIELD_UUID"
-        const val ROW_TITLE = "TITLE"
-        const val ROW_TYPE = "TYPE"
-        const val ROW_SPECIFIC_DATA = "SPECIFIC_DATA"
+      const val ROW_NAME = "NAME"
+      const val ROW_FIELD_UUID = "FIELD_UUID"
+      const val ROW_TITLE = "TITLE"
+      const val ROW_TYPE = "TYPE"
+      const val ROW_SPECIFIC_DATA = "SPECIFIC_DATA"
 
-        const val TYPE_TEXT_FIELD = 1
-        const val TYPE_DICTIONARY = 2
-    }
-    {% endhighlight %}
+      const val TYPE_TEXT_FIELD = 1
+      const val TYPE_DICTIONARY = 2
+  }
+  ```
 
 * Таблицу значений дополнительных полей товаров `ProductsExtraTable`:
 
-    {% highlight java %}
-    object ProductExtraTable {
-        @JvmField val URI = Uri.withAppendedPath(InventoryApi.BASE_URI, "CommodityExtra")
+  ```java
+  object ProductExtraTable {
+      @JvmField val URI = Uri.withAppendedPath(InventoryApi.BASE_URI, "CommodityExtra")
 
-        const val ROW_UUID = "UUID"
-        const val ROW_NAME = "NAME"
-        const val ROW_PRODUCT_UUID = "COMMODITY_UUID"
-        const val ROW_FIELD_UUID = "FIELD_UUID"
-        const val ROW_FIELD_VALUE = "FIELD_VALUE"
-        const val ROW_DATA = "DATA"
-    }
-    {% endhighlight %}
+      const val ROW_UUID = "UUID"
+      const val ROW_NAME = "NAME"
+      const val ROW_PRODUCT_UUID = "COMMODITY_UUID"
+      const val ROW_FIELD_UUID = "FIELD_UUID"
+      const val ROW_FIELD_VALUE = "FIELD_VALUE"
+      const val ROW_DATA = "DATA"
+  }
+  ```
 
 Схема отношения данных в таблицах.
 
@@ -82,7 +83,7 @@ Inventory API смарт-терминала включает в себя:
 
 Получить все штрихкоды товара:
 
-{% highlight java %}
+```java
 fun getAllBarcodesForProduct(context: Context, productUuid: String): List<String> {
     val barcodesList = ArrayList<String>()
     val cursor: Cursor? = context.contentResolver.query(
@@ -98,12 +99,12 @@ fun getAllBarcodesForProduct(context: Context, productUuid: String): List<String
     }
     return barcodesList
 }
-{% endhighlight %}
+```
 
 Получить данные товара:
 
 
-{% highlight java %}
+```java
 fun getProductByUuid(context: Context, uuid: String): ProductItem? {
   context.contentResolver
       .query(Uri.withAppendedPath(ProductTable.URI, uuid), null, null, null, null)
@@ -145,11 +146,11 @@ fun getProductByUuid(context: Context, uuid: String): ProductItem? {
           }
   return null
 }
-{% endhighlight %}
+```
 
 Получить возможные дополнительные поля:
 
-{% highlight java %}
+```java
 fun getField(context: Context, fieldUuid: String): Field? {
     context.contentResolver
             .query(FieldTable.URI, null, "${FieldTable.ROW_FIELD_UUID} = ?", arrayOf(fieldUuid), null)
@@ -169,11 +170,11 @@ fun getField(context: Context, fieldUuid: String): Field? {
 
     return null
 }
-{% endhighlight %}
+```
 
 Получить значения дополнительных полей товара:
 
-{% highlight java %}
+```java
 fun getProductExtras(context: Context, productUuid: String): List<ProductExtra> {
     val result = ArrayList<ProductExtra>()
     context.contentResolver
@@ -193,4 +194,4 @@ fun getProductExtras(context: Context, productUuid: String): List<ProductExtra> 
             }
     return result
 }
-{% endhighlight %}
+```

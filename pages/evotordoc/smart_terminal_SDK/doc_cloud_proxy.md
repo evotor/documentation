@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит пошаговое описание обмена сообщениями между приложением и сторонним сервисом"
 sidebar: evotordoc_sidebar
 permalink: doc_cloud_proxy.html
+tags: [Облако Эвотор, Терминал, Java, JavaScript]
 folder: evotordoc/smart_terminal_SDK
 published: true
 ---
@@ -34,10 +35,10 @@ published: true
 
 В `client.yaml`, в списке `capabilities` требуется указать элемент `internet`:
 
-{% highlight yaml %}
+```yaml
 capabilities:
   - internet
-{% endhighlight %}
+```
 
 <!-- Из JS-приложения вы можете отправить сообщение следующим образом: -->
 
@@ -80,5 +81,6 @@ capabilities:
 Ответ стороннего сервиса передаётся приложению в обратном порядке.
 
 Ответы стороннего сервиса должны содержать объекты:
+
   * `status` – содержит HTTP-код состояния.
   * `body` – содержит тело запроса.

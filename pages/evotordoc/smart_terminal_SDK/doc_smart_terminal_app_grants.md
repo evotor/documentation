@@ -1,9 +1,10 @@
 ---
 title: Права приложения
 keywords: sample
-summary: "Раздел содержит информацию о процессе разработки JS-приложения для смарт-терминала."
+summary: "Раздел содержит информацию правах пользователей смарт терминала и примеры того, как получить данные о них."
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_app_grants.html
+tags: [Терминал, Java, JavaScript]
 folder: smart_terminal_SDK
 ---
 
@@ -23,20 +24,21 @@ folder: smart_terminal_SDK
 
 1. По адресу `res/values` создайте файл `<Название>_grants.xml`, где `<Название>` – имя требуемого плагина, демона или экрана.
 2. В файле `<Название>_grants.xml` укажите массив строк с правами следующим образом:
-    {% highlight xml %}
-    <resources>
-    <string-array name="<Название>_grants">
-        <item>CASH_OPERATIONS_SELL</item>
-        <item>CASH_OPERATIONS_PAYBACK </item>
-    </string-array>
-    </resources>
-    {% endhighlight %}
+
+   ```xml
+   <resources>
+   <string-array name="<Название>_grants">
+       <item>CASH_OPERATIONS_SELL</item>
+       <item>CASH_OPERATIONS_PAYBACK </item>
+   </string-array>
+   </resources>
+   ```
 
 3. В манифесте приложения, для соответствующей операции (`activity`), добавьте элемент `meta-data` со следующими атрибутами:
 
-    {% highlight xml %}
-    <meta-data android:name="ru.evotor.launcher.GRANTS" android:resource="@array/<Название>_grants" />
-    {% endhighlight %}
+   ```xml
+   <meta-data android:name="ru.evotor.launcher.GRANTS" android:resource="@array/<Название>_grants" />
+   ```
 
 ### JS-приложение
 
@@ -44,46 +46,47 @@ folder: smart_terminal_SDK
 
 1. В файле `client.yaml` добавьте список `grants` требуемых прав для соответствующего элемента (демона, плагина или экрана):
 
-    {% highlight yaml %}
-    - name: <Название>
-      header: "<Заголовок экрана>"
-      launcher-label: "<Название плитики>"
-      launcher-icon: client/views/example-loader/icon.png
-      launcher-color: #133788
-      source: client/views/example-loader/view.html
-      scripts:
-        - no-script
-      styles:
-        - "*.css"
-      grants:
-        - CASH_OPERATIONS_SELL
-        - CASH_OPERATIONS_PAYBACK
-    {% endhighlight %}
+   ```yaml
+   - name: <Название>
+     header: "<Заголовок экрана>"
+     launcher-label: "<Название плитики>"
+     launcher-icon: client/views/example-loader/icon.png
+     launcher-color: #133788
+     source: client/views/example-loader/view.html
+     scripts:
+       - no-script
+     styles:
+       - "*.css"
+     grants:
+       - CASH_OPERATIONS_SELL
+       - CASH_OPERATIONS_PAYBACK
+   ```
 
 2. По адресу `res/values` создайте файл `<Название>_grants.xml`, который содержит массив строк с правами, перечисленными в списке `grants`:
 
-    {% highlight xml %}
-    <resources>
-    <string-array name="<Название>_grants">
-        <item>CASH_OPERATIONS_SELL</item>
-        <item>CASH_OPERATIONS_PAYBACK </item>
-    </string-array>
-    </resources>
-    {% endhighlight %}
+   ```xml
+   <resources>
+   <string-array name="<Название>_grants">
+       <item>CASH_OPERATIONS_SELL</item>
+       <item>CASH_OPERATIONS_PAYBACK </item>
+   </string-array>
+   </resources>
+   ```
 
 
-  где `<Название>` – значение параметра `name` в файле `client.yaml`.
+  Где `<Название>` – значение параметра `name` в файле `client.yaml`.
 
 3. Убедитесь, что в созданном манифесте приложения, для соответствующей операции (`activity`) добавлен элемент `meta-data` со следующими атрибутами:
 
-    {% highlight xml %}
-    <meta-data android:name="ru.evotor.launcher.GRANTS" android:resource="@array/<Название>_grants" />
-    {% endhighlight %}
+   ```xml
+   <meta-data android:name="ru.evotor.launcher.GRANTS" android:resource="@array/<Название>_grants" />
+   ```
 
 ### Примеры
+
 Манифест приложения:
 
-{% highlight xml %}
+```xml
 <activity android:name=".app.SomeJSWrappedActivity" android:theme="@style/JSWrappedTheme" android:icon="@drawable/icon" android:label="<Название плитки>">
     <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -92,18 +95,18 @@ folder: smart_terminal_SDK
     <meta-data android:name="ru.evotor.launcher.BACKGROUND_COLOR" android:value="#133788" />
     <meta-data android:name="ru.evotor.launcher.GRANTS" android:resource="@array/<Название>_grants" />
 </activity>
-{% endhighlight %}
+```
 
-Список прав в файле 'res/values/<Название>_grants.xml':
+Список прав в файле `res/values/<Название>_grants.xml`:
 
-{% highlight xml %}
+```xml
 <resources>
 <string-array name="<Название>_grants">
     <item>CASH_OPERATIONS_SELL</item>
     <item>CASH_OPERATIONS_PAYBACK </item>
 </string-array>
 </resources>
-{% endhighlight %}
+```
 
 
 

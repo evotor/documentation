@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит информацию об интеграции с облачной товароучётной системой."
 sidebar: evotordoc_sidebar
 permalink: doc_cloud_systems_integration.html
+tags: [Облако Эвотор, Товары]
 folder: evotordoc/evotor_tutorials
 ---
 

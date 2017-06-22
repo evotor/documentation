@@ -4,6 +4,7 @@ keywords: sample
 summary: "Тут релиз ноты"
 sidebar: evotordoc_sidebar
 permalink: doc_release_notes.html
+tags: []
 folder: evotordoc/evotor_integration
 ---
 

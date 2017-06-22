@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит описание Receipt API смарт-терминала."
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_receipt_api.html
+tags: [Java, Терминал, Чеки]
 folder: smart_terminal_SDK
 published: true
 ---
@@ -20,31 +21,30 @@ Receipt API смарт-терминала включает в себя:
 
 * Таблицу позиций, которые можно добавить в чек `PositionTable`:
 
-    {% highlight java %}
-    object PositionTable {
-        val URI = Uri.withAppendedPath(ReceiptApi.BASE_URI, "Position")
+  ```java
+  object PositionTable {
+      val URI = Uri.withAppendedPath(ReceiptApi.BASE_URI, "Position")
 
-        const val ROW_PRODUCT_UUID = "PRODUCT_UUID"
-        const val ROW_PRODUCT_CODE = "PRODUCT_CODE"
-        const val ROW_PRODUCT_TYPE = "PRODUCT_TYPE"
-        const val ROW_NAME = "NAME"
-        const val ROW_MEASURE_NAME = "MEASURE_NAME"
-        const val ROW_MEASURE_PRECISION = "MEASURE_PRECISION"
-        const val ROW_PRICE = "PRICE"
-        const val ROW_BARCODE = "BARCODE"
-        const val ROW_QUANTITY = "QUANTITY"
-        const val ROW_ALCOHOL_BY_VOLUME = "ALCOHOL_BY_VOLUME"
-        const val ROW_ALCOHOL_PRODUCT_KIND_CODE = "ALCOHOL_PRODUCT_KIND_CODE"
-        const val ROW_TARE_VOLUME = "TARE_VOLUME"
-    }
-    {% endhighlight %}
+      const val ROW_PRODUCT_UUID = "PRODUCT_UUID"
+      const val ROW_PRODUCT_CODE = "PRODUCT_CODE"
+      const val ROW_PRODUCT_TYPE = "PRODUCT_TYPE"
+      const val ROW_NAME = "NAME"
+      const val ROW_MEASURE_NAME = "MEASURE_NAME"
+      const val ROW_MEASURE_PRECISION = "MEASURE_PRECISION"
+      const val ROW_PRICE = "PRICE"
+      const val ROW_BARCODE = "BARCODE"
+      const val ROW_QUANTITY = "QUANTITY"
+      const val ROW_ALCOHOL_BY_VOLUME = "ALCOHOL_BY_VOLUME"
+      const val ROW_ALCOHOL_PRODUCT_KIND_CODE = "ALCOHOL_PRODUCT_KIND_CODE"
+      const val ROW_TARE_VOLUME = "TARE_VOLUME"
+  }
+  ```
 
 ### Примеры запросов к Receipt API
 
 Получить по штрихкоду позицию для добавления в чек:
 
-
-{% highlight java %}
+```java
 fun getPositionsByBarcode(context: Context, barcode: String): List<Position> {
         val positionsList = ArrayList<Position>()
 
@@ -81,4 +81,4 @@ fun getPositionsByBarcode(context: Context, barcode: String): List<Position> {
 
         return positionsList
     }
-{% endhighlight %}
+```
