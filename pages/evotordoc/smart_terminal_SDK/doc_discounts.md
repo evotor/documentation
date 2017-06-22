@@ -18,26 +18,26 @@ folder: smart_terminal_SDK
 
 `ReceiptDiscountEvent`сообщает о возможности начислить скидку.
 
-1. Создайте службу, которая наследует класс `IntegrationService`, например `MyDiscountService`. 
+1. Создайте службу, которая наследует класс `IntegrationService`, например `MyDiscountService`.
 2. Зарегистрируйте процессор `ReceiptDiscountEventProcessor` в методе `onCreate` службы `MyDiscountService`.
 
-    {% highlight java %}
-    public class MyDiscountService extends IntegrationService {
+   ```java
+   public class MyDiscountService extends IntegrationService {
 
-        @Override
-        public void onCreate() {
-            super.onCreate();
+       @Override
+       public void onCreate() {
+           super.onCreate();
 
-            registerProcessor(
-                    new ReceiptDiscountEventProcessor() {
-                        @Override
-                        public void call(ReceiptDiscountEvent positionsDiscountEvent, Callback callback) {
+           registerProcessor(
+                   new ReceiptDiscountEventProcessor() {
+                       @Override
+                       public void call(ReceiptDiscountEvent positionsDiscountEvent, Callback callback) {
 
-                        }
-                    });
-        }
-    }
-    {% endhighlight %}
+                       }
+                   });
+       }
+   }
+   ```
 
 где:
 `call` - метод получения событий и объектов.
@@ -47,24 +47,24 @@ folder: smart_terminal_SDK
 
 3. Объявите службу в манифесте приложения:
 
-    {% highlight xml %}
-    <service
-            android:name="MyDiscountService"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="evo.v2.receipt.sell.receiptDiscount" />
-            </intent-filter>
-    </service>
-    {% endhighlight %}
+   ```xml
+   <service
+           android:name="MyDiscountService"
+           android:enabled="true"
+           android:exported="true">
+           <intent-filter>
+               <action android:name="evo.v2.receipt.sell.receiptDiscount" />
+           </intent-filter>
+   </service>
+   ```
 
 
 
-#### Получение результата 
+#### Получение результата
 
 Запрашиваем результат `ReceiptDiscountEventResult` и //BigDecimal уточнить
 
-{% highlight java %}
+```java
 try {callback.onResult(
         new ReceiptDiscountEventResult(
         ReceiptDiscountEventResult.Result.OK,
@@ -75,4 +75,4 @@ try {callback.onResult(
                 exc.printStackTrace();
             }
 
-{% endhighlight %}
+```
