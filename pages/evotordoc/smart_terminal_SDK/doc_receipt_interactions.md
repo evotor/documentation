@@ -202,42 +202,62 @@ public class BeforePositionsEditedEvent {
 
 #### Добавление, изменение и удаление позиций
 
-Чтобы добавить позицию, используйте следующий метод:
+Чтобы добавить позицию:
 
-```java
-data class PositionAdd(val position: Position) : IPositionChange {
+* В Java-приложении используйте метод:
+  ```java
+  data class PositionAdd(val position: Position) : IPositionChange {
 
-    override fun toBundle(): Bundle {
-        return Bundle().apply {
-            putBundle(
-                    PositionMapper.KEY_POSITION,
-                    PositionMapper.toBundle(position)
-            )
-        }
-    }
+      override fun toBundle(): Bundle {
+          return Bundle().apply {
+              putBundle(
+                      PositionMapper.KEY_POSITION,
+                      PositionMapper.toBundle(position)
+              )
+          }
+      }
 
-    override fun getPositionUuid(): String? {
-        return position.uuid
-    }
+      override fun getPositionUuid(): String? {
+          return position.uuid
+      }
 
-    override fun getType(): IChange.Type {
-        return IChange.Type.POSITION_ADD
-    }
+      override fun getType(): IChange.Type {
+          return IChange.Type.POSITION_ADD
+      }
 
-    companion object {
-        @JvmStatic
-        fun from(bundle: Bundle?): PositionAdd? {
-            bundle ?: return null
+      companion object {
+          @JvmStatic
+          fun from(bundle: Bundle?): PositionAdd? {
+              bundle ?: return null
 
-            return PositionAdd(
-                    PositionMapper.from(
-                            bundle.getBundle(PositionMapper.KEY_POSITION)
-                    ) ?: return null
-            )
-        }
-    }
-}
-```
+              return PositionAdd(
+                      PositionMapper.from(
+                              bundle.getBundle(PositionMapper.KEY_POSITION)
+                      ) ?: return null
+              )
+          }
+      }
+  }
+  ```
+
+* В JS-приложении используйте метод:
+
+  ```javascript
+  function processBeforePositionsEdited(actionData) {
+  var position = {
+      "uuid" : "8e0ffg-lk3e-e93bnk-v0p41",
+      "productUuid" : "trb44-i32lev-9833jf",
+      "productCode" : "1024",
+      "productType" : "NORMAL",
+      "name" : "myLittlePosition",
+      "measureName" : "kg",
+      "measurePrecision" : 0,
+      "price" : "100",
+      "quantity" : "1"
+  }
+
+      receipt.addPosition(JSON.stringify(position));
+  ```
 
 Чтобы изменить позицию, используйте следующий метод:
 
@@ -319,22 +339,16 @@ data class PositionRemove(
 
 Пример позиции чека, соответствующей товару в терминале (у позиции есть `uuid` товара):
 
-function processBeforePositionsEdited(actionData) {
-
 ```java
-var position = {
-    "uuid" : "8e0ffg-lk3e-e93bnk-v0p41",
-    "productUuid" : "trb44-i32lev-9833jf",
-    "productCode" : "1024",
-    "productType" : "NORMAL",
-    "name" : "myLittlePosition",
-    "measureName" : "kg",
-    "measurePrecision" : 0,
-    "price" : "100",
-    "quantity" : "1"
-}
-
-    receipt.addPosition(JSON.stringify(position));
+val positionFromProduct = Position.Builder.newInstance(
+                UUID.randomUUID().toString(),
+                product.uuid,
+                product.name,
+                product.measureName,
+                product.measurePrecision,
+                product.price,
+                BigDecimal.ONE
+        ).build()
 ```
 
 Пример свободно заданной позиции (`uuid` товара – `null`):
