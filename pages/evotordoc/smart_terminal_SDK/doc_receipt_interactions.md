@@ -351,6 +351,33 @@ val positionFromProduct = Position.Builder.newInstance(
         ).build()
 ```
 
+Пример позиции чека с подпозицией (у позиции и подпозиции есть `uuid` товара):
+
+```java
+val positionFromProduct = Position.Builder.newInstance(
+                UUID.randomUUID().toString(),
+                product.uuid,
+                product.name,
+                product.measureName,
+                product.measurePrecision,
+                product.price,
+                BigDecimal.ONE
+        ).build()positionFromProduct.subPosition.add(
+                Position.Builder.newInstance(
+                                UUID.randomUUID().toString(),
+                                product.uuid,
+                                product.name,
+                                product.measureName,
+                                product.measurePrecision,
+                                product.price,
+                                BigDecimal.ONE
+                        ).build()
+                )
+```
+Вы можете использовать подпозиции `subPosition` для добавления опций к товару. 
+Например, к товару "Кофе" можно добавить подпозицию "Молоко". Подпозиция удаляется вместе с основной позицией товара.
+
+
 Пример свободно заданной позиции (`uuid` товара – `null`):
 
 ```java
