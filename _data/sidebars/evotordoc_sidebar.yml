@@ -84,7 +84,7 @@ entries:
       url: /doc_logging.html
       output: web
 
-    - title: Манифест приложения
+    - title: Манифест JS-приложения
       url: /doc_app_manifest.html
       output: web
 
@@ -108,21 +108,27 @@ entries:
       url: /doc_smart_terminal_inventory_api.html
       output: web
 
-    - title: Receipt API
-      url: /doc_smart_terminal_receipt_api.html
-      output: web
+      subfolders:
+        - title: Receipt API
+          output: web
+          subfolderitems:
+            - title: О Receipt API
+              url: /doc_smart_terminal_receipt_api.html
+              output: web
+
+            - title: Создание чека в приложении
+              url: /doc_receipt_creation.html
+              output: web
+
+            - title: Работа с позициями чека
+              url: /doc_receipt_interactions.html
+              output: web
 
     - title: Storage API
       url: /doc_storage_api.html
       output: web
 
-    - title: Создание чека в приложении
-      url: /doc_receipt_creation.html
-      output: web
 
-    - title: Работа с чеками
-      url: /doc_receipt_interactions.html
-      output: web
 
     - title: Скидки
       url: /doc_discounts.html
@@ -180,6 +186,10 @@ entries:
     output: web, pdf
 
     folderitems:
+    - title: Разработка Java-приложения
+      url: /doc_java_app_tutorial.html
+      output: web, pdf
+
     - title: Облачная товароучётная система
       url: /doc_cloud_systems_integration.html
       output: web, pdf
@@ -188,9 +198,9 @@ entries:
       url: /doc_iframe_within_application_page.html
       output: web, pdf
 
-    - title: Приложение для смарт-терминала
-      url: /doc_smart_terminal_application.html
-      output: web, pdf
+#    - title: Приложение для смарт-терминала
+#      url: /doc_smart_terminal_application.html
+#      output: web, pdf
 
     - title: Интеграция с 1С
       url: /doc_1C_integration.html
@@ -200,9 +210,7 @@ entries:
       url: /doc_JS_template_integration.html
       output: web, pdf
 
-    - title: Разработка Java-приложения
-      url: /doc_java_app_tutorial.html
-      output: web, pdf
+
 
 ###############################################################
 #                    Биллинг                                  #

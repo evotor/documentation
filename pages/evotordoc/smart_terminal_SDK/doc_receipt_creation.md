@@ -21,11 +21,12 @@ folder: smart_terminal_SDK
 
    Где:
 
-   `List<PositionAdd> positionAddList = new ArrayList<>()`– список позиций. Как добавить позицию в чек смотрите в **Списке возможных изменений**, в разделе [**Работа с чеком**](./doc_receipt_interactions.html).
+   `List<PositionAdd> positionAddList = new ArrayList<>()`– список позиций. Как добавить позицию в чек смотрите в разделе [Добавление, изменение и удаление позиций](doc_receipt_interactions.html#PositionAltering).
 
    `JSONObject extra = new JSONObject();`– добавляет дополнительные данные к чеку. Данные доступны только вашему приложению. Не создавайте этот объект, если приложение не добавляет дополнительные поля к чеку.
 
 2. Создайте команду открытия чека и вызовите метод `.process`
+
    ```java
    new OpenSellReceiptCommand(positionAddList, new SetExtra(object)).process(
                            activity,
@@ -49,3 +50,5 @@ folder: smart_terminal_SDK
    Где:
 
    `new SetExtra(extra)`– задаёт дополнительные данные чека. Если дополнительных данных нет указывайте `null`.
+
+   {% include note.html content="Приложение записывает дополнительные данные в чек только под своим идентификатором." %}
