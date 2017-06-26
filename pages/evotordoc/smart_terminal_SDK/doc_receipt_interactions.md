@@ -1,7 +1,7 @@
 ---
-title: Работа с чеком
+title: Работа с позициями чека
 keywords: sample
-summary: Раздел содержит информацию о том, какие события может использовать приложение, чтобы работать с чеком, например, добавлять или удалять позиции из чека.
+summary: Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека, а также .
 sidebar: evotordoc_sidebar
 permalink: doc_receipt_interactions.html
 tags: [Терминал, Java, Чеки]
@@ -200,7 +200,7 @@ public class BeforePositionsEditedEvent {
 }
 ```
 
-#### Добавление, изменение и удаление позиций
+#### Добавление, изменение и удаление позиций {#PositionAltering}
 
 Чтобы добавить позицию:
 
@@ -348,8 +348,22 @@ val positionFromProduct = Position.Builder.newInstance(
                 product.measurePrecision,
                 product.price,
                 BigDecimal.ONE
-        ).build()
+        ).setExtraKeys(private String identity;
+        private String appId;
+        private String description;).build()
 ```
+
+Где:
+
+* `UUID` – идентификатор позиции в формате uuid4.
+* `product.uuid` – идентификатор товара в формате uuid4, полученный из локальной базы товаров смарт-терминала.
+* `product.name` – наименование товара из локальной базы товаров смарт-терминала.
+* `product.measureName` – единицы измерения товара, полученные из локальной базы товаров смарт-терминала..
+* `product.measurePrecision` – точность измерения единиц товара, выраженная в количестве знаков после запятой.
+* `product.price` – цена продукта, полученная из локальной базы товаров смарт-терминала.
+* `BigDecimal.ONE` – количество добавленного товара.
+* `setExtraKeys()` – метод, который позволяет добавлять к позиции в чеке дополнительные ключи. Каждый ключ имеет описание (`description`), идентификатор (`identity`) и хранит данные о приложении, создавшем ключ (`appId`).
+  {% include note.html content="Приложение записывает дополнительные ключи в чек только под своим идентификатором." %}
 
 Пример позиции чека с подпозицией (у позиции и подпозиции есть `uuid` товара):
 
@@ -362,7 +376,9 @@ val positionFromProduct = Position.Builder.newInstance(
                 product.measurePrecision,
                 product.price,
                 BigDecimal.ONE
-        ).build()positionFromProduct.subPosition.add(
+        ).build()
+
+        positionFromProduct.subPosition.add(
                 Position.Builder.newInstance(
                                 UUID.randomUUID().toString(),
                                 product.uuid,
@@ -374,7 +390,8 @@ val positionFromProduct = Position.Builder.newInstance(
                         ).build()
                 )
 ```
-Вы можете использовать подпозиции `subPosition` для добавления опций к товару. 
+
+Вы можете использовать подпозиции `subPosition` для добавления опций к товару.
 Например, к товару "Кофе" можно добавить подпозицию "Молоко". Подпозиция удаляется вместе с основной позицией товара.
 
 

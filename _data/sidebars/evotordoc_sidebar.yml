@@ -96,7 +96,7 @@ entries:
       url: /doc_smart_terminal_app_tile.html
       output: web
 
-    - title: Проксирование HTTP-запросов
+    - title: Обмен данными между приложением и сторонним сервисом
       url: /doc_cloud_proxy.html
       output: web
 

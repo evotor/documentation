@@ -14,5 +14,8 @@ entries:
     - title: Bookmark links
       url: /mydoc_hyperlinks.html#bookmarklinks
 
-    - title: Some link bookmark
+    - title: Position altering link
       url: /doc_receipt_interactions.html#PositionAltering
+
+    - title: User's token link
+      url: /doc_authorization.html#usersToken
