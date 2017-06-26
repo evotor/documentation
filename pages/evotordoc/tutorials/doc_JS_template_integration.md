@@ -55,3 +55,27 @@ published: true
 4. Соберите apk.
 
    Необходимые данные загружаются автоматически из нашего репозитория.
+   
+  #### Пример добавления товара в чек
+   
+   ````
+   function processBeforePositionsEdited(actionData) {
+    var position = {
+        "uuid" : "8e0ffg-lk3e-e93bnk-v0p41",
+        "productUuid" : "trb44-i32lev-9833jf",
+        "productCode" : "1024",
+        "productType" : "NORMAL",
+        "name" : "myLittlePosition",
+        "measureName" : "kg",
+        "measurePrecision" : 0,
+        "price" : "100",
+        "quantity" : "1"
+    }
+
+    receipt.addPosition(JSON.stringify(position));
+}
+````
+где:
+`processBeforePositionsEdited` - плагин для редактирования позиции
+`receipt.addPosition` - добавление позиции в чек
+   
