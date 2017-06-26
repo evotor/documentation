@@ -1,5 +1,5 @@
 ---
-title: Манифест js-приложения
+title: Манифест JS-приложения
 keywords: sample
 summary:
 sidebar: evotordoc_sidebar

@@ -4,7 +4,7 @@ keywords: sample
 summary: "Раздел содержит информацию о запросах Эвотора к стороннему сервису."
 sidebar: evotordoc_sidebar
 permalink: doc_outgoing_calls_protocol.html
-tags: [Облако Эвотор, Товары]
+tags: [Облако, Товары]
 folder: evotordoc/evotor_integration
 ---
 

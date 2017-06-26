@@ -40,10 +40,13 @@ folder: smart_terminal_SDK
    }
    ```
 
-где:
-`call` - метод получения событий и объектов.
-`positionsDiscountEvent` -  событие N. //уточнить
-`callback`- объект возврата результата.
+   где:
+
+   `call` - метод получения событий и объектов.
+
+   `positionsDiscountEvent` -  событие N.
+
+   `callback`- объект возврата результата.
 
 
 3. Объявите службу в манифесте приложения:
@@ -63,7 +66,7 @@ folder: smart_terminal_SDK
 
 #### Получение результата
 
-Запрашиваем результат `ReceiptDiscountEventResult` и //BigDecimal уточнить
+Запрашиваем результат `ReceiptDiscountEventResult`.
 
 ```java
 try {callback.onResult(

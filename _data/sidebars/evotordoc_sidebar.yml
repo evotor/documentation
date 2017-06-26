@@ -80,7 +80,7 @@ entries:
       url: /doc_developer_mode.html
       output: web
 
-    - title: Отладка приложения
+    - title: Логирование
       url: /doc_logging.html
       output: web
 
@@ -190,6 +190,10 @@ entries:
       url: /doc_java_app_tutorial.html
       output: web, pdf
 
+    - title: Создание JS-приложения с помощью шаблона
+      url: /doc_JS_template_integration.html
+      output: web, pdf
+
     - title: Облачная товароучётная система
       url: /doc_cloud_systems_integration.html
       output: web, pdf
@@ -205,11 +209,6 @@ entries:
     - title: Интеграция с 1С
       url: /doc_1C_integration.html
       output: web, pdf
-
-    - title: Создание JS-приложения с помощью шаблона
-      url: /doc_JS_template_integration.html
-      output: web, pdf
-
 
 
 ###############################################################

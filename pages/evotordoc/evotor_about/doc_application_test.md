@@ -4,6 +4,7 @@ keywords: sample
 summary: "Раздел содержит инструкцию о том, как приступить к тестированию своего приложения."
 sidebar: evotordoc_sidebar
 permalink: doc_application_test.html
+tags: [Облако, Java, JavaScript]
 folder: evotordoc/evotor_about
 ---
 
@@ -11,6 +12,7 @@ folder: evotordoc/evotor_about
 
 
 Чтобы протестировать своё приложение выполните следующие действия:
+
 1. Войдите в [личный кабинет разработчика](https://dev.evotor.ru).
 2. Выберите приложение, которое требуется протестировать.
 ![картинка1](images\Developer LK.png)

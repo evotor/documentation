@@ -97,10 +97,11 @@ INTENT_FILTER_CASH_DRAWER
 
 `android:icon` – картинка устройства, которая будет отображаться пользователю при инициализации устройства;
 
-`android:label` – имя драйвера, которое будет отображаться пользователю при инициализации устройства
+`android:label` – имя драйвера, которое будет отображаться пользователю при инициализации устройства.
+
 Пример отображения иконки и имени драйвера
 
-[picture_1]
+![picture_1](images/icon_xmpl.png)
 
 Можно задать `activity` настроек:
 
@@ -138,6 +139,7 @@ defaultConfig {
 для `INTENT_FILTER_CASHDRAWER` – класс наследник `ru.evotor.devices.drivers.ICashDrawerDriverService.Stub`;
 
 Пример:
+
 ```java
 public class MyDeviceService extends Service {
 

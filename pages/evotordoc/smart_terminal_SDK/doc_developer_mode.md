@@ -4,7 +4,7 @@ keywords: sample
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_developer_mode.html
-tags: [Терминал, Облако Эвотор]
+tags: [Терминал, Облако]
 folder: smart_terminal_SDK
 published: true
 ---

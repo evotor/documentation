@@ -205,6 +205,7 @@ public class BeforePositionsEditedEvent {
 Чтобы добавить позицию:
 
 * В Java-приложении используйте метод:
+
   ```java
   data class PositionAdd(val position: Position) : IPositionChange {
 

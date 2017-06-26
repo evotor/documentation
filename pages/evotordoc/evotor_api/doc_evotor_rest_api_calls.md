@@ -4,7 +4,7 @@ keywords: sample
 summary: "Раздел содержит информацию о запросах, которые вы можете отправлять в REST API Эвотор"
 sidebar: evotordoc_sidebar
 permalink: doc_evotor_rest_api_calls.html
-tags: [Облако Эвотор, Товары]
+tags: [Облако, Товары]
 folder: evotordoc/evotor_integration
 ---
 

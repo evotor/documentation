@@ -4,7 +4,7 @@ keywords: sample
 summary: "Раздел содержит информацию об интеграции с 1С"
 sidebar: evotordoc_sidebar
 permalink: doc_1C_integration.html
-tags: [Облако Эвотор, Чеки, Товары]
+tags: [Облако, Чеки, Товары]
 folder: evotordoc/evotor_tutorials
 ---
 

@@ -4,7 +4,7 @@ keywords: sample
 summary: "Раздел содержит информацию о возвращаемых ошибках"
 sidebar: evotordoc_sidebar
 permalink: doc_errors_returned.html
-tags: [Облако Эвотор]
+tags: [Облако]
 folder: evotordoc/evotor_integration
 ---
 
@@ -42,7 +42,13 @@ folder: evotordoc/evotor_integration
 
 <td>2001</td>
 
-<td><pre>{ "errors": [ { "code": 2001 } ] }</pre></td>
+<td><pre>
+{ "errors":
+  [
+    { "code": 2001 }
+  ]
+}
+</pre></td>
 
 </tr>
 
@@ -52,7 +58,22 @@ folder: evotordoc/evotor_integration
 
 <td>2002</td>
 
-<td><pre>{ "errors": [ { "code": 2002, "reason": "missing", "subject": "deviceUuid" }, { "code": 2002, "reason": "unexpected", "subject": "deviceUuid" } ] }</pre></td>
+<td><pre>
+{ "errors":
+  [
+    {
+      "code": 2002,
+      "reason": "missing",
+      "subject": "deviceUuid"
+    },
+    {
+      "code": 2002,
+      "reason": "unexpected",
+      "subject": "deviceUuid"
+    }
+  ]
+}
+</pre></td>
 
 </tr>
 
@@ -62,7 +83,18 @@ folder: evotordoc/evotor_integration
 
 <td>2003</td>
 
-<td><pre>{ "errors": [ { "code": 2003, "reason": "incorrect", "subject": "deviceUuid", "value": "null" } ] }</pre></td>
+<td><pre>
+{ "errors":
+  [
+    {
+      "code": 2003,
+      "reason": "incorrect",
+      "subject": "deviceUuid",
+      "value": "null"
+    }
+  ]
+}
+</pre></td>
 
 </tr>
 
@@ -78,7 +110,15 @@ folder: evotordoc/evotor_integration
 
 <td>1001</td>
 
-<td><pre>{ "errors": [ { "code": 1001 } ] }</pre></td>
+<td><pre>
+{ "errors":
+  [
+    {
+      "code": 1001
+    }
+  ]
+}
+</pre></td>
 
 </tr>
 
@@ -88,7 +128,15 @@ folder: evotordoc/evotor_integration
 
 <td>1002</td>
 
-<td><pre>{ "errors": [ { "code": 1002 } ] }</pre></td>
+<td><pre>
+{ "errors":
+  [
+    {
+      "code": 1002
+    }
+  ]
+}
+</pre></td>
 
 </tr>
 
@@ -98,7 +146,15 @@ folder: evotordoc/evotor_integration
 
 <td>1003</td>
 
-<td><pre>{ "errors": [ { "code": 1003 } ] }</pre></td>
+<td><pre>
+{ "errors":
+  [
+    {
+      "code": 1003
+    }
+  ]
+}
+</pre></td>
 
 </tr>
 
@@ -108,7 +164,15 @@ folder: evotordoc/evotor_integration
 
 <td>1006</td>
 
-<td><pre>{ "errors": [ { "code": 1006 } ] }</pre></td>
+<td><pre>
+{ "errors":
+  [
+    {
+      "code": 1006
+    }
+  ]
+}
+</pre></td>
 
 </tr>
 
@@ -120,7 +184,18 @@ folder: evotordoc/evotor_integration
 
 <td>1004</td>
 
-<td><pre>{ "errors": [{ "code": 1004 "reason": "payment required" "subject": "userUuid" "value": "01-000000000015463" } ] }</pre></td>
+<td><pre>
+{ "errors":
+  [
+    {
+      "code": 1004,
+      "reason": "payment required",
+      "subject": "userUuid",
+      "value": "01-000000000015463"
+    }
+  ]
+}
+</pre></td>
 
 </tr>
 
@@ -146,7 +221,17 @@ folder: evotordoc/evotor_integration
 
 <td>1005</td>
 
-<td><pre>{ "errors": [{ "code": 1005 "reason": "not allowed" "subject": "deviceUuid" "value": "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f" } ] }</pre></td>
+<td><pre>
+{ "errors":
+  [
+    {
+      "code": 1005,
+      "reason": "not allowed",
+      "subject": "deviceUuid",
+      "value": "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f"
+    }
+  ]
+}</pre></td>
 
 </tr>
 
@@ -156,7 +241,18 @@ folder: evotordoc/evotor_integration
 
 <td>1007</td>
 
-<td><pre>{ "errors": [{ "code": 1007 "reason": "license overhead" "subject": "deviceUuid" "value": "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f" } ] }</pre></td>
+<td><pre>
+{ "errors":
+  [
+    {
+      "code": 1007,
+      "reason": "license overhead",
+      "subject": "deviceUuid",
+      "value": "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f"
+    }
+  ]
+}
+</pre></td>
 
 </tr>
 
@@ -172,7 +268,15 @@ folder: evotordoc/evotor_integration
 
 <td>2004</td>
 
-<td><pre>{ "errors": [ { "code": 2004 } ] }</pre></td>
+<td><pre>
+{ "errors":
+  [
+    {
+      "code": 2004
+    }
+  ]
+}
+</pre></td>
 
 </tr>
 
@@ -182,7 +286,15 @@ folder: evotordoc/evotor_integration
 
 <td style="text-align: left;">2005</td>
 
-<td style="text-align: left;"><pre>{ "errors": [ { "code": 2005 } ] }</pre></td>
+<td style="text-align: left;"><pre>
+{ "errors":
+  [
+    {
+      "code": 2005
+    }
+  ]
+}
+</pre></td>
 
 </tr>
 

@@ -4,7 +4,7 @@ keywords: sample
 summary: "Раздел содержит пошаговое описание обмена сообщениями между приложением и сторонним сервисом"
 sidebar: evotordoc_sidebar
 permalink: doc_cloud_proxy.html
-tags: [Облако Эвотор, Терминал, Java, JavaScript]
+tags: [Облако, Терминал, Java, JavaScript]
 folder: evotordoc/smart_terminal_SDK
 published: true
 ---
@@ -42,6 +42,8 @@ published: true
 Для отправки HTTP-сообщения из Java-приложения вы можете, например, использовать [библиотеку OkHttp](http://square.github.io/okhttp/) или способ, описанный на [developer.android.com](https://developer.android.com/training/basics/network-ops/connecting.html).
 
 #### JS-приложение
+
+Вы можете реализовать отправку HTTP-сообщений из JS-приложения любым удобным вам способом.
 
 В `client.yaml`, в списке `capabilities` требуется указать элемент `internet`:
 

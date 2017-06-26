@@ -11,6 +11,7 @@ folder: evotordoc/smart_terminal_SDK
 Чтобы ваше приложение получало данные от сканера штрихкодов, подключённого к смарт-терминалу, реализуйте интерфейс `BarcodeBroadcastReceiver`.
 
 Для этого:
+
 1. В манифесте приложения укажите следующий элемент:
     `<uses-permission android:name="ru.evotor.devices.SCANNER_RECEIVER" />`
 
