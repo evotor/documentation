@@ -7,6 +7,59 @@ permalink: doc_introduction.html
 folder: evotordoc/evotor_about
 ---
 
+
+<div class="row">
+         <div class="col-lg-12">
+             <h2 class="page-header">База знаний</h2>
+         </div>
+         <div class="col-md-3 col-sm-6">
+             <div class="panel panel-default text-center">
+                 <div class="panel-heading">
+                     <span class="fa-stack fa-5x">
+                           <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                           <i class="fa fa-cloud fa-stack-1x fa-inverse"></i>
+                     </span>
+                 </div>
+                 <div class="panel-body">
+                     <h3>Интеграция server-to-server</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                     <a href="tag_Облако.html" class="btn btn-primary">Подробнее</a>
+                 </div>
+             </div>
+         </div>
+         <div class="col-md-3 col-sm-6">
+             <div class="panel panel-default text-center">
+                 <div class="panel-heading">
+                     <span class="fa-stack fa-5x">
+                           <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                           <i class="fa fa-coffee fa-stack-1x fa-inverse"></i>
+                     </span>
+                 </div>
+                 <div class="panel-body">
+                     <h4>Java-приложение</h4>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                     <a href="tag_Java.html" class="btn btn-primary">Подробнее</a>
+                 </div>
+             </div>
+         </div>
+         <div class="col-md-3 col-sm-6">
+             <div class="panel panel-default text-center">
+                 <div class="panel-heading">
+                     <span class="fa-stack fa-5x">
+                           <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                           <i class="fa fa-gears fa-stack-1x fa-inverse"></i>
+                     </span>
+                 </div>
+                 <div class="panel-body">
+                     <h4>JavaScript-приложение</h4>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                     <a href="tag_JavaScript.html" class="btn btn-primary">Подробнее</a>
+                 </div>
+             </div>
+         </div>
+</div>
+
+
 [Приобретая смарт-терминал](https://evotor.ru/buy?order) пользователи платформы Эвотор получают доступ к базовой функциональности:
 
 *   Редактирование списка магазинов, сотрудников и смарт-терминалов.

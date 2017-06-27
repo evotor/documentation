@@ -17,5 +17,5 @@ entries:
     - title: Position altering link
       url: /doc_receipt_interactions.html#PositionAltering
 
-    - title: User's token link
-      url: /doc_authorization.html#usersToken
+    - title: Server token link
+      url: /doc_authorization.html#serverToken

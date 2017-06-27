@@ -51,73 +51,23 @@ folder: smart_terminal_SDK
 В ответ приложение возвращает результат со списком возможных изменений:
 
 ```java
-public class BeforePositionsEditedEventResult {
-
-    private static final String KEY_RESULT = "result";
-    private static final String KEY_CHANGES = "changes";
-
-    public static BeforePositionsEditedEventResult create(Bundle bundle) {
-        String resultName = bundle.getString(KEY_RESULT);
-        Parcelable[] changesParcelable = bundle.getParcelableArray(KEY_CHANGES);
-        List<IChange> changes = ChangesMapper.INSTANCE.create(changesParcelable);
-        List<IPositionChange> positionChanges = new ArrayList<>();
-        for (IChange change : changes) {
-            if (change instanceof IPositionChange) {
-                positionChanges.add((IPositionChange) change);
-            }
-        }
-        return new BeforePositionsEditedEventResult(
-                Utils.safeValueOf(Result.class, resultName, Result.UNKNOWN),
-                positionChanges
-        );
-    }
-
-    private final Result result;
-    private final List<IPositionChange> changes;
-
-    public BeforePositionsEditedEventResult(Result result, List<IPositionChange> changes) {
-        this.result = result;
-        this.changes = changes;
-    }
-
-    public Bundle toBundle() {
-        Bundle bundle = new Bundle();
-        bundle.putString(KEY_RESULT, result.name());
-        Parcelable[] changesParcelable = new Parcelable[changes.size()];
-        for (int i = 0; i < changesParcelable.length; i++) {
-            IChange change = changes.get(i);
-            changesParcelable[i] = ChangesMapper.INSTANCE.toBundle(change);
-        }
-        bundle.putParcelableArray(KEY_CHANGES, changesParcelable);
-        return bundle;
-    }
-
-    public Result getResult() {
-        return result;
-    }
-
-    public List<IPositionChange> getChanges() {
-        return changes;
-    }
-
-    public enum Result {
-        OK,
-        UNKNOWN;
-    }
-}
+public BeforePositionsEditedEventResult(
+        @Nullable List<IPositionChange> changes,
+        @Nullable SetExtra extra
+)
 ```
 
 Чтобы вернуть результат, используйте метод:
 
 ```java
-callback.onResult(beforePositionsEditedEventResult.toBundle())
+callback.onResult(beforePositionsEditedEventResult)
 ```
 
 
 Если приложению для возврата результата необходимо взаимодействие с пользователем, запустите операцию (`Activity`), которая наследует класс `BeforePositionsEditedEventActivity`:
 
 ```java
-callback.startActivity(new Intent(MyIntegrationService.this, MainActivity.class));
+callback.startActivity(new Intent(context, MainActivity.class));
 ```
 
 Ваша операция должна вызвать метод `setIntegrationResult`.
@@ -125,8 +75,10 @@ callback.startActivity(new Intent(MyIntegrationService.this, MainActivity.class)
 Например:
 
 ```java
-setIntegrationResult(new BeforePositionsEditedEventResult(BeforePositionsEditedEventResult.Result.OK, changes));
+setIntegrationResult(new BeforePositionsEditedEventResult(changes, null));
 ```
+
+Где вместо null вы можете передать `new SetExtra(extra)`, команду для [создания дополнительных полей в чеке](./doc_receipt_extras.html).
 
 Класс `BeforePositionsEditedEventActivity` задан как:
 
@@ -363,7 +315,7 @@ val positionFromProduct = Position.Builder.newInstance(
 * `product.measurePrecision` – точность измерения единиц товара, выраженная в количестве знаков после запятой.
 * `product.price` – цена продукта, полученная из локальной базы товаров смарт-терминала.
 * `BigDecimal.ONE` – количество добавленного товара.
-* `setExtraKeys()` – метод, который позволяет добавлять к позиции в чеке дополнительные ключи. Каждый ключ имеет описание (`description`), идентификатор (`identity`) и хранит данные о приложении, создавшем ключ (`appId`).
+* `setExtraKeys()` – метод, который позволяет добавлять к позиции в чеке дополнительные ключи (идентификаторы). Каждый ключ имеет описание (`description`), которое отображается в интерфейсе и печатается на чеке (можно передавать null), идентификатор (`identity`) и хранит данные о приложении, создавшем ключ (`appId`).
   {% include note.html content="Приложение записывает дополнительные ключи в чек только под своим идентификатором." %}
 
 Пример позиции чека с подпозицией (у позиции и подпозиции есть `uuid` товара):
@@ -522,6 +474,31 @@ public class PositionRemovedEvent extends PositionEvent {
 
     public ProductsUpdatedEvent(String receiptUuid, Position position) {
         super(receiptUuid, position);
+    }
+}
+```
+
+При [очистке чека](./doc_receipt_creation.html) приходит сообщение:
+
+```
+public class ReceiptClearedEvent extends ReceiptEvent {
+    public static final String BROADCAST_ACTION_SELL_RECEIPT_CLEARED = "evotor.intent.action.receipt.sell.CLEARED";
+    public static final String BROADCAST_ACTION_PAYBACK_RECEIPT_CLEARED = "evotor.intent.action.receipt.payback.CLEARED";
+
+    public ReceiptClearedEvent(@NonNull String receiptUuid) {
+        super(receiptUuid);
+    }
+
+    @Nullable
+    public static ReceiptClearedEvent create(@Nullable Bundle bundle) {
+        if (bundle == null) {
+            return null;
+        }
+        String receiptUuid = getReceiptUuid(bundle);
+        if (receiptUuid == null) {
+            return null;
+        }
+        return new ReceiptClearedEvent(receiptUuid);
     }
 }
 ```

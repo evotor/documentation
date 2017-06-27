@@ -1,5 +1,5 @@
 ---
-title: Создание чека в приложении
+title: Открытие чека в приложении
 keywords: sample
 summary: Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты.
 sidebar: evotordoc_sidebar
@@ -8,7 +8,7 @@ tags: [Терминал, Java, Чеки]
 folder: smart_terminal_SDK
 ---
 
-Чтобы передать сформированный чек:
+Чтобы открыть чек в смарт-терминале:
 
 1. Составьте список позиций, который требуется добавить в чек, наполните список
 
@@ -28,7 +28,7 @@ folder: smart_terminal_SDK
 2. Создайте команду открытия чека и вызовите метод `.process`
 
    ```java
-   new OpenSellReceiptCommand(positionAddList, new SetExtra(object)).process(
+   new OpenSellReceiptCommand(positionAddList, null).process(
                            activity,
                            new IntegrationManagerCallback() {
                                @Override
@@ -47,8 +47,6 @@ folder: smart_terminal_SDK
                            });
    ```
 
-   Где:
+   Где вместо null вы можете передать `new SetExtra(extra)`, команду для [создания дополнительных полей в чеке](./doc_receipt_extras.html).
 
-   `new SetExtra(extra)`– задаёт дополнительные данные чека. Если дополнительных данных нет указывайте `null`.
-
-   {% include note.html content="Приложение записывает дополнительные данные в чек только под своим идентификатором." %}
+   {% include note.html content="При создании нового чека, происходит автоматическая очистка существующего открытого чека." %}

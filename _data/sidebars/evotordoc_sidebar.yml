@@ -124,6 +124,10 @@ entries:
               url: /doc_receipt_interactions.html
               output: web
 
+            - title: Создание дополнительных полей в чеке
+              url: /doc_receipt_estras.html
+              output: web
+
     - title: Storage API
       url: /doc_storage_api.html
       output: web

@@ -1,7 +1,7 @@
 ---
 title: Плитка приложения на главном экране смарт-терминала
 keywords: sample
-summary: "Раздел содержит требования к плитке приложения, а также информацию о том как добвить плитку на главный экран смарт-терминала."
+summary: "Раздел содержит требования к плитке приложения, а также информацию о том как добавить плитку на главный экран смарт-терминала."
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_app_tile.html
 tags: [Терминал, Java, JavaScript]
@@ -59,6 +59,25 @@ folder: smart_terminal_SDK
     *  `android:value` – содержит цвет иконки в шестнадцатиричной кодировке.
 * Интент фильтр содержит соответствующие элементы action (`android:name="android.intent.action.MAIN"`) и category (`android:name="android.intent.category.EVOTOR"`).
 
+Вы также можете добавить иконку приложения на экран продажи, например, для [начисления скидок](./doc_discounts.html). Для этого создайте соответствующую службу:
+
+```xml
+<service
+  android:name=".InventoryAPI.ExampleService"
+  android:enabled="true"
+  android:exported="true"
+  android:icon="@mipmap/pirate"
+  android:label="DiscByButton">
+  <meta-data
+  android:name="ru.evotor.sales_screen.BACKGROUND_COLOR"
+  android:value="#cc0000" />
+    <intent-filter android:priority="20">
+      <category android:name="android.intent.category.DEFAULT" />
+      <action android:name="evo.v2.receipt.sell.receiptDiscount" />
+    </intent-filter>
+</service>
+```
+
 
 ### JS-приложение
 
@@ -74,7 +93,7 @@ folder: smart_terminal_SDK
     icon_192: client/views/example/icon-192.png
     icon_256: client/views/example/icon-256.png
     source: client/views/example/view.html
-    point: SALES_SCREEN
+    point: MAIN_SCREEN
     grants:
             - CASH_OPERATIONS_SELL
     scripts:

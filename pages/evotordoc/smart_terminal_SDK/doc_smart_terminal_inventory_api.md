@@ -84,114 +84,81 @@ Inventory API смарт-терминала включает в себя:
 Получить все штрихкоды товара:
 
 ```java
-fun getAllBarcodesForProduct(context: Context, productUuid: String): List<String> {
-    val barcodesList = ArrayList<String>()
-    val cursor: Cursor? = context.contentResolver.query(
-            Uri.withAppendedPath(BarcodeTable.URI, productUuid),
-            null, null, null, null)
-    if (cursor != null) {
-        if (cursor.moveToFirst()) {
-            do {
-                val barcode: String = cursor.getString(cursor.getColumnIndex(BarcodeTable.ROW_BARCODE))
-                barcodesList.add(barcode)
-            } while (cursor.moveToNext())
-        }
-    }
-    return barcodesList
-}
+fun getAllBarcodesForProduct(context: Context, productUuid: String): List<String>
 ```
 
 Получить данные товара:
 
 
 ```java
-fun getProductByUuid(context: Context, uuid: String): ProductItem? {
-  context.contentResolver
-      .query(Uri.withAppendedPath(ProductTable.URI, uuid), null, null, null, null)
-          ?.let { cursor ->
-              try {
-                  if (cursor.moveToFirst()) {
-                      if (cursor.getInt(cursor.getColumnIndex(ProductTable.ROW_IS_GROUP)) > 0) {
-                          return ProductItem.ProductGroup(
-                              uuid = cursor.getString(cursor.getColumnIndex(ProductTable.ROW_UUID)),
-                                  parentUuid = cursor.getString(cursor.getColumnIndex(ProductTable.ROW_PARENT_UUID)),
-                                  code = cursor.getString(cursor.getColumnIndex(ProductTable.ROW_CODE)),
-                                  name = cursor.getString(cursor.getColumnIndex(ProductTable.ROW_NAME)),
-                                  taxNumber = Utils.safeValueOf(TaxNumber::class.java, cursor.getString(cursor.getColumnIndex(ProductTable.ROW_TAX_NUMBER)), TaxNumber.NO_VAT)
-                          )
-                      } else {
-                          return ProductItem.Product(
-                              uuid = cursor.getString(cursor.getColumnIndex(ProductTable.ROW_UUID)),
-                                  parentUuid = cursor.getString(cursor.getColumnIndex(ProductTable.ROW_PARENT_UUID)),
-                                  code = cursor.getString(cursor.getColumnIndex(ProductTable.ROW_CODE)),
-                                  type = Utils.safeValueOf(ProductType::class.java, cursor.getString(cursor.getColumnIndex(ProductTable.ROW_TYPE)), ProductType.NORMAL),
-                                  name = cursor.getString(cursor.getColumnIndex(ProductTable.ROW_NAME)),
-                                  description = cursor.getString(cursor.getColumnIndex(ProductTable.ROW_DESCRIPTION)),
-                                  price = BigDecimal(cursor.getLong(cursor.getColumnIndex(ProductTable.ROW_PRICE_OUT))).divide(BigDecimal(100)),
-                                  quantity = BigDecimal(cursor.getLong(cursor.getColumnIndex(ProductTable.ROW_QUANTITY))).divide(BigDecimal(1000)),
-                                  measureName = cursor.getString(cursor.getColumnIndex(ProductTable.ROW_MEASURE_NAME)),
-                                  measurePrecision = cursor.getInt(cursor.getColumnIndex(ProductTable.ROW_MEASURE_PRECISION)),
-                                  alcoholByVolume = cursor.getLong(cursor.getColumnIndex(ProductTable.ROW_ALCOHOL_BY_VOLUME)).let { BigDecimal(it).divide(BigDecimal(1000)) },
-                                  alcoholProductKindCode = cursor.getLong(cursor.getColumnIndex(ProductTable.ROW_ALCOHOL_PRODUCT_KIND_CODE)),
-                                  tareVolume = cursor.getLong(cursor.getColumnIndex(ProductTable.ROW_TARE_VOLUME)).let { BigDecimal(it).divide(BigDecimal(1000)) },
-                                  taxNumber = Utils.safeValueOf(TaxNumber::class.java, cursor.getString(cursor.getColumnIndex(ProductTable.ROW_TAX_NUMBER)), TaxNumber.NO_VAT)
-                          )
-                      }
-                  }
-              } catch (e: Exception) {
-                  e.printStackTrace()
-              } finally {
-                  cursor.close()
-              }
-          }
-  return null
-}
+fun getProductByUuid(context: Context, uuid: String): ProductItem?
 ```
+
+Где ProductItem – абстракция над товарами и товарными группами.
+
+товар и группа имеют одинаковые поля
+
+uuid: String,
+parentUuid: String?,
+code: String?, – код товара из 1С, если нет, то null
+name: String – наименование товара или группы
+taxNumber – налоговая ставка
+
+
+
+Поля специфические товаров:
+
+
+            val type: ProductType, – тип товара: NORMAL, ALCOHOL_MARKED, ALKOHOL_NOT_MARKED.
+            val price: BigDecimal, цена
+            val quantity: BigDecimal, количество
+            val description: String?, описание
+            val measureName: String, единицы измерения
+            val measurePrecision: Int, точность измерения
+            val alcoholByVolume: BigDecimal?, крепость алкоголя, если не алкоголь то налл
+            val alcoholProductKindCode: Long?, код юида алкогольной продкуции
+            val tareVolume: BigDecimal? объём тары
+
 
 Получить возможные дополнительные поля:
 
 ```java
-fun getField(context: Context, fieldUuid: String): Field? {
-    context.contentResolver
-            .query(FieldTable.URI, null, "${FieldTable.ROW_FIELD_UUID} = ?", arrayOf(fieldUuid), null)
-            ?.let { cursor ->
-                try {
-                    if (cursor.moveToFirst()) {
-                        return createField(cursor)
-                    } else {
-                        return null
-                    }
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                } finally {
-                    cursor.close()
-                }
-            }
-
-    return null
-}
+fun getField(context: Context, fieldUuid: String): Field?
 ```
+де context - контекст приложения
+productUuid - uuid товара
+в качетсве результата будет возвращен объект Field, который может быть двух типов TextField и DictionaryField.
+Они имеют общие поля:
+val name: String?, – имя полня
+ val fieldUUID: String, – идентификатор поля в
+ val title: String?, – заголовок, который отображается в интерфейсе смарт-терминала
+ val type: Type – тип поля: TEXT_FIELD или DICTIONARY_FIELD.
+
+Поля специфические для TEXT_FIELD:
+* data – Валидный JSON-объект, который содержит данные, отображаемые с помощью JavaScript в интерфейсе смарт-терминала.
+
+Поля специфические для DICTIONARY_FIELD:
+multiple	Включает или выключает возможность выбора нескольких значений
+items массив возможных значений: title (заголовок элемента управления, который отображается пользоваетелю), value (идентификатор элемента управления).
+
+
+
 
 Получить значения дополнительных полей товара:
 
 ```java
-fun getProductExtras(context: Context, productUuid: String): List<ProductExtra> {
-    val result = ArrayList<ProductExtra>()
-    context.contentResolver
-            .query(ProductExtraTable.URI, null, "${ProductExtraTable.ROW_PRODUCT_UUID} = ?", arrayOf(productUuid), null)
-            ?.let { cursor ->
-                try {
-                    if (cursor.moveToFirst()) {
-                        do {
-                            result.add(createProductExtra(cursor))
-                        } while (cursor.moveToNext());
-                    }
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                } finally {
-                    cursor.close()
-                }
-            }
-    return result
-}
+fun getProductExtras(context: Context, productUuid: String): List<ProductExtra>
 ```
+где context - контекст приложения
+productUuid - uuid товара
+в качетсве результата будет возвращен список значений дополнительных полей товара
+
+объект ProductExtra содержит в себе следующие данные:
+uuid - uuid значения дополнительного поля товара
+name - имя дополнительного поля товара
+fieldUUID - uuid дополнительного поля товара
+fieldValue - строка содержащая значение дополнительного поля в определенном формате:
+  для текстового поля - строка обрамленная кавычками ("785af1da-4053-4214-abd6-71c9cd4b5800")
+  для поля из словаря - массив uuid элементов (["61bff019-5040-40cd-bedf-d854ac935f6c","b993bd2a-8f6a-4fbc-b916-2d9786cd5def"])
+ data - дополнительные данные от интеграции
+)

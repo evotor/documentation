@@ -84,7 +84,7 @@ capabilities:
 
 * `X-Evotor-Store-Uuid` – содержит идентификатор магазина в формате uuid4, к которому привязан терминал.
 * `X-Evotor-Device-UUID` – содержит идентификатор устройства в формате uuid4, полученный по запросу к `/api/v1/inventories/devices`.
-* `Authorization` – содержит [токен пользователя](./doc_authorization.html#usersToken). Токен необходим для bearer-авторизации.
+* `Authorization` – содержит [токен стороннего сервиса](./doc_authorization.html#serverToken). Токен необходим для bearer-авторизации.
 
 Сторонний сервер получает сообщение от облака Эвотор и определяет отправителя с помощью заголовка Authorization.
 

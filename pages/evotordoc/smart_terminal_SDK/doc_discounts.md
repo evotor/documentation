@@ -13,7 +13,7 @@ folder: smart_terminal_SDK
 Эвотор позволяет рассчитывать и передавать скидки.
 Для этого:
 1. Подпишитесь на событие `ReceiptDiscountEvent`.
-2. Получите результат, которое сообщает о возможности начисления скидки.
+2. Получите результат, который сообщает о возможности начисления скидки.
 
 #### Подписка на событие
 
@@ -70,13 +70,18 @@ folder: smart_terminal_SDK
 
 ```java
 try {callback.onResult(
-        new ReceiptDiscountEventResult(
-        ReceiptDiscountEventResult.Result.OK,
-        new BigDecimal(0.5)
-        ).toBundle())
+  new ReceiptDiscountEventResult(
+      discount,
+      null,
+      changes
+))
     }
         catch (RemoteException exc) {
                 exc.printStackTrace();
             }
 
 ```
+Где:
+discount – значение скидки в валюте.
+вместо null вы можете передать `new SetExtra(extra)`, команду для [создания дополнительных полей в чеке](./doc_receipt_extras.html).
+changes – список изменений по позициям.
