@@ -26,7 +26,7 @@ published: true
        }
        dependencies {
            ...
-           classpath group: 'com.github.evotor', name: 'template-plugin', version: 'v1.1.4'
+           classpath group: 'com.github.evotor', name: 'template-plugin', version: 'v1.1.7'
        }
    }
 
@@ -42,7 +42,7 @@ published: true
 
    ```
    dependencies {
-           compile 'com.github.evotor:template-plugin:v1.1.4'
+           compile 'com.github.evotor:template-plugin:v1.1.7'
    }
    ```
 
