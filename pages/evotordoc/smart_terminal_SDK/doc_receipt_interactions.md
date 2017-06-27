@@ -8,6 +8,7 @@ tags: [Терминал, Java, Чеки]
 folder: smart_terminal_SDK
 ---
 
+
 Приложение может добавлять, удалять и изменять позиции в чеке, а так же получать информацию о том, что чек был изменён:
 
 * Если вы хотите работать с позициями в чеке используйте службу, чтобы получать события о намерении изменения чека. В этом случае, смарт-терминал ждёт ответа от приложения. События приходят как при продаже, так и при возврате товара.
@@ -320,7 +321,7 @@ val positionFromProduct = Position.Builder.newInstance(
 * `product.measurePrecision` – точность измерения единиц товара, выраженная в количестве знаков после запятой.
 * `product.price` – цена продукта, полученная из локальной базы товаров смарт-терминала.
 * `BigDecimal.ONE` – количество добавленного товара.
-* `setExtraKeys()` – метод, который позволяет добавлять к позиции в чеке дополнительные ключи (идентификаторы). Каждый ключ имеет описание (`description`), которое отображается в интерфейсе и печатается на чеке (можно передавать null), идентификатор (`identity`) и хранит данные о приложении, создавшем ключ (`appId`).
+* `setExtraKeys()` – метод, который позволяет добавлять к позиции в чеке дополнительные ключи (идентификаторы). Каждый ключ имеет описание (`description`), которое отображается в интерфейсе и печатается на чеке (можно передавать `null`), идентификатор (`identity`) и хранит данные о приложении, создавшем ключ (`appId`).
   {% include note.html content="Приложение записывает дополнительные ключи в чек только под своим идентификатором." %}
 
 Пример позиции чека с подпозицией (у позиции и подпозиции есть `uuid` товара):
@@ -485,7 +486,7 @@ public class PositionRemovedEvent extends PositionEvent {
 
 При [очистке чека](./doc_receipt_creation.html) приходит сообщение:
 
-```
+```java
 public class ReceiptClearedEvent extends ReceiptEvent {
     public static final String BROADCAST_ACTION_SELL_RECEIPT_CLEARED = "evotor.intent.action.receipt.sell.CLEARED";
     public static final String BROADCAST_ACTION_PAYBACK_RECEIPT_CLEARED = "evotor.intent.action.receipt.payback.CLEARED";
@@ -509,8 +510,8 @@ public class ReceiptClearedEvent extends ReceiptEvent {
 ```
 
 Прочие уведомления:
-````
 
+```java
 public class MyReceiver extends BroadcastReceiver {
 
     @Override
@@ -544,13 +545,10 @@ public class MyReceiver extends BroadcastReceiver {
 
     }
 }
+```
 
-````
-
-где:
+Где:
 `CashInEvent` - внесение наличных.
 `CashDrawerOpenEvent` - открытие денежного ящика.
 `CashOutEvent` - выдача наличных.
 `ReceiptClosedEvent` - закрытие чека.
-
-
