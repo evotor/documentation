@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит информацию о том, какие события может использовать приложение, чтобы работать с чеком, например, добавлять или удалять позиции из чека.">
-<meta name="keywords" content=" sample">
-<title>Работа с чеком | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека.">
+<meta name="keywords" content="ТерминалJavaЧеки,  sample">
+<title>Работа с позициями чека | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Работа с чеком">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Работа с позициями чека">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -181,14 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_introduction.html">Введение</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            <li><a href="doc_integration_types.html">Способы интеграции</a></li>
             
             
             
@@ -260,14 +253,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -281,21 +281,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка или иконка приложения в интерфейсе смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            <li><a href="doc_cloud_proxy.html">Обмен данными между приложением и сторонним сервисом</a></li>
             
             
             
@@ -306,10 +299,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            
-            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            <li class="subfolders">
+                <a href="#">Receipt API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_smart_terminal_receipt_api.html">Поиск товара по штрихкоду</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li class="active"><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_discounts.html">Скидки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_extras.html">Создание дополнительных полей в чеке</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -317,27 +342,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_storage_api.html">Storage API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
-            
-            
-            
-            
-            
-            
-            <li class="active"><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_discounts.html">Скидки</a></li>
             
             
             
@@ -418,6 +422,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -432,21 +450,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -492,11 +496,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -507,7 +509,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Работа с чеком</h1>
+   <h1 class="post-title-main">Работа с позициями чека</h1>
 </div>
 
 
@@ -515,7 +517,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит информацию о том, какие события может использовать приложение, чтобы работать с чеком, например, добавлять или удалять позиции из чека.</div>
+    <div class="summary">Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека.</div>
    
 
     
@@ -546,136 +548,95 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Кроме плитки на главном экране или иконки на экране оплаты смарт-терминала, приложение можно запускать автоматически при получении соответствующего события. Для этого требуется подписать приложение на получение событий.</p>
+  <p>Приложение может добавлять, удалять и изменять позиции в чеке, а так же получать информацию о том, что чек был изменён:</p>
 
-<p>В зависимости от типа события подписку можно оформить одним из двух способов:</p>
 <ul>
-  <li>Используйте службу, если хотите получать события намерении изменения чека. В этом случае, смарт-терминал ждёт ответа от приложения и оно может взаимодействовать с чеком: добавлять, изменять и удалять позиции. События приходят как при продаже, так и при возврате товара.</li>
-  <li>Зарегистрируйте приёмник широковещательных сообщений, если хотите получать сообщения об открытии чека, обновлении базы продуктов или результате изменения чека. В этом случае смарт-терминал не ждёт ответа от приложения и оно не может взаимодействовать с чеком. Такие события могут понадобиться, например, для ведения статистики. События приходят как при продаже, так и при возврате товара.</li>
+  <li>
+    <p>Если вы хотите работать с позициями в чеке используйте службу, чтобы получать события о намерении изменения чека. В этом случае, смарт-терминал ждёт ответа от приложения. События приходят как при продаже, так и при возврате товара.</p>
+  </li>
+  <li>
+    <p>Если вы хотите получать сообщения об изменении чека или обновлении базы продуктов, например, для логирования и оповещения пользователей, используйте приёмник широковещательных сообщений. В этом случае смарт-терминал не ждёт ответа от приложения. События приходят как при продаже, так и при возврате товара.</p>
+  </li>
 </ul>
 
-<h3 id="Использование-службы-и-получение-событий-о-намерении-изменения-чека">Использование службы и получение событий о намерении изменения чека</h3>
+<h3 id="section">Использование службы и получение событий о намерении изменения чека</h3>
 
 <ol>
-  <li>Создайте службу, например <code class="highlighter-rouge">MyIntegrationService</code>, которая наследует класс <code class="highlighter-rouge">IntegrationService</code>. В колбэке <code class="highlighter-rouge">onCreate</code> службы, зарегистрируйте процессор <code class="highlighter-rouge">BeforePositionsEditedEventProcessor</code> (процессор наследует класс <code class="highlighter-rouge">ActionProcessor</code>).</li>
-</ol>
+  <li>
+    <p>Создайте службу, например <code class="highlighter-rouge">MyIntegrationService</code>, которая наследует класс <code class="highlighter-rouge">IntegrationService</code>. В колбэке <code class="highlighter-rouge">onCreate</code> службы, зарегистрируйте процессор <code class="highlighter-rouge">BeforePositionsEditedEventProcessor</code> (процессор наследует класс <code class="highlighter-rouge">ActionProcessor</code>).</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyIntegrationService</span> <span class="kd">extends</span> <span class="n">IntegrationService</span> <span class="o">{</span>
-        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
-            <span class="n">registerProcessor</span><span class="o">(</span><span class="k">new</span> <span class="n">BeforePositionsEditedEventProcessor</span><span class="o">()</span> <span class="o">{</span>
-                <span class="nd">@Override</span>
-                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="n">BeforePositionsEditedEvent</span> <span class="n">beforePositionsEditedEvent</span><span class="o">,</span> <span class="n">Callback</span> <span class="n">callback</span><span class="o">)</span>
-            <span class="o">});</span>
-        <span class="o">}</span>
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyIntegrationService</span> <span class="kd">extends</span> <span class="n">IntegrationService</span> <span class="o">{</span>
+ <span class="nd">@Nullable</span>
+ <span class="nd">@Override</span>
+ <span class="kd">protected</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">ActionProcessor</span><span class="o">&gt;</span> <span class="nf">createProcessors</span><span class="o">()</span> <span class="o">{</span>
+     <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">ActionProcessor</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+     <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">BeforePositionsEditedEvent</span><span class="o">.</span><span class="na">NAME_SELL_RECEIPT</span><span class="o">,</span> <span class="k">new</span> <span class="n">BeforePositionsEditedEventProcessor</span><span class="o">()</span> <span class="o">{</span>
+         <span class="nd">@Override</span>
+         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">String</span> <span class="n">action</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="n">BeforePositionsEditedEvent</span> <span class="n">event</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="n">Callback</span> <span class="n">callback</span><span class="o">){</span>
+
+         <span class="o">}</span>
+     <span class="o">});</span>
+     <span class="k">return</span> <span class="n">map</span><span class="o">;</span>
     <span class="o">}</span>
-    </code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Объявите службу в манифесте приложения:</p>
 
-<ol>
-  <li>Объявите службу в манифесте приложения:</li>
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;service</span>
+        <span class="na">android:name=</span><span class="s">".MyIntegrationService"</span>
+        <span class="na">android:enabled=</span><span class="s">"true"</span>
+        <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;intent-filter&gt;</span>
+            <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evo.v2.receipt.sell.beforePositionsEdited"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+</code></pre>
+    </div>
+  </li>
 </ol>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;service</span>
-            <span class="na">android:name=</span><span class="s">".MyIntegrationService"</span>
-            <span class="na">android:enabled=</span><span class="s">"true"</span>
-            <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;intent-filter&gt;</span>
-                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="nt">/&gt;</span>
-                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evo.v2.receipt.sell.beforePositionsEdited"</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;/intent-filter&gt;</span>
-    <span class="nt">&lt;/service&gt;</span>
-    </code></pre></figure>
 
 <p>В метод <code class="highlighter-rouge">call</code> процессора приходит событие <code class="highlighter-rouge">beforePositionsEditedEvent</code> и объект для возврата результата <code class="highlighter-rouge">callback</code>.</p>
 
 <p>В ответ приложение возвращает результат со списком возможных изменений:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeforePositionsEditedEventResult</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KEY_RESULT</span> <span class="o">=</span> <span class="s">"result"</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KEY_CHANGES</span> <span class="o">=</span> <span class="s">"changes"</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">BeforePositionsEditedEventResult</span> <span class="nf">create</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">bundle</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">resultName</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">KEY_RESULT</span><span class="o">);</span>
-        <span class="n">Parcelable</span><span class="o">[]</span> <span class="n">changesParcelable</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="na">getParcelableArray</span><span class="o">(</span><span class="n">KEY_CHANGES</span><span class="o">);</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">IChange</span><span class="o">&gt;</span> <span class="n">changes</span> <span class="o">=</span> <span class="n">ChangesMapper</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">changesParcelable</span><span class="o">);</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="n">positionChanges</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">IChange</span> <span class="n">change</span> <span class="o">:</span> <span class="n">changes</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">change</span> <span class="k">instanceof</span> <span class="n">IPositionChange</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">positionChanges</span><span class="o">.</span><span class="na">add</span><span class="o">((</span><span class="n">IPositionChange</span><span class="o">)</span> <span class="n">change</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">BeforePositionsEditedEventResult</span><span class="o">(</span>
-                <span class="n">Utils</span><span class="o">.</span><span class="na">safeValueOf</span><span class="o">(</span><span class="n">Result</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">resultName</span><span class="o">,</span> <span class="n">Result</span><span class="o">.</span><span class="na">UNKNOWN</span><span class="o">),</span>
-                <span class="n">positionChanges</span>
-        <span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Result</span> <span class="n">result</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="n">changes</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">BeforePositionsEditedEventResult</span><span class="o">(</span><span class="n">Result</span> <span class="n">result</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="n">changes</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">changes</span> <span class="o">=</span> <span class="n">changes</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">Bundle</span> <span class="nf">toBundle</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-        <span class="n">bundle</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="n">KEY_RESULT</span><span class="o">,</span> <span class="n">result</span><span class="o">.</span><span class="na">name</span><span class="o">());</span>
-        <span class="n">Parcelable</span><span class="o">[]</span> <span class="n">changesParcelable</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Parcelable</span><span class="o">[</span><span class="n">changes</span><span class="o">.</span><span class="na">size</span><span class="o">()];</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">changesParcelable</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="n">IChange</span> <span class="n">change</span> <span class="o">=</span> <span class="n">changes</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-            <span class="n">changesParcelable</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">ChangesMapper</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">.</span><span class="na">toBundle</span><span class="o">(</span><span class="n">change</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="n">bundle</span><span class="o">.</span><span class="na">putParcelableArray</span><span class="o">(</span><span class="n">KEY_CHANGES</span><span class="o">,</span> <span class="n">changesParcelable</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">bundle</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">Result</span> <span class="nf">getResult</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="nf">getChanges</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">changes</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">enum</span> <span class="n">Result</span> <span class="o">{</span>
-        <span class="n">OK</span><span class="o">,</span>
-        <span class="n">UNKNOWN</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="nf">BeforePositionsEditedEventResult</span><span class="o">(</span>
+        <span class="nd">@Nullable</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="n">changes</span><span class="o">,</span>
+        <span class="nd">@Nullable</span> <span class="n">SetExtra</span> <span class="n">extra</span>
+<span class="o">)</span>
+</code></pre>
+</div>
 
 <p>Чтобы вернуть результат, используйте метод:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">callback</span><span class="o">.</span><span class="na">onResult</span><span class="o">(</span><span class="n">beforePositionsEditedEventResult</span><span class="o">.</span><span class="na">toBundle</span><span class="o">())</span></code></pre></figure>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">callback</span><span class="o">.</span><span class="na">onResult</span><span class="o">(</span><span class="n">beforePositionsEditedEventResult</span><span class="o">)</span>
+</code></pre>
+</div>
 
-<p>Если приложению для возврата результата необходимо взаимодействие с пользователем, запустите операцию (<code class="highlighter-rouge">Activity</code>), которая наследует класс <code class="highlighter-rouge">BeforePositionsEditedEventActivity</code>:</p>
+<p>Если приложению для возврата результата необходимо взаимодействие с пользователем, запустите операцию (<code class="highlighter-rouge">Activity</code>), которая наследует класс <code class="highlighter-rouge">IntegrationActivity</code>:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">callback</span><span class="o">.</span><span class="na">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">MyIntegrationService</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">MainActivity</span><span class="o">.</span><span class="na">class</span><span class="o">));</span></code></pre></figure>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">callback</span><span class="o">.</span><span class="na">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">MainActivity</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+</code></pre>
+</div>
 
 <p>Ваша операция должна вызвать метод <code class="highlighter-rouge">setIntegrationResult</code>.</p>
 
 <p>Например:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">setIntegrationResult</span><span class="o">(</span><span class="k">new</span> <span class="n">BeforePositionsEditedEventResult</span><span class="o">(</span><span class="n">BeforePositionsEditedEventResult</span><span class="o">.</span><span class="na">Result</span><span class="o">.</span><span class="na">OK</span><span class="o">,</span> <span class="n">changes</span><span class="o">));</span></code></pre></figure>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">setIntegrationResult</span><span class="o">(</span><span class="k">new</span> <span class="n">BeforePositionsEditedEventResult</span><span class="o">(</span><span class="n">changes</span><span class="o">,</span> <span class="kc">null</span><span class="o">));</span>
+</code></pre>
+</div>
 
-<p>Класс <code class="highlighter-rouge">BeforePositionsEditedEventActivity</code> задан как:</p>
+<p>Где вместо null вы можете передать <code class="highlighter-rouge">new SetExtra(extra)</code>, команду для <a href="./doc_receipt_extras.html">создания дополнительных полей в чеке</a>.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeforePositionsEditedEventActivity</span> <span class="kd">extends</span> <span class="n">IntegrationActivity</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setIntegrationResult</span><span class="o">(</span><span class="n">BeforePositionsEditedEventResult</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">setIntegrationResult</span><span class="o">(</span><span class="n">result</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="kc">null</span> <span class="o">:</span> <span class="n">result</span><span class="o">.</span><span class="na">toBundle</span><span class="o">());</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">BeforePositionsEditedEvent</span> <span class="nf">getEvent</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">BeforePositionsEditedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">getSourceBundle</span><span class="o">());</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
-
-<h4 id="Описание-события-beforepositionseditedevent">Описание события <code class="highlighter-rouge">BeforePositionsEditedEvent</code></h4>
+<h4 id="beforepositionseditedevent">Описание события <code class="highlighter-rouge">BeforePositionsEditedEvent</code></h4>
 
 <p>О намерении изменения чека сообщает событие <code class="highlighter-rouge">beforePositionsEditedEvent</code>:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeforePositionsEditedEvent</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeforePositionsEditedEvent</span> <span class="kd">implements</span> <span class="n">IBundlable</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TAG</span> <span class="o">=</span> <span class="s">"PositionsEditedEvent"</span><span class="o">;</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NAME_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evo.v2.receipt.sell.beforePositionsEdited"</span><span class="o">;</span>
@@ -684,21 +645,29 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KEY_RECEIPT_UUID</span> <span class="o">=</span> <span class="s">"receiptUuid"</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KEY_CHANGES</span> <span class="o">=</span> <span class="s">"changes"</span><span class="o">;</span>
 
-
+    <span class="nd">@NonNull</span>
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">receiptUuid</span><span class="o">;</span>
+    <span class="nd">@NonNull</span>
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="n">changes</span><span class="o">;</span>
 
     <span class="kd">public</span> <span class="nf">BeforePositionsEditedEvent</span><span class="o">(</span>
-            <span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span>
-            <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="n">changes</span>
+            <span class="nd">@NonNull</span> <span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span>
+            <span class="nd">@NonNull</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="n">changes</span>
     <span class="o">)</span> <span class="o">{</span>
         <span class="k">this</span><span class="o">.</span><span class="na">receiptUuid</span> <span class="o">=</span> <span class="n">receiptUuid</span><span class="o">;</span>
         <span class="k">this</span><span class="o">.</span><span class="na">changes</span> <span class="o">=</span> <span class="n">changes</span><span class="o">;</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="nf">BeforePositionsEditedEvent</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">bundle</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">(</span>
-                <span class="n">bundle</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">KEY_RECEIPT_UUID</span><span class="o">,</span> <span class="kc">null</span><span class="o">),</span>
+    <span class="nd">@Nullable</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">BeforePositionsEditedEvent</span> <span class="nf">create</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">bundle</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">bundle</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="n">String</span> <span class="n">receiptUuid</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">KEY_RECEIPT_UUID</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">BeforePositionsEditedEvent</span><span class="o">(</span>
+                <span class="n">receiptUuid</span><span class="o">,</span>
                 <span class="n">Utils</span><span class="o">.</span><span class="na">filterByClass</span><span class="o">(</span>
                         <span class="n">ChangesMapper</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">.</span><span class="na">getParcelableArray</span><span class="o">(</span><span class="n">KEY_CHANGES</span><span class="o">)),</span>
                         <span class="n">IPositionChange</span><span class="o">.</span><span class="na">class</span>
@@ -706,6 +675,8 @@ $('#toc').on('click', 'a', function() {
         <span class="o">);</span>
     <span class="o">}</span>
 
+    <span class="nd">@Override</span>
+    <span class="nd">@NonNull</span>
     <span class="kd">public</span> <span class="n">Bundle</span> <span class="nf">toBundle</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">Bundle</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
         <span class="n">result</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="n">KEY_RECEIPT_UUID</span><span class="o">,</span> <span class="n">receiptUuid</span><span class="o">);</span>
@@ -718,20 +689,28 @@ $('#toc').on('click', 'a', function() {
         <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
     <span class="o">}</span>
 
+    <span class="nd">@NonNull</span>
     <span class="kd">public</span> <span class="n">String</span> <span class="nf">getReceiptUuid</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">receiptUuid</span><span class="o">;</span>
     <span class="o">}</span>
 
+    <span class="nd">@NonNull</span>
     <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="nf">getChanges</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">changes</span><span class="o">;</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
-<h4 id="Список-возможных-изменений">Список возможных изменений</h4>
+<h4 id="PositionAltering">Добавление, изменение и удаление позиций</h4>
 
-<p>Изменение сообщает о том, что будет добавлена позиция:</p>
+<p>Чтобы добавить позицию:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">data</span> <span class="kd">class</span> <span class="nf">PositionAdd</span><span class="o">(</span><span class="n">val</span> <span class="nl">position:</span> <span class="n">Position</span><span class="o">)</span> <span class="o">:</span> <span class="n">IPositionChange</span> <span class="o">{</span>
+<ul>
+  <li>
+    <p>В Java-приложении используйте метод:</p>
+
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">data</span> <span class="kd">class</span> <span class="nf">PositionAdd</span><span class="o">(</span><span class="n">val</span> <span class="nl">position:</span> <span class="n">Position</span><span class="o">)</span> <span class="o">:</span> <span class="n">IPositionChange</span> <span class="o">{</span>
 
     <span class="n">override</span> <span class="n">fun</span> <span class="nf">toBundle</span><span class="o">():</span> <span class="n">Bundle</span> <span class="o">{</span>
         <span class="k">return</span> <span class="nf">Bundle</span><span class="o">().</span><span class="na">apply</span> <span class="o">{</span>
@@ -762,11 +741,35 @@ $('#toc').on('click', 'a', function() {
             <span class="o">)</span>
         <span class="o">}</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>В JS-приложении используйте метод:</p>
 
-<p>Изменение сообщает том, что позиция будет отредактирована:</p>
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">processBeforePositionsEdited</span><span class="p">(</span><span class="nx">actionData</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">position</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"uuid"</span> <span class="p">:</span> <span class="s2">"8e0ffg-lk3e-e93bnk-v0p41"</span><span class="p">,</span>
+    <span class="s2">"productUuid"</span> <span class="p">:</span> <span class="s2">"trb44-i32lev-9833jf"</span><span class="p">,</span>
+    <span class="s2">"productCode"</span> <span class="p">:</span> <span class="s2">"1024"</span><span class="p">,</span>
+    <span class="s2">"productType"</span> <span class="p">:</span> <span class="s2">"NORMAL"</span><span class="p">,</span>
+    <span class="s2">"name"</span> <span class="p">:</span> <span class="s2">"myLittlePosition"</span><span class="p">,</span>
+    <span class="s2">"measureName"</span> <span class="p">:</span> <span class="s2">"kg"</span><span class="p">,</span>
+    <span class="s2">"measurePrecision"</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"price"</span> <span class="p">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"quantity"</span> <span class="p">:</span> <span class="s2">"1"</span>
+<span class="p">}</span>
+    <span class="nx">receipt</span><span class="p">.</span><span class="nx">addPosition</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">position</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">data</span> <span class="kd">class</span> <span class="nf">PositionEdit</span><span class="o">(</span><span class="n">val</span> <span class="nl">position:</span> <span class="n">Position</span><span class="o">)</span> <span class="o">:</span> <span class="n">IPositionChange</span> <span class="o">{</span>
+<p>Чтобы изменить позицию, используйте следующий метод:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">data</span> <span class="kd">class</span> <span class="nf">PositionEdit</span><span class="o">(</span><span class="n">val</span> <span class="nl">position:</span> <span class="n">Position</span><span class="o">)</span> <span class="o">:</span> <span class="n">IPositionChange</span> <span class="o">{</span>
 
     <span class="n">override</span> <span class="n">fun</span> <span class="nf">toBundle</span><span class="o">():</span> <span class="n">Bundle</span> <span class="o">{</span>
         <span class="k">return</span> <span class="nf">Bundle</span><span class="o">().</span><span class="na">apply</span> <span class="o">{</span>
@@ -795,11 +798,13 @@ $('#toc').on('click', 'a', function() {
             <span class="o">)</span>
         <span class="o">}</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
-<p>Изменение сообщает том, что позиция будет удалена:</p>
+<p>Чтобы удалить позицию, используйте следующий метод:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">data</span> <span class="kd">class</span> <span class="nf">PositionRemove</span><span class="o">(</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">data</span> <span class="kd">class</span> <span class="nf">PositionRemove</span><span class="o">(</span>
         <span class="kd">private</span> <span class="n">val</span> <span class="nl">positionUuid:</span> <span class="n">String</span>
 <span class="o">)</span> <span class="o">:</span> <span class="n">IPositionChange</span> <span class="o">{</span>
 
@@ -832,13 +837,93 @@ $('#toc').on('click', 'a', function() {
             <span class="o">)</span>
         <span class="o">}</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
-<h3 id="Получение-событий-об-открытии-чека-обновлении-базы-продуктов-или-результате-изменения-чека">Получение событий об открытии чека, обновлении базы продуктов или результате изменения чека</h3>
+<h4 id="section-1">Описание позиций</h4>
+
+<p>Вы можете добавить в чек как позицию соответствующую товару в базе терминала, так и задать свободную позицию.</p>
+
+<p>Пример позиции чека, соответствующей товару в терминале (у позиции есть <code class="highlighter-rouge">uuid</code> товара):</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">val</span> <span class="n">positionFromProduct</span> <span class="o">=</span> <span class="n">Position</span><span class="o">.</span><span class="na">Builder</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span>
+                <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">uuid</span><span class="o">,</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">name</span><span class="o">,</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">measureName</span><span class="o">,</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">measurePrecision</span><span class="o">,</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">price</span><span class="o">,</span>
+                <span class="n">BigDecimal</span><span class="o">.</span><span class="na">ONE</span>
+        <span class="o">)</span>
+        <span class="o">.</span><span class="na">setExtraKeys</span><span class="o">(</span><span class="n">extraKeys</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">build</span><span class="o">()</span>
+</code></pre>
+</div>
+
+<p>Где:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">UUID</code> – идентификатор позиции в формате uuid4.</li>
+  <li><code class="highlighter-rouge">product.uuid</code> – идентификатор товара в формате uuid4, полученный из локальной базы товаров смарт-терминала.</li>
+  <li><code class="highlighter-rouge">product.name</code> – наименование товара из локальной базы товаров смарт-терминала.</li>
+  <li><code class="highlighter-rouge">product.measureName</code> – единицы измерения товара, полученные из локальной базы товаров смарт-терминала..</li>
+  <li><code class="highlighter-rouge">product.measurePrecision</code> – точность измерения единиц товара, выраженная в количестве знаков после запятой.</li>
+  <li><code class="highlighter-rouge">product.price</code> – цена продукта, полученная из локальной базы товаров смарт-терминала.</li>
+  <li><code class="highlighter-rouge">BigDecimal.ONE</code> – количество добавленного товара.</li>
+  <li><code class="highlighter-rouge">setExtraKeys()</code> – метод, который позволяет добавлять к позиции в чеке дополнительные ключи (идентификаторы). Каждый ключ имеет описание (<code class="highlighter-rouge">description</code>), которое отображается в интерфейсе и печатается на чеке (можно передавать <code class="highlighter-rouge">null</code>), идентификатор (<code class="highlighter-rouge">identity</code>) и хранит данные о приложении, создавшем ключ (<code class="highlighter-rouge">appId</code>).
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Приложение записывает дополнительные ключи в чек только под своим идентификатором.</div>
+  </li>
+</ul>
+
+<p>Пример позиции чека с подпозицией (у позиции и подпозиции есть <code class="highlighter-rouge">uuid</code> товара):</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">val</span> <span class="n">positionFromProduct</span> <span class="o">=</span> <span class="n">Position</span><span class="o">.</span><span class="na">Builder</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span>
+                <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">uuid</span><span class="o">,</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">name</span><span class="o">,</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">measureName</span><span class="o">,</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">measurePrecision</span><span class="o">,</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">price</span><span class="o">,</span>
+                <span class="n">BigDecimal</span><span class="o">.</span><span class="na">ONE</span>
+        <span class="o">).</span><span class="na">build</span><span class="o">()</span>
+
+        <span class="n">positionFromProduct</span><span class="o">.</span><span class="na">subPosition</span><span class="o">.</span><span class="na">add</span><span class="o">(</span>
+                <span class="n">Position</span><span class="o">.</span><span class="na">Builder</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span>
+                                <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+                                <span class="n">product</span><span class="o">.</span><span class="na">uuid</span><span class="o">,</span>
+                                <span class="n">product</span><span class="o">.</span><span class="na">name</span><span class="o">,</span>
+                                <span class="n">product</span><span class="o">.</span><span class="na">measureName</span><span class="o">,</span>
+                                <span class="n">product</span><span class="o">.</span><span class="na">measurePrecision</span><span class="o">,</span>
+                                <span class="n">product</span><span class="o">.</span><span class="na">price</span><span class="o">,</span>
+                                <span class="n">BigDecimal</span><span class="o">.</span><span class="na">ONE</span>
+                        <span class="o">).</span><span class="na">build</span><span class="o">()</span>
+                <span class="o">)</span>
+</code></pre>
+</div>
+
+<p>Вы можете использовать подпозиции <code class="highlighter-rouge">subPosition</code> для добавления опций к товару.
+Например, к товару “Кофе” можно добавить подпозицию “Молоко”. Подпозиция удаляется вместе с основной позицией товара.</p>
+
+<p>Пример свободно заданной позиции (<code class="highlighter-rouge">uuid</code> товара – <code class="highlighter-rouge">null</code>):</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">val</span> <span class="n">freeProductPosition</span> <span class="o">=</span> <span class="n">Position</span><span class="o">.</span><span class="na">Builder</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span>
+                <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+                <span class="kc">null</span><span class="o">,</span>
+                <span class="s">"Товар"</span><span class="o">,</span>
+                <span class="s">"шт"</span><span class="o">,</span>
+                <span class="mi">0</span><span class="o">,</span>
+                <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">100</span><span class="o">),</span>
+                <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">100</span><span class="o">)</span>
+        <span class="o">).</span><span class="na">build</span><span class="o">()</span>
+</code></pre>
+</div>
+
+<h3 id="section-2">Получение событий об открытии чека, обновлении базы продуктов или результате изменения чека</h3>
 
 <p>Смарт терминал не ждёт ответ от приложения на широковещательные сообщения. Чтобы получать сообщения о результате изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">ru</span><span class="o">.</span><span class="na">evotor</span><span class="o">.</span><span class="na">consumer</span><span class="o">.</span><span class="na">consumer</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">ru</span><span class="o">.</span><span class="na">evotor</span><span class="o">.</span><span class="na">consumer</span><span class="o">.</span><span class="na">consumer</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">android.content.BroadcastReceiver</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
@@ -853,11 +938,13 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceive</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">"UUID: "</span> <span class="o">+</span> <span class="k">new</span> <span class="n">PositionAddedEvent</span><span class="o">(</span><span class="n">intent</span><span class="o">.</span><span class="na">getExtras</span><span class="o">()).</span><span class="na">getReceiptUuid</span><span class="o">(),</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p>Объявите приёмник в манифесте приложения:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;receiver</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;receiver</span>
         <span class="na">android:name=</span><span class="s">".AddPositionBroadcastReceiver"</span>
         <span class="na">android:enabled=</span><span class="s">"true"</span>
         <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
@@ -865,21 +952,25 @@ $('#toc').on('click', 'a', function() {
             <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evotor.intent.action.receipt.sell.POSITION_ADDED"</span> <span class="nt">/&gt;</span>
             <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/intent-filter&gt;</span>
-    <span class="nt">&lt;/receiver&gt;</span></code></pre></figure>
+    <span class="nt">&lt;/receiver&gt;</span>
+</code></pre>
+</div>
 
-<h4 id="Сообщения-о-результатах-изменения-чека">Сообщения о результатах изменения чека</h4>
+<h4 id="section-3">Сообщения о результатах изменения чека</h4>
 
 <p>При открытии чека (продажи или возврата) приходит сообщение:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ReceiptOpenedEvent</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ReceiptOpenedEvent</span> <span class="o">{</span>
     <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.OPENED"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">BROADCAST_ACTION_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.payback.OPENED"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">KEY_UUID</span> <span class="o">=</span> <span class="s">"uuid"</span><span class="o">;</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p>При добавлении позиции приходит сообщение:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionAddedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionAddedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.POSITION_ADDED"</span><span class="o">;</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.payback.POSITION_ADDED"</span><span class="o">;</span>
 
@@ -890,11 +981,13 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="nf">PositionAddedEvent</span><span class="o">(</span><span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span> <span class="n">Position</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">,</span> <span class="n">position</span><span class="o">);</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p>При изменении позиции приходит сообщение:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionEditedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionEditedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.POSITION_EDITED"</span><span class="o">;</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.payback.POSITION_EDITED"</span><span class="o">;</span>
 
@@ -905,11 +998,13 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="nf">PositionEditedEvent</span><span class="o">(</span><span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span> <span class="n">Position</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">,</span> <span class="n">position</span><span class="o">);</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p>При удалении позиции приходит сообщение:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionRemovedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionRemovedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.POSITION_REMOVED"</span><span class="o">;</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.payback.POSITION_REMOVED"</span><span class="o">;</span>
 
@@ -920,11 +1015,13 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="nf">PositionRemovedEvent</span><span class="o">(</span><span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span> <span class="n">Position</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">,</span> <span class="n">position</span><span class="o">);</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p>При обновлении базы товаров приходит сообщение:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionRemovedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionRemovedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_PRODUCTS_UPDATED</span> <span class="o">=</span> <span class="s">"evotor.intent.action.inventory.PRODUCTS_UPDATED"</span><span class="o">;</span>
 
     <span class="kd">public</span> <span class="nf">ProductsUpdatedEvent</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">extras</span><span class="o">)</span> <span class="o">{</span>
@@ -934,11 +1031,97 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="nf">ProductsUpdatedEvent</span><span class="o">(</span><span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span> <span class="n">Position</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">,</span> <span class="n">position</span><span class="o">);</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
+<p>При <a href="./doc_receipt_creation.html">очистке чека</a> приходит сообщение:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReceiptClearedEvent</span> <span class="kd">extends</span> <span class="n">ReceiptEvent</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT_CLEARED</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.CLEARED"</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_PAYBACK_RECEIPT_CLEARED</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.payback.CLEARED"</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">ReceiptClearedEvent</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">String</span> <span class="n">receiptUuid</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Nullable</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">ReceiptClearedEvent</span> <span class="nf">create</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">bundle</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">bundle</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">String</span> <span class="n">receiptUuid</span> <span class="o">=</span> <span class="n">getReceiptUuid</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">receiptUuid</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ReceiptClearedEvent</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>Прочие уведомления:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyReceiver</span> <span class="kd">extends</span> <span class="n">BroadcastReceiver</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceive</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">action</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getAction</span><span class="o">();</span>
+        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getExtras</span><span class="o">();</span>
+        <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="n">action</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.cashDrawer.OPEN"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">CashDrawerOpenEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.cashOperation.IN"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"total"</span> <span class="o">+</span> <span class="n">CashInEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getTotal</span><span class="o">().</span><span class="na">toPlainString</span><span class="o">());</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">CashInEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getDocumentUuid</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.cashOperation.CASH_OUT"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"total"</span> <span class="o">+</span> <span class="n">CashOutEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getTotal</span><span class="o">().</span><span class="na">toPlainString</span><span class="o">());</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">CashOutEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getDocumentUuid</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.inventory.CARD_OPEN"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">ProductCardOpenedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getProductUuid</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.receipt.sell.CLEARED"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">ReceiptClearedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getReceiptUuid</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.receipt.payback.CLEARED"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">ReceiptClearedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getReceiptUuid</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.receipt.sell.RECEIPT_CLOSED"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">ReceiptClosedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getReceiptUuid</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.receipt.payback.RECEIPT_CLOSED"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">ReceiptClosedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getReceiptUuid</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.receipt.sell.OPENED"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">ReceiptOpenedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getReceiptUuid</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.receipt.payback.OPENED"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">ReceiptOpenedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getReceiptUuid</span><span class="o">());</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>Где:
+<code class="highlighter-rouge">CashInEvent</code> - внесение наличных.
+<code class="highlighter-rouge">CashDrawerOpenEvent</code> - открытие денежного ящика.
+<code class="highlighter-rouge">CashOutEvent</code> - выдача наличных.
+<code class="highlighter-rouge">ReceiptClosedEvent</code> - закрытие чека.</p>
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
+        
+        
+        
+        <a href="tag_Чеки.html" class="btn btn-default navbar-btn cursorNorm" role="button">Чеки</a>
+        
+        
         
     </div>
 

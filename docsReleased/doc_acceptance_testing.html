@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -181,14 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_introduction.html">Введение</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            <li><a href="doc_integration_types.html">Способы интеграции</a></li>
             
             
             
@@ -260,14 +253,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -281,21 +281,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка или иконка приложения в интерфейсе смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            <li><a href="doc_cloud_proxy.html">Обмен данными между приложением и сторонним сервисом</a></li>
             
             
             
@@ -306,10 +299,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            
-            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            <li class="subfolders">
+                <a href="#">Receipt API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_smart_terminal_receipt_api.html">Поиск товара по штрихкоду</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_discounts.html">Скидки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_extras.html">Создание дополнительных полей в чеке</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -317,27 +342,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_storage_api.html">Storage API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_discounts.html">Скидки</a></li>
             
             
             
@@ -418,6 +422,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -432,21 +450,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -492,11 +496,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -546,7 +548,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>При оформлении страницы приложения следуйте ограничениям, указанным на <a href="https://dev.evotor.ru/">портале разработчиков</a>. Когда вы оформите страницу, протестируете приложение и будете готовы выложить его в открытый доступ, нам потребуется провести приёмочное тестирование. О готовности приложения сообщите по адресу <a href="mailto:developer@evotor.ru">developer@evotor.ru</a>.</p>
+  <p>При оформлении страницы приложения следуйте ограничениям, указанным на <a href="https://dev.evotor.ru/">портале разработчиков</a>. Когда вы оформите страницу, протестируете приложение и будете готовы выложить его в открытый доступ, нам потребуется провести приёмочное тестирование. О готовности приложения сообщите по адресу <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#100;&#101;&#118;&#101;&#108;&#111;&#112;&#101;&#114;&#064;&#101;&#118;&#111;&#116;&#111;&#114;&#046;&#114;&#117;">&#100;&#101;&#118;&#101;&#108;&#111;&#112;&#101;&#114;&#064;&#101;&#118;&#111;&#116;&#111;&#114;&#046;&#114;&#117;</a>.</p>
 
 <p>Приёмочное тестирование включает следующие проверки:</p>
 

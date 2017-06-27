@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит информацию об интеграции с облачной товароучётной системой.">
-<meta name="keywords" content=" sample">
+<meta name="keywords" content="ОблакоТовары,  sample">
 <title>Облачная товароучётная система | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -181,14 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_introduction.html">Введение</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            <li><a href="doc_integration_types.html">Способы интеграции</a></li>
             
             
             
@@ -260,14 +253,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -281,21 +281,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка или иконка приложения в интерфейсе смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            <li><a href="doc_cloud_proxy.html">Обмен данными между приложением и сторонним сервисом</a></li>
             
             
             
@@ -306,10 +299,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            
-            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            <li class="subfolders">
+                <a href="#">Receipt API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_smart_terminal_receipt_api.html">Поиск товара по штрихкоду</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_discounts.html">Скидки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_extras.html">Создание дополнительных полей в чеке</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -317,27 +342,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_storage_api.html">Storage API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_discounts.html">Скидки</a></li>
             
             
             
@@ -418,6 +422,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li class="active"><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -432,21 +450,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -492,11 +496,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -575,12 +577,6 @@ $('#toc').on('click', 'a', function() {
       <td style="text-align: center"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">https://example.com/api/v1/user/tariff</td>
-      <td style="text-align: center">Эвотор отправляет по адресу идентификатор пользователя Эвотор и идентификатор тарифа в товароучётной системе.</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">Вы указываете идентификатор тарифа в процессе разработки приложения на сайте https://dev.evotor.ru/, в разделе Тарифы.</td>
-    </tr>
-    <tr>
       <td style="text-align: center">https://example.com/api/v1/user/token</td>
       <td style="text-align: center">Эвотор отправляет по адресу токен приложения, с помощью которого будет авторизовывать запросы от товароучётной системы.</td>
       <td style="text-align: center"> </td>
@@ -593,11 +589,11 @@ $('#toc').on('click', 'a', function() {
   <p>Информацию о сущностях пользователя Эвотор (магазинах, товарах, сотрудниках и смарт-терминалах), товароучётная система получает с помощью запросов к облаку Эвотор.</p>
 </blockquote>
 
-<h3 id="Покупка-и-активация-приложения">Покупка и активация приложения</h3>
+<h3 id="section">Покупка и активация приложения</h3>
 
 <p><img src="images/cloud_application_handling.png" alt="Схема покупки и активации приложения" title="Схема покупки и активации приложения" /></p>
 
-<h4 id="Этап-1">Этап 1</h4>
+<h4 id="section-1">Этап 1</h4>
 
 <p>В магазине приложений, пользователь выбирает приложение и тариф, и авторизуется в стороннем сервисе одним из двух способов:</p>
 
@@ -629,13 +625,14 @@ $('#toc').on('click', 'a', function() {
     <p>Содержимое заголовка Authorization вы задаёте на <a href="https://dev.evotor.ru/">портале разработчиков</a>, при создании приложения. В зависимости от типа авторизации (basic или bearer), который поддерживает сторонний сервис, заголовок может содержать имя пользователя и пароль для доступа к стороннему сервису, закодированные в base64, или токен стороннего сервиса.</p>
 </blockquote>
 
-<h4 id="Этап-2">Этап 2</h4>
+<h4 id="section-2">Этап 2</h4>
 
 <p>Эвотор передаёт в сторонний сервис запрос <a href="https://goo.gl/V71Guj"><strong>[POST] Активация / деактивация тарифа</strong></a>. Тело запроса содержит идентификатор пользователя в Эвоторе и идентификатор тарифа, который вы указали при настойке интеграции приложения на портале dev.evotor.ru, а так же состояние тарифа <code>ACTIVE</code>.</p>
 
-<h3 id="Удаление-и-деактивация-приложения">Удаление и деактивация приложения</h3>
+<h3 id="section-3">Удаление и деактивация приложения</h3>
 
 <p>Эвотор останавливает интеграцию и удаляет приложение если:</p>
+
 <ul>
   <li>пользователь самостоятельно удалил приложение в разделе <strong>Мои приложения</strong> в Личном кабинете пользователя Эвотор;</li>
   <li>у пользователя недостаточно средств для продления подписки.
@@ -644,16 +641,28 @@ $('#toc').on('click', 'a', function() {
 
 <p>В обоих случаях, после удаления приложения, Эвотор передаёт в сторонний сервис запрос <a href="https://goo.gl/V71Guj"><strong>[POST] Активация / деактивация тарифа</strong></a> с состоянием <code class="highlighter-rouge">INACTIVE</code>.</p>
 
-<h4 id="Повторная-установка-приложения">Повторная установка приложения</h4>
+<h4 id="section-4">Повторная установка приложения</h4>
 
 <p>При повторной установке приложения, Эвотор проверяет истёк пробный период использования приложения или нет. Так же, в зависимости от значения параметра <code class="highlighter-rouge">haslBilling</code>, возможно изменение стороны ответственной за биллинг пользователя.</p>
 
-<h4 id="Подробная-схема-покупки-и-установки-приложения">Подробная схема покупки и установки приложения</h4>
+<h4 id="section-5">Подробная схема покупки и установки приложения</h4>
 
 <p><img src="images/market_app_install_schema.png" alt="" /></p>
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Облако.html" class="btn btn-default navbar-btn cursorNorm" role="button">Облако</a>
+        
+        
+        
+        <a href="tag_Товары.html" class="btn btn-default navbar-btn cursorNorm" role="button">Товары</a>
+        
+        
         
     </div>
 

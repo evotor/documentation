@@ -13,6 +13,8 @@ published: true
 
 {% include important.html content="Перед началом работы убедитесь, что в настройках Android Studio отключён параметр Instant run." %}
 
+### Создание приложения по шаблону
+
 Чтобы собрать приложение по шаблону:
 
 1. Создайте новый проект в Android Studio.
@@ -55,10 +57,10 @@ published: true
 4. Соберите apk.
 
    Необходимые данные загружаются автоматически из нашего репозитория.
-   
-  #### Пример добавления товара в чек
-   
-   ````
+
+### Пример добавления товара в чек
+
+```JavaScript
    function processBeforePositionsEdited(actionData) {
     var position = {
         "uuid" : "8e0ffg-lk3e-e93bnk-v0p41",
@@ -74,8 +76,9 @@ published: true
 
     receipt.addPosition(JSON.stringify(position));
 }
-````
-где:
-`processBeforePositionsEdited` - плагин для редактирования позиции
-`receipt.addPosition` - добавление позиции в чек
-   
+```
+
+Где:
+
+* `processBeforePositionsEdited` - плагин для редактирования позиции
+* `receipt.addPosition` - добавление позиции в чек

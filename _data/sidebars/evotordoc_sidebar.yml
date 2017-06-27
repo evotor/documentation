@@ -25,12 +25,8 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Введение
-      url: /doc_introduction.html
-      output: web, pdf
-
-    - title: Тестирование приложения
-      url: /doc_application_test.html
+    - title: Способы интеграции
+      url: /doc_integration_types.html
       output: web, pdf
 
     - title: Термины и определения
@@ -83,6 +79,10 @@ entries:
     - title: Логирование
       url: /doc_logging.html
       output: web
+
+    - title: Тестирование приложения
+      url: /doc_application_test.html
+      output: web, pdf
 
     - title: Манифест JS-приложения
       url: /doc_app_manifest.html

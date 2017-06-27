@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" sample">
+<meta name="keywords" content="ТерминалОблако,  sample">
 <title>Включение режима разработчика | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -181,14 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_introduction.html">Введение</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            <li><a href="doc_integration_types.html">Способы интеграции</a></li>
             
             
             
@@ -260,14 +253,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -281,21 +281,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка или иконка приложения в интерфейсе смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            <li><a href="doc_cloud_proxy.html">Обмен данными между приложением и сторонним сервисом</a></li>
             
             
             
@@ -306,10 +299,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            
-            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            <li class="subfolders">
+                <a href="#">Receipt API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_smart_terminal_receipt_api.html">Поиск товара по штрихкоду</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_discounts.html">Скидки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_extras.html">Создание дополнительных полей в чеке</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -317,27 +342,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_storage_api.html">Storage API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_discounts.html">Скидки</a></li>
             
             
             
@@ -418,6 +422,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -432,21 +450,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -492,11 +496,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -544,37 +546,85 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Режим разработчика даёт доступ к утилите <strong>LogCat</strong>, позволяет отлаживать приложение и собирать его на смарт-терминале в обход в магазина приложений.</p>
+  <p>Режим разработчика позволяет:</p>
+
+<ul>
+  <li>устанавливать приложение на смарт-терминал с помощью ADB, без необходимости загружать его в магазин приложений;</li>
+  <li>просматривать логи приложения с помощью утилиты <strong>LogCat</strong></li>
+  <li>подключать отладчик приложения.</li>
+</ul>
 
 <p>Чтобы включить режим разработчика:</p>
 
 <ol>
-  <li>На <a href="https://dev.evotor.ru">сайте разработчиков</a> выберите разрабатываемое приложение.</li>
+  <li>На <a href="https://dev.evotor.ru">dev.evotor.ru</a> выберите необходимое приложение.</li>
+  <li>
+    <p>На вкладке <strong>Версии</strong>, выберите необходимую версию приложения и перейдите на вкладку <strong>APK</strong>.</p>
+
+    <p>Одновременно у вас в разработке не может быть более двух версий приложения.</p>
+  </li>
+  <li>
+    <p>На вкладке <strong>APK</strong>:</p>
+
+    <ul>
+      <li>
+        <p>Если вы хотите, чтобы тестировщики и разработчики могли установить приложение из Магазина приложений, выберите <strong>Загрузить APK</strong>.</p>
+
+        <p>После того как вы загрузите APK, поля <strong>Код версии</strong> и <strong>Package name</strong> автоматически заполнятся значениями, указанными в APK приложения.</p>
+      </li>
+      <li>
+        <p>Если вы хотите вручную устанавливать приложение на смарт-терминал с помощью ADB, выберите <strong>Указать package name вручную</strong>.</p>
+
+        <p>Вам потребуется вручную указать имя пакета вашего приложения, в поле package name. Код версии в этом случае указывать не требуется.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>На вкладке <strong>Версии</strong>, выберите необходимую версию и нажмите на кнопку <strong>Выложить на тест</strong>.</p>
+
+    <p>Вам может потребоваться заполнить данные профиля и указать платёжные данные. Для тестов вы можете указать любые данные.</p>
+  </li>
   <li>На вкладке <strong>Тестирование</strong> укажите номер телефона учётной записи, для которой требуется включить режим разработчика.</li>
-  <li>Выберите тип пользователя <strong>Разработчик</strong> и нажмите на кнопку <strong>Добавить</strong>.</li>
+  <li>Выберите тип пользователя <strong>Разработчик приложения на терминале Эвотор</strong> и нажмите на кнопку <strong>Добавить</strong>.</li>
 </ol>
 
 <p>Режим разработчика включается на всех терминалах, зарегистрированных на указанный номер телефона.</p>
 
-<p><img src="images/developer_mode_enabling.gif" alt="Режим разработчика на сайте разработчиков" title="Режим разработчика на сайте разработчиков" /></p>
+<p>Режим разработчика действует только для приложения с заданным package name.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Вы можете отлаживать только те приложения, для которых учётная запись задана как <strong>разработчик</strong>.</div>
+<p><img src="images/developer_mode_enabling.png" alt="Режим разработчика на сайте разработчиков" title="Режим разработчика на сайте разработчиков" /></p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Если режим разработчика не включился сразу после добавления разработчика, убедитесь, что у вашего приложения указан идентификатор пакета (вкладка <strong>APK</strong>) и попробуйте выключить и включить wi-fi.</div>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Если режим разработчика не включился сразу после добавления разработчика, попробуйте выключить и включить wi-fi.</div>
 
-<p>В панели уведомлений смарт-терминалов появится сообщение:</p>
-<pre><code class="language-1">Режим разработчика активен
+<p>В панели уведомлений смарт-терминалов, зарегистрированных на указанный номер, появится сообщение:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Режим разработчика активен
 ADB: &lt;IP-адрес&gt;:&lt;порт&gt;
 </code></pre>
+</div>
 
 <p><img src="images/developer_mode.png" alt="Режим разработчика на терминале" title="Режим разработчика на терминале" /></p>
 
 <p>Для подключения к смарт-терминалу в Android Studio, используйте команду:</p>
-<pre><code class="language-1">adb connect &lt;IP-адрес&gt;:&lt;порт&gt;
+
+<div class="highlighter-rouge"><pre class="highlight"><code>adb connect &lt;IP-адрес&gt;:&lt;порт&gt;
 </code></pre>
+</div>
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Облако.html" class="btn btn-default navbar-btn cursorNorm" role="button">Облако</a>
+        
+        
         
     </div>
 

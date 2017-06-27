@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" sample">
+<meta name="keywords" content="JavaТерминалОборудование,  sample">
 <title>SDK для весов | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -181,14 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_introduction.html">Введение</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            <li><a href="doc_integration_types.html">Способы интеграции</a></li>
             
             
             
@@ -260,14 +253,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -281,21 +281,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка или иконка приложения в интерфейсе смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            <li><a href="doc_cloud_proxy.html">Обмен данными между приложением и сторонним сервисом</a></li>
             
             
             
@@ -306,10 +299,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            
-            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            <li class="subfolders">
+                <a href="#">Receipt API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_smart_terminal_receipt_api.html">Поиск товара по штрихкоду</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_discounts.html">Скидки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_extras.html">Создание дополнительных полей в чеке</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -317,27 +342,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_storage_api.html">Storage API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_discounts.html">Скидки</a></li>
             
             
             
@@ -418,6 +422,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -432,21 +450,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -492,11 +496,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -544,13 +546,13 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="Определение-внешнего-сервиса-в-androidmanifestxml">Определение внешнего сервиса в AndroidManifest.xml</h3>
+  <h3 id="androidmanifestxml">Определение внешнего сервиса в AndroidManifest.xml</h3>
 
 <p>Укажите хотя бы один <code class="highlighter-rouge">Intent filter</code>: <code class="highlighter-rouge">INTENT_FILTER_DRIVER_MANAGER</code> или <code class="highlighter-rouge">INTENT_FILTER_VIRTUAL_DRIVER_MANAGER</code>.</p>
 
 <p>Пример объявленного сервиса:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;service</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;service</span>
     <span class="na">android:name=</span><span class="s">"ru.mycompany.drivers.MyDeviceService"</span>
     <span class="na">android:enabled=</span><span class="s">"true"</span>
     <span class="na">android:exported=</span><span class="s">"true"</span>
@@ -575,7 +577,9 @@ $('#toc').on('click', 'a', function() {
     <span class="nt">&lt;meta-data</span>
         <span class="na">android:name=</span><span class="s">"device_categories"</span>
         <span class="na">android:value=</span><span class="s">"SCALES"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/service&gt;</span></code></pre></figure>
+<span class="nt">&lt;/service&gt;</span>
+</code></pre>
+</div>
 
 <p>Где:</p>
 
@@ -585,9 +589,11 @@ $('#toc').on('click', 'a', function() {
 
 <p><code class="highlighter-rouge">INTENT_FILTER_DRIVER_MANAGER</code> – используется для драйверов, требующих подключения USB-оборудования. Помимо <code class="highlighter-rouge">Intent filter</code> в <code class="highlighter-rouge">meta-data</code> необходимо указать характеристики <code class="highlighter-rouge">VendorID</code> и <code class="highlighter-rouge">ProductID</code> целевого устройства (десятичными числами):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;meta-data</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;meta-data</span>
     <span class="na">android:name=</span><span class="s">"usb_device"</span>
-    <span class="na">android:value=</span><span class="s">"VID_1659PID_8963"</span> <span class="nt">/&gt;</span></code></pre></figure>
+    <span class="na">android:value=</span><span class="s">"VID_1659PID_8963"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
 
 <p>Можно указать несколько устройств: <code class="highlighter-rouge">VID_1659PID_8963|VID_123PID_456|VID_1659PID_8964</code>.</p>
 
@@ -595,28 +601,33 @@ $('#toc').on('click', 'a', function() {
 
 <p><code class="highlighter-rouge">INTENT_FILTER_VIRTUAL_DRIVER_MANAGER</code> – используется для драйверов, не требующих подключения USB-оборудования (сетевое, bluetooth и др.). В <code class="highlighter-rouge">meta-data</code> необходимо указать, что драйвер является виртуальным:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;meta-data</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;meta-data</span>
     <span class="na">android:name=</span><span class="s">"virtual_device"</span>
-    <span class="na">android:value=</span><span class="s">"true"</span> <span class="nt">/&gt;</span></code></pre></figure>
+    <span class="na">android:value=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
 
 <p>Экземпляр такого драйвера пользователь может создать исключительно вручную через настройки оборудования. В этом случае, все работы по подключению к нужному устройству берёт на себя производитель драйвера.</p>
 
-<h3 id="Определение-роли-и-категории-устройства">Определение роли и категории устройства</h3>
+<h3 id="section">Определение роли и категории устройства</h3>
 
 <p>Чтобы устройство было распознано как весы, используйте <code class="highlighter-rouge">Intent filter</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">INTENT_FILTER_SCALES</code></pre></figure>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code>INTENT_FILTER_SCALES
+</code></pre>
+</div>
 
 <p>Вместе с этим необходимо указать в meta-data категорию устройства:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;meta-data</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;meta-data</span>
     <span class="na">android:name=</span><span class="s">"device_categories"</span>
     <span class="na">android:value=</span><span class="s">"SCALES"</span> <span class="nt">/&gt;</span>
-    </code></pre></figure>
+</code></pre>
+</div>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Можно указать сразу несколько ролей устройству: <code class="highlighter-rouge">SCALES|PRICEPRINTER|CASHDRAWER</code>(весы | принтер чеков | денежный ящик).</div>
 
-<h3 id="Присвоение-картинки-для-драйвера">Присвоение картинки для драйвера</h3>
+<h3 id="section-1">Присвоение картинки для драйвера</h3>
 
 <p>Укажите в манифесте приложения у сервиса:</p>
 
@@ -625,29 +636,33 @@ $('#toc').on('click', 'a', function() {
 <p><code class="highlighter-rouge">android:label</code> – имя драйвера, которое будет отображаться пользователю при инициализации устройства
 Пример отображения иконки и имени драйвера</p>
 
-<p>[picture_1]</p>
+<p><img src="images/scales.png" alt="picture_1" /></p>
 
 <p>Можно задать <code class="highlighter-rouge">activity</code> настроек:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;meta-data</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;meta-data</span>
     <span class="na">android:name=</span><span class="s">"settings_activity"</span>
-    <span class="na">android:value=</span><span class="s">"ru.mycompany.drivers.MySettingsActivity"</span> <span class="nt">/&gt;</span></code></pre></figure>
+    <span class="na">android:value=</span><span class="s">"ru.mycompany.drivers.MySettingsActivity"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
 
 <p>Указанная <code class="highlighter-rouge">activity</code> должна находиться в текущем <code class="highlighter-rouge">package</code> и будет вызвана при первом подключении устройства или при выборе устройства в меню настроек оборудования.</p>
 
 <p>Версия драйвера (<code class="highlighter-rouge">versionCode</code> и <code class="highlighter-rouge">versionName</code>) берётся из <code class="highlighter-rouge">build.gradle</code>:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">defaultConfig</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">defaultConfig</span> <span class="o">{</span>
     <span class="n">applicationId</span> <span class="s">"ru.mycompany.drivers.myscales"</span>
     <span class="n">minSdkVersion</span> <span class="mi">22</span>
     <span class="n">targetSdkVersion</span> <span class="mi">24</span>
     <span class="n">versionCode</span> <span class="mi">2</span>
     <span class="n">versionName</span> <span class="s">"1.0.1"</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> MinSdkVersion должна быть не выше версии 22.</div>
 
-<h3 id="Подключение-к-сервису-всех-action">Подключение к сервису всех action</h3>
+<h3 id="action">Подключение к сервису всех action</h3>
 
 <p>В реализации метода подключения к сервису для всех <code class="highlighter-rouge">action</code>, указанных в интент-фильтрах укажите соответствующие Binder’ы:</p>
 
@@ -659,7 +674,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Пример:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyDeviceService</span> <span class="kd">extends</span> <span class="n">Service</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyDeviceService</span> <span class="kd">extends</span> <span class="n">Service</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">MyDevice</span><span class="o">&gt;</span> <span class="n">instances</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
     <span class="kd">private</span> <span class="kd">volatile</span> <span class="n">AtomicInteger</span> <span class="n">newDeviceIndex</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
@@ -692,11 +707,13 @@ $('#toc').on('click', 'a', function() {
 		<span class="n">getMyDevice</span><span class="o">(</span><span class="n">instanceId</span><span class="o">).</span><span class="na">destroy</span><span class="o">();</span>
         <span class="n">instances</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">instanceId</span><span class="o">);</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p>В этом же сервисе можно определить <code class="highlighter-rouge">Map</code> для хранения списка нескольких активных экземпляров драйверов, т.к. обращаться к нему придётся из всех указанных Stub’ов.</p>
 
-<h3 id="Описание-указанных-binderов">Описание указанных Binder’ов</h3>
+<h3 id="binder">Описание указанных Binder’ов</h3>
 
 <p>Если нельзя выполнить действие, например, взвесить для метода getWeight, используйте один из типов <code class="highlighter-rouge">Exception</code> с легкочитаемым описанием для всех методов.</p>
 
@@ -715,7 +732,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><code class="highlighter-rouge"> IUsbDriverManagerService.Stub</code> – класс для управления драйверами usb-устройств: подключение и отключение устройств происходят здесь. Требуется реализовать методы <code class="highlighter-rouge">addUsbDevice</code> и <code class="highlighter-rouge">destroy</code>.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.IUsbDriverManagerService</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.IUsbDriverManagerService</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyDriverManagerStub</span> <span class="kd">extends</span> <span class="n">IUsbDriverManagerService</span><span class="o">.</span><span class="na">Stub</span> <span class="o">{</span>
 
@@ -734,7 +751,9 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">destroy</span><span class="o">(</span><span class="kt">int</span> <span class="n">instanceId</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">RemoteException</span> <span class="o">{</span>
         <span class="n">myDeviceService</span><span class="o">.</span><span class="na">destroy</span><span class="o">(</span><span class="n">instanceId</span><span class="o">);</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p>Метод <code class="highlighter-rouge">addUsbDevice</code> в <code class="highlighter-rouge">IUsbDriverManagerService</code> принимает на вход:</p>
 
@@ -755,7 +774,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>подключение и отключение устройств происходят здесь. Требуется реализовать методы <code class="highlighter-rouge">addNewVirtualDevice</code>, <code class="highlighter-rouge">recreateNewVirtualDevice</code> и <code class="highlighter-rouge">destroy</code>.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.IVirtualDriverManagerService</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.IVirtualDriverManagerService</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyDriverManagerStub</span> <span class="kd">extends</span> <span class="n">IVirtualDriverManagerService</span><span class="o">.</span><span class="na">Stub</span> <span class="o">{</span>
 
@@ -780,7 +799,9 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">destroy</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">RemoteException</span> <span class="o">{</span>
         <span class="n">myDeviceService</span><span class="o">.</span><span class="na">destroy</span><span class="o">(</span><span class="n">instanceId</span><span class="o">);</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p><code class="highlighter-rouge">addNewVirtualDevice</code> возвращает номер экземпляра драйвера внутри приложения. По этому номеру будет происходить обращение к конкретному драйверу.</p>
 
@@ -796,7 +817,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><code class="highlighter-rouge">IScalesDriverService.Stub</code> – класс для работы с конкретными экземплярами весов. Требуется реализовать метод <code class="highlighter-rouge">getWeight</code>.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.IScalesDriverService</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.IScalesDriverService</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.scales.Weight</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyScalesStub</span> <span class="kd">extends</span> <span class="n">IScalesDriverService</span><span class="o">.</span><span class="na">Stub</span> <span class="o">{</span>
@@ -811,7 +832,9 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="n">Weight</span> <span class="nf">getWeight</span><span class="o">(</span><span class="kt">int</span> <span class="n">instanceId</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">RemoteException</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">myDeviceService</span><span class="o">.</span><span class="na">getMyDevice</span><span class="o">(</span><span class="n">instanceId</span><span class="o">).</span><span class="na">getWeight</span><span class="o">();</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p>Метод <code class="highlighter-rouge">getWeight</code> принимает на вход номер экземпляра драйвера (тот, который вернул addUsbDevice на прошлом шаге).</p>
 
@@ -836,11 +859,11 @@ $('#toc').on('click', 'a', function() {
 
 <p>Все методы принимают на вход номер экземпляра драйвера.</p>
 
-<h3 id="Описание-класса-для-работы-с-оборудованием">Описание класса для работы с оборудованием</h3>
+<h3 id="section-2">Описание класса для работы с оборудованием</h3>
 
 <p>Пример для USB-весов:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.scales.IScales</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.scales.IScales</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.scales.Weight</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyDevice</span> <span class="kd">implements</span> <span class="n">IScales</span> <span class="o">{</span>
@@ -861,7 +884,9 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="n">Weight</span> <span class="nf">getWeight</span><span class="o">()</span> <span class="o">{</span>
         <span class="c1">//TODO Ваш код запроса веса</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p>Для устройств других категорий реализуйте соответствующие интерфейсы:</p>
 
@@ -871,12 +896,28 @@ $('#toc').on('click', 'a', function() {
 
 <p>Банковский терминал – <code class="highlighter-rouge">ru.evotor.devices.drivers.paysystem.IPaySystem</code>.</p>
 
-<h3 id="Завершение-работы">Завершение работы</h3>
+<h3 id="section-3">Завершение работы</h3>
 
 <p>Загрузите приложение на смарт-терминал, чтобы работать с драйвером.</p>
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
+        
+        
+        
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Оборудование.html" class="btn btn-default navbar-btn cursorNorm" role="button">Оборудование</a>
+        
+        
         
     </div>
 

@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит информацию о запросах Эвотора к стороннему сервису.">
-<meta name="keywords" content=" sample">
+<meta name="keywords" content="ОблакоТовары,  sample">
 <title>Запросы к стороннему сервису | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -181,14 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_introduction.html">Введение</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            <li><a href="doc_integration_types.html">Способы интеграции</a></li>
             
             
             
@@ -260,14 +253,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -281,21 +281,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка или иконка приложения в интерфейсе смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            <li><a href="doc_cloud_proxy.html">Обмен данными между приложением и сторонним сервисом</a></li>
             
             
             
@@ -306,10 +299,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            
-            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            <li class="subfolders">
+                <a href="#">Receipt API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_smart_terminal_receipt_api.html">Поиск товара по штрихкоду</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_discounts.html">Скидки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_extras.html">Создание дополнительных полей в чеке</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -317,27 +342,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_storage_api.html">Storage API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_discounts.html">Скидки</a></li>
             
             
             
@@ -418,6 +422,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -432,21 +450,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -492,11 +496,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -558,7 +560,8 @@ $('#toc').on('click', 'a', function() {
   <li>Получать и передавать номенклатуру.</li>
 </ul>
 
-<h3 id="Авторизация">Авторизация</h3>
+<h3 id="section">Авторизация</h3>
+
 <p>В зависимости от способа авторизации в стороннем сервисе, запросы облака Эвотор могут содержать заголовок <code class="highlighter-rouge">Authorization</code> с типом <code class="highlighter-rouge">Basic</code> или <code class="highlighter-rouge">Bearer</code>:</p>
 
 <ul>
@@ -570,15 +573,18 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ul>
 
-<p>После запросов <code class="highlighter-rouge">/create</code>, <code class="highlighter-rouge">/verify</code>, <code class="highlighter-rouge">/tariff</code>, сторонний сервис сообщает облаку Эвотор <em>пользовательский ключ авторизации</em>, который облако передаёт в заголовках <code class="highlighter-rouge">Authorization</code> с типом <code class="highlighter-rouge">Bearer</code>.</p>
+<p>После запросов <code class="highlighter-rouge">/create</code>, <code class="highlighter-rouge">/verify</code>, сторонний сервис сообщает облаку Эвотор <em>пользовательский ключ авторизации</em>, который облако передаёт в заголовках <code class="highlighter-rouge">Authorization</code> с типом <code class="highlighter-rouge">Bearer</code>.</p>
 
 <p>Сторонний веб-сервис также может обращаться в облако Эвотор за дополнительной информацией. Ключ для авторизации таких запросов, облако Эвотор отправляет на адрес <code class="highlighter-rouge">http://&lt;веб-адрес стороннего сервиса&gt;/api/v1/user/token</code>. Подробнее, см. раздел <strong>Авторизация</strong> на странице <a href="https://dev.evotor.r1nat.com/evotor-cloud-rest-api/">REST API облака Эвотор</a>.</p>
 
-<h3 id="Пример-post-запроса">Пример POST-запроса</h3>
+<h3 id="post-">Пример POST-запроса</h3>
+
 <p>Проверить данные учётной записи.
 Запрос:</p>
-<pre><code class="language-curl">-X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: Basic RXhhbXBsZXBhc3N3b3Jk' -d '{"userUuid":"01-000000000000001","username":"&lt;Имя учётной записи&gt;","password":"&lt;пароль учётной записи&gt;","customField":"любое значение"}' 'https://partner.org/api/v1/user/verify'
+
+<div class="highlighter-rouge"><pre class="highlight"><code>-X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: Basic RXhhbXBsZXBhc3N3b3Jk' -d '{"userUuid":"01-000000000000001","username":"&lt;Имя учётной записи&gt;","password":"&lt;пароль учётной записи&gt;","customField":"любое значение"}' 'https://partner.org/api/v1/user/verify'
 </code></pre>
+</div>
 
 <p>Ответ:</p>
 
@@ -589,12 +595,13 @@ $('#toc').on('click', 'a', function() {
 }
 </code></pre>
 
-<h3 id="Пример-put-запроса">Пример PUT-запроса</h3>
+<h3 id="put-">Пример PUT-запроса</h3>
 <p>Передать список магазинов в сторонний сервис.
 Запрос:</p>
 
-<pre><code class="language-curl">-X PUT --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: &lt;пользовательсский токен&gt;' -d '[{"uuid": "string", "name": "string", "address": "string"}]' 'https://partner.org/api/v1/inventories/stores'
+<div class="highlighter-rouge"><pre class="highlight"><code>-X PUT --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: &lt;пользовательсский токен&gt;' -d '[{"uuid": "string", "name": "string", "address": "string"}]' 'https://partner.org/api/v1/inventories/stores'
 </code></pre>
+</div>
 
 <p>Ответ:</p>
 
@@ -605,11 +612,24 @@ $('#toc').on('click', 'a', function() {
   }
 ]
 </code></pre>
-<h3 id="Справочник-api">Справочник API</h3>
-<p>Ознакомиться и испробовать запросы к REST API облака Эвотор вы можете на сайте https://api.evotor.ru/docs в разделе <strong>Протокол исходящих запросов</strong>.</p>
+
+<h3 id="api">Справочник API</h3>
+<p>Ознакомиться с запросами к REST API облака Эвотор вы можете на сайте https://api.evotor.ru/docs в разделе <strong>Протокол исходящих запросов</strong>.</p>
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Облако.html" class="btn btn-default navbar-btn cursorNorm" role="button">Облако</a>
+        
+        
+        
+        <a href="tag_Товары.html" class="btn btn-default navbar-btn cursorNorm" role="button">Товары</a>
+        
+        
         
     </div>
 

@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит пошаговое описание обмена сообщениями между приложением и сторонним сервисом">
-<meta name="keywords" content=" sample">
-<title>Проксирование HTTP-запросов к стороннему сервису | Документация Эвотор</title>
+<meta name="keywords" content="ОблакоТерминалJavaJavaScript,  sample">
+<title>Обмен данными между приложением и сторонним сервисом | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Проксирование HTTP-запросов к стороннему сервису">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Обмен данными между приложением и сторонним сервисом">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -181,14 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_introduction.html">Введение</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            <li><a href="doc_integration_types.html">Способы интеграции</a></li>
             
             
             
@@ -260,14 +253,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -281,21 +281,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка или иконка приложения в интерфейсе смарт-терминала</a></li>
             
             
             
             
             
             
-            <li class="active"><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            <li class="active"><a href="doc_cloud_proxy.html">Обмен данными между приложением и сторонним сервисом</a></li>
             
             
             
@@ -306,10 +299,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            
-            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            <li class="subfolders">
+                <a href="#">Receipt API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_smart_terminal_receipt_api.html">Поиск товара по штрихкоду</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_discounts.html">Скидки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_extras.html">Создание дополнительных полей в чеке</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -317,27 +342,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_storage_api.html">Storage API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_discounts.html">Скидки</a></li>
             
             
             
@@ -418,6 +422,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -432,21 +450,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -492,11 +496,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -507,7 +509,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Проксирование HTTP-запросов к стороннему сервису</h1>
+   <h1 class="post-title-main">Обмен данными между приложением и сторонним сервисом</h1>
 </div>
 
 
@@ -546,37 +548,57 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <!-- ### Создание списка разрешённых URL -->
+  <p>Все запросы приложений к стороннему сервису проходят через Облако Эвотор:</p>
 
-<!-- Чтобы приложение могло обмениваться сообщениями со сторонним сервисом, в настройках приложения на сайте разработчиков, требуется указать список разрешённых URL: -->
+<p><img src="\images\cloud_proxy.png" alt="" /></p>
 
-<!-- 1. На сайте разработчиков выберите приложение, для которого требуется указать список разрешённых URL. -->
-<!-- 2. На вкладке **Интеграция**, установите флажок **ФЛАЖОК** и укажите список URL, к которым может обращаться приложение. -->
+<p>Для отправки запросов требуется:</p>
 
-<p><!-- Примеры: -->
-  <!-- * `http://example\.com/document.*\.jsp\?wildcard=\*&param=value.*`; -->
-  <!-- * `https://another\.host\.com/document.*\.jsp`; -->
-  <!-- * `https://another\.host\.com/.*`. --></p>
+<ul>
+  <li>На портале <a href="https://dev.evotor.ru">dev.evotor.ru</a>, указать список разрешённых URL, к которым может обращаться приложение.</li>
+  <li>Поддержать возможность обращения к сторонним сервисам в приложении. Способ обращения отличается в зависимости от типа приложения (Java или JS).</li>
+</ul>
 
-<!-- После создания списка, обмен сообщениями происходит по описанному ниже процессу. -->
+<h3 id="url">Настройка списка разрешённых URL</h3>
 
-<h3 id="Шаг-1-Приложение-отправляет-http-сообщение">Шаг 1. Приложение отправляет HTTP-сообщение</h3>
+<p>Чтобы настроить список разрешённых URL:</p>
+
+<ol>
+  <li>На портале <a href="https://dev.evotor.ru">dev.evotor.ru</a> выберите приложение, для которого требуется указать список разрешённых URL.</li>
+  <li>На вкладке <strong>Интеграция</strong>, установите флажок <strong>(версия 2) URL для проксирование запросов из приложения с терминала на ваш сервер</strong> и укажите список URL, к которым может обращаться приложение.</li>
+</ol>
+
+<p>Примеры:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">http://example\.com/document.*\.jsp\?wildcard=\*&amp;param=value.*</code>;</li>
+  <li><code class="highlighter-rouge">https://another\.host\.com/document.*\.jsp</code>;</li>
+  <li><code class="highlighter-rouge">https://another\.host\.com/.*</code>.</li>
+</ul>
+
+<p>После создания списка, обмен сообщениями происходит по описанному ниже процессу.</p>
+
+<h3 id="http-">Шаг 1. Приложение отправляет HTTP-сообщение</h3>
 
 <p>Приложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. Вы можете воспользоваться любым удобным способом отправки сообщения.</p>
 
-<h4 id="java-приложение">Java-приложение</h4>
+<h4 id="java-">Java-приложение</h4>
 <p>Для отправки HTTP-сообщения из Java-приложения вы можете, например, использовать <a href="http://square.github.io/okhttp/">библиотеку OkHttp</a> или способ, описанный на <a href="https://developer.android.com/training/basics/network-ops/connecting.html">developer.android.com</a>.</p>
 
-<h4 id="js-приложение">JS-приложение</h4>
+<h4 id="js-">JS-приложение</h4>
+
+<p>Вы можете реализовать отправку HTTP-сообщений из JS-приложения любым удобным вам способом.</p>
 
 <p>В <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code> требуется указать элемент <code class="highlighter-rouge">internet</code>:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">capabilities</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">internet</span></code></pre></figure>
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">capabilities</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">internet</span>
+</code></pre>
+</div>
 
 <!-- Из JS-приложения вы можете отправить сообщение следующим образом: -->
 
-<h3 id="Шаг-2-Смарт-терминал-передаёт-сообщение-в-облако">Шаг 2. Смарт-терминал передаёт сообщение в облако</h3>
+<h3 id="section">Шаг 2. Смарт-терминал передаёт сообщение в облако</h3>
 
 <p>Терминал перехватывает сообщение и передаёт его в облако Эвотор.</p>
 
@@ -600,7 +622,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Transfer-Encoding</code></li>
 </ul>
 
-<h3 id="Шаг-3-Облако-передаёт-сообщение-адресату">Шаг 3. Облако передаёт сообщение адресату</h3>
+<h3 id="section-1">Шаг 3. Облако передаёт сообщение адресату</h3>
 
 <p>Облако удаляет служебные заголовки, добавляет свои заголовки и передаёт сообщение адресату.</p>
 
@@ -609,16 +631,17 @@ $('#toc').on('click', 'a', function() {
 <ul>
   <li><code class="highlighter-rouge">X-Evotor-Store-Uuid</code> – содержит идентификатор магазина в формате uuid4, к которому привязан терминал.</li>
   <li><code class="highlighter-rouge">X-Evotor-Device-UUID</code> – содержит идентификатор устройства в формате uuid4, полученный по запросу к <code class="highlighter-rouge">/api/v1/inventories/devices</code>.</li>
-  <li><code class="highlighter-rouge">Authorization</code> – содержит токен пользователя. Токен необходим для bearer-авторизации.</li>
+  <li><code class="highlighter-rouge">Authorization</code> – содержит <a href="./doc_authorization.html#serverToken">токен стороннего сервиса</a>. Токен необходим для bearer-авторизации.</li>
 </ul>
 
 <p>Сторонний сервер получает сообщение от облака Эвотор и определяет отправителя с помощью заголовка Authorization.</p>
 
-<h4 id="Шаг-4-Ответ-стороннего-сервиса">Шаг 4. Ответ стороннего сервиса</h4>
+<h4 id="section-2">Шаг 4. Ответ стороннего сервиса</h4>
 
 <p>Ответ стороннего сервиса передаётся приложению в обратном порядке.</p>
 
 <p>Ответы стороннего сервиса должны содержать объекты:</p>
+
 <ul>
   <li><code class="highlighter-rouge">status</code> – содержит HTTP-код состояния.</li>
   <li><code class="highlighter-rouge">body</code> – содержит тело запроса.</li>
@@ -626,6 +649,26 @@ $('#toc').on('click', 'a', function() {
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Облако.html" class="btn btn-default navbar-btn cursorNorm" role="button">Облако</a>
+        
+        
+        
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
+        
+        
+        
+        <a href="tag_JavaScript.html" class="btn btn-default navbar-btn cursorNorm" role="button">JavaScript</a>
+        
+        
         
     </div>
 

@@ -7,8 +7,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит информацию о процессе разработки JS-приложения для смарт-терминала.">
-<meta name="keywords" content=" sample">
+<meta name="description" content="Раздел содержит информацию правах пользователей смарт терминала и примеры того, как получить данные о них.">
+<meta name="keywords" content="ТерминалJavaJavaScript,  sample">
 <title>Права приложения | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -181,14 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_introduction.html">Введение</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            <li><a href="doc_integration_types.html">Способы интеграции</a></li>
             
             
             
@@ -260,14 +253,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -281,21 +281,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка или иконка приложения в интерфейсе смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            <li><a href="doc_cloud_proxy.html">Обмен данными между приложением и сторонним сервисом</a></li>
             
             
             
@@ -306,10 +299,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            
-            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            <li class="subfolders">
+                <a href="#">Receipt API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_smart_terminal_receipt_api.html">Поиск товара по штрихкоду</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_discounts.html">Скидки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_extras.html">Создание дополнительных полей в чеке</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -317,27 +342,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_storage_api.html">Storage API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_discounts.html">Скидки</a></li>
             
             
             
@@ -418,6 +422,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -432,21 +450,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -492,11 +496,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -515,7 +517,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит информацию о процессе разработки JS-приложения для смарт-терминала.</div>
+    <div class="summary">Раздел содержит информацию правах пользователей смарт терминала и примеры того, как получить данные о них.</div>
    
 
     
@@ -546,7 +548,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="О-правах-приложения">О правах приложения</h3>
+  <h3 id="section">О правах приложения</h3>
 
 <p>С помощью прав (grants), назначенных различным компонентам приложения, вы можете ограничить функциональность приложения для пользователей с определёнными ролями. Чтобы узнать список прав той или иной роли, используйте <a href="doc_smart_terminal_users_api.html">Users API</a>.</p>
 
@@ -556,96 +558,110 @@ $('#toc').on('click', 'a', function() {
 
 <p>Если оставить список прав пустым, приложение будет доступно любому пользоваетлю, независимо от роли.</p>
 
-<h3 id="java-приложение">Java-приложение</h3>
+<h3 id="java-">Java-приложение</h3>
 
-<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) java-приложения необходимыми правами, выполните следующие действия:</p>
+<p>Чтобы наделить java-приложение необходимыми правами, выполните следующие действия:</p>
 
 <ol>
   <li>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, где <code class="highlighter-rouge">&lt;Название&gt;</code> – имя требуемого плагина, демона или экрана.</li>
-  <li>В файле <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code> укажите массив строк с правами следующим образом:</li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code> укажите массив строк с правами следующим образом:</p>
+
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;resources&gt;</span>
+<span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_SELL<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_PAYBACK <span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/string-array&gt;</span>
+<span class="nt">&lt;/resources&gt;</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>В манифесте приложения, для соответствующей операции (<code class="highlighter-rouge">activity</code>), добавьте элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:</p>
+
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span>
+</code></pre>
+    </div>
+  </li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;resources&gt;</span>
-    <span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_SELL<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_PAYBACK <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/string-array&gt;</span>
-    <span class="nt">&lt;/resources&gt;</span>
-    </code></pre></figure>
-
-<ol>
-  <li>В манифесте приложения, для соответствующей операции (<code class="highlighter-rouge">activity</code>), добавьте элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:</li>
-</ol>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span>
-    </code></pre></figure>
-
-<h3 id="js-приложение">JS-приложение</h3>
+<h3 id="js-">JS-приложение</h3>
 
 <p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) JS-приложения необходимыми правами, выполните следующие действия:</p>
 
 <ol>
-  <li>В файле <code class="highlighter-rouge">client.yaml</code> добавьте список <code class="highlighter-rouge">grants</code> требуемых прав для соответствующего элемента (демона, плагина или экрана):</li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">client.yaml</code> добавьте список <code class="highlighter-rouge">grants</code> требуемых прав для соответствующего элемента (демона, плагина или экрана):</p>
+
+    <div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">&lt;Название&gt;</span>
+  <span class="s">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;Заголовок</span><span class="nv"> </span><span class="s">экрана&gt;"</span>
+  <span class="s">launcher-label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;Название</span><span class="nv"> </span><span class="s">плитики&gt;"</span>
+  <span class="s">launcher-icon</span><span class="pi">:</span> <span class="s">client/views/example-loader/icon.png</span>
+  <span class="s">launcher-color</span><span class="pi">:</span> <span class="c1">#133788</span>
+  <span class="s">source</span><span class="pi">:</span> <span class="s">client/views/example-loader/view.html</span>
+  <span class="s">scripts</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">no-script</span>
+  <span class="s">styles</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
+  <span class="s">grants</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
+    <span class="pi">-</span> <span class="s">CASH_OPERATIONS_PAYBACK</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, который содержит массив строк с правами, перечисленными в списке <code class="highlighter-rouge">grants</code>:</p>
+
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;resources&gt;</span>
+<span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_SELL<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_PAYBACK <span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/string-array&gt;</span>
+<span class="nt">&lt;/resources&gt;</span>
+</code></pre>
+    </div>
+  </li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml">    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;Название&gt;</span>
-      <span class="na">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;Заголовок</span><span class="nv"> </span><span class="s">экрана&gt;"</span>
-      <span class="na">launcher-label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;Название</span><span class="nv"> </span><span class="s">плитики&gt;"</span>
-      <span class="na">launcher-icon</span><span class="pi">:</span> <span class="s">client/views/example-loader/icon.png</span>
-      <span class="na">launcher-color</span><span class="pi">:</span> <span class="c1">#133788</span>
-      <span class="na">source</span><span class="pi">:</span> <span class="s">client/views/example-loader/view.html</span>
-      <span class="na">scripts</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">no-script</span>
-      <span class="na">styles</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
-      <span class="na">grants</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
-        <span class="pi">-</span> <span class="s">CASH_OPERATIONS_PAYBACK</span>
-    </code></pre></figure>
+<p>Где <code class="highlighter-rouge">&lt;Название&gt;</code> – значение параметра <code class="highlighter-rouge">name</code> в файле <code class="highlighter-rouge">client.yaml</code>.</p>
 
 <ol>
-  <li>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, который содержит массив строк с правами, перечисленными в списке <code class="highlighter-rouge">grants</code>:</li>
+  <li>
+    <p>Убедитесь, что в созданном манифесте приложения, для соответствующей операции (<code class="highlighter-rouge">activity</code>) добавлен элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:</p>
+
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span>
+</code></pre>
+    </div>
+  </li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;resources&gt;</span>
-    <span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_SELL<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_PAYBACK <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/string-array&gt;</span>
-    <span class="nt">&lt;/resources&gt;</span>
-    </code></pre></figure>
+<h3 id="section-1">Примеры</h3>
 
-<p>где <code class="highlighter-rouge">&lt;Название&gt;</code> – значение параметра <code class="highlighter-rouge">name</code> в файле <code class="highlighter-rouge">client.yaml</code>.</p>
-
-<ol>
-  <li>Убедитесь, что в созданном манифесте приложения, для соответствующей операции (<code class="highlighter-rouge">activity</code>) добавлен элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:</li>
-</ol>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span>
-    </code></pre></figure>
-
-<h3 id="Примеры">Примеры</h3>
 <p>Манифест приложения:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">".app.SomeJSWrappedActivity"</span> <span class="na">android:theme=</span><span class="s">"@style/JSWrappedTheme"</span> <span class="na">android:icon=</span><span class="s">"@drawable/icon"</span> <span class="na">android:label=</span><span class="s">"&lt;Название плитки&gt;"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">".app.SomeJSWrappedActivity"</span> <span class="na">android:theme=</span><span class="s">"@style/JSWrappedTheme"</span> <span class="na">android:icon=</span><span class="s">"@drawable/icon"</span> <span class="na">android:label=</span><span class="s">"&lt;Название плитки&gt;"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;intent-filter&gt;</span>
         <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.EVOTOR"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/intent-filter&gt;</span>
     <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.BACKGROUND_COLOR"</span> <span class="na">android:value=</span><span class="s">"#133788"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/activity&gt;</span></code></pre></figure>
+<span class="nt">&lt;/activity&gt;</span>
+</code></pre>
+</div>
 
-<p>Список прав в файле ‘res/values/<Название>_grants.xml':</Название></p>
+<p>Список прав в файле <code class="highlighter-rouge">res/values/&lt;Название&gt;_grants.xml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;resources&gt;</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;resources&gt;</span>
 <span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_SELL<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_PAYBACK <span class="nt">&lt;/item&gt;</span>
 <span class="nt">&lt;/string-array&gt;</span>
-<span class="nt">&lt;/resources&gt;</span></code></pre></figure>
+<span class="nt">&lt;/resources&gt;</span>
+</code></pre>
+</div>
 
-<h3 id="Список-прав">Список прав</h3>
+<h3 id="section-2">Список прав</h3>
 
 <p>В таблице ниже представлены права, которыми вы можете наделить компоненты приложения.</p>
 
@@ -710,6 +726,22 @@ $('#toc').on('click', 'a', function() {
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
+        
+        
+        
+        <a href="tag_JavaScript.html" class="btn btn-default navbar-btn cursorNorm" role="button">JavaScript</a>
+        
+        
         
     </div>
 

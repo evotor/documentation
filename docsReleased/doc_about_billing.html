@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит общую информацию о биллинге пользователей Эвотор. ">
-<meta name="keywords" content=" sample">
+<meta name="keywords" content="Биллинг,  sample">
 <title>О биллинге | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -181,14 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_introduction.html">Введение</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            <li><a href="doc_integration_types.html">Способы интеграции</a></li>
             
             
             
@@ -260,14 +253,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -281,21 +281,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка или иконка приложения в интерфейсе смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            <li><a href="doc_cloud_proxy.html">Обмен данными между приложением и сторонним сервисом</a></li>
             
             
             
@@ -306,10 +299,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            
-            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            <li class="subfolders">
+                <a href="#">Receipt API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_smart_terminal_receipt_api.html">Поиск товара по штрихкоду</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_discounts.html">Скидки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_extras.html">Создание дополнительных полей в чеке</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -317,27 +342,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_storage_api.html">Storage API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_discounts.html">Скидки</a></li>
             
             
             
@@ -418,6 +422,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -432,21 +450,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -492,11 +496,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -548,7 +550,7 @@ $('#toc').on('click', 'a', function() {
 
   <p>Эвотор определяет кто выполняет биллинг пользователя в зависимости от того, работает пользователь с существующей учётной записью стороннего сервиса или создаёт новую из Личного кабинета.</p>
 
-<h3 id="Кто-выполняет-биллинг">Кто выполняет биллинг</h3>
+<h3 id="section">Кто выполняет биллинг</h3>
 
 <p>Эвотор выполняет биллинг, если пользователь создал новую учётную запись в стороннем сервисе после установки приложения, из Личного кабинета Эвотор (сторонний сервис должен поддерживать URL <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost">/api/v1/user/create</a>). В этом случае, при создании новой учётной записи, сторонний сервис возвращает параметр <code class="highlighter-rouge">"hasBilling": "False"</code>. Впоследствии, при авторизации с помощью такой учётной записи, сторонний сервис всегда возвращает <code class="highlighter-rouge">"hasBilling": "False"</code>.</p>
 
@@ -556,28 +558,17 @@ $('#toc').on('click', 'a', function() {
 
 <p>Все изменения, связанные с подпиской, Эвотор отправляет по адресу <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1user~1event%2Fpost">partner.ru/api/v1/user/event</a>.</p>
 
-<h3 id="Данные-о-биллинге-пользователей">Данные о биллинге пользователей</h3>
+<h3 id="section-1">Данные о биллинге пользователей</h3>
 
-<p>Эвотор отправляет данные о биллинге пользователей на два URL:</p>
+<p>Эвотор отправляет данные о биллинге пользователей на URL <code class="highlighter-rouge">partner.ru/api/v1/user/event</code>:</p>
 
 <ul>
+  <li><code class="highlighter-rouge">SubscriptionCreated</code> – новая подписка.</li>
+  <li><code class="highlighter-rouge">SubscriptionActivated</code> – активирована платная фаза подписики. Эвотор передаёт сообщение, если пользователь решил продолжить использовать приложение после завершения пробного периода.</li>
+  <li><code class="highlighter-rouge">SubscriptionRenewed</code> – подписка продлена на следующий период.</li>
+  <li><code class="highlighter-rouge">SubscriptionCancelled</code> – подписка отменена.</li>
   <li>
-    <p><code class="highlighter-rouge">partner.ru/api/v1/user/tariff</code></p>
-
-    <p>Эвотор передаёт на URL сообщение об активации (<code class="highlighter-rouge">"status": "ACTIVE"</code>) и деактивации (<code class="highlighter-rouge">"status": "INACTIVE"</code>) тарифа. Сообщения по этому адресу требуется авторизовать с помощью токена стороннего сервиса (подробнее см. в разделе <a href="">””</a>).</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">partner.ru/api/v1/user/event</code></p>
-
-    <p>Эвотор передаёт на URL события, связанные с биллингом:</p>
-
-    <ul>
-      <li><code class="highlighter-rouge">SubscriptionCreated</code> – новая подписка.</li>
-      <li><code class="highlighter-rouge">SubscriptionActivated</code> – активирована платная фаза подписики. Эвотор передаёт сообщение, если пользователь решил продолжить использовать приложение после завершения пробного периода.</li>
-      <li><code class="highlighter-rouge">SubscriptionRenewed</code> – подписка продлена на следующий период.</li>
-      <li><code class="highlighter-rouge">SubscriptionCancelled</code> – подписка отменена.</li>
-      <li><code class="highlighter-rouge">SubscriptionTermsChanged</code> – изменились условия подписки, например, тарифный план или количество устройств.</li>
-    </ul>
+    <p><code class="highlighter-rouge">SubscriptionTermsChanged</code> – изменились условия подписки, например, тарифный план или количество устройств.</p>
 
     <p>Стороннему сервису достаточно подписаться на эти сообщения. Эвотор гарантирует доставку сообщений и не требует подтверждения получения.</p>
   </li>
@@ -587,6 +578,14 @@ $('#toc').on('click', 'a', function() {
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Биллинг.html" class="btn btn-default navbar-btn cursorNorm" role="button">Биллинг</a>
+        
+        
         
     </div>
 

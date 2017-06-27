@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" sample">
+<meta name="keywords" content="Облако,  sample">
 <title>Авторизация | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -181,14 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_introduction.html">Введение</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            <li><a href="doc_integration_types.html">Способы интеграции</a></li>
             
             
             
@@ -260,14 +253,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -281,21 +281,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка или иконка приложения в интерфейсе смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            <li><a href="doc_cloud_proxy.html">Обмен данными между приложением и сторонним сервисом</a></li>
             
             
             
@@ -306,10 +299,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            
-            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            <li class="subfolders">
+                <a href="#">Receipt API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_smart_terminal_receipt_api.html">Поиск товара по штрихкоду</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_discounts.html">Скидки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_extras.html">Создание дополнительных полей в чеке</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -317,27 +342,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_storage_api.html">Storage API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_discounts.html">Скидки</a></li>
             
             
             
@@ -418,6 +422,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -432,21 +450,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -492,11 +496,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -552,7 +554,7 @@ $('#toc').on('click', 'a', function() {
   <li>токен приложения.</li>
 </ul>
 
-<h3 id="Токен-стороннего-сервиса">Токен стороннего сервиса</h3>
+<h3 id="serverToken">Токен стороннего сервиса</h3>
 
 <p>Сторонний сервис использует токен для авторизации запросов Облака Эвотор в рамках работы с учётной записью в стороннем сервисе. Облако передаёт токен стороннего сервиса в заголовке <code class="highlighter-rouge">Authorization</code>. Токен необходим для авторизации следующих запросов и уведомлений:</p>
 
@@ -564,64 +566,81 @@ $('#toc').on('click', 'a', function() {
 </ul>
 
 <p>Чтобы задать токен стороннего сервиса:</p>
+
 <ol>
   <li>На сайте <a href="https://dev.evotor.ru/">dev.evotor.ru</a> выберите приложение для которого требуется задать токен.</li>
-  <li>На вкладке <strong>Интеграция</strong> выберите необходимый параметр (например, <strong>События биллинга</strong>) и укажите:
-    <ul>
-      <li>Токен в формате uuid4, если ваш сервис использует bearer-авторизацию.</li>
-      <li>Логин и пароль для доступа к вашему сервису, если он использует basic-авторизацию.</li>
-    </ul>
-  </li>
+  <li>На вкладке <strong>Интеграция</strong> выберите необходимый параметр (например, <strong>События биллинга</strong>) и укажите:</li>
 </ol>
+
+<ul>
+  <li>Токен в формате uuid4, если ваш сервис использует bearer-авторизацию.</li>
+  <li>Логин и пароль для доступа к вашему сервису, если он использует basic-авторизацию.</li>
+</ul>
 
 <p>В ответ на запросы <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1create%2Fpost">Регистрация новой учётной записи</a> и <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost">Авторизация существующего пользователя</a> сторонний сервис возвращает в Облако <em>токен пользователя</em>.</p>
 
-<h3 id="Токен-пользователя">Токен пользователя</h3>
+<h3 id="usersToken">Токен пользователя</h3>
 
 <p>При создании нового или авторизации существующего пользователя, сторонний сервис возвращает в Облако уникальный <em>токен пользователя</em>. Облако передаёт токен в заголовке <code class="highlighter-rouge">Authorization</code> запросов приложения к стороннему сервису.</p>
 
-<h3 id="Токен-приложения">Токен приложения</h3>
+<h3 id="section">Токен приложения</h3>
 
 <p>Облако присваивает токен приложения каждому установленному приложению и с его помощью определяет в рамках какого пользователя действуют запросы стороннего сервиса. При запросе к REST API Облака Эвотор, например, для получения списка товаров или магазинов пользователя, сторонний сервис передаёт <em>токен приложения</em> в заголовке <code class="highlighter-rouge">X-Authorization</code>.
 Получить токен, который Облако выдало установленному приложению, вы можете одним из способов:</p>
+
 <ul>
   <li>
     <p>по адресу <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost"><code class="highlighter-rouge">partner.ru/api/v1/user/token</code></a>.</p>
 
     <p>Авторизуйте запросы Облака с помощью токена стороннего сервиса.</p>
   </li>
-  <li>В GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe-приложения:
-    <pre><code class="language-curl">https://partner.org/#/?uid=&lt;example&gt;&amp;token=string
-</code></pre>
+  <li>
+    <p>В GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe-приложения:
+<code class="highlighter-rouge">curl
+https://partner.org/#/?uid=&lt;example&gt;&amp;token=string
+</code></p>
 
-    <p><img src="images/iframe_token.png" alt="Токен для интеграции с 1с" /></p>
+    <p><img src="images/iframe_token.png" alt="Токен из iframe'а" /></p>
   </li>
   <li>
-    <p>В Личном кабинете пользователя Эвотор, в разделе <strong>Настройки</strong> приложения.</p>
+    <p>В <a href="https://lk.evotor.ru/web/login">Личном кабинете пользователя Эвотор</a>, в разделе <strong>Настройки</strong> приложения.</p>
 
     <p>В этом случае, пользователю требуется вручную указать токен в интерфейсе стороннего приложения. Такой метод рекомендуется при работе с интеграциями 1С.</p>
   </li>
 </ul>
 
-<p>Чтобы отображать токен на закладке настроек приложения:</p>
+<p>Чтобы отображать токен на вкладке настроек приложения:</p>
+
 <ol>
   <li>На сайте <a href="https://dev.evotor.ru">dev.evotor.ru</a> выберите приложение для которого требуется задать токен.</li>
   <li>На вкладке <strong>Интеграция</strong> установите флажок <strong>Создать закладку “Настройки” на странице приложения</strong>.</li>
-  <li>В блоке <strong>Настройка формы</strong> нажмите на кнопку <strong>Текстовое поле</strong> и укажите поля:
+  <li>
+    <p>В блоке <strong>Настройка формы</strong> нажмите на кнопку <strong>Текстовое поле</strong> и укажите поля:</p>
+
     <ul>
-      <li><strong>FormData name</strong> – Токен приложения.</li>
-      <li><strong>RegExp для ввода символов</strong> – <code class="highlighter-rouge">${token}</code>.</li>
-      <li>При необходимости укажите дополнительную информацию в поле <strong>Подсказка к полю</strong>.</li>
+      <li><strong>FormData name</strong> – Название поля, например, “Токен приложения”.</li>
+      <li><strong>Значение поля</strong> – <code class="highlighter-rouge">${token}</code>, переменная, которая автоматически заменяется на токен приложения, полученный в базе данных.</li>
+      <li><strong>Подсказка к полю</strong> – при необходимости, укажите здесь дополнительную информацию.</li>
     </ul>
 
-    <p><img src="images/1c_integration_API_key.png" alt="Токен для интеграции с 1с" /></p>
+    <p><img src="images/users_token_setting_up.png" alt="Настройка токена на вкладке Интеграция" /></p>
   </li>
 </ol>
 
-<p>Токен приложения будет автоматически скопирован из базы данных и отображён в поле <strong>Токен приложения</strong> на вкладке <strong>Настройки</strong>.</p>
+<p>Токен приложения будет автоматически скопирован из базы данных и отображён в поле <strong>Токен приложения</strong> на вкладке <strong>Настройки</strong>, в <a href="https://lk.evotor.ru/web/login">Личном кабинете пользователя Эвотор</a>.</p>
+
+<p><img src="images/users_token.png" alt="Токен пользователя в Личном кабинете" /></p>
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Облако.html" class="btn btn-default navbar-btn cursorNorm" role="button">Облако</a>
+        
+        
         
     </div>
 

@@ -19,6 +19,7 @@ JSONObject object = new JSONObject();
 ```
 
 Вы можете создавать дополнительные поля в чеках в следующих случаях:
+
 * [при открытии чека](./doc_receipt_creation.html);
 * [при применении скидки](./doc_discounts.html);
 * [при изменении позиций в чеке](./doc_receipt_interactions.html).
