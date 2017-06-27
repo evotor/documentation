@@ -12,9 +12,7 @@ folder: tutorials
 
 Перед разработкой приложения убедитесь что:
 
-* На смарт-терминале установлена прошивка версии 2.4.0 или выше.
-
-* Версия приложения Evotor POS, установленного на смарт-терминале, 6.8.0 или выше.
+* На смарт-терминале установлена прошивка версии 2.4.2 или выше.
 
 * Для приложения включён [режим разработчика](./doc_developer_mode.html).
 
@@ -42,20 +40,10 @@ folder: tutorials
 2. В файле `build.gradle` приложения, добавьте библиотеку integration-library в зависимости:
 
    ```
-   dependencies {
-   compile fileTree(dir: 'libs', include: ['*.jar'])
-   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-       exclude group: 'com.android.support', module: 'support-annotations'
-   })
-   compile 'com.android.support:appcompat-v7:25.3.1'
-   compile 'com.android.support.constraint:constraint-layout:1.0.2'
-   compile 'com.android.support:design:25.3.1'
-   testCompile 'junit:junit:4.12'
-   compile group: 'com.github.evotor', name: 'integration-library', version: 'v0.3.15', changing: true
-   }
+        compile group: 'com.github.evotor', name: 'integration-library', version: 'v0.3.19', changing: true
    ```
 
-   {% include note.html content="Убедитесь, что в зависимости указана [актуальная версия библиотеки](https://github.com/xcam/integration-library/)." %}
+   {% include note.html content="Убедитесь, что в зависимости указана [актуальная версия библиотеки](https://github.com/evotor/integration-library/)." %}
 
 ### Пример 1. Добавление плитки приложения на главный экран смарт-терминала
 
@@ -96,7 +84,7 @@ folder: tutorials
 * События, на которые требуется ответ приложения.
 * Широковещательные сообщения, на которые ответ приложения не требуется.
 
-Чтобы запустить приложение при получении определённого события (например, при добавлении товара в чек):
+Чтобы получить события, на которые требуется ответ приложения, например, при добавлении товара в чек:
 
 1. Cоздайте службу, например `MyIntegrationService`.
 

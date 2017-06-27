@@ -13,59 +13,6 @@ published: true
 
 С помощью Users API вы можете узнать данные всех пользователей или пользователя, который авторизован на смарт-терминале в данный момент. Например, список прав авторизованного пользователя.
 
-
-
-Users API смарт-терминала включает в себя:
-
-* URI контента `BASE_URI = Uri.parse("content://ru.evotor.users")`:
-
-    Данные хранятся локально и синхронизируются с облаком Эвотор сразу после внесения изменений в облаке.
-
-* Таблицу пользователей `UsersTable`:
-
-  ```java
-  object UsersTable {
-  val URI = Uri.withAppendedPath(UsersContentProviderContract.BASE_URI, "users")
-  val URI_AUTHENTICATED = Uri.withAppendedPath(URI, "authenticated")
-
-  val ROW_USER_UUID = "USER_UUID"
-  val ROW_USER_SECOND_NAME = "USER_SECOND_NAME"
-  val ROW_USER_FIRST_NAME = "USER_FIRST_NAME"
-  val ROW_USER_PHONE = "USER_PHONE"
-  val ROW_USER_PIN = "USER_PIN"
-  val ROW_ROLE_UUID = "ROLE_UUID"
-  val ROW_ROLE_TITLE = "ROLE_TITLE"
-  }
-  ```
-
-* Таблицу ролей `RolesTable`:
-
-  ```java
-  object RolesTable {
-  URI = Uri.withAppendedPath(UsersContentProviderContract.BASE_URI, "roles")
-
-  val ROW_UUID = "UUID"
-  val ROW_TITLE = "TITLE"
-  }
-  ```
-
-* Таблицу прав `GrantsTable`:
-
-  ```java
-  object GrantsTable {
-  val URI = Uri.withAppendedPath(UsersContentProviderContract.BASE_URI, "grants")
-  val URI_GRANTS_OF_AUTHENTICATED_USER = Uri.withAppendedPath(URI, "authenticated")
-
-  val ROW_ROLE_UUID = "ROLE_UUID"
-  val ROW_TITLE = "TITLE"
-  }
-  ```
-
-
-Схема отношения данных в таблицах.
-
-![](images/UsersAPI.png "Диаграмма отношений данных")
-
 ### Примеры запросов к Users API
 
 Работа с данными пользователей:

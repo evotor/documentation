@@ -1,7 +1,7 @@
 ---
 title: Работа с позициями чека
 keywords: sample
-summary: Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека, а также .
+summary: Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека.
 sidebar: evotordoc_sidebar
 permalink: doc_receipt_interactions.html
 tags: [Терминал, Java, Чеки]
@@ -20,12 +20,17 @@ folder: smart_terminal_SDK
 
    ```java
    public class MyIntegrationService extends IntegrationService {
-       @Override
-       public void onCreate() {
-           registerProcessor(new BeforePositionsEditedEventProcessor() {
-               @Override
-               public void call(BeforePositionsEditedEvent beforePositionsEditedEvent, Callback callback)
-           });
+    @Nullable
+    @Override
+    protected Map<String, ActionProcessor> createProcessors() {
+        Map<String, ActionProcessor> map = new HashMap<>();
+        map.put(BeforePositionsEditedEvent.NAME_SELL_RECEIPT, new BeforePositionsEditedEventProcessor() {
+            @Override
+            public void call(@NonNull String action, @NonNull BeforePositionsEditedEvent event, @NonNull Callback callback){
+
+            }
+        });
+        return map;
        }
    }
    ```
@@ -64,7 +69,7 @@ callback.onResult(beforePositionsEditedEventResult)
 ```
 
 
-Если приложению для возврата результата необходимо взаимодействие с пользователем, запустите операцию (`Activity`), которая наследует класс `BeforePositionsEditedEventActivity`:
+Если приложению для возврата результата необходимо взаимодействие с пользователем, запустите операцию (`Activity`), которая наследует класс `IntegrationActivity`:
 
 ```java
 callback.startActivity(new Intent(context, MainActivity.class));
@@ -80,26 +85,14 @@ setIntegrationResult(new BeforePositionsEditedEventResult(changes, null));
 
 Где вместо null вы можете передать `new SetExtra(extra)`, команду для [создания дополнительных полей в чеке](./doc_receipt_extras.html).
 
-Класс `BeforePositionsEditedEventActivity` задан как:
 
-```java
-public class BeforePositionsEditedEventActivity extends IntegrationActivity {
-    public void setIntegrationResult(BeforePositionsEditedEventResult result) {
-        setIntegrationResult(result == null ? null : result.toBundle());
-    }
-
-    public BeforePositionsEditedEvent getEvent() {
-        return BeforePositionsEditedEvent.create(getSourceBundle());
-    }
-}
-```
 
 #### Описание события `BeforePositionsEditedEvent`
 
 О намерении изменения чека сообщает событие `beforePositionsEditedEvent`:
 
 ```java
-public class BeforePositionsEditedEvent {
+public class BeforePositionsEditedEvent implements IBundlable {
     private static final String TAG = "PositionsEditedEvent";
 
     public static final String NAME_SELL_RECEIPT = "evo.v2.receipt.sell.beforePositionsEdited";
@@ -108,21 +101,29 @@ public class BeforePositionsEditedEvent {
     private static final String KEY_RECEIPT_UUID = "receiptUuid";
     private static final String KEY_CHANGES = "changes";
 
-
+    @NonNull
     private final String receiptUuid;
+    @NonNull
     private final List<IPositionChange> changes;
 
     public BeforePositionsEditedEvent(
-            String receiptUuid,
-            List<IPositionChange> changes
+            @NonNull String receiptUuid,
+            @NonNull List<IPositionChange> changes
     ) {
         this.receiptUuid = receiptUuid;
         this.changes = changes;
     }
 
-    public BeforePositionsEditedEvent(Bundle bundle) {
-        this(
-                bundle.getString(KEY_RECEIPT_UUID, null),
+    @Nullable
+    public static BeforePositionsEditedEvent create(@Nullable Bundle bundle) {
+        if (bundle == null) {
+            return null;
+        }
+
+        String receiptUuid = bundle.getString(KEY_RECEIPT_UUID, null);
+
+        return new BeforePositionsEditedEvent(
+                receiptUuid,
                 Utils.filterByClass(
                         ChangesMapper.INSTANCE.create(bundle.getParcelableArray(KEY_CHANGES)),
                         IPositionChange.class
@@ -130,6 +131,8 @@ public class BeforePositionsEditedEvent {
         );
     }
 
+    @Override
+    @NonNull
     public Bundle toBundle() {
         Bundle result = new Bundle();
         result.putString(KEY_RECEIPT_UUID, receiptUuid);
@@ -142,10 +145,12 @@ public class BeforePositionsEditedEvent {
         return result;
     }
 
+    @NonNull
     public String getReceiptUuid() {
         return receiptUuid;
     }
 
+    @NonNull
     public List<IPositionChange> getChanges() {
         return changes;
     }
@@ -208,8 +213,8 @@ public class BeforePositionsEditedEvent {
       "price" : "100",
       "quantity" : "1"
   }
-
       receipt.addPosition(JSON.stringify(position));
+  }
   ```
 
 Чтобы изменить позицию, используйте следующий метод:
@@ -247,7 +252,7 @@ data class PositionEdit(val position: Position) : IPositionChange {
 }
 ```
 
-Чтобы добавить позицию, используйте следующий метод:
+Чтобы удалить позицию, используйте следующий метод:
 
 ```java
 data class PositionRemove(
@@ -301,9 +306,9 @@ val positionFromProduct = Position.Builder.newInstance(
                 product.measurePrecision,
                 product.price,
                 BigDecimal.ONE
-        ).setExtraKeys(private String identity;
-        private String appId;
-        private String description;).build()
+        )
+        .setExtraKeys(extraKeys)
+        .build()
 ```
 
 Где:

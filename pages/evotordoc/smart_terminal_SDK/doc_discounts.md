@@ -8,45 +8,46 @@ tags: [Терминал, Java, Чеки]
 folder: smart_terminal_SDK
 ---
 
-### Скидки
+Для расчёта и назначения скидки:
 
-Эвотор позволяет рассчитывать и передавать скидки.
-Для этого:
 1. Подпишитесь на событие `ReceiptDiscountEvent`.
 2. Получите результат, который сообщает о возможности начисления скидки.
 
-#### Подписка на событие
+Приложение не может автоматически применять скидку, перед этим его требуется вручную вызвать с помощью [иконки на экране оплаты смарт-терминала](./doc_smart_terminal_app_tile.html).
+
+### Подписка на событие
 
 `ReceiptDiscountEvent`сообщает о возможности начислить скидку.
 
 1. Создайте службу, которая наследует класс `IntegrationService`, например `MyDiscountService`.
-2. Зарегистрируйте процессор `ReceiptDiscountEventProcessor` в методе `onCreate` службы `MyDiscountService`.
+2. Переопределите метод `createProcessors` службы `MyDiscountService` и создайте в нём процессор `ReceiptDiscountEventProcessor` .
 
    ```java
-   public class MyDiscountService extends IntegrationService {
+  public class MyDiscountService extends IntegrationService {
+    @Nullable
+    @Override
+    protected Map<String, ActionProcessor> createProcessors() {
+        Map<String, ActionProcessor> map = new HashMap<>();
+        map.put(ReceiptDiscountEvent.NAME_SELL_RECEIPT, new ReceiptDiscountEventProcessor() {
+            @Override
+            public void call(@NonNull String action, @NonNull ReceiptDiscountEvent event, @NonNull Callback callback){
 
-       @Override
-       public void onCreate() {
-           super.onCreate();
-
-           registerProcessor(
-                   new ReceiptDiscountEventProcessor() {
-                       @Override
-                       public void call(ReceiptDiscountEvent positionsDiscountEvent, Callback callback) {
-
-                       }
-                   });
-       }
-   }
+            }
+        });
+        return map;
+    }
+}
    ```
 
    где:
 
-   `call` - метод получения событий и объектов.
+   `call` – метод получения событий и объектов.
 
-   `positionsDiscountEvent` -  событие N.
+   `action` – действие при событии.
 
-   `callback`- объект возврата результата.
+   `event` –  событие.
+
+   `callback`– объект возврата результата.
 
 
 3. Объявите службу в манифесте приложения:
@@ -62,9 +63,7 @@ folder: smart_terminal_SDK
    </service>
    ```
 
-
-
-#### Получение результата
+### Получение результата
 
 Запрашиваем результат `ReceiptDiscountEventResult`.
 
@@ -72,7 +71,7 @@ folder: smart_terminal_SDK
 try {callback.onResult(
   new ReceiptDiscountEventResult(
       discount,
-      null,
+      new SetExtra(extra),
       changes
 ))
     }
@@ -81,7 +80,8 @@ try {callback.onResult(
             }
 
 ```
+
 Где:
-discount – значение скидки в валюте.
-вместо null вы можете передать `new SetExtra(extra)`, команду для [создания дополнительных полей в чеке](./doc_receipt_extras.html).
-changes – список изменений по позициям.
+`discount` – значение скидки в валюте.
+`new SetExtra(extra)` – команда для [создания дополнительных полей в чеке](./doc_receipt_extras.html). Если дополнительные поля создавать не требуется вы можете передать `null`.
+`changes` – список изменений по позициям.

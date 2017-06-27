@@ -92,7 +92,7 @@ entries:
       url: /doc_smart_terminal_app_grants.html
       output: web
 
-    - title: Плитка приложения на главном экране смарт-терминала
+    - title: Плитка или иконка приложения в интерфейсе смарт-терминала
       url: /doc_smart_terminal_app_tile.html
       output: web
 
@@ -100,9 +100,9 @@ entries:
       url: /doc_cloud_proxy.html
       output: web
 
-    - title: Users API
-      url: /doc_smart_terminal_users_api.html
-      output: web
+#    - title: Users API
+#      url: /doc_smart_terminal_users_api.html
+#      output: web
 
     - title: Inventory API
       url: /doc_smart_terminal_inventory_api.html
@@ -112,7 +112,7 @@ entries:
         - title: Receipt API
           output: web
           subfolderitems:
-            - title: О Receipt API
+            - title: Поиск товара по штрихкоду
               url: /doc_smart_terminal_receipt_api.html
               output: web
 
@@ -124,19 +124,18 @@ entries:
               url: /doc_receipt_interactions.html
               output: web
 
+            - title: Скидки
+              url: /doc_discounts.html
+              output: web
+
             - title: Создание дополнительных полей в чеке
-              url: /doc_receipt_estras.html
+              url: /doc_receipt_extras.html
               output: web
 
     - title: Storage API
       url: /doc_storage_api.html
       output: web
 
-
-
-    - title: Скидки
-      url: /doc_discounts.html
-      output: web
 
 #    - title: Схемы и дополнительные поля товаров
 #      url: /doc_product_extras.html.html
