@@ -507,3 +507,50 @@ public class ReceiptClearedEvent extends ReceiptEvent {
     }
 }
 ```
+
+Прочие уведомления:
+````
+
+public class MyReceiver extends BroadcastReceiver {
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        String action = intent.getAction();
+        Bundle bundle = intent.getExtras();
+        Log.e("QWEASD", action);
+        if (action.equals("evotor.intent.action.cashDrawer.OPEN")) {
+            CashDrawerOpenEvent.create(bundle);
+        } else if (action.equals("evotor.intent.action.cashOperation.IN")) {
+            Log.e("QWEASD", "total" + CashInEvent.create(bundle).getTotal().toPlainString());
+            Log.e("QWEASD", "uuid" + CashInEvent.create(bundle).getDocumentUuid());
+        } else if (action.equals("evotor.intent.action.cashOperation.CASH_OUT")) {
+            Log.e("QWEASD", "total" + CashOutEvent.create(bundle).getTotal().toPlainString());
+            Log.e("QWEASD", "uuid" + CashOutEvent.create(bundle).getDocumentUuid());
+        } else if (action.equals("evotor.intent.action.inventory.CARD_OPEN")) {
+            Log.e("QWEASD", "uuid" + ProductCardOpenedEvent.create(bundle).getProductUuid());
+        } else if (action.equals("evotor.intent.action.receipt.sell.CLEARED")) {
+            Log.e("QWEASD", "uuid" + ReceiptClearedEvent.create(bundle).getReceiptUuid());
+        } else if (action.equals("evotor.intent.action.receipt.payback.CLEARED")) {
+            Log.e("QWEASD", "uuid" + ReceiptClearedEvent.create(bundle).getReceiptUuid());
+        } else if (action.equals("evotor.intent.action.receipt.sell.RECEIPT_CLOSED")) {
+            Log.e("QWEASD", "uuid" + ReceiptClosedEvent.create(bundle).getReceiptUuid());
+        } else if (action.equals("evotor.intent.action.receipt.payback.RECEIPT_CLOSED")) {
+            Log.e("QWEASD", "uuid" + ReceiptClosedEvent.create(bundle).getReceiptUuid());
+        } else if (action.equals("evotor.intent.action.receipt.sell.OPENED")) {
+            Log.e("QWEASD", "uuid" + ReceiptOpenedEvent.create(bundle).getReceiptUuid());
+        } else if (action.equals("evotor.intent.action.receipt.payback.OPENED")) {
+            Log.e("QWEASD", "uuid" + ReceiptOpenedEvent.create(bundle).getReceiptUuid());
+        }
+
+    }
+}
+
+````
+
+где:
+`CashInEvent` - внесение наличных.
+`CashDrawerOpenEvent` - открытие денежного ящика.
+`CashOutEvent` - выдача наличных.
+`ReceiptClosedEvent` - закрытие чека.
+
+
