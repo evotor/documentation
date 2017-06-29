@@ -22,6 +22,7 @@ fun getPositionsByBarcode(context: Context, barcode: String): List<Position>
 ```
 
 Где:
-`context` – контекст приложения.
-`barcode` – штрихкод товара.
-`List<Position>` – список позиций
+
+* `context` – контекст приложения.
+* `barcode` – штрихкод товара.
+* `List<Position>` – список позиций

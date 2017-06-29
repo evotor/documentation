@@ -88,7 +88,7 @@ INTENT_FILTER_SCALES
     android:value="SCALES" />
 ```
 
-{% include tip.html content="Можно указать сразу несколько ролей устройству: `SCALES|PRICEPRINTER|CASHDRAWER`(весы | принтер чеков | денежный ящик)." %}
+{% include tip.html content="Можно указать сразу несколько ролей устройству: `SCALES|PRICEPRINTER|CASHDRAWER|OTHER`(весы | принтер чеков | денежный ящик | другое оборудование)." %}
 
 
 ### Присвоение картинки для драйвера
