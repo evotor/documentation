@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит описание Users API смарт-терминала.">
-<meta name="keywords" content="JavaScriptJavaТерминал,  sample">
+<meta name="keywords" content="JavaТерминал,  sample">
 <title>Users API | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -295,6 +295,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li class="active"><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
             
             
@@ -548,121 +555,70 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="users-api--">Users API смарт-терминала</h3>
+  <h3 id="user-api--">User API смарт-терминала</h3>
 
 <p>С помощью Users API вы можете узнать данные всех пользователей или пользователя, который авторизован на смарт-терминале в данный момент. Например, список прав авторизованного пользователя.</p>
 
-<h3 id="users-api">Примеры запросов к Users API</h3>
+<p>Для работы используйте класс <code class="highlighter-rouge">UserAPI</code>.</p>
 
-<p>Работа с данными пользователей:</p>
+<h3 id="user-api">Методы User API</h3>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">fun</span> <span class="nf">createUser</span><span class="o">(</span><span class="nl">cursor:</span> <span class="n">Cursor</span><span class="o">):</span> <span class="n">User</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="nf">User</span><span class="o">(</span>
-                    <span class="n">uuid</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">UsersTable</span><span class="o">.</span><span class="na">ROW_USER_UUID</span><span class="o">)),</span>
-                    <span class="n">secondName</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">UsersTable</span><span class="o">.</span><span class="na">ROW_USER_SECOND_NAME</span><span class="o">)),</span>
-                    <span class="n">firstName</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">UsersTable</span><span class="o">.</span><span class="na">ROW_USER_FIRST_NAME</span><span class="o">)),</span>
-                    <span class="n">phone</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">UsersTable</span><span class="o">.</span><span class="na">ROW_USER_PHONE</span><span class="o">)),</span>
-                    <span class="n">pin</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">UsersTable</span><span class="o">.</span><span class="na">ROW_USER_PIN</span><span class="o">)),</span>
-                    <span class="n">roleUuid</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">UsersTable</span><span class="o">.</span><span class="na">ROW_ROLE_UUID</span><span class="o">)),</span>
-                    <span class="n">roleTitle</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">UsersTable</span><span class="o">.</span><span class="na">ROW_ROLE_TITLE</span><span class="o">))</span>
-            <span class="o">)</span>
-        <span class="o">}</span>
+<h4 id="section">Получить данные всех пользователей</h4>
 
-    <span class="n">fun</span> <span class="nf">getAllUsers</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;?</span> <span class="o">{</span> <span class="c1">// Получить данные всех пользователей.</span>
-        <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span>
-                <span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">UsersTable</span><span class="o">.</span><span class="na">URI</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">)</span>
-                <span class="o">?.</span><span class="na">let</span> <span class="o">{</span> <span class="n">cursor</span> <span class="o">-&gt;</span>
-                    <span class="n">val</span> <span class="n">users</span> <span class="o">=</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;()</span>
-                    <span class="k">try</span> <span class="o">{</span>
-                        <span class="k">while</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">moveToNext</span><span class="o">())</span> <span class="o">{</span>
-                            <span class="n">users</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">createUser</span><span class="o">(</span><span class="n">cursor</span><span class="o">))</span>
-                        <span class="o">}</span>
-                        <span class="k">return</span> <span class="n">users</span>
-                    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nl">e:</span> <span class="n">Exception</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">()</span>
-                    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-                        <span class="n">cursor</span><span class="o">.</span><span class="na">close</span><span class="o">()</span>
-                    <span class="o">}</span>
-                <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">null</span>
-    <span class="o">}</span>
-
-    <span class="n">fun</span> <span class="nf">getAuthenticatedUser</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">User</span><span class="o">?</span> <span class="o">{</span> <span class="c1">// Получить данные авторизованных пользователей.</span>
-            <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span>
-                    <span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">UsersTable</span><span class="o">.</span><span class="na">URI_AUTHENTICATED</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">)</span>
-                    <span class="o">?.</span><span class="na">let</span> <span class="o">{</span> <span class="n">cursor</span> <span class="o">-&gt;</span>
-                        <span class="k">try</span> <span class="o">{</span>
-                            <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">moveToFirst</span><span class="o">())</span> <span class="o">{</span>
-                                <span class="k">return</span> <span class="nf">createUser</span><span class="o">(</span><span class="n">cursor</span><span class="o">)</span>
-                            <span class="o">}</span>
-                        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nl">e:</span> <span class="n">Exception</span><span class="o">)</span> <span class="o">{</span>
-                            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">()</span>
-                        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-                            <span class="n">cursor</span><span class="o">.</span><span class="na">close</span><span class="o">()</span>
-                        <span class="o">}</span>
-                    <span class="o">}</span>
-            <span class="k">return</span> <span class="kc">null</span>
-        <span class="o">}</span>
-
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAllUsers</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span>
 </code></pre>
 </div>
 
-<p>Работа с правами:</p>
+<p>Где:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">fun</span> <span class="nf">createGrant</span><span class="o">(</span><span class="nl">cursor:</span> <span class="n">Cursor</span><span class="o">):</span> <span class="n">Grant</span> <span class="o">{</span>
-         <span class="k">return</span> <span class="nf">Grant</span><span class="o">(</span>
-                <span class="n">title</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">GrantsTable</span><span class="o">.</span><span class="na">ROW_TITLE</span><span class="o">)),</span>
-                <span class="n">roleUuid</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">GrantsTable</span><span class="o">.</span><span class="na">ROW_ROLE_UUID</span><span class="o">))</span>
-        <span class="o">)</span>
-    <span class="o">}</span>
+<ul>
+  <li><code class="highlighter-rouge">context</code> – контекст приложения.</li>
+  <li><code class="highlighter-rouge">List&lt;User&gt;</code> – список всех пользователей смарт-терминала.</li>
+</ul>
 
-    <span class="n">fun</span> <span class="nf">getAllGrants</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Grant</span><span class="o">&gt;?</span> <span class="o">{</span><span class="c1">//Получить список всех доступных прав.</span>
-            <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span>
-                    <span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">GrantsTable</span><span class="o">.</span><span class="na">URI</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">)</span>
-                    <span class="o">?.</span><span class="na">let</span> <span class="o">{</span> <span class="n">cursor</span> <span class="o">-&gt;</span>
-                        <span class="n">val</span> <span class="n">grants</span> <span class="o">=</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Grant</span><span class="o">&gt;()</span>
-                        <span class="k">try</span> <span class="o">{</span>
-                            <span class="k">while</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">moveToNext</span><span class="o">())</span> <span class="o">{</span>
-                                <span class="n">grants</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">createGrant</span><span class="o">(</span><span class="n">cursor</span><span class="o">))</span>
-                            <span class="o">}</span>
-                            <span class="k">return</span> <span class="n">grants</span>
-                        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nl">e:</span> <span class="n">Exception</span><span class="o">)</span> <span class="o">{</span>
-                            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">()</span>
-                        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-                            <span class="n">cursor</span><span class="o">.</span><span class="na">close</span><span class="o">()</span>
-                        <span class="o">}</span>
-                    <span class="o">}</span>
-            <span class="k">return</span> <span class="kc">null</span>
-    <span class="o">}</span>
+<h4 id="section-1">Получить данные авторизованного пользователя</h4>
 
-    <span class="n">fun</span> <span class="nf">getGrantsOfAuthenticatedUser</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Grant</span><span class="o">&gt;?</span> <span class="o">{</span><span class="c1">//Получить список прав авторизованного пользователя.</span>
-            <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span>
-                    <span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">GrantsTable</span><span class="o">.</span><span class="na">URI_GRANTS_OF_AUTHENTICATED_USER</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">)</span>
-                    <span class="o">?.</span><span class="na">let</span> <span class="o">{</span> <span class="n">cursor</span> <span class="o">-&gt;</span>
-                        <span class="n">val</span> <span class="n">grants</span> <span class="o">=</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Grant</span><span class="o">&gt;()</span>
-                        <span class="k">try</span> <span class="o">{</span>
-                            <span class="k">while</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">moveToNext</span><span class="o">())</span> <span class="o">{</span>
-                                <span class="n">grants</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">createGrant</span><span class="o">(</span><span class="n">cursor</span><span class="o">))</span>
-                            <span class="o">}</span>
-                            <span class="k">return</span> <span class="n">grants</span>
-                        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nl">e:</span> <span class="n">Exception</span><span class="o">)</span> <span class="o">{</span>
-                            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">()</span>
-                        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-                            <span class="n">cursor</span><span class="o">.</span><span class="na">close</span><span class="o">()</span>
-                        <span class="o">}</span>
-                    <span class="o">}</span>
-    <span class="o">}</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAuthenticatedUser</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">User</span>
 </code></pre>
 </div>
+
+<p>Где:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">context</code> – контекст приложения.</li>
+  <li><code class="highlighter-rouge">User</code> – пользователь авторизованный на смарт-терминале. Если пользователь неавторизован возвращается <code class="highlighter-rouge">null</code>.</li>
+</ul>
+
+<h4 id="section-2">Получить список всех доступных прав</h4>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAllGrants</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Grant</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p>Где:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">context</code> – контекст приложения.</li>
+  <li><code class="highlighter-rouge">List&lt;Grant&gt;</code> – список всех возможных прав.</li>
+</ul>
+
+<h4 id="section-3">Получить список прав авторизованного пользователя</h4>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getGrantsOfAuthenticatedUser</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Grant</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p>Где:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">context</code> – контекст приложения.</li>
+  <li><code class="highlighter-rouge">List&lt;Grant&gt;</code> – список всех прав авторизованного пользователя.</li>
+</ul>
 
 
     <div class="tags">
         
         <b>Тэги: </b>
-        
-        
-        
-        <a href="tag_JavaScript.html" class="btn btn-default navbar-btn cursorNorm" role="button">JavaScript</a>
         
         
         

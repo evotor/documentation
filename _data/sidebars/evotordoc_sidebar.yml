@@ -100,9 +100,9 @@ entries:
       url: /doc_cloud_proxy.html
       output: web
 
-#    - title: Users API
-#      url: /doc_smart_terminal_users_api.html
-#      output: web
+    - title: Users API
+      url: /doc_smart_terminal_users_api.html
+      output: web
 
     - title: Inventory API
       url: /doc_smart_terminal_inventory_api.html
