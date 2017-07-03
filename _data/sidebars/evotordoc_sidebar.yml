@@ -100,7 +100,7 @@ entries:
       url: /doc_cloud_proxy.html
       output: web
 
-    - title: Users API
+    - title: User API
       url: /doc_smart_terminal_users_api.html
       output: web
 
