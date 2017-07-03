@@ -555,15 +555,15 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="user-api--">User API смарт-терминала</h3>
-
-<p>С помощью User API вы можете узнать данные всех пользователей или пользователя, который авторизован на смарт-терминале в данный момент. Например, список прав авторизованного пользователя.</p>
+  <h3 id="section">Класс</h3>
 
 <p>Для работы используйте класс <code class="highlighter-rouge">UserAPI</code>.</p>
 
+<p>С помощью User API вы можете узнать данные всех пользователей или пользователя, который авторизован на смарт-терминале в данный момент. Например, список прав авторизованного пользователя.</p>
+
 <h3 id="user-api">Методы User API</h3>
 
-<h4 id="section">Получить данные всех пользователей</h4>
+<h4 id="section-1">Получить данные всех пользователей</h4>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAllUsers</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span>
 </code></pre>
@@ -576,7 +576,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">List&lt;User&gt;</code> – список всех пользователей смарт-терминала.</li>
 </ul>
 
-<h4 id="section-1">Получить данные авторизованного пользователя</h4>
+<h4 id="section-2">Получить данные авторизованного пользователя</h4>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAuthenticatedUser</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">User</span>
 </code></pre>
@@ -586,10 +586,10 @@ $('#toc').on('click', 'a', function() {
 
 <ul>
   <li><code class="highlighter-rouge">context</code> – контекст приложения.</li>
-  <li><code class="highlighter-rouge">User</code> – пользователь авторизованный на смарт-терминале. Если пользователь неавторизован возвращается <code class="highlighter-rouge">null</code>.</li>
+  <li><code class="highlighter-rouge">User</code> – пользователь авторизованный на смарт-терминале. Если пользователь не авторизован, возвращается <code class="highlighter-rouge">null</code>.</li>
 </ul>
 
-<h4 id="section-2">Получить список всех доступных прав</h4>
+<h4 id="section-3">Получить список всех доступных прав</h4>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAllGrants</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Grant</span><span class="o">&gt;</span>
 </code></pre>
@@ -602,7 +602,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">List&lt;Grant&gt;</code> – список всех возможных прав.</li>
 </ul>
 
-<h4 id="section-3">Получить список прав авторизованного пользователя</h4>
+<h4 id="section-4">Получить список прав авторизованного пользователя</h4>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getGrantsOfAuthenticatedUser</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Grant</span><span class="o">&gt;</span>
 </code></pre>
