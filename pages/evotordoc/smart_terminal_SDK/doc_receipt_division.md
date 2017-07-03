@@ -11,7 +11,7 @@ published: true
 
 Схема разделения чека выглядит следующим образом:
 
-![](/images/ReceiptDivision.png)
+![](./images/ReceiptDivision.png)
 
 
 ### Процесс разделения чека
