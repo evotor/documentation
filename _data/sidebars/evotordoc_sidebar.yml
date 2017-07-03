@@ -136,6 +136,10 @@ entries:
       url: /doc_storage_api.html
       output: web
 
+#    - title: Разделение чека
+#      url: /doc_receipt_division.html
+#      output: web
+
 
 #    - title: Схемы и дополнительные поля товаров
 #      url: /doc_product_extras.html.html

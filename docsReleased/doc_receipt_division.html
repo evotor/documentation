@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Troubleshooting pages | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит описание API, с помощью которого приложения могут разделить чек на несколько групп, например, для печати фискального и ЕНВД чека.">
+<meta name="keywords" content="ТерминалJava,  sample">
+<title>Разделение чека | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Troubleshooting pages">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Разделение чека">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -509,13 +509,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Troubleshooting pages</h1>
+   <h1 class="post-title-main">Разделение чека</h1>
 </div>
 
 
 
 <div class="post-content">
 
+   
+    <div class="summary">Раздел содержит описание API, с помощью которого приложения могут разделить чек на несколько групп, например, для печати фискального и ЕНВД чека.</div>
    
 
     
@@ -546,413 +548,65 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Таблица ниже содержит страницы, отмеченные тэгом <button type="button" style="cursor: default" class="btn btn-default navbar-btn">troubleshooting</button></p>
-<table><thead><tr><th>Название</th><th>Тип</th><th>Выдержка</th></tr></thead>
-    <tbody>
-    
-  
-    
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-        
-     
-   
-    
-   
-    
-   
-    
-   
+  <p>Схема разделения чека выглядит следующим образом:</p>
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+<p><img src="/images/ReceiptDivision.png" alt="" /></p>
 
-   </tbody>
-</table>
+<h3 id="section">Процесс разделения чека</h3>
 
+<ol>
+  <li>Пользователь выбирает тип оплаты <strong>Банковская карта</strong>.</li>
+  <li>EvoPOS передаёт событие <code class="highlighter-rouge">PaymentSelectedEvent</code> и ожидает ответа от приложений.</li>
+  <li>
+    <p>Приложение возвращает результат <code class="highlighter-rouge">PaymentSelectedEventResult</code> с данными о соответствии сумм и их получателей. Данные описаны в классе <code class="highlighter-rouge">PaymentPurpose</code>.</p>
+
+    <p>Перед тем как сопоставлять суммы и получателей, приложению требуется получить список получателей платежей, доступных на данном смарт-терминале. Список можно получить с помощью метода <code class="highlighter-rouge">getPaymentSystems</code>, класса <code class="highlighter-rouge">PaymentApi</code>. <a href="./doc_receipt_division.html#PaymentApiMethods">Подробное описание метода</a>.</p>
+  </li>
+  <li>
+    <p>На основе данных, полученных от приложения, EvoPOS совершает платёж  и передаёт событие <code class="highlighter-rouge">PrintGroupRequiredEvent</code>, после чего ожидает ответа от приложений.</p>
+  </li>
+  <li>
+    <p>Приложение возвращает результат <code class="highlighter-rouge">PrintGroupRequiredEventResult</code>, в котором, с помощью команды <code class="highlighter-rouge">SetPrintGroup</code>, задаёт <em>печатные группы</em>. Печатные группы содержат данные о соответствии позиций чека и получателей платежей.</p>
+
+    <p>В результате приложение так же может записывать <a href="./doc_receipt_extras.html">дополнительные поля чека</a>. Используйте для этого команду <code class="highlighter-rouge">SetExtra</code>.</p>
+
+    <p>Поля которые содержит печатная группа описаны в классе <code class="highlighter-rouge">PrintGroup</code>.</p>
+  </li>
+  <li>EvoPOS печатает чек в соответствии с полученными печатными группами.</li>
+</ol>
+
+<h3 id="PaymentApiMethods">Методы Payment API</h3>
+
+<p>Используйте класс <code class="highlighter-rouge">PaymentApi</code>.</p>
+
+<p>Получить список доступных на смарт-терминале получателей платежа:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getPaymentSystems</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">MutableList</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">PaymentSystem</span><span class="o">,</span> <span class="n">MutableList</span><span class="o">&lt;</span><span class="n">PaymentAccount</span><span class="o">&gt;&gt;&gt;</span>
+</code></pre>
+</div>
+
+<p>Где:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">context</code> – контекст приложения.</li>
+  <li><code class="highlighter-rouge">PaymentSystem</code> – возможный получатель платежа.</li>
+  <li><code class="highlighter-rouge">PaymentAccount</code> – уникальный счёт получателя платежа.</li>
+</ul>
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
+        
+        
         
     </div>
 
