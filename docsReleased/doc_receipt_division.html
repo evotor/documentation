@@ -564,6 +564,13 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
+<p>Где:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">evo.v2.receipt.sell.payment.SELECTED</code> – сообщает о разделении платежей.</li>
+  <li><code class="highlighter-rouge">evo.v2.receipt.sell.printGroup.REQUIRED</code> – сообщает о разделении чека на несколько печатных групп.</li>
+</ul>
+
 <h3 id="section-1">Разделение чека</h3>
 
 <p>Схема разделения чека выглядит следующим образом:</p>
@@ -576,46 +583,116 @@ $('#toc').on('click', 'a', function() {
   <li>Пользователь выбирает тип оплаты <strong>Банковская карта</strong>.</li>
   <li>EvoPOS передаёт событие <code class="highlighter-rouge">PaymentSelectedEvent</code> и ожидает ответа от приложений.</li>
   <li>
-    <p>Приложение может разделить чек на несколько платежей в счёт одного или нескольких юридических лиц. Данные о соответствии платежей и счетов приложение возвращает в результате <code class="highlighter-rouge">PaymentSelectedEventResult</code>. Данные описаны в классе <code class="highlighter-rouge">PaymentPurpose</code>.</p>
+    <p><a href="./doc_receipt_division.html#severalPayments">Приложение может разделить чек на несколько платежей</a> в счёт одного или нескольких юридических лиц.</p>
 
-    <p>Чтобы получить список счетов, доступных на данном смарт-терминале, <a href="./doc_receipt_division.html#PaymentApiMethods">воспользуйтесь методом</a> <code class="highlighter-rouge">getPaymentSystems</code>, класса <code class="highlighter-rouge">PaymentApi</code>.</p>
+    <p>Приложение возвращает данные о соответствии счетов и платежей в объекте <code class="highlighter-rouge">PaymentSelectedEventResult</code> и указывает разделение платежей в объекте <code class="highlighter-rouge">PaymentPurpose</code>.</p>
+
+    <p>Каждый из платежей, указанных в <code class="highlighter-rouge">PaymentPurpose</code> содержит:</p>
+
+    <ul>
+      <li>собственный идентификатор объекта PaymentPurpose, который можно использовать для сопоставления платежа и печатной группы;</li>
+      <li>сумму платежа;</li>
+      <li>идентификаторы платёжной системы и счёта в ней;</li>
+      <li>текст, который отображается пользователю при проведении данного платежа.</li>
+    </ul>
+
+    <p>В данный момент поддерживается разделение только в рамках той системы оплаты, которую выбрал пользователь. Разделение на различные системы оплаты (комбинированная оплата) не поддерживается.</p>
+
+    <p>Чтобы получить список счетов, доступных на данном смарт-терминале, <a href="./doc_receipt_division.html#PaymentSystemApiMethods">воспользуйтесь методом</a> <code class="highlighter-rouge">getPaymentSystems</code>, класса <code class="highlighter-rouge">PaymentSystemApi</code>.</p>
 
     <p>Используйте команду <code class="highlighter-rouge">SetExtra</code>, чтобы добавить к чеку <a href="./doc_receipt_extras.html">дополнительные поля</a>.</p>
   </li>
   <li>
-    <p>На основе данных, полученных от приложения, EvoPOS совершает платёж и начинает печать чека. При этом, EvoPOS передаёт событие <code class="highlighter-rouge">PrintGroupRequiredEvent</code> и ожидает ответа от приложений.</p>
+    <p>На основе данных, полученных от приложения, EvoPOS совершает платежи и начинает печать чека. Перед печатью чека EvoPOS передаёт событие <code class="highlighter-rouge">PrintGroupRequiredEvent</code> и ожидает ответа от приложений.</p>
   </li>
   <li>
-    <p>Приложение может напечатать несколько разных платежей в рамках одного чека или разделить платежи на несколько чеков. Данные о платежах и соответствующих чеках приложение передаёт в <em>печатных группах</em>. Приложение задаёт печатные группы с помощью команды <code class="highlighter-rouge">SetPrintGroup</code> и возвращает в результате <code class="highlighter-rouge">PrintGroupRequiredEventResult</code>.</p>
+    <p><a href="./doc_receipt_division.html#severalPintGroups">Приложение может напечатать несколько разных печатных документов</a> и разделить платежи на между ними. Данные о платежах и соответствующих чеках приложение передаёт в <em>печатных группах</em>.</p>
+
+    <p>Приложение передаёт данные о печатных документах, закреплённых за ними позициях и соответствующих платежах в объекте <code class="highlighter-rouge">PrintGroupRequiredEventResult</code>, которому соответствует список объектов <code class="highlighter-rouge">SetPrintGroup</code>.</p>
+
+    <p>Для каждого объекта <code class="highlighter-rouge">SetPrintGroup</code> приложение указывает:</p>
+
+    <ul>
+      <li>печатную группу (<code class="highlighter-rouge">PrintGroup</code>);</li>
+      <li>список идентификаторов платежей (<code class="highlighter-rouge">paymentPurposeIds</code>);</li>
+      <li>список иденификаторов позиций в формате uuid4 (<code class="highlighter-rouge">positionUuids</code>)</li>
+    </ul>
+
+    <p>В печатной группе приложение указывает:</p>
+
+    <ul>
+      <li>идентификатор печатной группы;</li>
+      <li>тип чека (фискальный, ЕНВД, квитанция);</li>
+      <li>систему налогообложения;</li>
+      <li>реквизиты организации (название, ИНН, адрес).</li>
+    </ul>
 
     <p>Используйте команду <code class="highlighter-rouge">SetExtra</code>, чтобы добавить к чеку <a href="./doc_receipt_extras.html">дополнительные поля</a>.</p>
-
-    <p>Класс <code class="highlighter-rouge">PrintGroup</code> содержит описание полей, которые соответствуют печатной группе.</p>
   </li>
   <li>EvoPOS печатает чек в соответствии с полученными печатными группами.</li>
 </ol>
 
-<h3 id="PaymentApiMethods">Методы Payment API</h3>
+<h3 id="PaymentSystemApiMethods">Методы PaymentSystem API</h3>
 
-<p>Используйте класс <code class="highlighter-rouge">PaymentApi</code>.</p>
+<p>Используйте класс <code class="highlighter-rouge">PaymentSystemApi</code>.</p>
 
-<p>Получить список доступных на смарт-терминале получателей платежа:</p>
+<p>Получить список платёжных систем, а также их учётных записей, доступных на смарт-терминале:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getPaymentSystems</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">MutableList</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">PaymentSystem</span><span class="o">,</span> <span class="n">MutableList</span><span class="o">&lt;</span><span class="n">PaymentAccount</span><span class="o">&gt;&gt;&gt;</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getPaymentSystems</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">PaymentSystem</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">PaymentAccount</span><span class="o">&gt;&gt;&gt;</span>
 </code></pre>
 </div>
 
-<p>Где:</p>
+<p>Метод возвращает список доступных на терминале платёжных систем (<code class="highlighter-rouge">PaymentSystem</code>) и соответствующих им счетов (<code class="highlighter-rouge">PaymentAccount</code>). Счета можно получить у приложений, которые реализуют различные способы оплаты.</p>
+
+<p>Объекты <code class="highlighter-rouge">PaymentSystem</code> содержат:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">context</code> – контекст приложения.</li>
-  <li><code class="highlighter-rouge">PaymentSystem</code> – тип платёжной системы. В данный момент, для разеделения чека доступен один тип – безналичный расчёт (<code class="highlighter-rouge">ELECTRON</code>). Содержит описание (<code class="highlighter-rouge">userDescription</code>) и тип оплаты (<code class="highlighter-rouge">paymentType</code>) в формате <code class="highlighter-rouge">string</code>. Оба атрибута могут принимать значение <code class="highlighter-rouge">null</code>.</li>
-  <li><code class="highlighter-rouge">PaymentAccount</code> – счёт получателя платежа. Содержит описание (<code class="highlighter-rouge">userDescription</code>) и идентификатор счёта (<code class="highlighter-rouge">accountId</code>) в формате <code class="highlighter-rouge">string</code>. Оба атрибута могут принимать значение <code class="highlighter-rouge">null</code>.</li>
+  <li>тип платёжной системы (наличные, электронные платежи, другие);</li>
+  <li>название, которое можно отобразить пользователю;</li>
+  <li>постоянный идентификатор платёжной системы в терминале.</li>
+</ul>
+
+<p>Объекты <code class="highlighter-rouge">PaymentAccount</code> содержат:</p>
+
+<ul>
+  <li>идентификатор счёта в рамках платёжной системы;</li>
+  <li>название счёта, которое можно отобразить пользователю.</li>
 </ul>
 
 <h3 id="section-2">Примеры</h3>
 
-<p>####Разделение чека на несколько печатных групп</p>
+<h4 id="severalPayments">Разделение платежей в чеке</h4>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>        <span class="n">processorMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span>
+                <span class="n">PaymentSelectedEvent</span><span class="o">.</span><span class="na">NAME_SELL_RECEIPT</span><span class="o">,</span>
+                <span class="k">new</span> <span class="nf">PaymentSelectedEventProcessor</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="nd">@Override</span>
+                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="n">PaymentSelectedEvent</span>
+                            <span class="n">paymentSelectedEvent</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="n">Callback</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">List</span><span class="o">&lt;</span><span class="n">PaymentPurpose</span><span class="o">&gt;</span> <span class="n">paymentParts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">PaymentPurpose</span><span class="o">&gt;();</span>
+                        <span class="n">String</span> <span class="n">psId</span> <span class="o">=</span> <span class="n">paymentSelectedEvent</span><span class="o">.</span><span class="na">getPaymentSystem</span><span class="o">().</span><span class="na">getPaymentSystemId</span><span class="o">();</span>
+                        <span class="n">paymentParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentPurpose</span><span class="o">(</span><span class="s">"-1-"</span><span class="o">,</span> <span class="n">psId</span><span class="o">,</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">3</span><span class="o">),</span> <span class="s">"0"</span><span class="o">,</span> <span class="s">"платёж клиента 1"</span><span class="o">));</span>
+                        <span class="n">paymentParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentPurpose</span><span class="o">(</span><span class="s">"-2-"</span><span class="o">,</span> <span class="n">psId</span><span class="o">,</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">5</span><span class="o">),</span> <span class="s">"0"</span><span class="o">,</span> <span class="s">"платёж клиента 2"</span><span class="o">));</span>
+                        <span class="n">paymentParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentPurpose</span><span class="o">(</span><span class="s">"-3-"</span><span class="o">,</span> <span class="n">psId</span><span class="o">,</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="s">"0"</span><span class="o">,</span> <span class="s">"платёж клиента 3"</span><span class="o">));</span>
+                        <span class="n">paymentParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentPurpose</span><span class="o">(</span><span class="s">"-4-"</span><span class="o">,</span> <span class="n">psId</span><span class="o">,</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">10</span><span class="o">),</span> <span class="s">"0"</span><span class="o">,</span> <span class="s">"платёж клиента 4"</span><span class="o">));</span>
+
+                        <span class="k">try</span> <span class="o">{</span>
+                            <span class="n">callback</span><span class="o">.</span><span class="na">onResult</span><span class="o">(</span>
+                                    <span class="k">new</span> <span class="nf">PaymentSelectedEventResult</span><span class="o">(</span>
+                                            <span class="kc">null</span><span class="o">,</span>
+                                            <span class="n">paymentParts</span>
+                                    <span class="o">).</span><span class="na">toBundle</span><span class="o">()</span>
+                            <span class="o">);</span>
+                        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">RemoteException</span> <span class="n">exc</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="n">exc</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                        <span class="o">}</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+        <span class="o">);</span>
+</code></pre>
+</div>
+
+<h4 id="severalPrintGroups">Разделение чека на несколько печатных групп</h4>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">processorMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span>
                 <span class="n">PrintGroupRequiredEvent</span><span class="o">.</span><span class="na">NAME_SELL_RECEIPT</span><span class="o">,</span>
@@ -649,37 +726,6 @@ $('#toc').on('click', 'a', function() {
                                             <span class="kc">null</span><span class="o">,</span>
                                             <span class="n">setPrintGroups</span>
                                     <span class="o">)</span>
-                            <span class="o">);</span>
-                        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">RemoteException</span> <span class="n">exc</span><span class="o">)</span> <span class="o">{</span>
-                            <span class="n">exc</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-                        <span class="o">}</span>
-                    <span class="o">}</span>
-                <span class="o">}</span>
-        <span class="o">);</span>
-</code></pre>
-</div>
-
-<h4 id="section-3">Разделение платежей в чеке</h4>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>        <span class="n">processorMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span>
-                <span class="n">PaymentSelectedEvent</span><span class="o">.</span><span class="na">NAME_SELL_RECEIPT</span><span class="o">,</span>
-                <span class="k">new</span> <span class="nf">PaymentSelectedEventProcessor</span><span class="o">()</span> <span class="o">{</span>
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="n">PaymentSelectedEvent</span>
-                            <span class="n">paymentSelectedEvent</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="n">Callback</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">List</span><span class="o">&lt;</span><span class="n">PaymentPurpose</span><span class="o">&gt;</span> <span class="n">paymentParts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">PaymentPurpose</span><span class="o">&gt;();</span>
-
-                        <span class="n">paymentParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentPurpose</span><span class="o">(</span><span class="s">"-1-"</span><span class="o">,</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">3</span><span class="o">),</span> <span class="s">"0"</span><span class="o">,</span> <span class="s">"платёж клиента 1"</span><span class="o">));</span>
-                        <span class="n">paymentParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentPurpose</span><span class="o">(</span><span class="s">"-2-"</span><span class="o">,</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">5</span><span class="o">),</span> <span class="s">"0"</span><span class="o">,</span> <span class="s">"платёж клиента 2"</span><span class="o">));</span>
-                        <span class="n">paymentParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentPurpose</span><span class="o">(</span><span class="s">"-3-"</span><span class="o">,</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="s">"0"</span><span class="o">,</span> <span class="s">"платёж клиента 3"</span><span class="o">));</span>
-                        <span class="n">paymentParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentPurpose</span><span class="o">(</span><span class="s">"-4-"</span><span class="o">,</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">10</span><span class="o">),</span> <span class="s">"0"</span><span class="o">,</span> <span class="s">"платёж клиента 4"</span><span class="o">));</span>
-
-                        <span class="k">try</span> <span class="o">{</span>
-                            <span class="n">callback</span><span class="o">.</span><span class="na">onResult</span><span class="o">(</span>
-                                    <span class="k">new</span> <span class="nf">PaymentSelectedEventResult</span><span class="o">(</span>
-                                            <span class="kc">null</span><span class="o">,</span>
-                                            <span class="n">paymentParts</span>
-                                    <span class="o">).</span><span class="na">toBundle</span><span class="o">()</span>
                             <span class="o">);</span>
                         <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">RemoteException</span> <span class="n">exc</span><span class="o">)</span> <span class="o">{</span>
                             <span class="n">exc</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>

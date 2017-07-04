@@ -18,6 +18,11 @@ published: true
 <action android:name="evo.v2.receipt.sell.printGroup.REQUIRED" />
 ```
 
+Где:
+
+* `evo.v2.receipt.sell.payment.SELECTED` – сообщает о разделении платежей.
+* `evo.v2.receipt.sell.printGroup.REQUIRED` – сообщает о разделении чека на несколько печатных групп.
+
 ### Разделение чека
 
 Схема разделения чека выглядит следующим образом:
@@ -28,41 +33,103 @@ published: true
 
 1. Пользователь выбирает тип оплаты **Банковская карта**.
 2. EvoPOS передаёт событие `PaymentSelectedEvent` и ожидает ответа от приложений.
-3. Приложение может разделить чек на несколько платежей в счёт одного или нескольких юридических лиц. Данные о соответствии платежей и счетов приложение возвращает в результате `PaymentSelectedEventResult`. Данные описаны в классе `PaymentPurpose`.
+3. [Приложение может разделить чек на несколько платежей](./doc_receipt_division.html#severalPayments) в счёт одного или нескольких юридических лиц.
 
-    Чтобы получить список счетов, доступных на данном смарт-терминале, [воспользуйтесь методом](./doc_receipt_division.html#PaymentApiMethods) `getPaymentSystems`, класса `PaymentApi`.
+    Приложение возвращает данные о соответствии счетов и платежей в объекте `PaymentSelectedEventResult` и указывает разделение платежей в объекте `PaymentPurpose`.
+
+    Каждый из платежей, указанных в `PaymentPurpose` содержит:
+
+    * собственный идентификатор объекта PaymentPurpose, который можно использовать для сопоставления платежа и печатной группы;
+    * сумму платежа;
+    * идентификаторы платёжной системы и счёта в ней;
+    * текст, который отображается пользователю при проведении данного платежа.
+
+    В данный момент поддерживается разделение только в рамках той системы оплаты, которую выбрал пользователь. Разделение на различные системы оплаты (комбинированная оплата) не поддерживается.
+
+    Чтобы получить список счетов, доступных на данном смарт-терминале, [воспользуйтесь методом](./doc_receipt_division.html#PaymentSystemApiMethods) `getPaymentSystems`, класса `PaymentSystemApi`.
 
     Используйте команду `SetExtra`, чтобы добавить к чеку [дополнительные поля](./doc_receipt_extras.html).
 
-4. На основе данных, полученных от приложения, EvoPOS совершает платёж и начинает печать чека. При этом, EvoPOS передаёт событие `PrintGroupRequiredEvent` и ожидает ответа от приложений.
+4. На основе данных, полученных от приложения, EvoPOS совершает платежи и начинает печать чека. Перед печатью чека EvoPOS передаёт событие `PrintGroupRequiredEvent` и ожидает ответа от приложений.
 
-5. Приложение может напечатать несколько разных платежей в рамках одного чека или разделить платежи на несколько чеков. Данные о платежах и соответствующих чеках приложение передаёт в *печатных группах*. Приложение задаёт печатные группы с помощью команды `SetPrintGroup` и возвращает в результате `PrintGroupRequiredEventResult`.
+5. [Приложение может напечатать несколько разных печатных документов](./doc_receipt_division.html#severalPintGroups) и разделить платежи на между ними. Данные о платежах и соответствующих чеках приложение передаёт в *печатных группах*.
+
+    Приложение передаёт данные о печатных документах, закреплённых за ними позициях и соответствующих платежах в объекте `PrintGroupRequiredEventResult`, которому соответствует список объектов `SetPrintGroup`.
+
+    Для каждого объекта `SetPrintGroup` приложение указывает:
+
+    * печатную группу (`PrintGroup`);
+    * список идентификаторов платежей (`paymentPurposeIds`);
+    * список иденификаторов позиций в формате uuid4 (`positionUuids`)
+
+    В печатной группе приложение указывает:
+
+    * идентификатор печатной группы;
+    * тип чека (фискальный, ЕНВД, квитанция);
+    * систему налогообложения;
+    * реквизиты организации (название, ИНН, адрес).
 
     Используйте команду `SetExtra`, чтобы добавить к чеку [дополнительные поля](./doc_receipt_extras.html).
-
-    Класс `PrintGroup` содержит описание полей, которые соответствуют печатной группе.
 
 6. EvoPOS печатает чек в соответствии с полученными печатными группами.
 
-### Методы Payment API {#PaymentApiMethods}
+### Методы PaymentSystem API {#PaymentSystemApiMethods}
 
-Используйте класс `PaymentApi`.
+Используйте класс `PaymentSystemApi`.
 
-Получить список доступных на смарт-терминале получателей платежа:
+Получить список платёжных систем, а также их учётных записей, доступных на смарт-терминале:
 
 ```java
-fun getPaymentSystems(context: Context): MutableList<Pair<PaymentSystem, MutableList<PaymentAccount>>>
+fun getPaymentSystems(context: Context): List<Pair<PaymentSystem, List<PaymentAccount>>>
 ```
 
-Где:
+Метод возвращает список доступных на терминале платёжных систем (`PaymentSystem`) и соответствующих им счетов (`PaymentAccount`). Счета можно получить у приложений, которые реализуют различные способы оплаты.
 
-* `context` – контекст приложения.
-* `PaymentSystem` – тип платёжной системы. В данный момент, для разеделения чека доступен один тип – безналичный расчёт (`ELECTRON`). Содержит описание (`userDescription`) и тип оплаты (`paymentType`) в формате `string`. Оба атрибута могут принимать значение `null`.
-* `PaymentAccount` – счёт получателя платежа. Содержит описание (`userDescription`) и идентификатор счёта (`accountId`) в формате `string`. Оба атрибута могут принимать значение `null`.
+Объекты `PaymentSystem` содержат:
+
+* тип платёжной системы (наличные, электронные платежи, другие);
+* название, которое можно отобразить пользователю;
+* постоянный идентификатор платёжной системы в терминале.
+
+Объекты `PaymentAccount` содержат:
+
+* идентификатор счёта в рамках платёжной системы;
+* название счёта, которое можно отобразить пользователю.
 
 ### Примеры
 
-####Разделение чека на несколько печатных групп
+#### Разделение платежей в чеке {#severalPayments}
+
+```java
+        processorMap.put(
+                PaymentSelectedEvent.NAME_SELL_RECEIPT,
+                new PaymentSelectedEventProcessor() {
+                    @Override
+                    public void call(@NonNull String s, @NonNull PaymentSelectedEvent
+                            paymentSelectedEvent, @NonNull Callback callback) {
+                        List<PaymentPurpose> paymentParts = new ArrayList<PaymentPurpose>();
+                        String psId = paymentSelectedEvent.getPaymentSystem().getPaymentSystemId();
+                        paymentParts.add(new PaymentPurpose("-1-", psId, new BigDecimal(3), "0", "платёж клиента 1"));
+                        paymentParts.add(new PaymentPurpose("-2-", psId, new BigDecimal(5), "0", "платёж клиента 2"));
+                        paymentParts.add(new PaymentPurpose("-3-", psId, new BigDecimal(2), "0", "платёж клиента 3"));
+                        paymentParts.add(new PaymentPurpose("-4-", psId, new BigDecimal(10), "0", "платёж клиента 4"));
+
+                        try {
+                            callback.onResult(
+                                    new PaymentSelectedEventResult(
+                                            null,
+                                            paymentParts
+                                    ).toBundle()
+                            );
+                        } catch (RemoteException exc) {
+                            exc.printStackTrace();
+                        }
+                    }
+                }
+        );
+```
+
+#### Разделение чека на несколько печатных групп {#severalPrintGroups}
 
 ```java
 processorMap.put(
@@ -97,37 +164,6 @@ processorMap.put(
                                             null,
                                             setPrintGroups
                                     )
-                            );
-                        } catch (RemoteException exc) {
-                            exc.printStackTrace();
-                        }
-                    }
-                }
-        );
-```
-
-#### Разделение платежей в чеке
-
-```java
-        processorMap.put(
-                PaymentSelectedEvent.NAME_SELL_RECEIPT,
-                new PaymentSelectedEventProcessor() {
-                    @Override
-                    public void call(@NonNull String s, @NonNull PaymentSelectedEvent
-                            paymentSelectedEvent, @NonNull Callback callback) {
-                        List<PaymentPurpose> paymentParts = new ArrayList<PaymentPurpose>();
-
-                        paymentParts.add(new PaymentPurpose("-1-", new BigDecimal(3), "0", "платёж клиента 1"));
-                        paymentParts.add(new PaymentPurpose("-2-", new BigDecimal(5), "0", "платёж клиента 2"));
-                        paymentParts.add(new PaymentPurpose("-3-", new BigDecimal(2), "0", "платёж клиента 3"));
-                        paymentParts.add(new PaymentPurpose("-4-", new BigDecimal(10), "0", "платёж клиента 4"));
-
-                        try {
-                            callback.onResult(
-                                    new PaymentSelectedEventResult(
-                                            null,
-                                            paymentParts
-                                    ).toBundle()
                             );
                         } catch (RemoteException exc) {
                             exc.printStackTrace();
