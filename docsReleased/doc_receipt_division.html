@@ -352,6 +352,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            
+            <li class="active"><a href="doc_receipt_division.html">Разделение чека</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Драйвера для оборудования</a>
                 <ul>
@@ -581,7 +588,11 @@ $('#toc').on('click', 'a', function() {
 
 <ol>
   <li>Пользователь выбирает тип оплаты <strong>Банковская карта</strong>.</li>
-  <li>EvoPOS передаёт событие <code class="highlighter-rouge">PaymentSelectedEvent</code> и ожидает ответа от приложений.</li>
+  <li>
+    <p>EvoPOS передаёт событие <code class="highlighter-rouge">PaymentSelectedEvent</code> и ожидает ответа от приложений.</p>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Событие возникает только если пользователь выбрал безналичный расчёт.</div>
+  </li>
   <li>
     <p><a href="./doc_receipt_division.html#severalPayments">Приложение может разделить чек на несколько платежей</a> в счёт одного или нескольких юридических лиц.</p>
 
@@ -606,7 +617,7 @@ $('#toc').on('click', 'a', function() {
     <p>На основе данных, полученных от приложения, EvoPOS совершает платежи и начинает печать чека. Перед печатью чека EvoPOS передаёт событие <code class="highlighter-rouge">PrintGroupRequiredEvent</code> и ожидает ответа от приложений.</p>
   </li>
   <li>
-    <p><a href="./doc_receipt_division.html#severalPintGroups">Приложение может напечатать несколько разных печатных документов</a> и разделить платежи на между ними. Данные о платежах и соответствующих чеках приложение передаёт в <em>печатных группах</em>.</p>
+    <p><a href="./doc_receipt_division.html#severalPintGroups">Приложение может напечатать несколько разных печатных документов</a> и разделить платежи на между ними.</p>
 
     <p>Приложение передаёт данные о печатных документах, закреплённых за ними позициях и соответствующих платежах в объекте <code class="highlighter-rouge">PrintGroupRequiredEventResult</code>, которому соответствует список объектов <code class="highlighter-rouge">SetPrintGroup</code>.</p>
 
@@ -622,7 +633,11 @@ $('#toc').on('click', 'a', function() {
 
     <ul>
       <li>идентификатор печатной группы;</li>
-      <li>тип чека (фискальный, ЕНВД, квитанция);</li>
+      <li>
+        <p>тип чека (фискальный, ЕНВД, квитанция);</p>
+
+        <p>И квитанция и ЕНВД чек задаются в виде строк, в отличие от фискального чека, который набирается с помощью команд ККМ. ЕНВД чек отличается от квитанции тем, что квитанция не содержит информации о способе оплаты и на распечатанном чеке явно указывается, что это квитанция.</p>
+      </li>
       <li>систему налогообложения;</li>
       <li>реквизиты организации (название, ИНН, адрес).</li>
     </ul>
