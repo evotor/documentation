@@ -31,6 +31,7 @@ published: true
 * `https://another\.host\.com/document.*\.jsp`;
 * `https://another\.host\.com/.*`.
 
+{% include note.html content="Чтобы задавать маски веб-сайтов используйте [регулярные выражения](http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum)." %}
 
 После создания списка, обмен сообщениями происходит по описанному ниже процессу.
 
