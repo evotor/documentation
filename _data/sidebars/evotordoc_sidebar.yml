@@ -100,16 +100,16 @@ entries:
       url: /doc_cloud_proxy.html
       output: web
 
-    - title: User API
+    - title: Работа с пользователями
       url: /doc_smart_terminal_users_api.html
       output: web
 
-    - title: Inventory API
+    - title: Товароучёт
       url: /doc_smart_terminal_inventory_api.html
       output: web
 
       subfolders:
-        - title: Receipt API
+        - title: Работа с чеком
           output: web
           subfolderitems:
             - title: Поиск товара по штрихкоду
@@ -124,6 +124,10 @@ entries:
               url: /doc_receipt_interactions.html
               output: web
 
+            - title: Разделение чека
+              url: /doc_receipt_division.html
+              output: web
+
             - title: Скидки
               url: /doc_discounts.html
               output: web
@@ -132,13 +136,10 @@ entries:
               url: /doc_receipt_extras.html
               output: web
 
-    - title: Storage API
+    - title: Хранение данных на терминале
       url: /doc_storage_api.html
       output: web
 
-    - title: Разделение чека
-      url: /doc_receipt_division.html
-      output: web
 
 
 #    - title: Схемы и дополнительные поля товаров
