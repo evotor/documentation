@@ -1,5 +1,5 @@
 ---
-title: User API
+title: Работа с пользователями
 keywords: sample
 summary: "Раздел содержит описание Users API смарт-терминала."
 sidebar: evotordoc_sidebar

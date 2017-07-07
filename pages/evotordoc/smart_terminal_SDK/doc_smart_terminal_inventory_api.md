@@ -1,5 +1,5 @@
 ---
-title: Inventory API
+title: Товароучёт
 keywords: sample
 summary: "Раздел содержит описание Inventory API смарт-терминала."
 sidebar: evotordoc_sidebar
@@ -106,5 +106,5 @@ fun getProductExtras(context: Context, productUuid: String): List<ProductExtra>
 
     * для текстового поля – строка обрамленная кавычками ("785af1da-4053-4214-abd6-71c9cd4b5800").
     * для поля из словаря – массив uuid элементов (["61bff019-5040-40cd-bedf-d854ac935f6c","b993bd2a-8f6a-4fbc-b916-2d9786cd5def"]).
-    
+
 * `data` - дополнительные данные от приложения.

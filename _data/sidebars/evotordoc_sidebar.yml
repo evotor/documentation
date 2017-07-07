@@ -128,6 +128,10 @@ entries:
               url: /doc_receipt_division.html
               output: web
 
+            - title: Получить данные сформированного чека
+              url: /doc_receipt_division.html
+              output: web
+
             - title: Скидки
               url: /doc_discounts.html
               output: web
