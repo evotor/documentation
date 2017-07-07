@@ -129,7 +129,7 @@ entries:
               output: web
 
             - title: Получить данные сформированного чека
-              url: /doc_receipt_division.html
+              url: /doc_get_receipt.html
               output: web
 
             - title: Скидки
