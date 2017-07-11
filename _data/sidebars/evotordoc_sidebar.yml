@@ -36,7 +36,7 @@ entries:
 #                    Облако Эвотор                     #
 #######################################################
 
-  - title: Облако Эвотор
+  - title: Разработка для Облака Эвотор
     output: web, pdf
 
     folderitems:
@@ -68,87 +68,189 @@ entries:
 #               SDK смарт-терминала                         #
 ###############################################################
 
-  - title: SDK смарт-терминала
+  - title: Разработка для смарт-терминала
     output: web, pdf
     folderitems:
 
+    - title: С чего начать
+      url: /doc_getting_started.html
+      output: web
+
+      subfolders:
+      - title: Основы создания приложений
+        output: web
+        subfolderitems:
+          - title: Компоненты приложения
+            url: /doc_app_components.html
+            output: web
+
+          - title: События
+            url: /doc_events.html
+            output: web
+
+          - title: Манифест приложения
+            url: /doc_app_manifest.html
+            output: web
+
     - title: Включение режима разработчика
       url: /doc_developer_mode.html
-      output: web
-
-    - title: Логирование
-      url: /doc_logging.html
-      output: web
-
-    - title: Тестирование приложения
-      url: /doc_application_test.html
-      output: web, pdf
-
-    - title: Манифест JS-приложения
-      url: /doc_app_manifest.html
       output: web
 
     - title: Права приложения
       url: /doc_smart_terminal_app_grants.html
       output: web
 
-    - title: Плитка или иконка приложения в интерфейсе смарт-терминала
-      url: /doc_smart_terminal_app_tile.html
-      output: web
+      subfolders:
+      - title: JAVA SDK
+        output: web
+        subfolderitems:
+          - title: Подключение библиотеки
+            url: /doc_integration_library_link.html
+            output: web
 
-    - title: Обмен данными между приложением и сторонним сервисом
-      url: /doc_cloud_proxy.html
-      output: web
+          - title: Приложение в интерфейсе терминала
+            url: /doc_java_app_tile.html
+            output: web
 
-    - title: Работа с пользователями
-      url: /doc_smart_terminal_users_api.html
-      output: web
+          - title: Обмен сообщениями со сторонним сервисом
+            url: /doc_java_third_party_service_communication.html
+            output: web
 
-    - title: Товароучёт
-      url: /doc_smart_terminal_inventory_api.html
-      output: web
+          - title: Работа с пользователями
+            url: /doc_java_app_users.html
+            output: web
+
+          - title: Товароучёт
+            url: /doc_java_inventory.html
+            output: web
+
+      subfolders:
+      - title: Работа с чеком
+        output: web
+        subfolderitems:
+          - title: Поиск товара по штрихкоду
+            url: /doc_smart_terminal_receipt_api.html
+            output: web
+
+          - title: Создание чека в приложении
+            url: /doc_receipt_creation.html
+            output: web
+
+          - title: Работа с позициями чека
+            url: /doc_receipt_interactions.html
+            output: web
+
+          - title: Разделение чека
+            url: /doc_receipt_division.html
+            output: web
+
+          - title: Получить данные сформированного чека
+            url: /doc_get_receipt.html
+            output: web
+
+          - title: Скидки
+            url: /doc_discounts.html
+            output: web
+
+          - title: Создание дополнительных полей в чеке
+            url: /doc_receipt_extras.html
+            output: web
+
+
+          subfolders:
+           - title: Работа с оборудованием
+             output: web
+             subfolderitems:
+
+               - title: Подключение оборудования
+                 url: /doc_integration_library_connection.html
+                 output: web
+
+               - title: Сканер штрихкодов
+                 url: /doc_barcode_scanner.html
+                 output: web
+
+               - title: Принтер чеков
+                 url: /doc_bill_printer.html
+                 output: web
+
+               - title: Весы
+                 url: /doc_scales.html
+                 output: web
+
+
+      subfolders:
+        - title: JavaScript SDK
+          output: web
+          subfolderitems:
+            - title: Подключение шаблона приложения
+              url: /doc_javascript_app_template_link.html
+              output: web
+
+            - title: Приложение в интерфейсе терминала
+              url: /doc_javascript_app_tile.html
+              output: web
+
+            - title: Обмен сообщениями со сторонним сервисом
+              url: /doc_java_third_party_service_communication.html
+              output: web
+
+            - title: Работа с пользователями
+              url: /doc_javascript_app_users.html
+              output: web
+
+            - title: Товароучёт
+              url: /doc_javascript_inventory.html
+              output: web
 
       subfolders:
         - title: Работа с чеком
           output: web
           subfolderitems:
             - title: Поиск товара по штрихкоду
-              url: /doc_smart_terminal_receipt_api.html
+              url: /?.html
               output: web
 
             - title: Создание чека в приложении
-              url: /doc_receipt_creation.html
+              url: /?.html
               output: web
 
             - title: Работа с позициями чека
-              url: /doc_receipt_interactions.html
+              url: /?.html
               output: web
 
             - title: Разделение чека
-              url: /doc_receipt_division.html
+              url: /?.html
               output: web
 
             - title: Получить данные сформированного чека
-              url: /doc_get_receipt.html
+              url: /?.html
               output: web
 
             - title: Скидки
-              url: /doc_discounts.html
+              url: /doc_javascript_discounts.html
               output: web
 
             - title: Создание дополнительных полей в чеке
-              url: /doc_receipt_extras.html
+              url: /?.html
               output: web
 
-    - title: Хранение данных на терминале
-      url: /doc_storage_api.html
-      output: web
+           - title: Работа с оборудованием
+             output: web
+             subfolderitems:
 
+               - title: Подключение оборудования
+                 url: /doc_javascriptintegration_library_connection.html
+                 output: web
 
+               - title: Сканер штрихкодов
+                 url: /doc_javascript_barcode_scanner.html
+                 output: web
 
-#    - title: Схемы и дополнительные поля товаров
-#      url: /doc_product_extras.html.html
-#      output: web
+               - title: Весы
+                 url: /doc_javascript_scales.html
+                 output: web
+
 
       subfolders:
         - title: Драйвера для оборудования
@@ -170,25 +272,15 @@ entries:
               url: /doc_drivers_scales.html
               output: web
 
-        - title: Работа с оборудованием
-          output: web
-          subfolderitems:
+    - title: Тестирование приложения
+      url: /doc_application_test.html
+      output: web, pdf
 
-            - title: Подключение оборудования
-              url: /doc_integration_library_connection.html
-              output: web
+#    - title: Схемы и дополнительные поля товаров
+#      url: /doc_product_extras.html.html
+#      output: web
 
-            - title: Сканер штрихкодов
-              url: /doc_barcode_scanner.html
-              output: web
 
-            - title: Принтер чеков
-              url: /doc_bill_printer.html
-              output: web
-
-            - title: Весы
-              url: /doc_scales.html
-              output: web
 
 #############################################################
 #            Примеры реализации                             #
@@ -243,17 +335,17 @@ entries:
 #               Публикация приложения                         #
 ###############################################################
 
-#  - title: Публикация приложения
-#    output: web, pdf
-#    folderitems:
+  - title: Публикация приложения
+    output: web, pdf
+    folderitems:
 
-#    - title: Модели биллинга
-#      url: /doc_billing_models.html
-#      output: web
+    - title: Инструкция по публикации приложения
+      url: /doc_billing_models.html
+      output: web
 
-#    - title: Приёмочное тестирование
-#      url: /doc_acceptance_testing.html
-#      output: web
+    - title: Что происходит после отправки приложения на ревью
+      url: /doc_acceptance_testing.html
+      output: web
 
 ###############################################################
 #                      FAQ                                    #
