@@ -76,21 +76,20 @@ entries:
       url: /doc_getting_started.html
       output: web
 
-      subfolders:
-      - title: Основы создания приложений
+    - title: Основы создания приложений
+      output: web
+      subfolderitems:
+      - title: Компоненты приложения
+        url: /doc_app_components.html
         output: web
-        subfolderitems:
-          - title: Компоненты приложения
-            url: /doc_app_components.html
-            output: web
 
-          - title: События
-            url: /doc_events.html
-            output: web
+      - title: События
+        url: /doc_events.html
+        output: web
 
-          - title: Манифест приложения
-            url: /doc_app_manifest.html
-            output: web
+      - title: Манифест приложения
+        url: /doc_app_manifest.html
+        output: web
 
     - title: Включение режима разработчика
       url: /doc_developer_mode.html
@@ -128,55 +127,55 @@ entries:
       - title: Работа с чеком
         output: web
         subfolderitems:
-          - title: Поиск товара по штрихкоду
-            url: /doc_smart_terminal_receipt_api.html
-            output: web
+        - title: Поиск товара по штрихкоду
+          url: /doc_smart_terminal_receipt_api.html
+          output: web
 
-          - title: Создание чека в приложении
-            url: /doc_receipt_creation.html
-            output: web
+        - title: Создание чека в приложении
+          url: /doc_receipt_creation.html
+          output: web
 
-          - title: Работа с позициями чека
-            url: /doc_receipt_interactions.html
-            output: web
+        - title: Работа с позициями чека
+          url: /doc_receipt_interactions.html
+          output: web
 
-          - title: Разделение чека
-            url: /doc_receipt_division.html
-            output: web
+        - title: Разделение чека
+          url: /doc_receipt_division.html
+          output: web
 
-          - title: Получить данные сформированного чека
-            url: /doc_get_receipt.html
-            output: web
+        - title: Получить данные сформированного чека
+          url: /doc_get_receipt.html
+          output: web
 
-          - title: Скидки
-            url: /doc_discounts.html
-            output: web
+        - title: Скидки
+          url: /doc_discounts.html
+          output: web
 
-          - title: Создание дополнительных полей в чеке
-            url: /doc_receipt_extras.html
-            output: web
+        - title: Создание дополнительных полей в чеке
+          url: /doc_receipt_extras.html
+          output: web
 
 
           subfolders:
-           - title: Работа с оборудованием
-             output: web
-             subfolderitems:
+          - title: Работа с оборудованием
+            output: web
+            subfolderitems:
 
-               - title: Подключение оборудования
-                 url: /doc_integration_library_connection.html
-                 output: web
+              - title: Подключение оборудования
+                url: /doc_integration_library_connection.html
+                output: web
 
-               - title: Сканер штрихкодов
-                 url: /doc_barcode_scanner.html
-                 output: web
+              - title: Сканер штрихкодов
+                url: /doc_barcode_scanner.html
+                output: web
 
-               - title: Принтер чеков
-                 url: /doc_bill_printer.html
-                 output: web
+              - title: Принтер чеков
+                url: /doc_bill_printer.html
+                output: web
 
-               - title: Весы
-                 url: /doc_scales.html
-                 output: web
+              - title: Весы
+                url: /doc_scales.html
+                output: web
 
 
       subfolders:
@@ -203,53 +202,52 @@ entries:
               url: /doc_javascript_inventory.html
               output: web
 
-      subfolders:
-        - title: Работа с чеком
+      - title: Работа с чеком
+        output: web
+        subfolderitems:
+        - title: Поиск товара по штрихкоду
+            url: /?.html
+            output: web
+
+        - title: Создание чека в приложении
+          url: /?.html
           output: web
-          subfolderitems:
-            - title: Поиск товара по штрихкоду
-              url: /?.html
-              output: web
 
-            - title: Создание чека в приложении
-              url: /?.html
-              output: web
+        - title: Работа с позициями чека
+          url: /?.html
+          output: web
 
-            - title: Работа с позициями чека
-              url: /?.html
-              output: web
+        - title: Разделение чека
+          url: /?.html
+          output: web
 
-            - title: Разделение чека
-              url: /?.html
-              output: web
+        - title: Получить данные сформированного чека
+          url: /?.html
+          output: web
 
-            - title: Получить данные сформированного чека
-              url: /?.html
-              output: web
+        - title: Скидки
+          url: /doc_javascript_discounts.html
+          output: web
 
-            - title: Скидки
-              url: /doc_javascript_discounts.html
-              output: web
+        - title: Создание дополнительных полей в чеке
+          url: /?.html
+          output: web
 
-            - title: Создание дополнительных полей в чеке
-              url: /?.html
-              output: web
-
-           - title: Работа с оборудованием
+         - title: Работа с оборудованием
              output: web
              subfolderitems:
 
-               - title: Подключение оборудования
-                 url: /doc_javascriptintegration_library_connection.html
-                 output: web
+             - title: Подключение оборудования
+               url: /doc_javascriptintegration_library_connection.html
+               output: web
 
-               - title: Сканер штрихкодов
-                 url: /doc_javascript_barcode_scanner.html
-                 output: web
+             - title: Сканер штрихкодов
+               url: /doc_javascript_barcode_scanner.html
+               output: web
 
-               - title: Весы
-                 url: /doc_javascript_scales.html
-                 output: web
+             - title: Весы
+               url: /doc_javascript_scales.html
+               output: web
 
 
       subfolders:
