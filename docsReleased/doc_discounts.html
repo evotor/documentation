@@ -565,25 +565,33 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Для расчёта и назначения скидки:</p>
+  <p>Вы можете добавлять скидку как на <a href="/doc_discounts.html#discountPosition">каждую позицию отдельно</a>, так и на весь чек.</p>
+
+<h3 id="section">Скидка на чек</h3>
+
+<p>Приложение не может автоматически применять скидку, перед этим его требуется вручную вызвать с помощью <a href="./doc_smart_terminal_app_tile.html">иконки на экране оплаты смарт-терминала</a>.</p>
+
+<p>Для расчёта и назначения скидки:</p>
 
 <ol>
   <li>Подпишитесь на событие <code class="highlighter-rouge">ReceiptDiscountEvent</code>.</li>
   <li>Получите результат, который сообщает о возможности начисления скидки.</li>
 </ol>
 
-<p>Приложение не может автоматически применять скидку, перед этим его требуется вручную вызвать с помощью <a href="./doc_smart_terminal_app_tile.html">иконки на экране оплаты смарт-терминала</a>.</p>
-
-<h3 id="section">Подписка на событие</h3>
+<p><em>Чтобы добавить скидку на весь чек:</em></p>
 
 <p><code class="highlighter-rouge">ReceiptDiscountEvent</code>сообщает о возможности начислить скидку.</p>
 
 <ol>
-  <li>Создайте службу, которая наследует класс <code class="highlighter-rouge">IntegrationService</code>, например <code class="highlighter-rouge">MyDiscountService</code>.</li>
   <li>
-    <p>Переопределите метод <code class="highlighter-rouge">createProcessors</code> службы <code class="highlighter-rouge">MyDiscountService</code> и создайте в нём процессор <code class="highlighter-rouge">ReceiptDiscountEventProcessor</code> .</p>
+    <p>Подпишитесь на событие:</p>
 
-    <div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyDiscountService</span> <span class="kd">extends</span> <span class="n">IntegrationService</span> <span class="o">{</span>
+    <ol>
+      <li>Создайте службу, которая наследует класс <code class="highlighter-rouge">IntegrationService</code>, например <code class="highlighter-rouge">MyDiscountService</code>.</li>
+      <li>
+        <p>Переопределите метод <code class="highlighter-rouge">createProcessors</code> службы <code class="highlighter-rouge">MyDiscountService</code> и создайте в нём процессор <code class="highlighter-rouge">ReceiptDiscountEventProcessor</code> .</p>
+
+        <div class="language-java highlighter-rouge"><pre class="highlight"><code>   <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyDiscountService</span> <span class="kd">extends</span> <span class="n">IntegrationService</span> <span class="o">{</span>
  <span class="nd">@Nullable</span>
  <span class="nd">@Override</span>
  <span class="kd">protected</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">ActionProcessor</span><span class="o">&gt;</span> <span class="nf">createProcessors</span><span class="o">()</span> <span class="o">{</span>
@@ -596,23 +604,23 @@ $('#toc').on('click', 'a', function() {
      <span class="o">});</span>
      <span class="k">return</span> <span class="n">map</span><span class="o">;</span>
  <span class="o">}</span>
-<span class="o">}</span>
+ <span class="o">}</span>
 </code></pre>
-    </div>
+        </div>
 
-    <p>где:</p>
+        <p>где:</p>
 
-    <ul>
-      <li><code class="highlighter-rouge">call</code> – метод получения событий и объектов.</li>
-      <li><code class="highlighter-rouge">action</code> – действие при событии.</li>
-      <li><code class="highlighter-rouge">event</code> –  событие.</li>
-      <li><code class="highlighter-rouge">callback</code>– объект возврата результата.</li>
-    </ul>
-  </li>
-  <li>
-    <p>Объявите службу в манифесте приложения:</p>
+        <ul>
+          <li><code class="highlighter-rouge">call</code> – метод получения событий и объектов.</li>
+          <li><code class="highlighter-rouge">action</code> – действие при событии.</li>
+          <li><code class="highlighter-rouge">event</code> –  событие.</li>
+          <li><code class="highlighter-rouge">callback</code>– объект возврата результата.</li>
+        </ul>
+      </li>
+      <li>
+        <p>Объявите службу в манифесте приложения:</p>
 
-    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;service</span>
+        <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;service</span>
         <span class="na">android:name=</span><span class="s">"MyDiscountService"</span>
         <span class="na">android:enabled=</span><span class="s">"true"</span>
         <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
@@ -621,13 +629,14 @@ $('#toc').on('click', 'a', function() {
         <span class="nt">&lt;/intent-filter&gt;</span>
 <span class="nt">&lt;/service&gt;</span>
 </code></pre>
-    </div>
+        </div>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Запросите результат <code class="highlighter-rouge">ReceiptDiscountEventResult</code>.</p>
   </li>
 </ol>
-
-<h3 id="section-1">Получение результата</h3>
-
-<p>Запрашиваем результат <code class="highlighter-rouge">ReceiptDiscountEventResult</code>.</p>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="k">try</span> <span class="o">{</span><span class="n">callback</span><span class="o">.</span><span class="na">onResult</span><span class="o">(</span>
   <span class="k">new</span> <span class="nf">ReceiptDiscountEventResult</span><span class="o">(</span>
@@ -648,7 +657,19 @@ $('#toc').on('click', 'a', function() {
 <ul>
   <li><code class="highlighter-rouge">discount</code> – значение скидки в валюте.</li>
   <li><code class="highlighter-rouge">new SetExtra(extra)</code> – команда для <a href="./doc_receipt_extras.html">создания дополнительных полей в чеке</a>. Если дополнительные поля создавать не требуется вы можете передать <code class="highlighter-rouge">null</code>.</li>
-  <li><code class="highlighter-rouge">changes</code> – список изменений по позициям.</li>
+  <li><code class="highlighter-rouge">changes</code> – список изменений по позициям. Спомощью поля</li>
+</ul>
+
+<h3 id="discountPosition">Скидка на позицию</h3>
+
+<p>Чтобы добавить скидку на позицию, вам потребуется передать значение скидки в поле <code class="highlighter-rouge">priceWithDiscountPosition</code>. Если скидки на позицию нет, передавайте <code class="highlighter-rouge">null</code>. Список полей позиции описан в классе <code class="highlighter-rouge">position.java</code>.</p>
+
+<p>Передать поле можно в любой момент, когда доступно редактирование существующих или добавление новых позиций в чек:</p>
+
+<ul>
+  <li><a href="./doc_receipt_creation.html">При создании чека в приложении</a>.</li>
+  <li><a href="./doc_receipt_interactions.html">В списке изменений changes, при работе с чеком</a>.</li>
+  <li>В списке изменений по позициям (см. выше)</li>
 </ul>
 
 
