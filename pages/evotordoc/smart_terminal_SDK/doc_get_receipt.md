@@ -52,5 +52,13 @@ fun getReceiptHeaders(context: Context, type: Receipt.Type? = null): ru.evotor.f
 Где:
 
 * `context` – контекст приложения.
-* `type` – тип чека: продажи (`SELL`) или возврата (`PAYBACK`). 
+* `type` – тип чека: продажи (`SELL`) или возврата (`PAYBACK`).
 * `ru.evotor.framework.Cursor<Receipt.Header?>` – курсор с заголовками чека.
+
+### Пример
+
+Получить список позиций открытого чека:
+
+``` java
+List<Position> positions = ReceiptApi.getReceipt(context, Receipt.Type.SELL).getPositions();
+```
