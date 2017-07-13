@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Работа с чеками | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит информацию, которая поможет вам установить своё приложение на смарт-терминал как с помощью Магазина приложений так и с помощью ADB Shell.">
+<meta name="keywords" content="ТерминалJavaJavaScript,  ">
+<title>Установка приложения | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Работа с чеками">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Установка приложения">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -528,13 +528,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Работа с чеками</h1>
+   <h1 class="post-title-main">Установка приложения</h1>
 </div>
 
 
 
 <div class="post-content">
 
+   
+    <div class="summary">Раздел содержит информацию, которая поможет вам установить своё приложение на смарт-терминал как с помощью Магазина приложений так и с помощью ADB Shell.</div>
    
 
     
@@ -565,485 +567,98 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Таблица ниже содержит страницы, отмеченные тэгом <button type="button" style="cursor: default" class="btn btn-default navbar-btn">Чеки</button></p>
-<table><thead><tr><th>Название</th><th>Тип</th><th>Выдержка</th></tr></thead>
-    <tbody>
-    
-  
-    
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
+  <p>Вы можете установить приложение на терминал:</p>
 
-        <tr><td><a href="doc_1C_integration.html">Интеграция с 1С</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию об интеграции с 1С </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<ul>
+  <li>с помощью магазина приложений;</li>
+  <li>с помощью ADB Shell.</li>
+</ul>
 
-        <tr><td><a href="doc_evotor_api_about.html">Об Облаке Эвотор</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит вводную информацию для работы с нашей документацией. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
+<h3 id="section">Установка приложения из магазина приложений</h3>
 
-        <tr><td><a href="doc_bill_printer.html">Принтер чеков</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как приложение может работать с принтером чеков. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<p>Установить приложение из Магазина могут только пользователи в роли <strong>Тестировщик</strong>.</p>
 
-        <tr><td><a href="doc_discounts.html">Скидки</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Вы можете добавлять скидку как на каждую позицию отдельно, так и на весь чек. Скидка на чек Приложение не может автоматически применять скидку, перед этим его требуется вручную вызвать с помощью иконки на экране оплаты смарт-терминала. Для расчёта и назначения скидки:  Подпишитесь на событие ReceiptDiscountEvent.... </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-        
-     
-        
+<p>Чтобы установить приложение из Магазина приложений:</p>
 
-        <tr><td><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит инструкцию по созданию простого java-приложения для смарт-терминала. На разных этапах приложение обладает разными функциями. Так, итоговое пр... </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<ol>
+  <li>
+    <p>Создайте приложение на сайте <a href="https://dev.evotor.ru">dev.evotor.ru</a></p>
 
-        <tr><td><a href="doc_receipt_creation.html">Открытие чека в приложении</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+    <p>При создании приложения установите флажок, который сообщает о наличии apk-файла.</p>
+  </li>
+  <li>
+    <p>Выберите или создайте новую версию приложения, которую требуется протестировать.</p>
+  </li>
+  <li>
+    <p>На вкладке <strong>APK</strong>, загрузите apk-файл своего приложения.</p>
 
-        <tr><td><a href="doc_receipt_extras.html">Создание дополнительных полей в чеке</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как и когда вы можете добавлять дополнительные поля в чеки. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
+    <p>Если вы уже загружали apk-файл, обратите внимание, что значение параметра versioncode нового apk-файла, должно быть больше, чем у уже загруженного.</p>
+  </li>
+  <li>
+    <p>На вкладке <strong>Тестирование</strong>, добавьте номера телефонов аккаунтов <a href="https://market.evotor.ru">market.evotor.ru</a>, которым будет доступно приложение для тестирования.</p>
+  </li>
+  <li>
+    <p>На вкладке <strong>Версии</strong> выберите версию, которую требуется протестировать и нажмите кнопку <strong>Выложить на тест</strong>.</p>
+  </li>
+  <li>
+    <p>Войдите в Личный кабинет на сайте <a href="https://market.evotor.ru">market.evotor.ru</a> используя номер телефона тестировщика.</p>
+  </li>
+  <li>
+    <p>Установите приложение из Магазина приложений.</p>
+  </li>
+</ol>
 
-        <tr><td><a href="doc_receipt_interactions.html">Работа с позициями чека</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека. </td>
-        </tr>
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<p>Необходимая версия приложения будет установлена на смарт-терминал, привязанный к этому аккаунту.</p>
 
-        <tr><td><a href="doc_smart_terminal_documents.html">Документы смарт-терминала</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит список документов, которые формирует смарт-терминал. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<h3 id="adb-shell">Установка приложения с помощью ADB Shell</h3>
 
-        <tr><td><a href="doc_smart_terminal_receipt_api.html">Поиск товара по штрихкоду</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит описание Receipt API смарт-терминала. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-        
-     
-   
-    
-   
-    
-   
-    
-   
+<p>Для установки с помощью ADB Shell вам потребуется:</p>
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+<ul>
+  <li>смарт-терминал с <a href="./doc_developer_mode.html">включённым режимом разработчика</a>.</li>
+  <li>Android Studio.</li>
+</ul>
 
-   </tbody>
-</table>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Перед установкой убедитесь, что ваш компьютер и смарт-терминал находятся в одной сети wi-fi.</div>
 
+<p>Чтобы установить приложение с помощью ADB Shell:</p>
+
+<ol>
+  <li>
+    <p>Откройте консоль Android Studio.</p>
+  </li>
+  <li>
+    <p>Подключитесь к смарт-терминалу с помощью команды:</p>
+
+    <p><code class="highlighter-rouge">adb connect &lt;IP-адрес&gt;:&lt;порт&gt;</code></p>
+  </li>
+  <li>
+    <p>Выполните команду:</p>
+
+    <p><code class="highlighter-rouge">adb install &lt;адрес apk-файла&gt;</code></p>
+  </li>
+</ol>
+
+<p>Приложение установится на смарт-терминал.</p>
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
+        
+        
+        
+        <a href="tag_JavaScript.html" class="btn btn-default navbar-btn cursorNorm" role="button">JavaScript</a>
+        
+        
         
     </div>
 

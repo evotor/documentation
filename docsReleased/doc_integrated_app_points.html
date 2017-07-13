@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Работа с чеками | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит пошаговое описание обмена сообщениями между приложением и сторонним сервисом">
+<meta name="keywords" content=" sample">
+<title>Встраивание приложения | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Работа с чеками">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Встраивание приложения">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -528,13 +528,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Работа с чеками</h1>
+   <h1 class="post-title-main">Встраивание приложения</h1>
 </div>
 
 
 
 <div class="post-content">
 
+   
+    <div class="summary">Раздел содержит пошаговое описание обмена сообщениями между приложением и сторонним сервисом</div>
    
 
     
@@ -565,482 +567,26 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Таблица ниже содержит страницы, отмеченные тэгом <button type="button" style="cursor: default" class="btn btn-default navbar-btn">Чеки</button></p>
-<table><thead><tr><th>Название</th><th>Тип</th><th>Выдержка</th></tr></thead>
-    <tbody>
-    
-  
-    
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
+  <p>Встроенное приложение</p>
 
-        <tr><td><a href="doc_1C_integration.html">Интеграция с 1С</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию об интеграции с 1С </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<p>вы можете вызвать интерфейс своего приложения если подпишетесь на необходимые события.</p>
 
-        <tr><td><a href="doc_evotor_api_about.html">Об Облаке Эвотор</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит вводную информацию для работы с нашей документацией. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
+<p>отдельное приложение и встроенное приложение</p>
 
-        <tr><td><a href="doc_bill_printer.html">Принтер чеков</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как приложение может работать с принтером чеков. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<p>В отличие от отдельного приложения, у встроенного приложения нет плитки, которая отображается на главном экране смарт-терминала. Приложение отображает интерфейс в зависимости от событий на смарт-терминале. События возникают при различных действиях на смарт-терминале и определяют какая функциональность доступна приложению в тот или иной момент.</p>
 
-        <tr><td><a href="doc_discounts.html">Скидки</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Вы можете добавлять скидку как на каждую позицию отдельно, так и на весь чек. Скидка на чек Приложение не может автоматически применять скидку, перед этим его требуется вручную вызвать с помощью иконки на экране оплаты смарт-терминала. Для расчёта и назначения скидки:  Подпишитесь на событие ReceiptDiscountEvent.... </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-        
-     
-        
+<p>На схеме изображена карта функционала, на которой показано когда возникает событие и доступ к каким функциям приложение получает при подписке на него.</p>
 
-        <tr><td><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит инструкцию по созданию простого java-приложения для смарт-терминала. На разных этапах приложение обладает разными функциями. Так, итоговое пр... </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<p>Приложению требуется подписаться на</p>
 
-        <tr><td><a href="doc_receipt_creation.html">Открытие чека в приложении</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<h3 id="java-">Как подписаться на события в Java-приложении</h3>
+<p>А здесь про android manifest.</p>
 
-        <tr><td><a href="doc_receipt_extras.html">Создание дополнительных полей в чеке</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как и когда вы можете добавлять дополнительные поля в чеки. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<h3 id="js-">Как подписаться на события в JS-приложении</h3>
 
-        <tr><td><a href="doc_receipt_interactions.html">Работа с позициями чека</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека. </td>
-        </tr>
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<p>Здесь про client.yaml</p>
 
-        <tr><td><a href="doc_smart_terminal_documents.html">Документы смарт-терминала</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит список документов, которые формирует смарт-терминал. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-
-        <tr><td><a href="doc_smart_terminal_receipt_api.html">Поиск товара по штрихкоду</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит описание Receipt API смарт-терминала. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-        
-     
-   
-    
-   
-    
-   
-    
-   
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-   </tbody>
-</table>
-
+<p>Действия, события а так же функционал, доступ к которому даёт то или иное событие, приведены в таблице ниже.</p>
 
 
     <div class="tags">

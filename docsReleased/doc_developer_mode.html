@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалОблако,  sample">
+<meta name="keywords" content="ТерминалJavaJavaScript,  sample">
 <title>Включение режима разработчика | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -568,7 +568,7 @@ $('#toc').on('click', 'a', function() {
   <p>Режим разработчика позволяет:</p>
 
 <ul>
-  <li>устанавливать приложение на смарт-терминал с помощью ADB, без необходимости загружать его в магазин приложений;</li>
+  <li>устанавливать приложение на смарт-терминал с помощью ADB Shell, без необходимости загружать его в магазин приложений;</li>
   <li>просматривать логи приложения с помощью утилиты <strong>LogCat</strong></li>
   <li>подключать отладчик приложения.</li>
 </ul>
@@ -587,12 +587,14 @@ $('#toc').on('click', 'a', function() {
 
     <ul>
       <li>
-        <p>Если вы хотите, чтобы тестировщики и разработчики могли установить приложение из Магазина приложений, выберите <strong>Загрузить APK</strong>.</p>
+        <p>Если вы хотите, чтобы тестировщики могли установить приложение из Магазина приложений, выберите <strong>Загрузить APK</strong>.</p>
 
         <p>После того как вы загрузите APK, поля <strong>Код версии</strong> и <strong>Package name</strong> автоматически заполнятся значениями, указанными в APK приложения.</p>
+
+        <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Если вы вберете <b>Загрузить APK</b> пользователи с ролю <b>Разработчик</b> также смогут <a href="./doc_app_installation.html">устанавливать приложения с помощью ADB Shell</a>.</div>
       </li>
       <li>
-        <p>Если вы хотите вручную устанавливать приложение на смарт-терминал с помощью ADB, выберите <strong>Ввести ID пакета вручную</strong>.</p>
+        <p>Если вы хотите вручную устанавливать приложение на смарт-терминал с помощью ADB Shell, выберите <strong>Ввести ID пакета вручную</strong>.</p>
 
         <p>Вам потребуется вручную указать имя пакета вашего приложения, в поле package name. Код версии в этом случае указывать не требуется.</p>
       </li>
@@ -609,7 +611,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Режим разработчика включается на всех терминалах, зарегистрированных на указанный номер телефона.</p>
 
-<p>Режим разработчика действует только для приложения с заданным package name.</p>
+<p>Режим разработчика действует только для приложения с заданным package name. Установить приложение с package name отличным от указанного нельзя.</p>
 
 <p><img src="images/developer_mode_enabling.png" alt="Режим разработчика на сайте разработчиков" title="Режим разработчика на сайте разработчиков" /></p>
 
@@ -641,7 +643,11 @@ ADB: &lt;IP-адрес&gt;:&lt;порт&gt;
         
         
         
-        <a href="tag_Облако.html" class="btn btn-default navbar-btn cursorNorm" role="button">Облако</a>
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
+        
+        
+        
+        <a href="tag_JavaScript.html" class="btn btn-default navbar-btn cursorNorm" role="button">JavaScript</a>
         
         
         

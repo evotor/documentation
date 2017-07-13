@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Работа с чеками | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуетс...">
+<meta name="keywords" content="ТерминалJava,  ">
+<title>Начало разработки | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Работа с чеками">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Начало разработки">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -528,13 +528,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Работа с чеками</h1>
+   <h1 class="post-title-main">Начало разработки</h1>
 </div>
 
 
 
 <div class="post-content">
 
+   
+    <div class="summary">Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуется для установки на смарт-терминал.</div>
    
 
     
@@ -565,485 +567,98 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Таблица ниже содержит страницы, отмеченные тэгом <button type="button" style="cursor: default" class="btn btn-default navbar-btn">Чеки</button></p>
-<table><thead><tr><th>Название</th><th>Тип</th><th>Выдержка</th></tr></thead>
-    <tbody>
-    
-  
-    
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
+  <h3 id="section">Требования</h3>
 
-        <tr><td><a href="doc_1C_integration.html">Интеграция с 1С</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию об интеграции с 1С </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<p>Для разработки java-приложения, вам потребуется:</p>
 
-        <tr><td><a href="doc_evotor_api_about.html">Об Облаке Эвотор</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит вводную информацию для работы с нашей документацией. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
+<ul>
+  <li>Android Studio версии 2.3.3 или выше;</li>
+  <li>библиотека <a href="https://github.com/evotor/integration-library">integration-library</a> версии 0.3+.</li>
+</ul>
 
-        <tr><td><a href="doc_bill_printer.html">Принтер чеков</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как приложение может работать с принтером чеков. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<h3 id="section-1">Подключение библиотеки</h3>
 
-        <tr><td><a href="doc_discounts.html">Скидки</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Вы можете добавлять скидку как на каждую позицию отдельно, так и на весь чек. Скидка на чек Приложение не может автоматически применять скидку, перед этим его требуется вручную вызвать с помощью иконки на экране оплаты смарт-терминала. Для расчёта и назначения скидки:  Подпишитесь на событие ReceiptDiscountEvent.... </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-        
-     
-        
+<p><em>Чтобы подключить библиотеку integration-library:</em></p>
 
-        <tr><td><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит инструкцию по созданию простого java-приложения для смарт-терминала. На разных этапах приложение обладает разными функциями. Так, итоговое пр... </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<ol>
+  <li>
+    <p>В Android Studio создайте новый проект: <code class="highlighter-rouge">&lt;YourProjectName&gt;</code>.</p>
 
-        <tr><td><a href="doc_receipt_creation.html">Открытие чека в приложении</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+    <p>При создании проекта убедитесь, что в раскрывающемся списке <strong>Minimum SDK</strong> выбран API версии 22 или выше.</p>
 
-        <tr><td><a href="doc_receipt_extras.html">Создание дополнительных полей в чеке</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как и когда вы можете добавлять дополнительные поля в чеки. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
+    <p>В качестве примера, используйте операцию <strong>Empty Activity</strong>. Вы можете не добавлять операцию или использовать любую из предложенных.</p>
 
-        <tr><td><a href="doc_receipt_interactions.html">Работа с позициями чека</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека. </td>
-        </tr>
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+    <p>На скриншоте представлена структура полученного проекта:</p>
 
-        <tr><td><a href="doc_smart_terminal_documents.html">Документы смарт-терминала</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит список документов, которые формирует смарт-терминал. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+    <p><img src="./images/project_sctructure.png" alt="" title="Структура проекта &lt;YourProjectName&gt;" /></p>
 
-        <tr><td><a href="doc_smart_terminal_receipt_api.html">Поиск товара по штрихкоду</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит описание Receipt API смарт-терминала. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-        
-     
-   
-    
-   
-    
-   
-    
-   
+    <p><a href="/doc_app_manifest.html">Манифест проекта</a> выглядит так:</p>
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+ <span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> <span class="na">package=</span><span class="s">"com.example.&lt;yourprojectname&gt;"</span><span class="nt">&gt;</span>
 
-   </tbody>
-</table>
+   <span class="nt">&lt;application</span>
+       <span class="na">android:allowBackup=</span><span class="s">"true"</span>
+       <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
+       <span class="na">android:label=</span><span class="s">"@string/app_name"</span>
+       <span class="na">android:roundIcon=</span><span class="s">"@mipmap/ic_launcher_round"</span>
+       <span class="na">android:supportsRtl=</span><span class="s">"true"</span>
+       <span class="na">android:theme=</span><span class="s">"@style/AppTheme"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">".MainActivity"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;intent-filter&gt;</span>
+               <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
+
+               <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span> <span class="nt">/&gt;</span>
+           <span class="nt">&lt;/intent-filter&gt;</span>
+       <span class="nt">&lt;/activity&gt;</span>
+   <span class="nt">&lt;/application&gt;</span>
+
+ <span class="nt">&lt;/manifest&gt;</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">build.gradle (Project: &lt;YourProjectName&gt;)</code> укажите:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>allprojects {
+    repositories {
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">build.gradle (Module: app)</code>, добавьте библиотеку integration-library в зависимости (dependencies):</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>compile group: 'com.github.evotor', name: 'integration-library', version: 'v0.4.+'
+</code></pre>
+    </div>
+
+    <p>Убедитесь, что в зависимости указана <a href="https://github.com/evotor/integration-library/">актуальная версия библиотеки</a>.</p>
+  </li>
+</ol>
+
+<p>Библиотека подключена к проекту. Теперь вы можете собрать APK-файл своей программы и <a href="./doc_app_installation.html">установить её на смарт-терминал</a>.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Манифест должен содержать элемент &lt;meta-data/&gt; с информацией об идентификаторе приложения (см. раздел <a href="./doc_app_manifest.html">“Манифест приложения”</a>).</div>
 
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
+        
+        
         
     </div>
 

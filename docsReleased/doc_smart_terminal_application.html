@@ -586,26 +586,26 @@ $('#toc').on('click', 'a', function() {
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">URL</th>
-      <th style="text-align: center">Назначение</th>
-      <th style="text-align: center">Авторизация</th>
-      <th style="text-align: center">Дополнительно</th>
+      <th style="text-align: left">URL</th>
+      <th style="text-align: left">Назначение</th>
+      <th style="text-align: left">Авторизация</th>
+      <th style="text-align: left">Дополнительно</th>
       <th> </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">https://example.com/api/v1/user/create</td>
-      <td style="text-align: center">Эвотор отправляет по адресу регистрационные данные для создания новой учётной записи в облачной товароучётной системе.</td>
-      <td style="text-align: center">Товароучётная система авторизует запрос облака с помощью имени пользователя и пароля (basic-авторизация) или токена (bearer-авторизация).</td>
-      <td style="text-align: center"> </td>
+      <td style="text-align: left">https://example.com/api/v1/user/create</td>
+      <td style="text-align: left">Эвотор отправляет по адресу регистрационные данные для создания новой учётной записи в облачной товароучётной системе.</td>
+      <td style="text-align: left">Товароучётная система авторизует запрос облака с помощью имени пользователя и пароля (basic-авторизация) или токена (bearer-авторизация).</td>
+      <td style="text-align: left"> </td>
       <td> </td>
     </tr>
     <tr>
-      <td style="text-align: center">https://example.com/api/v1/user/verify</td>
-      <td style="text-align: center">Эвотор отправляет по адресу данные для авторизации пользователя в облачной товароучётной системе с помощью ранее созданной учётной записи.</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
+      <td style="text-align: left">https://example.com/api/v1/user/verify</td>
+      <td style="text-align: left">Эвотор отправляет по адресу данные для авторизации пользователя в облачной товароучётной системе с помощью ранее созданной учётной записи.</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
       <td> </td>
     </tr>
   </tbody>
@@ -662,9 +662,9 @@ $('#toc').on('click', 'a', function() {
 <p>Чтобы приложение обменивалось сообщениями со сторонним сервисом, выполните следующие действия:
 1. На сайте разработчиков, выберите необходимое приложение и перейдите на вкладку <strong>Интеграция</strong>.
 3. Установите следующие флажки:
-  * <strong>Вебхук: веб-адрес, по которому приложение, установленное на смарт-терминале, отправляет запросы</strong>, где в поле <strong>URL</strong> требуется указать основной URL стороннего сервиса (baseUrl). Сообщения приложения содержат путь относительно указанного URL.
-  * <strong>Вебхук: веб-адрес, на который сторонний сервис принимает данные о регистрации новой учётной записи</strong>, где в поле <strong>URL</strong> требуется указать URL вида <code class="highlighter-rouge">https://partner.ru/api/v1/create</code> (см. таблицу выше).
-  * <strong>Вебхук: веб-адрес для авторизации существующей учётной записи в стороннем сервисе</strong>, где в поле <strong>URL</strong> требуется указать URL вида <code class="highlighter-rouge">https://partner.ru/api/v1/verify</code> (см. таблицу выше).
+  * <strong>Проксирование запросов из приложения с терминала на ваш сервер (ver.2)</strong>, где в поле <strong>URL</strong> требуется указать основной URL стороннего сервиса (baseUrl). Сообщения приложения содержат путь относительно указанного URL.
+  * <strong>Регистрация учётной записи в стороннем сервисе</strong>, где в поле <strong>URL</strong> требуется указать URL вида <code class="highlighter-rouge">https://partner.ru/api/v1/create</code> (см. таблицу выше).
+  * <strong>Авторизация учётной записи в стороннем сервисе</strong>, где в поле <strong>URL</strong> требуется указать URL вида <code class="highlighter-rouge">https://partner.ru/api/v1/verify</code> (см. таблицу выше).
 4. <a href="doc_application_test.html">Выложите приложение на тест, чтобы изменения вступили в силу</a>.
 5. Установите приложение Личном кабинете пользователя Эвотор.
 6. В Личном кабинете, на вкладке <strong>Установка / удаление</strong> приложения, выберите смарт-терминалы, с которых приложение сможет отправлять запросы в сторонний сервис.</p>
