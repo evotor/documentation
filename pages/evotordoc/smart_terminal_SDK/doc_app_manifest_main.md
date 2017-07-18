@@ -8,6 +8,9 @@
 #### Пример Java-манифеста
 
 
+В блоке meta-data необходимо объявить ` android:name="app_uuid" ` и ` android:value="ApllicationUUID" `. 
+
+
 ````xml
 -<manifest package="com.example.myapplication">
 
@@ -124,9 +127,6 @@
 
 </manifest>
 ````
-
-
-В блоке meta-data необходимо объявить ` android:name="app_uuid" ` и ` android:value="ApllicationUUID" `. 
 
 При разработке драйвера для устройств нужно учитывать дополнительные параметры [ссылка на манифест для дров]
 
