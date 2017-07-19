@@ -112,3 +112,10 @@ rdiscount:
 
 redcarpet:
   extensions: []
+
+gems:
+  - algoliasearch-jekyll
+
+algolia:
+  application_id: '44FLY7BTEO'
+  index_name:     'docs_index'

@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+    </script>
+<!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Этот раздел содержит информацию о событиях которые рассылает смарт-терминал. При получении различных событий приложение выполняет соответствующие функции, на...">
+<meta name="keywords" content="ТерминалJavaJavaScriptСобытия,  sample">
+<title>События смарт-терминала | Документация Эвотор</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-orange.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4CBFKS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <li><a href="whats_new.html">Что нового</a></li>
+                
+                
+                
+                <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
+                
+                
+                
+                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="Поиск...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="События смарт-терминала">{title}</a></li>',
+                    noResultsText: 'Ничего не найдено',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle"> </li>
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">О платформе Эвотор</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_integration_types.html">Способы интеграции</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_glossary.html">Термины и определения</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Облако Эвотор</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_authorization.html">Авторизация</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_example_calls.html">Примеры запросов</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_applications.html">Приложения для смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_documents.html">Документы смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">SDK смарт-терминала</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_java_getting_started.html">Начало разработки java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_app_icon.html">Иконка java-приложения в интерфейсе смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_installation.html">Установка java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_developer_mode.html">Включение режима разработчика</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Манифест приложения</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_about_manifest.html">О манифесте приложения</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_java_app_manifest.html">Манифест Java-приложения</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_logging.html">Логирование</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_application_test.html">Тестирование приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка или иконка приложения в интерфейсе смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_cloud_proxy.html">Обмен данными между приложением и сторонним сервисом</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_users_api.html">Работа с пользователями</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_inventory_api.html">Товароучёт</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Работа с чеком</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_smart_terminal_receipt_api.html">Поиск товара по штрихкоду</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_division.html">Разделение чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_get_receipt.html">Получить данные сформированного чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_discounts.html">Скидки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_extras.html">Создание дополнительных полей в чеке</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_storage_api.html">Хранение данных на терминале</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Драйвера для оборудования</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_drivers_library_connection.html">Подготовка к разработке</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_cashdrawer.html">SDK для денежных ящиков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_pinpads.html">SDK для банковских терминалов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_scales.html">SDK для весов</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Работа с оборудованием</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_integration_library_connection.html">Подключение оборудования</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_barcode_scanner.html">Сканер штрихкодов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_bill_printer.html">Принтер чеков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_scales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Примеры реализации</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Биллинг</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_about_billing.html">О биллинге</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_tariffs.html">Тарифы</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">FAQ</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+        
+           <p class="external">
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
+           </p>
+    </li>
+</ul>
+</div>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+    <!-- Content Column -->
+    <div class="col-md-9">
+        <div class="post-header">
+   <h1 class="post-title-main">События смарт-терминала</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Этот раздел содержит информацию о событиях которые рассылает смарт-терминал. При получении различных событий приложение выполняет соответствующие функции, например, сохраняет логи, редактирует чек, начисляет скидки и т.д..</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+  <p>Смарт-терминал рассылает два вида событий, на которые можно подписать приложение:</p>
+
+<ul>
+  <li>События, которые не требуют ответа. Такие события в основном используются для ведения статистики и записи логов.</li>
+  <li>События, которые требуют ответ. Такие события необходимы для интеграции функций приложения в процесс работы смарт-терминала, например, для редактирования позиций или начисления скидки при создании чека.</li>
+</ul>
+
+<h3 id="section">События, которые не требуют ответа</h3>
+
+<p>Чтобы подписать java-приложение на такие события укажите их в приёмнике широковещательных сообщений (BroadcastReceiver).</p>
+
+<p>Пример приёмника с нескольких сообщений.</p>
+
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;receiver</span>
+        <span class="na">android:name=</span><span class="s">".AddPositionBroadcastReceiver"</span>
+        <span class="na">android:enabled=</span><span class="s">"true"</span>
+        <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;intent-filter&gt;</span>
+            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evotor.intent.action.receipt.sell.POSITION_ADDED"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evotor.intent.action.receipt.sell.POSITION_EDITED"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evotor.intent.action.receipt.sell.POSITION_REMOVED"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/intent-filter&gt;</span>
+    <span class="nt">&lt;/receiver&gt;</span>
+</code></pre>
+</div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Вы можете указать несколько сообщений в одном приёмнике или использовать отдельный приёмник для каждого сообщения.</div>
+
+<p>Чтобы подписать JS-приложение на получение таких событий, укажите их в списке daemons в <a href="./ссылка на топик с js-манифестом">манифесте приложения</a>. Каждое событие вызывает соответствующий метод, в аргументе которого передаются данные о событии.</p>
+
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">daemons</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">daemon1</span>
+    <span class="s">events</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">evotor.intent.action.receipt.sell.CLEARED</span>
+      <span class="pi">-</span> <span class="s">evotor.intent.action.receipt.sell.OPENED</span>
+    <span class="s">behavior</span><span class="pi">:</span> <span class="s">daemon1.js</span>
+  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">daemon2</span>
+    <span class="s">events</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">evotor.intent.action.receipt.sell.POSITION_ADDED</span>
+      <span class="pi">-</span> <span class="s">evotor.intent.action.receipt.sell.POSITION_EDITED</span>
+      <span class="pi">-</span> <span class="s">evotor.intent.action.receipt.sell.POSITION_REMOVED</span>
+    <span class="s">behavior</span><span class="pi">:</span> <span class="s">daemon2.js</span>
+</code></pre>
+</div>
+
+<p>Таблица ниже содержит список всех событий, которые не требуют ответа.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Пакет</th>
+      <th>Событие</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>evotor.intent.action.receipt.sell.</td>
+      <td>CLEARED</td>
+      <td>Чек продажи очищен</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>OPENED</td>
+      <td>Чек продажи открыт</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>POSITION_ADDED</td>
+      <td>В чек продажи добавлена позиция</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>POSITION_EDITED</td>
+      <td>В чеке продажи изменена позиция</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>POSITION_REMOVED</td>
+      <td>Из чека продажи удалена позиция</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>RECEIPT_CLOSED</td>
+      <td>Чек продажи закрыт</td>
+    </tr>
+    <tr>
+      <td>evotor.intent.action.receipt.payback.</td>
+      <td>CLEARED</td>
+      <td>Чек возврата очищен</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>OPENED</td>
+      <td>Чек возврата открыт</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>POSITION_ADDED</td>
+      <td>В чек возврата добавлена позиция</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>POSITION_EDITED</td>
+      <td>В чеке возврата изменена позиция</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>POSITION_REMOVED</td>
+      <td>Из чека возврата удалена позиция</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>RECEIPT_CLOSED</td>
+      <td>Чек возврата закрыт</td>
+    </tr>
+    <tr>
+      <td>evotor.intent.action.cashOperation.</td>
+      <td>CASH_OUT</td>
+      <td>Выдача наличных из кассы</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>IN</td>
+      <td>Внесение наличных в кассу</td>
+    </tr>
+    <tr>
+      <td>evotor.intent.action.inventory.</td>
+      <td>CARD_OPEN</td>
+      <td>Открыта карточка товара</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>PRODUCTS_UPDATED</td>
+      <td>База товаров обновлена</td>
+    </tr>
+    <tr>
+      <td>evotor.intent.action.cashDrawer.</td>
+      <td>OPEN</td>
+      <td>Открыт денежный ящик</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Получение данных от сканера штрихкодов описано в соответствующих разделах для <a href="./doc_barcode_scanner.html">java-</a> и <a href="./doc_JS_barcode_scanner.html">JS-приложения</a></div>
+
+<h3 id="section-1">События, которые требуют ответа</h3>
+
+<p>События, которые требуют ответа являются <em>точками интеграции</em> приложения в процесс работы смарт-терминал. При получении таких событий приложение может реализовать свою логику и, например, редактировать чек, начислять скидки и т.д.</p>
+
+<p>Информацию о функциях приложения в зависимости от события, а так же о том, как подписать приложение на событие, которое требует ответа, вы найдёте в <a href="./ссылка на архив тегов">соответствующих разделах</a>.</p>
+
+<p>Схема ниже показывает процесс обмена событием, которое требует ответа. Первое приложение, которому смарт-терминал передаёт данные, выбирается случайным образом.</p>
+
+<p><img src="./images/EventSequenceDiagram.png" alt="" /></p>
+
+
+    <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
+        
+        
+        
+        <a href="tag_JavaScript.html" class="btn btn-default navbar-btn cursorNorm" role="button">JavaScript</a>
+        
+        
+        
+        
+        
+    </div>
+
+    
+
+</div>
+
+<hr class="shaded"/>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+</html>

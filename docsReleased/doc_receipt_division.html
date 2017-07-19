@@ -246,7 +246,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_getting_started.html">Начало разработки java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_app_icon.html">Иконка java-приложения в интерфейсе смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_installation.html">Установка java-приложения</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_developer_mode.html">Включение режима разработчика</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Манифест приложения</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_about_manifest.html">О манифесте приложения</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_java_app_manifest.html">Манифест Java-приложения</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -261,13 +309,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_application_test.html">Тестирование приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -594,7 +635,7 @@ $('#toc').on('click', 'a', function() {
 <ol>
   <li>Пользователь выбирает тип оплаты <strong>Банковская карта</strong>.</li>
   <li>
-    <p>EvoPOS передаёт событие <code class="highlighter-rouge">PaymentSelectedEvent</code> и ожидает ответа от приложений.</p>
+    <p>Смарт-терминал передаёт событие <code class="highlighter-rouge">PaymentSelectedEvent</code> и ожидает ответа от приложений.</p>
 
     <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Событие возникает только если пользователь выбрал безналичный расчёт.</div>
   </li>
@@ -619,7 +660,7 @@ $('#toc').on('click', 'a', function() {
     <p>Используйте команду <code class="highlighter-rouge">SetExtra</code>, чтобы добавить к чеку <a href="./doc_receipt_extras.html">дополнительные поля</a>.</p>
   </li>
   <li>
-    <p>На основе данных, полученных от приложения, EvoPOS совершает платежи и начинает печать чека. Перед печатью чека EvoPOS передаёт событие <code class="highlighter-rouge">PrintGroupRequiredEvent</code> и ожидает ответа от приложений.</p>
+    <p>На основе данных, полученных от приложения, смарт-терминал совершает платежи и начинает печать чека. Перед печатью чека EvoPOS передаёт событие <code class="highlighter-rouge">PrintGroupRequiredEvent</code> и ожидает ответа от приложений.</p>
   </li>
   <li>
     <p><a href="./doc_receipt_division.html#severalPintGroups">Приложение может напечатать несколько разных печатных документов</a> и разделить платежи на между ними.</p>
@@ -723,9 +764,9 @@ $('#toc').on('click', 'a', function() {
                         <span class="n">PrintGroup</span> <span class="n">printGroup</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintGroup</span><span class="o">(</span>
                                 <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
                                 <span class="n">PrintGroup</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">INVOICE</span><span class="o">,</span>
-                                <span class="s">"ООО \"Р&amp;К\""</span><span class="o">,</span>
-                                <span class="s">"098765432123"</span><span class="o">,</span>
-                                <span class="s">"г. Москва, пл. Манежная 1"</span><span class="o">,</span>
+                                <span class="s">"ООО \"Пример\""</span><span class="o">,</span>
+                                <span class="s">"012345678901"</span><span class="o">,</span>
+                                <span class="s">"г. Москва"</span><span class="o">,</span>
                                 <span class="n">TaxationSystem</span><span class="o">.</span><span class="na">PATENT</span>
                         <span class="o">);</span>
                         <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">paymentPurposeIds</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>

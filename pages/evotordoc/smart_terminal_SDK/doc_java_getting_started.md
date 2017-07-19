@@ -13,7 +13,7 @@ folder: smart_terminal_SDK
 Для разработки java-приложения, вам потребуется:
 
 * Android Studio версии 2.3.3 или выше;
-* библиотека [integration-library](https://github.com/evotor/integration-library) версии 0.3+.
+* библиотека [integration-library](https://github.com/evotor/integration-library) версии 0.4+.
 
 ### Подключение библиотеки
 
@@ -42,7 +42,7 @@ folder: smart_terminal_SDK
           android:roundIcon="@mipmap/ic_launcher_round"
           android:supportsRtl="true"
           android:theme="@style/AppTheme">
-          <activity android:name=".MainActivity">
+          <activity android:name=".<НазваниеОперации>">
               <intent-filter>
                   <action android:name="android.intent.action.MAIN" />
 
@@ -76,4 +76,9 @@ folder: smart_terminal_SDK
 
 Библиотека подключена к проекту. Теперь вы можете собрать APK-файл своей программы и [установить её на смарт-терминал](./doc_app_installation.html).
 
-{% include note.html content="Манифест должен содержать элемент \<meta-data/\> с информацией об идентификаторе приложения (см. раздел [\"Манифест приложения\"](./doc_app_manifest.html))." %}
+Так же, теперь вы можете:
+
+* [добавить иконку приложения на главный экран или экран оплаты](doc_java_app_icon.html);
+* [установить приложение на смарт-терминал](./doc_app_installation.html).
+
+<!-- {% include note.html content="Манифест должен содержать элемент \<meta-data/\> с информацией об идентификаторе приложения (см. раздел [\"Манифест приложения\"](./doc_app_manifest.html))." %} -->

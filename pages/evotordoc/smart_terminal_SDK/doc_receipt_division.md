@@ -32,7 +32,7 @@ published: true
 Процесс разделения чека:
 
 1. Пользователь выбирает тип оплаты **Банковская карта**.
-2. EvoPOS передаёт событие `PaymentSelectedEvent` и ожидает ответа от приложений.
+2. Смарт-терминал передаёт событие `PaymentSelectedEvent` и ожидает ответа от приложений.
 
     {% include note.html content="Событие возникает только если пользователь выбрал безналичный расчёт." %}
 
@@ -53,7 +53,7 @@ published: true
 
     Используйте команду `SetExtra`, чтобы добавить к чеку [дополнительные поля](./doc_receipt_extras.html).
 
-4. На основе данных, полученных от приложения, EvoPOS совершает платежи и начинает печать чека. Перед печатью чека EvoPOS передаёт событие `PrintGroupRequiredEvent` и ожидает ответа от приложений.
+4. На основе данных, полученных от приложения, смарт-терминал совершает платежи и начинает печать чека. Перед печатью чека EvoPOS передаёт событие `PrintGroupRequiredEvent` и ожидает ответа от приложений.
 
 5. [Приложение может напечатать несколько разных печатных документов](./doc_receipt_division.html#severalPintGroups) и разделить платежи на между ними.
 
@@ -147,9 +147,9 @@ processorMap.put(
                         PrintGroup printGroup = new PrintGroup(
                                 UUID.randomUUID().toString(),
                                 PrintGroup.Type.INVOICE,
-                                "ООО \"Р&К\"",
-                                "098765432123",
-                                "г. Москва, пл. Манежная 1",
+                                "ООО \"Пример\"",
+                                "012345678901",
+                                "г. Москва",
                                 TaxationSystem.PATENT
                         );
                         List<String> paymentPurposeIds = new ArrayList<String>();

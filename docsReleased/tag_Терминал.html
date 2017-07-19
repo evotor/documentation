@@ -246,7 +246,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_getting_started.html">Начало разработки java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_app_icon.html">Иконка java-приложения в интерфейсе смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_installation.html">Установка java-приложения</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_developer_mode.html">Включение режима разработчика</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Манифест приложения</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_about_manifest.html">О манифесте приложения</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_java_app_manifest.html">Манифест Java-приложения</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -261,13 +309,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_application_test.html">Тестирование приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -609,6 +650,23 @@ $('#toc').on('click', 'a', function() {
      
    
     
+        
+
+        <tr><td><a href="doc_about_manifest.html">О манифесте приложения</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> В структуре каждого приложения должен быть манифест AndroidManifest.xml.
+
+В манифесте необходимо объявить все компоненты, которые использует приложение: операции, службы, приёмники.
+Ниже приводятся примеры манифестов java и JS приложений.
+Подробнее о том, что такое манифест приложения.
+ </td>
+        </tr>
+        
+     
+        
+     
+   
+    
    
     
         
@@ -794,6 +852,22 @@ $('#toc').on('click', 'a', function() {
    
     
         
+
+        <tr><td><a href="doc_events.html">События смарт-терминала</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Этот раздел содержит информацию о событиях которые рассылает смарт-терминал. При получении различных событий приложение выполняет соответствующие функции, на... </td>
+        </tr>
+        
+     
+        
+     
+        
+     
+        
+     
+   
+    
+        
      
         
      
@@ -846,6 +920,30 @@ $('#toc').on('click', 'a', function() {
    
     
         
+
+        <tr><td><a href="doc_java_app_icon.html">Иконка приложения в интерфейсе смарт-терминала</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Иконка приложения на главном экране смарт-терминала Чтобы добавить иконку приложения на главный экран смарт-терминала: В манифесте приложения, измените секцию требуемой операции следующим образом:  &lt;activity android:name=".&lt;НазваниеОперации&gt;" android:icon="@mipmap/ic_launcher" android:label="Example tile" &gt; &lt;meta-data android:name="ru.evotor.launcher.BACKGROUND_COLOR" android:value=&lt;span... </td>
+        </tr>
+        
+     
+        
+     
+   
+    
+        
+
+        <tr><td><a href="doc_java_app_manifest.html">Манифест Java-приложения</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Ниже приведён пример манифеста java-приложения, которое добавляет две иконки на экран оплаты. При разработке драйвера для устройств нужно учитывать дополнительные параметры (см. SDK для денежных ящиков и другие разделы, посвящённые разработке драйверов) &lt;manifest package="com.example.myapplication"&gt; &lt;application android:theme="@style/AppTheme" android:icon=&lt;span... </td>
+        </tr>
+        
+     
+        
+     
+   
+    
+        
      
         
 
@@ -866,6 +964,20 @@ $('#toc').on('click', 'a', function() {
         <tr><td><a href="doc_java_getting_started.html">Начало разработки</a></td>
             <td><span class="label label-default">Страница</span></td>
           <td> Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуетс... </td>
+        </tr>
+        
+     
+        
+     
+   
+    
+        
+     
+        
+
+        <tr><td><a href="doc_receipt_print.html">Печать внутри кассового чека</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека. </td>
         </tr>
         
      

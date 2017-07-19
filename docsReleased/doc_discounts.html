@@ -246,7 +246,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_getting_started.html">Начало разработки java-приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_app_icon.html">Иконка java-приложения в интерфейсе смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_installation.html">Установка java-приложения</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_developer_mode.html">Включение режима разработчика</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Манифест приложения</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_about_manifest.html">О манифесте приложения</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_java_app_manifest.html">Манифест Java-приложения</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -261,13 +309,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_application_test.html">Тестирование приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -657,12 +698,12 @@ $('#toc').on('click', 'a', function() {
 <ul>
   <li><code class="highlighter-rouge">discount</code> – значение скидки в валюте.</li>
   <li><code class="highlighter-rouge">new SetExtra(extra)</code> – команда для <a href="./doc_receipt_extras.html">создания дополнительных полей в чеке</a>. Если дополнительные поля создавать не требуется вы можете передать <code class="highlighter-rouge">null</code>.</li>
-  <li><code class="highlighter-rouge">changes</code> – список изменений по позициям. Спомощью поля</li>
+  <li><code class="highlighter-rouge">changes</code> – список изменений по позициям.</li>
 </ul>
 
 <h3 id="discountPosition">Скидка на позицию</h3>
 
-<p>Чтобы добавить скидку на позицию, вам потребуется передать значение скидки в поле <code class="highlighter-rouge">priceWithDiscountPosition</code>. Если скидки на позицию нет, передавайте <code class="highlighter-rouge">null</code>. Список полей позиции описан в классе <code class="highlighter-rouge">position.java</code>.</p>
+<p>Чтобы добавить скидку на позицию, вам потребуется передать значение цены с учётом скидки в поле <code class="highlighter-rouge">priceWithDiscountPosition</code>. Если скидки на позицию нет, передавайте <code class="highlighter-rouge">null</code>. Список полей позиции описан в классе <code class="highlighter-rouge">position.java</code>.</p>
 
 <p>Передать поле можно в любой момент, когда доступно редактирование существующих или добавление новых позиций в чек:</p>
 

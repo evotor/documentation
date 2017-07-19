@@ -72,9 +72,37 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Начало разработки java-приложения
+      url: /doc_java_getting_started.html
+      output: web
+
+    - title: Иконка java-приложения в интерфейсе смарт-терминала
+      url: /doc_java_app_icon.html
+      output: web
+
+    - title: Установка java-приложения
+      url: /doc_app_installation.html
+      output: web
+
     - title: Включение режима разработчика
       url: /doc_developer_mode.html
       output: web
+
+      subfolders:
+        - title: Манифест приложения
+          output: web
+          subfolderitems:
+            - title: О манифесте приложения
+              url: /doc_about_manifest.html
+              output: web
+
+            - title: Манифест Java-приложения
+              url: /doc_java_app_manifest.html
+              output: web
+
+            - title: Манифест JS-приложения
+              url: /doc_app_manifest.html
+              output: web
 
     - title: Логирование
       url: /doc_logging.html
@@ -84,15 +112,11 @@ entries:
       url: /doc_application_test.html
       output: web, pdf
 
-    - title: Манифест JS-приложения
-      url: /doc_app_manifest.html
-      output: web
-
     - title: Права приложения
       url: /doc_smart_terminal_app_grants.html
       output: web
 
-    - title: Плитка или иконка приложения в интерфейсе смарт-терминала
+    - title: Иконка JS-приложения в интерфейсе смарт-терминала
       url: /doc_smart_terminal_app_tile.html
       output: web
 
