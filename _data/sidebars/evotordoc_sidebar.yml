@@ -65,6 +65,70 @@ entries:
       output: web, pdf
 
 ###############################################################
+#        Разработка для смарт-терминала                       #
+###############################################################
+
+#  - title: Разработка для смарт-терминала
+#    output: web, pdf
+#    folderitems:
+
+#    - title: С чего начать
+#      url: /doc_getting_started.html
+#      output: web
+
+#    - title: Компоненты приложения
+#      url: /doc_app_components.html
+#      output: web
+
+#    - title: События
+#      url: /doc_app_events.html
+#      output: web
+
+#      subfolders:
+#        - title: Манифест приложения
+#          output: web
+#          subfolderitems:
+#            - title: О манифесте приложения
+#              url: /doc_about_manifest.html
+#              output: web
+
+#            - title: Манифест Java-приложения
+#              url: /doc_java_app_manifest.html
+#              output: web
+
+#            - title: Манифест JS-приложения
+#              url: /doc_app_manifest.html
+#              output: web
+
+#    - title: Включение режима разработчика
+#      url: /doc_app_developer_mode.html
+#      output: web
+
+#    - title: Права приложения
+#      url: /doc_app_grants.html
+#      output: web
+
+#      subfolders:
+#        - title: Тестирование приложения
+#          output: web
+#          subfolderitems:
+#            - title: Установка приложения
+#              url: /doc_app_installation.html
+#              output: web
+
+#            - title: Перевод приложения в тестирование
+#              url: /doc_app_testing.html
+#              output: web
+
+#            - title: Логирование
+#              url: /doc_app_logging.html
+#              output: web
+
+#    - title: Схемы и дополнительные поля товаров
+#      url: /doc_product_extras.html.html
+#      output: web
+
+###############################################################
 #               SDK смарт-терминала                         #
 ###############################################################
 
@@ -213,6 +277,156 @@ entries:
             - title: Весы
               url: /doc_scales.html
               output: web
+
+
+###############################################################
+#               JAVA SDK                                      #
+###############################################################
+#  - title: JAVA SDK
+#    output: web
+#    folderitems:
+#    - title: Подключение библиотеки для разработки Java-приложений
+#      url: /doc_java_integration_library_connection.html
+#      output: web
+
+#    - title: Приложение в интерфейсе терминала
+#      url: /doc_java_app_icon.html
+#      output: web
+
+#    - title: Обмен сообщениями со сторонним сервисом
+#      url: /doc_java_third_party_service_communication.html
+#      output: web
+
+#    - title: Работа с пользователями смарт-терминала
+#      url: /doc_java_app_users.html
+#      output: web
+
+#      subfolders:
+#      - title: Работа с чеком
+#        output: web
+#        subfolderitems:
+#          - title: Поиск товара по штрихкоду
+#            url: /doc_java_receipt_api.html
+#            output: web
+
+#          - title: Открытие чека в приложении
+#            url: /doc_java_receipt_creation.html
+#            output: web
+
+#          - title: Работа с позициями чека
+#            url: /doc_java_receipt_interactions.html
+#            output: web
+
+#          - title: Разделение чека
+#            url: /doc_java_receipt_division.html
+#            output: web
+
+#          - title: Получить данные сформированного чека
+#            url: /doc_java_get_receipt.html
+#            output: web
+
+#          - title: Скидки
+#            url: /doc_java_discounts.html
+#            output: web
+
+#          - title: Создание дополнительных полей в чеке
+#            url: /doc_java_receipt_extras.html
+#            output: web
+
+#    - title: Товароучёт
+#      url: /doc_java_inventory.html
+#      output: web
+
+#      subfolders:
+#      - title: Работа с оборудованием
+#        output: web
+#        subfolderitems:
+#          - title: Сканер штрихкодов
+#            url: /doc_java_barcode_scanner.html
+#            output: web
+
+#          - title: Принтер чеков
+#            url: /doc_java_bill_printer.html
+#            output: web
+
+#          - title: Весы
+#            url: /doc_java_scales.html
+#            output: web
+
+###############################################################
+#               JavaScript SDK                                #
+###############################################################
+#  - title: JavaScript SDK
+#    output: web
+#    folderitems:
+#    - title: Подключение шаблона приложения
+#      url: /doc_javascript_app_template_link.html
+#      output: web
+
+#    - title: Приложение в интерфейсе терминала
+#      url: /doc_javascript_app_tile.html
+#      output: web
+
+#    - title: Обмен сообщениями со сторонним сервисом
+#      url: /doc_javascript_third_party_service_communication.html
+#      output: web
+
+#    - title: Работа с пользователями
+#      url: /doc_javascript_app_users.html
+#      output: web
+
+#    - title: Товароучёт
+#      url: /doc_javascript_inventory.html
+#      output: web
+
+#      subfolders:
+#      - title: Работа с чеком
+#        output: web
+#        subfolderitems:
+#        - title: Поиск товара по штрихкоду
+#          url: /?.html
+#          output: web
+
+#        - title: Создание чека в приложении
+#          url: /?.html
+#          output: web
+
+#        - title: Работа с позициями чека
+#          url: /?.html
+#          output: web
+
+#        - title: Разделение чека
+#          url: /?.html
+#          output: web
+
+#        - title: Получить данные сформированного чека
+#          url: /?.html
+#          output: web
+
+#        - title: Скидки
+#          url: /doc_javascript_discounts.html
+#          output: web
+
+#        - title: Создание дополнительных полей в чеке
+#          url: /?.html
+#          output: web
+
+#      subfolders:
+#      - title: Работа с оборудованием
+#        output: web
+#        subfolderitems:
+#        - title: Подключение оборудования
+#          url: /doc_javascript_integration_library_connection.html
+#          output: web
+
+#        - title: Сканер штрихкодов
+#          url: /doc_javascript_barcode_scanner.html
+#          output: web
+
+#        - title: Весы
+#          url: /doc_javascript_scales.html
+#          output: web
+
 
 #############################################################
 #            Примеры реализации                             #
