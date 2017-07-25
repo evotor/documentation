@@ -72,9 +72,9 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: С чего начать
-      url: /doc_getting_started.html
-      output: web
+#    - title: С чего начать
+#      url: /doc_getting_started.html
+#      output: web
 
     - title: Компоненты приложения
       url: /doc_app_components.html

@@ -20,7 +20,6 @@ folder: js_SDK
 
 ```javascript
 barcodeScanned()
-
 ```
 
 <!-- Функция возвращает... -->
