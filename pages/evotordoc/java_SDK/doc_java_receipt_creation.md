@@ -21,7 +21,7 @@ folder: smart_terminal_SDK
 
    Где:
 
-   `List<PositionAdd> positionAddList = new ArrayList<>()`– список позиций. Как добавить позицию в чек смотрите в разделе [Добавление, изменение и удаление позиций](doc_receipt_interactions.html#PositionAltering).
+   `List<PositionAdd> positionAddList = new ArrayList<>()`– список позиций. Как добавить позицию в чек смотрите в разделе [Добавление, изменение и удаление позиций](doc_java_receipt_interactions.html#PositionAltering).
 
    `JSONObject extra = new JSONObject();`– добавляет дополнительные данные к чеку. Данные доступны только вашему приложению. Не создавайте этот объект, если приложение не добавляет дополнительные поля к чеку.
 
@@ -47,6 +47,6 @@ folder: smart_terminal_SDK
                            });
    ```
 
-   Где вместо null вы можете передать `new SetExtra(extra)`, команду для [создания дополнительных полей в чеке](./doc_receipt_extras.html).
+   Где вместо null вы можете передать `new SetExtra(extra)`, команду для [создания дополнительных полей в чеке](./doc_java_receipt_extras.html).
 
    {% include note.html content="При создании нового чека, происходит автоматическая очистка существующего открытого чека." %}

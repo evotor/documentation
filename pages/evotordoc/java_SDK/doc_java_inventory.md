@@ -26,7 +26,7 @@ fun getAllBarcodesForProduct(context: Context, productUuid: String): List<String
 * `productUuid` – идентификатор товара в формате `uuid4`.
 * `List<String>` – список всех штрихкодов товара.
 
-#### Получить данные товара:
+#### Поиск товара по идентификатору:
 
 ```java
 fun getProductByUuid(context: Context, uuid: String): ProductItem?

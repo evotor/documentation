@@ -119,3 +119,5 @@ gems:
 algolia:
   application_id: '44FLY7BTEO'
   index_name:     'docs_index'
+
+github: [metadata]

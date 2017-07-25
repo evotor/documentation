@@ -83,7 +83,7 @@ callback.startActivity(new Intent(context, MainActivity.class));
 setIntegrationResult(new BeforePositionsEditedEventResult(changes, null));
 ```
 
-Где вместо null вы можете передать `new SetExtra(extra)`, команду для [создания дополнительных полей в чеке](./doc_receipt_extras.html).
+Где вместо null вы можете передать `new SetExtra(extra)`, команду для [создания дополнительных полей в чеке](./doc_java_receipt_extras.html).
 
 
 
@@ -483,7 +483,7 @@ public class PositionRemovedEvent extends PositionEvent {
 }
 ```
 
-При [очистке чека](./doc_receipt_creation.html) приходит сообщение:
+При [очистке чека](./doc_java_receipt_creation.html) приходит сообщение:
 
 ```java
 public class ReceiptClearedEvent extends ReceiptEvent {

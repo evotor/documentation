@@ -1,11 +1,11 @@
 ---
-title: Иконка JS-приложения в интерфейсе смарт-терминала
-keywords: sample
-summary: "Раздел содержит требования к плитке приложения, а также информацию о том как добавить плитку в интерфейс смарт-терминала."
+title: Приложение в интерфейсе смарт-терминала
+keywords:
+summary:
 sidebar: evotordoc_sidebar
-permalink: doc_smart_terminal_app_tile.html
-tags: [Терминал, Java, JavaScript]
-folder: smart_terminal_SDK
+permalink: doc_js_app_icon.html
+tags: [Терминал, JS]
+folder: js_SDK
 ---
 
 Вы можете запустить своё приложение по плитке, расположенной на одном из экранов смарт-терминала:
@@ -37,59 +37,9 @@ folder: smart_terminal_SDK
 
 * **Иконка**. Иконка должна быть квадратной – 64 dp. Требуется обеспечить набор иконок в трёх разрешениях: 96, 192, 256px.
 
-<!-- ### Java-приложение
+### Как добавить иконку приложения в интерфейс смарт-терминала
 
-Чтобы добавить плитку java-приложения на главный экран смарт-терминала, в манифесте приложения, измените соответствующий элемент `<Activity>` следующим образом:
-
-```xml
-<activity
-    android:name=".someActivity"
-    android:icon="@drawable/icon"
-    android:label="Example tile"
-    >
-    <meta-data
-        android:name="ru.evotor.launcher.BACKGROUND_COLOR"
-        android:value="#133788" />
-    <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.EVOTOR" />
-    </intent-filter>
-</activity>
-```
-
-Где:
-
-* Атрибут `android:name` задаёт название соответствующего элемента `Activity`.
-* Атрибут `android:icon` задаёт иконку, которая отображается на плитке.
-* Атрибут `android:label` название плитки.
-* Необязательный тег `<meta-data>`, содержит атрибуты:
-    * `android:name` – имя параметра, который задаёт цвет иконки.
-    *  `android:value` – значение параметра, который задаёт цвет иконки в шестнадцатиричной кодировке.
-* Интент фильтр содержит соответствующие элементы action (`android:name="android.intent.action.MAIN"`) и category (`android:name="android.intent.category.EVOTOR"`).
-
-Вы также можете добавить иконку приложения на экран продажи, например, для [начисления скидок](./doc_discounts.html). Для этого создайте соответствующую службу:
-
-```xml
-<service
-  android:name=".InventoryAPI.ExampleService"
-  android:enabled="true"
-  android:exported="true"
-  android:icon="@mipmap/pirate"
-  android:label="DiscByButton">
-  <meta-data
-  android:name="ru.evotor.sales_screen.BACKGROUND_COLOR"
-  android:value="#cc0000" />
-    <intent-filter android:priority="20">
-      <category android:name="android.intent.category.DEFAULT" />
-      <action android:name="evo.v2.receipt.sell.receiptDiscount" />
-    </intent-filter>
-</service>
-``` -->
-
-
-### JS-приложение
-
-Чтобы добавить плитку JS-приложения на главный экран смарт-терминала, в файле *client.yaml*, модифицируйте список `views` следующим образом:
+*Чтобы добавить плитку JS-приложения в интерфейс смарт-терминала, в файле client.yaml, модифицируйте список `views` следующим образом:*
 
 ```yaml
  views:

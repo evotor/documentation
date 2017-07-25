@@ -1,5 +1,5 @@
 ---
-title: Иконка приложения в интерфейсе смарт-терминала
+title: Приложение в интерфейсе смарт-терминала
 keywords:
 summary:
 sidebar: evotordoc_sidebar
