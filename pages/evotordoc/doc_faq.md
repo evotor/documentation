@@ -122,5 +122,18 @@ folder: evotordoc
                             </div>
                         </div>
                     </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">Что делать если у тестировщика или разработчика закончился пробный период приложения, с которым они работают?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseNine" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <p>Создайте учётную запись в вашей системе с помощью своего интерфейса, чтобы биллинг пользователя проходил на вашей стороне. В этом случае, при установке приложения на учётную запись тестировщика или разработчика, выберите опцию <b>у меня уже есть учётная запись</b>. Облако Эвотор передаст в вашу систему <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost">запрос на авторизацию данных пользователя в вашей системе</a>. В ответ ваша система передаёт токен пользователя и параметр hasBilling: true.</p>
+                            <p>Так как биллинг выполняет ваша система, Эвотор не пытается снять деньги с пользователя.</p>
+                            </div>
+                        </div>
+                    </div>
 </div>
 <!-- /.panel-group -->
