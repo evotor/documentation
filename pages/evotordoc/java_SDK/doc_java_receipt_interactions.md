@@ -384,8 +384,8 @@ import ru.evotor.framework.core.action.event.receipt.position_edited.PositionAdd
 public class AddPositionBroadcastReceiver extends BroadcastReceiver {
 
     @Override
-    public void onReceive(Context context, Intent intent) {
-        Toast.makeText(context, "UUID: " + new PositionAddedEvent(intent.getExtras()).getReceiptUuid(), Toast.LENGTH_LONG).show();
+    public void onReceive(Context context, Intent intent)
+        { Toast.makeText(context, "UUID: " + PositionAddedEvent.create(intent.getExtras()).getReceiptUuid(), Toast.LENGTH_LONG).show(); }
     }
 }
 ```

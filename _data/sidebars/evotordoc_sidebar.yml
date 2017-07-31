@@ -80,25 +80,13 @@ entries:
       url: /doc_app_components.html
       output: web
 
-    - title: События
-      url: /doc_app_events.html
+    - title: Точки интеграции
+      url: /doc_app_integration_points.html
       output: web
 
-      subfolders:
-        - title: Манифест приложения
-          output: web
-          subfolderitems:
-            - title: О манифесте приложения
-              url: /doc_about_manifest.html
-              output: web
-
-            - title: Манифест Java-приложения
-              url: /doc_java_app_manifest.html
-              output: web
-
-            - title: Манифест JS-приложения
-              url: /doc_app_manifest.html
-              output: web
+    - title: Манифест приложения
+      url: /doc_about_manifest.html
+      output: web
 
     - title: Включение режима разработчика
       url: /doc_app_developer_mode.html
@@ -293,6 +281,10 @@ entries:
       url: /doc_java_app_icon.html
       output: web
 
+    - title: Манифест Java-приложения
+      url: /doc_java_app_manifest.html
+      output: web
+
     - title: Обмен сообщениями со сторонним сервисом
       url: /doc_java_third_party_service_communication.html
       output: web
@@ -367,6 +359,10 @@ entries:
       url: /doc_js_app_icon.html
       output: web
 
+    - title: Манифест JS-приложения
+      url: /doc_js_app_manifest.html
+      output: web
+
     - title: Обмен сообщениями со сторонним сервисом
       url: /doc_js_third_party_service_communication.html
       output: web
@@ -383,8 +379,8 @@ entries:
       url: /doc_js_storage_api.html
       output: web
 
-    - title: Получение данных с подключённого оборудования
-      url: /doc_js_devices_interactions.html
+    - title: Получение данных от подключённых устройств
+      url: /doc_js_devices.html
       output: web
 
 #    - title: Работа с пользователями
@@ -472,6 +468,10 @@ entries:
 
     - title: Тарифы
       url: /doc_tariffs.html
+      output: web
+
+    - title: Выплаты
+      url: /doc_payoff.html
       output: web
 
 ###############################################################

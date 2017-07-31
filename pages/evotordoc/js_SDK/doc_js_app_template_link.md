@@ -19,9 +19,9 @@ folder: js_SDK
 * Android Studio версии 2.3.3 или выше;
 * плагин [template-plugin](https://github.com/evotor/template-plugin) версии 1.1.7.
 
-### Подключение библиотеки
+### Подключение шаблон JS-приложения
 
-*Чтобы подключить библиотеку integration-library:*
+*Чтобы подключить шаблон JS-приложения:*
 
 1. В Android Studio создайте новый проект: `<YourProjectName>`.
 
@@ -33,7 +33,7 @@ folder: js_SDK
 
     ![](./images/JS_project_sctructure_with_plugin.png "Структура проекта <YourProjectName>")
 
-    [Манифест проекта](/doc_app_manifest.html) выглядит так:
+    [Манифест проекта](/doc_js_app_manifest.html) выглядит так:
 
    ```yaml
    version: 1
@@ -122,4 +122,4 @@ folder: js_SDK
 * [добавить иконку приложения на главный экран или экран оплаты](doc_js_app_icon.html);
 * [установить приложение на смарт-терминал](./doc_app_installation.html).
 
-<!-- {% include note.html content="Манифест должен содержать элемент \<meta-data/\> с информацией об идентификаторе приложения (см. раздел [\"Манифест приложения\"](./doc_app_manifest.html))." %} -->
+<!-- {% include note.html content="Манифест должен содержать элемент \<meta-data/\> с информацией об идентификаторе приложения (см. раздел [\"Манифест приложения\"](./doc_js_app_manifest.html))." %} -->

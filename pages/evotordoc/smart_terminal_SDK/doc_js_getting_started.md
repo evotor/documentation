@@ -73,10 +73,10 @@ folder: smart_terminal_SDK
 
 Плагин подключён к проекту. Теперь вы можете собрать APK-файл своей программы и [установить её на смарт-терминал](./doc_app_installation.html).
 
-{% include note.html content="Обратите внимание на заполнение [Манифеста приложения](./doc_app_manifest.html))." %}
+{% include note.html content="Обратите внимание на заполнение [Манифеста приложения](./doc_js_app_manifest.html))." %}
 
 Структура проекта с подключённым плагином выглядит следующим образом:
 
 ![](./images/JS_project_sctructure_with_plugin.png)
 
-Где файл client.yaml, это [манифест JS-приложения](./doc_app_manifest.html), на основе которого, Android Studio, при сборке apk-файла, автоматически наполняет файл AndroidManifest.xml.
+Где файл client.yaml, это [манифест JS-приложения](./doc_js_app_manifest.html), на основе которого, Android Studio, при сборке apk-файла, автоматически наполняет файл AndroidManifest.xml.

@@ -3,7 +3,7 @@ title: Манифест JS-приложения
 keywords: sample
 summary:
 sidebar: evotordoc_sidebar
-permalink: doc_app_manifest.html
+permalink: doc_js_app_manifest.html
 tags: [JavaScript, Терминал]
 folder: smart_terminal_SDK
 ---

@@ -10,7 +10,10 @@ folder: java_SDK
 
 ### Работа с принтером чеков
 
-1. В колбэке `onCreate()` или при запуске операции (`activity`) инициализируйте класс `ru.evotor.devices.commons.DeviceServiceConnector`:
+1. В манифесте приложения укажите следующий элемент:
+    `<uses-permission android:name="ru.evotor.permission.receipt.printExtra.SET" />`
+
+2. В колбэке `onCreate()` или при запуске операции (`activity`) инициализируйте класс `ru.evotor.devices.commons.DeviceServiceConnector`:
 
    ```java
    DeviceServiceConnector.startInitConnections(getApplicationContext());
@@ -22,7 +25,7 @@ folder: java_SDK
 
    Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения." %}
 
-2. Вызовите метод `DeviceServiceConnector.getPrinterService()`.
+3. Вызовите метод `DeviceServiceConnector.getPrinterService()`.
 
     Метод не может быть `null` и в случае успеха возвращает объект `ru.evotor.devices.commons.IPrinterServiceWrapper`.
 
@@ -31,7 +34,7 @@ folder: java_SDK
       * `ru.evotor.devices.commons.exception.ServiceNotConnectedException` возвращается в результате серии неудачных попыток подключиться к принтеру.
       * `ru.evotor.devices.commons.exception.DeviceServiceException` – наследованое исключение.
 
-3. Вы можете вызвать следующие методы объекта `ru.evotor.devices.commons.IPrinterService`:
+4. Вы можете вызвать следующие методы объекта `ru.evotor.devices.commons.IPrinterService`:
 
     * `int getAllowableSymbolsLineLength(int deviceId)` – возвращает количество символов, которые помещаются на одной строке чека.
     * `int getAllowablePixelLineLength(int deviceId)` – возвращает доступную для печати ширину бумаги в пикселях
@@ -43,7 +46,7 @@ folder: java_SDK
 
         Каждый из методов может вернуть наследованное исключение `ru.evotor.devices.commons.exception.DeviceServiceException`.
 
-4. Передайте данные в печать с помощью метода `printDocument(int deviceId, in PrinterDocument printerDocument)`.
+5. Передайте данные в печать с помощью метода `printDocument(int deviceId, in PrinterDocument printerDocument)`.
 
     Аргумент `PrinterDocument` содержит список элементов печати `IPrintable`:
 
