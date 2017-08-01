@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалJS,  ">
+<meta name="keywords" content="ТерминалJS,  Раздел содержит описание методов, которые применяются в JS-приложении для работы с чеками и позициями чеков.">
 <title>Работа с чеком | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -641,11 +641,27 @@ $('#toc').on('click', 'a', function() {
 
   <p>Вы можете взаимодействовать как с чеком продажи, так и с чеком возврата.</p>
 
-<h3 id="section">Методы для работы с чеком</h3>
+<h3 id="section">Работа с чеком</h3>
 
-<p>Для работы с чеком вызывайте указанные методы у объекта <code class="highlighter-rouge">receipt</code>.</p>
+<p>Для работы с чеком вызывайте указанные методы у объекта <code class="highlighter-rouge">receipt</code>. Объект <code class="highlighter-rouge">receipt</code> доступен всегда, его не требуется получать с помощью функции <code class="highlighter-rouge">require()</code>.</p>
 
-<h4 id="section-1">Записать в чек дополнительные данные</h4>
+<h4 id="section-1">Задать скидку на чек</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">receipt</span><span class="p">.</span><span class="nx">applyReceiptDiscount</span><span class="p">(</span><span class="nx">discountvalue</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>В аргументе функции требуется передать строку с данными о скидке, которая применяется к чеку.</p>
+
+<h4 id="section-2">Получить чек</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">receipt</span><span class="p">.</span><span class="nx">getReceipt</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>Функция возвращает идентификатор чека в формате <code class="highlighter-rouge">uuid4</code> и JSON-объект с позициями чека.</p>
+
+<h4 id="section-3">Записать в чек дополнительные данные</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">receipt</span><span class="p">.</span><span class="nx">addReceiptExtra</span><span class="p">(</span><span class="nx">extradata</span><span class="p">)</span>
 </code></pre>
@@ -653,7 +669,30 @@ $('#toc').on('click', 'a', function() {
 
 <p>В аргументе функции требуется передать строку с дополнительными данными, которые добавятся к чеку.</p>
 
-<h4 id="section-2">Добавить позицию в чек</h4>
+<h3 id="section-4">Работа с позициями чека</h3>
+
+<p>Позиция представляет JSON-объект с обязательным набором полей:</p>
+
+<pre><code class="language-JSON">{
+  "uuid" : ,
+  "productUuid" : ,
+  "productCode" : ,
+  "productType" : ,
+  "name" : ,
+  "measureName" : ,
+  "measurePrecision" : ,
+  "price" : ,
+  "quantity" : ,
+  "alcoholByVolume" : , //Поле обязательно только для алкоголя.
+  "alcoholProductKindCode" : , //Поле обязательно только для алкоголя.
+  "tareVolume" : , //Поле обязательно только для алкоголя.
+  "mark" : //Поле обязательно только для маркированного алкоголя.
+}
+</code></pre>
+
+<p>При добавлении (<code class="highlighter-rouge">addPosition()</code>) или редактировании (<code class="highlighter-rouge">editPosition()</code>) позиции, в аргументе метода требуется передать позицию в виде строки.</p>
+
+<h4 id="section-5">Добавить позицию в чек</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">receipt</span><span class="p">.</span><span class="nx">addPosition</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span>
 </code></pre>
@@ -680,7 +719,9 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="section-3">Редактировать позицию в чеке</h4>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Чтобы добавить позицию в чек, соответствующий плагин требуется подписать на <a href="doc_app_integration_points.html#Callbacks">получение события</a> <code class="highlighter-rouge">evo.v2.receipt.sell.beforePositionsEdited</code>. Плагин требуется подписывать в <a href="doc_js_app_manifest.html">манифесете JS-приложения</a>.</div>
+
+<h4 id="section-6">Редактировать позицию в чеке</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">receipt</span><span class="p">.</span><span class="nx">editPosition</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span>
 </code></pre>
@@ -688,29 +729,13 @@ $('#toc').on('click', 'a', function() {
 
 <p>В аргументе функции требуется передать строку с данными позиции, которые требуется изменить.</p>
 
-<h4 id="section-4">Удалить позицию из чека</h4>
+<h4 id="section-7">Удалить позицию из чека</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">receipt</span><span class="p">.</span><span class="nx">removePosition</span><span class="p">(</span><span class="nx">uuid</span><span class="p">)</span>
 </code></pre>
 </div>
 
 <p>В аргументе функции требуется передать строку с идентификатором позиции в формате <code class="highlighter-rouge">uuid4</code>, которую требуется удалить из чека.</p>
-
-<h4 id="section-5">Задать скидку на чек</h4>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">receipt</span><span class="p">.</span><span class="nx">applyReceiptDiscount</span><span class="p">(</span><span class="nx">discountvalue</span><span class="p">)</span>
-</code></pre>
-</div>
-
-<p>В аргументе функции требуется передать строку с данными о скидке, которая применяется к чеку.</p>
-
-<h4 id="section-6">Получить чек</h4>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">receipt</span><span class="p">.</span><span class="nx">getReceipt</span><span class="p">()</span>
-</code></pre>
-</div>
-
-<p>Функция возвращает идентификатор чека в формате <code class="highlighter-rouge">uuid4</code> и JSON-объект с позициями чека.</p>
 
 
     <div class="tags">
