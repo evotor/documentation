@@ -421,6 +421,30 @@ entries:
 #          url: /?.html
 #          output: web
 
+
+###############################################################
+#               Драйвера для оборудования                     #
+###############################################################
+
+  - title: Драйвера для оборудования
+    output: web
+    folderitems:
+      - title: Подготовка к разработке
+        url: /doc_drivers_library_connection.html
+        output: web
+
+      - title: SDK для денежных ящиков
+        url: /doc_drivers_cashdrawer.html
+        output: web
+
+      - title: SDK для банковских терминалов
+        url: /doc_drivers_pinpads.html
+        output: web
+
+      - title: SDK для весов
+        url: /doc_drivers_scales.html
+        output: web
+
 #############################################################
 #            Примеры реализации                             #
 #############################################################
