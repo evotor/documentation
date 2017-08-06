@@ -31,8 +31,9 @@ folder: java_SDK
 ```
 
    Где:
+   Атрибут `android:name="ru.evotor.sales_screen.BACKGROUND_COLOR"` задаёт фон, на котором отображается иконка приложения.
 
-   Атрибут `android:name="ru.evotor.launcher.BACKGROUND_COLOR"` указывает, что иконка приложения будет отображаться на главном экране смарт-терминала.
+   Элемент `<action android:name="android.intent.action.MAIN" />` указывает, что иконка приложения будет отображаться на главном экране смарт-терминала.
 
 ### Иконка приложения на экране оплаты:
 
@@ -72,9 +73,9 @@ folder: java_SDK
 
    Где:
 
-   Атрибут `android:name="ru.evotor.sales_screen.BACKGROUND_COLOR"` указывает, что иконка приложения будет отображаться на экране оплаты смарт-терминала.
+   Атрибут `android:name="ru.evotor.sales_screen.BACKGROUND_COLOR"` задаёт фон, на котором отображается иконка приложения.
 
-   Фильтр `<action android:name="evo.v2.receipt.sell.receiptDiscount" />` сообщает приложению где отображать иконку.
+   Элемент `<action android:name="evo.v2.receipt.sell.receiptDiscount" />` сообщает приложению где отображать иконку.
 
 Итоговый манифест приложения, иконки которого отображаются как на главном экране, так и на экране оплаты выглядит так:
 
@@ -124,5 +125,38 @@ folder: java_SDK
 
 </manifest>
 ```
+
+### Замена кнопки "Продажа" на главном экране смарт-терминала
+
+Вы можете заменить кнопку **Продажа**, расположенную на главном экране смарт-терминала, на кнопку своего приложения:
+
+![](images\sale_button_changed.png)
+
+_Чтобы заменить кнопку **Продажа**:_
+
+В [манифесте приложения](./doc_java_app_manifest.html), измените секцию требуемой операции следующим образом:
+
+```xml
+ <activity
+   android:name=".<НазваниеОперации>"
+   android:icon="@mipmap/ic_launcher"
+   android:label="Example tile"
+   >
+   <meta-data
+       android:name="ru.evotor.launcher.BACKGROUND_COLOR"
+       android:value="#133788" />
+   <intent-filter>
+       <action android:name="ru.evotor.intent.action.SELL_MAIN" />
+       <category android:name="android.intent.category.EVOTOR" />
+       <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+ </activity>
+```
+
+   Где:
+
+   Атрибут `android:name="ru.evotor.sales_screen.BACKGROUND_COLOR"` задаёт фон, на котором отображается иконка приложения.
+
+   Элемент `<action android:name="ru.evotor.intent.action.SELL_MAIN" />` указывает, что иконка приложения заменит кнопку **Продажа** на главном экране смарт-терминала.
 
 Теперь вы можете собрать apk своего приложения и [установить его на терминал](./doc_app_installation.html). Иконки приложения будут отображаться как на главном экране смарт-терминала, так и на экране оплаты.

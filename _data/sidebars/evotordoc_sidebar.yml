@@ -445,6 +445,10 @@ entries:
         url: /doc_drivers_scales.html
         output: web
 
+#      - title: SDK подключаемого USB-оборудования
+#        url: /doc_drivers_other.html
+#        output: web
+
 #############################################################
 #            Примеры реализации                             #
 #############################################################
@@ -461,12 +465,12 @@ entries:
       url: /doc_JS_template_integration.html
       output: web, pdf
 
-    - title: Облачная товароучётная система
-      url: /doc_cloud_systems_integration.html
-      output: web, pdf
-
     - title: IFrame на странице приложения
       url: /doc_iframe_within_application_page.html
+      output: web, pdf
+
+    - title: Интеграция с облачными сервисами
+      url: /doc_cloud_systems_integration.html
       output: web, pdf
 
 #    - title: Приложение для смарт-терминала
