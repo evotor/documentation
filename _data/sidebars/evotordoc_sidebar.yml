@@ -325,6 +325,10 @@ entries:
             url: /doc_java_receipt_extras.html
             output: web
 
+          - title: Печать внутри кассового чека
+            url: /doc_java_receipt_print.html
+            output: web
+
     - title: Товароучёт
       url: /doc_java_inventory.html
       output: web

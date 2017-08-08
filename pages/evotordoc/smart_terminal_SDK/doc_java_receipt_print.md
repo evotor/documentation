@@ -3,7 +3,7 @@ title: Печать внутри кассового чека
 keywords: sample
 summary: "Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека."
 sidebar: evotordoc_sidebar
-permalink: doc_receipt_print.html
+permalink: doc_java_receipt_print.html
 tags: [Java, Терминал, Оборудование]
 folder: evotordoc/smart_terminal_SDK
 ---

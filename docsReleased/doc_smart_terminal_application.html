@@ -394,6 +394,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    
+                    
+                    <li><a href="doc_java_receipt_print.html">Печать внутри кассового чека</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -558,14 +564,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_cloud_systems_integration.html">Интеграция с облачными сервисами</a></li>
             
             
             
@@ -763,7 +769,7 @@ $('#toc').on('click', 'a', function() {
 
 <h5 id="section-4">Этап 2</h5>
 
-<p>Эвотор передаёт в сторонний сервис запрос <a href="https://goo.gl/V71Guj"><strong>[POST] Активация / деактивация тарифа</strong></a>. Тело запроса содержит идентификатор пользователя в Эвоторе и идентификатор тарифа, который вы указали при настойке интеграции приложения на портале dev.evotor.ru, а так же состояние тарифа <code>ACTIVE</code>.</p>
+<p>Эвотор передаёт в сторонний сервис событие <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost"><strong>SSubscriptionCreated</strong></a>. Событие содержит поля, которые указывают на начало пробного периода использования приложения. В дальнейшем, при изменении подписки, Облако передаёт в сторонний сервис другие события биллинга.</p>
 
 <h4 id="section-5">Взаимодействие приложения и стороннего сервиса</h4>
 

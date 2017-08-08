@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит краткую информацию какие данные и на какие URL передаёт Эвотор.">
-<meta name="keywords" content="Биллинг,  sample">
-<title>Обмен данными | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека.">
+<meta name="keywords" content="JavaТерминалОборудование,  sample">
+<title>Печать внутри кассового чека | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Обмен данными">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Печать внутри кассового чека">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -396,7 +396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_java_receipt_print.html">Печать внутри кассового чека</a></li>
+                    <li class="active"><a href="doc_java_receipt_print.html">Печать внутри кассового чека</a></li>
                     
                     
                     
@@ -644,7 +644,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Обмен данными</h1>
+   <h1 class="post-title-main">Печать внутри кассового чека</h1>
 </div>
 
 
@@ -652,7 +652,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит краткую информацию какие данные и на какие URL передаёт Эвотор.</div>
+    <div class="summary">Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека.</div>
    
 
     
@@ -683,32 +683,138 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Эвотор отправляет данные о биллинге пользователей на два URL:</p>
+  <p>Смарт-терминал позволяет приложениям печатать свои данные внутри кассового чека: тексты, штрихкоды или изображения.</p>
+
+<p>Следующие методы определяют, где печатаются переданные данные:</p>
 
 <ul>
-  <li>
-    <p><code class="highlighter-rouge">/partner.ru/api/v1/user/tariff</code></p>
-
-    <p>Эвотор передаёт на URL сообщение об активации (<code class="highlighter-rouge">"status": "ACTIVE"</code>) и деактивации (<code class="highlighter-rouge">"status": "INACTIVE"</code>) тарифа. Сообщения по этому адресу требуется авторизовать с помощью токена стороннего сервиса (подробнее см. в разделе <a href="">””</a>).</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">/partner.ru/api/v1/user/event</code></p>
-
-    <p>Эвотор передаёт на URL события, связанные с биллингом:</p>
-
-    <ul>
-      <li><code class="highlighter-rouge">SubscriptionCreated</code> – новая подписка.</li>
-      <li><code class="highlighter-rouge">SubscriptionActivated</code> – активирована платная фаза подписики. Эвотор передаёт сообщение, если пользователь решил продолжить использовать приложение после завершения пробного периода.</li>
-      <li><code class="highlighter-rouge">SubscriptionRenewed</code> – подписка продлена на следующий период.</li>
-      <li><code class="highlighter-rouge">SubscriptionCancelled</code> – подписка отменена.</li>
-      <li><code class="highlighter-rouge">SubscriptionTermsChanged</code> – изменились условия подписки, например, тарифный план или количество устройств.</li>
-    </ul>
-
-    <p>Стороннему сервису достаточно подписаться на эти сообщения. Эвотор гарантирует доставку сообщений и не требует подтверждения получения.</p>
-  </li>
+  <li><code class="highlighter-rouge">PrintExtraPlacePrintGroupTop</code> – данные печатаются после клише и до текста “Кассовый чек”;</li>
+  <li><code class="highlighter-rouge">PrintExtraPlacePrintGroupHeader</code> – данные печатаются после текста “Кассовый чек”, до имени пользователя;</li>
+  <li><code class="highlighter-rouge">PrintExtraPlacePrintGroupSummary</code> – данные печатаются после итога и списка оплат, до текста “всего оплачено”;</li>
+  <li><code class="highlighter-rouge">PrintExtraPlacePositionFooter</code> – данные печатаются в позиции в чеке, до <a href="./doc_receipt_interactions.html#Position">подпозиций</a>;</li>
+  <li><code class="highlighter-rouge">PrintExtraPlacePositionAllSubpositionsFooter</code> – данные печатаются в позиции в чеке, после всех подпозиций.</li>
 </ul>
 
-<p>Подробное описание передаваемых данных и способов авторизации смотрите в <a href="https://api.evotor.ru/docs">справочнике API</a>.</p>
+<h3 id="section">Печать данных внутри кассового чека</h3>
+
+<p><em>Чтобы приложение печатало данные внутри кассового чека:</em></p>
+
+<ol>
+  <li>
+    <p>В <a href="./ссылка на java-манифест">манифесте приложения</a>, наделите приложение необходимыми правами:</p>
+
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"ru.evotor.permission.receipt.printExtra.SET"</span> <span class="nt">/&gt;</span>
+</code></pre>
+    </div>
+  </li>
+  <li>Создайте службу, которая отвечает за передачу данных для печати.</li>
+  <li>
+    <p>Объявите службу в манифесте приложения и укажите intent-filter:</p>
+
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evo.v2.receipt.sell.printExtra.REQUIRED"</span> <span class="nt">/&gt;</span>
+</code></pre>
+    </div>
+
+    <p>Где:</p>
+
+    <p>Событие <code class="highlighter-rouge">evo.v2.receipt.sell.printExtra.REQUIRED</code> – сообщает о возможности печати внутри кассового чека продажи. Для печати внутри кассового чека возврата подпишитесь на событие <code class="highlighter-rouge">evo.v2.receipt.payback.printExtra.REQUIRED</code>.</p>
+  </li>
+  <li>
+    <p>В службе, подпишите процессор <code class="highlighter-rouge">PrintExtraRequiredEventProcessor</code> на событие:</p>
+
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">processorMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span>
+                <span class="n">PrintExtraRequiredEvent</span><span class="o">.</span><span class="na">NAME_SELL_RECEIPT</span><span class="o">,</span>
+                <span class="k">new</span> <span class="nf">PrintExtraRequiredEventProcessor</span><span class="o">()</span> <span class="o">{</span>
+                <span class="o">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>В службе, в методе <code class="highlighter-rouge">PrintExtraRequiredEventProcessor</code> укажите место и массив данных, которые требуется распечатать:</p>
+
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="n">PrintExtraRequiredEventProcessor</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="n">PrintExtraRequiredEvent</span> <span class="n">printExtraRequiredEvent</span><span class="o">,</span> <span class="n">Callback</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">SetPrintExtra</span><span class="o">&gt;</span> <span class="n">setPrintExtras</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SetPrintExtra</span><span class="o">&gt;();</span>
+        <span class="n">setPrintExtras</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">SetPrintExtra</span><span class="o">(</span>
+                <span class="c1">//Метод, который указывает место, где будут распечатаны данные.</span>
+                <span class="k">new</span> <span class="nf">PrintExtraPlacePrintGroupTop</span><span class="o">(</span><span class="kc">null</span><span class="o">),</span>
+                <span class="c1">//Массив данных, которые должны быть распечатаны.</span>
+                <span class="k">new</span> <span class="n">IPrintable</span><span class="o">[]{</span>
+                        <span class="k">new</span> <span class="nf">PrintableText</span><span class="o">(</span><span class="s">"&lt;Текст&gt;"</span><span class="o">),</span>
+                        <span class="k">new</span> <span class="nf">PrintableBarcode</span><span class="o">(</span><span class="s">"&lt;Штрихкод&gt;"</span><span class="o">,</span> <span class="n">PrintableBarcode</span><span class="o">.</span><span class="na">BarcodeType</span><span class="o">.</span><span class="na">CODE39</span><span class="o">),</span>
+                        <span class="k">new</span> <span class="nf">PrintableImage</span><span class="o">(</span><span class="n">BitmapFactory</span><span class="o">.</span><span class="na">decodeFile</span><span class="o">(</span><span class="s">"&lt;путь к файлу изображения&gt;"</span><span class="o">))</span>
+                <span class="o">}</span>
+        <span class="o">));</span>
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h3 id="section-1">Пример</h3>
+
+<p>Ниже приведена служба, которая передаёт данные для печати с помощью всех доступных методов:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">processorMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span>
+                <span class="n">PrintExtraRequiredEvent</span><span class="o">.</span><span class="na">NAME_SELL_RECEIPT</span><span class="o">,</span>
+                <span class="k">new</span> <span class="nf">PrintExtraRequiredEventProcessor</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="nd">@Override</span>
+                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="n">PrintExtraRequiredEvent</span> <span class="n">printExtraRequiredEvent</span><span class="o">,</span> <span class="n">Callback</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">List</span><span class="o">&lt;</span><span class="n">SetPrintExtra</span><span class="o">&gt;</span> <span class="n">setPrintExtras</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SetPrintExtra</span><span class="o">&gt;();</span>
+                        <span class="n">setPrintExtras</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">SetPrintExtra</span><span class="o">(</span>
+                                <span class="k">new</span> <span class="nf">PrintExtraPlacePrintGroupTop</span><span class="o">(</span><span class="kc">null</span><span class="o">),</span>
+                                <span class="k">new</span> <span class="n">IPrintable</span><span class="o">[]{</span>
+                                        <span class="k">new</span> <span class="nf">PrintableText</span><span class="o">(</span><span class="s">"&lt;Текст&gt;"</span><span class="o">),</span>
+                                        <span class="k">new</span> <span class="nf">PrintableBarcode</span><span class="o">(</span><span class="s">"&lt;Штрихкод&gt;"</span><span class="o">,</span> <span class="n">PrintableBarcode</span><span class="o">.</span><span class="na">BarcodeType</span><span class="o">.</span><span class="na">CODE39</span><span class="o">),</span>
+                                        <span class="k">new</span> <span class="nf">PrintableImage</span><span class="o">(</span><span class="n">BitmapFactory</span><span class="o">.</span><span class="na">decodeFile</span><span class="o">(</span><span class="s">"&lt;путь к файлу изображения&gt;"</span><span class="o">))</span>
+                                <span class="o">}</span>
+                        <span class="o">));</span>
+                        <span class="n">setPrintExtras</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">SetPrintExtra</span><span class="o">(</span>
+                                <span class="k">new</span> <span class="nf">PrintExtraPlacePrintGroupHeader</span><span class="o">(</span><span class="kc">null</span><span class="o">),</span>
+                                <span class="k">new</span> <span class="n">IPrintable</span><span class="o">[]{</span>
+                                        <span class="k">new</span> <span class="nf">PrintableBarcode</span><span class="o">(</span><span class="s">"&lt;Штрихкод&gt;"</span><span class="o">,</span> <span class="n">PrintableBarcode</span><span class="o">.</span><span class="na">BarcodeType</span><span class="o">.</span><span class="na">CODE39</span><span class="o">),</span>
+                                        <span class="k">new</span> <span class="nf">PrintableText</span><span class="o">(</span><span class="s">"&lt;Текст&gt;"</span><span class="o">)</span>
+                                <span class="o">}</span>
+                        <span class="o">));</span>
+                        <span class="n">setPrintExtras</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">SetPrintExtra</span><span class="o">(</span>
+                                <span class="k">new</span> <span class="nf">PrintExtraPlacePrintGroupSummary</span><span class="o">(</span><span class="kc">null</span><span class="o">),</span>
+                                <span class="k">new</span> <span class="n">IPrintable</span><span class="o">[]{</span>
+                                        <span class="k">new</span> <span class="nf">PrintableText</span><span class="o">(</span><span class="s">"&lt;Текст&gt;"</span><span class="o">),</span>
+                                        <span class="k">new</span> <span class="nf">PrintableImage</span><span class="o">(</span><span class="n">BitmapFactory</span><span class="o">.</span><span class="na">decodeFile</span><span class="o">(</span><span class="s">"&lt;путь к файлу изображения&gt;"</span><span class="o">)),</span>
+                                        <span class="k">new</span> <span class="nf">PrintableBarcode</span><span class="o">(</span><span class="s">"&lt;Штрихкод&gt;"</span><span class="o">,</span> <span class="n">PrintableBarcode</span><span class="o">.</span><span class="na">BarcodeType</span><span class="o">.</span><span class="na">CODE39</span><span class="o">),</span>
+                                        <span class="k">new</span> <span class="nf">PrintableText</span><span class="o">(</span><span class="s">"&lt;Текст&gt;"</span><span class="o">)</span>
+                                <span class="o">}</span>
+                        <span class="o">));</span>
+                        <span class="n">Receipt</span> <span class="n">r</span> <span class="o">=</span> <span class="n">ReceiptApi</span><span class="o">.</span><span class="na">getReceipt</span><span class="o">(</span><span class="n">DiscountService</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">SELL</span><span class="o">);</span>
+                        <span class="k">if</span> <span class="o">(</span><span class="n">r</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="k">for</span> <span class="o">(</span><span class="n">Position</span> <span class="n">p</span> <span class="o">:</span> <span class="n">r</span><span class="o">.</span><span class="na">getPositions</span><span class="o">())</span> <span class="o">{</span>
+                                <span class="n">setPrintExtras</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">SetPrintExtra</span><span class="o">(</span>
+                                        <span class="k">new</span> <span class="nf">PrintExtraPlacePositionFooter</span><span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">getUuid</span><span class="o">()),</span>
+                                        <span class="k">new</span> <span class="n">IPrintable</span><span class="o">[]{</span>
+                                                <span class="k">new</span> <span class="nf">PrintableBarcode</span><span class="o">(</span><span class="s">"&lt;Штрихкод&gt;"</span><span class="o">,</span> <span class="n">PrintableBarcode</span><span class="o">.</span><span class="na">BarcodeType</span><span class="o">.</span><span class="na">CODE39</span><span class="o">),</span>
+                                                <span class="k">new</span> <span class="nf">PrintableText</span><span class="o">(</span><span class="s">"&lt;Текст&gt;\n"</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="na">getUuid</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\n&lt;Текст&gt;"</span><span class="o">)</span>
+                                        <span class="o">}</span>
+                                <span class="o">));</span>
+                                <span class="n">setPrintExtras</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">SetPrintExtra</span><span class="o">(</span>
+                                        <span class="k">new</span> <span class="nf">PrintExtraPlacePositionAllSubpositionsFooter</span><span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">getUuid</span><span class="o">()),</span>
+                                        <span class="k">new</span> <span class="n">IPrintable</span><span class="o">[]{</span>
+                                                <span class="k">new</span> <span class="nf">PrintableBarcode</span><span class="o">(</span><span class="s">"&lt;Штрихкод&gt;"</span><span class="o">,</span> <span class="n">PrintableBarcode</span><span class="o">.</span><span class="na">BarcodeType</span><span class="o">.</span><span class="na">CODE39</span><span class="o">),</span>
+                                                <span class="k">new</span> <span class="nf">PrintableText</span><span class="o">(</span><span class="s">"&lt;Текст&gt;\n"</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="na">getUuid</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\n&lt;Текст&gt;"</span><span class="o">)</span>
+                                        <span class="o">}</span>
+                                <span class="o">));</span>
+
+                            <span class="o">}</span>
+                        <span class="o">}</span>
+                        <span class="k">try</span> <span class="o">{</span>
+                            <span class="n">callback</span><span class="o">.</span><span class="na">onResult</span><span class="o">(</span><span class="k">new</span> <span class="n">PrintExtraRequiredEventResult</span><span class="o">(</span><span class="n">setPrintExtras</span><span class="o">).</span><span class="na">toBundle</span><span class="o">());</span>
+                        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">RemoteException</span> <span class="n">exc</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="n">exc</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                        <span class="o">}</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+        <span class="o">);</span>
+</code></pre>
+</div>
 
 
     <div class="tags">
@@ -717,7 +823,15 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_Биллинг.html" class="btn btn-default navbar-btn cursorNorm" role="button">Биллинг</a>
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
+        
+        
+        
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Оборудование.html" class="btn btn-default navbar-btn cursorNorm" role="button">Оборудование</a>
         
         
         

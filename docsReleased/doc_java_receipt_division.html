@@ -394,6 +394,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    
+                    
+                    <li><a href="doc_java_receipt_print.html">Печать внутри кассового чека</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -558,14 +564,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_cloud_systems_integration.html">Интеграция с облачными сервисами</a></li>
             
             
             
@@ -709,7 +715,7 @@ $('#toc').on('click', 'a', function() {
     <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Событие возникает только если пользователь выбрал безналичный расчёт.</div>
   </li>
   <li>
-    <p><a href="./doc_receipt_division.html#severalPayments">Приложение может разделить чек на несколько платежей</a> в счёт одного или нескольких юридических лиц.</p>
+    <p><a href="./doc_java_receipt_division.html#severalPayments">Приложение может разделить чек на несколько платежей</a> в счёт одного или нескольких юридических лиц.</p>
 
     <p>Приложение возвращает данные о соответствии счетов и платежей в объекте <code class="highlighter-rouge">PaymentSelectedEventResult</code> и указывает разделение платежей в объекте <code class="highlighter-rouge">PaymentPurpose</code>.</p>
 
@@ -724,7 +730,7 @@ $('#toc').on('click', 'a', function() {
 
     <p>В данный момент поддерживается разделение только в рамках той системы оплаты, которую выбрал пользователь. Разделение на различные системы оплаты (комбинированная оплата) не поддерживается.</p>
 
-    <p>Чтобы получить список счетов, доступных на данном смарт-терминале, <a href="./doc_receipt_division.html#PaymentSystemApiMethods">воспользуйтесь методом</a> <code class="highlighter-rouge">getPaymentSystems</code>, класса <code class="highlighter-rouge">PaymentSystemApi</code>.</p>
+    <p>Чтобы получить список счетов, доступных на данном смарт-терминале, <a href="./doc_java_receipt_division.html#PaymentSystemApiMethods">воспользуйтесь методом</a> <code class="highlighter-rouge">getPaymentSystems</code>, класса <code class="highlighter-rouge">PaymentSystemApi</code>.</p>
 
     <p>Используйте команду <code class="highlighter-rouge">SetExtra</code>, чтобы добавить к чеку <a href="./doc_java_receipt_extras.html">дополнительные поля</a>.</p>
   </li>
@@ -732,7 +738,7 @@ $('#toc').on('click', 'a', function() {
     <p>На основе данных, полученных от приложения, смарт-терминал совершает платежи и начинает печать чека. Перед печатью чека EvoPOS передаёт событие <code class="highlighter-rouge">PrintGroupRequiredEvent</code> и ожидает ответа от приложений.</p>
   </li>
   <li>
-    <p><a href="./doc_receipt_division.html#severalPintGroups">Приложение может напечатать несколько разных печатных документов</a> и разделить платежи на между ними.</p>
+    <p><a href="./doc_java_receipt_division.html#severalPintGroups">Приложение может напечатать несколько разных печатных документов</a> и разделить платежи между ними.</p>
 
     <p>Приложение передаёт данные о печатных документах, закреплённых за ними позициях и соответствующих платежах в объекте <code class="highlighter-rouge">PrintGroupRequiredEventResult</code>, которому соответствует список объектов <code class="highlighter-rouge">SetPrintGroup</code>.</p>
 
@@ -751,7 +757,7 @@ $('#toc').on('click', 'a', function() {
       <li>
         <p>тип чека (фискальный, ЕНВД, квитанция);</p>
 
-        <p>И квитанция и ЕНВД чек задаются в виде строк, в отличие от фискального чека, который набирается с помощью команд ККМ. ЕНВД чек отличается от квитанции тем, что квитанция не содержит информации о способе оплаты и на распечатанном чеке явно указывается, что это квитанция.</p>
+        <p>Квитанция и ЕНВД чек задаются в виде строк, в отличие от фискального чека, который набирается с помощью команд ККМ. ЕНВД чек отличается от квитанции тем, что квитанция не содержит информации о способе оплаты и на распечатанном чеке явно указывается, что это квитанция.</p>
       </li>
       <li>систему налогообложения;</li>
       <li>реквизиты организации (название, ИНН, адрес).</li>

@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит информацию об интеграции с облачной товароучётной системой.">
 <meta name="keywords" content="ОблакоТовары,  sample">
-<title>Облачная товароучётная система | Документация Эвотор</title>
+<title>Интеграция с облачными сервисами | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Облачная товароучётная система">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Интеграция с облачными сервисами">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -394,6 +394,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    
+                    
+                    <li><a href="doc_java_receipt_print.html">Печать внутри кассового чека</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -558,14 +564,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="active"><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="doc_cloud_systems_integration.html">Интеграция с облачными сервисами</a></li>
             
             
             
@@ -638,7 +644,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Облачная товароучётная система</h1>
+   <h1 class="post-title-main">Интеграция с облачными сервисами</h1>
 </div>
 
 
@@ -711,12 +717,16 @@ $('#toc').on('click', 'a', function() {
       <td style="text-align: left"> </td>
       <td style="text-align: left"> </td>
     </tr>
+    <tr>
+      <td style="text-align: left">https://example.com/api/v1/subscription/event</td>
+      <td style="text-align: left">Эвотор отправляет по адресу события сообщающие об изменении подписки на приложение.</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
   </tbody>
 </table>
 
-<blockquote>
-  <p>Информацию о сущностях пользователя Эвотор (магазинах, товарах, сотрудниках и смарт-терминалах), товароучётная система получает с помощью запросов к облаку Эвотор.</p>
-</blockquote>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Информацию о сущностях пользователя Эвотор (магазинах, товарах, сотрудниках и смарт-терминалах), товароучётная система получает с помощью запросов к облаку Эвотор.</div>
 
 <h3 id="section">Покупка и активация приложения</h3>
 
@@ -756,7 +766,7 @@ $('#toc').on('click', 'a', function() {
 
 <h4 id="section-2">Этап 2</h4>
 
-<p>Эвотор передаёт в сторонний сервис запрос <a href="https://goo.gl/V71Guj"><strong>[POST] Активация / деактивация тарифа</strong></a>. Тело запроса содержит идентификатор пользователя в Эвоторе и идентификатор тарифа, который вы указали при настойке интеграции приложения на портале dev.evotor.ru, а так же состояние тарифа <code>ACTIVE</code>.</p>
+<p>Эвотор передаёт в сторонний сервис событие <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost"><strong>SSubscriptionCreated</strong></a>. Событие содержит поля, которые указывают на начало пробного периода использования приложения. В дальнейшем, при изменении подписки, Облако передаёт в сторонний сервис другие события биллинга.</p>
 
 <h3 id="section-3">Удаление и деактивация приложения</h3>
 
@@ -772,11 +782,13 @@ $('#toc').on('click', 'a', function() {
 
 <h4 id="section-4">Повторная установка приложения</h4>
 
-<p>При повторной установке приложения, Эвотор проверяет истёк пробный период использования приложения или нет. Так же, в зависимости от значения параметра <code class="highlighter-rouge">haslBilling</code>, возможно изменение стороны ответственной за биллинг пользователя.</p>
+<p>При повторной установке приложения, Эвотор проверяет истёк пробный период использования приложения или нет. Так же, в зависимости от значения параметра <code class="highlighter-rouge">hasBilling</code>, возможно изменение стороны ответственной за биллинг пользователя.</p>
 
 <h4 id="section-5">Подробная схема покупки и установки приложения</h4>
 
 <p><img src="images/market_app_install_schema.png" alt="" /></p>
+
+<h3 id="section-6">Удаление и деактивация приложения</h3>
 
 
     <div class="tags">

@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит краткую информацию какие данные и на какие URL передаёт Эвотор.">
-<meta name="keywords" content="Биллинг,  sample">
-<title>Обмен данными | Документация Эвотор</title>
+<meta name="description" content="">
+<meta name="keywords" content="ТерминалJava,  ">
+<title>Чеки интернет-магазинов | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Обмен данными">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Чеки интернет-магазинов">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -644,15 +644,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Обмен данными</h1>
+   <h1 class="post-title-main">Чеки интернет-магазинов</h1>
 </div>
 
 
 
 <div class="post-content">
 
-   
-    <div class="summary">Раздел содержит краткую информацию какие данные и на какие URL передаёт Эвотор.</div>
    
 
     
@@ -683,32 +681,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Эвотор отправляет данные о биллинге пользователей на два URL:</p>
-
-<ul>
-  <li>
-    <p><code class="highlighter-rouge">/partner.ru/api/v1/user/tariff</code></p>
-
-    <p>Эвотор передаёт на URL сообщение об активации (<code class="highlighter-rouge">"status": "ACTIVE"</code>) и деактивации (<code class="highlighter-rouge">"status": "INACTIVE"</code>) тарифа. Сообщения по этому адресу требуется авторизовать с помощью токена стороннего сервиса (подробнее см. в разделе <a href="">””</a>).</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">/partner.ru/api/v1/user/event</code></p>
-
-    <p>Эвотор передаёт на URL события, связанные с биллингом:</p>
-
-    <ul>
-      <li><code class="highlighter-rouge">SubscriptionCreated</code> – новая подписка.</li>
-      <li><code class="highlighter-rouge">SubscriptionActivated</code> – активирована платная фаза подписики. Эвотор передаёт сообщение, если пользователь решил продолжить использовать приложение после завершения пробного периода.</li>
-      <li><code class="highlighter-rouge">SubscriptionRenewed</code> – подписка продлена на следующий период.</li>
-      <li><code class="highlighter-rouge">SubscriptionCancelled</code> – подписка отменена.</li>
-      <li><code class="highlighter-rouge">SubscriptionTermsChanged</code> – изменились условия подписки, например, тарифный план или количество устройств.</li>
-    </ul>
-
-    <p>Стороннему сервису достаточно подписаться на эти сообщения. Эвотор гарантирует доставку сообщений и не требует подтверждения получения.</p>
-  </li>
-</ul>
-
-<p>Подробное описание передаваемых данных и способов авторизации смотрите в <a href="https://api.evotor.ru/docs">справочнике API</a>.</p>
+  
 
 
     <div class="tags">
@@ -717,7 +690,11 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_Биллинг.html" class="btn btn-default navbar-btn cursorNorm" role="button">Биллинг</a>
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
         
         
         
