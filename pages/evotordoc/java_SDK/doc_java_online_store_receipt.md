@@ -1,5 +1,5 @@
 ---
-title: Передача чеков на email и номер телефона
+title: Печать электронных чеков
 keywords:
 summary:
 sidebar: evotordoc_sidebar
