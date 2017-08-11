@@ -760,6 +760,16 @@ $('#toc').on('click', 'a', function() {
 <td><a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/core/action/command/open_receipt_command/OpenPaybackReceiptCommand.java">OpenPaybackReceiptCommand </a></td>
 <td>new OpenPaybackReceiptCommand(positionAddList, extra).process(context, callback);</td>
 </tr>
+<tr><td>Команда печати чека продажи</td>
+<td>evo.v2.receipt.sell.printReceipt</td>
+<td><a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/core/action/command/print_receipt_command/PrintSellReceiptCommand.kt">PrintSellReceiptCommand</a></td>
+<td>PrintSellReceiptCommand command = new PrintSellReceiptCommand(positionsList, payments, clientPhone, clientEmail);</td>
+</tr>
+<tr><td>Команда печати чека возврата</td>
+<td>evo.v2.receipt.payback.printReceipt</td>
+<td><a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/core/action/command/print_receipt_command/PrintPaybackReceiptCommand.kt">PrintPaybackReceiptCommand </a></td>
+<td>PrintPaybackReceiptCommand command = new PrintPaybackReceiptCommand(positions, payments, clientPhone, clientEmail);</td>
+</tr>
 </table>
 
 <h4 id="Events">События, которые не требуют ответа</h4>

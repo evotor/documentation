@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content="ТерминалJava,  ">
-<title>Чеки интернет-магазинов | Документация Эвотор</title>
+<title>Передача чеков на email и номер телефона | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Чеки интернет-магазинов">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Передача чеков на email и номер телефона">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -644,7 +644,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Чеки интернет-магазинов</h1>
+   <h1 class="post-title-main">Передача чеков на email и номер телефона</h1>
 </div>
 
 
@@ -681,7 +681,156 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  
+  <p>Приложение может создавать чеки и передавать их для оформления в смарт-терминал. Созданные чеки смарт-терминал может автоматически передавать созданные чеки на указанный адрес электронной почты (email) и / или номер телефона. Передача чеков актуальна, например, для интернет-магазинов.</p>
+
+<p>С помощью отдельной <a href="./doc_app_integration_points.html#Commands">команды</a> приложение может напечатать созданный чек.</p>
+
+<h3 id="email---">Передача чека на email и номер телефона</h3>
+
+<p>Смарт-терминал передаёт чеки если указан email и / или номер телефона. Касса не печатает чек, если указаны поля email и / или номер телефона.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Только кассы нового образца могут не печатать чеки. Кассы старого образца печатают чек независимо от того указан email или номер телефона.</div>
+
+<p>Чтобы передавать чек на email и номер телефона:</p>
+
+<ol>
+  <li>
+    <p>В <a href="./doc_java_app_manifest.html">манифесте приложения</a> укажите права для приложения:</p>
+
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"ru.evotor.permission.receipt.print.INTERNET_RECEIPT"</span> <span class="nt">/&gt;</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Составьте список позиций, который требуется добавить в чек, наполните список</p>
+
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">openReceipt</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">PositionAdd</span><span class="o">&gt;</span> <span class="n">positionAddList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+        <span class="n">JSONObject</span> <span class="n">extra</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+</code></pre>
+    </div>
+
+    <p>Где:</p>
+
+    <p><code class="highlighter-rouge">List&lt;PositionAdd&gt; positionAddList = new ArrayList&lt;&gt;()</code>– список позиций. Как добавить позицию в чек смотрите в разделе <a href="doc_java_receipt_interactions.html#PositionAltering">Добавление, изменение и удаление позиций</a>.</p>
+
+    <p><code class="highlighter-rouge">JSONObject extra = new JSONObject();</code>– добавляет дополнительные данные к чеку. Данные доступны только вашему приложению. Не создавайте этот объект, если приложение не добавляет дополнительные поля к чеку.</p>
+  </li>
+  <li>
+    <p>Укажите способ оплаты:</p>
+
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Payment</span><span class="o">&gt;</span> <span class="n">payments</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">Payment</span> <span class="n">payment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Payment</span><span class="o">(</span>
+        <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+        <span class="k">new</span> <span class="nf">BigDecimal</span><span class="o">(</span><span class="mi">9000</span><span class="o">),</span>
+        <span class="k">new</span> <span class="nf">PaymentSystem</span><span class="o">(</span><span class="n">PaymentType</span><span class="o">.</span><span class="na">ELECTRON</span><span class="o">,</span> <span class="s">"Card"</span><span class="o">,</span> <span class="s">"Cashless"</span><span class="o">),</span>
+        <span class="kc">null</span><span class="o">,</span>
+        <span class="kc">null</span><span class="o">,</span>
+        <span class="kc">null</span>
+<span class="o">);</span>
+</code></pre>
+    </div>
+
+    <p>Где:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">PaymentType</code> – задаёт <a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/payment/PaymentType.java">способ оплаты</a>.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Создайте команду для передачи чека и вызовите метод <code class="highlighter-rouge">.process</code>:</p>
+
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PrintSellReceiptCommand</span> <span class="n">command</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintSellReceiptCommand</span><span class="o">(</span><span class="n">positions</span><span class="o">,</span> <span class="n">payments</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="s">"example@example.com"</span><span class="o">);</span>
+<span class="n">command</span><span class="o">.</span><span class="na">process</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="k">new</span> <span class="n">IntegrationManagerCallback</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">IntegrationManagerFuture</span> <span class="n">future</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">IntegrationManagerFuture</span><span class="o">.</span><span class="na">Result</span> <span class="n">result</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">future</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
+            <span class="k">switch</span> <span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getType</span><span class="o">())</span> <span class="o">{</span>
+                <span class="k">case</span> <span class="nl">OK:</span>
+                    <span class="n">PrintReceiptCommandResult</span> <span class="n">printSellReceiptResult</span> <span class="o">=</span> <span class="n">PrintReceiptCommandResult</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getData</span><span class="o">());</span>
+                    <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="s">"OK"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+                    <span class="k">break</span><span class="o">;</span>
+                <span class="k">case</span> <span class="nl">ERROR:</span>
+                    <span class="n">Error</span> <span class="n">error</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">getError</span><span class="o">();</span>
+                    <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">error</span><span class="o">.</span><span class="na">getMessage</span><span class="o">(),</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+                    <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IntegrationException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</code></pre>
+    </div>
+
+    <p>Где:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">positions</code> – список позиций чека.</li>
+      <li><code class="highlighter-rouge">payments</code> – информация о способе оплаты.</li>
+      <li><code class="highlighter-rouge">clientPhone</code> – номер телефона клиента в формате строки. Может быть <code class="highlighter-rouge">null</code>. Смарт-терминал передаёт чек на указанный номер телефона.</li>
+      <li><code class="highlighter-rouge">clientEmail</code> – email клиента в формате строки. Может быть <code class="highlighter-rouge">null</code>. Смарт-терминал передаёт чек на указанный адрес электронной почты.</li>
+    </ul>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Если поля <code class="highlighter-rouge">clientPhone</code> и <code class="highlighter-rouge">clientEmail</code> не указаны, смарт-терминал печатает чек и не передаёт его.</div>
+  </li>
+</ol>
+
+<h3 id="section">Пример</h3>
+
+<p>Существует также более детальный способ создания и передачи чека:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span>
+        <span class="n">Position</span><span class="o">.</span><span class="na">Builder</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span>
+                <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+                <span class="kc">null</span><span class="o">,</span>
+                <span class="s">"1234"</span><span class="o">,</span>
+                <span class="s">"12"</span><span class="o">,</span>
+                <span class="mi">0</span><span class="o">,</span>
+                <span class="k">new</span> <span class="nf">BigDecimal</span><span class="o">(</span><span class="mi">1000</span><span class="o">),</span>
+                <span class="n">BigDecimal</span><span class="o">.</span><span class="na">TEN</span>
+        <span class="o">).</span><span class="na">build</span><span class="o">()</span>
+<span class="o">);</span>
+<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span>
+        <span class="n">Position</span><span class="o">.</span><span class="na">Builder</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span>
+                <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+                <span class="kc">null</span><span class="o">,</span>
+                <span class="s">"1234"</span><span class="o">,</span>
+                <span class="s">"12"</span><span class="o">,</span>
+                <span class="mi">0</span><span class="o">,</span>
+                <span class="k">new</span> <span class="nf">BigDecimal</span><span class="o">(</span><span class="mi">500</span><span class="o">),</span>
+                <span class="n">BigDecimal</span><span class="o">.</span><span class="na">ONE</span>
+        <span class="o">).</span><span class="na">setPriceWithDiscountPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">300</span><span class="o">)).</span><span class="na">build</span><span class="o">()</span>
+<span class="o">);</span>
+<span class="kd">final</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">PrintReceipt</span> <span class="n">printReceipt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">PrintReceipt</span><span class="o">(</span>
+        <span class="kc">null</span><span class="o">,</span>
+        <span class="n">list</span><span class="o">,</span>
+        <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Payment</span><span class="o">,</span> <span class="n">BigDecimal</span><span class="o">&gt;()</span> <span class="o">,</span>
+        <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Payment</span><span class="o">,</span> <span class="n">BigDecimal</span><span class="o">&gt;()</span>
+<span class="o">);</span>
+
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Receipt</span><span class="o">.</span><span class="na">PrintReceipt</span><span class="o">&gt;</span> <span class="n">listDocs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">listDocs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">printReceipt</span><span class="o">);</span>
+<span class="n">BigDecimal</span> <span class="n">receiptDiscount</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
+<span class="k">new</span> <span class="nf">PrintSellReceiptCommand</span><span class="o">(</span><span class="n">listDocs</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="s">"example@example.com"</span><span class="o">,</span> <span class="n">receiptDiscount</span><span class="o">).</span><span class="na">process</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="k">new</span> <span class="n">IntegrationManagerCallback</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">IntegrationManagerFuture</span> <span class="n">integrationManagerFuture</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">IntegrationManagerFuture</span><span class="o">.</span><span class="na">Result</span> <span class="n">result</span> <span class="o">=</span> <span class="n">integrationManagerFuture</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getType</span><span class="o">()</span> <span class="o">==</span> <span class="n">IntegrationManagerFuture</span><span class="o">.</span><span class="na">Result</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">OK</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="s">"Result OK"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IntegrationException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</code></pre>
+</div>
 
 
     <div class="tags">
