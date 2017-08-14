@@ -400,6 +400,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    
+                    
+                    <li class="active"><a href="doc_online_store_receipt.html">Печать электронных чеков</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -708,6 +714,7 @@ $('#toc').on('click', 'a', function() {
         <span class="n">List</span><span class="o">&lt;</span><span class="n">PositionAdd</span><span class="o">&gt;</span> <span class="n">positionAddList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
 
         <span class="n">JSONObject</span> <span class="n">extra</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+      <span class="o">}</span>
 </code></pre>
     </div>
 
@@ -806,10 +813,19 @@ $('#toc').on('click', 'a', function() {
                 <span class="n">BigDecimal</span><span class="o">.</span><span class="na">ONE</span>
         <span class="o">).</span><span class="na">setPriceWithDiscountPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">300</span><span class="o">)).</span><span class="na">build</span><span class="o">()</span>
 <span class="o">);</span>
+<span class="n">HashMap</span> <span class="n">payments</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Payment</span><span class="o">,</span> <span class="n">BigDecimal</span><span class="o">&gt;();</span>
+<span class="n">payments</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Payment</span><span class="o">(</span>
+                    <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+                    <span class="k">new</span> <span class="nf">BigDecimal</span><span class="o">(</span><span class="mi">9300</span><span class="o">),</span>
+                    <span class="k">new</span> <span class="nf">PaymentSystem</span><span class="o">(</span><span class="n">PaymentType</span><span class="o">.</span><span class="na">ELECTRON</span><span class="o">,</span> <span class="s">"Internet"</span><span class="o">,</span> <span class="s">"12424"</span><span class="o">),</span>
+                    <span class="kc">null</span><span class="o">,</span>
+                    <span class="kc">null</span><span class="o">,</span>
+                    <span class="kc">null</span>
+            <span class="o">),</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">9300</span><span class="o">));</span>
 <span class="kd">final</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">PrintReceipt</span> <span class="n">printReceipt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">PrintReceipt</span><span class="o">(</span>
         <span class="kc">null</span><span class="o">,</span>
         <span class="n">list</span><span class="o">,</span>
-        <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Payment</span><span class="o">,</span> <span class="n">BigDecimal</span><span class="o">&gt;()</span> <span class="o">,</span>
+        <span class="n">payments</span><span class="o">,</span>
         <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Payment</span><span class="o">,</span> <span class="n">BigDecimal</span><span class="o">&gt;()</span>
 <span class="o">);</span>
 

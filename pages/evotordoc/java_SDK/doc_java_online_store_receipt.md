@@ -33,6 +33,7 @@ folder: java_SDK
            List<PositionAdd> positionAddList = new ArrayList<>();
 
            JSONObject extra = new JSONObject();
+         }
    ```
 
    Где:
@@ -124,11 +125,8 @@ list.add(
                 BigDecimal.ONE
         ).setPriceWithDiscountPosition(new BigDecimal(300)).build()
 );
-final Receipt.PrintReceipt printReceipt = new Receipt.PrintReceipt(
-        null,
-        list,
-        new HashMap<Payment, BigDecimal>() {{
-            put(new Payment(
+HashMap payments = new HashMap<Payment, BigDecimal>();
+payments.put(new Payment(
                     UUID.randomUUID().toString(),
                     new BigDecimal(9300),
                     new PaymentSystem(PaymentType.ELECTRON, "Internet", "12424"),
@@ -136,7 +134,10 @@ final Receipt.PrintReceipt printReceipt = new Receipt.PrintReceipt(
                     null,
                     null
             ), new BigDecimal(9300));
-        }},
+final Receipt.PrintReceipt printReceipt = new Receipt.PrintReceipt(
+        null,
+        list,
+        payments,
         new HashMap<Payment, BigDecimal>()
 );
 

@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит вводную информацию для работы с нашей документацией.">
-<meta name="keywords" content="ОблакоТоварыЧеки,  sample">
-<title>Об Облаке Эвотор | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит инструкцию по переходу к элементам управления смарт-терминалом.">
+<meta name="keywords" content="ТерминалJava,  ">
+<title>Вызов окон смарт-терминала | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Об Облаке Эвотор">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Вызов окон смарт-терминала">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -650,7 +650,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Об Облаке Эвотор</h1>
+   <h1 class="post-title-main">Вызов окон смарт-терминала</h1>
 </div>
 
 
@@ -658,7 +658,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит вводную информацию для работы с нашей документацией.</div>
+    <div class="summary">Раздел содержит инструкцию по переходу к элементам управления смарт-терминалом.</div>
    
 
     
@@ -689,29 +689,43 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Облако Эвотор позволяет интегрировать сторонний сервис и смарт-терминал. В Облаке хранятся следующие данные пользователей платформы:</p>
+  <p>Для вызова окон смарт-терминала используйте класс <code class="highlighter-rouge">NavigationApi</code>.</p>
+
+<p>Ваше приложение может вызывать окна смарт-терминала:</p>
 
 <ul>
-  <li>Магазины;</li>
-  <li>Сотрудники;</li>
-  <li>Смарт-терминалы;</li>
-  <li>Товары;</li>
-  <li>Документы смарт-терминала.</li>
+  <li>
+    <p>окно редактирования клише чека (<strong>Настройки</strong> &gt; <strong>Кассовый чек</strong>);</p>
+
+    <p><img src="images\receiptsettings.png" alt="" /></p>
+  </li>
+  <li>
+    <p>окно доступа к отчётам (<strong>Отчёты</strong> &gt; <strong>Кассовый чек</strong>).</p>
+
+    <p><img src="images\CashRegisterReport.png" alt="" /></p>
+  </li>
 </ul>
 
-<p>Для доступа к данным облака используйте Эвотор API. Эвотор API – это REST API, который поддерживает методы как для доступа к данным пользователя, так и для взаимодействия со сторонним сервисом. Все методы Эвотор API описаны в <a href="https://api.evotor.ru/docs">справочние API</a>.</p>
+<p><em>Чтобы вызывать окна смарт-терминала:</em></p>
 
-<p>Методы, которые дают доступ к данным описаны в разделах:</p>
+<p>в коде кнопки, по нажатию которой вы хотите вызвать окно, добавьте один из следующих элементов:</p>
 
 <ul>
-  <li><a href="https://api.evotor.ru/docs/#tag/Sushnosti-polzovatelya-Evotor">Сущности пользователя Эвотор</a>;</li>
-  <li><a href="https://api.evotor.ru/docs/#tag/Tovary-i-dokumenty">Товары и документы</a>;</li>
-  <li><a href="https://api.evotor.ru/docs/#tag/Shemy-i-dopolnitelnye-polya-tovarov">Схемы и дополнительные поля товаров</a>.</li>
+  <li>
+    <p>Если вы хотите вызвать окно настройки клише чека добавьте:</p>
+
+    <p><code class="highlighter-rouge">java
+ startActivity(NavigationApi.createIntentForCashReceiptSettings());
+</code></p>
+  </li>
+  <li>
+    <p>Если вы хотите вызвать окно доступа к отчётам:</p>
+
+    <p><code class="highlighter-rouge">java
+ startActivity(NavigationApi.createIntentForCashRegisterReport());
+</code></p>
+  </li>
 </ul>
-
-<p>Методы, собранные в разделах <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy">вебхуки-запросы</a> и <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya">веб-хуки уведомления</a>, позволяют стороннему сервису получать изменения, которые происходят в Облаке.</p>
-
-<p><a href="./doc_smart_terminal_applications.html">Установленные на смарт-терминале приложения</a> не работают с Облаком напрямую и получают данные с помощью сторонних сервисов.</p>
 
 
     <div class="tags">
@@ -720,15 +734,11 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_Облако.html" class="btn btn-default navbar-btn cursorNorm" role="button">Облако</a>
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
         
         
         
-        <a href="tag_Товары.html" class="btn btn-default navbar-btn cursorNorm" role="button">Товары</a>
-        
-        
-        
-        <a href="tag_Чеки.html" class="btn btn-default navbar-btn cursorNorm" role="button">Чеки</a>
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
         
         
         

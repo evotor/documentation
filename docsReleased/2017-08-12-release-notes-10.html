@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит вводную информацию для работы с нашей документацией.">
-<meta name="keywords" content="ОблакоТоварыЧеки,  sample">
-<title>Об Облаке Эвотор | Документация Эвотор</title>
+<meta name="description" content="">
+<meta name="keywords" content=",  ">
+<title>12.08.2017 | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Об Облаке Эвотор">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="12.08.2017">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -649,94 +649,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Content Column -->
     <div class="col-md-9">
-        <div class="post-header">
-   <h1 class="post-title-main">Об Облаке Эвотор</h1>
-</div>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">12.08.2017</h1>
+        <p class="post-meta"><time datetime="2017-08-12T00:00:00+03:00" itemprop="datePublished">Aug 12, 2017</time> /
+            
+            
+            
+
+        </p>
 
 
+    </header>
 
-<div class="post-content">
+    <div class="post-content" itemprop="articleBody">
 
-   
-    <div class="summary">Раздел содержит вводную информацию для работы с нашей документацией.</div>
-   
+        
 
-    
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
-
-    
-
-
-    
-
-  <p>Облако Эвотор позволяет интегрировать сторонний сервис и смарт-терминал. В Облаке хранятся следующие данные пользователей платформы:</p>
+        <p>Добавлено описание новых API:</p>
 
 <ul>
-  <li>Магазины;</li>
-  <li>Сотрудники;</li>
-  <li>Смарт-терминалы;</li>
-  <li>Товары;</li>
-  <li>Документы смарт-терминала.</li>
+  <li><a href="./doc_java_receipt_division.html">Описано разделение чека на несколько чеков</a></li>
+  <li><a href="./doc_java_receipt_print.html">Описан API для печать внутри кассового чека</a></li>
+  <li><a href="./doc_drivers_other.html">Описан SDK для подключаемого USB-оборудования</a></li>
+  <li><a href="./doc_java_app_icon.html">Описана замена кнопки “Продажа” на главном экране смарт-терминала</a></li>
+  <li><a href="./doc_app_integration_points.html">Описаны точки интеграции со смарт-терминалом</a></li>
+  <li><a href="./doc_js_devices.html">Описано получение данных от подключённых устройств в JavaScript-приложении</a></li>
+  <li><a href="doc_js_inventory.html">Описан поиск товара по идентификатору в JavaScript-приложении</a></li>
+  <li>Добавлены интрукции по созданию Java и JavaScript-приложения</li>
 </ul>
 
-<p>Для доступа к данным облака используйте Эвотор API. Эвотор API – это REST API, который поддерживает методы как для доступа к данным пользователя, так и для взаимодействия со сторонним сервисом. Все методы Эвотор API описаны в <a href="https://api.evotor.ru/docs">справочние API</a>.</p>
-
-<p>Методы, которые дают доступ к данным описаны в разделах:</p>
+<p>Изменена структура документации. Информация, ранее представленная в “SDK смарт-терминала”, теперь содержится в четырёх разделах:</p>
 
 <ul>
-  <li><a href="https://api.evotor.ru/docs/#tag/Sushnosti-polzovatelya-Evotor">Сущности пользователя Эвотор</a>;</li>
-  <li><a href="https://api.evotor.ru/docs/#tag/Tovary-i-dokumenty">Товары и документы</a>;</li>
-  <li><a href="https://api.evotor.ru/docs/#tag/Shemy-i-dopolnitelnye-polya-tovarov">Схемы и дополнительные поля товаров</a>.</li>
+  <li>Разработка для смарт-терминала – содержит общие темы, относящиеся к разработке приложений для смарт-терминала.</li>
+  <li>Java SDK – содержит описание API, которые необходимы при разработке Java-приложения.</li>
+  <li>JavaScript SDK – содержит описание API, которые необходимы при разработке JavaScript-приложения.</li>
+  <li>Драйвера для оборудования – содержит описание API, необходимых при разработке драйверов для оборудования, подключаемого к смарт-терминалу.</li>
 </ul>
 
-<p>Методы, собранные в разделах <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy">вебхуки-запросы</a> и <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya">веб-хуки уведомления</a>, позволяют стороннему сервису получать изменения, которые происходят в Облаке.</p>
+<p>REST API Облака Эвотор:</p>
 
-<p><a href="./doc_smart_terminal_applications.html">Установленные на смарт-терминале приложения</a> не работают с Облаком напрямую и получают данные с помощью сторонних сервисов.</p>
+<ul>
+  <li>[Добавлены события подписки]</li>
+  <li>[Изменен формат чеков]</li>
+</ul>
 
-
-    <div class="tags">
-        
-        <b>Тэги: </b>
-        
-        
-        
-        <a href="tag_Облако.html" class="btn btn-default navbar-btn cursorNorm" role="button">Облако</a>
-        
-        
-        
-        <a href="tag_Товары.html" class="btn btn-default navbar-btn cursorNorm" role="button">Товары</a>
-        
-        
-        
-        <a href="tag_Чеки.html" class="btn btn-default navbar-btn cursorNorm" role="button">Чеки</a>
-        
-        
-        
     </div>
 
-    
 
-</div>
+
+</article>
+
 
 <hr class="shaded"/>
 

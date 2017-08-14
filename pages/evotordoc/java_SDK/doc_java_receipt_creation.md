@@ -17,6 +17,7 @@ folder: smart_terminal_SDK
            List<PositionAdd> positionAddList = new ArrayList<>();
 
            JSONObject extra = new JSONObject();
+         }
    ```
 
    Где:
