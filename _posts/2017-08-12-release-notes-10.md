@@ -1,8 +1,8 @@
 ---
-title:  "12.08.2017"
+title:  "15.08.2017"
 summary:
 categories: what's new
-permalink: 2017-08-12-release-notes-10.
+permalink: 2017-08-15-release-notes-10.html
 tags:
 ---
 Добавлено описание новых API:
@@ -14,6 +14,8 @@ tags:
 * [Описаны точки интеграции со смарт-терминалом](./doc_app_integration_points.html)
 * [Описано получение данных от подключённых устройств в JavaScript-приложении](./doc_js_devices.html)
 * [Описан поиск товара по идентификатору в JavaScript-приложении](doc_js_inventory.html)
+* [Описан вызов окон терминала](https://developer.evotor.ru/docs/doc_java_navigation.html)
+* [Обновлено описание позиции, добавлены поля](https://developer.evotor.ru/docs/doc_java_receipt_interactions.html#Position)
 * Добавлены интрукции по созданию Java и JavaScript-приложения
 
 Изменена структура документации. Информация, ранее представленная в "SDK смарт-терминала", теперь содержится в четырёх разделах:
@@ -25,5 +27,5 @@ tags:
 
 REST API Облака Эвотор:
 
-* [Добавлены события подписки]
-* [Изменен формат чеков]
+* [Добавлены события подписки](https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost)
+* [Изменен формат чеков](https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1receipt%2Fpost)

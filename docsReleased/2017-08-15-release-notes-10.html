@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" news, blog, updates, release notes, announcements">
-<title>Что нового | Документация Эвотор</title>
+<meta name="keywords" content=",  ">
+<title>15.08.2017 | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -104,7 +104,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li class="active"><a href="whats_new.html">Что нового</a></li>
+                <li><a href="whats_new.html">Что нового</a></li>
                 
                 
                 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Что нового">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="15.08.2017">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -656,169 +656,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Content Column -->
     <div class="col-md-9">
-        <div class="post-header">
-   <h1 class="post-title-main">Что нового</h1>
-</div>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">15.08.2017</h1>
+        <p class="post-meta"><time datetime="2017-08-12T00:00:00+03:00" itemprop="datePublished">Aug 12, 2017</time> /
+            
+            
+            
+
+        </p>
 
 
+    </header>
 
-<div class="post-content">
-
-   
-
-    
-
-
-    
-
-  <div class="home">
-
-    <div class="post-list">
-        
-
-
-    <h2><a class="post-link" href="2017-08-15-release-notes-10.html">15.08.2017</a></h2>
-        <span class="post-meta">Aug 12, 2017 /
-            </span>
-        <p> Добавлено описание новых API:  Описано разделение чека на несколько чеков Описан API для печать внутри кассового чека Описан SDK для подключаемого USB-оборудования Описана замена кнопки “Продажа” на главном экране смарт-терминала Описаны точки интеграции со смарт-терминалом Описано получение данных от подключённых устройств в JavaScript-приложении... </p>
+    <div class="post-content" itemprop="articleBody">
 
         
 
+        <p>Добавлено описание новых API:</p>
 
-    <h2><a class="post-link" href="2017-06-01-release-notes-9.html">01.06.2017</a></h2>
-        <span class="post-meta">Jun 1, 2017 /
-            </span>
-        <p> 
-  В документацию добавлены разделы:
-    
-      Проксирование HTTP-запросов.
-      Скидки.
-    
-  
+<ul>
+  <li><a href="./doc_java_receipt_division.html">Описано разделение чека на несколько чеков</a></li>
+  <li><a href="./doc_java_receipt_print.html">Описан API для печать внутри кассового чека</a></li>
+  <li><a href="./doc_drivers_other.html">Описан SDK для подключаемого USB-оборудования</a></li>
+  <li><a href="./doc_java_app_icon.html">Описана замена кнопки “Продажа” на главном экране смарт-терминала</a></li>
+  <li><a href="./doc_app_integration_points.html">Описаны точки интеграции со смарт-терминалом</a></li>
+  <li><a href="./doc_js_devices.html">Описано получение данных от подключённых устройств в JavaScript-приложении</a></li>
+  <li><a href="doc_js_inventory.html">Описан поиск товара по идентификатору в JavaScript-приложении</a></li>
+  <li><a href="https://developer.evotor.ru/docs/doc_java_navigation.html">Описан вызов окон терминала</a></li>
+  <li><a href="https://developer.evotor.ru/docs/doc_java_receipt_interactions.html#Position">Обновлено описание позиции, добавлены поля</a></li>
+  <li>Добавлены интрукции по созданию Java и JavaScript-приложения</li>
+</ul>
 
- </p>
+<p>Изменена структура документации. Информация, ранее представленная в “SDK смарт-терминала”, теперь содержится в четырёх разделах:</p>
 
-        
+<ul>
+  <li>Разработка для смарт-терминала – содержит общие темы, относящиеся к разработке приложений для смарт-терминала.</li>
+  <li>Java SDK – содержит описание API, которые необходимы при разработке Java-приложения.</li>
+  <li>JavaScript SDK – содержит описание API, которые необходимы при разработке JavaScript-приложения.</li>
+  <li>Драйвера для оборудования – содержит описание API, необходимых при разработке драйверов для оборудования, подключаемого к смарт-терминалу.</li>
+</ul>
 
+<p>REST API Облака Эвотор:</p>
 
-    <h2><a class="post-link" href="2017-05-31-release-notes-8.html">31.05.2017</a></h2>
-        <span class="post-meta">May 31, 2017 /
-            </span>
-        <p>  Изменён адрес и движок веб-сайта с документации. Изменён состав полей вебхуков Регистрация учётной записи и Авторизация пользователя. Изменены списки ошибок вебхуков-запросов. В документации переработан раздел Эвотор API, теперь он называется Облако Эвотор. Из документации удалён раздел Публикация приложения. В документацию добавлены разделы:  <a... </p>
+<ul>
+  <li><a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost">Добавлены события подписки</a></li>
+  <li><a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1receipt%2Fpost">Изменен формат чеков</a></li>
+</ul>
 
-        
-
-
-    <h2><a class="post-link" href="2017-05-12-release-notes-7.html">12.05.2017</a></h2>
-        <span class="post-meta">May 12, 2017 /
-            </span>
-        <p> 
-  В документацию добавлен новый раздел “Inventory API”;
-  Исправлен вебхук Отправить чек: receipt изменён на receipts;
-  Изменено описание схемы товара: удалено поле fields.
-  Исправлено описание схемы дополнительных полей товара.
-
- </p>
-
-        
-
-
-    <h2><a class="post-link" href="2017-05-04-release-notes-6.html">04.05.2017</a></h2>
-        <span class="post-meta">May 4, 2017 /
-            </span>
-        <p> 
-  В документацию добавлены новые разделы:
-    
-      Получение данных от сканера штрихкодов
-      Печать информации на чеках
-      Биллинг:
-        
-          О биллинге
-          Тарифы
-        
-      
-    
-  
-  В описание событий подписки добавлено поле sequenceNumber.
-
- </p>
-
-        
-
-
-    <h2><a class="post-link" href="2017-04-28-release-notes-5.html">28.04.2017</a></h2>
-        <span class="post-meta">Apr 28, 2017 /
-            </span>
-        <p>  Изменён процесс добавления тестировщиков: теперь аккаунты для тестирования добавляются автоматически, повторно выкладывать приложение на тест не требуется. Исправлена неисправность, при которой добавленный тестировщик отображался на портале разработчиков но не попадал в базу данных. С 1.06.2016 при работе с /api/v1/inventories/* Эвотор не будет передавать пустые необязательные (не отмеченные как Required)... </p>
-
-        
-
-
-    <h2><a class="post-link" href="2017-04-20-release-notes-4.html">20.04.2017</a></h2>
-        <span class="post-meta">Apr 20, 2017 /
-            </span>
-        <p> 
-  В справочник API добавлен раздел “Схемы и дополнительные поля товаров”.
-  В справочник API, в раздел “Вебхуки-уведомления”, добавлено описание событий, связанных с биллингом пользователей Эвотор.
-  В документацию, в раздел SDK смарт-терминала, добавлена страница ”Плитка приложения на главном экране смарт-терминала”.
-  Исправлены ошибки.
-
- </p>
-
-        
-
-
-    <h2><a class="post-link" href="2017-04-06-release-notes-3.html">06.04.2017</a></h2>
-        <span class="post-meta">Apr 6, 2017 /
-            </span>
-        <p> 
-  Реорганизована структура справочника API: “Запросы к стороннему сервису” перенесены в разделы “вебхуки-запросы” и “вебхуки-уведомления”, добавлены ссылки на документацию и SDK смарт-терминала.
-  Исправлены ошибки.
-
- </p>
-
-        
-
-
-    <h2><a class="post-link" href="2017-03-31-release-notes-2.html">31.03.2017</a></h2>
-        <span class="post-meta">Mar 31, 2017 /
-            </span>
-        <p> 
-  “Запросы к стороннему сервису”: в раздел Учётные записи в стороннем сервисе добавлено описание запроса Получить токен приложения.
-  “Запросы к стороннему сервису”: в запросы добавлено описание возвращаемых ошибок.
-  “Запросы к облаку Эвотор”: исправлен формат часового пояса в запросе Получить список документов.
-  Исправлены ошибки.
-
- </p>
-
-        
-
-
-    <h2><a class="post-link" href="2017-03-22-release-notes-1.html">22.03.2017</a></h2>
-        <span class="post-meta">Mar 22, 2017 /
-            </span>
-        <p> 
-  Добавлены новые разделы документации “О платформе Эвотор” и “Интеграция с платформой”.
-  Версия 1.0.3: Изменена и доработана спецификация API.
-
- </p>
-
-        
-
-
-<hr />
-
-
-</div>
-
-
-    <div class="tags">
-        
     </div>
 
-    
 
-</div>
+
+</article>
+
 
 <hr class="shaded"/>
 
