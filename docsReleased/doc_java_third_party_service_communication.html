@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалJavaJavaScript,  ">
+<meta name="keywords" content="ТерминалJava,  ">
 <title>Обмен сообщениями со сторонним сервисом | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -345,6 +345,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_app_users.html">Работа с пользователями смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_navigation.html">Вызов окон смарт-терминала</a></li>
             
             
             
@@ -691,11 +698,13 @@ $('#toc').on('click', 'a', function() {
 
 <p><img src="images\cloud_proxy.png" alt="" /></p>
 
+<p>Для отправки запросов приложения могут использовать только 80 и 443 порт.</p>
+
 <p>Для отправки запросов требуется:</p>
 
 <ul>
   <li>На портале <a href="https://dev.evotor.ru">dev.evotor.ru</a>, указать список разрешённых URL, к которым может обращаться приложение.</li>
-  <li>Поддержать возможность обращения к сторонним сервисам в приложении. Способ обращения отличается в зависимости от типа приложения (Java или JS).</li>
+  <li>Поддержать возможность обращения к сторонним сервисам в приложении.</li>
 </ul>
 
 <h3 id="url">Настройка списка разрешённых URL</h3>
@@ -724,6 +733,8 @@ $('#toc').on('click', 'a', function() {
 <p>Приложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. Вы можете воспользоваться любым удобным способом отправки сообщения.</p>
 
 <p>Например, для отправки HTTP-сообщения из Java-приложения вы можете, например, использовать <a href="http://square.github.io/okhttp/">библиотеку OkHttp</a> или способ, описанный на <a href="https://developer.android.com/training/basics/network-ops/connecting.html">developer.android.com</a>.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Убедитесь, что ваше приложение не использует перечисленные ниже заголовки. В противном случае, смарт-терминал перезапишет их содержимое.</div>
 
 <h3 id="section">Шаг 2. Смарт-терминал передаёт сообщение в облако</h3>
 
@@ -786,10 +797,6 @@ $('#toc').on('click', 'a', function() {
         
         
         <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
-        
-        
-        
-        <a href="tag_JavaScript.html" class="btn btn-default navbar-btn cursorNorm" role="button">JavaScript</a>
         
         
         

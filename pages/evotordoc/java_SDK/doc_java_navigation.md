@@ -4,7 +4,7 @@ keywords:
 summary: Раздел содержит инструкцию по переходу к элементам управления смарт-терминалом.
 sidebar: evotordoc_sidebar
 permalink: doc_java_navigation.html
-tags: [Терминал, Java,]
+tags: [Терминал, Java]
 folder: java_SDK
 ---
 
@@ -16,21 +16,19 @@ folder: java_SDK
 
    ![](images\receiptsettings.png)
 
-* окно доступа к отчётам (**Отчёты** > **Кассовый чек**).
+* окно доступа к кассовым отчётам (**Отчёты** > **Кассовый отчёт**).
 
    ![](images\CashRegisterReport.png)
 
-*Чтобы вызывать окна смарт-терминала:*
+*Чтобы вызывать необходимое окно выполните код:*
 
-   в коде кнопки, по нажатию которой вы хотите вызвать окно, добавьте один из следующих элементов:
+   * Если вы хотите вызвать окно настройки клише выполните код:
 
-   * Если вы хотите вызвать окно настройки клише чека добавьте:
+```java
+startActivity(NavigationApi.createIntentForCashReceiptSettings());
+```
+   * Если вы хотите вызвать окно доступа к кассовым отчётам выполните код:
 
-      ```java
-      startActivity(NavigationApi.createIntentForCashReceiptSettings());
-      ```
-   * Если вы хотите вызвать окно доступа к отчётам:
-
-      ```java
-      startActivity(NavigationApi.createIntentForCashRegisterReport());
-      ```
+```java
+startActivity(NavigationApi.createIntentForCashRegisterReport());
+```

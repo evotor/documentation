@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_third_party_service_communication.html
-tags: [Терминал, Java, JavaScript]
+tags: [Терминал, Java]
 folder: java_SDK
 ---
 
@@ -12,10 +12,12 @@ folder: java_SDK
 
 ![](images\cloud_proxy.png)
 
+Для отправки запросов приложения могут использовать только 80 и 443 порт.
+
 Для отправки запросов требуется:
 
 * На портале [dev.evotor.ru](https://dev.evotor.ru), указать список разрешённых URL, к которым может обращаться приложение.
-* Поддержать возможность обращения к сторонним сервисам в приложении. Способ обращения отличается в зависимости от типа приложения (Java или JS).
+* Поддержать возможность обращения к сторонним сервисам в приложении.
 
 ### Настройка списка разрешённых URL
 
@@ -40,7 +42,7 @@ folder: java_SDK
 
 Например, для отправки HTTP-сообщения из Java-приложения вы можете, например, использовать [библиотеку OkHttp](http://square.github.io/okhttp/) или способ, описанный на [developer.android.com](https://developer.android.com/training/basics/network-ops/connecting.html).
 
-
+{% include note.html content="Убедитесь, что ваше приложение не использует перечисленные ниже заголовки. В противном случае, смарт-терминал перезапишет их содержимое." %}
 
 ### Шаг 2. Смарт-терминал передаёт сообщение в облако
 

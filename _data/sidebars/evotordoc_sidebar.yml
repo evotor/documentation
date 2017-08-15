@@ -293,6 +293,10 @@ entries:
       url: /doc_java_app_users.html
       output: web
 
+    - title: Вызов окон смарт-терминала
+      url: /doc_java_navigation.html
+      output: web
+
       subfolders:
       - title: Работа с чеком
         output: web

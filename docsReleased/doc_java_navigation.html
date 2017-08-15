@@ -348,6 +348,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            
+            <li class="active"><a href="doc_java_navigation.html">Вызов окон смарт-терминала</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с чеком</a>
                 <ul>
@@ -700,32 +707,28 @@ $('#toc').on('click', 'a', function() {
     <p><img src="images\receiptsettings.png" alt="" /></p>
   </li>
   <li>
-    <p>окно доступа к отчётам (<strong>Отчёты</strong> &gt; <strong>Кассовый чек</strong>).</p>
+    <p>окно доступа к кассовым отчётам (<strong>Отчёты</strong> &gt; <strong>Кассовый отчёт</strong>).</p>
 
     <p><img src="images\CashRegisterReport.png" alt="" /></p>
   </li>
 </ul>
 
-<p><em>Чтобы вызывать окна смарт-терминала:</em></p>
-
-<p>в коде кнопки, по нажатию которой вы хотите вызвать окно, добавьте один из следующих элементов:</p>
+<p><em>Чтобы вызывать необходимое окно выполните код:</em></p>
 
 <ul>
-  <li>
-    <p>Если вы хотите вызвать окно настройки клише чека добавьте:</p>
-
-    <p><code class="highlighter-rouge">java
- startActivity(NavigationApi.createIntentForCashReceiptSettings());
-</code></p>
-  </li>
-  <li>
-    <p>Если вы хотите вызвать окно доступа к отчётам:</p>
-
-    <p><code class="highlighter-rouge">java
- startActivity(NavigationApi.createIntentForCashRegisterReport());
-</code></p>
-  </li>
+  <li>Если вы хотите вызвать окно настройки клише выполните код:</li>
 </ul>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">startActivity</span><span class="o">(</span><span class="n">NavigationApi</span><span class="o">.</span><span class="na">createIntentForCashReceiptSettings</span><span class="o">());</span>
+</code></pre>
+</div>
+<ul>
+  <li>Если вы хотите вызвать окно доступа к кассовым отчётам выполните код:</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">startActivity</span><span class="o">(</span><span class="n">NavigationApi</span><span class="o">.</span><span class="na">createIntentForCashRegisterReport</span><span class="o">());</span>
+</code></pre>
+</div>
 
 
     <div class="tags">

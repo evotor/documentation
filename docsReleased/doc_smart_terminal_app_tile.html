@@ -348,6 +348,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            
+            <li><a href="doc_java_navigation.html">Вызов окон смарт-терминала</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с чеком</a>
                 <ul>
@@ -689,137 +696,63 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Вы можете запустить своё приложение по плитке, расположенной на одном из экранов смарт-терминала:</p>
+  <h3 id="section">Получение данных о товаре</h3>
 
-<ul>
-  <li>на главном экране;</li>
-  <li>на экране продажи;</li>
-  <li>на экране возврата.</li>
-</ul>
+<p><em>Чтобы приложение получало данные от весов:</em></p>
 
-<p>Вы можете запускать приложение с помощью плитки на главном экране смарт-терминала или с помощью иконок на экране продажи и/или возврата товара</p>
+<p>Используйте функцию <code class="highlighter-rouge">getProduct()</code>:</p>
 
-<p>Вы можете интегрировать своё приложение в существующий процесс смарт-терминала, например, продажу или работу с оборудованием, или добавить плитку приложения на главный экран. Плиток может быть несколько, если приложение реализует независимые действия, например, плитки “Продать товар” и “Вернуть товар”.</p>
+<p><code class="highlighter-rouge">
+   fun getProduct(commodityUuid: String): JSValue
+  </code>
+   Весы передают данные в параметры функции.</p>
 
-<p><img src="images\Tile_example.png" alt="Пример плитки" /></p>
+<h3 id="section-1">Взвешивание товара</h3>
 
-<h3 id="section">Рекомендации по добавлению плитки</h3>
+<p><em>Чтобы приложение получало данные от весов:</em></p>
 
-<p>Добавляйте плитку если:</p>
-
-<ul>
-  <li>у приложения есть свой интерфейс;</li>
-  <li>приложение реализует полезное действие и / или предоставляет сотруднику магазина доступ к аналитической информации.</li>
-</ul>
-
-<p>Вы можете изменять следующие параметры плитки:</p>
-
-<ul>
+<ol>
   <li>
-    <p><strong>Цвет</strong>. Может быть любым, пока на его фоне отчётливо отображаются символы и иконка.</p>
+    <p>В <a href="./doc_js_app_manifest.html">манифесте приложения</a> укажите соответствующие права:</p>
 
-    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Как правило цвет плитки делают таким же как и цвет основных кнопок в интерфейсе приложения.</div>
+    <div class="language-yaml highlighter-rouge"><pre class="highlight"><code></code></pre>
+    </div>
   </li>
   <li>
-    <p><strong>Название</strong>. Может быть названием приложения или полезного действия, например, “Продажи за неделю”. Плитка отображает до 20 символов. Остальные символы скрываются многоточием.</p>
-  </li>
-  <li>
-    <p><strong>Иконка</strong>. Иконка должна быть квадратной – 64 dp. Требуется обеспечить набор иконок в трёх разрешениях: 96, 192, 256px.</p>
-  </li>
-</ul>
+    <p>Используйте функцию <code class="highlighter-rouge">getWeight()</code>:</p>
 
-<!-- ### Java-приложение
-
-Чтобы добавить плитку java-приложения на главный экран смарт-терминала, в манифесте приложения, измените соответствующий элемент `<Activity>` следующим образом:
-
-```xml
-<activity
-    android:name=".someActivity"
-    android:icon="@drawable/icon"
-    android:label="Example tile"
-    >
-    <meta-data
-        android:name="ru.evotor.launcher.BACKGROUND_COLOR"
-        android:value="#133788" />
-    <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.EVOTOR" />
-    </intent-filter>
-</activity>
-```
-
-Где:
-
-* Атрибут `android:name` задаёт название соответствующего элемента `Activity`.
-* Атрибут `android:icon` задаёт иконку, которая отображается на плитке.
-* Атрибут `android:label` название плитки.
-* Необязательный тег `<meta-data>`, содержит атрибуты:
-    * `android:name` – имя параметра, который задаёт цвет иконки.
-    *  `android:value` – значение параметра, который задаёт цвет иконки в шестнадцатиричной кодировке.
-* Интент фильтр содержит соответствующие элементы action (`android:name="android.intent.action.MAIN"`) и category (`android:name="android.intent.category.EVOTOR"`).
-
-Вы также можете добавить иконку приложения на экран продажи, например, для [начисления скидок](./doc_discounts.html). Для этого создайте соответствующую службу:
-
-```xml
-<service
-  android:name=".InventoryAPI.ExampleService"
-  android:enabled="true"
-  android:exported="true"
-  android:icon="@mipmap/pirate"
-  android:label="DiscByButton">
-  <meta-data
-  android:name="ru.evotor.sales_screen.BACKGROUND_COLOR"
-  android:value="#cc0000" />
-    <intent-filter android:priority="20">
-      <category android:name="android.intent.category.DEFAULT" />
-      <action android:name="evo.v2.receipt.sell.receiptDiscount" />
-    </intent-filter>
-</service>
-``` -->
-
-<h3 id="js-">JS-приложение</h3>
-
-<p>Чтобы добавить плитку JS-приложения на главный экран смарт-терминала, в файле <em>client.yaml</em>, модифицируйте список <code class="highlighter-rouge">views</code> следующим образом:</p>
-
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code> <span class="s">views</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">Example</span>
-    <span class="s">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Заголовок</span><span class="nv"> </span><span class="s">окна"</span>
-    <span class="s">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Название</span><span class="nv"> </span><span class="s">приложения</span><span class="nv"> </span><span class="s">для</span><span class="nv"> </span><span class="s">плитки"</span>
-    <span class="s">color</span><span class="pi">:</span> <span class="c1">#133788</span>
-    <span class="s">icon_96</span><span class="pi">:</span> <span class="s">client/views/example/icon-96.png</span>
-    <span class="s">icon_192</span><span class="pi">:</span> <span class="s">client/views/example/icon-192.png</span>
-    <span class="s">icon_256</span><span class="pi">:</span> <span class="s">client/views/example/icon-256.png</span>
-    <span class="s">source</span><span class="pi">:</span> <span class="s">client/views/example/view.html</span>
-    <span class="s">point</span><span class="pi">:</span> <span class="s">MAIN_SCREEN</span>
-    <span class="s">grants</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
-    <span class="s">scripts</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">no-script</span>
-    <span class="s">styles</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
+    <div class="highlighter-rouge"><pre class="highlight"><code>override fun getWeight(): JSValue {
+    try {
+        val weight = DeviceServiceConnector.getScalesService().getWeight(ru.evotor.devices.commons.Constants.DEFAULT_DEVICE_INDEX)
+        return JSValue(jsContext, weight?.weightInGrams.toString())
+    } catch (exc: DeviceServiceException) {
+        exc.printStackTrace()
+        return JSValue(jsContext, null)
+    }
+}
 </code></pre>
-</div>
-
-<p>Где:</p>
-
-<ul>
-  <li>
-    <p><code class="highlighter-rouge">name</code> – задаёт название элемента списка <code class="highlighter-rouge">views</code>.</p>
-
-    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Название элемента может содержать только латинские буквы, цифры и символ “_”.</div>
+    </div>
+    <p>Весы передают данные в параметры функции.</p>
   </li>
-  <li><code class="highlighter-rouge">header</code> – задаёт заголовок окна, которое открывается по нажатию на плитку.</li>
-  <li><code class="highlighter-rouge">label</code> – задаёт название плитки.</li>
-  <li><code class="highlighter-rouge">color</code> – задаёт цвет плитки в шестнадцатиричной кодировке.</li>
-  <li><code class="highlighter-rouge">icon_96</code> – задаёт путь к иконке в разрешении 96 х 96 пикселей. Иконка копируется в папку drawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
-  <li><code class="highlighter-rouge">icon_192</code> – задаёт путь к иконке в разрешении 192 х 192 пикселя. Иконка копируется в папку xxdrawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
-  <li><code class="highlighter-rouge">icon_256</code> – задаёт путь к иконке в разрешении 256 х 256 пикселей. Иконка копируется в папку xxxdrawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
-  <li><code class="highlighter-rouge">source</code> – задаёт полный путь к html-файлу, который открывается по нажатию на плитку.</li>
-  <li><code class="highlighter-rouge">point</code> – задаёт экран смарт-терминала, с которого вызывается приложение. Возможные значения: <code class="highlighter-rouge">SALES_SCREEN</code> и <code class="highlighter-rouge">MAIN_SCREEN</code></li>
-  <li><code class="highlighter-rouge">grants</code> – задаёт <a href="doc_smart_terminal_app_grants.html">права приложения</a>.</li>
-  <li><code class="highlighter-rouge">scripts</code> – задаёт список подключаемых скриптов.</li>
-  <li><code class="highlighter-rouge">styles</code> – задаёт список подключаемых стилей.</li>
-</ul>
+</ol>
+
+<h3 id="section-2">Сканирование штрихкодов</h3>
+
+<p><em>Чтобы приложение получало данные от сканера штрихкодов:</em></p>
+
+<ol>
+  <li>
+    <p>В <a href="./doc_js_app_manifest.html">манифесте приложения</a> укажите соответствующие права:</p>
+
+    <div class="language-yaml highlighter-rouge"><pre class="highlight"><code></code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Используйте функцию <code class="highlighter-rouge">barcodeScanned()</code>.</p>
+
+    <p>Сканер штрихкодов передаёт данные в параметры функции.</p>
+  </li>
+</ol>
 
 
     <div class="tags">
