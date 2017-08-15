@@ -4,13 +4,15 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_third_party_service_communication.html
-tags: [Терминал, Java]
+tags: [Терминал, JavaScript]
 folder: JS_SDK
 ---
 
 Все запросы приложений к стороннему сервису проходят через Облако Эвотор:
 
 ![](images\cloud_proxy.png)
+
+Для отправки запросов приложения могут использовать только 80 и 443 порт.
 
 Для отправки запросов требуется:
 
