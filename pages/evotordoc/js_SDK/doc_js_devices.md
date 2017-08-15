@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_devices.html
-tags: [Терминал, JS]
+tags: [Терминал, JavaScript]
 folder: js_SDK
 ---
 
@@ -31,13 +31,15 @@ var devices = require('devices')
 
 #### Получить штрихкод товара
 
+Приложение может получать данные от сканера штрихкодов только во view.html. Для этого используйте метод:
+
 ```javascript
-devices.barcodeScanned(scanneddata)
+barcodeScanned(scanneddata)
 ```
 
 Метод возвращает данные, полученные от сканера штрихкодов.
 
-Метод можно реализовать только во view.html.
+{% include note.html content="В плагине или демоне данные от сканера штрихкодов получить нельзя." %}
 
 #### Получить вес товара
 

@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалJS,  ">
+<meta name="keywords" content="ТерминалJavaScript,  ">
 <title>Получение данных с подключённого оборудования | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -717,13 +717,15 @@ $('#toc').on('click', 'a', function() {
 
 <h4 id="section-3">Получить штрихкод товара</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">devices</span><span class="p">.</span><span class="nx">barcodeScanned</span><span class="p">(</span><span class="nx">scanneddata</span><span class="p">)</span>
+<p>Приложение может получать данные от сканера штрихкодов только во view.html. Для этого используйте метод:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">barcodeScanned</span><span class="p">(</span><span class="nx">scanneddata</span><span class="p">)</span>
 </code></pre>
 </div>
 
 <p>Метод возвращает данные, полученные от сканера штрихкодов.</p>
 
-<p>Метод можно реализовать только во view.html.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> В плагине или демоне данные от сканера штрихкодов получить нельзя.</div>
 
 <h4 id="section-4">Получить вес товара</h4>
 
@@ -745,6 +747,8 @@ $('#toc').on('click', 'a', function() {
         <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
         
         
+        
+        <a href="tag_JavaScript.html" class="btn btn-default navbar-btn cursorNorm" role="button">JavaScript</a>
         
         
         
