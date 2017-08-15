@@ -301,17 +301,6 @@
 
 
 {
-"title": "Запросы REST API Эвотор",
-"tags": "ОблакоТовары",
-"keywords": "",
-"url": "doc_evotor_rest_api_calls.html",
-"summary": "Раздел содержит информацию о запросах, которые вы можете отправлять в REST API Эвотор"
-}
-,
-
-
-
-{
 "title": "Примеры запросов",
 "tags": "Облако ЭвоторТовары",
 "keywords": "",
@@ -708,33 +697,11 @@
 
 
 {
-"title": "Запросы к стороннему сервису",
-"tags": "ОблакоТовары",
-"keywords": "",
-"url": "doc_outgoing_calls_protocol.html",
-"summary": "Раздел содержит информацию о запросах Эвотора к стороннему сервису."
-}
-,
-
-
-
-{
 "title": "Выплаты",
 "tags": "",
 "keywords": "",
 "url": "doc_payoff.html",
 "summary": ""
-}
-,
-
-
-
-{
-"title": "Изменения API и SDK",
-"tags": "",
-"keywords": "",
-"url": "doc_release_notes.html",
-"summary": "Тут релиз ноты"
 }
 ,
 
