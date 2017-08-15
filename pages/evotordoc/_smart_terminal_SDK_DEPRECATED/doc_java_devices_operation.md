@@ -1,6 +1,6 @@
 ---
 title: Иконка JS-приложения в интерфейсе смарт-терминала
-keywords: sample
+keywords:
 summary: "Раздел содержит требования к плитке приложения, а также информацию о том как добавить плитку в интерфейс смарт-терминала."
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_app_tile.html

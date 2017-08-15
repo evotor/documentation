@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_online_store_receipt.html
-tags: [Терминал, Java]
+tags: [Терминал, Java, Чеки]
 folder: java_SDK
 ---
 

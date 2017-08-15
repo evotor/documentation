@@ -1,6 +1,6 @@
 ---
 title: Открытие чека в приложении
-keywords: sample
+keywords:
 summary: Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты.
 sidebar: evotordoc_sidebar
 permalink: doc_receipt_creation.html

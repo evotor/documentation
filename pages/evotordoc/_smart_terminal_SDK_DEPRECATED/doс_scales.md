@@ -1,6 +1,6 @@
 ---
 title: Весы
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_scales.html

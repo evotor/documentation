@@ -1,6 +1,6 @@
 ---
 title: Создание JS-приложения с помощью шаблона
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_JS_template_integration.html

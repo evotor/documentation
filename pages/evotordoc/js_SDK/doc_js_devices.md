@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_devices.html
-tags: [Терминал, JavaScript]
+tags: [Терминал, JavaScript, Оборудование]
 folder: js_SDK
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Работа с пользователями смарт-терминала
-keywords: sample
+keywords:
 summary: "Раздел содержит описание Users API смарт-терминала."
 sidebar: evotordoc_sidebar
 permalink: doc_java_app_users.html

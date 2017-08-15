@@ -1,6 +1,6 @@
 ---
 title: SDK для банковский терминалов
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_drivers_pinpads.html

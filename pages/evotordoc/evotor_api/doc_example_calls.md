@@ -1,6 +1,6 @@
 ---
 title: Примеры запросов
-keywords: sample
+keywords:
 summary: "Раздел содержит примеры запросов к Эвотор API и вебхуков облака Эвотор."
 sidebar: evotordoc_sidebar
 permalink: doc_example_calls.html

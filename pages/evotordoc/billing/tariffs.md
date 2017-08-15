@@ -1,6 +1,6 @@
 ---
 title: Тарифы
-keywords: sample
+keywords:
 summary: "Раздел содержит описание тарифов и типов оплаты приложения."
 sidebar: evotordoc_sidebar
 permalink: doc_tariffs.html

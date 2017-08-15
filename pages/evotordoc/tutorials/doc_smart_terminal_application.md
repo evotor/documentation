@@ -1,6 +1,6 @@
 ---
 title: Приложение для смарт-терминала
-keywords: sample
+keywords:
 summary: "Раздел содержит информацию, которая потребуется при разработке приложения для терминала."
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_application.html

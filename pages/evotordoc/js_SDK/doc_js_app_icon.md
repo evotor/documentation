@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_app_icon.html
-tags: [Терминал, JS]
+tags: [Терминал, JavaScript]
 folder: js_SDK
 ---
 

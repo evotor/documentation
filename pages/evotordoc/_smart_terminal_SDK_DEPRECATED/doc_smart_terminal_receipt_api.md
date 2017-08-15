@@ -1,6 +1,6 @@
 ---
 title: Поиск товара по штрихкоду
-keywords: sample
+keywords:
 summary: "Раздел содержит описание Receipt API смарт-терминала."
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_receipt_api.html

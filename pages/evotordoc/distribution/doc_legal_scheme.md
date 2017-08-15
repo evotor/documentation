@@ -1,6 +1,6 @@
 ---
 title: Юридическая схема
-keywords: sample
+keywords:
 summary: "Раздел содержит информацию описание юридического взаимодействия с Эвотором"
 sidebar: evotordoc_sidebar
 permalink: doc_legal_scheme.html

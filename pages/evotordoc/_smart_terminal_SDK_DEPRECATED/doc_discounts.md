@@ -1,6 +1,6 @@
 ---
 title: Скидки
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_discounts.html

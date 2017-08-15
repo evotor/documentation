@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_inventory.html
-tags: [Терминал, Java, JavaScript]
+tags: [Терминал, Java, Товары]
 folder: java_SDK
 ---
 
@@ -76,7 +76,7 @@ fun getField(context: Context, fieldUuid: String): Field?
    `title` – заголовок, который отображается в интерфейсе смарт-терминала.
    `type` – тип поля: TEXT_FIELD или DICTIONARY_FIELD.
 
-   Поля, уникальные типа TEXT_FIELD:
+   Поля, уникальные для типа TEXT_FIELD:
 
    * `data` – Валидный JSON-объект, который содержит данные, отображаемые с помощью JavaScript в интерфейсе смарт-терминала.
 

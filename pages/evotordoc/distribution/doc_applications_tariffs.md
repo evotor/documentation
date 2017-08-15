@@ -1,6 +1,6 @@
 ---
 title: Подписка
-keywords: sample
+keywords:
 summary: "Раздел содержит информацию тарифах."
 sidebar: evotordoc_sidebar
 permalink: doc_applications_tariffs.html

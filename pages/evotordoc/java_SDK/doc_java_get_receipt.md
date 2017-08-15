@@ -4,7 +4,7 @@ keywords:
 summary: "Раздел содержит описание интерфейса, с помощью которого можно получить данные сформированного чека."
 sidebar: evotordoc_sidebar
 permalink: doc_java_get_receipt.html
-tags: [Терминал, Java]
+tags: [Терминал, Java, Чеки]
 folder: java_SDK
 ---
 

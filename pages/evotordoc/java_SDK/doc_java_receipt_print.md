@@ -1,6 +1,6 @@
 ---
 title: Печать внутри кассового чека
-keywords: sample
+keywords:
 summary: "Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека."
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_print.html

@@ -1,6 +1,6 @@
 ---
 title: SDK для подключаемого USB-оборудования
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_drivers_other.html

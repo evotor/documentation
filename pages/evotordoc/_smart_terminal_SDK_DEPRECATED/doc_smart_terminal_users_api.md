@@ -1,6 +1,6 @@
 ---
 title: Работа с пользователями
-keywords: sample
+keywords:
 summary: "Раздел содержит описание Users API смарт-терминала."
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_users_api.html

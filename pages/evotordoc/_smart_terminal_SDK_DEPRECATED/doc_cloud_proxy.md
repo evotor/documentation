@@ -1,6 +1,6 @@
 ---
 title: Обмен данными между приложением и сторонним сервисом
-keywords: sample
+keywords:
 summary: "Раздел содержит пошаговое описание обмена сообщениями между приложением и сторонним сервисом"
 sidebar: evotordoc_sidebar
 permalink: doc_cloud_proxy.html

@@ -1,6 +1,6 @@
 ---
 title: О биллинге
-keywords: sample
+keywords:
 summary: "Раздел содержит общую информацию о биллинге пользователей Эвотор. "
 sidebar: evotordoc_sidebar
 permalink: doc_about_billing.html

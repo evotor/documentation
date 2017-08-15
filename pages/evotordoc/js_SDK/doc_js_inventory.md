@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_inventory.html
-tags: [Терминал, JS]
+tags: [Терминал, JavaScript, Товары]
 folder: js_SDK
 ---
 

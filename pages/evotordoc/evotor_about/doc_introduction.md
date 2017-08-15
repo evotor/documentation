@@ -1,6 +1,6 @@
 ---
 title: Введение
-keywords: sample
+keywords:
 summary: "Раздел содержит вводную информацию для работы с нашей документацией."
 sidebar: evotordoc_sidebar
 permalink: doc_introduction.html

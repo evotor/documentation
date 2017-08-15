@@ -1,6 +1,6 @@
 ---
 title: Приложения для смарт-терминала и Облако Эвотор
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_applications.html

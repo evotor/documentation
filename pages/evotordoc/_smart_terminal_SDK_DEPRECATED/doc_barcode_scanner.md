@@ -1,6 +1,6 @@
 ---
 title: Сканер штрихкодов
-keywords: sample
+keywords:
 summary: "Раздел содержит инструкцию о том, как подготовить приложение для получения данных от сканера штрихкодов."
 sidebar: evotordoc_sidebar
 permalink: doc_barcode_scanner.html

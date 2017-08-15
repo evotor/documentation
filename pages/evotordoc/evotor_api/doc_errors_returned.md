@@ -1,6 +1,6 @@
 ---
 title: Возвращаемые ошибки
-keywords: sample
+keywords:
 summary: "Раздел содержит информацию о возвращаемых ошибках"
 sidebar: evotordoc_sidebar
 permalink: doc_errors_returned.html

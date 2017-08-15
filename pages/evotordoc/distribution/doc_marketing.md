@@ -1,6 +1,6 @@
 ---
 title: Продвижение
-keywords: sample
+keywords:
 summary: "Раздел содержит информацию продвижении вашего приложения в магазине приложений."
 sidebar: evotordoc_sidebar
 permalink: doc_marketing.html

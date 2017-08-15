@@ -1,6 +1,6 @@
 ---
 title: Манифест JS-приложения
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_app_manifest.html

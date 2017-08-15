@@ -1,6 +1,6 @@
 ---
 title: Работа с позициями чека
-keywords: sample
+keywords:
 summary: Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека.
 sidebar: evotordoc_sidebar
 permalink: doc_receipt_interactions.html

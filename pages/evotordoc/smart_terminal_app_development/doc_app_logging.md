@@ -1,6 +1,6 @@
 ---
 title: Логирование
-keywords: sample
+keywords:
 summary: "Раздел содержит информацию о доступе к логам приложений."
 sidebar: evotordoc_sidebar
 permalink: doc_app_logging.html

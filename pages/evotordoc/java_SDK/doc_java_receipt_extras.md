@@ -4,7 +4,7 @@ keywords:
 summary: Раздел содержит информацию о том, как и когда вы можете добавлять дополнительные поля в чеки.
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_extras.html
-tags: [Терминал, Java]
+tags: [Терминал, Java, Чеки]
 folder: java_SDK
 ---
 

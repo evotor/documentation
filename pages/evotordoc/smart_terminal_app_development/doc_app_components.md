@@ -1,6 +1,6 @@
 ---
 title: Компоненты приложения
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_app_components.html

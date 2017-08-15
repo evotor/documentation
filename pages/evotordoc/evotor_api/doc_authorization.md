@@ -1,6 +1,6 @@
 ---
 title: Авторизация
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_authorization.html

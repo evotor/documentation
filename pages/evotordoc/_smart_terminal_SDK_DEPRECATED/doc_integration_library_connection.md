@@ -1,6 +1,6 @@
 ---
 title: Подключение оборудования
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_integration_library_connection.html

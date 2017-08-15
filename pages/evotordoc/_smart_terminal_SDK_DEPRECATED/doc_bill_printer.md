@@ -1,6 +1,6 @@
 ---
 title: Принтер чеков
-keywords: sample
+keywords:
 summary: "Раздел содержит информацию о том, как приложение может работать с принтером чеков."
 sidebar: evotordoc_sidebar
 permalink: doc_bill_printer.html

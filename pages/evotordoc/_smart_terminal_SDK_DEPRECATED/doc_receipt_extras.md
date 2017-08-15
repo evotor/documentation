@@ -1,6 +1,6 @@
 ---
 title: Создание дополнительных полей в чеке
-keywords: sample
+keywords:
 summary: Раздел содержит информацию о том, как и когда вы можете добавлять дополнительные поля в чеки.
 sidebar: evotordoc_sidebar
 permalink: doc_receipt_extras.html

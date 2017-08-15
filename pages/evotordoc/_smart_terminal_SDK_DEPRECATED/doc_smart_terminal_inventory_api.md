@@ -1,6 +1,6 @@
 ---
 title: Товароучёт
-keywords: sample
+keywords:
 summary: "Раздел содержит описание Inventory API смарт-терминала."
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_inventory_api.html

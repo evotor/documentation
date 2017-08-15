@@ -1,6 +1,6 @@
 ---
 title: Запросы к стороннему сервису
-keywords: sample
+keywords:
 summary: "Раздел содержит информацию о запросах Эвотора к стороннему сервису."
 sidebar: evotordoc_sidebar
 permalink: doc_outgoing_calls_protocol.html

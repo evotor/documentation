@@ -1,6 +1,6 @@
 ---
 title: Встраивание приложения
-keywords: sample
+keywords:
 summary: "Раздел содержит пошаговое описание обмена сообщениями между приложением и сторонним сервисом"
 sidebar: evotordoc_sidebar
 permalink: doc_integrated_app_points.html

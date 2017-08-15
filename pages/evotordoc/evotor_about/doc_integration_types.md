@@ -1,6 +1,6 @@
 ---
 title: Способы интеграции
-keywords: sample
+keywords:
 summary: "Раздел содержит  краткое описание типов и технологий разработки приложений для платформы Эвотор."
 sidebar: evotordoc_sidebar
 permalink: doc_integration_types.html

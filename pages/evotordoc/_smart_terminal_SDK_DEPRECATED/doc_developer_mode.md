@@ -1,6 +1,6 @@
 ---
 title: Включение режима разработчика
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_developer_mode.html

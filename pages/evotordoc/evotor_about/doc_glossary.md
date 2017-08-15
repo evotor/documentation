@@ -1,6 +1,6 @@
 ---
 title: Термины и определения
-keywords: sample
+keywords:
 summary: "В этом разделе вы найдёте глоссарий терминов, которые встречаются в нашей документации."
 sidebar: evotordoc_sidebar
 permalink: doc_glossary.html

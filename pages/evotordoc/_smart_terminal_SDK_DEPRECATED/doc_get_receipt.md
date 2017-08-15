@@ -1,6 +1,6 @@
 ---
 title: Получить данные сформированного чека
-keywords: sample
+keywords:
 summary: "Раздел содержит описание интерфейса, с помощью которого можно получить данные сформированного чека."
 sidebar: evotordoc_sidebar
 permalink: doc_get_receipt.html

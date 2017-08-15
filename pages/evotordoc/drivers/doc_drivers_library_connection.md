@@ -1,6 +1,6 @@
 ---
 title: Подготовка к разработке
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_drivers_library_connection.html

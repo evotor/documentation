@@ -1,6 +1,6 @@
 ---
 title: Test
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: test.html

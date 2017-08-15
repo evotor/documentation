@@ -4,7 +4,7 @@ keywords: Раздел содержит описание методов, кот�
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_receipt_interactions.html
-tags: [Терминал, JS]
+tags: [Терминал, JavaScript, Чеки]
 folder: js_SDK
 ---
 

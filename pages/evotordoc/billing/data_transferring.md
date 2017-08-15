@@ -1,6 +1,6 @@
 ---
 title: Обмен данными
-keywords: sample
+keywords:
 summary: "Раздел содержит краткую информацию какие данные и на какие URL передаёт Эвотор."
 sidebar: evotordoc_sidebar
 permalink: doc_data_transfering.html

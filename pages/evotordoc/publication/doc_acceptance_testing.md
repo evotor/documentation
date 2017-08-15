@@ -1,6 +1,6 @@
 ---
 title: Приёмочное тестирование приложения
-keywords: sample
+keywords:
 summary: "Раздел содержит информацию о проверках, которые мы выполняем перед размещением приложения в Магазине приложений."
 sidebar: evotordoc_sidebar
 permalink: doc_acceptance_testing.html

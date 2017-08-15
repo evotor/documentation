@@ -1,6 +1,6 @@
 ---
 title: Изменения API и SDK
-keywords: sample
+keywords:
 summary: "Тут релиз ноты"
 sidebar: evotordoc_sidebar
 permalink: doc_release_notes.html

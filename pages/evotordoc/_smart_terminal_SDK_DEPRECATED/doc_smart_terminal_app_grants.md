@@ -1,6 +1,6 @@
 ---
 title: Права приложения
-keywords: sample
+keywords:
 summary: "Раздел содержит информацию правах пользователей смарт терминала и примеры того, как получить данные о них."
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_app_grants.html

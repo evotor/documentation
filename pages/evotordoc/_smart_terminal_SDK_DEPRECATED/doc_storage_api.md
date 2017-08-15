@@ -1,6 +1,6 @@
 ---
 title: Storage API
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_storage_api.html

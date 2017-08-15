@@ -1,6 +1,6 @@
 ---
 title: Условия
-keywords: sample
+keywords:
 summary: "Раздел содержит информацию об условиях работы с Эвотором"
 sidebar: evotordoc_sidebar
 permalink: doc_conditions.html

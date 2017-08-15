@@ -1,6 +1,6 @@
 ---
 title: Перевод приложения в тестирование
-keywords: sample
+keywords:
 summary: "Раздел содержит инструкцию о том, как приступить к тестированию своего приложения."
 sidebar: evotordoc_sidebar
 permalink: doc_app_testing.html

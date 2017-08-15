@@ -1,6 +1,6 @@
 ---
 title: SDK для весов
-keywords: sample
+keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_drivers_scales.html

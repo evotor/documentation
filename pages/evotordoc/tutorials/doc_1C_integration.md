@@ -1,6 +1,6 @@
 ---
 title: Интеграция с 1С
-keywords: sample
+keywords:
 summary: "Раздел содержит информацию об интеграции с 1С"
 sidebar: evotordoc_sidebar
 permalink: doc_1C_integration.html
