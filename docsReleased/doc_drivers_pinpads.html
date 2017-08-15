@@ -867,9 +867,7 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="binder">Описание указанных Binder’ов</h3>
 
-<p>Если нельзя выполнить действие, например, взвесить для метода getWeight, используйте один из типов <code class="highlighter-rouge">Exception</code> с легкочитаемым описанием для всех методов.</p>
-
-<p>Поддерживаемые типы <code class="highlighter-rouge">Exception</code>:</p>
+<p>Если нельзя выполнить действие, используйте исключение (<code class="highlighter-rouge">Exception</code>) одного из следующих типов:</p>
 
 <ul>
   <li><code class="highlighter-rouge">BadParcelableException</code>;</li>
@@ -880,9 +878,14 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">NetworkOnMainThreadException</code>.</li>
 </ul>
 
+<p>Пример:
+<code class="highlighter-rouge">java
+throw new IllegalStateException();
+</code></p>
+
 <p>Подробное описание типов <code class="highlighter-rouge">Exception</code> на портале <a href="developer.android.com">developer.android.com</a></p>
 
-<p><code class="highlighter-rouge"> IUsbDriverManagerService.Stub</code> – класс для управления драйверами usb-устройств: подключение и отключение устройств происходят здесь. Требуется реализовать методы <code class="highlighter-rouge">addUsbDevice</code> и <code class="highlighter-rouge">destroy</code>.</p>
+<p><code class="highlighter-rouge">IUsbDriverManagerService.Stub</code> – класс для управления драйверами usb-устройств: подключение и отключение устройств происходят здесь. Требуется реализовать методы <code class="highlighter-rouge">addUsbDevice</code> и <code class="highlighter-rouge">destroy</code>.</p>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.IUsbDriverManagerService</span><span class="o">;</span>
 

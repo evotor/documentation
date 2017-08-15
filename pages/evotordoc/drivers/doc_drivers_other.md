@@ -159,9 +159,7 @@ public class MyDeviceService extends Service {
 
 ### Описание указанных Binder'ов
 
-Если нельзя выполнить действие, используйте один из типов `Exception` с легкочитаемым описанием для всех методов.
-
-Поддерживаемые типы `Exception`:
+Если нельзя выполнить действие, используйте исключение (`Exception`) одного из следующих типов:
 
 - `BadParcelableException`;
 - `IllegalArgumentException`;
@@ -170,9 +168,14 @@ public class MyDeviceService extends Service {
 - `SecurityException`;
 - `NetworkOnMainThreadException`.
 
+Пример:
+```java
+throw new IllegalStateException();
+```
+
 Подробное описание типов `Exception` на портале [developer.android.com](developer.android.com)
 
-` IUsbDriverManagerService.Stub` – класс для управления драйверами usb-устройств: подключение и отключение устройств происходят здесь. Требуется реализовать методы `addUsbDevice` и `destroy`.
+`IUsbDriverManagerService.Stub` – класс для управления драйверами usb-устройств: подключение и отключение устройств происходят здесь. Требуется реализовать методы `addUsbDevice` и `destroy`.
 
 ```java
 import ru.evotor.devices.drivers.IUsbDriverManagerService;
