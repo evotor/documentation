@@ -181,7 +181,7 @@ public class MyDeviceService extends Service {
 
 ### Описание указанных Binder'ов
 
-Если нельзя выполнить действие, например, взвесить для метода getWeight,  используйте исключение (`Exception`) одного из следующих типов:
+Если нельзя выполнить действие, например, взвесить для метода `getWeight`,  используйте исключение (`Exception`) одного из следующих типов:
 
 - `BadParcelableException`;
 - `IllegalArgumentException`;
