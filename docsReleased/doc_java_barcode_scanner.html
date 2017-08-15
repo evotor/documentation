@@ -702,7 +702,7 @@ $('#toc').on('click', 'a', function() {
 
 <ol>
   <li>
-    <p>В манифесте приложения укажите следующий элемент:
+    <p>В манифесте приложения добавьте разрешение на использование сканера штрихкодов:
  <code class="highlighter-rouge">&lt;uses-permission android:name="ru.evotor.devices.SCANNER_RECEIVER" /&gt;</code></p>
   </li>
   <li>
@@ -711,7 +711,7 @@ $('#toc').on('click', 'a', function() {
     <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">BarcodeBroadcastReceiver</span> <span class="n">mBarcodeBroadcastReceiver</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BarcodeBroadcastReceiver</span><span class="o">()</span> <span class="o">{</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceiveBarcode</span><span class="o">(</span><span class="n">String</span> <span class="n">barcode</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBarcodeReceived</span><span class="o">(</span><span class="n">String</span> <span class="n">barcode</span><span class="o">,</span> <span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// Переменная barcode содержит считанный штрихкод.</span>
     <span class="o">}</span>
 <span class="o">};</span>

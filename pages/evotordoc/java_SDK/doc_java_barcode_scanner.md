@@ -12,7 +12,7 @@ folder: java_SDK
 
 Для этого:
 
-1. В манифесте приложения укажите следующий элемент:
+1. В манифесте приложения добавьте разрешение на использование сканера штрихкодов:
     `<uses-permission android:name="ru.evotor.devices.SCANNER_RECEIVER" />`
 
 2. Объявите класс `BarcodeBroadcastReceiver`:
@@ -21,7 +21,7 @@ folder: java_SDK
    BarcodeBroadcastReceiver mBarcodeBroadcastReceiver = new BarcodeBroadcastReceiver() {
 
        @Override
-       public void onReceiveBarcode(String barcode) {
+       public void onBarcodeReceived(String barcode, Context context) {
            // Переменная barcode содержит считанный штрихкод.
        }
    };
