@@ -840,6 +840,12 @@ $('#toc').on('click', 'a', function() {
         
      
         
+     
+   
+    
+        
+     
+        
 
         <tr><td><a href="doc_app_testing.html">Перевод приложения в тестирование</a></td>
             <td><span class="label label-default">Страница</span></td>
@@ -984,6 +990,18 @@ $('#toc').on('click', 'a', function() {
         <tr><td><a href="doc_java_app_icon.html">Приложение в интерфейсе смарт-терминала</a></td>
             <td><span class="label label-default">Страница</span></td>
           <td> Иконка приложения на главном экране смарт-терминала Чтобы добавить иконку приложения на главный экран смарт-терминала: В манифесте приложения, измените секцию требуемой операции следующим образом:  &lt;activity android:name=".&lt;НазваниеОперации&gt;" android:icon="@mipmap/ic_launcher" android:label="Example tile" &gt; &lt;meta-data android:name="ru.evotor.launcher.BACKGROUND_COLOR" android:value=&lt;span... </td>
+        </tr>
+        
+     
+   
+    
+        
+     
+        
+
+        <tr><td><a href="doc_java_app_manifest.html">Манифест Java-приложения</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Ниже приведён пример манифеста java-приложения, которое добавляет две иконки на экран оплаты. При разработке драйвера для устройств нужно учитывать дополнительные параметры (см. SDK для денежных ящиков и другие разделы, посвящённые разработке драйверов) &lt;manifest package="com.example.myapplication"&gt; &lt;application android:theme="@style/AppTheme" android:icon=&lt;span... </td>
         </tr>
         
      
@@ -1205,6 +1223,20 @@ $('#toc').on('click', 'a', function() {
     
         
 
+        <tr><td><a href="doc_java_receipt_print.html">Печать внутри кассового чека</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека. </td>
+        </tr>
+        
+     
+        
+     
+        
+     
+   
+    
+        
+
         <tr><td><a href="doc_java_scales.html">Весы</a></td>
             <td><span class="label label-default">Страница</span></td>
           <td> Работа весами   В колбэке onCreate() или при запуске операции (activity) инициализируйте класс ru.evotor.devices.commons.DeviceServiceConnector: DeviceServiceConnector.startInitConnections(getApplicationContext()); Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку  Совет: Воспользуйтесь методом addConnectionWrapper, чтобы получить событие об успешном подключении. Используйте это событие, если... </td>
@@ -1277,7 +1309,7 @@ $('#toc').on('click', 'a', function() {
 
         <tr><td><a href="doc_js_third_party_service_communication.html">Обмен сообщениями со сторонним сервисом</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Все запросы приложений к стороннему сервису проходят через Облако Эвотор:  Для отправки запросов требуется:  На портале dev.evotor.ru, указать список разрешённых URL, к которым может обращаться приложение. Поддержать возможность обращения к сторонним сервисам в приложении. Способ обращения отличается в зависимости от типа приложения (Java или... </td>
+          <td> Все запросы приложений к стороннему сервису проходят через Облако Эвотор:  Для отправки запросов требуется:  На портале dev.evotor.ru, указать список разрешённых URL, к которым может обращаться приложение. Поддержать возможность обращения к сторонним сервисам в приложении.  Настройка списка разрешённых URL Чтобы настроить список разрешённых... </td>
         </tr>
         
      
