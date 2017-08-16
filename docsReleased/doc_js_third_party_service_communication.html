@@ -696,9 +696,11 @@ $('#toc').on('click', 'a', function() {
 
   <p>Все запросы приложений к стороннему сервису проходят через Облако Эвотор:</p>
 
-<p><img src="images\cloud_proxy.png" alt="" /></p>
+<p class="center-image"><img src="images\cloud_proxy.png" alt="" /></p>
 
 <p>Для отправки запросов приложения могут использовать только 80 и 443 порт.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Обмен сообщениями со сторонним сервисом возможен только если вы установили приложение из <a href="https://market.evotor.ru">Магазина приложений</a> для этого вам потребуется пользователь с <a href="./doc_app_testing.html">ролью Тестировщика</a>.</div>
 
 <p>Для отправки запросов требуется:</p>
 
@@ -726,7 +728,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">https://another\.host\.com/.*</code>.</li>
 </ul>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Чтобы задавать маски веб-сайтов используйте <a href="http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum">регулярные выражения</a>.</div>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Чтобы задавать маски веб-сайтов используйте <a href="http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum">регулярные выражения</a>.</div>
 
 <p>После создания списка, обмен сообщениями происходит по описанному ниже процессу.</p>
 
@@ -734,16 +736,18 @@ $('#toc').on('click', 'a', function() {
 
 <p>Приложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. Вы можете воспользоваться любым удобным способом отправки сообщения.</p>
 
-<p>Убедитесь что в файле <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code>, указан модулю для отправки HTTP-запросов:</p>
+<p>Убедитесь что в файле <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code>, указан модуль для отправки HTTP-запросов:</p>
 
 <div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">capabilities</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">internet</span>
 </code></pre>
 </div>
 
-<p>Отправляйте запросы с помощью методов объекта <code class="highlighter-rouge">http</code>. Объект <code class="highlighter-rouge">http</code> доступен во view.html без подключения модуля.</p>
+<p>Отправляйте запросы с помощью методов объекта <code class="highlighter-rouge">http</code>.</p>
 
-<p>Чтобы получить доступ к объекту <code class="highlighter-rouge">http</code> в плагине или демоне, требуется подключить модуль:</p>
+<p>Во view.html объект <code class="highlighter-rouge">http</code> доступен без подключения модуля.</p>
+
+<p>В плагине или демоне, чтобы получить доступ к объекту <code class="highlighter-rouge">http</code>, требуется подключить модуль:</p>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">)</span>
 </code></pre>

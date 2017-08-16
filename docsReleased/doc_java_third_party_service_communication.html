@@ -696,9 +696,11 @@ $('#toc').on('click', 'a', function() {
 
   <p>Все запросы приложений к стороннему сервису проходят через Облако Эвотор:</p>
 
-<p><img src="images\cloud_proxy.png" alt="" /></p>
+<p class="center-image"><img src="images\cloud_proxy.png" alt="" /></p>
 
 <p>Для отправки запросов приложения могут использовать только 80 и 443 порт.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Обмен сообщениями со сторонним сервисом возможен только если вы установили приложение из <a href="https://market.evotor.ru">Магазина приложений</a> для этого вам потребуется пользователь с <a href="./doc_app_testing.html">ролью Тестировщика</a>.</div>
 
 <p>Для отправки запросов требуется:</p>
 
@@ -726,7 +728,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">https://another\.host\.com/.*</code>.</li>
 </ul>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Чтобы задавать маски веб-сайтов используйте <a href="http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum">регулярные выражения</a>.</div>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Чтобы задавать маски веб-сайтов используйте <a href="http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum">регулярные выражения</a>.</div>
 
 <p>После создания списка, обмен сообщениями происходит по описанному ниже процессу.</p>
 
