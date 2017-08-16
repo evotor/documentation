@@ -134,8 +134,10 @@ payments.put(new Payment(
                     null,
                     null
             ), new BigDecimal(9300));
+PrintGroup printGroup = new PrintGroup(UUID.randomUUID().toString(),
+                PrintGroup.Type.CASH_RECEIPT, null, null, null, null, false);
 final Receipt.PrintReceipt printReceipt = new Receipt.PrintReceipt(
-        null,
+        printGroup,
         list,
         payments,
         new HashMap<Payment, BigDecimal>()
