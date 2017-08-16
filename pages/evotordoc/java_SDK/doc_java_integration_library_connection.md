@@ -27,6 +27,7 @@ folder: java_SDK
 
     На скриншоте представлена структура полученного проекта:
 
+    {: .center-image}
     ![](./images/project_sctructure.png "Структура проекта <YourProjectName>")
 
     [Манифест проекта](/doc_js_app_manifest.html) выглядит так:

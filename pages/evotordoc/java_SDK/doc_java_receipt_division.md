@@ -26,6 +26,7 @@ folder: java_SDK
 
 Схема разделения чека выглядит следующим образом:
 
+{: .center-image}
 ![](./images/ReceiptDivision.png)
 
 Процесс разделения чека:

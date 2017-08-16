@@ -31,6 +31,7 @@ folder: js_SDK
 
     На скриншоте представлена структура полученного проекта:
 
+    {: .center-image}
     ![](./images/JS_project_sctructure_with_plugin.png "Структура проекта <YourProjectName>")
 
     [Манифест проекта](/doc_js_app_manifest.html) выглядит так:

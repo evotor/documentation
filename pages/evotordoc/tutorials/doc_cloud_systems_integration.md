@@ -51,6 +51,7 @@ folder: evotordoc/evotor_tutorials
 
 #### Подробная схема покупки и установки приложения
 
+{: .center-image}
 ![](images/market_app_install_schema.png)
 
 ### Удаление и деактивация приложения
