@@ -1177,3 +1177,8 @@ h4.panel-title {
     padding-top: 0px;
     margin-top: 0px;
 }
+
+.center-image
+{
+    text-align: center;
+}
