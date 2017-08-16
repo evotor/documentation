@@ -101,6 +101,7 @@ INTENT_FILTER_CASH_DRAWER
 
 Пример отображения иконки и имени драйвера
 
+{: .center-image}
 ![picture_1](images/icon_xmpl.png)
 
 Можно задать `activity` настроек:

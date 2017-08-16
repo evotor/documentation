@@ -33,6 +33,7 @@ folder: evotordoc/evotor_tutorials
 
 #### Покупка и активация приложения для смарт-терминала
 
+{: .center-image}
 ![Схема покупки и активации приложения](images/smart_terminal_application_handling.png "Схема покупки и активации приложения")
 
 ##### Этап 1

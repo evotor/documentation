@@ -25,6 +25,7 @@ folder: evotordoc/evotor_tutorials
 
 ### Покупка и активация приложения
 
+{: .center-image}
 ![Схема покупки и активации приложения](images/cloud_application_handling.png "Схема покупки и активации приложения")
 
 #### Этап 1
