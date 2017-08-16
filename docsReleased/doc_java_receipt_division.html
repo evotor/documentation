@@ -698,7 +698,7 @@ $('#toc').on('click', 'a', function() {
 
   <h3 id="section">Требования</h3>
 
-<p>Чтобы служба получала необходимые сообщения, в манифесте приложения требуется задать intent-filter соответствующей службе:</p>
+<p>Чтобы служба получала необходимые сообщения, в манифесте приложения требуется задать <code class="highlighter-rouge">intent-filter</code> для соответствующей службы:</p>
 
 <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evo.v2.receipt.sell.payment.SELECTED"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evo.v2.receipt.sell.printGroup.REQUIRED"</span> <span class="nt">/&gt;</span>
@@ -735,7 +735,7 @@ $('#toc').on('click', 'a', function() {
     <p>Каждый из платежей, указанных в <code class="highlighter-rouge">PaymentPurpose</code> содержит:</p>
 
     <ul>
-      <li>собственный идентификатор объекта PaymentPurpose, который можно использовать для сопоставления платежа и печатной группы;</li>
+      <li>собственный идентификатор объекта <code class="highlighter-rouge">PaymentPurpose</code>, который можно использовать для сопоставления платежа и печатной группы;</li>
       <li>сумму платежа;</li>
       <li>идентификаторы платёжной системы и счёта в ней;</li>
       <li>текст, который отображается пользователю при проведении данного платежа.</li>
@@ -855,7 +855,8 @@ $('#toc').on('click', 'a', function() {
                                 <span class="s">"ООО \"Пример\""</span><span class="o">,</span>
                                 <span class="s">"012345678901"</span><span class="o">,</span>
                                 <span class="s">"г. Москва"</span><span class="o">,</span>
-                                <span class="n">TaxationSystem</span><span class="o">.</span><span class="na">PATENT</span>
+                                <span class="n">TaxationSystem</span><span class="o">.</span><span class="na">PATENT</span><span class="o">,</span>
+                                <span class="kc">true</span>
                         <span class="o">);</span>
                         <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">paymentPurposeIds</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
                         <span class="n">paymentPurposeIds</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"-1-"</span><span class="o">);</span>
@@ -884,6 +885,9 @@ $('#toc').on('click', 'a', function() {
         <span class="o">);</span>
 </code></pre>
 </div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Поле <code class="highlighter-rouge">true</code> печатной группы <code class="highlighter-rouge">printGroup</code> указывает, что чек будет напечатан. </div>
+
 
 
     <div class="tags">

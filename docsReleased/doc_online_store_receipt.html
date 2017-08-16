@@ -829,8 +829,10 @@ $('#toc').on('click', 'a', function() {
                     <span class="kc">null</span><span class="o">,</span>
                     <span class="kc">null</span>
             <span class="o">),</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">9300</span><span class="o">));</span>
+<span class="n">PrintGroup</span> <span class="n">printGroup</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintGroup</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+                <span class="n">PrintGroup</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">CASH_RECEIPT</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
 <span class="kd">final</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">PrintReceipt</span> <span class="n">printReceipt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">PrintReceipt</span><span class="o">(</span>
-        <span class="kc">null</span><span class="o">,</span>
+        <span class="n">printGroup</span><span class="o">,</span>
         <span class="n">list</span><span class="o">,</span>
         <span class="n">payments</span><span class="o">,</span>
         <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Payment</span><span class="o">,</span> <span class="n">BigDecimal</span><span class="o">&gt;()</span>
