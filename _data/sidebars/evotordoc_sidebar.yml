@@ -285,7 +285,7 @@ entries:
       url: /doc_java_app_manifest.html
       output: web
 
-    - title: Обмен сообщениями со сторонним сервисом
+    - title: Обмен сообщениями Java-приложения и стороннего сервиса
       url: /doc_java_third_party_service_communication.html
       output: web
 
@@ -375,7 +375,7 @@ entries:
       url: /doc_js_app_manifest.html
       output: web
 
-    - title: Обмен сообщениями со сторонним сервисом
+    - title: Обмен сообщениями JS-приложения и стороннего сервиса
       url: /doc_js_third_party_service_communication.html
       output: web
 
