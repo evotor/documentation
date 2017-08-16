@@ -15,6 +15,8 @@ folder: java_SDK
 
 Для отправки запросов приложения могут использовать только 80 и 443 порт.
 
+{% include note.html content="Обмен сообщениями со сторонним сервисом возможен только если вы установили приложение из [Магазина приложений](https://market.evotor.ru) для этого вам потребуется пользователь с [ролью Тестировщика](./doc_app_testing.html)." %}
+
 Для отправки запросов требуется:
 
 * На портале [dev.evotor.ru](https://dev.evotor.ru), указать список разрешённых URL, к которым может обращаться приложение.
@@ -35,7 +37,7 @@ folder: java_SDK
 * `https://another\.host\.com/document.*\.jsp`;
 * `https://another\.host\.com/.*`.
 
-{% include note.html content="Чтобы задавать маски веб-сайтов используйте [регулярные выражения](http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum)." %}
+{% include tip.html content="Чтобы задавать маски веб-сайтов используйте [регулярные выражения](http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum)." %}
 
 После создания списка, обмен сообщениями происходит по описанному ниже процессу.
 
