@@ -1,33 +1,33 @@
 ---
 title: Приложение в интерфейсе смарт-терминала
-keywords:
-summary:
+keywords: Интерфейс, иконка, плитка, манифест
+summary: Вы можете запускать приложение с помощью кнопок и иконок, добавленных в интерфейс смарт-терминала. Раздел содержит информацию о том как добавить свои иконки или заменить существующую кнопку интерфейса смарт-терминала.
 sidebar: evotordoc_sidebar
 permalink: doc_java_app_icon.html
 tags: [Терминал, Java]
 folder: java_SDK
 ---
 
-### Иконка приложения на главном экране смарт-терминала
+## Иконка приложения на главном экране смарт-терминала
 
 *Чтобы добавить иконку приложения на главный экран смарт-терминала:*
 
 В [манифесте приложения](./doc_java_app_manifest.html), измените секцию требуемой операции следующим образом:
 
 ```xml
- <activity
-   android:name=".<НазваниеОперации>"
-   android:icon="@mipmap/ic_launcher"
-   android:label="Example tile"
-   >
-   <meta-data
-       android:name="ru.evotor.launcher.BACKGROUND_COLOR"
-       android:value="#133788" />
-   <intent-filter>
-       <action android:name="android.intent.action.MAIN" />
-       <category android:name="android.intent.category.EVOTOR" />
-    </intent-filter>
- </activity>
+<activity
+  android:name=".<НазваниеОперации>"
+  android:icon="@mipmap/ic_launcher"
+  android:label="Example tile"
+  >
+  <meta-data
+      android:name="ru.evotor.launcher.BACKGROUND_COLOR"
+      android:value="#133788" />
+  <intent-filter>
+      <action android:name="android.intent.action.MAIN" />
+      <category android:name="android.intent.category.EVOTOR" />
+  </intent-filter>
+</activity>
 ```
 
    Где:
@@ -41,7 +41,7 @@ folder: java_SDK
 
 1. В [созданном приложении](./doc_java_getting_started.html) создайте службу (`service`).
 
-   Для этого выполните следующие действия: File → New → Service → Service (IntentService).
+   Для этого, в Android Studio, в проекте выберите `app` и выполните следующие действия: File → New → Service → Service (IntentService).
 
    Добавленная служба автоматически объявится в манифесте приложения:
 
@@ -126,7 +126,7 @@ folder: java_SDK
 </manifest>
 ```
 
-### Замена кнопки "Продажа" на главном экране смарт-терминала
+## Замена кнопки **Продажа** на главном экране смарт-терминала
 
 Вы можете заменить кнопку **Продажа**, расположенную на главном экране смарт-терминала, на кнопку своего приложения:
 
@@ -135,7 +135,7 @@ folder: java_SDK
 
 _Чтобы заменить кнопку **Продажа**:_
 
-В [манифесте приложения](./doc_java_app_manifest.html), измените секцию требуемой операции следующим образом:
+В [манифесте приложения](./doc_java_app_manifest.html), измените секцию соответствующей операции следующим образом:
 
 ```xml
  <activity
@@ -160,4 +160,4 @@ _Чтобы заменить кнопку **Продажа**:_
 
    Элемент `<action android:name="ru.evotor.intent.action.SELL_MAIN" />` указывает, что иконка приложения заменит кнопку **Продажа** на главном экране смарт-терминала.
 
-Теперь вы можете собрать apk своего приложения и [установить его на терминал](./doc_app_installation.html). Иконки приложения будут отображаться как на главном экране смарт-терминала, так и на экране оплаты.
+Теперь вы можете собрать apk своего приложения и [установить его на терминал](./doc_app_installation.html).
