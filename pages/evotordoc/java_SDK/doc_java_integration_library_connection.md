@@ -8,14 +8,14 @@ tags: [Терминал, Java]
 folder: java_SDK
 ---
 
-### Требования
+## Требования
 
 Для разработки java-приложения, вам потребуется:
 
 * Android Studio версии 2.3.3 или выше;
 * библиотека [integration-library](https://github.com/evotor/integration-library) версии 0.4+.
 
-### Подключение библиотеки
+## Подключение библиотеки
 
 *Чтобы подключить библиотеку integration-library:*
 
