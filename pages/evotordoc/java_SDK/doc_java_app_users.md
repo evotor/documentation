@@ -1,6 +1,6 @@
 ---
 title: Работа с пользователями смарт-терминала
-keywords:
+keywords: API, пользователи, User, методы
 summary: "Раздел содержит описание Users API смарт-терминала."
 sidebar: evotordoc_sidebar
 permalink: doc_java_app_users.html
@@ -9,15 +9,15 @@ folder: java_SDK
 published: true
 ---
 
-### Класс
-
-Для работы используйте класс `UserAPI`.
-
 С помощью User API вы можете узнать данные всех пользователей или пользователя, который авторизован на смарт-терминале в данный момент. Например, список прав авторизованного пользователя.
 
-### Методы User API
+Для работы используйте класс [`UserAPI`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/users/UserApi.kt).
 
-#### Получить данные всех пользователей
+## Методы User API
+
+Класс `UserAPI` содержит следующие методы:
+
+### Получить данные всех пользователей
 
 ```java
 fun getAllUsers(context: Context): List<User>
@@ -28,7 +28,7 @@ fun getAllUsers(context: Context): List<User>
 * `context` – контекст приложения.
 * `List<User>` – список всех пользователей смарт-терминала.
 
-#### Получить данные авторизованного пользователя
+### Получить данные авторизованного пользователя
 
 ```java
 fun getAuthenticatedUser(context: Context): User
@@ -39,7 +39,7 @@ fun getAuthenticatedUser(context: Context): User
 * `context` – контекст приложения.
 * `User` – пользователь авторизованный на смарт-терминале. Если пользователь не авторизован, возвращается `null`.
 
-#### Получить список всех доступных прав
+### Получить список всех доступных прав
 
 ```java
 fun getAllGrants(context: Context): List<Grant>
@@ -50,7 +50,7 @@ fun getAllGrants(context: Context): List<Grant>
 * `context` – контекст приложения.
 * `List<Grant>` – список всех возможных прав.
 
-#### Получить список прав авторизованного пользователя
+### Получить список прав авторизованного пользователя
 
 ```java
 fun getGrantsOfAuthenticatedUser(context: Context): List<Grant>
