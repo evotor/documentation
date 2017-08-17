@@ -8,7 +8,7 @@ tags: [Терминал, Java, Чеки]
 folder: java_SDK
 ---
 
-Вы можете добавлять скидку как на [каждую позицию отдельно](/doc_java_discounts.html#discountPosition), так и на весь чек (см. ниже).
+Вы можете добавлять скидку как на [каждую позицию отдельно](./doc_java_discounts.html#discountPosition), так и на весь чек (см. ниже).
 
 ### Скидка на чек
 
