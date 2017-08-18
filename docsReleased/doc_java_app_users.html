@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит описание Users API смарт-терминала.">
-<meta name="keywords" content="JavaТерминал,  ">
+<meta name="keywords" content="JavaТерминал,  API, пользователи, User, методы">
 <title>Работа с пользователями смарт-терминала | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -409,7 +409,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_online_store_receipt.html">Печать электронных чеков</a></li>
+                    <li><a href="doc_java_online_store_receipt.html">Печать электронных чеков</a></li>
                     
                     
                     
@@ -696,15 +696,15 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="section">Класс</h3>
+  <p>С помощью User API вы можете узнать данные всех пользователей или пользователя, который авторизован на смарт-терминале в данный момент. Например, список прав авторизованного пользователя.</p>
 
-<p>Для работы используйте класс <code class="highlighter-rouge">UserAPI</code>.</p>
+<p>Для работы используйте класс <a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/users/UserApi.kt"><code class="highlighter-rouge">UserAPI</code></a>.</p>
 
-<p>С помощью User API вы можете узнать данные всех пользователей или пользователя, который авторизован на смарт-терминале в данный момент. Например, список прав авторизованного пользователя.</p>
+<h2 id="section">Методы</h2>
 
-<h3 id="user-api">Методы User API</h3>
+<p>Класс <code class="highlighter-rouge">UserAPI</code> содержит следующие методы:</p>
 
-<h4 id="section-1">Получить данные всех пользователей</h4>
+<h3 id="section-1">Получить данные всех пользователей</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAllUsers</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span>
 </code></pre>
@@ -717,7 +717,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">List&lt;User&gt;</code> – список всех пользователей смарт-терминала.</li>
 </ul>
 
-<h4 id="section-2">Получить данные авторизованного пользователя</h4>
+<h3 id="section-2">Получить данные авторизованного пользователя</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAuthenticatedUser</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">User</span>
 </code></pre>
@@ -730,7 +730,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">User</code> – пользователь авторизованный на смарт-терминале. Если пользователь не авторизован, возвращается <code class="highlighter-rouge">null</code>.</li>
 </ul>
 
-<h4 id="section-3">Получить список всех доступных прав</h4>
+<h3 id="section-3">Получить список всех доступных прав</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAllGrants</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Grant</span><span class="o">&gt;</span>
 </code></pre>
@@ -743,7 +743,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">List&lt;Grant&gt;</code> – список всех возможных прав.</li>
 </ul>
 
-<h4 id="section-4">Получить список прав авторизованного пользователя</h4>
+<h3 id="section-4">Получить список прав авторизованного пользователя</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getGrantsOfAuthenticatedUser</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Grant</span><span class="o">&gt;</span>
 </code></pre>

@@ -7,8 +7,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит описание интерфейса, с помощью которого можно получить данные сформированного чека.">
-<meta name="keywords" content="ТерминалJavaЧеки,  ">
+<meta name="description" content="Раздел содержит описание методов интерфейса, с помощью которого можно получить данные сформированного чека.">
+<meta name="keywords" content="ТерминалJavaЧеки,  чек, методы, интерфейс, заголовки, ReceiptApi">
 <title>Получить данные сформированного чека | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -409,7 +409,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_online_store_receipt.html">Печать электронных чеков</a></li>
+                    <li><a href="doc_java_online_store_receipt.html">Печать электронных чеков</a></li>
                     
                     
                     
@@ -665,7 +665,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит описание интерфейса, с помощью которого можно получить данные сформированного чека.</div>
+    <div class="summary">Раздел содержит описание методов интерфейса, с помощью которого можно получить данные сформированного чека.</div>
    
 
     
@@ -696,13 +696,11 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="section">Класс</h3>
+  <h2 id="section">Методы</h2>
 
-<p>Для работы используйте класс <code class="highlighter-rouge">ReceiptApi</code>.</p>
+<p>Класс <a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/ReceiptApi.kt"><code class="highlighter-rouge">ReceiptApi</code></a> содержит следующие методы</p>
 
-<h3 id="section-1">Методы</h3>
-
-<h4 id="section-2">Получить текущий открытый чек</h4>
+<h3 id="section-1">Получить текущий открытый чек</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getReceipt</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">type:</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">Type</span><span class="o">):</span> <span class="n">Receipt</span><span class="o">?</span>
 </code></pre>
@@ -718,7 +716,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Метод возвращает чек или <code class="highlighter-rouge">null</code>, если чек отсутствует.</p>
 
-<h4 id="section-3">Получить чек по идентификатору</h4>
+<h3 id="section-2">Получить чек по идентификатору</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getReceipt</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">uuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">Receipt</span><span class="o">?</span>
 </code></pre>
@@ -734,7 +732,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Метод возвращает чек или <code class="highlighter-rouge">null</code>, если чек отсутствует.</p>
 
-<h4 id="section-4">Получить список заголовков чека</h4>
+<h3 id="section-3">Получить список заголовков чека</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getReceiptHeaders</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">type:</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">Type</span><span class="o">?</span> <span class="o">=</span> <span class="kc">null</span><span class="o">):</span> <span class="n">ru</span><span class="o">.</span><span class="na">evotor</span><span class="o">.</span><span class="na">framework</span><span class="o">.</span><span class="na">Cursor</span><span class="o">&lt;</span><span class="n">Receipt</span><span class="o">.</span><span class="na">Header</span><span class="o">?&gt;?</span>
 </code></pre>
@@ -748,7 +746,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">ru.evotor.framework.Cursor&lt;Receipt.Header?&gt;</code> – курсор с заголовками чека.</li>
 </ul>
 
-<h3 id="section-5">Пример</h3>
+<h2 id="section-4">Пример</h2>
 
 <p>Получить список позиций открытого чека:</p>
 

@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит информацию о том, как приложение может работать с принтером чеков.">
-<meta name="keywords" content="JavaТерминалОборудованиеЧеки,  ">
+<meta name="keywords" content="JavaТерминалОборудованиеЧеки,  оборудование, принтер, чеки, печать, методы">
 <title>Принтер чеков | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -409,7 +409,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_online_store_receipt.html">Печать электронных чеков</a></li>
+                    <li><a href="doc_java_online_store_receipt.html">Печать электронных чеков</a></li>
                     
                     
                     
@@ -696,7 +696,9 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="section">Работа с принтером чеков</h3>
+  <h2 id="section">Работа с принтером чеков</h2>
+
+<p><em>Чтобы приложение печатало свои данные на чеке, выполните следующие действия:</em></p>
 
 <ol>
   <li>
@@ -719,7 +721,7 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Вызовите метод <code class="highlighter-rouge">DeviceServiceConnector.getPrinterService()</code>.</p>
 
-    <p>Метод не может быть <code class="highlighter-rouge">null</code> и в случае успеха возвращает объект <code class="highlighter-rouge">ru.evotor.devices.commons.IPrinterServiceWrapper</code>.</p>
+    <p>Метод возвращает объект <code class="highlighter-rouge">ru.evotor.devices.commons.IPrinterServiceWrapper</code>. Не может быть <code class="highlighter-rouge">null</code></p>
 
     <p>Метод может вернуть следующие исключения (<code class="highlighter-rouge">exception</code>):</p>
 
@@ -733,7 +735,7 @@ $('#toc').on('click', 'a', function() {
 
     <ul>
       <li><code class="highlighter-rouge">int getAllowableSymbolsLineLength(int deviceId)</code> – возвращает количество символов, которые помещаются на одной строке чека.</li>
-      <li><code class="highlighter-rouge">int getAllowablePixelLineLength(int deviceId)</code> – возвращает доступную для печати ширину бумаги в пикселях</li>
+      <li><code class="highlighter-rouge">int getAllowablePixelLineLength(int deviceId)</code> – возвращает доступную для печати ширину бумаги в пикселях.</li>
       <li>
         <p><code class="highlighter-rouge">void printDocument(int deviceId, in PrinterDocument printerDocument)</code> – печатает указанный массив объектов: текст, штрихкоды, изображения.</p>
 
@@ -760,7 +762,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Работа с удалённым сервисом может занимать длительное время, поэтому не вызывайте перечисленные методы в главном потоке приложения.</div>
 
-<h3 id="section-1">Примеры</h3>
+<h2 id="section-1">Примеры</h2>
 
 <p>Код для печати сообщения на чеке:</p>
 

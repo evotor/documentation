@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалJavaЧеки,  ">
+<meta name="keywords" content="ТерминалJavaЧеки,  скидки, чек, позиция, событие, подписка">
 <title>Скидки | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -409,7 +409,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_online_store_receipt.html">Печать электронных чеков</a></li>
+                    <li><a href="doc_java_online_store_receipt.html">Печать электронных чеков</a></li>
                     
                     
                     
@@ -696,20 +696,18 @@ $('#toc').on('click', 'a', function() {
 
   <p>Вы можете добавлять скидку как на <a href="./doc_java_discounts.html#discountPosition">каждую позицию отдельно</a>, так и на весь чек (см. ниже).</p>
 
-<h3 id="section">Скидка на чек</h3>
+<h2 id="section">Скидка на чек</h2>
 
-<p>Приложение не может автоматически применять скидку, перед этим его требуется вручную вызвать с помощью <a href="./doc_java_app_icon.html">иконки на экране оплаты смарт-терминала</a>.</p>
+<p>Приложение не может автоматически применять скидку, перед этим его требуется вручную вызвать с помощью <a href="./doc_java_app_icon.html#SalesScreen">иконки на экране оплаты смарт-терминала</a>.</p>
 
 <p>Для расчёта и назначения скидки:</p>
 
 <ol>
-  <li>Подпишитесь на событие <code class="highlighter-rouge">ReceiptDiscountEvent</code>.</li>
+  <li>Подпишитесь на событие <code class="highlighter-rouge">ReceiptDiscountEvent</code>, которое сообщает о возможности начислить скидку.</li>
   <li>Получите результат, который сообщает о возможности начисления скидки.</li>
 </ol>
 
 <p><em>Чтобы добавить скидку на весь чек:</em></p>
-
-<p><code class="highlighter-rouge">ReceiptDiscountEvent</code>сообщает о возможности начислить скидку.</p>
 
 <ol>
   <li>
@@ -789,9 +787,9 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">changes</code> – список изменений по позициям.</li>
 </ul>
 
-<h3 id="discountPosition">Скидка на позицию</h3>
+<h2 id="discountPosition">Скидка на позицию</h2>
 
-<p>Чтобы добавить скидку на позицию, вам потребуется передать значение цены с учётом скидки в поле <code class="highlighter-rouge">priceWithDiscountPosition</code>. Если скидки на позицию нет, передавайте <code class="highlighter-rouge">null</code>. Список полей позиции описан в классе <code class="highlighter-rouge">position.java</code>.</p>
+<p>Чтобы добавить скидку на позицию, вам потребуется передать значение цены с учётом скидки в поле <code class="highlighter-rouge">priceWithDiscountPosition</code>. Если скидки на позицию нет, передавайте <code class="highlighter-rouge">null</code>. Список полей позиции описан в классе <a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/Position.java"><code class="highlighter-rouge">position.java</code></a>.</p>
 
 <p>Передать поле можно в любой момент, когда доступно редактирование существующих или добавление новых позиций в чек:</p>
 

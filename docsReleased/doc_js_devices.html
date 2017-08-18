@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалJavaScriptОборудование,  ">
+<meta name="keywords" content="ТерминалJavaScriptОборудование,  сканер, штрихкоды, весы, устройства, разрешения, devices">
 <title>Получение данных с подключённого оборудования | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -409,7 +409,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_online_store_receipt.html">Печать электронных чеков</a></li>
+                    <li><a href="doc_java_online_store_receipt.html">Печать электронных чеков</a></li>
                     
                     
                     
@@ -696,38 +696,22 @@ $('#toc').on('click', 'a', function() {
 
   <p>Ваше приложение может получать данные от сканера штрихкодов и весов, подключённых к смарт-терминалу.</p>
 
-<h3 id="section">Подготовка к работе</h3>
+<h2 id="Scales">Получить вес товара</h2>
 
-<p>Убедитесь, что в файле <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code>, указан модуль для работы с подключёнными устройствами:</p>
+<p>Убедитесь, что список <code class="highlighter-rouge">capabilities</code>, в файле <code class="highlighter-rouge">client.yaml</code>, содержит разрешение для работы с подключёнными устройствами:</p>
 
 <div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">capabilities</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">devices</span>
 </code></pre>
 </div>
 
-<h3 id="section-1">Методы для работы с подключёнными устройствами</h3>
-
-<h4 id="section-2">Подключение модуля</h4>
-
-<p>Чтобы использовать методы для работы с подключёнными устройствами подключите модуль:</p>
+<p>Чтобы приложение взаимодействовало с весами подключите модуль:</p>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">devices</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'devices'</span><span class="p">)</span>
 </code></pre>
 </div>
 
-<h4 id="section-3">Получить штрихкод товара</h4>
-
-<p>Приложение может получать данные от сканера штрихкодов только во view.html. Для этого используйте метод:</p>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">barcodeScanned</span><span class="p">(</span><span class="nx">scanneddata</span><span class="p">)</span>
-</code></pre>
-</div>
-
-<p>Метод возвращает данные, полученные от сканера штрихкодов.</p>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> В плагине или демоне данные от сканера штрихкодов получить нельзя.</div>
-
-<h4 id="section-4">Получить вес товара</h4>
+<p>Чтобы получить вес товара используйте метод:</p>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">devices</span><span class="p">.</span><span class="nx">getWeight</span><span class="p">()</span>
 </code></pre>
@@ -736,6 +720,26 @@ $('#toc').on('click', 'a', function() {
 <p>Метод возвращает данные, полученные от весов.</p>
 
 <p>Метод можно реализовать как в демоне, так и во view.html</p>
+
+<h2 id="BarcodeScanner">Получить штрихкод товара</h2>
+
+<p>Убедитесь, что список <code class="highlighter-rouge">capabilities</code>, в файле <code class="highlighter-rouge">client.yaml</code>, содержит разрешение для работы со сканером штрихкодов:</p>
+
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">capabilities</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">barcode-scanner</span>
+</code></pre>
+</div>
+
+<p>Чтобы получить отсканированный штрихкод используйте метод:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">barcodeScanned</span><span class="p">(</span><span class="nx">scanneddata</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Метод возвращает данные, полученные от сканера штрихкодов.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Приложение может получать данные от сканера штрихкодов только во view.html. В плагине или демоне данные от сканера штрихкодов получить нельзя.</div>
+
 
 
     <div class="tags">

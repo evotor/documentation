@@ -1,6 +1,6 @@
 ---
 title: Печать электронных чеков
-keywords:
+keywords: чек, телефон, email, печать
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_online_store_receipt.html
@@ -8,19 +8,19 @@ tags: [Терминал, Java, Чеки]
 folder: java_SDK
 ---
 
-Приложение может создавать чеки и передавать их для оформления в смарт-терминал. Созданные чеки смарт-терминал может автоматически передавать чеки на указанный адрес электронной почты (email) и / или номер телефона. Передача чеков актуальна, например, для интернет-магазинов.
+Приложение может создавать чеки и передавать их для оформления в смарт-терминал. Смарт-терминал может автоматически передавать созданные чеки на указанный адрес электронной почты (email) и / или номер телефона. Передача чеков актуальна, например, для интернет-магазинов.
 
 С помощью отдельной [команды](./doc_app_integration_points.html#Commands) приложение может напечатать созданный чек.
 
-### Передача чека на email и номер телефона
+## Передача чека на email и номер телефона
 
 Смарт-терминал передаёт чеки если указан email и / или номер телефона. Касса не печатает чек, если указаны поля email и / или номер телефона.
 
 {% include note.html content="Только кассы нового образца могут не печатать чеки. Кассы старого образца печатают чек независимо от того указан email или номер телефона." %}
 
-Чтобы передавать чек на email и номер телефона:
+*Чтобы передавать чек на email и номер телефона:*
 
-1. В [манифесте приложения](./doc_java_app_manifest.html) укажите права для приложения:
+1. В [манифесте](./doc_java_app_manifest.html) укажите права приложения:
 
    ```xml
    <uses-permission android:name="ru.evotor.permission.receipt.print.INTERNET_RECEIPT" />
@@ -94,10 +94,10 @@ folder: java_SDK
     * `clientPhone` – номер телефона клиента в формате строки. Может быть `null`. Смарт-терминал передаёт чек на указанный номер телефона.
     * `clientEmail` – email клиента в формате строки. Может быть `null`. Смарт-терминал передаёт чек на указанный адрес электронной почты.
 
-    {% include note.html content="Если поля `clientPhone` и `clientEmail` не указаны, смарт-терминал печатает чек и не передаёт его." %}
+    {% include note.html content="Если поля `clientPhone` и `clientEmail` не указаны, смарт-терминал вернёт ошибку." %}
 
 
-### Пример
+## Пример
 
 Существует также более детальный способ создания и передачи чека:
 
@@ -151,9 +151,16 @@ new PrintSellReceiptCommand(listDocs, null, null, "example@example.com", receipt
     public void run(IntegrationManagerFuture integrationManagerFuture) {
         try {
             IntegrationManagerFuture.Result result = integrationManagerFuture.getResult();
-            if (result.getType() == IntegrationManagerFuture.Result.Type.OK) {
-                Toast.makeText(MainActivity.this, "Result OK", Toast.LENGTH_SHORT).show();
-            }
+            switch (result.getType()) {
+                       case OK:
+                           PrintReceiptCommandResult printSellReceiptResult = PrintReceiptCommandResult.create(result.getData());
+                           Toast.makeText(MainActivity.this, "OK", Toast.LENGTH_LONG).show();
+                           break;
+                       case ERROR:
+                           Error error = result.getError();
+                           Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_LONG).show();
+                           break;
+                   }
         } catch (IntegrationException e) {
             e.printStackTrace();
         }

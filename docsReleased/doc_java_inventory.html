@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалJavaТовары,  ">
+<meta name="keywords" content="ТерминалJavaТовары,  товары, база, интерфейс, методы, InventoryAPI">
 <title>Товароучёт | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -409,7 +409,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_online_store_receipt.html">Печать электронных чеков</a></li>
+                    <li><a href="doc_java_online_store_receipt.html">Печать электронных чеков</a></li>
                     
                     
                     
@@ -694,13 +694,11 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="section">Класс</h3>
+  <h2 id="section">Методы</h2>
 
-<p>Для работы используйте класс <code class="highlighter-rouge">InventoryApi</code>.</p>
+<p>Класс <a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/inventory/InventoryApi.kt"><code class="highlighter-rouge">InventoryApi</code></a> содержит следующие методы.</p>
 
-<h3 id="inventory-api">Методы Inventory API</h3>
-
-<h4 id="section-1">Получить все штрихкоды товара:</h4>
+<h3 id="section-1">Получить все штрихкоды товара:</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAllBarcodesForProduct</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">productUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span>
 </code></pre>
@@ -714,7 +712,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">List&lt;String&gt;</code> – список всех штрихкодов товара.</li>
 </ul>
 
-<h4 id="section-2">Поиск товара по идентификатору:</h4>
+<h3 id="section-2">Поиск товара по идентификатору:</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getProductByUuid</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">uuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">ProductItem</span><span class="o">?</span>
 </code></pre>
@@ -752,7 +750,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">tareVolume</code> – объём тары алкогольной продукции.</li>
 </ul>
 
-<h4 id="section-3">Получить возможные дополнительные поля:</h4>
+<h3 id="section-3">Получить возможные дополнительные поля:</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getField</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">fieldUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">Field</span><span class="o">?</span>
 </code></pre>
@@ -781,13 +779,13 @@ $('#toc').on('click', 'a', function() {
     <p>Поля, уникальные для типа DICTIONARY_FIELD:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">multiple</code> –	dключает или выключает возможность выбора нескольких значений.</li>
-      <li><code class="highlighter-rouge">items</code> – массив возможных значений. Массив содержит поля <code class="highlighter-rouge">title</code> – заголовок элемента управления, который отображается пользоваетелю и <code class="highlighter-rouge">value</code> – идентификатор элемента управления.</li>
+      <li><code class="highlighter-rouge">multiple</code> –	включает или выключает возможность выбора нескольких значений.</li>
+      <li><code class="highlighter-rouge">items</code> – массив возможных значений. Массив содержит поля <code class="highlighter-rouge">title</code> – заголовок элемента управления, который отображается пользователю и <code class="highlighter-rouge">value</code> – идентификатор элемента управления.</li>
     </ul>
   </li>
 </ul>
 
-<h4 id="section-4">Получить значения дополнительных полей товара:</h4>
+<h3 id="section-4">Получить значения дополнительных полей товара:</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getProductExtras</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">productUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ProductExtra</span><span class="o">&gt;</span>
 </code></pre>
@@ -797,7 +795,7 @@ $('#toc').on('click', 'a', function() {
 <ul>
   <li><code class="highlighter-rouge">context</code> - контекст приложения</li>
   <li><code class="highlighter-rouge">productUuid</code> - uuid товара</li>
-  <li><code class="highlighter-rouge">List&lt;ProductExtra&gt;</code> – в качетсве результата будет возвращен список значений дополнительных полей товара</li>
+  <li><code class="highlighter-rouge">List&lt;ProductExtra&gt;</code> – в качестве результата будет возвращен список значений дополнительных полей товара</li>
 </ul>
 
 <p>Объект <code class="highlighter-rouge">ProductExtra</code> содержит в себе следующие данные:</p>

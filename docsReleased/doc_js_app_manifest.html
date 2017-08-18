@@ -409,7 +409,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_online_store_receipt.html">Печать электронных чеков</a></li>
+                    <li><a href="doc_java_online_store_receipt.html">Печать электронных чеков</a></li>
                     
                     
                     
@@ -696,9 +696,9 @@ $('#toc').on('click', 'a', function() {
 
   <p>В папке <code class="highlighter-rouge">app/manifests</code> вашего приложения должен находиться файл манифеста приложения – <a href="https://developer.android.com/guide/topics/manifest/manifest-intro.html?hl=ru">AndroidManifest.xml</a>.</p>
 
-<p>Манифест JS-приложения генерируется автоматически на основе файла client.yaml, размещённого по адресу <code class="highlighter-rouge">app\assets</code>.</p>
+<p>Android Studio создаёт манифест JS-приложения автоматически на основе файла client.yaml, который размещён по адресу <code class="highlighter-rouge">app\assets</code>.</p>
 
-<h3 id="clientyaml">Пример файла client.yaml</h3>
+<h2 id="clientyaml">Пример файла client.yaml</h2>
 
 <p>Ниже приведён пример заполненного файла <code class="highlighter-rouge">client.yaml</code> для приложения, которое имеет интерфейс, использует плагины и демоны.</p>
 
@@ -772,17 +772,20 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">appUUID</code> – идентификатор приложения в формате uuid4. Отображается  в адресной строке приложения на <a href="https://dev.evotor.ru">dev.evotor.ru</a>, в личном кабинете разработчика.</li>
 </ul>
 
-<!-- #### Список capabilities
+<h3 id="capabilities">Список capabilities</h3>
 
-Список модулей, доступных приложению. Подключайте модули с помощью функции `require('<модуль>')`. Методы каждого из модулей описаны в соответствующих разделах.
+<p>В списке <code class="highlighter-rouge">capabilities</code> требуется перечислить разрешения, которые потребуются вашему приложению.</p>
 
-Список модулей, доступных js-приложению:
+<p>Доступны следующие разрешения:</p>
 
-* `internet` – используйте модуль, если хотите дать приложению возможность выходить в интернет, например, [чтобы обратиться к стороннему сервису](./doc_cloud_proxy.html).
-* `devices` – используйте модуль, если хотите дать приложению возможность получать [штрихкоды и данные от весов](./doc_barcode_scanner.html).
-* `storage` – используйте модуль, если хотите дать приложению возможность [хранить данные на смарт-терминале](./doc_storage_api.html), между запусками приложения. -->
+<ul>
+  <li><code class="highlighter-rouge">internet</code> – позволяет приложению выходить в интернет, например, <a href="./doc_js_third_party_service_communication.html">чтобы обратиться к стороннему сервису</a>.</li>
+  <li><code class="highlighter-rouge">devices</code> – позволяет приложению получать данные от устройств, подключённых к смарт, терминалу, например <a href="./doc_js_devices.html#Scales">данные от весов</a>.</li>
+  <li><code class="highlighter-rouge">storage</code> – позволяет приложению <a href="./doc_storage_api.html">хранить данные на смарт-терминале</a>, между запусками приложения.</li>
+  <li><code class="highlighter-rouge">barcode-scanner</code> – позволяет приложению получать <a href="./doc_js_devices.html#BarcodeScanner">данные от сканера штрихкодов</a>.</li>
+</ul>
 
-<h4 id="daemons">Список daemons</h4>
+<h3 id="daemons">Список daemons</h3>
 
 <p>Список демонов (js-скриптов), которые использует приложение. Демонам доступна функциональность логирования (<code class="highlighter-rouge">logger</code>) и хранения данных (<code class="highlighter-rouge">storage</code>) Храните демоны в папке <code class="highlighter-rouge">app\assets\daemons</code>.</p>
 
@@ -877,7 +880,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">behavior</code> – в параметре требуется указать название запускаемого демона в формате <code class="highlighter-rouge">&lt;Название скрипта&gt;.js</code>.</li>
 </ul>
 
-<h4 id="plugins">Список plugins</h4>
+<h3 id="plugins">Список plugins</h3>
 
 <p>Список плагинов (js-скриптов), которые использует приложение. Храните плагины в папке <code class="highlighter-rouge">app\assets\plugins</code>.</p>
 
@@ -890,7 +893,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">behavior</code> – в параметре требуется указать название запускаемого плагина в формате <code class="highlighter-rouge">&lt;Название скрипта&gt;.js</code>.</li>
 </ul>
 
-<h4 id="views">Список views</h4>
+<h3 id="views">Список views</h3>
 
 <p>Список файлов экранов интерфейса приложения в формате HTML. Храните файлы экранов в папке <code class="highlighter-rouge">app\assets\views</code></p>
 

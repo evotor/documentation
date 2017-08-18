@@ -334,7 +334,7 @@ entries:
             output: web
 
           - title: Печать электронных чеков
-            url: /doc_online_store_receipt.html
+            url: /doc_java_online_store_receipt.html
             output: web
 
     - title: Товароучёт
