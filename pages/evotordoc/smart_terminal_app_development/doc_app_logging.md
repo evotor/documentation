@@ -18,16 +18,21 @@ published: true
 
 ### JS-приложение
 
-Используйте функцию объекта `logger` для записи событий JS-приложений:
+*Чтобы записывать логи в JS-приложении:*
 
-```javascript
-    logger.log(String)
-```
+1. Подключите модуль для записи логов:
+
+   ```javascript
+   var storage = require('logger')
+   ```
+
+2. Используйте функцию объекта `logger` для записи событий JS-приложений:
+
+   ```javascript
+   logger.log(String)
+   ```
 
 Функция отображает в `logcat` значение `String`.
-
-{% include important.html content="Перед использованием объекта `logger` в демонах или плагинах, объект требуется получить с помощью функции `require`: `var logger = require('logger')`." %}
-
 
 ### Java-приложение
 
