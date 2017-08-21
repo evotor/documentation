@@ -1,6 +1,6 @@
 ---
 title: Разделение чека
-keywords:
+keywords: Разделение, деление, чек, печатная, группа, платёжные, системы
 summary: "Раздел содержит описание интерфейса, с помощью которого приложения могут делить чек на несколько платежей или на несколько чеков (печатных групп), например, для отдельной печати фискального и ЕНВД чека."
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_division.html
@@ -8,13 +8,15 @@ tags: [Терминал, Java, Чеки]
 folder: java_SDK
 ---
 
-### Требования
+## Требования
 
 Чтобы служба получала необходимые сообщения, в манифесте приложения требуется задать `intent-filter` для соответствующей службы:
 
 ```xml
-<action android:name="evo.v2.receipt.sell.payment.SELECTED" />
-<action android:name="evo.v2.receipt.sell.printGroup.REQUIRED" />
+<intent-filter>
+  <action android:name="evo.v2.receipt.sell.payment.SELECTED" />
+  <action android:name="evo.v2.receipt.sell.printGroup.REQUIRED" />
+</intent-filter>
 ```
 
 Где:
@@ -22,7 +24,7 @@ folder: java_SDK
 * `evo.v2.receipt.sell.payment.SELECTED` – сообщает о разделении платежей.
 * `evo.v2.receipt.sell.printGroup.REQUIRED` – сообщает о разделении чека на несколько печатных групп.
 
-### Разделение чека
+## Разделение чека
 
 Схема разделения чека выглядит следующим образом:
 
@@ -83,7 +85,7 @@ folder: java_SDK
 
 6. EvoPOS печатает чек в соответствии с полученными печатными группами.
 
-### Методы PaymentSystem API {#PaymentSystemApiMethods}
+## Методы PaymentSystem API {#PaymentSystemApiMethods}
 
 Используйте класс `PaymentSystemApi`.
 
@@ -106,9 +108,9 @@ fun getPaymentSystems(context: Context): List<Pair<PaymentSystem, List<PaymentAc
 * идентификатор счёта в рамках платёжной системы;
 * название счёта, которое можно отобразить пользователю.
 
-### Примеры
+## Примеры
 
-#### Разделение платежей в чеке {#severalPayments}
+### Разделение платежей в чеке {#severalPayments}
 
 ```java
         processorMap.put(
@@ -139,7 +141,7 @@ fun getPaymentSystems(context: Context): List<Pair<PaymentSystem, List<PaymentAc
         );
 ```
 
-#### Разделение чека на несколько печатных групп {#severalPrintGroups}
+### Разделение чека на несколько печатных групп {#severalPrintGroups}
 
 ```java
 processorMap.put(

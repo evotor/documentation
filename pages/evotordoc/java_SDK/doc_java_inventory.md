@@ -1,20 +1,17 @@
 ---
 title: Товароучёт
-keywords:
+keywords: товары, база, интерфейс, методы, InventoryAPI
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_inventory.html
 tags: [Терминал, Java, Товары]
 folder: java_SDK
 ---
+## Методы
 
-### Класс
+Класс [`InventoryApi`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/inventory/InventoryApi.kt) содержит методы, описанные ниже.
 
-Для работы используйте класс `InventoryApi`.
-
-### Методы Inventory API
-
-#### Получить все штрихкоды товара:
+### Получить все штрихкоды товара:
 
 ```java
 fun getAllBarcodesForProduct(context: Context, productUuid: String): List<String>
@@ -26,7 +23,7 @@ fun getAllBarcodesForProduct(context: Context, productUuid: String): List<String
 * `productUuid` – идентификатор товара в формате `uuid4`.
 * `List<String>` – список всех штрихкодов товара.
 
-#### Поиск товара по идентификатору:
+### Поиск товара по идентификатору:
 
 ```java
 fun getProductByUuid(context: Context, uuid: String): ProductItem?
@@ -58,7 +55,7 @@ fun getProductByUuid(context: Context, uuid: String): ProductItem?
 * `alcoholProductKindCode` – идентификатор алкогольной продукции в формате uuid4.
 * `tareVolume` – объём тары алкогольной продукции.
 
-#### Получить возможные дополнительные поля:
+### Получить возможные дополнительные поля:
 
 ```java
 fun getField(context: Context, fieldUuid: String): Field?
@@ -82,10 +79,10 @@ fun getField(context: Context, fieldUuid: String): Field?
 
    Поля, уникальные для типа DICTIONARY_FIELD:
 
-   * `multiple` –	dключает или выключает возможность выбора нескольких значений.
-   * `items` – массив возможных значений. Массив содержит поля `title` – заголовок элемента управления, который отображается пользоваетелю и `value` – идентификатор элемента управления.
+   * `multiple` –	включает или выключает возможность выбора нескольких значений.
+   * `items` – массив возможных значений. Массив содержит поля `title` – заголовок элемента управления, который отображается пользователю и `value` – идентификатор элемента управления.
 
-#### Получить значения дополнительных полей товара:
+### Получить значения дополнительных полей товара:
 
 ```java
 fun getProductExtras(context: Context, productUuid: String): List<ProductExtra>
@@ -94,7 +91,7 @@ fun getProductExtras(context: Context, productUuid: String): List<ProductExtra>
 
 * `context` - контекст приложения
 * `productUuid` - uuid товара
-* `List<ProductExtra>` – в качетсве результата будет возвращен список значений дополнительных полей товара
+* `List<ProductExtra>` – в качестве результата будет возвращен список значений дополнительных полей товара
 
 Объект `ProductExtra` содержит в себе следующие данные:
 

@@ -13,7 +13,7 @@ published: true
 
 Для работы используйте класс [`UserAPI`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/users/UserApi.kt).
 
-## Методы User API
+## Методы
 
 Класс `UserAPI` содержит следующие методы:
 

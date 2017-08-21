@@ -1,6 +1,6 @@
 ---
 title: Подключение шаблона JS-приложения
-keywords:
+keywords: шаблон, разработка, приложение, JS
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_app_template_link.html
@@ -12,14 +12,14 @@ folder: js_SDK
 
 {% include important.html content="Перед началом работы убедитесь, что в настройках Android Studio отключён параметр Instant run." %}
 
-### Требования
+## Требования
 
 Для разработки js-приложения, вам потребуется:
 
 * Android Studio версии 2.3.3 или выше;
 * плагин [template-plugin](https://github.com/evotor/template-plugin) версии 1.1.7.
 
-### Подключение шаблон JS-приложения
+## Подключение шаблон JS-приложения
 
 *Чтобы подключить шаблон JS-приложения:*
 
@@ -99,7 +99,7 @@ folder: js_SDK
      }
    ```
 
-3. В файле `build.gradle (Module: app)`, добавьте плагин template-plugin в зависимости (dependencies):
+3. В файле `build.gradle (Module: app)`, добавьте плагин `template-plugin` в зависимости (dependencies):
 
    ```
    dependencies {

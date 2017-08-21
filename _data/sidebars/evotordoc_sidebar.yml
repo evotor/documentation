@@ -301,9 +301,9 @@ entries:
       - title: Работа с чеком
         output: web
         subfolderitems:
-          - title: Поиск товара по штрихкоду
-            url: /doc_java_receipt_api.html
-            output: web
+#          - title: Поиск товара по штрихкоду
+#            url: /doc_java_receipt_api.html
+#            output: web
 
           - title: Открытие чека в приложении
             url: /doc_java_receipt_creation.html

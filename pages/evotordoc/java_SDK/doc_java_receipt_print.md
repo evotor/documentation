@@ -1,6 +1,6 @@
 ---
 title: Печать внутри кассового чека
-keywords:
+keywords: печать, чек
 summary: "Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека."
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_print.html
@@ -18,7 +18,7 @@ folder: evotordoc/smart_terminal_SDK
 * `PrintExtraPlacePositionFooter` – данные печатаются в позиции в чеке, до [подпозиций](./doc_receipt_interactions.html#Position);
 * `PrintExtraPlacePositionAllSubpositionsFooter` – данные печатаются в позиции в чеке, после всех подпозиций.
 
-### Печать данных внутри кассового чека
+## Печать данных внутри кассового чека
 
 *Чтобы приложение печатало данные внутри кассового чека:*
 
@@ -29,7 +29,7 @@ folder: evotordoc/smart_terminal_SDK
    ```
 
 2. Создайте службу, которая отвечает за передачу данных для печати.
-3. Объявите службу в манифесте приложения и укажите intent-filter:
+3. Объявите службу в манифесте приложения и укажите `intent-filter`:
 
    ```xml
    <action android:name="evo.v2.receipt.sell.printExtra.REQUIRED" />
@@ -46,6 +46,7 @@ folder: evotordoc/smart_terminal_SDK
                    PrintExtraRequiredEvent.NAME_SELL_RECEIPT,
                    new PrintExtraRequiredEventProcessor() {
                    }
+                   )
    ```
 
 5. В службе, в методе `PrintExtraRequiredEventProcessor` укажите место и массив данных, которые требуется распечатать:
@@ -58,7 +59,7 @@ folder: evotordoc/smart_terminal_SDK
            setPrintExtras.add(new SetPrintExtra(
                    //Метод, который указывает место, где будут распечатаны данные.
                    new PrintExtraPlacePrintGroupTop(null),
-                   //Массив данных, которые должны быть распечатаны.
+                   //Массив данных, которые требуется распечатать.
                    new IPrintable[]{
                            new PrintableText("<Текст>"),
                            new PrintableBarcode("<Штрихкод>", PrintableBarcode.BarcodeType.CODE39),

@@ -1,6 +1,6 @@
 ---
 title: Работа с позициями чека
-keywords:
+keywords: позиция, чек, события, открыть, добавить, изменить
 summary: "Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека."
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_interactions.html
@@ -14,7 +14,106 @@ folder: java_SDK
 
 * Если вы хотите получать сообщения об изменении чека или обновлении базы продуктов, например, для логирования и оповещения пользователей, используйте приёмник широковещательных сообщений. В этом случае смарт-терминал не ждёт ответа от приложения. События приходят как при продаже, так и при возврате товара.
 
-### Использование службы и получение событий о намерении изменения чека
+## Описание позиции {#Position}
+
+Вы можете добавить в чек как позицию соответствующую товару в базе терминала, так и задать свободную позицию.
+
+Конструкторы позиций описаны  в классе [`Position.java`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/Position.java).
+
+Пример конструктора позиции чека, соответствующей товару в терминале (у позиции есть `uuid` товара):
+
+```java
+public Position(
+        String uuid,
+        String productUuid,
+        String productCode,
+        ProductType productType,
+        String name,
+        String measureName,
+        int measurePrecision,
+        TaxNumber taxNumber,
+        BigDecimal price,
+        BigDecimal priceWithDiscountPosition,
+        BigDecimal quantity,
+        String barcode,
+        String mark,
+        BigDecimal alcoholByVolume,
+        Long alcoholProductKindCode,
+        BigDecimal tareVolume,
+        Set<ExtraKey> extraKeys,
+        List<Position> subPositions
+)
+```
+
+Где:
+
+* `uuid` – идентификатор позиции в формате uuid4.
+* `productUuid` – идентификатор товара в формате uuid4, полученный из локальной базы товаров смарт-терминала.
+* `productCode` – Код товара. Может быть `null`.
+* `productType` – Вид товара.
+* `name` – наименование товара из локальной базы товаров смарт-терминала.
+* `measureName` – единицы измерения товара, полученные из локальной базы товаров смарт-терминала.
+* `measurePrecision` – точность измерения единиц товара, выраженная в количестве знаков после запятой.
+* `taxNumber` – налоговая ставка. Может быть `null`. Доступные значения описаны в классе [`TaxNumber.kt`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/TaxNumber.kt). Если поле не задано, смарт-терминал обращается за налоговой ставкой в Облако. Если в Облаке нет информации о налоговой ставке для позиции, смарт-терминал использует значение, заданное в настройках.
+* `price` – цена продукта, полученная из локальной базы товаров смарт-терминала.
+* `priceWithDiscountPosition` – цена позиции с учётом скидки.
+* `quantity` – количество добавленного товара.
+* `barcode` – штрихкод, по которому найден товар. Может быть `null`.
+* `mark` – алкогольная марка.
+* `alcoholByVolume` – крепость алкогольной продукции. Может быть `null`.
+* `alcoholProductKindCode` – код вида продукции ФСРАР. Может быть `null`.
+* `tareVolume` – объём тары. Может быть `null`.
+* `extraKeys` – метод, который позволяет добавлять к позиции в чеке дополнительные ключи (идентификаторы). Каждый ключ имеет описание (`description`), которое отображается в интерфейсе и печатается на чеке (можно передавать `null`), идентификатор (`identity`) и хранит данные о приложении, создавшем ключ (`appId`).
+
+  {% include note.html content="Приложение записывает дополнительные ключи в чек только под своим идентификатором." %}
+
+* `subPositions` – список подпозиций.
+
+Пример позиции чека с подпозицией (у позиции и подпозиции есть `uuid` товара):
+
+```java
+val positionFromProduct = Position.Builder.newInstance(
+                UUID.randomUUID().toString(),
+                product.uuid,
+                product.name,
+                product.measureName,
+                product.measurePrecision,
+                product.price,
+                BigDecimal.ONE
+        ).build()
+
+        positionFromProduct.subPosition.add(
+                Position.Builder.newInstance(
+                                UUID.randomUUID().toString(),
+                                product.uuid,
+                                product.name,
+                                product.measureName,
+                                product.measurePrecision,
+                                product.price,
+                                BigDecimal.ONE
+                        ).build()
+                )
+```
+
+Вы можете использовать подпозиции `subPosition` для добавления опций к товару.
+Например, к товару "Кофе" можно добавить подпозицию "Молоко". Подпозиция удаляется вместе с основной позицией товара.
+
+
+Пример свободно заданной позиции (`uuid` товара – `null`):
+
+```java
+val freeProductPosition = Position.Builder.newInstance(
+                UUID.randomUUID().toString(),
+                null,
+                "Товар",
+                "шт",
+                0,
+                BigDecimal(100),
+                BigDecimal(100)
+        ).build()
+```
+
+## Использование службы и получение событий о намерении изменения чека
 
 1. Создайте службу, например `MyIntegrationService`, которая наследует класс `IntegrationService`. В колбэке `onCreate` службы, зарегистрируйте процессор `BeforePositionsEditedEventProcessor` (процессор наследует класс `ActionProcessor`).
 
@@ -68,7 +167,6 @@ public BeforePositionsEditedEventResult(
 callback.onResult(beforePositionsEditedEventResult)
 ```
 
-
 Если приложению для возврата результата необходимо взаимодействие с пользователем, запустите операцию (`Activity`), которая наследует класс `IntegrationActivity`:
 
 ```java
@@ -87,7 +185,7 @@ setIntegrationResult(new BeforePositionsEditedEventResult(changes, null));
 
 
 
-#### Описание события `BeforePositionsEditedEvent`
+### Описание события `BeforePositionsEditedEvent`
 
 О намерении изменения чека сообщает событие `beforePositionsEditedEvent`:
 
@@ -157,7 +255,7 @@ public class BeforePositionsEditedEvent implements IBundlable {
 }
 ```
 
-#### Добавление, изменение и удаление позиций {#PositionAltering}
+## Добавление, изменение и удаление позиций {#PositionAltering}
 
 Чтобы добавить позицию:
 
@@ -291,106 +389,7 @@ data class PositionRemove(
 }
 ```
 
-#### Описание позиций {#Position}
-
-Вы можете добавить в чек как позицию соответствующую товару в базе терминала, так и задать свободную позицию.
-
-Конструкторы позиций описаны  в классе [`Position.java`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/Position.java).
-
-Пример конструктора позиции чека, соответствующей товару в терминале (у позиции есть `uuid` товара):
-
-```java
-public Position(
-        String uuid,
-        String productUuid,
-        String productCode,
-        ProductType productType,
-        String name,
-        String measureName,
-        int measurePrecision,
-        TaxNumber taxNumber,
-        BigDecimal price,
-        BigDecimal priceWithDiscountPosition,
-        BigDecimal quantity,
-        String barcode,
-        String mark,
-        BigDecimal alcoholByVolume,
-        Long alcoholProductKindCode,
-        BigDecimal tareVolume,
-        Set<ExtraKey> extraKeys,
-        List<Position> subPositions
-)
-```
-
-Где:
-
-* `uuid` – идентификатор позиции в формате uuid4.
-* `productUuid` – идентификатор товара в формате uuid4, полученный из локальной базы товаров смарт-терминала.
-* `productCode` – Код товара. Может быть `null`.
-* `productType` – Вид товара.
-* `name` – наименование товара из локальной базы товаров смарт-терминала.
-* `measureName` – единицы измерения товара, полученные из локальной базы товаров смарт-терминала.
-* `measurePrecision` – точность измерения единиц товара, выраженная в количестве знаков после запятой.
-* `taxNumber` – налоговая ставка. Может быть `null`. Доступные значения описаны в классе [`TaxNumber.kt`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/TaxNumber.kt). Если поле не задано, смарт-терминал обращается за налоговой ставкой в Облако. Если в Облаке нет информации о налоговой ставке для позиции, смарт-терминал использует значение, заданное в настройках.
-* `price` – цена продукта, полученная из локальной базы товаров смарт-терминала.
-* `priceWithDiscountPosition` – цена позиции с учётом скидки.
-* `quantity` – количество добавленного товара.
-* `barcode` – штрихкод, по которому найден товар. Может быть `null`.
-* `mark` – алкогольная марка.
-* `alcoholByVolume` – крепость алкогольной продукции. Может быть `null`.
-* `alcoholProductKindCode` – код вида продукции ФСРАР. Может быть `null`.
-* `tareVolume` – объём тары. Может быть `null`.
-* `extraKeys` – метод, который позволяет добавлять к позиции в чеке дополнительные ключи (идентификаторы). Каждый ключ имеет описание (`description`), которое отображается в интерфейсе и печатается на чеке (можно передавать `null`), идентификатор (`identity`) и хранит данные о приложении, создавшем ключ (`appId`).
-
-  {% include note.html content="Приложение записывает дополнительные ключи в чек только под своим идентификатором." %}
-
-* `subPositions` – список подпозиций.
-
-Пример позиции чека с подпозицией (у позиции и подпозиции есть `uuid` товара):
-
-```java
-val positionFromProduct = Position.Builder.newInstance(
-                UUID.randomUUID().toString(),
-                product.uuid,
-                product.name,
-                product.measureName,
-                product.measurePrecision,
-                product.price,
-                BigDecimal.ONE
-        ).build()
-
-        positionFromProduct.subPosition.add(
-                Position.Builder.newInstance(
-                                UUID.randomUUID().toString(),
-                                product.uuid,
-                                product.name,
-                                product.measureName,
-                                product.measurePrecision,
-                                product.price,
-                                BigDecimal.ONE
-                        ).build()
-                )
-```
-
-Вы можете использовать подпозиции `subPosition` для добавления опций к товару.
-Например, к товару "Кофе" можно добавить подпозицию "Молоко". Подпозиция удаляется вместе с основной позицией товара.
-
-
-Пример свободно заданной позиции (`uuid` товара – `null`):
-
-```java
-val freeProductPosition = Position.Builder.newInstance(
-                UUID.randomUUID().toString(),
-                null,
-                "Товар",
-                "шт",
-                0,
-                BigDecimal(100),
-                BigDecimal(100)
-        ).build()
-```
-
-### Получение событий об открытии чека, обновлении базы продуктов или результате изменения чека
+## Получение событий об открытии чека, обновлении базы продуктов или результате изменения чека
 
 Смарт терминал не ждёт ответ от приложения на широковещательные сообщения. Чтобы получать сообщения о результате изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:
 
@@ -427,7 +426,7 @@ public class AddPositionBroadcastReceiver extends BroadcastReceiver {
     </receiver>
 ```
 
-#### Сообщения о результатах изменения чека
+## Сообщения о результатах изменения чека
 
 При открытии чека (продажи или возврата) приходит сообщение:
 

@@ -1,6 +1,6 @@
 ---
 title: Принтер чеков
-keywords:
+keywords: оборудование, принтер, чеки, печать, методы
 summary: "Раздел содержит информацию о том, как приложение может работать с принтером чеков."
 sidebar: evotordoc_sidebar
 permalink: doc_java_bill_printer.html
@@ -8,7 +8,9 @@ tags: [Java, Терминал, Оборудование, Чеки]
 folder: java_SDK
 ---
 
-### Работа с принтером чеков
+## Работа с принтером чеков
+
+*Чтобы приложение печатало свои данные на чеке, выполните следующие действия:*
 
 1. В манифесте приложения укажите следующий элемент:
     `<uses-permission android:name="ru.evotor.permission.receipt.printExtra.SET" />`
@@ -27,7 +29,7 @@ folder: java_SDK
 
 3. Вызовите метод `DeviceServiceConnector.getPrinterService()`.
 
-    Метод не может быть `null` и в случае успеха возвращает объект `ru.evotor.devices.commons.IPrinterServiceWrapper`.
+    Метод возвращает объект `ru.evotor.devices.commons.IPrinterServiceWrapper`. Не может быть `null`
 
     Метод может вернуть следующие исключения (`exception`):
 
@@ -37,7 +39,7 @@ folder: java_SDK
 4. Вы можете вызвать следующие методы объекта `ru.evotor.devices.commons.IPrinterService`:
 
     * `int getAllowableSymbolsLineLength(int deviceId)` – возвращает количество символов, которые помещаются на одной строке чека.
-    * `int getAllowablePixelLineLength(int deviceId)` – возвращает доступную для печати ширину бумаги в пикселях
+    * `int getAllowablePixelLineLength(int deviceId)` – возвращает доступную для печати ширину бумаги в пикселях.
     * `void printDocument(int deviceId, in PrinterDocument printerDocument)` – печатает указанный массив объектов: текст, штрихкоды, изображения.
 
         Аргумент `deviceId` указывает устройство, для которого вызывается метод.
@@ -56,7 +58,7 @@ folder: java_SDK
 
 {% include note.html content="Работа с удалённым сервисом может занимать длительное время, поэтому не вызывайте перечисленные методы в главном потоке приложения." %}
 
-### Примеры
+## Примеры
 
 Код для печати сообщения на чеке:
 

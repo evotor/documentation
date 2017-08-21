@@ -1,6 +1,6 @@
 ---
 title: Весы
-keywords:
+keywords: оборудование, весы, вес, масса, метод
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_scales.html
@@ -8,7 +8,7 @@ tags: [Java, Терминал, Оборудование]
 folder: java_SDK
 ---
 
-### Работа весами
+*Чтобы получить данные от весов:*
 
 1. В колбэке `onCreate()` или при запуске операции (`activity`) инициализируйте класс `ru.evotor.devices.commons.DeviceServiceConnector`:
 

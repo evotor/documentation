@@ -1,9 +1,9 @@
 ---
 title: Печать электронных чеков
-keywords: чек, телефон, email, печать
+keywords: чек, телефон, email, печать, интернет, магазин
 summary:
 sidebar: evotordoc_sidebar
-permalink: doc_online_store_receipt.html
+permalink: doc_java_online_store_receipt.html
 tags: [Терминал, Java, Чеки]
 folder: java_SDK
 ---

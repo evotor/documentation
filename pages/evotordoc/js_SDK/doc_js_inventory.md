@@ -1,6 +1,6 @@
 ---
 title: Поиск товара по идентификатору
-keywords:
+keywords: номенклатура, товар, inventory
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_inventory.html
@@ -8,26 +8,26 @@ tags: [Терминал, JavaScript, Товары]
 folder: js_SDK
 ---
 
-### Подготовка к работе
+## Подготовка к работе
 
-Убедитесь, что в файле `client.yaml`, в списке `capabilities`, указан модуль для работы с номенклатурой:
+*Чтобы использовать методы для работы с номенклатурой:*
 
-```yaml
-capabilities:
-    - inventory
-```
+1. Убедитесь, что в файле `client.yaml`, в списке `capabilities`, указано разрешение для работы с номенклатурой:
 
-### Методы для работы номенклатурой
+   ```yaml
+    capabilities:
+        - inventory
+   ```
 
-#### Подключение модуля
+2. В плагине, демоне или `view.html` подключите модуль `inventory`:
 
-*Чтобы использовать методы для работы с номенклатурой подключите модуль:*
+   ```javascript
+   var inventory = require('inventory')
+   ```
 
-```javascript
-var inventory = require('inventory')
-```
+## Методы для работы номенклатурой
 
-#### Метод для поиска товаров по идентификатору
+### Метод для поиска товаров по идентификатору
 
 ```javascript
 inventory.getProduct(uuid)
