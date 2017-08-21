@@ -45,6 +45,16 @@ folder: java_SDK
 
 Приложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. Вы можете воспользоваться любым удобным способом отправки сообщения.
 
+Эвотор гарантирует поддержку следующих MIME-типов:
+
+* `application/x-www-form-urlencoded`
+* `application/json`
+* `application/xml`
+* `text/*`
+* `image/*`
+
+Поддержка других MIME-типов не гарантируется.
+
 Например, для отправки HTTP-сообщения из Java-приложения вы можете, например, использовать [библиотеку OkHttp](http://square.github.io/okhttp/) или способ, описанный на [developer.android.com](https://developer.android.com/training/basics/network-ops/connecting.html).
 
 {% include note.html content="Убедитесь, что ваше приложение не использует перечисленные ниже заголовки. В противном случае, смарт-терминал перезапишет их содержимое." %}
