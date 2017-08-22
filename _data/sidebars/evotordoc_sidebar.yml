@@ -357,6 +357,10 @@ entries:
             url: /doc_java_scales.html
             output: web
 
+    - title: Логирование Java-приложения
+      url: /doc_java_logging.html
+      output: web
+
 ###############################################################
 #               JavaScript SDK                                #
 ###############################################################
@@ -393,6 +397,10 @@ entries:
 
     - title: Получение данных от подключённых устройств
       url: /doc_js_devices.html
+      output: web
+
+    - title: Логирование JS-приложения
+      url: /doc_js_logging.html
       output: web
 
 #    - title: Работа с пользователями
