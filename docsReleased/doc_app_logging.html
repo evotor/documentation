@@ -361,12 +361,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
                     
                     
@@ -453,6 +447,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -513,6 +514,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_js_logging.html">Логирование JS-приложения</a></li>
             
             
             
@@ -696,7 +704,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Для доступа к логам и отладки приложения на терминале реализован <a href="./doc_developer_mode.html">режим разработчика</a>.</p>
+  <p>Для доступа к логам и отладки приложения на терминале реализован <a href="./doc_app_developer_mode.html">режим разработчика</a>.</p>
 
 <p>Вы можете просматривать логи с помощью утилиты <code class="highlighter-rouge">logcat</code>.</p>
 
@@ -704,31 +712,12 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Вам будет легче найти логи своего приложения, если вы добавите <code class="highlighter-rouge">packageName</code> приложения в текст лога или в виде тега. </div>
 
-<h3 id="js-">JS-приложение</h3>
-
-<p>Используйте функцию объекта <code class="highlighter-rouge">logger</code> для записи событий JS-приложений:</p>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>    <span class="nx">logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">)</span>
-</code></pre>
-</div>
-
-<p>Функция отображает в <code class="highlighter-rouge">logcat</code> значение <code class="highlighter-rouge">String</code>.</p>
-
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Перед использованием объекта <code class="highlighter-rouge">logger</code> в демонах или плагинах, объект требуется получить с помощью функции <code class="highlighter-rouge">require</code>: <code class="highlighter-rouge">var logger = require('logger')</code>.</div>
-
-<h3 id="java-">Java-приложение</h3>
-
-<p>Для записи событий Java-приложений используйте методы класса <code class="highlighter-rouge">Log</code>:</p>
+<p>Описание доступа к логам приложения приводится в соответствующих разделах:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Log.v(String, String)</code> – Verbose;</li>
-  <li><code class="highlighter-rouge">Log.d(String, String)</code> – Debug;</li>
-  <li><code class="highlighter-rouge">Log.i(String, String)</code> – Info;</li>
-  <li><code class="highlighter-rouge">Log.w(String, String)</code> – Warn;</li>
-  <li><code class="highlighter-rouge">Log.e(String, String)</code> – Error.</li>
+  <li><a href="./doc_java_logging.html">Логирование Java-приложения</a>.</li>
+  <li><a href="./doc_js_logging.html">Логирование JS-приложения</a>.</li>
 </ul>
-
-<p>Подробное описание класса и используемых методов смотрите в <a href="https://developer.android.com/reference/android/util/Log.html">документации для ОС Android</a>.</p>
 
 
     <div class="tags">
