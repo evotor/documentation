@@ -44,7 +44,7 @@ folder: smart_terminal_app_development
 
 Для установки с помощью ADB Shell вам потребуется:
 
-* смарт-терминал с [включённым режимом разработчика](./doc_developer_mode.html).
+* смарт-терминал с [включённым режимом разработчика](./doc_app_developer_mode.html).
 * Android Studio.
 
 {% include note.html content="Перед установкой убедитесь, что ваш компьютер и смарт-терминал находятся в одной сети wi-fi." %}

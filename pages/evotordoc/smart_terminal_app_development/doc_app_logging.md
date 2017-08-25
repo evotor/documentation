@@ -8,7 +8,7 @@ tags: [Терминал, JavaScript, Java]
 folder: smart_terminal_app_development
 published: true
 ---
-Для доступа к логам и отладки приложения на терминале реализован [режим разработчика](./doc_developer_mode.html).
+Для доступа к логам и отладки приложения на терминале реализован [режим разработчика](./doc_app_developer_mode.html).
 
 Вы можете просматривать логи с помощью утилиты `logcat`.
 
