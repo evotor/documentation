@@ -137,7 +137,7 @@ entries:
 #      output: web
 
 #    - title: Включение режима разработчика
-#      url: /doc_developer_mode.html
+#      url: /doc_java_integration_library_connection.html
 #      output: web
 
 #      subfolders:
