@@ -63,6 +63,8 @@ fun getReceiptHeaders(context: Context, type: Receipt.Type? = null): ru.evotor.f
 * `type` – тип чека: продажи (`SELL`) или возврата (`PAYBACK`).
 * `ru.evotor.framework.Cursor<Receipt.Header?>` – курсор с заголовками чека.
 
+Метод возвращает заголовки созданных чеков, которые хранятся на терминале.
+
 ## Пример
 
 Получить список позиций открытого чека:
