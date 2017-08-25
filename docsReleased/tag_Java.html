@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
+                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -361,12 +361,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
                     
                     
@@ -453,6 +447,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -513,6 +514,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_js_logging.html">Логирование JS-приложения</a></li>
             
             
             
@@ -1089,8 +1097,14 @@ $('#toc').on('click', 'a', function() {
 
         <tr><td><a href="doc_java_inventory.html">Товароучёт</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Методы Класс InventoryApi содержит следующие методы. Получить все штрихкоды товара: fun getAllBarcodesForProduct(context: Context, productUuid: String): List&lt;String&gt;   Где:  context – контекст приложения. productUuid – идентификатор товара... </td>
+          <td> Методы Класс InventoryApi содержит методы, описанные ниже. Получить все штрихкоды товара: fun getAllBarcodesForProduct(context: Context, productUuid: String): List&lt;String&gt;   Где:  context – контекст приложения. productUuid – идентификатор... </td>
         </tr>
+        
+     
+        
+     
+   
+    
         
      
         
@@ -1211,7 +1225,7 @@ $('#toc').on('click', 'a', function() {
 
         <tr><td><a href="doc_java_scales.html">Весы</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Работа весами   В колбэке onCreate() или при запуске операции (activity) инициализируйте класс ru.evotor.devices.commons.DeviceServiceConnector: DeviceServiceConnector.startInitConnections(getApplicationContext()); Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку  Совет: Воспользуйтесь методом addConnectionWrapper, чтобы получить событие об успешном подключении. Используйте это событие, если... </td>
+          <td> Чтобы получить данные от весов:   В колбэке onCreate() или при запуске операции (activity) инициализируйте класс ru.evotor.devices.commons.DeviceServiceConnector: DeviceServiceConnector.startInitConnections(getApplicationContext()); Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку  Совет: Воспользуйтесь методом addConnectionWrapper, чтобы получить событие об успешном подключении. Используйте это... </td>
         </tr>
         
      
@@ -1227,7 +1241,7 @@ $('#toc').on('click', 'a', function() {
 
         <tr><td><a href="doc_java_third_party_service_communication.html">Обмен сообщениями Java-приложения и стороннего сервиса</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Все запросы приложений к стороннему сервису проходят через Облако Эвотор:  Для отправки запросов приложения могут использовать только 80 и 443 порт.  Примечание: Обмен сообщениями со сторонним сервисом возможен только если вы установили приложение из Магазина приложений. Для отправки... </td>
+          <td> Все запросы приложений к стороннему сервису проходят через Облако Эвотор:  Для отправки запросов приложения могут использовать только 80 и 443 порт.  Примечание: Установленные на смарт-терминале приложения могут обращаться только к сторонним сервисам. Обращаться к REST API Облака Эвотор нельзя.... </td>
         </tr>
         
      
@@ -1263,6 +1277,24 @@ $('#toc').on('click', 'a', function() {
      
         
      
+        
+     
+   
+    
+        
+     
+        
+     
+   
+    
+        
+     
+        
+
+        <tr><td><a href="doc_js_modules.html">Модули</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Для доступа к функциям смарт-терминала, JS-приложение может использовать различные модули. Подключайте модули с помощью функции require('&lt;модуль&gt;'). Методы каждого из модулей описаны в соответствующих разделах. Модули для доступа к функциям смарт-терминала Доступные модули:  storage – модуль для работы с хранилищем данных на смарт-терминале. logger –... </td>
+        </tr>
         
      
    
@@ -1373,6 +1405,8 @@ $('#toc').on('click', 'a', function() {
     
    
 
+        
+        
         
         
         

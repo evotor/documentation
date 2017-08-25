@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека.">
-<meta name="keywords" content="ТерминалJavaЧеки,  ">
+<meta name="keywords" content="ТерминалJavaЧеки,  позиция, чек, события, открыть, добавить, изменить">
 <title>Работа с позициями чека | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
+                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -361,12 +361,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
                     
                     
@@ -453,6 +447,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -513,6 +514,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_js_logging.html">Логирование JS-приложения</a></li>
             
             
             
@@ -707,7 +715,108 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ul>
 
-<h3 id="section">Использование службы и получение событий о намерении изменения чека</h3>
+<h2 id="Position">Описание позиции</h2>
+
+<p>Вы можете добавить в чек как позицию соответствующую товару в базе терминала, так и задать свободную позицию.</p>
+
+<p>Конструкторы позиций описаны  в классе <a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/Position.java"><code class="highlighter-rouge">Position.java</code></a>.</p>
+
+<p>Пример конструктора позиции чека, соответствующей товару в терминале (у позиции есть <code class="highlighter-rouge">uuid</code> товара):</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="nf">Position</span><span class="o">(</span>
+        <span class="n">String</span> <span class="n">uuid</span><span class="o">,</span>
+        <span class="n">String</span> <span class="n">productUuid</span><span class="o">,</span>
+        <span class="n">String</span> <span class="n">productCode</span><span class="o">,</span>
+        <span class="n">ProductType</span> <span class="n">productType</span><span class="o">,</span>
+        <span class="n">String</span> <span class="n">name</span><span class="o">,</span>
+        <span class="n">String</span> <span class="n">measureName</span><span class="o">,</span>
+        <span class="kt">int</span> <span class="n">measurePrecision</span><span class="o">,</span>
+        <span class="n">TaxNumber</span> <span class="n">taxNumber</span><span class="o">,</span>
+        <span class="n">BigDecimal</span> <span class="n">price</span><span class="o">,</span>
+        <span class="n">BigDecimal</span> <span class="n">priceWithDiscountPosition</span><span class="o">,</span>
+        <span class="n">BigDecimal</span> <span class="n">quantity</span><span class="o">,</span>
+        <span class="n">String</span> <span class="n">barcode</span><span class="o">,</span>
+        <span class="n">String</span> <span class="n">mark</span><span class="o">,</span>
+        <span class="n">BigDecimal</span> <span class="n">alcoholByVolume</span><span class="o">,</span>
+        <span class="n">Long</span> <span class="n">alcoholProductKindCode</span><span class="o">,</span>
+        <span class="n">BigDecimal</span> <span class="n">tareVolume</span><span class="o">,</span>
+        <span class="n">Set</span><span class="o">&lt;</span><span class="n">ExtraKey</span><span class="o">&gt;</span> <span class="n">extraKeys</span><span class="o">,</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span> <span class="n">subPositions</span>
+<span class="o">)</span>
+</code></pre>
+</div>
+
+<p>Где:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">uuid</code> – идентификатор позиции в формате uuid4.</li>
+  <li><code class="highlighter-rouge">productUuid</code> – идентификатор товара в формате uuid4, полученный из локальной базы товаров смарт-терминала.</li>
+  <li><code class="highlighter-rouge">productCode</code> – Код товара. Может быть <code class="highlighter-rouge">null</code>.</li>
+  <li><code class="highlighter-rouge">productType</code> – Вид товара.</li>
+  <li><code class="highlighter-rouge">name</code> – наименование товара из локальной базы товаров смарт-терминала.</li>
+  <li><code class="highlighter-rouge">measureName</code> – единицы измерения товара, полученные из локальной базы товаров смарт-терминала.</li>
+  <li><code class="highlighter-rouge">measurePrecision</code> – точность измерения единиц товара, выраженная в количестве знаков после запятой.</li>
+  <li><code class="highlighter-rouge">taxNumber</code> – налоговая ставка. Может быть <code class="highlighter-rouge">null</code>. Доступные значения описаны в классе <a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/TaxNumber.kt"><code class="highlighter-rouge">TaxNumber.kt</code></a>. Если поле не задано, смарт-терминал обращается за налоговой ставкой в Облако. Если в Облаке нет информации о налоговой ставке для позиции, смарт-терминал использует значение, заданное в настройках.</li>
+  <li><code class="highlighter-rouge">price</code> – цена продукта, полученная из локальной базы товаров смарт-терминала.</li>
+  <li><code class="highlighter-rouge">priceWithDiscountPosition</code> – цена позиции с учётом скидки.</li>
+  <li><code class="highlighter-rouge">quantity</code> – количество добавленного товара.</li>
+  <li><code class="highlighter-rouge">barcode</code> – штрихкод, по которому найден товар. Может быть <code class="highlighter-rouge">null</code>.</li>
+  <li><code class="highlighter-rouge">mark</code> – алкогольная марка.</li>
+  <li><code class="highlighter-rouge">alcoholByVolume</code> – крепость алкогольной продукции. Может быть <code class="highlighter-rouge">null</code>.</li>
+  <li><code class="highlighter-rouge">alcoholProductKindCode</code> – код вида продукции ФСРАР. Может быть <code class="highlighter-rouge">null</code>.</li>
+  <li><code class="highlighter-rouge">tareVolume</code> – объём тары. Может быть <code class="highlighter-rouge">null</code>.</li>
+  <li>
+    <p><code class="highlighter-rouge">extraKeys</code> – метод, который позволяет добавлять к позиции в чеке дополнительные ключи (идентификаторы). Каждый ключ имеет описание (<code class="highlighter-rouge">description</code>), которое отображается в интерфейсе и печатается на чеке (можно передавать <code class="highlighter-rouge">null</code>), идентификатор (<code class="highlighter-rouge">identity</code>) и хранит данные о приложении, создавшем ключ (<code class="highlighter-rouge">appId</code>).</p>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Приложение записывает дополнительные ключи в чек только под своим идентификатором.</div>
+  </li>
+  <li><code class="highlighter-rouge">subPositions</code> – список подпозиций.</li>
+</ul>
+
+<p>Пример позиции чека с подпозицией (у позиции и подпозиции есть <code class="highlighter-rouge">uuid</code> товара):</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">val</span> <span class="n">positionFromProduct</span> <span class="o">=</span> <span class="n">Position</span><span class="o">.</span><span class="na">Builder</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span>
+                <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">uuid</span><span class="o">,</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">name</span><span class="o">,</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">measureName</span><span class="o">,</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">measurePrecision</span><span class="o">,</span>
+                <span class="n">product</span><span class="o">.</span><span class="na">price</span><span class="o">,</span>
+                <span class="n">BigDecimal</span><span class="o">.</span><span class="na">ONE</span>
+        <span class="o">).</span><span class="na">build</span><span class="o">()</span>
+
+        <span class="n">positionFromProduct</span><span class="o">.</span><span class="na">subPosition</span><span class="o">.</span><span class="na">add</span><span class="o">(</span>
+                <span class="n">Position</span><span class="o">.</span><span class="na">Builder</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span>
+                                <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+                                <span class="n">product</span><span class="o">.</span><span class="na">uuid</span><span class="o">,</span>
+                                <span class="n">product</span><span class="o">.</span><span class="na">name</span><span class="o">,</span>
+                                <span class="n">product</span><span class="o">.</span><span class="na">measureName</span><span class="o">,</span>
+                                <span class="n">product</span><span class="o">.</span><span class="na">measurePrecision</span><span class="o">,</span>
+                                <span class="n">product</span><span class="o">.</span><span class="na">price</span><span class="o">,</span>
+                                <span class="n">BigDecimal</span><span class="o">.</span><span class="na">ONE</span>
+                        <span class="o">).</span><span class="na">build</span><span class="o">()</span>
+                <span class="o">)</span>
+</code></pre>
+</div>
+
+<p>Вы можете использовать подпозиции <code class="highlighter-rouge">subPosition</code> для добавления опций к товару.
+Например, к товару “Кофе” можно добавить подпозицию “Молоко”. Подпозиция удаляется вместе с основной позицией товара.</p>
+
+<p>Пример свободно заданной позиции (<code class="highlighter-rouge">uuid</code> товара – <code class="highlighter-rouge">null</code>):</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">val</span> <span class="n">freeProductPosition</span> <span class="o">=</span> <span class="n">Position</span><span class="o">.</span><span class="na">Builder</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span>
+                <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+                <span class="kc">null</span><span class="o">,</span>
+                <span class="s">"Товар"</span><span class="o">,</span>
+                <span class="s">"шт"</span><span class="o">,</span>
+                <span class="mi">0</span><span class="o">,</span>
+                <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">100</span><span class="o">),</span>
+                <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">100</span><span class="o">)</span>
+        <span class="o">).</span><span class="na">build</span><span class="o">()</span>
+</code></pre>
+</div>
+
+<h2 id="section">Использование службы и получение событий о намерении изменения чека</h2>
 
 <ol>
   <li>
@@ -780,7 +889,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Где вместо null вы можете передать <code class="highlighter-rouge">new SetExtra(extra)</code>, команду для <a href="./doc_java_receipt_extras.html">создания дополнительных полей в чеке</a>.</p>
 
-<h4 id="beforepositionseditedevent">Описание события <code class="highlighter-rouge">BeforePositionsEditedEvent</code></h4>
+<h3 id="beforepositionseditedevent">Описание события <code class="highlighter-rouge">BeforePositionsEditedEvent</code></h3>
 
 <p>О намерении изменения чека сообщает событие <code class="highlighter-rouge">beforePositionsEditedEvent</code>:</p>
 
@@ -850,7 +959,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="PositionAltering">Добавление, изменение и удаление позиций</h4>
+<h2 id="PositionAltering">Добавление, изменение и удаление позиций</h2>
 
 <p>Чтобы добавить позицию:</p>
 
@@ -989,108 +1098,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="Position">Описание позиций</h4>
-
-<p>Вы можете добавить в чек как позицию соответствующую товару в базе терминала, так и задать свободную позицию.</p>
-
-<p>Конструкторы позиций описаны  в классе <a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/Position.java"><code class="highlighter-rouge">Position.java</code></a>.</p>
-
-<p>Пример конструктора позиции чека, соответствующей товару в терминале (у позиции есть <code class="highlighter-rouge">uuid</code> товара):</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="nf">Position</span><span class="o">(</span>
-        <span class="n">String</span> <span class="n">uuid</span><span class="o">,</span>
-        <span class="n">String</span> <span class="n">productUuid</span><span class="o">,</span>
-        <span class="n">String</span> <span class="n">productCode</span><span class="o">,</span>
-        <span class="n">ProductType</span> <span class="n">productType</span><span class="o">,</span>
-        <span class="n">String</span> <span class="n">name</span><span class="o">,</span>
-        <span class="n">String</span> <span class="n">measureName</span><span class="o">,</span>
-        <span class="kt">int</span> <span class="n">measurePrecision</span><span class="o">,</span>
-        <span class="n">TaxNumber</span> <span class="n">taxNumber</span><span class="o">,</span>
-        <span class="n">BigDecimal</span> <span class="n">price</span><span class="o">,</span>
-        <span class="n">BigDecimal</span> <span class="n">priceWithDiscountPosition</span><span class="o">,</span>
-        <span class="n">BigDecimal</span> <span class="n">quantity</span><span class="o">,</span>
-        <span class="n">String</span> <span class="n">barcode</span><span class="o">,</span>
-        <span class="n">String</span> <span class="n">mark</span><span class="o">,</span>
-        <span class="n">BigDecimal</span> <span class="n">alcoholByVolume</span><span class="o">,</span>
-        <span class="n">Long</span> <span class="n">alcoholProductKindCode</span><span class="o">,</span>
-        <span class="n">BigDecimal</span> <span class="n">tareVolume</span><span class="o">,</span>
-        <span class="n">Set</span><span class="o">&lt;</span><span class="n">ExtraKey</span><span class="o">&gt;</span> <span class="n">extraKeys</span><span class="o">,</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span> <span class="n">subPositions</span>
-<span class="o">)</span>
-</code></pre>
-</div>
-
-<p>Где:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">uuid</code> – идентификатор позиции в формате uuid4.</li>
-  <li><code class="highlighter-rouge">productUuid</code> – идентификатор товара в формате uuid4, полученный из локальной базы товаров смарт-терминала.</li>
-  <li><code class="highlighter-rouge">productCode</code> – Код товара. Может быть <code class="highlighter-rouge">null</code>.</li>
-  <li><code class="highlighter-rouge">productType</code> – Вид товара.</li>
-  <li><code class="highlighter-rouge">name</code> – наименование товара из локальной базы товаров смарт-терминала.</li>
-  <li><code class="highlighter-rouge">measureName</code> – единицы измерения товара, полученные из локальной базы товаров смарт-терминала.</li>
-  <li><code class="highlighter-rouge">measurePrecision</code> – точность измерения единиц товара, выраженная в количестве знаков после запятой.</li>
-  <li><code class="highlighter-rouge">taxNumber</code> – налоговая ставка. Может быть <code class="highlighter-rouge">null</code>. Доступные значения описаны в классе <a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/TaxNumber.kt"><code class="highlighter-rouge">TaxNumber.kt</code></a>. Если поле не задано, смарт-терминал обращается за налоговой ставкой в Облако. Если в Облаке нет информации о налоговой ставке для позиции, смарт-терминал использует значение, заданное в настройках.</li>
-  <li><code class="highlighter-rouge">price</code> – цена продукта, полученная из локальной базы товаров смарт-терминала.</li>
-  <li><code class="highlighter-rouge">priceWithDiscountPosition</code> – цена позиции с учётом скидки.</li>
-  <li><code class="highlighter-rouge">quantity</code> – количество добавленного товара.</li>
-  <li><code class="highlighter-rouge">barcode</code> – штрихкод, по которому найден товар. Может быть <code class="highlighter-rouge">null</code>.</li>
-  <li><code class="highlighter-rouge">mark</code> – алкогольная марка.</li>
-  <li><code class="highlighter-rouge">alcoholByVolume</code> – крепость алкогольной продукции. Может быть <code class="highlighter-rouge">null</code>.</li>
-  <li><code class="highlighter-rouge">alcoholProductKindCode</code> – код вида продукции ФСРАР. Может быть <code class="highlighter-rouge">null</code>.</li>
-  <li><code class="highlighter-rouge">tareVolume</code> – объём тары. Может быть <code class="highlighter-rouge">null</code>.</li>
-  <li>
-    <p><code class="highlighter-rouge">extraKeys</code> – метод, который позволяет добавлять к позиции в чеке дополнительные ключи (идентификаторы). Каждый ключ имеет описание (<code class="highlighter-rouge">description</code>), которое отображается в интерфейсе и печатается на чеке (можно передавать <code class="highlighter-rouge">null</code>), идентификатор (<code class="highlighter-rouge">identity</code>) и хранит данные о приложении, создавшем ключ (<code class="highlighter-rouge">appId</code>).</p>
-
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Приложение записывает дополнительные ключи в чек только под своим идентификатором.</div>
-  </li>
-  <li><code class="highlighter-rouge">subPositions</code> – список подпозиций.</li>
-</ul>
-
-<p>Пример позиции чека с подпозицией (у позиции и подпозиции есть <code class="highlighter-rouge">uuid</code> товара):</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">val</span> <span class="n">positionFromProduct</span> <span class="o">=</span> <span class="n">Position</span><span class="o">.</span><span class="na">Builder</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span>
-                <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
-                <span class="n">product</span><span class="o">.</span><span class="na">uuid</span><span class="o">,</span>
-                <span class="n">product</span><span class="o">.</span><span class="na">name</span><span class="o">,</span>
-                <span class="n">product</span><span class="o">.</span><span class="na">measureName</span><span class="o">,</span>
-                <span class="n">product</span><span class="o">.</span><span class="na">measurePrecision</span><span class="o">,</span>
-                <span class="n">product</span><span class="o">.</span><span class="na">price</span><span class="o">,</span>
-                <span class="n">BigDecimal</span><span class="o">.</span><span class="na">ONE</span>
-        <span class="o">).</span><span class="na">build</span><span class="o">()</span>
-
-        <span class="n">positionFromProduct</span><span class="o">.</span><span class="na">subPosition</span><span class="o">.</span><span class="na">add</span><span class="o">(</span>
-                <span class="n">Position</span><span class="o">.</span><span class="na">Builder</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span>
-                                <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
-                                <span class="n">product</span><span class="o">.</span><span class="na">uuid</span><span class="o">,</span>
-                                <span class="n">product</span><span class="o">.</span><span class="na">name</span><span class="o">,</span>
-                                <span class="n">product</span><span class="o">.</span><span class="na">measureName</span><span class="o">,</span>
-                                <span class="n">product</span><span class="o">.</span><span class="na">measurePrecision</span><span class="o">,</span>
-                                <span class="n">product</span><span class="o">.</span><span class="na">price</span><span class="o">,</span>
-                                <span class="n">BigDecimal</span><span class="o">.</span><span class="na">ONE</span>
-                        <span class="o">).</span><span class="na">build</span><span class="o">()</span>
-                <span class="o">)</span>
-</code></pre>
-</div>
-
-<p>Вы можете использовать подпозиции <code class="highlighter-rouge">subPosition</code> для добавления опций к товару.
-Например, к товару “Кофе” можно добавить подпозицию “Молоко”. Подпозиция удаляется вместе с основной позицией товара.</p>
-
-<p>Пример свободно заданной позиции (<code class="highlighter-rouge">uuid</code> товара – <code class="highlighter-rouge">null</code>):</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">val</span> <span class="n">freeProductPosition</span> <span class="o">=</span> <span class="n">Position</span><span class="o">.</span><span class="na">Builder</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span>
-                <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
-                <span class="kc">null</span><span class="o">,</span>
-                <span class="s">"Товар"</span><span class="o">,</span>
-                <span class="s">"шт"</span><span class="o">,</span>
-                <span class="mi">0</span><span class="o">,</span>
-                <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">100</span><span class="o">),</span>
-                <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">100</span><span class="o">)</span>
-        <span class="o">).</span><span class="na">build</span><span class="o">()</span>
-</code></pre>
-</div>
-
-<h3 id="section-1">Получение событий об открытии чека, обновлении базы продуктов или результате изменения чека</h3>
+<h2 id="section-1">Получение событий об открытии чека, обновлении базы продуктов или результате изменения чека</h2>
 
 <p>Смарт терминал не ждёт ответ от приложения на широковещательные сообщения. Чтобы получать сообщения о результате изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:</p>
 
@@ -1127,7 +1135,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="section-2">Сообщения о результатах изменения чека</h4>
+<h2 id="section-2">Сообщения о результатах изменения чека</h2>
 
 <p>При открытии чека (продажи или возврата) приходит сообщение:</p>
 

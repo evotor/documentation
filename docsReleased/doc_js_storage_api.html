@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалJavaScript,  ">
+<meta name="keywords" content="ТерминалJavaScript,  хранение, данные, сохранить, изменить, удалить, storage">
 <title>Хранение данных на смарт-терминале | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
+                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -361,12 +361,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
                     
                     
@@ -453,6 +447,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -513,6 +514,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_js_logging.html">Логирование JS-приложения</a></li>
             
             
             
@@ -694,26 +702,31 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="section">Подготовка к работе</h3>
+  <h2 id="section">Подготовка к работе</h2>
 
-<p>Убедитесь, что в файле <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code>, указан модуль для работы с хранилищем данных на смарт-терминале:</p>
+<p><em>Чтобы использовать методы для работы с хранилищем данных:</em></p>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">capabilities</span><span class="pi">:</span>
+<ol>
+  <li>
+    <p>Убедитесь, что в файле <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code>, указано следующее разрешение:</p>
+
+    <div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">capabilities</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">storage</span>
 </code></pre>
-</div>
+    </div>
+  </li>
+  <li>
+    <p>Подключите модуль для работы с хранилищем данных:</p>
 
-<h3 id="section-1">Методы для работы с хранилищем данных</h3>
-
-<h4 id="section-2">Подключение модуля</h4>
-
-<p>Чтобы использовать методы для работы с хранилищем данных подключите модуль:</p>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">storage</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'storage'</span><span class="p">)</span>
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">storage</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'storage'</span><span class="p">)</span>
 </code></pre>
-</div>
+    </div>
+  </li>
+</ol>
 
-<h4 id="section-3">Сохранение данных</h4>
+<h2 id="section-1">Методы для работы с хранилищем данных</h2>
+
+<h3 id="section-2">Сохранение данных</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">storage</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="o">&lt;</span><span class="err">ключ</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="err">значение</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre>
@@ -725,7 +738,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Одна пара <ключ>-<значение> не может занимать более 600 Кбайт.</значение></ключ></div>
 
-<h4 id="section-4">Получение данных</h4>
+<h3 id="section-3">Получение данных</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">storage</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="o">&lt;</span><span class="err">ключ</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre>
@@ -735,7 +748,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Возвращает ранее записанную строковую переменную или <code class="highlighter-rouge">null</code>, если значение не найдено.</p>
 
-<h4 id="section-5">Удаление данных</h4>
+<h3 id="section-4">Удаление данных</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">storage</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span>
 </code></pre>

@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
+                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -361,12 +361,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
                     
                     
@@ -453,6 +447,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -513,6 +514,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_js_logging.html">Логирование JS-приложения</a></li>
             
             
             
@@ -980,8 +988,14 @@ $('#toc').on('click', 'a', function() {
 
         <tr><td><a href="doc_java_inventory.html">Товароучёт</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Методы Класс InventoryApi содержит следующие методы. Получить все штрихкоды товара: fun getAllBarcodesForProduct(context: Context, productUuid: String): List&lt;String&gt;   Где:  context – контекст приложения. productUuid – идентификатор товара... </td>
+          <td> Методы Класс InventoryApi содержит методы, описанные ниже. Получить все штрихкоды товара: fun getAllBarcodesForProduct(context: Context, productUuid: String): List&lt;String&gt;   Где:  context – контекст приложения. productUuid – идентификатор... </td>
         </tr>
+        
+     
+   
+    
+        
+     
         
      
    
@@ -1096,8 +1110,20 @@ $('#toc').on('click', 'a', function() {
 
         <tr><td><a href="doc_js_inventory.html">Поиск товара по идентификатору</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Подготовка к работе Убедитесь, что в файле client.yaml, в списке capabilities, указан модуль для работы с номенклатурой: capabilities: - inventory   Методы для работы номенклатурой Подключение модуля Чтобы использовать методы для работы с номенклатурой подключите модуль: &lt;div... </td>
+          <td> Подготовка к работе Чтобы использовать методы для работы с номенклатурой:   Убедитесь, что в файле client.yaml, в списке capabilities, указано разрешение для работы с номенклатурой:  capabilities: - inventory     В плагине, демоне или view.html... </td>
         </tr>
+        
+     
+   
+    
+        
+     
+        
+     
+   
+    
+        
+     
         
      
    
@@ -1202,6 +1228,8 @@ $('#toc').on('click', 'a', function() {
     
    
 
+        
+        
         
         
         

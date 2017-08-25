@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека.">
-<meta name="keywords" content="JavaТерминалОборудование,  ">
+<meta name="keywords" content="JavaТерминалОборудование,  печать, чек">
 <title>Печать внутри кассового чека | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
+                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -361,12 +361,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
                     
                     
@@ -453,6 +447,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -513,6 +514,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_js_logging.html">Логирование JS-приложения</a></li>
             
             
             
@@ -708,7 +716,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">PrintExtraPlacePositionAllSubpositionsFooter</code> – данные печатаются в позиции в чеке, после всех подпозиций.</li>
 </ul>
 
-<h3 id="section">Печать данных внутри кассового чека</h3>
+<h2 id="section">Печать данных внутри кассового чека</h2>
 
 <p><em>Чтобы приложение печатало данные внутри кассового чека:</em></p>
 
@@ -722,7 +730,7 @@ $('#toc').on('click', 'a', function() {
   </li>
   <li>Создайте службу, которая отвечает за передачу данных для печати.</li>
   <li>
-    <p>Объявите службу в манифесте приложения и укажите intent-filter:</p>
+    <p>Объявите службу в манифесте приложения и укажите <code class="highlighter-rouge">intent-filter</code>:</p>
 
     <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evo.v2.receipt.sell.printExtra.REQUIRED"</span> <span class="nt">/&gt;</span>
 </code></pre>
@@ -739,6 +747,7 @@ $('#toc').on('click', 'a', function() {
                 <span class="n">PrintExtraRequiredEvent</span><span class="o">.</span><span class="na">NAME_SELL_RECEIPT</span><span class="o">,</span>
                 <span class="k">new</span> <span class="nf">PrintExtraRequiredEventProcessor</span><span class="o">()</span> <span class="o">{</span>
                 <span class="o">}</span>
+                <span class="o">)</span>
 </code></pre>
     </div>
   </li>
@@ -752,7 +761,7 @@ $('#toc').on('click', 'a', function() {
         <span class="n">setPrintExtras</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">SetPrintExtra</span><span class="o">(</span>
                 <span class="c1">//Метод, который указывает место, где будут распечатаны данные.</span>
                 <span class="k">new</span> <span class="nf">PrintExtraPlacePrintGroupTop</span><span class="o">(</span><span class="kc">null</span><span class="o">),</span>
-                <span class="c1">//Массив данных, которые должны быть распечатаны.</span>
+                <span class="c1">//Массив данных, которые требуется распечатать.</span>
                 <span class="k">new</span> <span class="n">IPrintable</span><span class="o">[]{</span>
                         <span class="k">new</span> <span class="nf">PrintableText</span><span class="o">(</span><span class="s">"&lt;Текст&gt;"</span><span class="o">),</span>
                         <span class="k">new</span> <span class="nf">PrintableBarcode</span><span class="o">(</span><span class="s">"&lt;Штрихкод&gt;"</span><span class="o">,</span> <span class="n">PrintableBarcode</span><span class="o">.</span><span class="na">BarcodeType</span><span class="o">.</span><span class="na">CODE39</span><span class="o">),</span>

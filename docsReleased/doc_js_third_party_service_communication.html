@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалJavaScript,  ">
+<meta name="keywords" content="ТерминалJavaScript,  обмен, сообщения, HTTP, сторонний, сервис, проксирование">
 <title>Обмен сообщениями со сторонним сервисом | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
+                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -361,12 +361,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
                     
                     
@@ -453,6 +447,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -513,6 +514,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_js_logging.html">Логирование JS-приложения</a></li>
             
             
             
@@ -700,18 +708,21 @@ $('#toc').on('click', 'a', function() {
 
 <p>Для отправки запросов приложения могут использовать только 80 и 443 порт.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Обмен сообщениями со сторонним сервисом возможен только если вы установили приложение из <a href="./doc_app_installation.html#MarkeplaceAppInstallation">Магазина приложений</a>.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Установленные на смарт-терминале приложения могут обращаться только к сторонним сервисам. Обращаться к REST API Облака Эвотор нельзя.</div>
+
+<h2 id="section">Подготовка к отправке запросов</h2>
 
 <p>Для отправки запросов требуется:</p>
 
 <ul>
   <li>На портале <a href="https://dev.evotor.ru">dev.evotor.ru</a>, указать список разрешённых URL, к которым может обращаться приложение.</li>
   <li>Поддержать возможность обращения к сторонним сервисам в приложении.</li>
+  <li>Установить приложение в <a href="./doc_app_installation.html#MarkeplaceAppInstallation">Магазине приложений</a>.</li>
 </ul>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Если вы разрабатываете Java-приложение, смотрите раздел <a href="./doc_java_third_party_service_communication.html">Обмен сообщениями Java-приложения и стороннего сервиса</a>.</div>
 
-<h3 id="url">Настройка списка разрешённых URL</h3>
+<h2 id="url">Настройка списка разрешённых URL</h2>
 
 <p>Чтобы настроить список разрешённых URL:</p>
 
@@ -732,9 +743,21 @@ $('#toc').on('click', 'a', function() {
 
 <p>После создания списка, обмен сообщениями происходит по описанному ниже процессу.</p>
 
-<h3 id="http-">Шаг 1. Приложение отправляет HTTP-сообщение</h3>
+<h2 id="http-">Шаг 1. Приложение отправляет HTTP-сообщение</h2>
 
 <p>Приложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. Вы можете воспользоваться любым удобным способом отправки сообщения.</p>
+
+<p>Эвотор гарантирует поддержку следующих MIME-типов:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">application/x-www-form-urlencoded</code></li>
+  <li><code class="highlighter-rouge">application/json</code></li>
+  <li><code class="highlighter-rouge">application/xml</code></li>
+  <li><code class="highlighter-rouge">text/*</code></li>
+  <li><code class="highlighter-rouge">image/*</code></li>
+</ul>
+
+<p>Поддержка других MIME-типов не гарантируется.</p>
 
 <p>Убедитесь что в файле <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code>, указан модуль для отправки HTTP-запросов:</p>
 
@@ -755,7 +778,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Во view.html вы также можете использовать ajax или другие способы обмена сообщениями.</div>
 
-<h4 id="get-">Метод для GET-запроса</h4>
+<h3 id="get-">Метод для GET-запроса</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="err">:</span> <span class="nb">String</span><span class="p">)</span>
 </code></pre>
@@ -763,7 +786,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>В аргументе метода требуется передать URL, по которому выполняется GET-запрос.</p>
 
-<h4 id="post-">Метод для POST-запроса</h4>
+<h3 id="post-">Метод для POST-запроса</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">http</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">url</span><span class="err">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">payload</span><span class="err">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">mediaType</span><span class="err">:</span> <span class="nb">String</span><span class="p">)</span>
 </code></pre>
@@ -771,7 +794,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>В аргументе метода требуется передать URL, по-которому выполняется POST-запрос и тело запроса.</p>
 
-<h3 id="section">Шаг 2. Смарт-терминал передаёт сообщение в облако</h3>
+<h2 id="section-1">Шаг 2. Смарт-терминал передаёт сообщение в облако</h2>
 
 <p>Терминал перехватывает сообщение и передаёт его в облако Эвотор.</p>
 
@@ -795,7 +818,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Transfer-Encoding</code></li>
 </ul>
 
-<h3 id="section-1">Шаг 3. Облако передаёт сообщение адресату</h3>
+<h2 id="section-2">Шаг 3. Облако передаёт сообщение адресату</h2>
 
 <p>Облако удаляет служебные заголовки, добавляет свои заголовки и передаёт сообщение адресату.</p>
 
@@ -809,7 +832,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Сторонний сервер получает сообщение от облака Эвотор и определяет отправителя с помощью заголовка Authorization.</p>
 
-<h4 id="section-2">Шаг 4. Ответ стороннего сервиса</h4>
+<h2 id="section-3">Шаг 4. Ответ стороннего сервиса</h2>
 
 <p>Ответ стороннего сервиса передаётся приложению в обратном порядке.</p>
 

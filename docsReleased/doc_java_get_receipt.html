@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит описание методов интерфейса, с помощью которого можно получить данные сформированного чека.">
-<meta name="keywords" content="ТерминалJavaЧеки,  чек, методы, интерфейс, заголовки, ReceiptApi">
+<meta name="keywords" content="ТерминалJavaЧеки,  чек, методы, интерфейс, заголовки, ReceiptApi, штрихкод, позиция">
 <title>Получить данные сформированного чека | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
+                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -361,12 +361,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
                     
                     
@@ -453,6 +447,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -513,6 +514,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_js_logging.html">Логирование JS-приложения</a></li>
             
             
             
@@ -698,7 +706,7 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Методы</h2>
 
-<p>Класс <a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/ReceiptApi.kt"><code class="highlighter-rouge">ReceiptApi</code></a> содержит следующие методы</p>
+<p>Класс <a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/ReceiptApi.kt"><code class="highlighter-rouge">ReceiptApi</code></a> содержит описанные ниже методы.</p>
 
 <h3 id="section-1">Получить текущий открытый чек</h3>
 
@@ -732,7 +740,21 @@ $('#toc').on('click', 'a', function() {
 
 <p>Метод возвращает чек или <code class="highlighter-rouge">null</code>, если чек отсутствует.</p>
 
-<h3 id="section-3">Получить список заголовков чека</h3>
+<h3 id="section-3">Получить по штрихкоду позицию для добавления в чек:</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getPositionsByBarcode</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">barcode:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p>Где:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">context</code> – контекст приложения.</li>
+  <li><code class="highlighter-rouge">barcode</code> – штрихкод товара.</li>
+  <li><code class="highlighter-rouge">List&lt;Position&gt;</code> – список позиций</li>
+</ul>
+
+<h3 id="section-4">Получить список заголовков чека</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getReceiptHeaders</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">type:</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">Type</span><span class="o">?</span> <span class="o">=</span> <span class="kc">null</span><span class="o">):</span> <span class="n">ru</span><span class="o">.</span><span class="na">evotor</span><span class="o">.</span><span class="na">framework</span><span class="o">.</span><span class="na">Cursor</span><span class="o">&lt;</span><span class="n">Receipt</span><span class="o">.</span><span class="na">Header</span><span class="o">?&gt;?</span>
 </code></pre>
@@ -746,7 +768,9 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">ru.evotor.framework.Cursor&lt;Receipt.Header?&gt;</code> – курсор с заголовками чека.</li>
 </ul>
 
-<h2 id="section-4">Пример</h2>
+<p>Метод возвращает заголовки созданных чеков, которые хранятся на терминале.</p>
+
+<h2 id="section-5">Пример</h2>
 
 <p>Получить список позиций открытого чека:</p>
 

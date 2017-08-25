@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалJavaScriptТовары,  ">
+<meta name="keywords" content="ТерминалJavaScriptТовары,  номенклатура, товар, inventory">
 <title>Поиск товара по идентификатору | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
+                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -361,12 +361,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
                     
                     
@@ -453,6 +447,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -513,6 +514,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_js_logging.html">Логирование JS-приложения</a></li>
             
             
             
@@ -694,26 +702,31 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="section">Подготовка к работе</h3>
+  <h2 id="section">Подготовка к работе</h2>
 
-<p>Убедитесь, что в файле <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code>, указан модуль для работы с номенклатурой:</p>
+<p><em>Чтобы использовать методы для работы с номенклатурой:</em></p>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">capabilities</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">inventory</span>
+<ol>
+  <li>
+    <p>Убедитесь, что в файле <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code>, указано разрешение для работы с номенклатурой:</p>
+
+    <div class="language-yaml highlighter-rouge"><pre class="highlight"><code> <span class="s">capabilities</span><span class="pi">:</span>
+     <span class="pi">-</span> <span class="s">inventory</span>
 </code></pre>
-</div>
+    </div>
+  </li>
+  <li>
+    <p>В плагине, демоне или <code class="highlighter-rouge">view.html</code> подключите модуль <code class="highlighter-rouge">inventory</code>:</p>
 
-<h3 id="section-1">Методы для работы номенклатурой</h3>
-
-<h4 id="section-2">Подключение модуля</h4>
-
-<p><em>Чтобы использовать методы для работы с номенклатурой подключите модуль:</em></p>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">inventory</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'inventory'</span><span class="p">)</span>
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">inventory</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'inventory'</span><span class="p">)</span>
 </code></pre>
-</div>
+    </div>
+  </li>
+</ol>
 
-<h4 id="section-3">Метод для поиска товаров по идентификатору</h4>
+<h2 id="section-1">Методы для работы номенклатурой</h2>
+
+<h3 id="section-2">Метод для поиска товаров по идентификатору</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">inventory</span><span class="p">.</span><span class="nx">getProduct</span><span class="p">(</span><span class="nx">uuid</span><span class="p">)</span>
 </code></pre>

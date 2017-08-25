@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалJavaScript,  ">
+<meta name="keywords" content="ТерминалJavaScript,  шаблон, разработка, приложение, JS">
 <title>Подключение шаблона JS-приложения | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
+                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -361,12 +361,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
                     
                     
@@ -453,6 +447,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -513,6 +514,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_js_logging.html">Логирование JS-приложения</a></li>
             
             
             
@@ -698,7 +706,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Перед началом работы убедитесь, что в настройках Android Studio отключён параметр Instant run.</div>
 
-<h3 id="section">Требования</h3>
+<h2 id="section">Требования</h2>
 
 <p>Для разработки js-приложения, вам потребуется:</p>
 
@@ -707,7 +715,7 @@ $('#toc').on('click', 'a', function() {
   <li>плагин <a href="https://github.com/evotor/template-plugin">template-plugin</a> версии 1.1.7.</li>
 </ul>
 
-<h3 id="js-">Подключение шаблон JS-приложения</h3>
+<h2 id="js-">Подключение шаблон JS-приложения</h2>
 
 <p><em>Чтобы подключить шаблон JS-приложения:</em></p>
 
@@ -790,7 +798,7 @@ allprojects {
     </div>
   </li>
   <li>
-    <p>В файле <code class="highlighter-rouge">build.gradle (Module: app)</code>, добавьте плагин template-plugin в зависимости (dependencies):</p>
+    <p>В файле <code class="highlighter-rouge">build.gradle (Module: app)</code>, добавьте плагин <code class="highlighter-rouge">template-plugin</code> в зависимости (dependencies):</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>dependencies {
         compile 'com.github.evotor:template-plugin:v1.1.7'
