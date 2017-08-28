@@ -135,5 +135,22 @@ folder: evotordoc
                             </div>
                         </div>
                     </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Что делать если Облако Эвотор не проксирует запросы к стороннему сервису?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseTen" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <p>Если Облако Эвотор не <a href="https://developer.evotor.ru/docs/doc_java_third_party_service_communication.html">проксирует запросы</a>  от вашего приложения к стороннему сервису, убедитесь что:</p>
+                            <ul>
+                              <li>для обмена сообщениями со сторонним сервисом приложение использует порты 80 и 443;</li>
+                              <li>приложение <a href="https://developer.evotor.ru/docs/doc_app_installation.html#MarkeplaceAppInstallation">установлено из Магазина приложений</a>;</li>
+                              <li>на смарт-терминале установлены последние версии Evotor POS и EvoWall.</li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
 </div>
 <!-- /.panel-group -->
