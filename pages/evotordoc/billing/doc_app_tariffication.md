@@ -1,5 +1,5 @@
 ---
-title: Тарификация приложений
+title: О тарификации приложений
 keywords:
 summary: Раздел содержит общие сведения о монетизации приложений.
 sidebar: evotordoc_sidebar
@@ -7,6 +7,8 @@ permalink: doc_app_tariffication.html
 tags: []
 folder: billing
 ---
+
+{% include important.html content="Цены, приведённые в разделе, являются ориентировочными. Каждый тариф модераторы Эвотора проверяют и согласуют отдельно." %}
 
 ## О тарификации приложений
 

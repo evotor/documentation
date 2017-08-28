@@ -514,6 +514,10 @@ entries:
       url: /doc_about_billing.html
       output: web
 
+    - title: О тарификации приложений
+      url: /doc_app_tariffication.html
+      output: web
+
     - title: Тарифы
       url: /doc_tariffs.html
       output: web
