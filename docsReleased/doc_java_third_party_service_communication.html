@@ -715,7 +715,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Для отправки запросов приложения могут использовать только 80 и 443 порт.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Установленные на смарт-терминале приложения могут обращаться только к сторонним сервисам. Обращаться к REST API Облака Эвотор нельзя.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Установленные на смарт-терминале приложения могут обращаться только к сторонним сервисам. При этом, сторонние сервисы не должны быть в одной локальной сети со смарт-терминалом. Обращаться к REST API Облака Эвотор нельзя.</div>
 
 <h2 id="section">Подготовка к отправке запросов</h2>
 
@@ -762,6 +762,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">application/xml</code></li>
   <li><code class="highlighter-rouge">text/*</code></li>
   <li><code class="highlighter-rouge">image/*</code></li>
+  <li><code class="highlighter-rouge">multipart/form-data</code></li>
 </ul>
 
 <p>Поддержка других MIME-типов не гарантируется.</p>
@@ -803,7 +804,7 @@ $('#toc').on('click', 'a', function() {
 <ul>
   <li><code class="highlighter-rouge">X-Evotor-Store-Uuid</code> – содержит идентификатор магазина в формате uuid4, к которому привязан терминал.</li>
   <li><code class="highlighter-rouge">X-Evotor-Device-UUID</code> – содержит идентификатор устройства в формате uuid4, полученный по запросу к <code class="highlighter-rouge">/api/v1/inventories/devices</code>.</li>
-  <li><code class="highlighter-rouge">Authorization</code> – содержит <a href="./doc_authorization.html#serverToken">токен стороннего сервиса</a>. Токен необходим для bearer-авторизации.</li>
+  <li><code class="highlighter-rouge">Authorization</code> – содержит <a href="./doc_authorization.html#usersToken">токен пользователя</a>. Токен необходим для bearer-авторизации.</li>
 </ul>
 
 <p>Сторонний сервер получает сообщение от облака Эвотор и определяет отправителя с помощью заголовка Authorization.</p>
@@ -812,12 +813,17 @@ $('#toc').on('click', 'a', function() {
 
 <p>Ответ стороннего сервиса передаётся приложению в обратном порядке.</p>
 
-<p>Ответы стороннего сервиса должны содержать объекты:</p>
+<p>Если вы используете проксирование ver.2 требования к содержимому ответа отсутствуют.</p>
+
+<p>Если вы используете проксирование ver.1 ответы стороннего сервиса должны содержать объекты:</p>
 
 <ul>
   <li><code class="highlighter-rouge">status</code> – содержит HTTP-код состояния.</li>
   <li><code class="highlighter-rouge">body</code> – содержит тело запроса.</li>
 </ul>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> За проксирование отвечает параметр <strong>Проксирование запросов из приложения с терминала на ваш сервер</strong> на вкладке <strong>Интеграция</strong> вашего приложения, на сайте <a href="https://dev.evotor.ru/">dev.evotor.ru</a>.</div>
+
 
 
     <div class="tags">
