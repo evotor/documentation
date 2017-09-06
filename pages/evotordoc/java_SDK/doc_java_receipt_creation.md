@@ -50,4 +50,6 @@ folder: smart_terminal_SDK
 
    Где вместо null вы можете передать `new SetExtra(extra)`, команду для [создания дополнительных полей в чеке](./doc_java_receipt_extras.html).
 
+   {% include tip.html content="Замените `SELL` на `PAYBACK`, если хотите открыть чек возврата." %}
+
    {% include note.html content="При создании нового чека, происходит автоматическая очистка существующего открытого чека." %}
