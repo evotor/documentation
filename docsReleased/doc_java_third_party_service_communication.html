@@ -754,6 +754,8 @@ $('#toc').on('click', 'a', function() {
 
 <p>Приложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. Вы можете воспользоваться любым удобным способом отправки сообщения.</p>
 
+<p>В зависимости от версии проксирования Облако Эвотор обрабатывает запросы: <code class="highlighter-rouge">GET</code> и <code class="highlighter-rouge">POST</code> (для ver.1 и ver.2), <code class="highlighter-rouge">PATCH</code> (только для ver.2).</p>
+
 <p>Эвотор гарантирует поддержку следующих MIME-типов:</p>
 
 <ul>
@@ -768,8 +770,6 @@ $('#toc').on('click', 'a', function() {
 <p>Поддержка других MIME-типов не гарантируется.</p>
 
 <p>Например, для отправки HTTP-сообщения из Java-приложения вы можете, например, использовать <a href="http://square.github.io/okhttp/">библиотеку OkHttp</a> или способ, описанный на <a href="https://developer.android.com/training/basics/network-ops/connecting.html">developer.android.com</a>.</p>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Убедитесь, что ваше приложение не использует перечисленные ниже заголовки. В противном случае, смарт-терминал перезапишет их содержимое.</div>
 
 <h2 id="section-1">Шаг 2. Смарт-терминал передаёт сообщение в облако</h2>
 
