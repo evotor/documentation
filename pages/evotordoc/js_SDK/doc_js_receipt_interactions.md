@@ -91,7 +91,7 @@ var position = {
 }
 ```
 
-{% include note.html content="Чтобы добавить позицию в чек, соответствующий плагин требуется подписать на [получение события](doc_app_integration_points.html#Callbacks) `evo.v2.receipt.sell.beforePositionsEdited`. Плагин требуется подписывать в [манифесете JS-приложения](doc_js_app_manifest.html)." %}
+{% include note.html content="Чтобы добавить позицию в чек, соответствующий плагин требуется подписать на [получение события](doc_app_integration_points.html#Callbacks) `evo.v2.receipt.sell.beforePositionsEdited`. Плагин требуется подписывать в [манифесете JS-приложения](./doc_js_app_manifest.html)." %}
 
 ### Редактировать позицию в чеке
 
