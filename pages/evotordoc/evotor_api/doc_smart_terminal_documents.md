@@ -40,9 +40,25 @@ folder: evotordoc/evotor_integration
 
 <tr>
 
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;BUY&quot;}">BUY</td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041f\u0440\u043e\u0434\u0430\u0436\u0430&quot;}">Выкуп товара у клиента, с увеличением остатка. Например, при приёме цветного металла.</td>
+
+</tr>
+
+<tr>
+
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PAYBACK&quot;}">PAYBACK</td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0412\u043e\u0437\u0432\u0440\u0430\u0442 \u0434\u0435\u043d\u0435\u0433&quot;}">Возврат денег</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PAYBACK&quot;}">BUYBACK</td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0412\u043e\u0437\u0432\u0440\u0430\u0442 \u0434\u0435\u043d\u0435\u0433&quot;}">Выкуп товара клиентом, с уменьшением остатка. Например, выкуп залога в ломбарде.</td>
 
 </tr>
 
