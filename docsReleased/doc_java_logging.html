@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалJavaScript,  логи, журналы, log">
+<meta name="keywords" content="ТерминалJava,  логи, журналы, log">
 <title>Логирование Java-приложения | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -719,6 +719,15 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Log.e(String, String)</code> – Error.</li>
 </ul>
 
+<p>Смарт-терминал фильтрует логи по имени пакета (<em>packagename</em>) приложения.</p>
+
+<p>Чтобы ваши логи отображались в logcat необходимо добавить имя пакета приложения в тэг или в текст сообщения:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TAG</span> <span class="o">=</span> <span class="s">"packagename"</span><span class="o">;</span>
+<span class="n">Log</span><span class="o">.</span><span class="na">v</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="n">String</span><span class="o">);</span>
+</code></pre>
+</div>
+
 <p>Подробное описание класса и используемых методов смотрите в <a href="https://developer.android.com/reference/android/util/Log.html">документации для ОС Android</a>.</p>
 
 
@@ -732,7 +741,7 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_JavaScript.html" class="btn btn-default navbar-btn cursorNorm" role="button">JavaScript</a>
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
         
         
         
