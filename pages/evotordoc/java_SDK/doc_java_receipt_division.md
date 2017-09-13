@@ -4,7 +4,7 @@ keywords: Разделение, деление, чек, печатная, гру
 summary: "Раздел содержит описание интерфейса, с помощью которого приложения могут делить чек на несколько платежей или на несколько чеков (печатных групп), например, для отдельной печати фискального и ЕНВД чека."
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_division.html
-tags: [Терминал, Java, Чеки]
+tags: [Terminal, Java, Receipts]
 folder: java_SDK
 ---
 

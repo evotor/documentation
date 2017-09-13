@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_app_icon.html
-tags: [Терминал, JavaScript]
+tags: [Terminal, JavaScript]
 folder: js_SDK
 ---
 
@@ -75,6 +75,6 @@ folder: js_SDK
 * `icon_256` – задаёт путь к иконке в разрешении 256 х 256 пикселей. Иконка копируется в папку xxxdrawable-hdpi, файл переименовывается в `<Значение параметра name>-icon.png`.
 * `source` – задаёт полный путь к html-файлу, который открывается по нажатию на плитку.
 * `point` – задаёт экран смарт-терминала, с которого вызывается приложение. Возможные значения: `SALES_SCREEN` и `MAIN_SCREEN`
-* `grants` – задаёт [права приложения](doc_smart_terminal_app_grants.html).
+* `grants` – задаёт [права приложения](./doc_app_grants.html).
 * `scripts` – задаёт список подключаемых скриптов.
 * `styles` – задаёт список подключаемых стилей.

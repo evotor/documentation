@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит описание методов интерфейса, с помощью которого можно получить данные сформированного чека.">
-<meta name="keywords" content="ТерминалJavaЧеки,  чек, методы, интерфейс, заголовки, ReceiptApi, штрихкод, позиция">
+<meta name="keywords" content="TerminalJavaReceipts,  чек, методы, интерфейс, заголовки, ReceiptApi, штрихкод, позиция, платеж">
 <title>Получить данные сформированного чека | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -38,8 +38,6 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -713,7 +711,7 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Методы</h2>
 
-<p>Класс <a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/ReceiptApi.kt"><code class="highlighter-rouge">ReceiptApi</code></a> содержит описанные ниже методы.</p>
+<p>Классы <a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/ReceiptApi.kt"><code class="highlighter-rouge">ReceiptApi</code></a> и <a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/Receipt.kt"><code class="highlighter-rouge">Reseipt</code></a> содержат описанные ниже методы.</p>
 
 <h3 id="section-1">Получить текущий открытый чек</h3>
 
@@ -729,7 +727,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Receipt</code> – текущий открытый чек.</li>
 </ul>
 
-<p>Метод возвращает чек или <code class="highlighter-rouge">null</code>, если чек отсутствует.</p>
+<p>Метод возвращает чек или <code class="highlighter-rouge">null</code>, если чек закрыт.</p>
 
 <h3 id="section-2">Получить чек по идентификатору</h3>
 
@@ -745,7 +743,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Receipt</code> – чек.</li>
 </ul>
 
-<p>Метод возвращает чек или <code class="highlighter-rouge">null</code>, если чек отсутствует.</p>
+<p>Метод возвращает чек или <code class="highlighter-rouge">null</code>, если чек не найден.</p>
 
 <h3 id="section-3">Получить по штрихкоду позицию для добавления в чек:</h3>
 
@@ -761,7 +759,40 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">List&lt;Position&gt;</code> – список позиций</li>
 </ul>
 
-<h3 id="section-4">Получить список заголовков чека</h3>
+<h3 id="section-4">Получить позиции чека</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getPositions</span><span class="o">():</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">printDocuments</span>
+            <span class="o">.</span><span class="na">flatMap</span> <span class="o">{</span> <span class="n">it</span><span class="o">.</span><span class="na">positions</span> <span class="o">}</span>
+            <span class="o">.</span><span class="na">toList</span><span class="o">()</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>Где:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">List&lt;Position&gt;</code> – список позиций чека</li>
+</ul>
+
+<h3 id="section-5">Получить список платежей чека</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getPayments</span><span class="o">():</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Payment</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">printDocuments</span>
+            <span class="o">.</span><span class="na">map</span> <span class="o">{</span> <span class="n">it</span><span class="o">.</span><span class="na">payments</span> <span class="o">}</span>
+            <span class="o">.</span><span class="na">flatMap</span> <span class="o">{</span> <span class="n">it</span><span class="o">.</span><span class="na">keys</span> <span class="o">}</span>
+            <span class="o">.</span><span class="na">distinct</span><span class="o">()</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>Где:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">List&lt;Payment&gt;</code> – список платежей чека</li>
+</ul>
+
+<h3 id="section-6">Получить список заголовков чека</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getReceiptHeaders</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">type:</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">Type</span><span class="o">?</span> <span class="o">=</span> <span class="kc">null</span><span class="o">):</span> <span class="n">ru</span><span class="o">.</span><span class="na">evotor</span><span class="o">.</span><span class="na">framework</span><span class="o">.</span><span class="na">Cursor</span><span class="o">&lt;</span><span class="n">Receipt</span><span class="o">.</span><span class="na">Header</span><span class="o">?&gt;?</span>
 </code></pre>
@@ -777,7 +808,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Метод возвращает заголовки созданных чеков, которые хранятся на терминале.</p>
 
-<h2 id="section-5">Пример</h2>
+<h2 id="section-7">Пример</h2>
 
 <p>Получить список позиций открытого чека:</p>
 
@@ -792,7 +823,7 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        <a href="tag_Terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">Terminal</a>
         
         
         
@@ -800,7 +831,7 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_Чеки.html" class="btn btn-default navbar-btn cursorNorm" role="button">Чеки</a>
+        <a href="tag_Receipts.html" class="btn btn-default navbar-btn cursorNorm" role="button">Receipts</a>
         
         
         

@@ -4,7 +4,7 @@ keywords:
 summary: Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты.
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_creation.html
-tags: [Терминал, Java, Чеки]
+tags: [Terminal, Java, Receipts]
 folder: smart_terminal_SDK
 ---
 

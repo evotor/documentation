@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_drivers_other.html
-tags: [Java, Терминал, Оборудование]
+tags: [Java, Terminal, Equipment]
 folder: evotordoc/drivers
 ---
 
@@ -161,19 +161,17 @@ public class MyDeviceService extends Service {
 
 Если нельзя выполнить действие, используйте исключение (`Exception`) одного из следующих типов:
 
-- `BadParcelableException`;
-- `IllegalArgumentException`;
-- `IllegalStateException`;
-- `NullPointerException`;
-- `SecurityException`;
-- `NetworkOnMainThreadException`.
+* [`BadParcelableException`](https://developer.android.com/reference/android/os/BadParcelableException.html);
+* [`IllegalArgumentException`](https://developer.android.com/reference/java/lang/IllegalArgumentException.html);
+* [`IllegalStateException`](https://developer.android.com/reference/java/lang/IllegalStateException.html);
+* [`NullPointerException`](https://developer.android.com/reference/java/lang/NullPointerException.html);
+* [`SecurityException`](https://developer.android.com/reference/java/lang/SecurityException.html);
+* [`NetworkOnMainThreadException`](https://developer.android.com/reference/android/os/NetworkOnMainThreadException.html).
 
 Пример:
 ```java
 throw new IllegalStateException();
 ```
-
-Подробное описание типов `Exception` на портале [developer.android.com](developer.android.com)
 
 `IUsbDriverManagerService.Stub` – класс для управления драйверами usb-устройств: подключение и отключение устройств происходят здесь. Требуется реализовать методы `addUsbDevice` и `destroy`.
 

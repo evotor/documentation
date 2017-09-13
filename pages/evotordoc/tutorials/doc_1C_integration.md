@@ -4,7 +4,7 @@ keywords:
 summary: "Раздел содержит информацию об интеграции с 1С"
 sidebar: evotordoc_sidebar
 permalink: doc_1C_integration.html
-tags: [Облако, Чеки, Товары]
+tags: [Cloud, Receipts, Products]
 folder: evotordoc/evotor_tutorials
 ---
 

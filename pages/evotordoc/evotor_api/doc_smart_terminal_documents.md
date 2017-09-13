@@ -4,7 +4,7 @@ keywords:
 summary: "Раздел содержит список документов, которые формирует смарт-терминал."
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_documents.html
-tags: [Облако, Терминал, Чеки]
+tags: [Cloud, Terminal, Receipts]
 folder: evotordoc/evotor_integration
 ---
 

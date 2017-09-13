@@ -12,11 +12,11 @@ tags:
 * В документации переработан раздел Эвотор API, теперь он называется [Облако Эвотор](https://developer.evotor.ru/docs/doc_authorization.html).
 * Из документации удалён раздел Публикация приложения.
 * В документацию добавлены разделы:
-  * [Включение режима разработчика](https://developer.evotor.ru/docs/doc_developer_mode.html).
-  * [Отладка приложения](https://developer.evotor.ru/docs/doc_logging.html).
-  * [Users API](https://developer.evotor.ru/docs/doc_smart_terminal_users_api.html).
-  * [Storage API](https://developer.evotor.ru/docs/doc_storage_api.html).
-  * [Работа с чеками](https://developer.evotor.ru/docs/doc_receipt_interactions.html).
+  * [Включение режима разработчика](https://developer.evotor.ru/docs/doc_app_developer_mode.html).
+  * [Отладка приложения](https://developer.evotor.ru/docs/doc_app_logging.html).
+  * [Users API](https://developer.evotor.ru/docs/doc_java_app_users.html).
+  * [Storage API](https://developer.evotor.ru/docs/doc_js_storage_api.html).
+  * [Работа с чеками](https://developer.evotor.ru/docs/doc_java_receipt_interactions.html).
   * [Драйвера для оборудования](https://developer.evotor.ru/docs/doc_drivers_library_connection.html).
-  * [Работа с оборудованием](https://developer.evotor.ru/docs/doc_integration_library_connection.html).
+  * [Работа с оборудованием](https://developer.evotor.ru/docs/doc_java_integration_library_connection.html).
 * Исправления и улучшения.

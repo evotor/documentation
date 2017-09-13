@@ -1,8 +1,8 @@
 ---
 title: "Работа с подключаемым оборудованием"
-tagName: Оборудование
+tagName: Equipment
 search: exclude
-permalink: tag_Оборудование.html
+permalink: tag_equipment.html
 sidebar: evotordoc_sidebar
 folder: tags
 ---

@@ -4,7 +4,7 @@ keywords: сканер, штрихкоды, весы, устройства, ра
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_devices.html
-tags: [Терминал, JavaScript, Оборудование]
+tags: [Terminal, JavaScript, Equipment]
 folder: js_SDK
 ---
 

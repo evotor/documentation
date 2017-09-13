@@ -6,5 +6,5 @@ permalink: 2017-06-01-release-notes-9.html
 tags:
 ---
 * В документацию добавлены разделы:
-  * [Проксирование HTTP-запросов](https://developer.evotor.ru/docs/doc_cloud_proxy.html).
-  * [Скидки](https://developer.evotor.ru/docs/doc_discounts.html).
+  * [Проксирование HTTP-запросов](https://developer.evotor.ru/docs/doc_java_third_party_service_communication.html).
+  * [Скидки](https://developer.evotor.ru/docs/doc_java_discounts.html).

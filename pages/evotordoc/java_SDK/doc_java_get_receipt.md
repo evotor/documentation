@@ -1,15 +1,15 @@
 ---
 title: Получить данные сформированного чека
-keywords: чек, методы, интерфейс, заголовки, ReceiptApi, штрихкод, позиция
+keywords: чек, методы, интерфейс, заголовки, ReceiptApi, штрихкод, позиция, платеж
 summary: "Раздел содержит описание методов интерфейса, с помощью которого можно получить данные сформированного чека."
 sidebar: evotordoc_sidebar
 permalink: doc_java_get_receipt.html
-tags: [Терминал, Java, Чеки]
+tags: [Terminal, Java, Receipts]
 folder: java_SDK
 ---
 ## Методы
 
-Класс [`ReceiptApi`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/ReceiptApi.kt) содержит описанные ниже методы.
+Классы [`ReceiptApi`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/ReceiptApi.kt) и [`Reseipt`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/Receipt.kt) содержат описанные ниже методы.
 
 ### Получить текущий открытый чек
 
@@ -23,7 +23,7 @@ fun getReceipt(context: Context, type: Receipt.Type): Receipt?
 * `type` – тип чека: продажи (`SELL`) или возврата (`PAYBACK`).
 * `Receipt` – текущий открытый чек.
 
-Метод возвращает чек или `null`, если чек отсутствует.
+Метод возвращает чек или `null`, если чек закрыт.
 
 ### Получить чек по идентификатору
 
@@ -37,7 +37,7 @@ fun getReceipt(context: Context, uuid: String): Receipt?
 * `uuid` – идентификатор чека в формате `uuid4`.
 * `Receipt` – чек.
 
-Метод возвращает чек или `null`, если чек отсутствует.
+Метод возвращает чек или `null`, если чек не найден.
 
 ### Получить по штрихкоду позицию для добавления в чек:
 
@@ -50,6 +50,35 @@ fun getPositionsByBarcode(context: Context, barcode: String): List<Position>
 * `context` – контекст приложения.
 * `barcode` – штрихкод товара.
 * `List<Position>` – список позиций
+
+### Получить позиции чека
+
+```java
+fun getPositions(): List<Position> {
+    return printDocuments
+            .flatMap { it.positions }
+            .toList()
+}
+```
+
+Где:
+
+* `List<Position>` – список позиций чека
+
+### Получить список платежей чека
+
+```java
+fun getPayments(): List<Payment> {
+    return printDocuments
+            .map { it.payments }
+            .flatMap { it.keys }
+            .distinct()
+}
+```
+
+Где:
+
+* `List<Payment>` – список платежей чека
 
 ### Получить список заголовков чека
 

@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Navigation pages | Документация Эвотор</title>
+<title>Работа с товарами | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -38,8 +38,6 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -133,7 +131,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Navigation pages">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Работа с товарами">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -672,7 +670,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Navigation pages</h1>
+   <h1 class="post-title-main">Работа с товарами</h1>
 </div>
 
 
@@ -709,7 +707,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Таблица ниже содержит страницы, отмеченные тэгом <button type="button" style="cursor: default" class="btn btn-default navbar-btn">navigation</button></p>
+  <p>Таблица ниже содержит страницы, отмеченные тэгом <button type="button" style="cursor: default" class="btn btn-default navbar-btn">Products</button></p>
 <table><thead><tr><th>Название</th><th>Тип</th><th>Выдержка</th></tr></thead>
     <tbody>
     
@@ -726,11 +724,23 @@ $('#toc').on('click', 'a', function() {
         
      
         
+
+        <tr><td><a href="doc_1C_integration.html">Интеграция с 1С</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Раздел содержит информацию об интеграции с 1С </td>
+        </tr>
+        
      
    
     
         
      
+        
+
+        <tr><td><a href="doc_evotor_api_about.html">Об Облаке Эвотор</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Раздел содержит вводную информацию для работы с нашей документацией. </td>
+        </tr>
         
      
         
@@ -749,8 +759,6 @@ $('#toc').on('click', 'a', function() {
      
         
      
-   
-    
    
     
         
@@ -803,6 +811,8 @@ $('#toc').on('click', 'a', function() {
     
    
     
+        
+     
    
     
         
@@ -828,6 +838,12 @@ $('#toc').on('click', 'a', function() {
         
      
         
+
+        <tr><td><a href="doc_cloud_systems_integration.html">Интеграция с облачными сервисами</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Раздел содержит информацию об интеграции с облачной товароучётной системой. </td>
+        </tr>
+        
      
    
     
@@ -877,6 +893,12 @@ $('#toc').on('click', 'a', function() {
     
         
      
+        
+
+        <tr><td><a href="doc_example_calls.html">Примеры запросов</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Раздел содержит примеры запросов к Эвотор API и вебхуков облака Эвотор. </td>
+        </tr>
         
      
    
@@ -910,6 +932,12 @@ $('#toc').on('click', 'a', function() {
         
      
         
+
+        <tr><td><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Раздел содержит инструкцию по созданию простого java-приложения для смарт-терминала. На разных этапах приложение обладает разными функциями. Так, итоговое пр... </td>
+        </tr>
+        
      
    
     
@@ -963,6 +991,12 @@ $('#toc').on('click', 'a', function() {
      
         
      
+        
+
+        <tr><td><a href="doc_java_inventory.html">Товароучёт</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Методы Класс InventoryApi содержит методы, описанные ниже. Получить все штрихкоды товара: fun getAllBarcodesForProduct(context: Context, productUuid: String): List&lt;String&gt;   Где:  context – контекст приложения. productUuid – идентификатор... </td>
+        </tr>
         
      
    
@@ -1086,6 +1120,12 @@ $('#toc').on('click', 'a', function() {
         
      
         
+
+        <tr><td><a href="doc_js_inventory.html">Поиск товара по идентификатору</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Подготовка к работе Чтобы использовать методы для работы с номенклатурой:   Убедитесь, что в файле client.yaml, в списке capabilities, указано разрешение для работы с номенклатурой:  capabilities: - inventory     В плагине, демоне или view.html... </td>
+        </tr>
+        
      
    
     
@@ -1145,28 +1185,6 @@ $('#toc').on('click', 'a', function() {
      
         
      
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
    
     
    

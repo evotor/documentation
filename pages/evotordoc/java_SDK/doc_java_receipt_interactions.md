@@ -4,7 +4,7 @@ keywords: позиция, чек, события, открыть, добавит
 summary: "Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека."
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_interactions.html
-tags: [Терминал, Java, Чеки]
+tags: [Terminal, Java, Receipts]
 folder: java_SDK
 ---
 

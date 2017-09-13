@@ -7,8 +7,8 @@ tags:
 ---
 
 * В документацию добавлены новые разделы:
-  * [Получение данных от сканера штрихкодов](./doc_barcode_scanner.html)
-  * [Печать информации на чеках](./doc_bill_printer.html)
+  * [Получение данных от сканера штрихкодов](./doc_java_barcode_scanner.html)
+  * [Печать информации на чеках](./doc_java_bill_printer.html)
   * Биллинг:
     * [О биллинге](./doc_about_billing.html)
     * [Тарифы](./doc_tariffs.html)

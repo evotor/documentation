@@ -4,7 +4,7 @@ keywords: хранение, данные, сохранить, изменить, 
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_storage_api.html
-tags: [Терминал, JavaScript]
+tags: [Terminal, JavaScript]
 folder: js_SDK
 ---
 

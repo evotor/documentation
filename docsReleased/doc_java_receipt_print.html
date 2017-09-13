@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека.">
-<meta name="keywords" content="JavaТерминалОборудование,  печать, чек">
+<meta name="keywords" content="JavaTerminalEquipment,  печать, чек">
 <title>Печать внутри кассового чека | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -38,8 +38,6 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -719,7 +717,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">PrintExtraPlacePrintGroupTop</code> – данные печатаются после клише и до текста “Кассовый чек”;</li>
   <li><code class="highlighter-rouge">PrintExtraPlacePrintGroupHeader</code> – данные печатаются после текста “Кассовый чек”, до имени пользователя;</li>
   <li><code class="highlighter-rouge">PrintExtraPlacePrintGroupSummary</code> – данные печатаются после итога и списка оплат, до текста “всего оплачено”;</li>
-  <li><code class="highlighter-rouge">PrintExtraPlacePositionFooter</code> – данные печатаются в позиции в чеке, до <a href="./doc_receipt_interactions.html#Position">подпозиций</a>;</li>
+  <li><code class="highlighter-rouge">PrintExtraPlacePositionFooter</code> – данные печатаются в позиции в чеке, до <a href="./doc_java_receipt_interactions.html#Position">подпозиций</a>;</li>
   <li><code class="highlighter-rouge">PrintExtraPlacePositionAllSubpositionsFooter</code> – данные печатаются в позиции в чеке, после всех подпозиций.</li>
 </ul>
 
@@ -729,7 +727,7 @@ $('#toc').on('click', 'a', function() {
 
 <ol>
   <li>
-    <p>В <a href="./ссылка на java-манифест">манифесте приложения</a>, наделите приложение необходимыми правами:</p>
+    <p>В <a href="./doc_java_app_manifest.html">манифесте приложения</a>, наделите приложение необходимыми правами:</p>
 
     <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"ru.evotor.permission.receipt.printExtra.SET"</span> <span class="nt">/&gt;</span>
 </code></pre>
@@ -856,11 +854,11 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        <a href="tag_Terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">Terminal</a>
         
         
         
-        <a href="tag_Оборудование.html" class="btn btn-default navbar-btn cursorNorm" role="button">Оборудование</a>
+        <a href="tag_Equipment.html" class="btn btn-default navbar-btn cursorNorm" role="button">Equipment</a>
         
         
         

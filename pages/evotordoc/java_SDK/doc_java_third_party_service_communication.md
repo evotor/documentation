@@ -4,7 +4,7 @@ keywords: обмен, сообщения, HTTP, сторонний, сервис
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_third_party_service_communication.html
-tags: [Терминал, Java]
+tags: [Terminal, Java]
 folder: java_SDK
 ---
 

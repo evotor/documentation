@@ -4,7 +4,7 @@ keywords:
 summary: "Раздел содержит примеры запросов к Эвотор API и вебхуков облака Эвотор."
 sidebar: evotordoc_sidebar
 permalink: doc_example_calls.html
-tags: [Облако Эвотор, Товары]
+tags: [Cloud, Products]
 folder: evotordoc/evotor_about
 ---
 
@@ -116,4 +116,4 @@ no content
 
 Со всеми возможностями Эвотор API вы можете ознакомиться в [справочнике](https://api.evotor.ru/docs/).
 
-Последние изменения в документации и API отражаются в разделе [**Что нового**](https://developer.evotor.ru/docs/whats_new).
+Последние изменения в документации и API отражаются в разделе [**Что нового**](https://developer.evotor.ru/docs/whats_new.html).

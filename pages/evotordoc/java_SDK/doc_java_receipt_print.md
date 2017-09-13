@@ -4,7 +4,7 @@ keywords: печать, чек
 summary: "Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека."
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_print.html
-tags: [Java, Терминал, Оборудование]
+tags: [Java, Terminal, Equipment]
 folder: evotordoc/smart_terminal_SDK
 ---
 
@@ -15,14 +15,14 @@ folder: evotordoc/smart_terminal_SDK
 * `PrintExtraPlacePrintGroupTop` – данные печатаются после клише и до текста "Кассовый чек";
 * `PrintExtraPlacePrintGroupHeader` – данные печатаются после текста "Кассовый чек", до имени пользователя;
 * `PrintExtraPlacePrintGroupSummary` – данные печатаются после итога и списка оплат, до текста "всего оплачено";
-* `PrintExtraPlacePositionFooter` – данные печатаются в позиции в чеке, до [подпозиций](./doc_receipt_interactions.html#Position);
+* `PrintExtraPlacePositionFooter` – данные печатаются в позиции в чеке, до [подпозиций](./doc_java_receipt_interactions.html#Position);
 * `PrintExtraPlacePositionAllSubpositionsFooter` – данные печатаются в позиции в чеке, после всех подпозиций.
 
 ## Печать данных внутри кассового чека
 
 *Чтобы приложение печатало данные внутри кассового чека:*
 
-1. В [манифесте приложения](./ссылка на java-манифест), наделите приложение необходимыми правами:
+1. В [манифесте приложения](./doc_java_app_manifest.html), наделите приложение необходимыми правами:
 
    ```xml
    <uses-permission android:name="ru.evotor.permission.receipt.printExtra.SET" />

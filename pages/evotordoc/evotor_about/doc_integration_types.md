@@ -29,7 +29,7 @@ folder: evotordoc/evotor_about
                  <div class="panel-body">
                      <h3>Серверная интеграция</h3>
                      <p>Облачные приложения, или серверная интеграция. Самый популярный пример - это интеграция со сторонними товароучётными системами.</p>
-                     <a href="tag_Облако.html" class="btn btn-primary">Подробнее</a>
+                     <a href="tag_Cloud.html" class="btn btn-primary">Подробнее</a>
                  </div>
              </div>
          </div>

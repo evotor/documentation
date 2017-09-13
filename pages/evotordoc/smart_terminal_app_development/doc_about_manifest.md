@@ -4,8 +4,8 @@ keywords: манифест, manifest
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_about_manifest.html
-tags: [Терминал, Java, JS]
-folder: smart_terminal_SDK
+tags: [Terminal, Java, JavaScript]
+folder: smart_terminal_app_development
 ---
 
 В структуре каждого приложения должен быть манифест AndroidManifest.xml.

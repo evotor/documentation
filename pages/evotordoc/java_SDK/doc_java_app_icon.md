@@ -4,7 +4,7 @@ keywords: Интерфейс, иконка, плитка, манифест, эк
 summary: Вы можете запускать приложение с помощью кнопок и иконок, добавленных в интерфейс смарт-терминала. Раздел содержит информацию о том как добавить свои иконки или заменить существующую кнопку интерфейса смарт-терминала.
 sidebar: evotordoc_sidebar
 permalink: doc_java_app_icon.html
-tags: [Терминал, Java]
+tags: [Terminal, Java]
 folder: java_SDK
 ---
 
@@ -70,7 +70,7 @@ folder: java_SDK
 
 *Чтобы добавить иконку приложения на экран оплаты смарт-терминала:*
 
-1. В [созданном приложении](./doc_java_getting_started.html) создайте службу (`service`).
+1. В [созданном приложении](./doc_java_integration_library_connection.html) создайте службу (`service`).
 
    Для этого, в Android Studio, в проекте выберите `app` и выполните следующие действия: File → New → Service → Service (IntentService).
 

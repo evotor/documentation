@@ -4,7 +4,7 @@ keywords: логи, журналы, logger
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_logging.html
-tags: [Терминал, JavaScript]
+tags: [Terminal, JavaScript]
 folder: js_SDK
 published: true
 ---

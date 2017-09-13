@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_drivers_library_connection.html
-tags: [Терминал, Java, Оборудование]
+tags: [Java, Terminal, Equipment]
 folder: smart_terminal_SDK
 ---
 

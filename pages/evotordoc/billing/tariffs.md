@@ -4,7 +4,7 @@ keywords:
 summary: "Раздел содержит описание тарифов и типов оплаты приложения."
 sidebar: evotordoc_sidebar
 permalink: doc_tariffs.html
-tags: [Биллинг]
+tags: [Billing]
 folder: evotordoc/billing
 ---
 
@@ -64,7 +64,7 @@ folder: evotordoc/billing
 
 #### Изменение условий подписки
 
-Пользователь в любой момент может изменить [условия подписки]().
+Пользователь в любой момент может изменить условия подписки.
 
 Когда пользователь изменяет подписку ([событие SubscriptionTermsChanged](https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1user~1event%2Fpost)) Эвотор разницу, которую пользователь должен доплатить, чтобы работать с приложением на новых условиях. В примере ниже описан алгоритм вычисления разницы.
 

@@ -4,8 +4,8 @@ keywords: обмен, сообщения, HTTP, сторонний, сервис
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_modules.html
-tags: [Терминал, Java]
-folder: java_SDK
+tags: [Terminal, JavaScript]
+folder: js_SDK
 ---
 
 Для доступа к функциям смарт-терминала, JS-приложение может использовать различные модули.
