@@ -2,7 +2,7 @@
 title: "Работа с чеками"
 tagName: Receipts
 search: exclude
-permalink: tag_receipts.html
+permalink: tag_Receipts.html
 sidebar: evotordoc_sidebar
 folder: tags
 ---

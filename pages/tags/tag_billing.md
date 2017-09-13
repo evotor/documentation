@@ -2,7 +2,7 @@
 title: "Биллинг пользователей Эвотор"
 tagName: Billing
 search: exclude
-permalink: tag_billing.html
+permalink: tag_Billing.html
 sidebar: evotordoc_sidebar
 folder: tags
 ---
