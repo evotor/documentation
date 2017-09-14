@@ -5,7 +5,7 @@ summary: "Раздел содержит информацию о возвраща
 sidebar: evotordoc_sidebar
 permalink: doc_errors_returned.html
 tags: [Cloud]
-folder: evotordoc/evotor_integration
+folder: evotor_api
 ---
 
 В ответ на каждый запрос, который принимает или отправляет облако Эвотор, приходит HTTP-код состояния. В теле ответа обязательно только поле `code`. Таблица ниже содержит коды возвращаемых ошибок, их описания и содержимое ответов.

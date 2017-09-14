@@ -5,7 +5,7 @@ summary:
 sidebar: evotordoc_sidebar
 permalink: doc_drivers_library_connection.html
 tags: [Java, Terminal, Equipment]
-folder: smart_terminal_SDK
+folder: drivers
 ---
 
 Для начала разработки подключите библиотеку для работы с оборудованием.

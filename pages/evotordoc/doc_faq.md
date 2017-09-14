@@ -6,7 +6,7 @@ keywords: frequently asked questions, FAQ, question and answer, collapsible sect
 last_updated: November 30, 2015
 summary: "Раздел содержит ответы на часто задаваемые вопросы."
 toc: false
-folder: evotordoc
+folder: 
 ---
 
 <p></p>

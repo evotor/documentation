@@ -4,7 +4,7 @@ keywords:
 summary: "В этом разделе вы найдёте глоссарий терминов, которые встречаются в нашей документации."
 sidebar: evotordoc_sidebar
 permalink: doc_glossary.html
-folder: evotordoc/evotor_about
+folder: evotor_about
 ---
 
 ### Общие термины

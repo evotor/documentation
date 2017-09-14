@@ -5,7 +5,7 @@ summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_third_party_service_communication.html
 tags: [Terminal, JavaScript]
-folder: JS_SDK
+folder: js_SDK
 ---
 
 Все запросы приложений к стороннему сервису проходят через Облако Эвотор:

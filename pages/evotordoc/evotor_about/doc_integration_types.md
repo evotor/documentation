@@ -4,7 +4,7 @@ keywords:
 summary: "Раздел содержит  краткое описание типов и технологий разработки приложений для платформы Эвотор."
 sidebar: evotordoc_sidebar
 permalink: doc_integration_types.html
-folder: evotordoc/evotor_about
+folder: evotor_about
 ---
 
 Платформа Эвотор предоставляет три направления для разработки:

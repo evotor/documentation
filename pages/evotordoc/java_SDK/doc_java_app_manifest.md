@@ -5,7 +5,7 @@ summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_app_manifest.html
 tags: [Terminal, Java]
-folder: smart_terminal_SDK
+folder: java_SDK
 ---
 
 Ниже приведён пример манифеста java-приложения, которое добавляет две [иконки на экран оплаты](./doc_java_app_icon.html).

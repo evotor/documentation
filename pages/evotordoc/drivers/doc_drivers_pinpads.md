@@ -5,7 +5,7 @@ summary:
 sidebar: evotordoc_sidebar
 permalink: doc_drivers_pinpads.html
 tags: [Java, Terminal, Equipment]
-folder: smart_terminal_SDK
+folder: drivers
 ---
 
 ### Определение внешнего сервиса в AndroidManifest.xml

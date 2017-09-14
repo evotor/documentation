@@ -5,7 +5,7 @@ summary: Раздел содержит информацию о том, как п
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_creation.html
 tags: [Terminal, Java, Receipts]
-folder: smart_terminal_SDK
+folder: java_SDK
 ---
 
 *Чтобы открыть чек в смарт-терминале:*

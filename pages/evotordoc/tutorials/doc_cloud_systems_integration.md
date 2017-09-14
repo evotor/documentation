@@ -5,7 +5,7 @@ summary: "Раздел содержит информацию об интегра
 sidebar: evotordoc_sidebar
 permalink: doc_cloud_systems_integration.html
 tags: [Cloud, Products]
-folder: evotordoc/evotor_tutorials
+folder: tutorials
 ---
 
 Облачная товароучётная система это сторонний сервис, который позволяет  пользователям взаимодействовать с сущностями предприятия: магазинами, сотрудниками и товарами.

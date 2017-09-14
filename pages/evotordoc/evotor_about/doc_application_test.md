@@ -5,7 +5,7 @@ summary: "Раздел содержит инструкцию о том, как �
 sidebar: evotordoc_sidebar
 permalink: doc_application_test.html
 tags: [Облако, Java, JavaScript]
-folder: evotordoc/evotor_about
+folder: evotor_about
 ---
 
 ## Тестирование приложения

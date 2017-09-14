@@ -5,7 +5,7 @@ summary:
 sidebar: evotordoc_sidebar
 permalink: doc_drivers_other.html
 tags: [Java, Terminal, Equipment]
-folder: evotordoc/drivers
+folder: drivers
 ---
 
 ### Определение внешнего сервиса в AndroidManifest.xml

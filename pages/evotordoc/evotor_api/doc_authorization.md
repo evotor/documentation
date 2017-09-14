@@ -5,7 +5,7 @@ summary:
 sidebar: evotordoc_sidebar
 permalink: doc_authorization.html
 tags: [Cloud]
-folder: evotordoc/evotor_about
+folder: evotor_api
 ---
 
 В зависимости от типа приложения, для работы с Облаком Эвотор вам могут понадобиться следующие токены:

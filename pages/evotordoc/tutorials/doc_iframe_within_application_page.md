@@ -5,7 +5,7 @@ summary: "Краткая инструкция по добавлению фрей
 sidebar: evotordoc_sidebar
 permalink: doc_iframe_within_application_page.html
 tags: [Cloud]
-folder: evotordoc/evotor_tutorials
+folder: tutorials
 ---
 
 ## Добавление IFrame

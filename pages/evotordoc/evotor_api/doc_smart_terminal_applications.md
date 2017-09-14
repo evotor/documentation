@@ -5,7 +5,7 @@ summary:
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_applications.html
 tags: [Terminal, Cloud]
-folder: evotordoc/evotor_api
+folder: evotor_api
 ---
 
 Приложения для смарт-терминала можно делятся на JS-приложения (созданные на языке JavaScript) и Java-приложения (созданные на языке Java).

@@ -5,7 +5,7 @@ summary: "Раздел содержит информацию, которая п�
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_application.html
 tags: [Java, JavaScript, Terminal, Cloud]
-folder: evotordoc/evotor_tutorials
+folder: tutorials
 ---
 
 Ваше приложение для смарт-терминала может быть написано на языке Java или JavaScript.

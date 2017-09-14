@@ -5,7 +5,7 @@ summary: "Раздел содержит примеры запросов к Эв�
 sidebar: evotordoc_sidebar
 permalink: doc_example_calls.html
 tags: [Cloud, Products]
-folder: evotordoc/evotor_about
+folder: evotor_api
 ---
 
 ### Запросы к Эвотор API

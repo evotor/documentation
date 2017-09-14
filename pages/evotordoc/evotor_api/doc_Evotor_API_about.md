@@ -5,7 +5,7 @@ summary: "Раздел содержит вводную информацию дл
 sidebar: evotordoc_sidebar
 permalink: doc_evotor_api_about.html
 tags: [Cloud, Products, Receipts]
-folder: evotordoc/evotor_api
+folder: evotor_api
 published: true
 ---
 

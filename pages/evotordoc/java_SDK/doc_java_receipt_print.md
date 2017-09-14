@@ -5,7 +5,7 @@ summary: "Раздел содержит инструкцию о том, как �
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_print.html
 tags: [Java, Terminal, Equipment]
-folder: evotordoc/smart_terminal_SDK
+folder: java_SDK
 ---
 
 Смарт-терминал позволяет приложениям печатать свои данные внутри кассового чека: тексты, штрихкоды или изображения.

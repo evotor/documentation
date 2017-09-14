@@ -5,7 +5,7 @@ summary: "Раздел содержит информацию об интегра
 sidebar: evotordoc_sidebar
 permalink: doc_1C_integration.html
 tags: [Cloud, Receipts, Products]
-folder: evotordoc/evotor_tutorials
+folder: tutorials
 ---
 
 Конфигурация 1С, установленная на компьютере пользователя, и обменивается данными с Эвотором с помощью [REST API](https://api.evotor.ru/docs/). Эвотор авторизует запросы от 1С с помощью **токена приложения**, который пользователь может получить на странице **Настройки** приложения в Личном кабинете.
