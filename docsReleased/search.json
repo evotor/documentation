@@ -4,17 +4,6 @@
 
 
 {
-"title": "О биллинге",
-"tags": "Billing",
-"keywords": "",
-"url": "doc_about_billing.html",
-"summary": "Раздел содержит общую информацию о биллинге пользователей Эвотор."
-}
-,
-
-
-
-{
 "title": "Интеграция с 1С",
 "tags": "CloudReceiptsProducts",
 "keywords": "",
@@ -42,6 +31,17 @@
 "keywords": "",
 "url": "doc_JS_template_integration.html",
 "summary": ""
+}
+,
+
+
+
+{
+"title": "О биллинге",
+"tags": "Billing",
+"keywords": "",
+"url": "doc_about_billing.html",
+"summary": "Раздел содержит общую информацию о биллинге пользователей Эвотор."
 }
 ,
 
@@ -490,7 +490,7 @@
 {
 "title": "Разделение чека",
 "tags": "TerminalJavaReceipts",
-"keywords": "Разделение, деление, чек, печатная, группа, платёжные, системы",
+"keywords": "Разделение, деление, чек, печатная, группа, платёжные, системы, фискальный, нефискальный",
 "url": "doc_java_receipt_division.html",
 "summary": "Раздел содержит описание интерфейса, с помощью которого приложения могут делить чек на несколько платежей или на несколько чеков (печатных групп), например, для отдельной печати фискального и ЕНВД чека."
 }
@@ -708,6 +708,17 @@
 
 
 {
+"title": "Тарифы",
+"tags": "Billing",
+"keywords": "",
+"url": "doc_tariffs.html",
+"summary": "Раздел содержит описание тарифов и типов оплаты приложения."
+}
+,
+
+
+
+{
 "title": "О платформе Эвотор",
 "tags": "",
 "keywords": "sample homepage",
@@ -721,7 +732,7 @@
 {
 "title": "Что нового",
 "tags": "",
-"keywords": "news, blog, updates, release notes, announcements",
+"keywords": "новости, блог, обновления, release notes, изменения",
 "url": "whats_new.html",
 "summary": ""
 }
@@ -758,21 +769,20 @@
 
 
 
+
+
+
+
+
+
 {
-"title": "Тарифы",
-"tags": "Billing",
+"title": "12.09.2017",
+"tags": "",
 "keywords": "",
-"url": "doc_tariffs.html",
-"summary": "Раздел содержит описание тарифов и типов оплаты приложения."
+"url": "2017-09-12-release-notes-14.html",
+"summary": ""
 }
 ,
-
-
-
-
-
-
-
 
 
 {

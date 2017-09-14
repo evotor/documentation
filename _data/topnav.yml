@@ -5,9 +5,9 @@ topnav:
 
   items:
     - title: Разработчикам
-      url: https://dev.evotor.ru/
+      external_url: https://dev.evotor.ru/
     - title: Справочник API
-      url: https://api.evotor.ru/
+      external_url: https://api.evotor.ru/
     - title: SDK смарт-терминала
       url: /doc_java_integration_library_connection.html
     - title: Что нового

@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит описание интерфейса, с помощью которого приложения могут делить чек на несколько платежей или на несколько чеков (печатных групп), например, ...">
-<meta name="keywords" content="TerminalJavaReceipts,  Разделение, деление, чек, печатная, группа, платёжные, системы">
+<meta name="keywords" content="TerminalJavaReceipts,  Разделение, деление, чек, печатная, группа, платёжные, системы, фискальный, нефискальный">
 <title>Разделение чека | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -102,15 +102,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="whats_new.html">Что нового</a></li>
+                <li><a href="https://dev.evotor.ru/" target="_blank">Разработчикам</a></li>
                 
                 
                 
-                <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
+                <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
                 
                 
                 
                 <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
+                
+                
+                
+                <li><a href="whats_new.html">Что нового</a></li>
                 
                 
                 
@@ -709,6 +713,10 @@ $('#toc').on('click', 'a', function() {
 
     
 
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/java_SDK/doc_java_receipt_division.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+
+    
+
   <h2 id="section">Требования</h2>
 
 <p>Чтобы служба получала необходимые сообщения, в манифесте приложения требуется задать <code class="highlighter-rouge">intent-filter</code> для соответствующей службы:</p>
@@ -783,9 +791,17 @@ $('#toc').on('click', 'a', function() {
     <ul>
       <li>идентификатор печатной группы;</li>
       <li>
-        <p>тип чека (фискальный, ЕНВД, квитанция);</p>
+        <p>тип чека:</p>
 
-        <p>Квитанция и ЕНВД чек задаются в виде строк, в отличие от фискального чека, который набирается с помощью команд ККМ. ЕНВД чек отличается от квитанции тем, что квитанция не содержит информации о способе оплаты и на распечатанном чеке явно указывается, что это квитанция.</p>
+        <ul>
+          <li>фискальный – <code class="highlighter-rouge">CASH_RECEIPT</code></li>
+          <li>квитанция (нефискальный чек) – <code class="highlighter-rouge">INVOICE</code></li>
+          <li>
+            <p>ЕНВД (нефискальный чек) – <code class="highlighter-rouge">STRING_UTII</code></p>
+
+            <p>Квитанция и ЕНВД чек задаются в виде строк, в отличие от фискального чека, который набирается с помощью команд ККМ. ЕНВД чек отличается от квитанции тем, что квитанция не содержит информации о способе оплаты и на распечатанном чеке явно указывается, что это квитанция.</p>
+          </li>
+        </ul>
       </li>
       <li>
         <p>систему налогообложения;</p>
@@ -862,6 +878,8 @@ $('#toc').on('click', 'a', function() {
 </div>
 
 <h3 id="severalPrintGroups">Разделение чека на несколько печатных групп</h3>
+
+<p>Пример печати квитанции (<code class="highlighter-rouge">INVOICE</code>)</p>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">processorMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span>
                 <span class="n">PrintGroupRequiredEvent</span><span class="o">.</span><span class="na">NAME_SELL_RECEIPT</span><span class="o">,</span>
