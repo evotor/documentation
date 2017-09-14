@@ -2,7 +2,7 @@
 title: "Java-приложение"
 tagName: Java
 search: exclude
-permalink: tag_Java.html
+permalink: tag_java.html
 sidebar: evotordoc_sidebar
 folder: tags
 ---

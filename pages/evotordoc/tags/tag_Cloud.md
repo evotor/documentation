@@ -2,7 +2,7 @@
 title: "Облако Эвотор"
 tagName: Cloud
 search: exclude
-permalink: tag_Cloud.html
+permalink: tag_cloud.html
 sidebar: evotordoc_sidebar
 folder: tags
 ---

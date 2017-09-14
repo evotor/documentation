@@ -2,7 +2,7 @@
 title: "Работа с товарами"
 tagName: Products
 search: exclude
-permalink: tag_Products.html
+permalink: tag_products.html
 sidebar: evotordoc_sidebar
 folder: tags
 ---

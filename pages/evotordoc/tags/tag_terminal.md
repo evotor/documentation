@@ -2,7 +2,7 @@
 title: "Разработка для терминала"
 tagName: Terminal
 search: exclude
-permalink: tag_Terminal.html
+permalink: tag_terminal.html
 sidebar: evotordoc_sidebar
 folder: tags
 ---
