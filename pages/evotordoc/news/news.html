@@ -1,7 +1,7 @@
 ---
 title: Что нового
 sidebar: evotordoc_sidebar
-keywords: news, blog, updates, release notes, announcements
+keywords: новости, блог, обновления, release notes, изменения
 permalink: whats_new.html
 toc: false
 folder: news
@@ -19,7 +19,7 @@ folder: news
                 <a href="{{ "tag_" | append: tag | append: ".html"}}">{{tag}}</a>{% unless forloop.last %}, {% endunless%}
 
                 {% endfor %}</span>
-        <p>{% if page.summary %} {{ page.summary | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ post.content | truncatewords: 50 | strip_html }} {% endif %}</p>
+        <p>{% if page.summary %} {{ page.summary | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ post.content }} {% endif %}</p>
 
         {% endfor %}
 

@@ -114,10 +114,10 @@ redcarpet:
   extensions: []
 
 gems:
-  - algoliasearch-jekyll
+#  - algoliasearch-jekyll
 
-algolia:
-  application_id: '44FLY7BTEO'
-  index_name:     'docs_index'
+#algolia:
+#  application_id: '44FLY7BTEO'
+#  index_name:     'docs_index'
 
 github: [metadata]

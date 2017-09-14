@@ -4,9 +4,11 @@ topnav:
 - title: Topnav
 
   items:
-    - title: Что нового
-      url: /whats_new.html
+    - title: Разработчикам
+      url: https://dev.evotor.ru/
     - title: Справочник API
-      external_url: https://api.evotor.ru/docs/
+      url: https://api.evotor.ru/
     - title: SDK смарт-терминала
       url: /doc_java_integration_library_connection.html
+    - title: Что нового
+      url: /whats_new.html
