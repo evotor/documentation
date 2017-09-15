@@ -30,7 +30,7 @@ folder: java_SDK
 
    ```java
    public void openReceipt() {
-           List<PositionAdd> positionAddList = new ArrayList<>();
+           List<positions> positionAddList = new ArrayList<>();
 
            JSONObject extra = new JSONObject();
          }
