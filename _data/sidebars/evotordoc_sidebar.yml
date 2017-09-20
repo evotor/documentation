@@ -40,29 +40,38 @@ entries:
     output: web, pdf
 
     folderitems:
-#    - title: Об Облаке Эвотор
-#      url: /doc_evotor_api_about.html
-#      output: web, pdf
-
-    - title: Авторизация
-      url: /doc_authorization.html
+    - title: Введение
+      url: /doc_evotor_api_introduction.html
       output: web, pdf
+
+      subfolders:
+        - title: Авторизация
+          output: web
+          subfolderitems:
+            - title: Авторизация запросов к Облаку Эвотор
+              url: /doc_authorization.html
+              output: web
+
+            - title: Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис
+              url: /doc_evotor_api_authorization.html
+              output: web
 
     - title: Примеры запросов
       url: /doc_example_calls.html
       output: web, pdf
 
-    - title: Приложения для смарт-терминала
-      url: /doc_smart_terminal_applications.html
+    - title: Ошибки, которые может возвращать сторонний сервис
+      url: /doc_errors_returned.html
       output: web, pdf
+
+#    - title: Приложения для смарт-терминала
+#      url: /doc_smart_terminal_applications.html
+#      output: web, pdf
 
     - title: Документы смарт-терминала
       url: /doc_smart_terminal_documents.html
       output: web, pdf
 
-    - title: Возвращаемые ошибки
-      url: /doc_errors_returned.html
-      output: web, pdf
 
 ###############################################################
 #        Разработка для смарт-терминала                       #

@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит описание методов интерфейса, с помощью которого можно получить данные сформированного чека.">
-<meta name="keywords" content="TerminalJavaReceipts,  чек, методы, интерфейс, заголовки, ReceiptApi, штрихкод, позиция, платеж">
-<title>Получить данные сформированного чека | Документация Эвотор</title>
+<meta name="description" content="">
+<meta name="keywords" content=",  ">
+<title>14.09.2017 | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -135,7 +135,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Получить данные сформированного чека">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="14.09.2017">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -381,7 +381,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li class="active"><a href="doc_java_get_receipt.html">Получить данные сформированного чека</a></li>
+                    <li><a href="doc_java_get_receipt.html">Получить данные сформированного чека</a></li>
                     
                     
                     
@@ -673,181 +673,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Content Column -->
     <div class="col-md-9">
-        <div class="post-header">
-   <h1 class="post-title-main">Получить данные сформированного чека</h1>
-</div>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">14.09.2017</h1>
+        <p class="post-meta"><time datetime="2017-09-14T00:00:00+03:00" itemprop="datePublished">Sep 14, 2017</time> /
+            
+            
+            
+
+        </p>
 
 
+    </header>
 
-<div class="post-content">
+    <div class="post-content" itemprop="articleBody">
 
-   
-    <div class="summary">Раздел содержит описание методов интерфейса, с помощью которого можно получить данные сформированного чека.</div>
-   
+        
 
-    
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
-
-    
-
-
-    
-
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/java_SDK/doc_java_get_receipt.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
-
-    
-
-  <h2 id="section">Методы</h2>
-
-<p>Классы <a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/ReceiptApi.kt"><code class="highlighter-rouge">ReceiptApi</code></a> и <a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/Receipt.kt"><code class="highlighter-rouge">Reseipt</code></a> содержат описанные ниже методы.</p>
-
-<h3 id="section-1">Получить текущий открытый чек</h3>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getReceipt</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">type:</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">Type</span><span class="o">):</span> <span class="n">Receipt</span><span class="o">?</span>
-</code></pre>
-</div>
-
-<p>Где:</p>
+        <p>Улучшения:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">context</code> – контекст приложения.</li>
-  <li><code class="highlighter-rouge">type</code> – тип чека: продажи (<code class="highlighter-rouge">SELL</code>) или возврата (<code class="highlighter-rouge">PAYBACK</code>).</li>
-  <li><code class="highlighter-rouge">Receipt</code> – текущий открытый чек.</li>
+  <li>По ссылке <strong>Разработчикам</strong>, расположенной в панели навигации вы можете попасть на портал для разработчиков https://dev.evotor.ru.</li>
+  <li>На каждую страницу документации добавлена кнопка <strong>Редактировать</strong>, которая ведёт на исходники документации на github. Если вы обнаружите какую-то ошибку или захотите сделать предложение, теперь это так же просто как сделать pull-request.</li>
 </ul>
 
-<p>Метод возвращает чек или <code class="highlighter-rouge">null</code>, если чек закрыт.</p>
-
-<h3 id="section-2">Получить чек по идентификатору</h3>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getReceipt</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">uuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">Receipt</span><span class="o">?</span>
-</code></pre>
-</div>
-
-<p>Где:</p>
+<p>Исправления:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">context</code> – контекст приложения.</li>
-  <li><code class="highlighter-rouge">uuid</code> – идентификатор чека в формате <code class="highlighter-rouge">uuid4</code>.</li>
-  <li><code class="highlighter-rouge">Receipt</code> – чек.</li>
+  <li>Исправлено отображение новостей. Теперь на главной странице отображается полное содержание новости.</li>
+  <li>Исправлены битые ссылки.</li>
 </ul>
 
-<p>Метод возвращает чек или <code class="highlighter-rouge">null</code>, если чек не найден.</p>
-
-<h3 id="section-3">Получить по штрихкоду позицию для добавления в чек:</h3>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getPositionsByBarcode</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">barcode:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span>
-</code></pre>
-</div>
-
-<p>Где:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">context</code> – контекст приложения.</li>
-  <li><code class="highlighter-rouge">barcode</code> – штрихкод товара.</li>
-  <li><code class="highlighter-rouge">List&lt;Position&gt;</code> – список позиций</li>
-</ul>
-
-<h3 id="section-4">Получить позиции чека</h3>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getPositions</span><span class="o">():</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">printDocuments</span>
-            <span class="o">.</span><span class="na">flatMap</span> <span class="o">{</span> <span class="n">it</span><span class="o">.</span><span class="na">positions</span> <span class="o">}</span>
-            <span class="o">.</span><span class="na">toList</span><span class="o">()</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<p>Где:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">List&lt;Position&gt;</code> – список позиций чека</li>
-</ul>
-
-<h3 id="section-5">Получить список платежей чека</h3>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getPayments</span><span class="o">():</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Payment</span><span class="o">&gt;</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">printDocuments</span>
-            <span class="o">.</span><span class="na">map</span> <span class="o">{</span> <span class="n">it</span><span class="o">.</span><span class="na">payments</span> <span class="o">}</span>
-            <span class="o">.</span><span class="na">flatMap</span> <span class="o">{</span> <span class="n">it</span><span class="o">.</span><span class="na">keys</span> <span class="o">}</span>
-            <span class="o">.</span><span class="na">distinct</span><span class="o">()</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<p>Где:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">List&lt;Payment&gt;</code> – список платежей чека</li>
-</ul>
-
-<h3 id="section-6">Получить список заголовков чека</h3>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getReceiptHeaders</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">type:</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">Type</span><span class="o">?</span> <span class="o">=</span> <span class="kc">null</span><span class="o">):</span> <span class="n">ru</span><span class="o">.</span><span class="na">evotor</span><span class="o">.</span><span class="na">framework</span><span class="o">.</span><span class="na">Cursor</span><span class="o">&lt;</span><span class="n">Receipt</span><span class="o">.</span><span class="na">Header</span><span class="o">?&gt;?</span>
-</code></pre>
-</div>
-
-<p>Где:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">context</code> – контекст приложения.</li>
-  <li><code class="highlighter-rouge">type</code> – тип чека: продажи (<code class="highlighter-rouge">SELL</code>) или возврата (<code class="highlighter-rouge">PAYBACK</code>).</li>
-  <li><code class="highlighter-rouge">ru.evotor.framework.Cursor&lt;Receipt.Header?&gt;</code> – курсор с заголовками чека.</li>
-</ul>
-
-<p>Метод возвращает заголовки созданных чеков, которые хранятся на терминале.</p>
-
-<h2 id="section-7">Пример</h2>
-
-<p>Получить список позиций открытого чека:</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span> <span class="n">positions</span> <span class="o">=</span> <span class="n">ReceiptApi</span><span class="o">.</span><span class="na">getReceipt</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">SELL</span><span class="o">).</span><span class="na">getPositions</span><span class="o">();</span>
-</code></pre>
-</div>
-
-
-    <div class="tags">
-        
-        <b>Тэги: </b>
-        
-        
-        
-        <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">Terminal</a>
-        
-        
-        
-        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
-        
-        
-        
-        <a href="tag_Receipts.html" class="btn btn-default navbar-btn cursorNorm" role="button">Receipts</a>
-        
-        
-        
     </div>
 
-    
 
-</div>
+
+</article>
+
 
 <hr class="shaded"/>
 

@@ -100,7 +100,7 @@ folder: java_SDK
 ```kotlin
 class PaymentSystemSellEvent(
         val receiptUuid: String,
-        val accoundId: String?,
+        val accountId: String?,
         val sum: BigDecimal,
         val description: String?
 )
@@ -109,7 +109,7 @@ class PaymentSystemSellEvent(
 Где:
 
 * `receiptUuid` – идентификатор чека.
-* `accoundId` – счёт (учётная запись) в платёжной системе.
+* `accountId` – счёт (учётная запись) в платёжной системе.
 * `sum` – сумма платежа.
 * `description` – текстовое описание
 
