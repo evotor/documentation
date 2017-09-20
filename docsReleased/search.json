@@ -15,6 +15,17 @@
 
 
 {
+"title": "Об Облаке Эвотор",
+"tags": "CloudProductsReceipts",
+"keywords": "",
+"url": "doc_evotor_api_about.html",
+"summary": "Раздел содержит вводную информацию для работы с нашей документацией."
+}
+,
+
+
+
+{
 "title": "Создание JS-приложения с помощью шаблона",
 "tags": "JavaScriptTerminal",
 "keywords": "",
@@ -240,17 +251,6 @@
 "keywords": "",
 "url": "doc_errors_returned.html",
 "summary": "Раздел содержит информацию о возвращаемых ошибках"
-}
-,
-
-
-
-{
-"title": "Об Облаке Эвотор",
-"tags": "CloudProductsReceipts",
-"keywords": "",
-"url": "doc_evotor_api_about.html",
-"summary": "Раздел содержит вводную информацию для работы с нашей документацией."
 }
 ,
 
@@ -770,8 +770,6 @@
 "summary": ""
 }
 ,
-
-
 
 
 

@@ -864,7 +864,8 @@ $('#toc').on('click', 'a', function() {
 <ul>
   <li><code class="highlighter-rouge">X-Evotor-Store-Uuid</code> – содержит идентификатор магазина в формате uuid4, к которому привязан терминал.</li>
   <li><code class="highlighter-rouge">X-Evotor-Device-UUID</code> – содержит идентификатор устройства в формате uuid4, полученный по запросу к <code class="highlighter-rouge">/api/v1/inventories/devices</code>.</li>
-  <li><code class="highlighter-rouge">Authorization</code> – содержит <a href="./doc_authorization.html#usersToken">токен пользователя</a>. Токен необходим для bearer-авторизации.</li>
+  <li><code class="highlighter-rouge">X-Evotor-User-Id</code> – содержит идентификатор пользователя в Облаке Эвотор.</li>
+  <li><code class="highlighter-rouge">Authorization</code> – содержит <a href="./doc_evotor_api_authorization.html#usersToken">токен пользователя</a>. Токен необходим для bearer-авторизации.</li>
 </ul>
 
 <p>Сторонний сервер получает сообщение от облака Эвотор и определяет отправителя с помощью заголовка Authorization.</p>
