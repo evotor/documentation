@@ -1,5 +1,5 @@
 ---
-title: Примеры запросов
+title: Примеры запросов к Облаку Эвотор
 keywords:
 summary: "Раздел содержит примеры запросов к Эвотор API и вебхуков облака Эвотор."
 sidebar: evotordoc_sidebar
@@ -8,25 +8,30 @@ tags: [Cloud, Products]
 folder: evotor_api
 ---
 
-### Запросы к Эвотор API
+С помощью API Облака Эвотор сторонние сервисы могут получить доступ к данным пользователей платформы, которые хранятся в облаке Эвотор.
 
-С помощью Эвотор API сторонние сервисы могут получить доступ к данным пользователей платформы, которые хранятся в облаке Эвотор.
-
-Обращаясь к Эвотор API сторонние сервисы могут:
+Обращаясь к Облаку сторонние сервисы могут:
 
 * искать магазины, сотрудников и смарт терминалы пользователя платформы;
 * в рамках выбранного магазина:
 
-  * получать и передавать информацию о продуктах;
-  * удалять продукты;
-  * получать документы смарт-терминалов.
+  * получать и передавать информацию о товарах;
+  * удалять товары;
+  * получать документы смарт-терминалов;
+  * создавать схемы и дополнительные поля товаров.
 
-#### Пример GET-запроса к облаку Эвотор
+## Примеры запросов к Облаку Эвотор {#evotorApi}
 
-Получить список всех магазинов пользователя:
+### Получить список всех магазинов пользователя {#getStores}
+
+Для выполнения этого запроса вам потребуется [токен приложения](./doc_authorization.html).
+
+Запрос:
 
 ```
--X GET --header 'Accept: application/json' --header 'X-Authorization: <токен приложения>' --header 'Content-Type: application/json' 'https://api.evotor.ru/api/v1/inventories/stores/search'
+curl -X GET \
+  https://api.evotor.ru/api/v1/inventories/stores/search \
+  -H 'x-authorization: <токен приложения>'
 ```
 
 Ответ:
@@ -34,26 +39,53 @@ folder: evotor_api
 ```JSON
 [
   {
-    "uuid": "string",
+    "uuid": "<идентификатор магазина>",
     "address": null,
     "name": "Мой магазин1",
     "code": null
   },
-  {
-    "uuid": "string",
-    "address": null,
-    "name": "Мой магазин3",
-    "code": null
-  }
 ]
 ```
 
-#### Пример POST-запроса
+### Создать новый товар в определённом магазине
+
+Для выполнения этого запроса вам потребуется [токен приложения](./doc_authorization.html) и идентификатор магазина, который вы можете получить с помощью [предыдущего запроса](./doc_example_calls.html#getStores).
 
 Создать новый товар в определённом магазине:
 
 ```
-curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Authorization: <токен приложения>' -d '[{"uuid":"n1e2w3-t4ov5qr6","code":"","barCodes":[],"alcoCodes":[],"name":"Новый товар","price":0,"quantity":0,"costPrice":0,"measureName":"","tax":"NO_VAT","allowToSell":false,"description":"","articleNumber":"","parentUuid":"","group":false,"type":"NORMAL","alcoholByVolume":0,"alcoholProductKindCode":0,"tareVolume":0}]' 'https://api.evotor.ru/api/v1/inventories/stores/storeUuid-123456/products'
+curl -X POST \
+  https://api.evotor.ru/api/v1/inventories/stores/<идентификатор магазина>/products \
+  -H 'accept: application/json' \
+  -H 'content-type: application/json' \
+  -H 'x-authorization: <токен приложения>' \
+  -d '[
+  {
+    "uuid": "01ba18b6-8707-5f47-3d9c-4db058054cb2",
+    "code": "6",
+    "barCodes": [
+      "2000000000060"
+    ],
+    "alcoCodes": [
+      "0000000000000000001"
+    ],
+    "name": "Сидр",
+    "price": 123.12,
+    "quantity": 12,
+    "costPrice": 100.123,
+    "measureName": "шт",
+    "tax": "VAT_18",
+    "allowToSell": true,
+    "description": "Вкусный яблочный сидр.",
+    "articleNumber": "сид123",
+    "parentUuid": "1ddea16b-971b-dee5-3798-1b29a7aa2e27",
+    "group": false,
+    "type": "ALCOHOL_NOT_MARKED",
+    "alcoholByVolume": 5.45,
+    "alcoholProductKindCode": 123,
+    "tareVolume": 0.57
+  }
+]'
 ```
 
 ```
@@ -62,10 +94,9 @@ no content
 
 При создании товаров в ответ приходит пустое сообщение. Код ответа в случае удачного добавления – 200.
 
+## Примеры вебхуков, которые Облако передаёт в сторонний сервис {#webhooks}
 
-### Вебхуки облака Эвотор
-
-Все изменения в Личном кабинете пользователя (создание магазина, регистрация смарт-терминала и т.п.) облако Эвотор передаёт в сторонний сервис, с помощью вебхуков. Таким образом, все запросы пользователей к стороннему сервису проксируются через облако Эвотор.
+Все изменения в Личном кабинете пользователя (создание магазина, регистрация смарт-терминала и т.п.) облако Эвотор может передавать в сторонний сервис, с помощью вебхуков.
 
 Подписка на вебхуки позволяет:
 
@@ -75,9 +106,11 @@ no content
 * Передавать в сторонний сервис чеки (упрощённые документы) и документы смарт-терминалов.
 * Получать и передавать номенклатуру.
 
-#### Пример вебкука-запроса
+### Вебхук-запрос на авторизацию учётной записи стороннего сервиса
 
-Проверить данные учётной записи:
+Для выполнения этого запроса облаку потребуется [токен стороннего сервиса](./doc_evotor_api_authorization.html#serverToken).
+
+Запрос:
 
 ```
 -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: Basic <токен стороннего сервиса>' -d '{"userUuid":"01-000000000000001","username":"<Имя учётной записи>","password":"<пароль учётной записи>","customField":"любое значение"}' 'https://partner.org/api/v1/user/verify'
@@ -89,15 +122,18 @@ no content
 {
   "userUuid": "01-000000000000001",
   "hasBilling": false,
-  "token": "пользовательский токен"
+  "token": "<токен пользователя>"
 }
 ```
 
-#### Пример вебхука-уведомления
-Передать список магазинов в сторонний сервис:
+### Вебхук-уведомление о создании нового магазина в Личном кабинете пользователя Эвотор
+
+Для выполнения этого запроса облаку потребуется [токен пользователя](./doc_evotor_api_authorization.html#usersToken).
+
+Запрос:
 
 ```
--X PUT --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: <пользовательсский токен>' -d '[{"uuid": "string", "name": "string", "address": "string"}]' 'https://partner.org/api/v1/inventories/stores'
+-X PUT --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: <токен пользователя>' -d '[{"uuid": "string", "name": "string", "address": "string"}]' 'https://partner.org/api/v1/inventories/stores'
 ```
 
 Ответ:
@@ -111,9 +147,8 @@ no content
 ]
 ```
 
+## Справочник API
 
-### Справочник API
-
-Со всеми возможностями Эвотор API вы можете ознакомиться в [справочнике](https://api.evotor.ru/docs/).
+Со всеми возможностями Облака Эвотор вы можете ознакомиться в [справочнике](https://api.evotor.ru/docs/).
 
 Последние изменения в документации и API отражаются в разделе [**Что нового**](https://developer.evotor.ru/docs/whats_new.html).
