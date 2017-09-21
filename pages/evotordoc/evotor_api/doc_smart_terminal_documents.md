@@ -116,7 +116,7 @@ folder: evotor_api
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;RETURN&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/10-RETURN.json">RETURN</a></td>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0412\u043e\u0437\u0432\u0440\u0430\u0442 \u0442\u043e\u0432\u0430\u0440\u0430 \u043f\u043e\u0441\u0442\u0430\u0432\u0449\u0438\u043a\u0443&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/01-ACCEPT.json">Возврат товара поставщику</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0412\u043e\u0437\u0432\u0440\u0430\u0442 \u0442\u043e\u0432\u0430\u0440\u0430 \u043f\u043e\u0441\u0442\u0430\u0432\u0449\u0438\u043a\u0443&quot;}">Возврат товара поставщику</td>
 
 </tr>
 
@@ -164,4 +164,4 @@ folder: evotor_api
 
 </table>
 
-  Со структурой всех типов документов смарт-терминала вы можете ознакомиться [в нашем репозитории на гитхабе](https://github.com/evotor/documentation-api/tree/master/pos-docs).
+Со структурой всех типов документов смарт-терминала вы можете ознакомиться [в нашем репозитории на гитхабе](https://github.com/evotor/documentation-api/tree/master/pos-docs).
