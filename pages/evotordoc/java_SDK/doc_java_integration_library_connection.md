@@ -4,7 +4,7 @@ keywords: Разработка, Java, библиотека, integration-library
 summary: Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуется для установки на смарт-терминал.
 sidebar: evotordoc_sidebar
 permalink: doc_java_integration_library_connection.html
-tags: [terminal, Java]
+tags: [terminal, java]
 folder: java_SDK
 ---
 

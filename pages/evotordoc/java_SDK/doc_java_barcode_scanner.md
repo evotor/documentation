@@ -4,7 +4,7 @@ keywords: оборудование, штрихкоды, сканер, класс
 summary: "Раздел содержит инструкцию о том, как подготовить приложение для получения данных от сканера штрихкодов."
 sidebar: evotordoc_sidebar
 permalink: doc_java_barcode_scanner.html
-tags: [terminal, Java, equipment]
+tags: [terminal, java, equipment]
 folder: java_SDK
 ---
 

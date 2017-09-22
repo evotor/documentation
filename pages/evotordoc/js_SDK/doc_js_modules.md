@@ -4,7 +4,7 @@ keywords: обмен, сообщения, HTTP, сторонний, сервис
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_modules.html
-tags: [terminal, JavaScript]
+tags: [terminal, javascript]
 folder: js_SDK
 ---
 

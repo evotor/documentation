@@ -4,7 +4,7 @@ keywords: интеграция, манифест, подписка, событи
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_app_integration_points.html
-tags: [terminal, JavaScript, Java]
+tags: [terminal, javascript, java]
 folder: smart_terminal_app_development
 ---
 

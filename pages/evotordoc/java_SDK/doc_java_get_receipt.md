@@ -4,7 +4,7 @@ keywords: чек, методы, интерфейс, заголовки, ReceiptA
 summary: "Раздел содержит описание методов интерфейса, с помощью которого можно получить данные сформированного чека."
 sidebar: evotordoc_sidebar
 permalink: doc_java_get_receipt.html
-tags: [terminal, Java, receipts]
+tags: [terminal, java, receipts]
 folder: java_SDK
 ---
 ## Методы

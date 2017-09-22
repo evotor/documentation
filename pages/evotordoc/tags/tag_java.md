@@ -1,6 +1,6 @@
 ---
 title: "Java-приложение"
-tagName: Java
+tagName: java
 search: exclude
 permalink: tag_java.html
 sidebar: evotordoc_sidebar

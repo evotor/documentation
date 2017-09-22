@@ -4,7 +4,7 @@ keywords:
 summary: "Раздел содержит инструкцию о том, как приступить к тестированию своего приложения."
 sidebar: evotordoc_sidebar
 permalink: doc_application_test.html
-tags: [Облако, Java, JavaScript]
+tags: [Облако, java, javascript]
 folder: evotor_about
 ---
 

@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_drivers_library_connection.html
-tags: [Java, terminal, equipment]
+tags: [java, terminal, equipment]
 folder: drivers
 ---
 

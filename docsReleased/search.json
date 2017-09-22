@@ -27,7 +27,7 @@
 
 {
 "title": "Создание JS-приложения с помощью шаблона",
-"tags": "JavaScriptterminal",
+"tags": "javascriptterminal",
 "keywords": "",
 "url": "doc_JS_template_integration.html",
 "summary": ""
@@ -49,7 +49,7 @@
 
 {
 "title": "О манифесте приложения",
-"tags": "terminalJavaJavaScript",
+"tags": "terminaljavajavascript",
 "keywords": "манифест, manifest",
 "url": "doc_about_manifest.html",
 "summary": ""
@@ -60,7 +60,7 @@
 
 {
 "title": "Компоненты приложения",
-"tags": "terminalJavaJavaScript",
+"tags": "terminaljavajavascript",
 "keywords": "",
 "url": "doc_app_components.html",
 "summary": ""
@@ -71,7 +71,7 @@
 
 {
 "title": "Включение режима разработчика",
-"tags": "terminalJavaJavaScript",
+"tags": "terminaljavajavascript",
 "keywords": "",
 "url": "doc_app_developer_mode.html",
 "summary": ""
@@ -82,7 +82,7 @@
 
 {
 "title": "Права приложения",
-"tags": "terminalJavaJavaScript",
+"tags": "terminaljavajavascript",
 "keywords": "",
 "url": "doc_app_grants.html",
 "summary": "Раздел содержит информацию правах пользователей смарт терминала и примеры того, как получить данные о них."
@@ -93,7 +93,7 @@
 
 {
 "title": "Установка приложения",
-"tags": "terminalJavaJavaScript",
+"tags": "terminaljavajavascript",
 "keywords": "",
 "url": "doc_app_installation.html",
 "summary": "Раздел содержит информацию, которая поможет вам установить своё приложение на смарт-терминал как с помощью Магазина приложений так и с помощью ADB Shell."
@@ -104,7 +104,7 @@
 
 {
 "title": "Точки интеграции",
-"tags": "terminalJavaScriptJava",
+"tags": "terminaljavascriptjava",
 "keywords": "интеграция, манифест, подписка, события, BroadcastReceiver, команды",
 "url": "doc_app_integration_points.html",
 "summary": ""
@@ -115,7 +115,7 @@
 
 {
 "title": "Логирование",
-"tags": "terminalJavaScriptJava",
+"tags": "terminaljavascriptjava",
 "keywords": "",
 "url": "doc_app_logging.html",
 "summary": "Раздел содержит информацию о доступе к логам приложений."
@@ -148,7 +148,7 @@
 
 {
 "title": "Перевод приложения в тестирование",
-"tags": "cloudJavaJavaScript",
+"tags": "cloudJavajavascript",
 "keywords": "",
 "url": "doc_app_testing.html",
 "summary": "Раздел содержит инструкцию о том, как приступить к тестированию своего приложения."
@@ -159,7 +159,7 @@
 
 {
 "title": "Тестирование приложения",
-"tags": "ОблакоJavaJavaScript",
+"tags": "Облакоjavajavascript",
 "keywords": "",
 "url": "doc_application_test.html",
 "summary": "Раздел содержит инструкцию о том, как приступить к тестированию своего приложения."
@@ -192,7 +192,7 @@
 
 {
 "title": "SDK для денежного ящика",
-"tags": "Javaterminalequipment",
+"tags": "javaterminalequipment",
 "keywords": "",
 "url": "doc_drivers_cashdrawer.html",
 "summary": ""
@@ -203,7 +203,7 @@
 
 {
 "title": "Подготовка к разработке",
-"tags": "Javaterminalequipment",
+"tags": "javaterminalequipment",
 "keywords": "",
 "url": "doc_drivers_library_connection.html",
 "summary": ""
@@ -214,7 +214,7 @@
 
 {
 "title": "SDK для подключаемого USB-оборудования",
-"tags": "Javaterminalequipment",
+"tags": "javaterminalequipment",
 "keywords": "",
 "url": "doc_drivers_other.html",
 "summary": ""
@@ -225,7 +225,7 @@
 
 {
 "title": "SDK для банковский терминалов",
-"tags": "Javaterminalequipment",
+"tags": "javaterminalequipment",
 "keywords": "",
 "url": "doc_drivers_pinpads.html",
 "summary": ""
@@ -236,7 +236,7 @@
 
 {
 "title": "SDK для весов",
-"tags": "Javaterminalequipment",
+"tags": "javaterminalequipment",
 "keywords": "",
 "url": "doc_drivers_scales.html",
 "summary": ""
@@ -335,7 +335,7 @@
 
 {
 "title": "Приложение в интерфейсе смарт-терминала",
-"tags": "terminalJava",
+"tags": "terminaljava",
 "keywords": "Интерфейс, иконка, плитка, манифест, экран, оплата, возврат, продажа",
 "url": "doc_java_app_icon.html",
 "summary": "Вы можете запускать приложение с помощью кнопок и иконок, добавленных в интерфейс смарт-терминала. Раздел содержит информацию о том как добавить свои иконки или заменить существующую кнопку интерфейса смарт-терминала."
@@ -346,7 +346,7 @@
 
 {
 "title": "Манифест Java-приложения",
-"tags": "terminalJava",
+"tags": "terminaljava",
 "keywords": "Манифест, Java, manifest",
 "url": "doc_java_app_manifest.html",
 "summary": ""
@@ -357,7 +357,7 @@
 
 {
 "title": "Разработка Java-приложения",
-"tags": "Javaterminalreceiptsproducts",
+"tags": "javaterminalreceiptsproducts",
 "keywords": "",
 "url": "doc_java_app_tutorial.html",
 "summary": "Раздел содержит инструкцию по созданию простого java-приложения для смарт-терминала. На разных этапах приложение обладает разными функциями. Так, итоговое приложение сможет показывать интерфейс по нажатию на плитку на главном экране смарт-терминала, получать информацию о том, что в чек добавлен определённый товар, выводить экран с предложением добавить к этому товару ещё один, получать информацию о закрытии чека и записывать сообщение об этом в лог."
@@ -368,7 +368,7 @@
 
 {
 "title": "Работа с пользователями смарт-терминала",
-"tags": "Javaterminal",
+"tags": "javaterminal",
 "keywords": "API, пользователи, User, методы",
 "url": "doc_java_app_users.html",
 "summary": "Раздел содержит описание Users API смарт-терминала."
@@ -379,7 +379,7 @@
 
 {
 "title": "Сканер штрихкодов",
-"tags": "terminalJavaequipment",
+"tags": "terminaljavaequipment",
 "keywords": "оборудование, штрихкоды, сканер, класс, операция",
 "url": "doc_java_barcode_scanner.html",
 "summary": "Раздел содержит инструкцию о том, как подготовить приложение для получения данных от сканера штрихкодов."
@@ -390,7 +390,7 @@
 
 {
 "title": "Принтер чеков",
-"tags": "Javaterminalequipmentreceipts",
+"tags": "javaterminalequipmentreceipts",
 "keywords": "оборудование, принтер, чеки, печать, методы",
 "url": "doc_java_bill_printer.html",
 "summary": "Раздел содержит информацию о том, как приложение может работать с принтером чеков."
@@ -401,7 +401,7 @@
 
 {
 "title": "Скидки",
-"tags": "terminalJavareceipts",
+"tags": "terminaljavareceipts",
 "keywords": "скидки, чек, позиция, событие, подписка",
 "url": "doc_java_discounts.html",
 "summary": ""
@@ -412,7 +412,7 @@
 
 {
 "title": "Получить данные сформированного чека",
-"tags": "terminalJavareceipts",
+"tags": "terminaljavareceipts",
 "keywords": "чек, методы, интерфейс, заголовки, ReceiptApi, штрихкод, позиция, платеж",
 "url": "doc_java_get_receipt.html",
 "summary": "Раздел содержит описание методов интерфейса, с помощью которого можно получить данные сформированного чека."
@@ -423,7 +423,7 @@
 
 {
 "title": "Подключение библиотеки для разработки Java-приложений",
-"tags": "terminalJava",
+"tags": "terminaljava",
 "keywords": "Разработка, Java, библиотека, integration-library",
 "url": "doc_java_integration_library_connection.html",
 "summary": "Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуется для установки на смарт-терминал."
@@ -434,7 +434,7 @@
 
 {
 "title": "Товароучёт",
-"tags": "terminalJavaproducts",
+"tags": "terminaljavaproducts",
 "keywords": "товары, база, интерфейс, методы, InventoryAPI",
 "url": "doc_java_inventory.html",
 "summary": ""
@@ -445,7 +445,7 @@
 
 {
 "title": "Логирование Java-приложения",
-"tags": "terminalJava",
+"tags": "terminaljava",
 "keywords": "логи, журналы, log",
 "url": "doc_java_logging.html",
 "summary": ""
@@ -456,7 +456,7 @@
 
 {
 "title": "Вызов окон смарт-терминала",
-"tags": "terminalJava",
+"tags": "terminaljava",
 "keywords": "интерфейс, окно, методы, навигация",
 "url": "doc_java_navigation.html",
 "summary": "Раздел содержит инструкцию по переходу к элементам управления смарт-терминалом."
@@ -467,7 +467,7 @@
 
 {
 "title": "Печать электронных чеков",
-"tags": "terminalJavareceipts",
+"tags": "terminaljavareceipts",
 "keywords": "чек, телефон, email, печать, интернет, магазин",
 "url": "doc_java_online_store_receipt.html",
 "summary": ""
@@ -478,7 +478,7 @@
 
 {
 "title": "Платёжные системы",
-"tags": "terminalJava",
+"tags": "terminaljava",
 "keywords": "чек, печатная, группа, платёжные, системы, манифест",
 "url": "doc_java_payment_systems.html",
 "summary": ""
@@ -489,7 +489,7 @@
 
 {
 "title": "Поиск товара по штрихкоду",
-"tags": "Javaterminalreceipts",
+"tags": "javaterminalreceipts",
 "keywords": "",
 "url": "doc_java_receipt_api.html",
 "summary": "Раздел содержит описание Receipt API смарт-терминала."
@@ -500,7 +500,7 @@
 
 {
 "title": "Открытие чека в приложении",
-"tags": "terminalJavareceipts",
+"tags": "terminaljavareceipts",
 "keywords": "",
 "url": "doc_java_receipt_creation.html",
 "summary": "Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты."
@@ -511,7 +511,7 @@
 
 {
 "title": "Разделение чека",
-"tags": "terminalJavareceipts",
+"tags": "terminaljavareceipts",
 "keywords": "Разделение, деление, чек, печатная, группа, платёжные, системы, фискальный, нефискальный",
 "url": "doc_java_receipt_division.html",
 "summary": "Раздел содержит описание интерфейса, с помощью которого приложения могут делить чек на несколько платежей или на несколько чеков (печатных групп), например, для отдельной печати фискального и ЕНВД чека."
@@ -522,7 +522,7 @@
 
 {
 "title": "Создание дополнительных полей в чеке",
-"tags": "terminalJavareceipts",
+"tags": "terminaljavareceipts",
 "keywords": "чеки, extras, дополнительные",
 "url": "doc_java_receipt_extras.html",
 "summary": "Раздел содержит информацию о том, как и когда вы можете добавлять дополнительные поля в чеки."
@@ -533,7 +533,7 @@
 
 {
 "title": "Работа с позициями чека",
-"tags": "terminalJavaReceipts",
+"tags": "terminaljavaReceipts",
 "keywords": "позиция, чек, события, открыть, добавить, изменить",
 "url": "doc_java_receipt_interactions.html",
 "summary": "Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека."
@@ -544,7 +544,7 @@
 
 {
 "title": "Печать внутри кассового чека",
-"tags": "Javaterminalequipment",
+"tags": "javaterminalequipment",
 "keywords": "печать, чек",
 "url": "doc_java_receipt_print.html",
 "summary": "Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека."
@@ -555,7 +555,7 @@
 
 {
 "title": "Весы",
-"tags": "Javaterminalequipment",
+"tags": "javaterminalequipment",
 "keywords": "оборудование, весы, вес, масса, метод",
 "url": "doc_java_scales.html",
 "summary": ""
@@ -566,7 +566,7 @@
 
 {
 "title": "Обмен сообщениями Java-приложения и стороннего сервиса",
-"tags": "terminalJava",
+"tags": "terminaljava",
 "keywords": "обмен, сообщения, HTTP, сторонний, сервис, проксирование",
 "url": "doc_java_third_party_service_communication.html",
 "summary": ""
@@ -577,7 +577,7 @@
 
 {
 "title": "Приложение в интерфейсе смарт-терминала",
-"tags": "terminalJavaScript",
+"tags": "terminaljavascript",
 "keywords": "",
 "url": "doc_js_app_icon.html",
 "summary": ""
@@ -588,7 +588,7 @@
 
 {
 "title": "Манифест JS-приложения",
-"tags": "JavaScriptterminal",
+"tags": "javascriptterminal",
 "keywords": "",
 "url": "doc_js_app_manifest.html",
 "summary": ""
@@ -599,7 +599,7 @@
 
 {
 "title": "Подключение шаблона JS-приложения",
-"tags": "terminalJavaScript",
+"tags": "terminaljavascript",
 "keywords": "шаблон, разработка, приложение, JS",
 "url": "doc_js_app_template_link.html",
 "summary": ""
@@ -610,7 +610,7 @@
 
 {
 "title": "Получение данных с подключённого оборудования",
-"tags": "terminalJavaScriptequipment",
+"tags": "terminaljavascriptequipment",
 "keywords": "сканер, штрихкоды, весы, устройства, разрешения, devices",
 "url": "doc_js_devices.html",
 "summary": ""
@@ -621,7 +621,7 @@
 
 {
 "title": "Поиск товара по идентификатору",
-"tags": "terminalJavaScriptproducts",
+"tags": "terminaljavascriptproducts",
 "keywords": "номенклатура, товар, inventory",
 "url": "doc_js_inventory.html",
 "summary": ""
@@ -632,7 +632,7 @@
 
 {
 "title": "Логирование JS-приложения",
-"tags": "terminalJavaScript",
+"tags": "terminaljavascript",
 "keywords": "логи, журналы, logger",
 "url": "doc_js_logging.html",
 "summary": ""
@@ -643,7 +643,7 @@
 
 {
 "title": "Модули",
-"tags": "terminalJavaScript",
+"tags": "terminaljavascript",
 "keywords": "обмен, сообщения, HTTP, сторонний, сервис, проксирование",
 "url": "doc_js_modules.html",
 "summary": ""
@@ -654,7 +654,7 @@
 
 {
 "title": "Работа с чеком",
-"tags": "terminalJavaScriptreceipts",
+"tags": "terminaljavascriptreceipts",
 "keywords": "чек, позиция, редактировать, добавить, удалить",
 "url": "doc_js_receipt_interactions.html",
 "summary": "Раздел содержит описание методов, которые применяются в JS-приложении для работы с чеками и позициями чеков."
@@ -665,7 +665,7 @@
 
 {
 "title": "Хранение данных на смарт-терминале",
-"tags": "terminalJavaScript",
+"tags": "terminaljavascript",
 "keywords": "хранение, данные, сохранить, изменить, удалить, storage",
 "url": "doc_js_storage_api.html",
 "summary": ""
@@ -676,7 +676,7 @@
 
 {
 "title": "Обмен сообщениями со сторонним сервисом",
-"tags": "terminalJavaScript",
+"tags": "terminaljavascript",
 "keywords": "обмен, сообщения, HTTP, сторонний, сервис, проксирование",
 "url": "doc_js_third_party_service_communication.html",
 "summary": ""
@@ -698,7 +698,7 @@
 
 {
 "title": "Приложение для смарт-терминала",
-"tags": "JavaJavaScriptterminalcloud",
+"tags": "javajavascriptterminalcloud",
 "keywords": "",
 "url": "doc_smart_terminal_application.html",
 "summary": "Раздел содержит информацию, которая потребуется при разработке приложения для терминала."

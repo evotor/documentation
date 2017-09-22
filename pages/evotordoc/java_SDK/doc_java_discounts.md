@@ -4,7 +4,7 @@ keywords: скидки, чек, позиция, событие, подписка
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_discounts.html
-tags: [terminal, Java, receipts]
+tags: [terminal, java, receipts]
 folder: java_SDK
 ---
 

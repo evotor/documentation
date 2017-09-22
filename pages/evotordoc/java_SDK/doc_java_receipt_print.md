@@ -4,7 +4,7 @@ keywords: печать, чек
 summary: "Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека."
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_print.html
-tags: [Java, terminal, equipment]
+tags: [java, terminal, equipment]
 folder: java_SDK
 ---
 

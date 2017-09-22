@@ -1,6 +1,6 @@
 ---
 title: "JS-приложение"
-tagName: JavaScript
+tagName: javascript
 search: exclude
 permalink: tag_javascript.html
 sidebar: evotordoc_sidebar

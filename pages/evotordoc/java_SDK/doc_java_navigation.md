@@ -4,7 +4,7 @@ keywords: интерфейс, окно, методы, навигация
 summary: Раздел содержит инструкцию по переходу к элементам управления смарт-терминалом.
 sidebar: evotordoc_sidebar
 permalink: doc_java_navigation.html
-tags: [terminal, Java]
+tags: [terminal, java]
 folder: java_SDK
 ---
 

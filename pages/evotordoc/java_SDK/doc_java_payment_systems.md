@@ -4,7 +4,7 @@ keywords: чек, печатная, группа, платёжные, систе
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_payment_systems.html
-tags: [terminal, Java]
+tags: [terminal, java]
 folder: java_SDK
 ---
 

@@ -4,7 +4,7 @@ keywords: шаблон, разработка, приложение, JS
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_app_template_link.html
-tags: [terminal, JavaScript]
+tags: [terminal, javascript]
 folder: js_SDK
 ---
 
