@@ -4,7 +4,7 @@ keywords:
 summary: "Раздел содержит вводную информацию для работы с нашей документацией."
 sidebar: evotordoc_sidebar
 permalink: doc_evotor_api_about.html
-tags: [Cloud, products, receipts]
+tags: [cloud, products, receipts]
 folder: evotor_api
 published: true
 ---

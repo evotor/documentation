@@ -5,7 +5,7 @@
 
 {
 "title": "Интеграция с 1С",
-"tags": "Cloudreceiptsproducts",
+"tags": "cloudreceiptsproducts",
 "keywords": "",
 "url": "doc_1C_integration.html",
 "summary": "Раздел содержит информацию об интеграции с 1С"
@@ -16,7 +16,7 @@
 
 {
 "title": "Об Облаке Эвотор",
-"tags": "Cloudproductsreceipts",
+"tags": "cloudproductsreceipts",
 "keywords": "",
 "url": "doc_evotor_api_about.html",
 "summary": "Раздел содержит вводную информацию для работы с нашей документацией."
@@ -148,7 +148,7 @@
 
 {
 "title": "Перевод приложения в тестирование",
-"tags": "CloudJavaJavaScript",
+"tags": "cloudJavaJavaScript",
 "keywords": "",
 "url": "doc_app_testing.html",
 "summary": "Раздел содержит инструкцию о том, как приступить к тестированию своего приложения."
@@ -170,7 +170,7 @@
 
 {
 "title": "Авторизация запросов к Облаку Эвотор",
-"tags": "Cloud",
+"tags": "cloud",
 "keywords": "",
 "url": "doc_authorization.html",
 "summary": ""
@@ -181,7 +181,7 @@
 
 {
 "title": "Интеграция с облачными сервисами",
-"tags": "Cloudproducts",
+"tags": "cloudproducts",
 "keywords": "",
 "url": "doc_cloud_systems_integration.html",
 "summary": "Раздел содержит информацию об интеграции с облачной товароучётной системой."
@@ -247,7 +247,7 @@
 
 {
 "title": "Ошибки, которые может возвращать сторонний сервис",
-"tags": "Cloud",
+"tags": "cloud",
 "keywords": "",
 "url": "doc_errors_returned.html",
 "summary": "Раздел содержит информацию о возвращаемых ошибках"
@@ -258,7 +258,7 @@
 
 {
 "title": "Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис",
-"tags": "Cloud",
+"tags": "cloud",
 "keywords": "",
 "url": "doc_evotor_api_authorization.html",
 "summary": ""
@@ -269,7 +269,7 @@
 
 {
 "title": "Введение",
-"tags": "Cloud",
+"tags": "cloud",
 "keywords": "",
 "url": "doc_evotor_api_introduction.html",
 "summary": "Раздел содержит вводную информацию о том, что вам потребуется, чтобы начать использовать API Облака Эвотор."
@@ -280,7 +280,7 @@
 
 {
 "title": "Примеры запросов к Облаку Эвотор",
-"tags": "Cloudproducts",
+"tags": "cloudproducts",
 "keywords": "",
 "url": "doc_example_calls.html",
 "summary": "Раздел содержит примеры запросов к Эвотор API и вебхуков облака Эвотор."
@@ -313,7 +313,7 @@
 
 {
 "title": "IFrame на странице приложения",
-"tags": "Cloud",
+"tags": "cloud",
 "keywords": "IFrame",
 "url": "doc_iframe_within_application_page.html",
 "summary": "Краткая инструкция по добавлению фрейма в настройки приложения"
@@ -698,7 +698,7 @@
 
 {
 "title": "Приложение для смарт-терминала",
-"tags": "JavaJavaScriptterminalCloud",
+"tags": "JavaJavaScriptterminalcloud",
 "keywords": "",
 "url": "doc_smart_terminal_application.html",
 "summary": "Раздел содержит информацию, которая потребуется при разработке приложения для терминала."
@@ -709,7 +709,7 @@
 
 {
 "title": "Приложения для смарт-терминала и Облако Эвотор",
-"tags": "terminalCloud",
+"tags": "terminalcloud",
 "keywords": "",
 "url": "doc_smart_terminal_applications.html",
 "summary": ""
@@ -720,7 +720,7 @@
 
 {
 "title": "Документы смарт-терминала",
-"tags": "Cloudterminalreceipts",
+"tags": "cloudterminalreceipts",
 "keywords": "",
 "url": "doc_smart_terminal_documents.html",
 "summary": "Раздел содержит список документов, которые формирует смарт-терминал."

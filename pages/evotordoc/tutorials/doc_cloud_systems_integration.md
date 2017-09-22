@@ -4,7 +4,7 @@ keywords:
 summary: "Раздел содержит информацию об интеграции с облачной товароучётной системой."
 sidebar: evotordoc_sidebar
 permalink: doc_cloud_systems_integration.html
-tags: [Cloud, products]
+tags: [cloud, products]
 folder: tutorials
 ---
 

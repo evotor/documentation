@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_applications.html
-tags: [terminal, Cloud]
+tags: [terminal, cloud]
 folder: evotor_api
 ---
 
