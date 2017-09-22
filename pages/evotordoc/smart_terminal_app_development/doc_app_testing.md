@@ -4,7 +4,7 @@ keywords:
 summary: "Раздел содержит инструкцию о том, как приступить к тестированию своего приложения."
 sidebar: evotordoc_sidebar
 permalink: doc_app_testing.html
-tags: [cloud, Java, JavaScript]
+tags: [Cloud, Java, JavaScript]
 folder: smart_terminal_app_development
 ---
 

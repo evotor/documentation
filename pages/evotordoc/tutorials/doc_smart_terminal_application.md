@@ -4,7 +4,7 @@ keywords:
 summary: "Раздел содержит информацию, которая потребуется при разработке приложения для терминала."
 sidebar: evotordoc_sidebar
 permalink: doc_smart_terminal_application.html
-tags: [Java, JavaScript, terminal, cloud]
+tags: [Java, JavaScript, terminal, Cloud]
 folder: tutorials
 ---
 

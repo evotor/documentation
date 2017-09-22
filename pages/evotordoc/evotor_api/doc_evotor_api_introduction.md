@@ -4,7 +4,7 @@ keywords:
 summary: Раздел содержит вводную информацию о том, что вам потребуется, чтобы начать использовать API Облака Эвотор.
 sidebar: evotordoc_sidebar
 permalink: doc_evotor_api_introduction.html
-tags: [cloud]
+tags: [ Cloud ]
 folder: evotor_api
 published: true
 ---

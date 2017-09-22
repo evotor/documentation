@@ -4,7 +4,7 @@ keywords:
 summary: "Раздел содержит примеры запросов к Эвотор API и вебхуков облака Эвотор."
 sidebar: evotordoc_sidebar
 permalink: doc_example_calls.html
-tags: [cloud, products]
+tags: [Cloud, products]
 folder: evotor_api
 ---
 
