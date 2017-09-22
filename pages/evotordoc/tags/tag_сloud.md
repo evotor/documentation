@@ -1,6 +1,6 @@
 ---
 title: "Облако Эвотор"
-tagName: Cloud
+tagName: сloud
 search: exclude
 permalink: tag_cloud.html
 sidebar: evotordoc_sidebar

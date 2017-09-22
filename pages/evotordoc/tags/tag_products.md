@@ -1,6 +1,6 @@
 ---
 title: "Работа с товарами"
-tagName: Products
+tagName: products
 search: exclude
 permalink: tag_products.html
 sidebar: evotordoc_sidebar

@@ -1,6 +1,6 @@
 ---
 title: "Работа с чеками"
-tagName: Receipts
+tagName: receipts
 search: exclude
 permalink: tag_receipts.html
 sidebar: evotordoc_sidebar
