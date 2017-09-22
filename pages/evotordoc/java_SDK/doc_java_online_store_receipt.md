@@ -4,7 +4,7 @@ keywords: чек, телефон, email, печать, интернет, маг�
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_online_store_receipt.html
-tags: [Terminal, Java, Receipts]
+tags: [terminal, Java, receipts]
 folder: java_SDK
 ---
 

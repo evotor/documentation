@@ -4,7 +4,7 @@ keywords: манифест, manifest
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_about_manifest.html
-tags: [Terminal, Java, JavaScript]
+tags: [terminal, Java, JavaScript]
 folder: smart_terminal_app_development
 ---
 

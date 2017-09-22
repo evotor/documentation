@@ -4,7 +4,7 @@ keywords:
 summary: Раздел содержит общие сведения о монетизации приложений.
 sidebar: evotordoc_sidebar
 permalink: doc_app_tariffication.html
-tags: [Billing]
+tags: [billing]
 folder: billing
 ---
 

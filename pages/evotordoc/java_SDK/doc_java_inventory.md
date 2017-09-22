@@ -4,7 +4,7 @@ keywords: товары, база, интерфейс, методы, InventoryAPI
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_inventory.html
-tags: [Terminal, Java, Products]
+tags: [terminal, Java, products]
 folder: java_SDK
 ---
 ## Методы

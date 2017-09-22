@@ -4,7 +4,7 @@ keywords: логи, журналы, log
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_logging.html
-tags: [Terminal, Java]
+tags: [terminal, Java]
 folder: java_SDK
 published: true
 ---

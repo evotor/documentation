@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_JS_template_integration.html
-tags: [JavaScript, Terminal]
+tags: [JavaScript, terminal]
 folder: tutorials
 published: true
 ---

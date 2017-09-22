@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_app_manifest.html
-tags: [JavaScript, Terminal]
+tags: [JavaScript, terminal]
 folder: js_SDK
 ---
 

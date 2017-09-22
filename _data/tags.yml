@@ -1,9 +1,9 @@
 allowed-tags:
   - Java
   - JavaScript
-  - Terminal
-  - Cloud
-  - Equipment
-  - Receipts
-  - Billing
-  - Products
+  - terminal
+  - cloud
+  - equipment
+  - receipts
+  - billing
+  - products

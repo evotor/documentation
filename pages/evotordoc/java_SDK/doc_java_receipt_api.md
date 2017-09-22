@@ -4,7 +4,7 @@ keywords:
 summary: "Раздел содержит описание Receipt API смарт-терминала."
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_api.html
-tags: [Java, Terminal, Receipts]
+tags: [Java, terminal, receipts]
 folder: java_SDK
 ---
 

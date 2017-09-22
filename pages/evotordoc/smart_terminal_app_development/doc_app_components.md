@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_app_components.html
-tags: [Terminal, Java, JavaScript]
+tags: [terminal, Java, JavaScript]
 folder: smart_terminal_app_development
 ---
 
