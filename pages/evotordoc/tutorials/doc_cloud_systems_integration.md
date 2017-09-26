@@ -53,4 +53,4 @@ folder: tutorials
 ### Подробная схема покупки и установки приложения
 
 {: .center-image}
-![](images/market_app_install_schema.png)
+<a data-fancybox="gallery" href="market_app_install_schema.png">![](images/market_app_install_schema.png)</a>

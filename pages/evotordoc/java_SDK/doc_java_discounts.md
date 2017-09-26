@@ -72,7 +72,7 @@ try {callback.onResult(
       discount,
       new SetExtra(extra),
       changes
-))
+));
     }
         catch (RemoteException exc) {
                 exc.printStackTrace();

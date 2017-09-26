@@ -44,7 +44,7 @@ folder: evotor_about
                  <div class="panel-body">
                      <h3>Java-приложение</h3>
                      <p>Как отдельные, так и интегрированные приложения, написанные на языке Java.</p>
-                     <a href="tag_Java.html" class="btn btn-primary">Подробнее</a>
+                     <a href="tag_java.html" class="btn btn-primary">Подробнее</a>
                  </div>
              </div>
          </div>
@@ -59,7 +59,7 @@ folder: evotor_about
                  <div class="panel-body">
                      <h3>JavaScript-приложение</h3>
                      <p>Как отдельные, так и интегрированные приложения, написанные на языке JavaScript.</p>
-                     <a href="tag_JavaScript.html" class="btn btn-primary">Подробнее</a>
+                     <a href="tag_javascript.html" class="btn btn-primary">Подробнее</a>
                  </div>
              </div>
          </div>
