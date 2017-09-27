@@ -1,0 +1,960 @@
+[
+
+
+
+
+{
+"title": "Интеграция с 1С",
+"tags": "cloudreceiptsproducts",
+"keywords": "",
+"url": "doc_1C_integration.html",
+"summary": "Раздел содержит информацию об интеграции с 1С"
+}
+,
+
+
+
+{
+"title": "Об Облаке Эвотор",
+"tags": "cloudproductsreceipts",
+"keywords": "",
+"url": "doc_evotor_api_about.html",
+"summary": "Раздел содержит вводную информацию для работы с нашей документацией."
+}
+,
+
+
+
+{
+"title": "Создание JS-приложения с помощью шаблона",
+"tags": "javascriptterminal",
+"keywords": "",
+"url": "doc_JS_template_integration.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "О биллинге",
+"tags": "billing",
+"keywords": "",
+"url": "doc_about_billing.html",
+"summary": "Раздел содержит общую информацию о биллинге пользователей Эвотор."
+}
+,
+
+
+
+{
+"title": "О манифесте приложения",
+"tags": "terminaljavajavascript",
+"keywords": "манифест, manifest",
+"url": "doc_about_manifest.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Компоненты приложения",
+"tags": "terminaljavajavascript",
+"keywords": "",
+"url": "doc_app_components.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Включение режима разработчика",
+"tags": "terminaljavajavascript",
+"keywords": "",
+"url": "doc_app_developer_mode.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Права приложения",
+"tags": "terminaljavajavascript",
+"keywords": "",
+"url": "doc_app_grants.html",
+"summary": "Раздел содержит информацию правах пользователей смарт терминала и примеры того, как получить данные о них."
+}
+,
+
+
+
+{
+"title": "Установка приложения",
+"tags": "terminaljavajavascript",
+"keywords": "",
+"url": "doc_app_installation.html",
+"summary": "Раздел содержит информацию, которая поможет вам установить своё приложение на смарт-терминал как с помощью Магазина приложений так и с помощью ADB Shell."
+}
+,
+
+
+
+{
+"title": "Точки интеграции",
+"tags": "terminaljavascriptjava",
+"keywords": "интеграция, манифест, подписка, события, BroadcastReceiver, команды",
+"url": "doc_app_integration_points.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Логирование",
+"tags": "terminaljavascriptjava",
+"keywords": "",
+"url": "doc_app_logging.html",
+"summary": "Раздел содержит информацию о доступе к логам приложений."
+}
+,
+
+
+
+{
+"title": "Черновики, модерация и публикация приложения",
+"tags": "",
+"keywords": "Черновик, ревью, модерация, проверка, публикация",
+"url": "doc_app_review.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "О тарификации приложений",
+"tags": "billing",
+"keywords": "",
+"url": "doc_app_tariffication.html",
+"summary": "Раздел содержит общие сведения о монетизации приложений."
+}
+,
+
+
+
+{
+"title": "Перевод приложения в тестирование",
+"tags": "cloudJavajavascript",
+"keywords": "",
+"url": "doc_app_testing.html",
+"summary": "Раздел содержит инструкцию о том, как приступить к тестированию своего приложения."
+}
+,
+
+
+
+{
+"title": "Тестирование приложения",
+"tags": "Облакоjavajavascript",
+"keywords": "",
+"url": "doc_application_test.html",
+"summary": "Раздел содержит инструкцию о том, как приступить к тестированию своего приложения."
+}
+,
+
+
+
+{
+"title": "Авторизация запросов к Облаку Эвотор",
+"tags": "cloud",
+"keywords": "",
+"url": "doc_authorization.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Интеграция с облачными сервисами",
+"tags": "cloudproducts",
+"keywords": "",
+"url": "doc_cloud_systems_integration.html",
+"summary": "Раздел содержит информацию об интеграции с облачной товароучётной системой."
+}
+,
+
+
+
+{
+"title": "SDK для денежного ящика",
+"tags": "javaterminalequipment",
+"keywords": "",
+"url": "doc_drivers_cashdrawer.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Подготовка к разработке",
+"tags": "javaterminalequipment",
+"keywords": "",
+"url": "doc_drivers_library_connection.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "SDK для подключаемого USB-оборудования",
+"tags": "javaterminalequipment",
+"keywords": "",
+"url": "doc_drivers_other.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "SDK для банковский терминалов",
+"tags": "javaterminalequipment",
+"keywords": "",
+"url": "doc_drivers_pinpads.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "SDK для весов",
+"tags": "javaterminalequipment",
+"keywords": "",
+"url": "doc_drivers_scales.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Ошибки, которые может возвращать сторонний сервис",
+"tags": "cloud",
+"keywords": "",
+"url": "doc_errors_returned.html",
+"summary": "Раздел содержит информацию о возвращаемых ошибках"
+}
+,
+
+
+
+{
+"title": "Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис",
+"tags": "cloud",
+"keywords": "",
+"url": "doc_evotor_api_authorization.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Введение",
+"tags": "cloud",
+"keywords": "",
+"url": "doc_evotor_api_introduction.html",
+"summary": "Раздел содержит вводную информацию о том, что вам потребуется, чтобы начать использовать API Облака Эвотор."
+}
+,
+
+
+
+{
+"title": "Примеры запросов к Облаку Эвотор",
+"tags": "cloudproducts",
+"keywords": "",
+"url": "doc_example_calls.html",
+"summary": "Раздел содержит примеры запросов к Эвотор API и вебхуков облака Эвотор."
+}
+,
+
+
+
+{
+"title": "Часто задаваемые вопросы",
+"tags": "",
+"keywords": "frequently asked questions, FAQ, question and answer, collapsible sections, expand, collapse",
+"url": "doc_faq.html",
+"summary": "Раздел содержит ответы на часто задаваемые вопросы."
+}
+,
+
+
+
+{
+"title": "Термины и определения",
+"tags": "",
+"keywords": "",
+"url": "doc_glossary.html",
+"summary": "В этом разделе вы найдёте глоссарий терминов, которые встречаются в нашей документации."
+}
+,
+
+
+
+{
+"title": "IFrame на странице приложения",
+"tags": "cloud",
+"keywords": "IFrame",
+"url": "doc_iframe_within_application_page.html",
+"summary": "Краткая инструкция по добавлению фрейма в настройки приложения"
+}
+,
+
+
+
+{
+"title": "Способы интеграции",
+"tags": "",
+"keywords": "",
+"url": "doc_integration_types.html",
+"summary": "Раздел содержит  краткое описание типов и технологий разработки приложений для платформы Эвотор."
+}
+,
+
+
+
+{
+"title": "Приложение в интерфейсе смарт-терминала",
+"tags": "terminaljava",
+"keywords": "Интерфейс, иконка, плитка, манифест, экран, оплата, возврат, продажа",
+"url": "doc_java_app_icon.html",
+"summary": "Вы можете запускать приложение с помощью кнопок и иконок, добавленных в интерфейс смарт-терминала. Раздел содержит информацию о том как добавить свои иконки или заменить существующую кнопку интерфейса смарт-терминала."
+}
+,
+
+
+
+{
+"title": "Манифест Java-приложения",
+"tags": "terminaljava",
+"keywords": "Манифест, Java, manifest",
+"url": "doc_java_app_manifest.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Разработка Java-приложения",
+"tags": "javaterminalreceiptsproducts",
+"keywords": "",
+"url": "doc_java_app_tutorial.html",
+"summary": "Раздел содержит инструкцию по созданию простого java-приложения для смарт-терминала. На разных этапах приложение обладает разными функциями. Так, итоговое приложение сможет показывать интерфейс по нажатию на плитку на главном экране смарт-терминала, получать информацию о том, что в чек добавлен определённый товар, выводить экран с предложением добавить к этому товару ещё один, получать информацию о закрытии чека и записывать сообщение об этом в лог."
+}
+,
+
+
+
+{
+"title": "Работа с пользователями смарт-терминала",
+"tags": "javaterminal",
+"keywords": "API, пользователи, User, методы",
+"url": "doc_java_app_users.html",
+"summary": "Раздел содержит описание Users API смарт-терминала."
+}
+,
+
+
+
+{
+"title": "Сканер штрихкодов",
+"tags": "terminaljavaequipment",
+"keywords": "оборудование, штрихкоды, сканер, класс, операция",
+"url": "doc_java_barcode_scanner.html",
+"summary": "Раздел содержит инструкцию о том, как подготовить приложение для получения данных от сканера штрихкодов."
+}
+,
+
+
+
+{
+"title": "Принтер чеков",
+"tags": "javaterminalequipmentreceipts",
+"keywords": "оборудование, принтер, чеки, печать, методы",
+"url": "doc_java_bill_printer.html",
+"summary": "Раздел содержит информацию о том, как приложение может работать с принтером чеков."
+}
+,
+
+
+
+{
+"title": "Скидки",
+"tags": "terminaljavareceipts",
+"keywords": "скидки, чек, позиция, событие, подписка",
+"url": "doc_java_discounts.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Получить данные сформированного чека",
+"tags": "terminaljavareceipts",
+"keywords": "чек, методы, интерфейс, заголовки, ReceiptApi, штрихкод, позиция, платеж",
+"url": "doc_java_get_receipt.html",
+"summary": "Раздел содержит описание методов интерфейса, с помощью которого можно получить данные сформированного чека."
+}
+,
+
+
+
+{
+"title": "Подключение библиотеки для разработки Java-приложений",
+"tags": "terminaljava",
+"keywords": "Разработка, Java, библиотека, integration-library",
+"url": "doc_java_integration_library_connection.html",
+"summary": "Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуется для установки на смарт-терминал."
+}
+,
+
+
+
+{
+"title": "Товароучёт",
+"tags": "terminaljavaproducts",
+"keywords": "товары, база, интерфейс, методы, InventoryAPI",
+"url": "doc_java_inventory.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Логирование Java-приложения",
+"tags": "terminaljava",
+"keywords": "логи, журналы, log",
+"url": "doc_java_logging.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Вызов окон смарт-терминала",
+"tags": "terminaljava",
+"keywords": "интерфейс, окно, методы, навигация",
+"url": "doc_java_navigation.html",
+"summary": "Раздел содержит инструкцию по переходу к элементам управления смарт-терминалом."
+}
+,
+
+
+
+{
+"title": "Печать электронных чеков",
+"tags": "terminaljavareceipts",
+"keywords": "чек, телефон, email, печать, интернет, магазин",
+"url": "doc_java_online_store_receipt.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Платёжные системы",
+"tags": "terminaljava",
+"keywords": "чек, печатная, группа, платёжные, системы, манифест",
+"url": "doc_java_payment_systems.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Поиск товара по штрихкоду",
+"tags": "javaterminalreceipts",
+"keywords": "",
+"url": "doc_java_receipt_api.html",
+"summary": "Раздел содержит описание Receipt API смарт-терминала."
+}
+,
+
+
+
+{
+"title": "Открытие чека в приложении",
+"tags": "terminaljavareceipts",
+"keywords": "",
+"url": "doc_java_receipt_creation.html",
+"summary": "Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты."
+}
+,
+
+
+
+{
+"title": "Разделение чека",
+"tags": "terminaljavareceipts",
+"keywords": "Разделение, деление, чек, печатная, группа, платёжные, системы, фискальный, нефискальный",
+"url": "doc_java_receipt_division.html",
+"summary": "Раздел содержит описание интерфейса, с помощью которого приложения могут делить чек на несколько платежей или на несколько чеков (печатных групп), например, для отдельной печати фискального и ЕНВД чека."
+}
+,
+
+
+
+{
+"title": "Создание дополнительных полей в чеке",
+"tags": "terminaljavareceipts",
+"keywords": "чеки, extras, дополнительные",
+"url": "doc_java_receipt_extras.html",
+"summary": "Раздел содержит информацию о том, как и когда вы можете добавлять дополнительные поля в чеки."
+}
+,
+
+
+
+{
+"title": "Работа с позициями чека",
+"tags": "terminaljavaReceipts",
+"keywords": "позиция, чек, события, открыть, добавить, изменить",
+"url": "doc_java_receipt_interactions.html",
+"summary": "Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека."
+}
+,
+
+
+
+{
+"title": "Печать внутри кассового чека",
+"tags": "javaterminalequipment",
+"keywords": "печать, чек",
+"url": "doc_java_receipt_print.html",
+"summary": "Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека."
+}
+,
+
+
+
+{
+"title": "Весы",
+"tags": "javaterminalequipment",
+"keywords": "оборудование, весы, вес, масса, метод",
+"url": "doc_java_scales.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Обмен сообщениями Java-приложения и стороннего сервиса",
+"tags": "terminaljava",
+"keywords": "обмен, сообщения, HTTP, сторонний, сервис, проксирование",
+"url": "doc_java_third_party_service_communication.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Приложение в интерфейсе смарт-терминала",
+"tags": "terminaljavascript",
+"keywords": "",
+"url": "doc_js_app_icon.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Манифест JS-приложения",
+"tags": "javascriptterminal",
+"keywords": "",
+"url": "doc_js_app_manifest.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Подключение шаблона JS-приложения",
+"tags": "terminaljavascript",
+"keywords": "шаблон, разработка, приложение, JS",
+"url": "doc_js_app_template_link.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Получение данных с подключённого оборудования",
+"tags": "terminaljavascriptequipment",
+"keywords": "сканер, штрихкоды, весы, устройства, разрешения, devices",
+"url": "doc_js_devices.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Поиск товара по идентификатору",
+"tags": "terminaljavascriptproducts",
+"keywords": "номенклатура, товар, inventory",
+"url": "doc_js_inventory.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Логирование JS-приложения",
+"tags": "terminaljavascript",
+"keywords": "логи, журналы, logger",
+"url": "doc_js_logging.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Модули",
+"tags": "terminaljavascript",
+"keywords": "обмен, сообщения, HTTP, сторонний, сервис, проксирование",
+"url": "doc_js_modules.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Работа с чеком",
+"tags": "terminaljavascriptreceipts",
+"keywords": "чек, позиция, редактировать, добавить, удалить",
+"url": "doc_js_receipt_interactions.html",
+"summary": "Раздел содержит описание методов, которые применяются в JS-приложении для работы с чеками и позициями чеков."
+}
+,
+
+
+
+{
+"title": "Хранение данных на смарт-терминале",
+"tags": "terminaljavascript",
+"keywords": "хранение, данные, сохранить, изменить, удалить, storage",
+"url": "doc_js_storage_api.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Обмен сообщениями со сторонним сервисом",
+"tags": "terminaljavascript",
+"keywords": "обмен, сообщения, HTTP, сторонний, сервис, проксирование",
+"url": "doc_js_third_party_service_communication.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Выплаты",
+"tags": "",
+"keywords": "",
+"url": "doc_payoff.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Приложение для смарт-терминала",
+"tags": "javajavascriptterminalcloud",
+"keywords": "",
+"url": "doc_smart_terminal_application.html",
+"summary": "Раздел содержит информацию, которая потребуется при разработке приложения для терминала."
+}
+,
+
+
+
+{
+"title": "Приложения для смарт-терминала и Облако Эвотор",
+"tags": "terminalcloud",
+"keywords": "",
+"url": "doc_smart_terminal_applications.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Документы смарт-терминала",
+"tags": "cloudterminalreceipts",
+"keywords": "",
+"url": "doc_smart_terminal_documents.html",
+"summary": "Раздел содержит список документов, которые формирует смарт-терминал."
+}
+,
+
+
+
+{
+"title": "Тарифы",
+"tags": "billing",
+"keywords": "",
+"url": "doc_tariffs.html",
+"summary": "Раздел содержит описание тарифов и типов оплаты приложения."
+}
+,
+
+
+
+{
+"title": "О платформе Эвотор",
+"tags": "",
+"keywords": "sample homepage",
+"url": "index.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Что нового",
+"tags": "",
+"keywords": "новости, блог, обновления, release notes, изменения",
+"url": "whats_new.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "News",
+"tags": "",
+"keywords": "news, blog, updates, release notes, announcements",
+"url": "news_archive.html",
+"summary": ""
+}
+,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+"title": "20.09.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-09-20-release-notes-16.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "14.09.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-09-14-release-notes-15.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "12.09.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-09-12-release-notes-14.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "08.09.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-09-08-release-notes-13.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "29.08.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-08-29-release-notes-12.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "25.08.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-08-25-release-notes-11.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "15.08.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-08-15-release-notes-10.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "01.06.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-06-01-release-notes-9.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "31.05.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-05-31-release-notes-8.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "12.05.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-05-12-release-notes-7.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "04.05.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-05-04-release-notes-6.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "28.04.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-04-28-release-notes-5.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "20.04.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-04-20-release-notes-4.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "06.04.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-04-06-release-notes-3.html",
+"summary": ""
+}
+,
+
+
+{
+"title": "31.03.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-03-31-release-notes-2.html",
+"summary": "здесь примерный абстракт из поста"
+}
+,
+
+
+{
+"title": "22.03.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-03-22-release-notes-1.html",
+"summary": "здесь примерный абстракт из поста"
+}
+
+
+
+]

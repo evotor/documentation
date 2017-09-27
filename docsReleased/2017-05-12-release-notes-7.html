@@ -3,7 +3,10 @@
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
     </script>
+    <link rel="stylesheet" href="css/magnific-popup.css">
 <!-- End Google Tag Manager -->
+
+
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -172,6 +175,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle"> </li>
+    <p class="external">
+        <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
+    </p>
     
     
     
@@ -675,9 +681,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-           <p class="external">
-               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
-           </p>
+
     </li>
 </ul>
 </div>
@@ -726,7 +730,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <!-- /.container -->
     </div>
+<script src="js/jquery.magnific-popup.js"></script>
+<script>
+  $('.popup-link').magnificPopup({
+  type: 'image'
+  // other options
+});
+// Initialize popup as usual
+$('.image-link').magnificPopup({
+  type: 'image',
+  mainClass: 'mfp-with-zoom', // this class is for CSS animation below
 
+  zoom: {
+    enabled: true, // By default it's false, so don't forget to enable it
+
+    duration: 300, // duration of the effect, in milliseconds
+    easing: 'ease-in-out', // CSS transition easing function
+
+    // The "opener" function should return the element from which popup will be zoomed in
+    // and to which popup will be scaled down
+    // By defailt it looks for an image tag:
+    opener: function(openerElement) {
+      // openerElement is the element on which popup was initialized, in this case its <a> tag
+      // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+      return openerElement.is('img') ? openerElement : openerElement.find('img');
+    }
+  }
+
+});
+</script>
 </body>
 
 </html>
