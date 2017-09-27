@@ -3,6 +3,7 @@
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
     </script>
+    <link rel="stylesheet" href="css/magnific-popup.css">
 <!-- End Google Tag Manager -->
 
 
@@ -846,9 +847,9 @@ $('#toc').on('click', 'a', function() {
 
 <ul>
   <li><code class="highlighter-rouge">receiptUuid</code> – идентификатор чека.</li>
-  <li><code class="highlighter-rouge">accountId</code> – счёт (учётная запись) в платёжной системе.</li>
+  <li><code class="highlighter-rouge">accountId</code> – счёт (учётная запись) в платёжной системе. Поле указывать необязательно.</li>
   <li><code class="highlighter-rouge">sum</code> – сумма платежа.</li>
-  <li><code class="highlighter-rouge">description</code> – текстовое описание</li>
+  <li><code class="highlighter-rouge">description</code> – текстовое описание. Поле может быть указано любым приложением, например, при разделении чека. В приложении требуется предусмотреть возможность отображения этого поля.</li>
 </ul>
 
 <h3 id="section-3">Отмена продажи</h3>
@@ -871,8 +872,8 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">receiptUuid</code> – идентификатор чека.</li>
   <li><code class="highlighter-rouge">accoundId</code> – счёт (учётная запись) в платёжной системе.</li>
   <li><code class="highlighter-rouge">sum</code> – сумма платежа.</li>
-  <li><code class="highlighter-rouge">rrn</code> – уникальный идентификатор, по которому смарт-терминал будет определять транзакцию, например, при возврате товара.</li>
-  <li><code class="highlighter-rouge">description</code> – текстовое описание.</li>
+  <li><code class="highlighter-rouge">rrn</code> – уникальный идентификатор платежа, который будет отменён.</li>
+  <li><code class="highlighter-rouge">description</code> – текстовое описание. Поле может быть указано любым приложением, например, при разделении чека. В приложении требуется предусмотреть возможность отображения этого поля.</li>
 </ul>
 
 <h3 id="section-4">Возврат</h3>
@@ -895,8 +896,8 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">receiptUuid</code> – идентификатор чека.</li>
   <li><code class="highlighter-rouge">accoundId</code> – счёт (учётная запись) в платёжной системе.</li>
   <li><code class="highlighter-rouge">sum</code> – сумма платежа.</li>
-  <li><code class="highlighter-rouge">rrn</code> – уникальный идентификатор, по которому смарт-терминал будет определять транзакцию, например, при возврате товара.</li>
-  <li><code class="highlighter-rouge">description</code> – текстовое описание.</li>
+  <li><code class="highlighter-rouge">rrn</code> – уникальный идентификатор платежа, который будет отменён.</li>
+  <li><code class="highlighter-rouge">description</code> – текстовое описание. Поле может быть указано любым приложением, например, при разделении чека. В приложении требуется предусмотреть возможность отображения этого поля.</li>
 </ul>
 
 <h3 id="section-5">Отмена возврата</h3>
@@ -919,8 +920,8 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">receiptUuid</code> – идентификатор чека.</li>
   <li><code class="highlighter-rouge">accoundId</code> – счёт (учётная запись) в платёжной системе.</li>
   <li><code class="highlighter-rouge">sum</code> – сумма платежа.</li>
-  <li><code class="highlighter-rouge">rrn</code> – уникальный идентификатор, по которому смарт-терминал будет определять транзакцию, например, при возврате товара.</li>
-  <li><code class="highlighter-rouge">description</code> – текстовое описание.</li>
+  <li><code class="highlighter-rouge">rrn</code> – уникальный идентификатор платежа, который будет отменён.</li>
+  <li><code class="highlighter-rouge">description</code> – текстовое описание. Поле может быть указано любым приложением, например, при разделении чека. В приложении требуется предусмотреть возможность отображения этого поля.</li>
 </ul>
 
 <h2 id="section-6">Результаты</h2>
@@ -941,7 +942,7 @@ $('#toc').on('click', 'a', function() {
 <p>Где:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">rrn</code> – уникальный идентификатор, по которому смарт-терминал будет определять транзакцию. Например, при возврате товара.</li>
+  <li><code class="highlighter-rouge">rrn</code> – уникальный идентификатор платежа, который понадобится при отмене транзакции.</li>
   <li><code class="highlighter-rouge">slip</code> – текст, который будет напечатан на чеке в двух экземплярах.</li>
   <li><code class="highlighter-rouge">paymentInfo</code> – поле для хранения статистической информации. Приложение не заполняет это поле.</li>
   <li><code class="highlighter-rouge">paymentType</code> – тип оплаты. По умолчанию <code class="highlighter-rouge">ELECTRON</code>.</li>
@@ -1060,7 +1061,35 @@ $('#toc').on('click', 'a', function() {
 </div>
 <!-- /.container -->
     </div>
+<script src="js/jquery.magnific-popup.js"></script>
+<script>
+  $('.popup-link').magnificPopup({
+  type: 'image'
+  // other options
+});
+// Initialize popup as usual
+$('.image-link').magnificPopup({
+  type: 'image',
+  mainClass: 'mfp-with-zoom', // this class is for CSS animation below
 
+  zoom: {
+    enabled: true, // By default it's false, so don't forget to enable it
+
+    duration: 300, // duration of the effect, in milliseconds
+    easing: 'ease-in-out', // CSS transition easing function
+
+    // The "opener" function should return the element from which popup will be zoomed in
+    // and to which popup will be scaled down
+    // By defailt it looks for an image tag:
+    opener: function(openerElement) {
+      // openerElement is the element on which popup was initialized, in this case its <a> tag
+      // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+      return openerElement.is('img') ? openerElement : openerElement.find('img');
+    }
+  }
+
+});
+</script>
 </body>
 
 </html>
