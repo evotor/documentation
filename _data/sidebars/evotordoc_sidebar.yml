@@ -29,6 +29,10 @@ entries:
       url: /doc_integration_types.html
       output: web, pdf
 
+    - title: Жизненный цикл версии приложения
+      url: /doc_app_version_lifespan.html
+      output: web, pdf
+
     - title: Термины и определения
       url: /doc_glossary.html
       output: web, pdf

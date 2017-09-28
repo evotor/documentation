@@ -184,12 +184,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">О платформе Эвотор</a>
+        
         <ul>
             
             
             
             <li><a href="doc_integration_types.html">Способы интеграции</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_version_lifespan.html">Жизненный цикл версии приложения</a></li>
             
             
             
@@ -206,7 +215,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Облако Эвотор</a>
+        
         <ul>
             
             
@@ -263,7 +274,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Разработка для смарт-терминала</a>
+        
         <ul>
             
             
@@ -333,7 +346,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">JAVA SDK</a>
+        
         <ul>
             
             
@@ -481,7 +496,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">JavaScript SDK</a>
+        
         <ul>
             
             
@@ -552,7 +569,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Драйвера для оборудования</a>
+        
         <ul>
             
             
@@ -588,7 +607,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Примеры реализации</a>
+        
         <ul>
             
             
@@ -631,7 +652,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Биллинг</a>
+        
         <ul>
             
             
@@ -667,7 +690,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">FAQ</a>
+        
         <ul>
             
             
@@ -896,7 +921,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">receiptUuid</code> – идентификатор чека.</li>
   <li><code class="highlighter-rouge">accoundId</code> – счёт (учётная запись) в платёжной системе.</li>
   <li><code class="highlighter-rouge">sum</code> – сумма платежа.</li>
-  <li><code class="highlighter-rouge">rrn</code> – уникальный идентификатор платежа, который будет отменён.</li>
+  <li><code class="highlighter-rouge">rrn</code> – уникальный идентификатор платежа, по которому будет проведён возврат.</li>
   <li><code class="highlighter-rouge">description</code> – текстовое описание. Поле может быть указано любым приложением, например, при разделении чека. В приложении требуется предусмотреть возможность отображения этого поля.</li>
 </ul>
 
@@ -964,7 +989,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">errorDescription</code> – описание ошибки.</li>
 </ul>
 
-<h2 id="section-7">Пример</h2>
+<h2 id="paymentservice">Пример службы <code class="highlighter-rouge">PaymentService</code></h2>
 
 <p>Пример службы <code class="highlighter-rouge">PaymentService</code>, которая поддерживает все методы класса <code class="highlighter-rouge">PaymentSystemProcessor.kt</code>:</p>
 
@@ -1029,7 +1054,76 @@ $('#toc').on('click', 'a', function() {
                         <span class="o">}</span>
                     <span class="o">}</span>
                 <span class="o">}</span>
+            <span class="o">}</span>
         <span class="o">);</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h2 id="paymentactivity">Пример операции PaymentActivity</h2>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">ru</span><span class="o">.</span><span class="na">apptest</span><span class="o">.</span><span class="na">test</span><span class="o">.</span><span class="na">testapplication</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Random</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">ru.evotor.framework.core.IntegrationActivity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">ru.evotor.framework.core.action.event.receipt.payment.system.result.PaymentSystemPaymentErrorResult</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">ru.evotor.framework.core.action.event.receipt.payment.system.result.PaymentSystemPaymentOkResult</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">ru.evotor.framework.payment.PaymentType</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PaymentActivity</span> <span class="kd">extends</span> <span class="n">IntegrationActivity</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">EXTRA_NAME_OPERATION</span> <span class="o">=</span> <span class="s">"EXTRA_NAME_OPERATION"</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_payment</span><span class="o">);</span>
+
+        <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">button_ok</span><span class="o">).</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">rrn</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+                <span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
+                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                    <span class="n">rrn</span> <span class="o">+=</span> <span class="n">random</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">slip</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+                <span class="n">slip</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"SLIP START"</span><span class="o">);</span>
+                <span class="n">slip</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"RRN:"</span><span class="o">);</span>
+                <span class="n">slip</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">rrn</span><span class="o">);</span>
+                <span class="n">slip</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"SLIP EMD"</span><span class="o">);</span>
+                <span class="n">setIntegrationResult</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentSystemPaymentOkResult</span><span class="o">(</span><span class="n">rrn</span><span class="o">,</span> <span class="n">slip</span><span class="o">,</span> <span class="s">"123qwe"</span><span class="o">,</span> <span class="n">PaymentType</span><span class="o">.</span><span class="na">ELECTRON</span><span class="o">));</span>
+                <span class="n">finish</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+
+        <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">button_error</span><span class="o">).</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">setIntegrationResult</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentSystemPaymentErrorResult</span><span class="o">(</span><span class="s">"beda was happened"</span><span class="o">));</span>
+                <span class="n">finish</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">getIntent</span><span class="o">().</span><span class="na">hasExtra</span><span class="o">(</span><span class="n">EXTRA_NAME_OPERATION</span><span class="o">))</span> <span class="o">{</span>
+            <span class="o">((</span><span class="n">TextView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">textView_operation</span><span class="o">)).</span><span class="na">setText</span><span class="o">(</span><span class="n">getIntent</span><span class="o">().</span><span class="na">getStringExtra</span><span class="o">(</span><span class="n">EXTRA_NAME_OPERATION</span><span class="o">));</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBackPressed</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">setIntegrationResult</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentSystemPaymentErrorResult</span><span class="o">(</span><span class="s">"onBackPressed was happened"</span><span class="o">));</span>
+        <span class="n">finish</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre>
 </div>
 
