@@ -144,17 +144,17 @@ folder: evotor_api
 
 </tr>
 
-<tr>
+<!-- <tr>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;FPRINT (Transaction:CLOSE_SESSION)&quot;}">FPRINT (Transaction:CLOSE_SESSION)</td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0417\u0430\u043a\u0440\u044b\u0442\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u041a\u041a\u041c&quot;}">Закрытие смены ККМ</td>
 
-</tr>
+</tr> -->
 
 <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;OPEN_TARE&quot;}">OPEN_TARE</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;OPEN_TARE&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/16-OPEN_TARE.json">OPEN_TARE</a></td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0417\u0430\u043a\u0440\u044b\u0442\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u041a\u041a\u041c&quot;}">Вскрытие тары алкогольной продукции</td>
 

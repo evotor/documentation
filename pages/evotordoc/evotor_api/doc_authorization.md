@@ -106,5 +106,4 @@ Iframe будет добавлен на вкладку **Настройки**, �
 https://partner.org/#/?uid=<example>&token=string
 ```
 
-{: .center-image}
-![Токен из iframe](images/iframe_token.png)
+{% include image.html file="iframe_token.png" url="images/iframe_token.png" caption="Токен из iframe" %}

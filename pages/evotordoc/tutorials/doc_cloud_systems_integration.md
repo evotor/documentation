@@ -52,5 +52,4 @@ folder: tutorials
 
 ### Подробная схема покупки и установки приложения
 
-{: .center-image}
-![](images/market_app_install_schema.png)
+{% include image.html file="market_app_install_schema.png" url="images/market_app_install_schema.png" caption="Схема покупки и установки приложения" %}

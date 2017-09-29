@@ -17,20 +17,17 @@ folder: smart_terminal_app_development
 1. Войдите в [личный кабинет разработчика](https://dev.evotor.ru).
 2. Выберите приложение, которое требуется протестировать.
 
-   {: .center-image}
-   ![картинка1](images\Developer LK.png)
+   {% include image.html file="Developer LK.png" url="images/Developer LK.png" caption="Выбор приложения" %}
 
 3. На вкладке **Тестирование**, в разделе **Тестировщик**, в поле **Мобильный телефон**, укажите номер телефона, к которому привязана учётная запись Эвотор и нажмите на кнопку **Добавить**.
 
    Одновременно вы можете добавить не более пяти тестировщиков.
 
-   {: .center-image}
-   ![картинка2](images\Add_software_tester.png)
+   {% include image.html file="Add_software_tester.png" url="images/Add_software_tester.png" caption="Добавление тестировщика" %}
 
 4. В разделе **Версии** нажмите на кнопку **Выложить на тест**.
 
-   {: .center-image}
-   ![картинка3](images\upload_to_test.png)
+   {% include image.html file="upload_to_test.png" url="images/upload_to_test.png" caption="Передача приложения в тестирование" %}
 
    Статус приложения изменится на **В тестировании**
 
