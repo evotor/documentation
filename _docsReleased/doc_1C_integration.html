@@ -784,29 +784,32 @@ $('#toc').on('click', 'a', function() {
 
 <ol>
   <li>Эвотор авторизует запросы приложения с помощью токена, указанного на странице <strong>Настройки</strong>.</li>
-  <li>Приложение сопоставляет сущности Эвотора (смарт-терминалы, сотрудников и магазины) и 1С.</li>
-</ol>
+  <li>
+    <p>Приложение сопоставляет сущности Эвотора (смарт-терминалы, сотрудников и магазины) и 1С.</p>
 
-<figure class="center-image"><a class="no_icon" href="images/1c_entities_association.png"><img class="docimage center-image" src="images/1c_entities_association.png" alt="" /></a><figcaption>Сопоставление сущностей Облака Эвотор и 1С</figcaption></figure>
-
-<ol>
-  <li>Приложение передаёт товары из 1С в Эвотор. Проверяется:</li>
-</ol>
-
-<ul>
-  <li>Корректность данных: данные соответствуют описанию в <a href="https://api.evotor.ru/docs/">Справочнике REST API</a>.</li>
-  <li>Сжатие запросов в gzip.</li>
-  <li>Передача товаров пачками (актуально для большой базы товаров)
-    <ol>
-      <li>Приложение удаляет товары в Эвоторе как поштучно, так и все товары одновременно.</li>
-      <li>Приложение загружает документы из Эвотора. Проверяется:</li>
-    </ol>
+    <figure class="center-image"><a class="no_icon" href="images/1c_entities_association.png"><img class="docimage center-image" src="images/1c_entities_association.png" alt="" /></a><figcaption>Сопоставление сущностей Облака Эвотор и 1С</figcaption></figure>
   </li>
-  <li>Загрузка документов как по всему магазину, так и по конкретному смарт-терминалу (deviceUuid).</li>
-  <li>Загрузка определённого типа документов (см. запрос <a href="https://api.evotor.ru/docs/#tag/Tovary-i-dokumenty%2Fpaths%2F~1api.evotor.ru~1api~1v1~1inventories~1stores~1%7BstoreUuid%7D~1documents%2Fget"><strong>Получить список документов</strong></a>/.</li>
-  <li>Корректность дат в GET-параметрах.</li>
-  <li>Обработка <a href="https://developer.evotor.ru/protocol_of_errors/">возвращаемых ошибок</a>.</li>
-</ul>
+  <li>
+    <p>Приложение передаёт товары из 1С в Эвотор. Проверяется:</p>
+
+    <ul>
+      <li>Корректность данных: данные соответствуют описанию в <a href="https://api.evotor.ru/docs/">Справочнике REST API</a>.</li>
+      <li>Сжатие запросов в gzip.</li>
+      <li>Передача товаров пачками (актуально для большой базы товаров)</li>
+    </ul>
+  </li>
+  <li>Приложение удаляет товары в Эвоторе как поштучно, так и все товары одновременно.</li>
+  <li>
+    <p>Приложение загружает документы из Эвотора. Проверяется:</p>
+
+    <ul>
+      <li>Загрузка документов как по всему магазину, так и по конкретному смарт-терминалу (deviceUuid).</li>
+      <li>Загрузка определённого типа документов (см. запрос <a href="https://api.evotor.ru/docs/#tag/Tovary-i-dokumenty%2Fpaths%2F~1api.evotor.ru~1api~1v1~1inventories~1stores~1%7BstoreUuid%7D~1documents%2Fget"><strong>Получить список документов</strong></a>/.</li>
+      <li>Корректность дат в GET-параметрах.</li>
+      <li>Обработка <a href="https://developer.evotor.ru/protocol_of_errors/">возвращаемых ошибок</a>.</li>
+    </ul>
+  </li>
+</ol>
 
 <p>После того как приложение пройдёт приёмочное тестирование, мы выложим его в открытый доступ.</p>
 
