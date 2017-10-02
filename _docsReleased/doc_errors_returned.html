@@ -3,7 +3,7 @@
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
     </script>
-<!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
 
 
     <meta charset="utf-8">
@@ -161,7 +161,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="row">
         <!-- Sidebar Column -->
         <div class="col-md-3">
-
           
 
 
@@ -717,8 +716,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
     <!-- Content Column -->
-    <div class="col-md-9">
-        <div class="post-header">
+          <div class="col-md-9">
+                <div class="post-header">
    <h1 class="post-title-main">Ошибки, которые может возвращать сторонний сервис</h1>
 </div>
 
@@ -762,7 +761,76 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>В ответ на каждый <a href="./doc_example_calls.html#webhooks">вебхук</a>, который отправляет Облако Эвотор, сторонний сервис должен передавать HTTP-код состояния. В теле ответа обязательно только поле <code class="highlighter-rouge">code</code>.</p>
+  <p>Сторонний сервис должен отвечать на каждый <a href="./doc_example_calls.html#webhooks">вебхук</a> Облака Эвотор. Ответ стороннего сервиса содержит HTTP-код состояния, в теле ответа обязательно только поле <code class="highlighter-rouge">code</code>.</p>
+
+<h2 id="section">Схема ответа стороннего сервиса</h2>
+
+<p>Ниже приведена общая схема ответа стороннего сервиса на вебхук Облака Эвотор</p>
+
+<pre><code class="language-JSON">{
+	"errors": [
+		{
+			"code": "errorCode1"
+		},
+		{
+			"code": "errorCode2",
+			"additionalField1": "field1Value",
+			"additionalField2": "field2Value"
+		}
+	]
+}
+</code></pre>
+
+<p>где:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">errors</code> – массив объектов ошибок. Обязательное поле.</li>
+  <li><code class="highlighter-rouge">code</code> – поле, которое содержит код ошибки из <a href="./doc_errors_returned.html#errorsList">списка возможных ошибок</a>. Код ошибки может принимать значения от 0000 до 9999.</li>
+  <li><code class="highlighter-rouge">additionalField</code> – дополнительное поле. Значение дополнительного поля может определять ответное действие Облака Эвотор.</li>
+</ul>
+
+<h2 id="section-1">Примеры ошибок</h2>
+
+<h3 id="section-2">400 Неверный запрос</h3>
+
+<p>Ответ стороннего сервиса на некорректный вебхук Облака будет выглядеть так:</p>
+
+<pre><code class="language-JSON">{ "errors":
+  [
+    {
+      "code": 2003,
+      "reason": "incorrect",
+      "subject": "deviceUuid",
+      "value": "null"
+    }
+  ]
+}
+</code></pre>
+
+<p>Помимо обязательного поля <code class="highlighter-rouge">code</code>, объект содержит дополнительные поля которые указывают на ошибку. Дополнительные поля могут отсутствовать или отличаться от приведённых в примере.</p>
+
+<h3 id="section-3">401 Не авторизован</h3>
+
+<p>Ответ стороннего сервиса на неверные данные авторизации, полученные от Облака, будет выглядеть так:</p>
+
+<pre><code class="language-JSON">
+{ "errors":
+  [
+    {
+      "code": 1001
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="section-4">404 Не найдено</h3>
+
+<p>Ответ стороннего сервиса если указанный в запросе Облака ресурс не найден:</p>
+
+<pre><code class="language-JSON">{ }
+</code></pre>
+
+<h2 id="errorsList">Таблица ошибок, которые сторонний сервис может возвращать Облаку</h2>
 
 <p>Таблица ниже содержит коды возвращаемых ошибок, которые сторонний сервис может вернуть Облаку, их описания и содержимое ответов.</p>
 
@@ -1077,11 +1145,12 @@ $('#toc').on('click', 'a', function() {
 
 <hr class="shaded"/>
 
-    </div>
+          </div>
     <!-- /.row -->
-</div>
+        </div>
 <!-- /.container -->
     </div>
+</div>
     <script src="js/jquery.magnific-popup.js"></script>
     <script>
     $('.no_icon').magnificPopup({

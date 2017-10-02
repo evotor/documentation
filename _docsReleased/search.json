@@ -290,6 +290,17 @@
 
 
 {
+"title": "Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис",
+"tags": "cloud",
+"keywords": "",
+"url": "doc_evotor_api_authorization.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Примеры запросов к Облаку Эвотор",
 "tags": "cloudproducts",
 "keywords": "",
