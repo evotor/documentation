@@ -825,8 +825,12 @@ $('#toc').on('click', 'a', function() {
                         <span class="k">new</span> <span class="nf">PrintableImage</span><span class="o">(</span><span class="n">BitmapFactory</span><span class="o">.</span><span class="na">decodeFile</span><span class="o">(</span><span class="s">"&lt;путь к файлу изображения&gt;"</span><span class="o">))</span>
                 <span class="o">}</span>
         <span class="o">));</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
 </code></pre>
     </div>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Наполняйте массив <code class="highlighter-rouge">IPrintable</code> только теми элементами, которые требуется распечатать. Например, если на чеке необходимо распечатать только штрихкод, в массив следует добавить только элемент <code class="highlighter-rouge">new PrintableBarcode("&lt;Штрихкод&gt;", PrintableBarcode.BarcodeType.CODE39)</code>. Пустые элементы в массиве <code class="highlighter-rouge">IPrintable</code> приведут к исключению.</div>
   </li>
 </ol>
 

@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" ">
-<title> | Документация Эвотор</title>
+<meta name="keywords" content=",  ">
+<title>02.10.2017 | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -140,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="02.10.2017">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -717,74 +717,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Content Column -->
           <div class="col-md-9">
-                <div class="post-header">
-   <h1 class="post-title-main"></h1>
-</div>
+                <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">02.10.2017</h1>
+        <p class="post-meta"><time datetime="2017-10-02T00:00:00+03:00" itemprop="datePublished">Oct 2, 2017</time> /
+            
+            
+            
 
-
-<div class="post-content">
-
-   
-
-    
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
-
-    
-
-
-    
-
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc//titlepage/.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
-
-    
-
-  <div class="printTitleArea">
-    <div class="printTitle"></div>
-    <div class="printSubtitle"></div>
-    <div class="lastGeneratedDate">Last generated: October 02, 2017</div>
-    <hr />
-
-    <div class="printTitleImage">
-        <img src="http://localhost:4000//images/company_logo_big.png"/>
-    </div>
-
-    <div class="copyrightBoilerplate">
-        <p>&copy; 2016 Your company. This is a boilerplate copyright statement... All rights reserved. No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
         </p>
 
-    </div>
 
-</div>
+    </header>
 
+    <div class="post-content" itemprop="articleBody">
 
-    <div class="tags">
         
+
+        <p>Список изменений:</p>
+
+<ul>
+  <li>Расширен раздел с описанием <a href="./doc_errors_returned.html">ошибок стороннего сервиса</a>;</li>
+  <li>Добавлено примечание о наполнении массива IPrintable в разделе о <a href="./doc_java_receipt_print.html">печати информации внутри кассовго чека</a>.</li>
+</ul>
+
     </div>
 
-    
 
-</div>
+
+</article>
+
 
 <hr class="shaded"/>
 

@@ -66,7 +66,11 @@ folder: java_SDK
                            new PrintableImage(BitmapFactory.decodeFile("<путь к файлу изображения>"))
                    }
            ));
+         }
+       }
    ```
+
+   {% include note.html content="Наполняйте массив `IPrintable` только теми элементами, которые требуется распечатать. Например, если на чеке необходимо распечатать только штрихкод, в массив следует добавить только элемент `new PrintableBarcode(\"<Штрихкод>\", PrintableBarcode.BarcodeType.CODE39)`. Пустые элементы в массиве `IPrintable` приведут к исключению." %}
 
 ### Пример
 
