@@ -4,7 +4,7 @@ permalink: doc_faq.html
 sidebar: evotordoc_sidebar
 keywords: frequently asked questions, FAQ, question and answer, collapsible sections, expand, collapse
 last_updated: November 30, 2015
-summary: "Раздел содержит ответы на часто задаваемые вопросы."
+summary:
 toc: false
 folder:
 ---

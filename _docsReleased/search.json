@@ -316,7 +316,7 @@
 "tags": "",
 "keywords": "frequently asked questions, FAQ, question and answer, collapsible sections, expand, collapse",
 "url": "doc_faq.html",
-"summary": "Раздел содержит ответы на часто задаваемые вопросы."
+"summary": ""
 }
 ,
 
@@ -746,6 +746,17 @@
 "keywords": "",
 "url": "doc_smart_terminal_documents.html",
 "summary": "Раздел содержит список документов, которые формирует смарт-терминал."
+}
+,
+
+
+
+{
+"title": "Подписки",
+"tags": "billing",
+"keywords": "биллинг, подписка, события",
+"url": "doc_subscriptions.html",
+"summary": ""
 }
 ,
 

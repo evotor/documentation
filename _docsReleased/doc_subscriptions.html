@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Работа с подключаемым оборудованием | Документация Эвотор</title>
+<meta name="keywords" content="billing,  биллинг, подписка, события">
+<title>Подписки | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -140,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Работа с подключаемым оборудованием">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Подписки">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -718,7 +718,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Работа с подключаемым оборудованием</h1>
+   <h1 class="post-title-main">Подписки</h1>
 </div>
 
 
@@ -755,603 +755,136 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/tags/tag_equipment.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/billing/doc_subscriptions.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p>Таблица ниже содержит страницы, отмеченные тэгом <button type="button" style="cursor: default" class="btn btn-default navbar-btn">equipment</button></p>
-<table><thead><tr><th>Название</th><th>Тип</th><th>Выдержка</th></tr></thead>
-    <tbody>
-    
-  
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+  <p>Согласно разделу <a href="./doc_tariffs.html">Тарифы</a>, вы можете распространять своё приложение как по подписочной модели, так и за разовые платежи.</p>
 
-        <tr><td><a href="doc_drivers_cashdrawer.html">SDK для денежного ящика</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Определение внешнего сервиса в AndroidManifest.xml Укажите хотя бы один Intent filter: INTENT_FILTER_DRIVER_MANAGER или INTENT_FILTER_VIRTUAL_DRIVER_MANAGER. Пример объявленного сервиса: &lt;service android:name="ru.mycompany.drivers.MyDeviceService" android:enabled="true" android:exported="true" android:icon="@drawable/logo" android:label="@string/service_name"&gt; &lt;intent-filter&gt; &lt;action android:name="ru.evotor.devices.drivers.DriverManager" &lt;span... </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<p>Чтобы ваш сервис узнавал о установке приложения, его удалении или каких-либо изменениях в подписках Облако Эвотор передаёт сервису и <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost"><em>события подписки</em></a>.</p>
 
-        <tr><td><a href="doc_drivers_library_connection.html">Подготовка к разработке</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Для начала разработки подключите библиотеку для работы с оборудованием. Добавьте ссылку на репозиторий на репозиторий jitpack в build.gradle проекта.  allprojects { repositories { jcenter() maven { url 'https://jitpack.io' } } }   В модуле build.gradle добавьте зависимость и укажите точную версию: &lt;pre... </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<h2 id="section">Порядок распространения событий</h2>
 
-        <tr><td><a href="doc_drivers_other.html">SDK для подключаемого USB-оборудования</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Определение внешнего сервиса в AndroidManifest.xml Укажите фильтр Intent filter: INTENT_FILTER_DRIVER_MANAGER. Пример объявленного сервиса: &lt;service android:name="ru.mycompany.drivers.MyDeviceService" android:enabled="true" android:exported="true" android:icon="@drawable/logo" android:label="@string/service_name"&gt; &lt;intent-filter&gt; &lt;action android:name="ru.evotor.devices.drivers.DriverManager" /&gt; &lt;/intent-filter&gt; &lt;meta-data... </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<h3 id="section-1">Подписка на приложение</h3>
 
-        <tr><td><a href="doc_drivers_pinpads.html">SDK для банковский терминалов</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Определение внешнего сервиса в AndroidManifest.xml Укажите хотя бы один Intent filter: INTENT_FILTER_DRIVER_MANAGER или INTENT_FILTER_VIRTUAL_DRIVER_MANAGER. Пример объявленного сервиса: &lt;service android:name="ru.mycompany.drivers.MyPaySystemService" android:enabled="true" android:exported="true" android:icon="@drawable/logo" android:label="@string/service_name"&gt; &lt;intent-filter&gt; &lt;action android:name="ru.evotor.devices.drivers.DriverManager" &lt;span... </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<p>При подписке на приложение, Облако Эвотор передаёт события в следующем порядке:</p>
 
-        <tr><td><a href="doc_drivers_scales.html">SDK для весов</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Определение внешнего сервиса в AndroidManifest.xml Укажите хотя бы один Intent filter: INTENT_FILTER_DRIVER_MANAGER или INTENT_FILTER_VIRTUAL_DRIVER_MANAGER. Пример объявленного сервиса: &lt;service android:name="ru.mycompany.drivers.MyDeviceService" android:enabled="true" android:exported="true" android:icon="@drawable/logo" android:label="@string/service_name"&gt; &lt;intent-filter&gt; &lt;action android:name="ru.evotor.devices.drivers.DriverManager" &lt;span... </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+<ol>
+  <li>После того как пользователь устанавливает приложение в <a href="https://lk.evotor.ru/web/login">Личном Кабинете</a>, Облако передаёт событие <code class="highlighter-rouge">subscriptionCreated</code>.</li>
+  <li>
+    <p>По истечению пробного периода:</p>
 
-        <tr><td><a href="doc_java_barcode_scanner.html">Сканер штрихкодов</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит инструкцию о том, как подготовить приложение для получения данных от сканера штрихкодов. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
+    <ul>
+      <li>
+        <p>Если пользователь оплачивает приложение, Облако передаёт событие <code class="highlighter-rouge">subscriptionActivated</code>.</p>
 
-        <tr><td><a href="doc_java_bill_printer.html">Принтер чеков</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как приложение может работать с принтером чеков. </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+        <p>Событие <code class="highlighter-rouge">subscriptionActivated</code> сообщает об успешной оплате приложения.</p>
+      </li>
+      <li>
+        <p>Если пользователь не оплачивает приложение, Облако передаёт событие <code class="highlighter-rouge">subscriptionTerminated</code>.</p>
 
-        <tr><td><a href="doc_java_receipt_print.html">Печать внутри кассового чека</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
+        <p>Событие <code class="highlighter-rouge">subscriptionTerminated</code> сообщает о том, что регулярная оплата приложения не прошла.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>После того как пользователь удаляет приложение, Облако передаёт событие <code class="highlighter-rouge">subscriptionTerminationRequested</code>.</p>
 
-        <tr><td><a href="doc_java_scales.html">Весы</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Чтобы получить данные от весов:   В колбэке onCreate() или при запуске операции (activity) инициализируйте класс ru.evotor.devices.commons.DeviceServiceConnector: DeviceServiceConnector.startInitConnections(getApplicationContext()); Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку  Совет: Воспользуйтесь методом addConnectionWrapper, чтобы получить событие об успешном подключении. Используйте это... </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
+    <p>Облако передаёт <code class="highlighter-rouge">subscriptionTerminationRequested</code> когда пользователь удаляет приложения до истечения оплаченного или пробного периода.</p>
+  </li>
+  <li>
+    <p>После того как пользователь повторно установил приложение в течение оплаченного или пробного периода, Облако передаёт событие <code class="highlighter-rouge">subscriptionRenewed</code>.</p>
 
-        <tr><td><a href="doc_js_devices.html">Получение данных с подключённого оборудования</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Ваше приложение может получать данные от сканера штрихкодов и весов, подключённых к смарт-терминалу. Получить вес товара Убедитесь, что список capabilities, в файле client.yaml, содержит разрешение для работы с подключёнными устройствами: capabilities: - devices   Чтобы приложение взаимодействовало с весами... </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
+    <p>Облако так же передаёт <code class="highlighter-rouge">subscriptionRenewed</code> после успешной оплаты очередного периода и продления использования приложения.</p>
+  </li>
+  <li>
+    <p>Если пользователь изменил условия подписки (например, тарифный план или количество устройств), до истечения оплаченного или пробного периода, Облако передаёт событие <code class="highlighter-rouge">SubscriptionTermsChanged</code>.</p>
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    <p>Если пользователь переустановил приложение с новым тарифным планом в течение оплаченного или пробного периода, Облако передаёт события <code class="highlighter-rouge">subscriptionRenewed</code>, а потом <code class="highlighter-rouge">SubscriptionTermsChanged</code>.</p>
+  </li>
+</ol>
 
-   </tbody>
-</table>
+<p>Ниже представлена диаграмма распространения событий при подписке на приложение.</p>
 
+<figure class="center-image"><a class="no_icon" href="images/subscription_events_diagram.png"><img class="docimage center-image" src="images/subscription_events_diagram.png" alt="" /></a><figcaption>Диаграмма распространения событий</figcaption></figure>
+
+<!-- @startuml
+title Диаграмма распространения событий при подписочной модели
+
+state "Подписка оформлена " as CREATED
+CREATED: Подписка в пробном периоде или или ожидает оплату
+state "Подписка неактивна" as TERMINATED
+TERMINATED: Подписка не оплачена
+state "Подписка актива" as ACTIVATED
+ACTIVATED: Подписка оплачена
+
+[*]->CREATED:(1)SubscriptionCreated
+CREATED -down-> ACTIVATED:(2)SubscriptionActivated
+CREATED -down->TERMINATED:(3)SubscriptionTerminated
+CREATED ->CREATED:(6)SubscriptionTermsChanged
+CREATED ->CREATED:(7)SubscriptionTerminationRequested
+CREATED ->CREATED:(8)SubscriptionRenewed
+ACTIVATED -up->TERMINATED:(4)SubscriptionTerminated
+ACTIVATED ->ACTIVATED:(9)SubscriptionTermsChanged
+ACTIVATED ->ACTIVATED:(10)SubscriptionTerminationRequested
+ACTIVATED ->ACTIVATED:(11)SubscriptionRenewed
+TERMINATED-down->ACTIVATED:(5)SubscriptionRenewed
+@enduml -->
+
+<h3 id="section-2">Разовая оплата приложения</h3>
+
+<p>При разовой оплате приложения, Облако Эвотор передаёт события в следующем порядке:</p>
+
+<ol>
+  <li>После того как пользователь устанавливает приложение в <a href="https://lk.evotor.ru/web/login">Личном Кабинете</a>, Облако передаёт событие <code class="highlighter-rouge">subscriptionCreated</code>.</li>
+  <li>
+    <p>По истечению пробного периода:</p>
+
+    <ul>
+      <li>
+        <p>Если пользователь оплачивает приложение, Облако передаёт событие <code class="highlighter-rouge">subscriptionActivated</code>.</p>
+
+        <p>Событие <code class="highlighter-rouge">subscriptionActivated</code> сообщает об успешной оплате приложения.</p>
+      </li>
+      <li>
+        <p>Если пользователь не оплачивает приложение, Облако передаёт событие <code class="highlighter-rouge">subscriptionTerminated</code>.</p>
+      </li>
+    </ul>
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Если у приложения нет пробного периода, Облако передаёт событие <code class="highlighter-rouge">subscriptionActivated</code> сразу после события <code class="highlighter-rouge">subscriptionCreated</code>.</div>
+  </li>
+  <li>После того как пользователь удаляет приложение, Облако передаёт событие <code class="highlighter-rouge">subscriptionTerminated</code>.</li>
+</ol>
+
+<p>Ниже представлена диаграмма распространения событий при разовой оплате приложения.</p>
+
+<figure class="center-image"><a class="no_icon" href="images/OTP_events_diagram.png"><img class="docimage center-image" src="images/OTP_events_diagram.png" alt="" /></a><figcaption>Диаграмма распространения событий</figcaption></figure>
+
+<!-- @startuml
+title Диаграмма распространения событий при разовой оплате
+
+state "Подписка оформлена " as CREATED
+CREATED: Подписка в пробном периоде или ожидает оплату
+state "Подписка неактивна" as TERMINATED
+TERMINATED: Подписка не оплачена
+state "Подписка активна" as ACTIVATED
+ACTIVATED: Подписка оплачена
+
+[*]->CREATED:(1)SubscriptionCreated
+CREATED -down-> ACTIVATED:(2)SubscriptionActivated
+CREATED -down->TERMINATED:(3)SubscriptionTerminated
+ACTIVATED ->TERMINATED:(3)SubscriptionTerminated
+@enduml -->
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_billing.html" class="btn btn-default navbar-btn cursorNorm" role="button">billing</a>
+        
+        
         
     </div>
 
