@@ -4,7 +4,7 @@ keywords: чек, позиция, редактировать, добавить, 
 summary: Раздел содержит описание методов, которые применяются в JS-приложении для работы с чеками и позициями чеков.
 sidebar: evotordoc_sidebar
 permalink: doc_js_receipt_interactions.html
-tags: [Terminal, JavaScript, Receipts]
+tags: [terminal, javascript, receipts]
 folder: js_SDK
 ---
 

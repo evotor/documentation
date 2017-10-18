@@ -1,6 +1,6 @@
 ---
 title: "Биллинг пользователей Эвотор"
-tagName: Billing
+tagName: billing
 search: exclude
 permalink: tag_billing.html
 sidebar: evotordoc_sidebar

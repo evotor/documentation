@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_evotor_api_authorization.html
-tags: [Cloud]
+tags: [cloud]
 folder: evotor_api
 ---
 

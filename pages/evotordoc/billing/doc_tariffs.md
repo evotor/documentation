@@ -4,7 +4,7 @@ keywords:
 summary: "Раздел содержит описание тарифов и типов оплаты приложения."
 sidebar: evotordoc_sidebar
 permalink: doc_tariffs.html
-tags: [Billing]
+tags: [billing]
 folder: billing
 ---
 

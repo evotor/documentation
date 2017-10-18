@@ -4,7 +4,7 @@ keywords: Манифест, Java, manifest
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_app_manifest.html
-tags: [Terminal, Java]
+tags: [terminal, java]
 folder: java_SDK
 ---
 

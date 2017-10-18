@@ -1,6 +1,6 @@
 ---
 title: "Разработка для терминала"
-tagName: Terminal
+tagName: terminal
 search: exclude
 permalink: tag_terminal.html
 sidebar: evotordoc_sidebar

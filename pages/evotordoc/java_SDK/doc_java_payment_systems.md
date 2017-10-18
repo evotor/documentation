@@ -4,7 +4,7 @@ keywords: чек, печатная, группа, платёжные, систе
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_payment_systems.html
-tags: [Terminal, Java]
+tags: [terminal, java]
 folder: java_SDK
 ---
 
@@ -109,9 +109,9 @@ class PaymentSystemSellEvent(
 Где:
 
 * `receiptUuid` – идентификатор чека.
-* `accountId` – счёт (учётная запись) в платёжной системе.
+* `accountId` – счёт (учётная запись) в платёжной системе. Поле указывать необязательно.
 * `sum` – сумма платежа.
-* `description` – текстовое описание
+* `description` – текстовое описание. Поле может быть указано любым приложением, например, при разделении чека. В приложении требуется предусмотреть возможность отображения этого поля.
 
 ### Отмена продажи
 
@@ -132,8 +132,8 @@ class PaymentSystemSellCancelEvent(
 * `receiptUuid` – идентификатор чека.
 * `accoundId` – счёт (учётная запись) в платёжной системе.
 * `sum` – сумма платежа.
-* `rrn` – уникальный идентификатор, по которому смарт-терминал будет определять транзакцию, например, при возврате товара.
-* `description` – текстовое описание.
+* `rrn` – уникальный идентификатор платежа, который будет отменён.
+* `description` – текстовое описание. Поле может быть указано любым приложением, например, при разделении чека. В приложении требуется предусмотреть возможность отображения этого поля.
 
 ### Возврат
 
@@ -154,8 +154,8 @@ class PaymentSystemPaybackEvent(
 * `receiptUuid` – идентификатор чека.
 * `accoundId` – счёт (учётная запись) в платёжной системе.
 * `sum` – сумма платежа.
-* `rrn` – уникальный идентификатор, по которому смарт-терминал будет определять транзакцию, например, при возврате товара.
-* `description` – текстовое описание.
+* `rrn` – уникальный идентификатор платежа, по которому будет проведён возврат.
+* `description` – текстовое описание. Поле может быть указано любым приложением, например, при разделении чека. В приложении требуется предусмотреть возможность отображения этого поля.
 
 ### Отмена возврата
 
@@ -176,8 +176,8 @@ class PaymentSystemPaybackCancelEvent(
 * `receiptUuid` – идентификатор чека.
 * `accoundId` – счёт (учётная запись) в платёжной системе.
 * `sum` – сумма платежа.
-* `rrn` – уникальный идентификатор, по которому смарт-терминал будет определять транзакцию, например, при возврате товара.
-* `description` – текстовое описание.
+* `rrn` – уникальный идентификатор платежа, который будет отменён.
+* `description` – текстовое описание. Поле может быть указано любым приложением, например, при разделении чека. В приложении требуется предусмотреть возможность отображения этого поля.
 
 ## Результаты
 
@@ -196,7 +196,7 @@ class PaymentSystemPaymentOkResult(
 
 Где:
 
-* `rrn` – уникальный идентификатор, по которому смарт-терминал будет определять транзакцию. Например, при возврате товара.
+* `rrn` – уникальный идентификатор платежа, который понадобится при отмене транзакции.
 * `slip` – текст, который будет напечатан на чеке в двух экземплярах.
 * `paymentInfo` – поле для хранения статистической информации. Приложение не заполняет это поле.
 * `paymentType` – тип оплаты. По умолчанию `ELECTRON`.
@@ -215,7 +215,7 @@ class PaymentSystemPaymentErrorResult(
 
 * `errorDescription` – описание ошибки.
 
-## Пример
+## Пример службы `PaymentService`
 
 Пример службы `PaymentService`, которая поддерживает все методы класса `PaymentSystemProcessor.kt`:
 
@@ -281,5 +281,74 @@ public class PaymentService extends IntegrationService {
                         }
                     }
                 }
+            }
         );
+}
+```
+
+## Пример операции PaymentActivity
+
+```java
+package ru.apptest.test.testapplication;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import ru.evotor.framework.core.IntegrationActivity;
+import ru.evotor.framework.core.action.event.receipt.payment.system.result.PaymentSystemPaymentErrorResult;
+import ru.evotor.framework.core.action.event.receipt.payment.system.result.PaymentSystemPaymentOkResult;
+import ru.evotor.framework.payment.PaymentType;
+
+public class PaymentActivity extends IntegrationActivity {
+
+    public static final String EXTRA_NAME_OPERATION = "EXTRA_NAME_OPERATION";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_payment);
+
+        findViewById(R.id.button_ok).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String rrn = "";
+                Random random = new Random();
+                for (int i = 0; i < 10; i++) {
+                    rrn += random.nextInt(10);
+                }
+                List<String> slip = new ArrayList<String>();
+                slip.add("SLIP START");
+                slip.add("RRN:");
+                slip.add(rrn);
+                slip.add("SLIP EMD");
+                setIntegrationResult(new PaymentSystemPaymentOkResult(rrn, slip, "123qwe", PaymentType.ELECTRON));
+                finish();
+            }
+        });
+
+        findViewById(R.id.button_error).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setIntegrationResult(new PaymentSystemPaymentErrorResult("beda was happened"));
+                finish();
+            }
+        });
+
+        if (getIntent().hasExtra(EXTRA_NAME_OPERATION)) {
+            ((TextView) findViewById(R.id.textView_operation)).setText(getIntent().getStringExtra(EXTRA_NAME_OPERATION));
+        }
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        setIntegrationResult(new PaymentSystemPaymentErrorResult("onBackPressed was happened"));
+        finish();
+    }
+}
 ```

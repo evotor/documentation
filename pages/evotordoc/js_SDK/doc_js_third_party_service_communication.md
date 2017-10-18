@@ -4,7 +4,7 @@ keywords: обмен, сообщения, HTTP, сторонний, сервис
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_third_party_service_communication.html
-tags: [Terminal, JavaScript]
+tags: [terminal, javascript]
 folder: js_SDK
 ---
 
@@ -131,7 +131,8 @@ http.post(url: String, payload: String, mediaType: String)
 
 * `X-Evotor-Store-Uuid` – содержит идентификатор магазина в формате uuid4, к которому привязан терминал.
 * `X-Evotor-Device-UUID` – содержит идентификатор устройства в формате uuid4, полученный по запросу к `/api/v1/inventories/devices`.
-* `Authorization` – содержит [токен пользователя](./doc_authorization.html#usersToken). Токен необходим для bearer-авторизации.
+* `X-Evotor-User-Id` – содержит идентификатор пользователя в Облаке Эвотор.
+* `Authorization` – содержит [токен пользователя](./doc_evotor_api_authorization.html#usersToken). Токен необходим для bearer-авторизации.
 
 Сторонний сервер получает сообщение от облака Эвотор и определяет отправителя с помощью заголовка Authorization.
 

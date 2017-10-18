@@ -4,7 +4,7 @@ keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_drivers_cashdrawer.html
-tags: [Java, Terminal, Equipment]
+tags: [java, terminal, equipment]
 folder: drivers
 ---
 

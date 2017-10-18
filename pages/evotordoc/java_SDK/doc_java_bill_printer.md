@@ -4,7 +4,7 @@ keywords: оборудование, принтер, чеки, печать, ме
 summary: "Раздел содержит информацию о том, как приложение может работать с принтером чеков."
 sidebar: evotordoc_sidebar
 permalink: doc_java_bill_printer.html
-tags: [Java, Terminal, Equipment, Receipts]
+tags: [java, terminal, equipment, receipts]
 folder: java_SDK
 ---
 

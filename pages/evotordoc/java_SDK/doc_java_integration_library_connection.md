@@ -4,7 +4,7 @@ keywords: Разработка, Java, библиотека, integration-library
 summary: Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуется для установки на смарт-терминал.
 sidebar: evotordoc_sidebar
 permalink: doc_java_integration_library_connection.html
-tags: [Terminal, Java]
+tags: [terminal, java]
 folder: java_SDK
 ---
 
@@ -21,16 +21,15 @@ folder: java_SDK
 
 1. В Android Studio создайте новый проект: `<YourProjectName>`.
 
-    При создании проекта убедитесь, что в раскрывающемся списке **Minimum SDK** выбран API версии 22 или выше.
+   При создании проекта убедитесь, что в раскрывающемся списке **Minimum SDK** выбран API версии 22 или выше.
 
-    В качестве примера, используйте операцию **Empty Activity**. Вы можете не добавлять операцию или использовать любую из предложенных.
+   В качестве примера, используйте операцию **Empty Activity**. Вы можете не добавлять операцию или использовать любую из предложенных.
 
-    На скриншоте представлена структура полученного проекта:
+   На скриншоте представлена структура полученного проекта:
 
-    {: .center-image}
-    ![](./images/project_sctructure.png "Структура проекта <YourProjectName>")
+   {% include image.html file="project_sctructure.png" url="images/project_sctructure.png" caption="Структура проекта" %}
 
-    [Манифест проекта](/doc_js_app_manifest.html) выглядит так:
+   [Манифест проекта](/doc_js_app_manifest.html) выглядит так:
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?>

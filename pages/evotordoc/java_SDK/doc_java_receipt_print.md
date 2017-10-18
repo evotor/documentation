@@ -4,7 +4,7 @@ keywords: печать, чек
 summary: "Раздел содержит инструкцию о том, как настроить в приложении печать внутри кассового чека."
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_print.html
-tags: [Java, Terminal, Equipment]
+tags: [java, terminal, equipment]
 folder: java_SDK
 ---
 
@@ -66,7 +66,11 @@ folder: java_SDK
                            new PrintableImage(BitmapFactory.decodeFile("<путь к файлу изображения>"))
                    }
            ));
+         }
+       }
    ```
+
+   {% include note.html content="Наполняйте массив `IPrintable` только теми элементами, которые требуется распечатать. Например, если на чеке необходимо распечатать только штрихкод, в массив следует добавить только элемент `new PrintableBarcode(\"<Штрихкод>\", PrintableBarcode.BarcodeType.CODE39)`. Пустые элементы в массиве `IPrintable` приведут к исключению." %}
 
 ### Пример
 

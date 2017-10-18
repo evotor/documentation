@@ -4,7 +4,7 @@ keywords: шаблон, разработка, приложение, JS
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_app_template_link.html
-tags: [Terminal, JavaScript]
+tags: [terminal, javascript]
 folder: js_SDK
 ---
 
@@ -25,14 +25,13 @@ folder: js_SDK
 
 1. В Android Studio создайте новый проект: `<YourProjectName>`.
 
-    При создании проекта убедитесь, что в раскрывающемся списке **Minimum SDK** выбран API версии 22 или выше.
+   При создании проекта убедитесь, что в раскрывающемся списке **Minimum SDK** выбран API версии 22 или выше.
 
-    В качестве примера, используйте операцию **Empty Activity**. Вы можете не добавлять операцию или использовать любую из предложенных.
+   В качестве примера, используйте операцию **Empty Activity**. Вы можете не добавлять операцию или использовать любую из предложенных.
 
-    На скриншоте представлена структура полученного проекта:
+   На скриншоте представлена структура полученного проекта:
 
-    {: .center-image}
-    ![](./images/JS_project_sctructure_with_plugin.png "Структура проекта <YourProjectName>")
+   {% include image.html file="JS_project_sctructure_with_plugin.png" url="images/JS_project_sctructure_with_plugin.png" caption="Структура проекта" %}
 
     [Манифест проекта](./doc_js_app_manifest.html) выглядит так:
 

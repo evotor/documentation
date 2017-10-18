@@ -4,12 +4,12 @@ keywords: чек, методы, интерфейс, заголовки, ReceiptA
 summary: "Раздел содержит описание методов интерфейса, с помощью которого можно получить данные сформированного чека."
 sidebar: evotordoc_sidebar
 permalink: doc_java_get_receipt.html
-tags: [Terminal, Java, Receipts]
+tags: [terminal, java, receipts]
 folder: java_SDK
 ---
 ## Методы
 
-Классы [`ReceiptApi`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/ReceiptApi.kt) и [`Reseipt`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/Receipt.kt) содержат описанные ниже методы.
+Классы [`ReceiptApi`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/ReceiptApi.kt) и [`Receipt`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/Receipt.kt) содержат описанные ниже методы.
 
 ### Получить текущий открытый чек
 

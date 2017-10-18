@@ -4,7 +4,7 @@ keywords: интеграция, манифест, подписка, событи
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_app_integration_points.html
-tags: [Terminal, JavaScript, Java]
+tags: [terminal, javascript, java]
 folder: smart_terminal_app_development
 ---
 
@@ -14,8 +14,7 @@ folder: smart_terminal_app_development
 
 Схема ниже показывает процесс обмена событием, которое требует ответа. Первое приложение, которое получает событие, смарт-терминал выбирает случайным образом.
 
-{: .center-image}
-![](./images/EventSequenceDiagram.png)
+{% include image.html file="EventSequenceDiagram.png" url="images/EventSequenceDiagram.png" caption="Обмен событиями, которые требуют ответа" %}
 
 ## Подготовка манифеста приложения
 В зависимости от типа точки интеграции, вам потребуется соответствующим образом изменить [манифест приложения](./doc_about_manifest.html). Так, если вы используете службы или приёмники сообщений, вам необходимо объявить их в манифесте приложения.

@@ -1,6 +1,6 @@
 ---
 title: "Работа с подключаемым оборудованием"
-tagName: Equipment
+tagName: equipment
 search: exclude
 permalink: tag_equipment.html
 sidebar: evotordoc_sidebar

@@ -4,7 +4,7 @@ keywords: номенклатура, товар, inventory
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_js_inventory.html
-tags: [Terminal, JavaScript, Products]
+tags: [terminal, javascript, products]
 folder: js_SDK
 ---
 

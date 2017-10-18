@@ -4,9 +4,9 @@ permalink: doc_faq.html
 sidebar: evotordoc_sidebar
 keywords: frequently asked questions, FAQ, question and answer, collapsible sections, expand, collapse
 last_updated: November 30, 2015
-summary: "Раздел содержит ответы на часто задаваемые вопросы."
+summary:
 toc: false
-folder: 
+folder:
 ---
 
 <p></p>
@@ -149,6 +149,24 @@ folder:
                               <li>приложение <a href="https://developer.evotor.ru/docs/doc_app_installation.html#MarkeplaceAppInstallation">установлено из Магазина приложений</a>;</li>
                               <li>на смарт-терминале установлены последние версии Evotor POS и EvoWall.</li>
                             </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">Значение скидки на весь чек отличается от суммы скидок на позиции в чеке, почему?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseEleven" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <p>Дело в том, что при применении скидки на позицию остаются дробные части меньше копейки.</p>
+                            <p>Пример:</p>
+                            <p>Товар стоимостью 19.31 за штуку. Продаётся 200 штук.</p>
+                            <p>Скидка на чек - 10%:</p>
+                            <p>(19,31*200) - 10% = 3862 - 10% = 3475,8</p>
+                            <p>Скидка на позицию - 10%:</p>
+                            <p>(19,31 - 10%) * 200 = 17,379 * 200 = 17,38 * 200 = 3476</p>
                             </div>
                         </div>
                     </div>

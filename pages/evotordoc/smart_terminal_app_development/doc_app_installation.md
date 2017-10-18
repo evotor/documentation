@@ -4,7 +4,7 @@ keywords:
 summary: Раздел содержит информацию, которая поможет вам установить своё приложение на смарт-терминал как с помощью Магазина приложений так и с помощью ADB Shell.
 sidebar: evotordoc_sidebar
 permalink: doc_app_installation.html
-tags: [Terminal, Java, JavaScript]
+tags: [terminal, java, javascript]
 folder: smart_terminal_app_development
 ---
 

@@ -4,7 +4,7 @@ keywords: оборудование, весы, вес, масса, метод
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_scales.html
-tags: [Java, Terminal, Equipment]
+tags: [java, terminal, equipment]
 folder: java_SDK
 ---
 

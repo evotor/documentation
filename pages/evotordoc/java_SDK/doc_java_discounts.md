@@ -4,7 +4,7 @@ keywords: скидки, чек, позиция, событие, подписка
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_java_discounts.html
-tags: [Terminal, Java, Receipts]
+tags: [terminal, java, receipts]
 folder: java_SDK
 ---
 
@@ -72,7 +72,7 @@ try {callback.onResult(
       discount,
       new SetExtra(extra),
       changes
-))
+));
     }
         catch (RemoteException exc) {
                 exc.printStackTrace();

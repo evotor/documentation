@@ -4,7 +4,7 @@ keywords: API, пользователи, User, методы
 summary: "Раздел содержит описание Users API смарт-терминала."
 sidebar: evotordoc_sidebar
 permalink: doc_java_app_users.html
-tags: [Java, Terminal]
+tags: [java, terminal]
 folder: java_SDK
 published: true
 ---
