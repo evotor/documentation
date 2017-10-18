@@ -28,6 +28,10 @@ layout: default
 
 {% endif %}
 
+{% unless page.toc == false %}
+{% include toc.html %}
+{% endunless %}
+
 <div class="post-content">
 
    {% if page.summary %}
