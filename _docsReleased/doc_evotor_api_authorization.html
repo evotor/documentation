@@ -686,6 +686,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_subscriptions.html">Подписки</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -720,6 +727,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="post-header">
    <h1 class="post-title-main">Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис</h1>
 </div>
+
+
+
+
+
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
 
 
 
@@ -768,7 +800,7 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p><em>Вебхуки-уведомления</em>. Все уведомления, кроме <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost"><em>Событий подписки</em></a> и <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost"><em>Событий установки и удаления приложений</em></a>, сторонний сервис должен авторизовать с помощью <a href="./doc_evotor_api_authorization.html#usersToken">токена пользователя</a>, который Облако получает от стороннего сервиса при регистрации или авторизации пользователей.</p>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> События подписки и события установки и удаления приложений требуется авторизуются с помощью токена стороннего сервиса.</div>
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> События подписки и события установки и удаления приложений авторизуются с помощью токена стороннего сервиса.</div>
   </li>
 </ul>
 
