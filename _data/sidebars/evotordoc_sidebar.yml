@@ -518,6 +518,11 @@ entries:
       url: /doc_1C_integration.html
       output: web, pdf
 
+    - title: Черновики, модерация и публикация приложения
+      url: /doc_app_review.html
+      output: web, pdf
+
+
 
 ###############################################################
 #                    Биллинг                                  #
