@@ -56,7 +56,7 @@ folder: java_SDK
     * Штрихкоды – `ru.evotor.devices.commons.printer.printable.PrintableBarcode`;
     * Картинки – `ru.evotor.devices.commons.printer.printable.PrintableImage`.
 
-{% include note.html content="Работа с удалённым сервисом может занимать длительное время, поэтому не вызывайте перечисленные методы в главном потоке приложения. Работа из главного потока приложения приведет к выбросу исключения DeviceServiceOperationOnMainThreadException" %}
+{% include note.html content="Работа с удалённым сервисом может занимать длительное время, поэтому не вызывайте перечисленные методы в главном потоке приложения. Вызов методов из главного потока приложения вернёт исключение `DeviceServiceOperationOnMainThreadException`." %}
 
 ## Примеры
 
