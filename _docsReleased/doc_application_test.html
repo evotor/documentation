@@ -9,9 +9,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты.">
-<meta name="keywords" content="terminaljavareceipts,  ">
-<title>Открытие чека в приложении | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит инструкцию о том, как приступить к тестированию своего приложения.">
+<meta name="keywords" content="Облакоjavajavascript,  ">
+<title>Тестирование приложения | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -140,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Открытие чека в приложении">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Тестирование приложения">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -399,7 +399,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li class="active"><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
+                    <li><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
                     
                     
                     
@@ -732,7 +732,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Открытие чека в приложении</h1>
+   <h1 class="post-title-main">Тестирование приложения</h1>
 </div>
 
 
@@ -765,66 +765,47 @@ $('#toc').on('click', 'a', function() {
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты.</div>
+    <div class="summary">Раздел содержит инструкцию о том, как приступить к тестированию своего приложения.</div>
    
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/java_SDK/doc_java_receipt_creation.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/evotor_about/doc_application_test.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p><em>Чтобы открыть чек в смарт-терминале:</em></p>
+  <h2 id="section">Тестирование приложения</h2>
+
+<p>Чтобы протестировать своё приложение выполните следующие действия:</p>
 
 <ol>
   <li>
-    <p>Составьте список позиций, который требуется добавить в чек, наполните список</p>
-
-    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">openReceipt</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">PositionAdd</span><span class="o">&gt;</span> <span class="n">positionAddList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-
-        <span class="n">JSONObject</span> <span class="n">extra</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
-      <span class="o">}</span>
-</code></pre>
-    </div>
-
-    <p>Где:</p>
-
-    <p><code class="highlighter-rouge">List&lt;PositionAdd&gt; positionAddList = new ArrayList&lt;&gt;()</code>– список позиций. Как добавить позицию в чек смотрите в разделе <a href="doc_java_receipt_interactions.html#PositionAltering">Добавление, изменение и удаление позиций</a>.</p>
-
-    <p><code class="highlighter-rouge">JSONObject extra = new JSONObject();</code>– добавляет дополнительные данные к чеку. Данные доступны только вашему приложению. Не создавайте этот объект, если приложение не добавляет дополнительные поля к чеку.</p>
+    <p>Войдите в <a href="https://dev.evotor.ru">личный кабинет разработчика</a>.</p>
   </li>
   <li>
-    <p>Создайте команду открытия чека и вызовите метод <code class="highlighter-rouge">.process</code></p>
-
-    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="n">OpenSellReceiptCommand</span><span class="o">(</span><span class="n">positionAddList</span><span class="o">,</span> <span class="kc">null</span><span class="o">).</span><span class="na">process</span><span class="o">(</span>
-                        <span class="n">activity</span><span class="o">,</span>
-                        <span class="k">new</span> <span class="nf">IntegrationManagerCallback</span><span class="o">()</span> <span class="o">{</span>
-                            <span class="nd">@Override</span>
-                            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">IntegrationManagerFuture</span> <span class="n">integrationManagerFuture</span><span class="o">)</span> <span class="o">{</span>
-                                <span class="k">try</span> <span class="o">{</span>
-                                    <span class="n">IntegrationManagerFuture</span><span class="o">.</span><span class="na">Result</span> <span class="n">result</span> <span class="o">=</span> <span class="n">integrationManagerFuture</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
-                                    <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getType</span><span class="o">()</span> <span class="o">==</span> <span class="n">IntegrationManagerFuture</span><span class="o">.</span><span class="na">Result</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">OK</span><span class="o">)</span> <span class="o">{</span>
-                                        <span class="n">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="s">"evotor.intent.action.payment.SELL"</span><span class="o">));</span>
-                                    <span class="o">}</span>
-                                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-                                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IntegrationException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-                                <span class="o">}</span>
-                            <span class="o">}</span>
-                        <span class="o">});</span>
-</code></pre>
-    </div>
-
-    <p>Где вместо null вы можете передать <code class="highlighter-rouge">new SetExtra(extra)</code>, команду для <a href="./doc_java_receipt_extras.html">создания дополнительных полей в чеке</a>.</p>
-
-    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Замените <code class="highlighter-rouge">SELL</code> на <code class="highlighter-rouge">PAYBACK</code>, если хотите открыть чек возврата.</div>
-
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> При создании нового чека, происходит автоматическая очистка существующего открытого чека.</div>
+    <p>Выберите приложение, которое требуется протестировать.</p>
   </li>
 </ol>
 
+<p class="center-image"><img src="images\Developer LK.png" alt="картинка1" /></p>
+
+<ol>
+  <li>В разделе <strong>Тестирование</strong> добавьте необходимые телефонные номера в поле <strong>Добавить тестировщика</strong> и выберите требуюмую роль <strong>Тестировщик</strong> или <strong>Разработчик</strong>.</li>
+</ol>
+
+<p class="center-image"><img src="images\Add_software_tester.png" alt="картинка2" /></p>
+
+<ol>
+  <li>В разделе <strong>Версии</strong> нажмите на кнопку <strong>Выложить на тест</strong>.</li>
+</ol>
+
+<p class="center-image"><img src="images\upload_to_test.png" alt="картинка3" /></p>
+
+<ol>
+  <li>Ознакомьтесь с условиями оферты и нажмите на кнопку <strong>Продолжить</strong>.</li>
+</ol>
+
+<p>Приложение будет добавлено в тестовом режиме в <a href="https://market.evotor.ru/">магазин</a>. Вы увидите приложение в магазине, если войдёте в Личный кабинет пользователя, зарегистрированный на номер телефона тестировщика, указанный в шаге 3.</p>
 
 
     <div class="tags">
@@ -833,15 +814,13 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
-        
         
         
         <a href="tag_java.html" class="btn btn-default navbar-btn cursorNorm" role="button">java</a>
         
         
         
-        <a href="tag_receipts.html" class="btn btn-default navbar-btn cursorNorm" role="button">receipts</a>
+        <a href="tag_javascript.html" class="btn btn-default navbar-btn cursorNorm" role="button">javascript</a>
         
         
         

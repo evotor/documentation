@@ -767,32 +767,6 @@ $('#toc').on('click', 'a', function() {
    
 
     
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
-
-    
-
-
-    
 
     <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/tags/tag_products.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
@@ -816,20 +790,6 @@ $('#toc').on('click', 'a', function() {
             <td><span class="label label-default">Страница</span></td>
           <td> Раздел содержит информацию об интеграции с 1С </td>
         </tr>
-        
-     
-   
-    
-        
-     
-        
-
-        <tr><td><a href="doc_evotor_api_about.html">Об Облаке Эвотор</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит вводную информацию для работы с нашей документацией. </td>
-        </tr>
-        
-     
         
      
    
@@ -980,6 +940,20 @@ $('#toc').on('click', 'a', function() {
      
    
     
+        
+     
+   
+    
+        
+     
+        
+
+        <tr><td><a href="doc_evotor_api_about.html">Об Облаке Эвотор</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Раздел содержит вводную информацию для работы с нашей документацией. </td>
+        </tr>
+        
+     
         
      
    
@@ -1298,6 +1272,8 @@ $('#toc').on('click', 'a', function() {
     
         
      
+   
+    
    
     
    
