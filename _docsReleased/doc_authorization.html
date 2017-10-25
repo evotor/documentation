@@ -393,6 +393,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            
+            <li><a href="doc_java_navigation.html">Платёжные системы</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с чеком</a>
                 <ul>
@@ -772,26 +779,26 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Все запросы к Облаку Эвотор осуществляются в рамках приложения. После установки приложения в <a href="https://market.evotor.ru/#/store/auth/login">Личном кабинете</a>, Облако присваивает ему <em>токен приложения</em>, уникальный для пары приложение-пользователь.</p>
+  <p>Все запросы к Облаку Эвотор осуществляются в рамках приложения. После установки приложения в <a href="https://market.evotor.ru/#/store/auth/login">Личном кабинете</a>, Облако присваивает ему <em>токен Облака Эвотор</em>, уникальный для пары приложение-пользователь.</p>
 
 <p>Передавайте этот токен в заголовке <code class="highlighter-rouge">X-Authorization</code>, чтобы авторизовать <a href="./doc_example_calls.html#evotorApi">свои запросы к Облаку</a>.</p>
 
-<h2 id="section">Как получить токен приложения</h2>
+<h2 id="section">Как получить токен Облака Эвотор</h2>
 
-<p>Вы можете получить токен приложения:</p>
+<p>Вы можете получить токен Облака Эвотор:</p>
 
 <ul>
   <li><a href="./doc_authorization.html#byhand">вручную</a>;</li>
   <li>
     <p><a href="./doc_authorization.html#automated">автоматически</a>.</p>
 
-    <p>Для автоматического получения токена приложения вам потребуется поддержать собственный сервис. В документации такой сервис называется <em>сторонним</em>.</p>
+    <p>Для автоматического получения токена Облака Эвотор вам потребуется поддержать собственный сервис. В документации такой сервис называется <em>сторонним</em>.</p>
   </li>
 </ul>
 
 <h3 id="byhand">Получение токена вручную</h3>
 
-<p><em>Чтобы получить токен приложения вручную:</em></p>
+<p><em>Чтобы получить токен Облака Эвотор вручную:</em></p>
 
 <ol>
   <li>
@@ -820,7 +827,7 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Перейдите на вкладку <strong>Настройки</strong>.</p>
 
-    <p>На вкладке отображается поле, которое содержит токен приложения, необходимый для авторизации запросов к Облаку. Передавайте токен в заголовке <code class="highlighter-rouge">X-Authorization</code>.</p>
+    <p>На вкладке отображается поле, которое содержит токен Облака Эвотор, необходимый для авторизации запросов к Облаку. Передавайте токен в заголовке <code class="highlighter-rouge">X-Authorization</code>.</p>
 
     <p class="center-image"><img src="./images/app_token.png" alt="" /></p>
   </li>
@@ -828,7 +835,7 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="automated">Автоматическое получение токена</h3>
 
-<p>Автоматически вы можете получить токен приложения одним из двух способов:</p>
+<p>Автоматически вы можете получить токен Облака Эвотор одним из двух способов:</p>
 
 <ul>
   <li>
@@ -839,15 +846,15 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ul>
 
-<p><em>Чтобы получить токен приложения на адрес <code class="highlighter-rouge">partner.ru/api/v1/user/token</code>:</em></p>
+<p><em>Чтобы получить токен Облака Эвотор на адрес <code class="highlighter-rouge">partner.ru/api/v1/user/token</code>:</em></p>
 
 <ol>
   <li>
     <p>Поддержите в своём сервисе адрес <code class="highlighter-rouge">partner.ru/api/v1/user/token</code>.</p>
 
-    <p>На указанный адрес Облако передаёт токен приложения после его установки в <a href="https://market.evotor.ru/#/store/auth/login">Личном кабинете</a> пользователя. Запросы облака необходимо авторизовать с помощью <em>токена стороннего сервиса</em>.</p>
+    <p>На указанный адрес Облако передаёт токен Облака Эвотор после его установки в <a href="https://market.evotor.ru/#/store/auth/login">Личном кабинете</a> пользователя. Запросы облака необходимо авторизовать с помощью <a href="https://developer.evotor.ru/docs/doc_evotor_api_authorization.html#serverToken"><em>токена приложения стороннего сервиса</em></a>.</p>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Токен стороннего сервиса – токен, с помощью которого ваш сервис авторизует запросы от Облака Эвотор</div>
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Токен приложения стороннего сервиса – токен, с помощью которого ваш сервис авторизует запросы от Облака Эвотор</div>
   </li>
   <li>
     <p>Войдите в <a href="https://dev.evotor.ru/#/store/apps">Личный кабинет</a> на сайте разработчиков и выберите <a href="./doc_evotor_api_introduction.html">созданное приложение</a>.</p>
@@ -859,14 +866,14 @@ $('#toc').on('click', 'a', function() {
     <p>Включите опцию <strong>Токен приложения для доступа к REST API Эвотор</strong>.</p>
   </li>
   <li>
-    <p>В поле <strong>URL</strong>, укажите адрес вида <code class="highlighter-rouge">partner.ru/api/v1/user/token</code>, на который Облако будет передавать токен приложения.</p>
+    <p>В поле <strong>URL</strong>, укажите адрес вида <code class="highlighter-rouge">partner.ru/api/v1/user/token</code>, на который Облако будет передавать токен Облака Эвотор.</p>
   </li>
   <li>
-    <p>Выберите тип авторизации, с помощью которого ваш сервис будет авторизовать <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost">передачу токена приложения</a>.</p>
+    <p>Выберите тип авторизации, с помощью которого ваш сервис будет авторизовать <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost">передачу токена Облака Эвотор</a>.</p>
 
     <ul>
       <li>
-        <p>Если вы выбрали <strong>С помощью токена</strong>. В поле <strong>Токен</strong>, укажите токен стороннего сервиса в формате <code class="highlighter-rouge">uuid4</code>.</p>
+        <p>Если вы выбрали <strong>С помощью токена</strong>. В поле <strong>Токен</strong>, укажите токен приложения стороннего сервиса в формате <code class="highlighter-rouge">uuid4</code>.</p>
 
         <p>Облако передаёт токен в заголовке <code class="highlighter-rouge">Authorization</code>.</p>
       </li>
@@ -877,16 +884,16 @@ $('#toc').on('click', 'a', function() {
       </li>
     </ul>
 
-    <p>Подробное описание запроса на передачу токена приложения вы найдёте в <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost">Справочнике API</a>. Получченный токен передавайте в заголове <code class="highlighter-rouge">X-Authorization</code>, в своих запросах к Облаку.</p>
+    <p>Подробное описание запроса на передачу токена Облака Эвотор вы найдёте в <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost">Справочнике API</a>. Полученный токен передавайте в заголовке <code class="highlighter-rouge">X-Authorization</code>, в своих запросах к Облаку.</p>
   </li>
   <li>
     <p>Сохраните изменения, вернитесь к списку черновиков приложения и переведите необходимый черновик в тестирование.</p>
   </li>
 </ol>
 
-<p>После того, как пользователь Магазина приложений установит ваше приложение, Облако будет передавать в ваш сервис токен приложения.</p>
+<p>После того, как пользователь Магазина приложений установит ваше приложение, Облако будет передавать в ваш сервис токен Облака Эвотор.</p>
 
-<p><em>Чтобы получить токен приложения в GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe-приложения:</em></p>
+<p><em>Чтобы получить токен Облака Эвотор в GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe-приложения:</em></p>
 
 <ol>
   <li>
@@ -906,12 +913,12 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ol>
 
-<p>Iframe будет добавлен на вкладку <strong>Настройки</strong>, на странице установленного приложения. Облако передаёт токен приложения в GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe:</p>
+<p>Iframe будет добавлен на вкладку <strong>Настройки</strong>, на странице установленного приложения. Облако передаёт токен Облака Эвотор в GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe:</p>
 
 <pre><code class="language-curl">https://partner.org/#/?uid=&lt;example&gt;&amp;token=string
 </code></pre>
 
-<figure class="center-image"><a class="no_icon" href="images/iframe_token.png"><img class="docimage center-image" src="images/iframe_token.png" alt="" /></a><figcaption>Токен из iframe</figcaption></figure>
+<figure class="center-image"><a class="no_icon" href="images/iframe_token.png"><img class="docimage center-image" id="imageborder" src="images/iframe_token.png" alt="" /></a><figcaption>Токен из iframe</figcaption></figure>
 
 
 
