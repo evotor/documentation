@@ -310,9 +310,9 @@ entries:
       url: /doc_java_navigation.html
       output: web
 
-#    - title: Платёжные системы
-#      url: /doc_java_navigation.html
-#      output: web
+    - title: Платёжные системы
+      url: /doc_java_navigation.html
+      output: web
 
       subfolders:
       - title: Работа с чеком

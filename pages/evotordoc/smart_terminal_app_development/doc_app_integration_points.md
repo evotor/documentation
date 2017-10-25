@@ -258,9 +258,9 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
 <td>evo.v2.receipt.payback.receiptDiscount</td>
 <td><a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/core/action/event/receipt/discount/ReceiptDiscountEvent.java">ReceiptDiscountEvent.java</a></td>
 </tr>
-<!-- <tr>
+<tr>
 <td><a href="https://developer.evotor.ru/docs/doc_java_payment_systems.html">Оплата в сторонней платёжной системе</a></td>
 <td>evo.v2.receipt.paymentSystem</td>
 <td><a href="https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/core/action/event/receipt/payment/system/event/PaymentSystemEvent.kt">PaymentSystemEvent.kt</a></td>
-</tr> -->
+</tr>
 </table>
