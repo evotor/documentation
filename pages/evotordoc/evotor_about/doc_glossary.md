@@ -41,11 +41,11 @@ folder: evotor_about
 
 ### Технические термины
 
-Токен приложения
+Токен Облака Эвотор
 : {{site.data.doc_glossary.App_token}}
 
-Токен стороннего сервиса
+Токен приложения стороннего сервиса
 : {{site.data.doc_glossary.Third_party_service_token}}
 
-Токен пользователя
+Токен пользователя приложения стороннего сервиса
 : {{site.data.doc_glossary.User_token}}
