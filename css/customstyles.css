@@ -339,6 +339,7 @@ a.accordion-toggle, a.accordion-collapsed {
     /* padding: 4px;*/
     padding:0px;
     margin: 0px;
+    position: sticky;
 }
 
 .nav > li {
