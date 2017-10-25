@@ -361,17 +361,18 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 .nav li > a > span {
-    float: right;
-    font-size: 19px;
+    float: left;
+    font-size: 15px;
     font-weight: bolder;
+    margin-right: 5px;
 }
 
 
 .nav li > a > span:after {
-    content: '\25be';
+    content: '\002B';
 }
 .nav li.active > a > span:after {
-    content: '\25b4';
+    content: '\2212';
 }
 
 .nav a:hover, .nav li.active > a {

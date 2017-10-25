@@ -6,7 +6,7 @@ sidebar: evotordoc_sidebar
 permalink: doc_application_test.html
 tags: [Облако, java, javascript]
 folder: evotor_about
-publishung: false
+published: false
 ---
 
 ## Тестирование приложения
