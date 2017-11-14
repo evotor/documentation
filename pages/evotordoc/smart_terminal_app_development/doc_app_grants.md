@@ -8,7 +8,7 @@ tags: [terminal, java, javascript]
 folder: smart_terminal_app_development
 ---
 
-### О правах приложения
+## О правах приложения
 
 С помощью прав (grants), назначенных различным компонентам приложения, вы можете ограничить функциональность приложения для пользователей с определёнными ролями. Чтобы узнать список прав той или иной роли, используйте [Users API](doc_java_app_users.html).
 
@@ -19,7 +19,7 @@ folder: smart_terminal_app_development
 
 Если оставить список прав пустым, приложение будет доступно любому пользоваетлю, независимо от роли.
 
-### Java-приложение
+## Java-приложение
 
 Чтобы наделить java-приложение необходимыми правами, выполните следующие действия:
 
@@ -41,7 +41,7 @@ folder: smart_terminal_app_development
    <meta-data android:name="ru.evotor.launcher.GRANTS" android:resource="@array/<Название>_grants" />
    ```
 
-### JS-приложение
+## JS-приложение
 
 Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) JS-приложения необходимыми правами, выполните следующие действия:
 
@@ -83,7 +83,7 @@ folder: smart_terminal_app_development
    <meta-data android:name="ru.evotor.launcher.GRANTS" android:resource="@array/<Название>_grants" />
    ```
 
-### Примеры
+## Примеры
 
 Манифест приложения:
 
@@ -112,7 +112,7 @@ folder: smart_terminal_app_development
 
 
 
-### Список прав
+## Список прав
 
 В таблице ниже представлены права, которыми вы можете наделить компоненты приложения.
 

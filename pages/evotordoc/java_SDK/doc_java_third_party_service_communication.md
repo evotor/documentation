@@ -68,7 +68,7 @@ folder: java_SDK
 
 Поддержка других MIME-типов не гарантируется.
 
-Например, для отправки HTTP-сообщения из Java-приложения вы можете, например, использовать [библиотеку OkHttp](http://square.github.io/okhttp/) или способ, описанный на [developer.android.com](https://developer.android.com/training/basics/network-ops/connecting.html).
+Например, для отправки HTTP-сообщения из Java-приложения вы можете, использовать [библиотеку OkHttp](http://square.github.io/okhttp/) или способ, описанный на [developer.android.com](https://developer.android.com/training/basics/network-ops/connecting.html).
 
 ## Шаг 2. Смарт-терминал передаёт сообщение в облако
 

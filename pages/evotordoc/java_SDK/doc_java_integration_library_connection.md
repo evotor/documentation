@@ -12,7 +12,7 @@ folder: java_SDK
 
 Для разработки java-приложения, вам потребуется:
 
-* Android Studio версии 2.3.3 или выше;
+* Android Studio версии 3.0 или выше;
 * библиотека [integration-library](https://github.com/evotor/integration-library) версии 0.4+.
 
 ## Подключение библиотеки
@@ -29,7 +29,7 @@ folder: java_SDK
 
    {% include image.html file="project_sctructure.png" url="images/project_sctructure.png" caption="Структура проекта" %}
 
-   [Манифест проекта](/doc_js_app_manifest.html) выглядит так:
+   [Манифест созданного проекта](/doc_java_app_manifest.html) выглядит так:
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?>
@@ -54,7 +54,9 @@ folder: java_SDK
     </manifest>
    ```
 
-2. В файле `build.gradle (Project: <YourProjectName>)` укажите:
+   {% include note.html content="Работы с приложением, манифест должен содержать элемент `<meta-data/>` с идентификатором приложения (см. раздел [\"Манифест приложения\"](./doc_java_app_manifest.html))." %}
+
+2. В файле проекта `build.gradle (Project: <YourProjectName>)` укажите:
 
    ```
    allprojects {
@@ -65,14 +67,24 @@ folder: java_SDK
    }
    ```
 
-3. В файле `build.gradle (Module: app)`, добавьте библиотеку integration-library в зависимости (dependencies):
+3. В файле приложения `build.gradle (Module: app)`, добавьте библиотеку integration-library в зависимости:
 
    ```
+   dependencies {
    compile group: 'com.github.evotor', name: 'integration-library', version: 'v0.4.+'
+   }
    ```
 
-    Убедитесь, что в зависимости указана [актуальная версия библиотеки](https://github.com/evotor/integration-library/).
+    Убедитесь, что вы используете [актуальную версию библиотеки](https://github.com/evotor/integration-library/).
 
+4. В проекте укажите параметр minSdkVersion:
+
+   ```
+   defaultConfig {
+        minSdkVersion 22
+   ...
+   }
+   ```
 
 Библиотека подключена к проекту. Теперь вы можете собрать APK-файл своего приложения.
 
@@ -80,5 +92,3 @@ folder: java_SDK
 
 * [добавить иконку приложения на главный экран или экран оплаты](doc_java_app_icon.html);
 * [установить приложение на смарт-терминал](./doc_app_installation.html).
-
-<!-- {% include note.html content="Манифест должен содержать элемент \<meta-data/\> с информацией об идентификаторе приложения (см. раздел [\"Манифест приложения\"](./doc_js_app_manifest.html))." %} -->

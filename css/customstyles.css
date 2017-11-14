@@ -276,9 +276,9 @@ div#toc ul li ul {
 }
 
 div#toc ul li ul li::before {
-    content: "\23FA  ";
-    margin-right: 6px;
-    font-size: 6px;
+    content: "-  ";
+    /*margin-right: 6px;
+    font-size: 6px;*/
 }
 
 div#toc >ul::before {

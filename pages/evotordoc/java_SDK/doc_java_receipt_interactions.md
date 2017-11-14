@@ -187,7 +187,7 @@ setIntegrationResult(new BeforePositionsEditedEventResult(changes, null));
 
 ### Описание события `BeforePositionsEditedEvent`
 
-О намерении изменения чека сообщает событие `beforePositionsEditedEvent`:
+О намерении изменения чека сообщает событие [`beforePositionsEditedEvent`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.java):
 
 ```java
 public class BeforePositionsEditedEvent implements IBundlable {
@@ -389,9 +389,9 @@ data class PositionRemove(
 }
 ```
 
-## Получение событий об открытии чека, обновлении базы продуктов или результате изменения чека
+## Получение событий об открытии чека, обновлении базы товаров или результате изменения чека
 
-Смарт терминал не ждёт ответ от приложения на широковещательные сообщения. Чтобы получать сообщения о результате изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:
+Смарт-терминал не ждёт ответ от приложения на широковещательные сообщения. Чтобы получать сообщения о результате изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:
 
 ```java
 package ru.evotor.consumer.consumer;

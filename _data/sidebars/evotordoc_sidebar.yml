@@ -311,7 +311,7 @@ entries:
       output: web
 
     - title: Платёжные системы
-      url: /doc_java_navigation.html
+      url: /doc_java_payment_systems.html
       output: web
 
       subfolders:
@@ -377,6 +377,26 @@ entries:
     - title: Логирование Java-приложения
       url: /doc_java_logging.html
       output: web
+
+###############################################################
+#               REACT SDK                                      #
+###############################################################
+
+#- title: REACT SDK
+#    output: web
+#    folderitems:
+#    - title: Подготовка среды для разработки на React Native
+#      url: /doc_react_getting_started.html
+#      output: web
+#
+#    - title: Зависимости проекта
+#      url: /doc_react_dependencies.html
+#      output: web
+#
+#    - title: Установка приложения на смарт-терминал
+#      url: /doc_react_app_installation.html
+#      output: web
+
 
 ###############################################################
 #               JavaScript SDK                                #
@@ -522,8 +542,6 @@ entries:
       url: /doc_app_review.html
       output: web, pdf
 
-
-
 ###############################################################
 #                    Биллинг                                  #
 ###############################################################
@@ -572,9 +590,13 @@ entries:
 #                      FAQ                                    #
 ###############################################################
 
-  - title: FAQ
+  - title: Вопросы и устранение проблем
     output: web, pdf
     folderitems:
     - title: Часто задаваемые вопросы
       url: /doc_faq.html
+      output: web
+
+    - title: Устранение проблем с установкой приложения
+      url: /doc_installation_troubleshooting.html
       output: web

@@ -95,3 +95,31 @@ try {callback.onResult(
 * [При создании чека в приложении](./doc_java_receipt_creation.html).
 * [В списке изменений changes, при работе с чеком](./doc_java_receipt_interactions.html).
 * В списке изменений по позициям (см. выше)
+
+### Пример скидки на позицию
+
+```java
+List<PositionAdd> positionAddList = new ArrayList<>();
+        positionAddList.add(
+                new PositionAdd(
+                        Position.Builder.newInstance(
+                                //идентификатор (uuid) позиции
+                                UUID.randomUUID().toString(),
+                                //идентификатор (uuid) товара
+                                null,
+                                //Наименование товара
+                                "Зубочистки",
+                                //Наименование единицы измерения
+                                "кг",
+                                //Точность единицы измерения
+                                0,
+                                //Цена без скидок
+                                new BigDecimal(200),
+                                //Количество
+                                new BigDecimal(1)
+                                //Добавление цены с учетом скидки на позицию. Итог = price - priceWithDiscountPosition
+                        ).setPriceWithDiscountPosition(new BigDecimal(100))
+                                .setExtraKeys(set).build()
+                )
+        );
+```
