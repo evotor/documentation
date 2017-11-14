@@ -176,9 +176,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle"> </li>
-    <!-- <p class="external">
+    <p class="external">
         <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
-    </p> -->
+    </p>
     
     
     
@@ -396,7 +396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_navigation.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
             
             
             
@@ -713,13 +713,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">FAQ</a>
+        <a href="#">Вопросы и устранение проблем</a>
         
         <ul>
             
             
             
             <li><a href="doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
             
             
             
@@ -742,6 +749,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <h1 class="post-title-main">Приложение в интерфейсе смарт-терминала</h1>
 </div>
 
+
+
+
+ <div class="summary">Вы можете запускать приложение с помощью кнопок и иконок, добавленных в интерфейс смарт-терминала. Раздел содержит информацию о том как добавить свои иконки или заменить существующую кнопку интерфейса смарт-терминала.</div>
 
 
 
@@ -771,9 +782,9 @@ $('#toc').on('click', 'a', function() {
 
 <div class="post-content">
 
-   
+   <!-- 
     <div class="summary">Вы можете запускать приложение с помощью кнопок и иконок, добавленных в интерфейс смарт-терминала. Раздел содержит информацию о том как добавить свои иконки или заменить существующую кнопку интерфейса смарт-терминала.</div>
-   
+    -->
 
     
 
@@ -792,8 +803,6 @@ $('#toc').on('click', 'a', function() {
 <p>Вы можете запускать приложение с помощью плитки на главном экране смарт-терминала или с помощью иконок на экране продажи и/или возврата товара</p>
 
 <p>Вы можете интегрировать своё приложение в существующий процесс смарт-терминала, например, продажу или работу с оборудованием, или добавить плитку приложения на главный экран. Плиток может быть несколько, если приложение реализует независимые действия, например, плитки “Продать товар” и “Вернуть товар”.</p>
-
-<p class="center-image"><img src="images\Tile_example.png" alt="Пример плитки" /></p>
 
 <h2 id="section">Рекомендации по добавлению плитки</h2>
 
@@ -846,6 +855,8 @@ $('#toc').on('click', 'a', function() {
    Атрибут <code class="highlighter-rouge">android:name="ru.evotor.sales_screen.BACKGROUND_COLOR"</code> задаёт фон, на котором отображается иконка приложения.</p>
 
 <p>Элемент <code class="highlighter-rouge">&lt;action android:name="android.intent.action.MAIN" /&gt;</code> указывает, что иконка приложения будет отображаться на главном экране смарт-терминала.</p>
+
+<figure class="center-image"><a class="no_icon" href="images/Tile_example.png"><img class="docimage center-image" id="imageborder" src="images/Tile_example.png" alt="" /></a><figcaption>Приложение на главном экране смарт-терминала</figcaption></figure>
 
 <h2 id="SalesScreen">Иконка приложения на экране оплаты</h2>
 
@@ -945,11 +956,13 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
+<figure class="center-image"><a class="no_icon" href="images/template_plugin_applied.png"><img class="docimage center-image" id="imageborder" src="images/template_plugin_applied.png" alt="" /></a><figcaption>Приложение на экране оплаты смарт-терминала</figcaption></figure>
+
 <h2 id="section-2">Замена кнопки <strong>Продажа</strong> на главном экране смарт-терминала</h2>
 
 <p>Вы можете заменить кнопку <strong>Продажа</strong>, расположенную на главном экране смарт-терминала, на кнопку своего приложения:</p>
 
-<p class="center-image"><img src="images\sale_button_changed.png" alt="" /></p>
+<figure class="center-image"><a class="no_icon" href="images/sale_button_changed.png"><img class="docimage center-image" id="imageborder" src="images/sale_button_changed.png" alt="" /></a><figcaption>Изменение кнопки **Продажа**</figcaption></figure>
 
 <p><em>Чтобы заменить кнопку <strong>Продажа</strong>:</em></p>
 

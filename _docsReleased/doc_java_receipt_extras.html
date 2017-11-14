@@ -176,9 +176,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle"> </li>
-    <!-- <p class="external">
+    <p class="external">
         <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
-    </p> -->
+    </p>
     
     
     
@@ -396,7 +396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_navigation.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
             
             
             
@@ -713,13 +713,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">FAQ</a>
+        <a href="#">Вопросы и устранение проблем</a>
         
         <ul>
             
             
             
             <li><a href="doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
             
             
             
@@ -742,6 +749,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <h1 class="post-title-main">Создание дополнительных полей в чеке</h1>
 </div>
 
+
+
+
+ <div class="summary">Раздел содержит информацию о том, как и когда вы можете добавлять дополнительные поля в чеки.</div>
 
 
 
@@ -771,9 +782,9 @@ $('#toc').on('click', 'a', function() {
 
 <div class="post-content">
 
-   
+   <!-- 
     <div class="summary">Раздел содержит информацию о том, как и когда вы можете добавлять дополнительные поля в чеки.</div>
-   
+    -->
 
     
 
@@ -781,9 +792,13 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Приложения могут записывать дополнительные данные в чеки продажи и возврата.</p>
+  <p>Приложения могут записывать дополнительные поля в чеки продажи и возврата.</p>
 
-<p>Дополнительные данные должны представлять валидный JSON-объект:</p>
+<p>Дополнительные поля помогут вам хранить и отображать информацию, которая не предусмотрена стандартной моделью чека <a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/02-SELL.json">продажи</a> или <a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/03-PAYBACK.json">возврата</a>.</p>
+
+<p>Например, системы лояльности могут хранить в дополнительных полях информацию о карте лояльности пользователя.</p>
+
+<p>Дополнительные поля должны представлять валидный JSON-объект:</p>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">JSONObject</span> <span class="n">object</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
                 <span class="n">object</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"key"</span><span class="o">,</span> <span class="s">"value"</span><span class="o">);</span>

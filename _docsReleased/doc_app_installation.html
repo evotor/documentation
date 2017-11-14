@@ -176,9 +176,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle"> </li>
-    <!-- <p class="external">
+    <p class="external">
         <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
-    </p> -->
+    </p>
     
     
     
@@ -396,7 +396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_navigation.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
             
             
             
@@ -713,13 +713,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">FAQ</a>
+        <a href="#">Вопросы и устранение проблем</a>
         
         <ul>
             
             
             
             <li><a href="doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
             
             
             
@@ -742,6 +749,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <h1 class="post-title-main">Установка приложения</h1>
 </div>
 
+
+
+
+ <div class="summary">Раздел содержит информацию, которая поможет вам установить своё приложение на смарт-терминал как с помощью Магазина приложений так и с помощью ADB Shell.</div>
 
 
 
@@ -771,9 +782,9 @@ $('#toc').on('click', 'a', function() {
 
 <div class="post-content">
 
-   
+   <!-- 
     <div class="summary">Раздел содержит информацию, которая поможет вам установить своё приложение на смарт-терминал как с помощью Магазина приложений так и с помощью ADB Shell.</div>
-   
+    -->
 
     
 
@@ -784,7 +795,7 @@ $('#toc').on('click', 'a', function() {
   <p>Вы можете установить приложение на терминал:</p>
 
 <ul>
-  <li>с помощью магазина приложений;</li>
+  <li>из <a href="https://market.evotor.ru">Магазина приложений</a>;</li>
   <li>с помощью ADB Shell.</li>
 </ul>
 
@@ -821,10 +832,25 @@ $('#toc').on('click', 'a', function() {
   </li>
   <li>
     <p>Установите приложение из Магазина приложений.</p>
+
+    <figure class="center-image"><a class="no_icon" href="images/app_installation.png"><img class="docimage center-image" id="imageborder" src="images/app_installation.png" alt="" /></a><figcaption>Флажок установки приложения</figcaption></figure>
   </li>
 </ol>
 
 <p>Необходимая версия приложения будет установлена на смарт-терминал, привязанный к этому аккаунту.</p>
+
+<h3 id="section">Проблемы при установке приложения из Магазина приложений</h3>
+
+<p>Если у вас возникли проблемы при установке приложения:</p>
+
+<ul>
+  <li>Убедитесь, что на <a href="https://dev.evotor.ru">сайте разработчиков</a> создано приложение <strong>Приложение с APK</strong>;</li>
+  <li>Убедитесь, что на вкладке <strong>APK</strong>, на странице приложения, на <a href="https://dev.evotor.ru">сайте разработчиков</a>, загружен apk-файл приложения;</li>
+  <li>Убедитесь, что приложение, которое требуется установить на смарт-терминал, опубликовано или находится в одном из статусов: <strong>в тестировании</strong> или <strong>ревью</strong>.</li>
+  <li>На вкладке <strong>Установка/Удаление</strong>, на странице приложения в <a href="https://market.evotor.ru">Магазине приложений</a> снимите флажок со смарт-терминала на котором требуется установить приложение и нажмите кнопку <strong>Применить</strong>. Затем повторно установите флажок и нажмите кнопку <strong>Применить</strong>.</li>
+  <li>При установке приложения из <a href="https://market.evotor.ru">Магазина приложений</a> на смарт-терминал со включённым режимом разработчика, убедитесь, что на смарт-терминале установлена прошивка не ниже версии 3.0.*. В противном случае, отключите режим разработчика.</li>
+  <li>Ознакомьтесь с инструкциями, представленными на <a href="./doc_installation_troubleshooting.html">странице устранения проблем</a>.</li>
+</ul>
 
 <h2 id="adb-shell">Установка приложения с помощью ADB Shell</h2>
 
@@ -861,6 +887,18 @@ $('#toc').on('click', 'a', function() {
 </ol>
 
 <p>Приложение установится на смарт-терминал.</p>
+
+<h3 id="adb-shell-1">Проблемы при установке приложения с помощью ADB Shell</h3>
+
+<p>Если у вас возникли проблемы при установке приложения:</p>
+
+<ul>
+  <li>Убедитесь, что на смарт-терминале включён режим разработчика;</li>
+  <li>Убедитесь, что на <a href="https://dev.evotor.ru">сайте разработчиков</a> создано приложение <strong>Приложение с APK</strong>;</li>
+  <li>Убедитесь, что <code class="highlighter-rouge">app_uuid</code> и <code class="highlighter-rouge">packageID</code> указанные на вкладке <strong>APK</strong>, на странице приложения на <a href="https://dev.evotor.ru">сайте разработчиков</a>, совпадают со значениями заданными в манифесте приложения;</li>
+  <li>Убедитесь, что смарт-терминал привязан к аккаунту, с ролью разработчика на вкладке <strong>Тестирование</strong>, на странице приложения на <a href="https://dev.evotor.ru">сайте разработчиков</a>.</li>
+  <li>Ознакомьтесь с инструкциями, представленными на <a href="./doc_installation_troubleshooting.html">странице устранения проблем</a>.</li>
+</ul>
 
 
     <div class="tags">

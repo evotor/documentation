@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Страница не найдена | Документация Эвотор</title>
+<meta name="keywords" content=" приложение, установка, проблемы, устранение">
+<title>Устранение проблем с установкой приложения | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -140,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Страница не найдена">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Устранение проблем с установкой приложения">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -726,7 +726,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
+            <li class="active"><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
             
             
             
@@ -746,7 +746,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Страница не найдена</h1>
+   <h1 class="post-title-main">Устранение проблем с установкой приложения</h1>
 </div>
 
 
@@ -784,11 +784,32 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc//404.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc//doc_installation_troubleshooting.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p>Запрашиваемая страница не существует. Проверьте URL или воспользуйтесь поиском по сайту.</p>
+  <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Обратите внимание облачные приложения не устанавливаются на смарт-терминал.</div>
+
+<p>Если у вас возникли проблемы при установке приложения на смарт-терминал:</p>
+
+<ul>
+  <li>
+    <p>Убедитесь, что на смарт-терминале нет проблем с подключением к Интернету:</p>
+
+    <p>Для этого откройте в браузере (<strong>Ещё</strong> → <strong>Браузер</strong>) страницу Магазина приложений - https://market.evotor.ru.</p>
+  </li>
+  <li>
+    <p>Попробуйте отключить и повторно подключить смарт-терминал к wi-fi;</p>
+  </li>
+  <li>
+    <p>Попробуйте следующий способ:</p>
+    <ol>
+      <li>Перейдите в раздел <strong>Ещё</strong> → <strong>Настройки</strong> → <strong>Хранилище и USB-накопители</strong> → <strong>Приложения</strong> → <strong>Системный сервис</strong>.</li>
+      <li>Нажмите кнопку <strong>Стереть данные</strong>.</li>
+      <li>Перезагрузите смарт-терминал.</li>
+    </ol>
+  </li>
+</ul>
 
 
     <div class="tags">

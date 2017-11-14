@@ -176,9 +176,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle"> </li>
-    <!-- <p class="external">
+    <p class="external">
         <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
-    </p> -->
+    </p>
     
     
     
@@ -396,7 +396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_navigation.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
             
             
             
@@ -713,13 +713,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">FAQ</a>
+        <a href="#">Вопросы и устранение проблем</a>
         
         <ul>
             
             
             
             <li><a href="doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
             
             
             
@@ -742,6 +749,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <h1 class="post-title-main">Права приложения</h1>
 </div>
 
+
+
+
+ <div class="summary">Раздел содержит информацию правах пользователей смарт терминала и примеры того, как получить данные о них.</div>
 
 
 
@@ -771,9 +782,9 @@ $('#toc').on('click', 'a', function() {
 
 <div class="post-content">
 
-   
+   <!-- 
     <div class="summary">Раздел содержит информацию правах пользователей смарт терминала и примеры того, как получить данные о них.</div>
-   
+    -->
 
     
 
@@ -781,7 +792,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="section">О правах приложения</h3>
+  <h2 id="section">О правах приложения</h2>
 
 <p>С помощью прав (grants), назначенных различным компонентам приложения, вы можете ограничить функциональность приложения для пользователей с определёнными ролями. Чтобы узнать список прав той или иной роли, используйте <a href="doc_java_app_users.html">Users API</a>.</p>
 
@@ -791,7 +802,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Если оставить список прав пустым, приложение будет доступно любому пользоваетлю, независимо от роли.</p>
 
-<h3 id="java-">Java-приложение</h3>
+<h2 id="java-">Java-приложение</h2>
 
 <p>Чтобы наделить java-приложение необходимыми правами, выполните следующие действия:</p>
 
@@ -818,7 +829,7 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ol>
 
-<h3 id="js-">JS-приложение</h3>
+<h2 id="js-">JS-приложение</h2>
 
 <p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) JS-приложения необходимыми правами, выполните следующие действия:</p>
 
@@ -868,7 +879,7 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ol>
 
-<h3 id="section-1">Примеры</h3>
+<h2 id="section-1">Примеры</h2>
 
 <p>Манифест приложения:</p>
 
@@ -894,7 +905,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="section-2">Список прав</h3>
+<h2 id="section-2">Список прав</h2>
 
 <p>В таблице ниже представлены права, которыми вы можете наделить компоненты приложения.</p>
 

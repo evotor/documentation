@@ -279,17 +279,6 @@
 
 
 {
-"title": "Модифицирование товаров",
-"tags": "cloud",
-"keywords": "",
-"url": "doc_tutorials_products_modifications.html",
-"summary": ""
-}
-,
-
-
-
-{
 "title": "Примеры запросов к Облаку Эвотор",
 "tags": "cloudproducts",
 "keywords": "",
@@ -328,6 +317,17 @@
 "keywords": "IFrame",
 "url": "doc_iframe_within_application_page.html",
 "summary": "Краткая инструкция по добавлению фрейма в настройки приложения"
+}
+,
+
+
+
+{
+"title": "Устранение проблем с установкой приложения",
+"tags": "",
+"keywords": "приложение, установка, проблемы, устранение",
+"url": "doc_installation_troubleshooting.html",
+"summary": ""
 }
 ,
 
@@ -708,6 +708,17 @@
 
 
 {
+"title": "Работа с пользователями смарт-терминала",
+"tags": "terminalreact",
+"keywords": "",
+"url": "doc_react_usersAPI.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Приложение для смарт-терминала",
 "tags": "javajavascriptterminalcloud",
 "keywords": "",
@@ -815,6 +826,16 @@
 
 
 
+
+
+{
+"title": "14.11.2017",
+"tags": "",
+"keywords": "",
+"url": "2017-11-14-release-notes-19.html",
+"summary": ""
+}
+,
 
 
 {

@@ -176,9 +176,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle"> </li>
-    <!-- <p class="external">
+    <p class="external">
         <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
-    </p> -->
+    </p>
     
     
     
@@ -396,7 +396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_navigation.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
             
             
             
@@ -713,13 +713,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">FAQ</a>
+        <a href="#">Вопросы и устранение проблем</a>
         
         <ul>
             
             
             
             <li><a href="doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
             
             
             
@@ -746,9 +753,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
+
+
 <div class="post-content">
 
-   
+   <!--  -->
 
     
 
@@ -759,6 +768,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="home">
 
     <div class="post-list">
+        
+
+
+    <h2><a class="post-link" href="2017-11-14-release-notes-19.html">14.11.2017</a></h2>
+        <span class="post-meta">Nov 14, 2017 /
+            </span>
+        <p> <p>Список изменений:</p>
+
+<ul>
+  <li>REST API: исправлены параметры <code class="highlighter-rouge">barCodes</code> и <code class="highlighter-rouge">alcoCodes</code>. Ранее эти параметры передавались в виде <code class="highlighter-rouge">barcodes</code> и <code class="highlighter-rouge">alcocodes</code>, соответственно. До 15 января 2018 года мы будем передавать оба варианта параметров. Начиная с 16 января 2018 года поддержка параметров, набранных строчными буквами будет прекращена.</li>
+  <li>В FAQ добавлен вопрос, посвящённый различию скидок на весь чек и суммы скидок на позиции в чеке.</li>
+  <li>Добавлен раздел <a href="./doc_subscriptions.html">“Подписки”</a>.</li>
+  <li>Исправлен раздел <a href="./doc_1C_integration.html">“Интеграция с 1С”</a>.</li>
+  <li>Добавлен раздел <a href="./doc_app_review.html">“Черновики, модерация и публикация приложения”</a>.</li>
+  <li>Добавлен раздел <a href="./doc_doc_java_payment_systems.html">“Платёжные системы”</a></li>
+  <li>Косметические изменения в документации.</li>
+</ul>
+ </p>
+
         
 
 
@@ -960,22 +988,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <ul>
   <li><a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost">Добавлены события подписки</a></li>
   <li><a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1receipt%2Fpost">Изменен формат чеков</a></li>
-</ul>
- </p>
-
-        
-
-
-    <h2><a class="post-link" href="2017-06-01-release-notes-9.html">01.06.2017</a></h2>
-        <span class="post-meta">Jun 1, 2017 /
-            </span>
-        <p> <ul>
-  <li>В документацию добавлены разделы:
-    <ul>
-      <li><a href="https://developer.evotor.ru/docs/doc_java_third_party_service_communication.html">Проксирование HTTP-запросов</a>.</li>
-      <li><a href="https://developer.evotor.ru/docs/doc_java_discounts.html">Скидки</a>.</li>
-    </ul>
-  </li>
 </ul>
  </p>
 

@@ -176,9 +176,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle"> </li>
-    <!-- <p class="external">
+    <p class="external">
         <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
-    </p> -->
+    </p>
     
     
     
@@ -396,7 +396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_navigation.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
             
             
             
@@ -713,13 +713,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">FAQ</a>
+        <a href="#">Вопросы и устранение проблем</a>
         
         <ul>
             
             
             
             <li><a href="doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
             
             
             
@@ -741,6 +748,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="post-header">
    <h1 class="post-title-main">Скидки</h1>
 </div>
+
+
 
 
 
@@ -771,7 +780,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="post-content">
 
-   
+   <!--  -->
 
     
 
@@ -883,6 +892,34 @@ $('#toc').on('click', 'a', function() {
   <li><a href="./doc_java_receipt_interactions.html">В списке изменений changes, при работе с чеком</a>.</li>
   <li>В списке изменений по позициям (см. выше)</li>
 </ul>
+
+<h3 id="section-1">Пример скидки на позицию</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">List</span><span class="o">&lt;</span><span class="n">PositionAdd</span><span class="o">&gt;</span> <span class="n">positionAddList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="n">positionAddList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span>
+                <span class="k">new</span> <span class="nf">PositionAdd</span><span class="o">(</span>
+                        <span class="n">Position</span><span class="o">.</span><span class="na">Builder</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span>
+                                <span class="c1">//идентификатор (uuid) позиции</span>
+                                <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+                                <span class="c1">//идентификатор (uuid) товара</span>
+                                <span class="kc">null</span><span class="o">,</span>
+                                <span class="c1">//Наименование товара</span>
+                                <span class="s">"Зубочистки"</span><span class="o">,</span>
+                                <span class="c1">//Наименование единицы измерения</span>
+                                <span class="s">"кг"</span><span class="o">,</span>
+                                <span class="c1">//Точность единицы измерения</span>
+                                <span class="mi">0</span><span class="o">,</span>
+                                <span class="c1">//Цена без скидок</span>
+                                <span class="k">new</span> <span class="nf">BigDecimal</span><span class="o">(</span><span class="mi">200</span><span class="o">),</span>
+                                <span class="c1">//Количество</span>
+                                <span class="k">new</span> <span class="nf">BigDecimal</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+                                <span class="c1">//Добавление цены с учетом скидки на позицию. Итог = price - priceWithDiscountPosition</span>
+                        <span class="o">).</span><span class="na">setPriceWithDiscountPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">100</span><span class="o">))</span>
+                                <span class="o">.</span><span class="na">setExtraKeys</span><span class="o">(</span><span class="n">set</span><span class="o">).</span><span class="na">build</span><span class="o">()</span>
+                <span class="o">)</span>
+        <span class="o">);</span>
+</code></pre>
+</div>
 
 
     <div class="tags">

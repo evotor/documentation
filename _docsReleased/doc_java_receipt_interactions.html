@@ -176,9 +176,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle"> </li>
-    <!-- <p class="external">
+    <p class="external">
         <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
-    </p> -->
+    </p>
     
     
     
@@ -396,7 +396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_navigation.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
             
             
             
@@ -713,13 +713,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">FAQ</a>
+        <a href="#">Вопросы и устранение проблем</a>
         
         <ul>
             
             
             
             <li><a href="doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
             
             
             
@@ -742,6 +749,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <h1 class="post-title-main">Работа с позициями чека</h1>
 </div>
 
+
+
+
+ <div class="summary">Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека.</div>
 
 
 
@@ -771,9 +782,9 @@ $('#toc').on('click', 'a', function() {
 
 <div class="post-content">
 
-   
+   <!-- 
     <div class="summary">Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека.</div>
-   
+    -->
 
     
 
@@ -968,7 +979,7 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="beforepositionseditedevent">Описание события <code class="highlighter-rouge">BeforePositionsEditedEvent</code></h3>
 
-<p>О намерении изменения чека сообщает событие <code class="highlighter-rouge">beforePositionsEditedEvent</code>:</p>
+<p>О намерении изменения чека сообщает событие <a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.java"><code class="highlighter-rouge">beforePositionsEditedEvent</code></a>:</p>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeforePositionsEditedEvent</span> <span class="kd">implements</span> <span class="n">IBundlable</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TAG</span> <span class="o">=</span> <span class="s">"PositionsEditedEvent"</span><span class="o">;</span>
@@ -1175,9 +1186,9 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h2 id="section-1">Получение событий об открытии чека, обновлении базы продуктов или результате изменения чека</h2>
+<h2 id="section-1">Получение событий об открытии чека, обновлении базы товаров или результате изменения чека</h2>
 
-<p>Смарт терминал не ждёт ответ от приложения на широковещательные сообщения. Чтобы получать сообщения о результате изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:</p>
+<p>Смарт-терминал не ждёт ответ от приложения на широковещательные сообщения. Чтобы получать сообщения о результате изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:</p>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">ru</span><span class="o">.</span><span class="na">evotor</span><span class="o">.</span><span class="na">consumer</span><span class="o">.</span><span class="na">consumer</span><span class="o">;</span>
 

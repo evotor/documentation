@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Страница не найдена | Документация Эвотор</title>
+<meta name="keywords" content="terminalreact,  ">
+<title>Работа с пользователями смарт-терминала | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -140,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Страница не найдена">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Работа с пользователями смарт-терминала">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -746,7 +746,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Страница не найдена</h1>
+   <h1 class="post-title-main">Работа с пользователями смарт-терминала</h1>
 </div>
 
 
@@ -784,14 +784,81 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc//404.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_SDK/doc_react_usersAPI.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p>Запрашиваемая страница не существует. Проверьте URL или воспользуйтесь поиском по сайту.</p>
+  <p>В разделе приведены методы для работы с пользователями смарт-терминала. Методы React Native обращаются к Java интерфейсу описанному в разделе <a href="./doc_java_app_users.html">“Работа с пользователями смарт-терминала”</a></p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Так как выполнение запросов к Java API занимает много времени, методы React SDK требуется выполнять асинхронно. Для этого в аргумент метода требуется передать колбэк-функцию.</div>
+
+<h2 id="section">Методы</h2>
+
+<h3 id="section-1">Получить данные всех пользователей</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllUsers</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">UserModule</span><span class="p">.</span><span class="nx">getAllUsers</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="section-2">Получить данные авторизованного пользователя</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAuthenticatedUser</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">UserModule</span><span class="p">.</span><span class="nx">getAuthenticatedUser</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="section-3">Получить список всех доступных прав</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllGrants</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">UserModule</span><span class="p">.</span><span class="nx">getAllGrants</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="section-4">Получить список прав авторизованного пользователя</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getGrantsOfAuthenticatedUser</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">UserModule</span><span class="p">.</span><span class="nx">getGrantsOfAuthenticatedUser</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="section-5">Примеры</h2>
+
+<p>Пример использования метода для получения списка всех пользователей по нажатию на кнопку в интерфейсе приложения.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">onUsersSelect</span> <span class="o">=</span> <span class="p">(</span><span class="nx">actionIndex</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nx">actionIndex</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">UserApi</span><span class="p">.</span><span class="nx">getAllUsers</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+
+<p>Пример колбэк-функции, которая передаётся в аргумент метода и выводит список всех пользователей в лог.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">callback</span> <span class="o">=</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre>
+</div>
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
+        
+        
+        
+        
         
     </div>
 

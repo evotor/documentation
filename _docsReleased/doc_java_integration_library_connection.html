@@ -176,9 +176,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle"> </li>
-    <!-- <p class="external">
+    <p class="external">
         <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
-    </p> -->
+    </p>
     
     
     
@@ -396,7 +396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_navigation.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
             
             
             
@@ -713,13 +713,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">FAQ</a>
+        <a href="#">Вопросы и устранение проблем</a>
         
         <ul>
             
             
             
             <li><a href="doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
             
             
             
@@ -742,6 +749,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <h1 class="post-title-main">Подключение библиотеки для разработки Java-приложений</h1>
 </div>
 
+
+
+
+ <div class="summary">Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуется для установки на смарт-терминал.</div>
 
 
 
@@ -771,9 +782,9 @@ $('#toc').on('click', 'a', function() {
 
 <div class="post-content">
 
-   
+   <!-- 
     <div class="summary">Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуется для установки на смарт-терминал.</div>
-   
+    -->
 
     
 
@@ -786,7 +797,7 @@ $('#toc').on('click', 'a', function() {
 <p>Для разработки java-приложения, вам потребуется:</p>
 
 <ul>
-  <li>Android Studio версии 2.3.3 или выше;</li>
+  <li>Android Studio версии 3.0 или выше;</li>
   <li>библиотека <a href="https://github.com/evotor/integration-library">integration-library</a> версии 0.4+.</li>
 </ul>
 
@@ -806,7 +817,7 @@ $('#toc').on('click', 'a', function() {
 
     <figure class="center-image"><a class="no_icon" href="images/project_sctructure.png"><img class="docimage center-image" id="imageborder" src="images/project_sctructure.png" alt="" /></a><figcaption>Структура проекта</figcaption></figure>
 
-    <p><a href="/doc_js_app_manifest.html">Манифест проекта</a> выглядит так:</p>
+    <p><a href="/doc_java_app_manifest.html">Манифест созданного проекта</a> выглядит так:</p>
 
     <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
  <span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> <span class="na">package=</span><span class="s">"com.example.&lt;yourprojectname&gt;"</span><span class="nt">&gt;</span>
@@ -830,9 +841,11 @@ $('#toc').on('click', 'a', function() {
  <span class="nt">&lt;/manifest&gt;</span>
 </code></pre>
     </div>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Работы с приложением, манифест должен содержать элемент <code class="highlighter-rouge">&lt;meta-data/&gt;</code> с идентификатором приложения (см. раздел <a href="./doc_java_app_manifest.html">“Манифест приложения”</a>).</div>
   </li>
   <li>
-    <p>В файле <code class="highlighter-rouge">build.gradle (Project: &lt;YourProjectName&gt;)</code> укажите:</p>
+    <p>В файле проекта <code class="highlighter-rouge">build.gradle (Project: &lt;YourProjectName&gt;)</code> укажите:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>allprojects {
     repositories {
@@ -844,13 +857,25 @@ $('#toc').on('click', 'a', function() {
     </div>
   </li>
   <li>
-    <p>В файле <code class="highlighter-rouge">build.gradle (Module: app)</code>, добавьте библиотеку integration-library в зависимости (dependencies):</p>
+    <p>В файле приложения <code class="highlighter-rouge">build.gradle (Module: app)</code>, добавьте библиотеку integration-library в зависимости:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>compile group: 'com.github.evotor', name: 'integration-library', version: 'v0.4.+'
+    <div class="highlighter-rouge"><pre class="highlight"><code>dependencies {
+compile group: 'com.github.evotor', name: 'integration-library', version: 'v0.4.+'
+}
 </code></pre>
     </div>
 
-    <p>Убедитесь, что в зависимости указана <a href="https://github.com/evotor/integration-library/">актуальная версия библиотеки</a>.</p>
+    <p>Убедитесь, что вы используете <a href="https://github.com/evotor/integration-library/">актуальную версию библиотеки</a>.</p>
+  </li>
+  <li>
+    <p>В проекте укажите параметр minSdkVersion:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>defaultConfig {
+     minSdkVersion 22
+...
+}
+</code></pre>
+    </div>
   </li>
 </ol>
 
@@ -862,9 +887,6 @@ $('#toc').on('click', 'a', function() {
   <li><a href="doc_java_app_icon.html">добавить иконку приложения на главный экран или экран оплаты</a>;</li>
   <li><a href="./doc_app_installation.html">установить приложение на смарт-терминал</a>.</li>
 </ul>
-
-<!-- <div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Манифест должен содержать элемент \<meta-data/\> с информацией об идентификаторе приложения (см. раздел ["Манифест приложения"](./doc_js_app_manifest.html)).</div>
- -->
 
 
     <div class="tags">
