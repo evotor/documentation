@@ -14,7 +14,7 @@ folder: java_SDK
 
 При разработке драйвера для устройств нужно учитывать дополнительные параметры (см. [SDK для денежных ящиков](./doc_drivers_cashdrawer.html) и другие разделы, посвящённые разработке драйверов).
 
-{% include note.html content="В секции `application`, требуется указать элемент `meta-data`, который содержит идентификатор приложения – строка в формате `uuid4`. Вы найдёте идентификатор приложения в адресной строке браузера, когда выберете приложение на сайте [dev.evotor.ru](https://dev.evotor.ru)." %}
+{% include note.html content="В секции `application`, требуется указать элемент `meta-data`, который содержит идентификатор приложения – строка в формате `uuid4`. Идентификатор отображается в поле **Идентификатор приложениия** на вкладке **APK** вашего приложения, на сайте [dev.evotor.ru](https://dev.evotor.ru)." %}
 
 {% include image.html file="app_uuid.png" url="images/app_uuid.png" caption="Идентификатор приложения" %}
 
@@ -33,7 +33,7 @@ folder: java_SDK
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
 
-      <meta-data android:name="app_uuid" android:value="<Строка с идентификатором приложения, представленном в формате uuid4>"/>
+      <meta-data android:name="app_uuid" android:value="<Идентификатор приложения>"/>
 
       <activity
           android:name=".MainActivity"

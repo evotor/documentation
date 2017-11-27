@@ -9,61 +9,95 @@ folder: react_SDK
 published: true
 ---
 
-В разделе приведены методы для работы с пользователями смарт-терминала. Методы React Native обращаются к Java интерфейсу описанному в разделе ["Работа с пользователями смарт-терминала"](./doc_java_app_users.html)
+В разделе приведены методы для работы с пользователями смарт-терминала. Методы React Native обращаются к Java интерфейсу описанному в разделе ["Работа с пользователями смарт-терминала"](./doc_java_app_users.html).
 
-{% include note.html content="Так как выполнение запросов к Java API занимает много времени, методы React SDK требуется выполнять асинхронно. Для этого в аргумент метода требуется передать колбэк-функцию." %}
+{% include note.html content="Так как выполнение запросов к Java API занимает много времени, методы React SDK требуется выполнять асинхронно. Для этого в качестве аргумента метода требуется передать колбэк-функцию." %}
 
 ## Методы
 
 ### Получить данные всех пользователей
 
 ```javascript
-static getAllUsers(callback: Function) {
+static getAllUsers(callback: (User[]) => void) {
     UserModule.getAllUsers(callback);
 }
 ```
 
+Где `User` – экземпляр класса с [данными о пользователе](./doc_react_usersAPI.html#userData).
+
 ### Получить данные авторизованного пользователя
 
 ```javascript
-static getAuthenticatedUser(callback: Function) {
+static getAuthenticatedUser(callback: (User | null) => void) {
     UserModule.getAuthenticatedUser(callback);
 }
 ```
 
+Где `User` – экземпляр класса с [данными о пользователе](./doc_react_usersAPI.html#userData).
+
 ### Получить список всех доступных прав
 
 ```javascript
-static getAllGrants(callback: Function) {
+static getAllGrants(callback: (Grant[]) => void) {
     UserModule.getAllGrants(callback);
 }
 ```
 
+Где `Grant` – экземпляр класса с [данными о роли](./doc_react_usersAPI.html#roleData).
+
 ### Получить список прав авторизованного пользователя
 
 ```javascript
-static getGrantsOfAuthenticatedUser(callback: Function) {
+static getGrantsOfAuthenticatedUser(callback: (Grant[]) => void) {
     UserModule.getGrantsOfAuthenticatedUser(callback);
 }
 ```
 
-## Примеры
+Где `Grant` – экземпляр класса с [данными о роли](./doc_react_usersAPI.html#roleData).
 
-Пример использования метода для получения списка всех пользователей по нажатию на кнопку в интерфейсе приложения.
+## Возвращаемые данные
+
+### Данные о пользователе {#userData}
 
 ```javascript
-const onUsersSelect = (actionIndex, callback) => {
-    switch (actionIndex) {
-        UserApi.getAllUsers(callback);
-        break;
+class User {
+    constructor(uuid: string,
+                secondName: string | null,
+                firstName: string | null,
+                phone: string | null,
+                pin: string,
+                roleUuid: string,
+                roleTitle: string) {
+        this.uid = uuid;//Идентификатор пользователя в Облаке Эвотор.
+        this.secondName = secondName;//Фамилия пользователя.
+        this.firstName = firstName;//Имя пользователя.
+        this.phone = phone;//Номер телефона.
+        this.pin = pin;//ПИН для доступа к пользователю на смарт-терминале.
+        this.roleUuid = roleUuid;//Идентификатор присвоенной пользователю роли в формате uuid4.
+        this.roleTitle = roleTitle;//Имя присвоенной пользователю роли.
+    }
+};
+```
+
+### Данные о роли {#roleData}
+
+```javascript
+class Grant {
+    constructor(title: string, roleUuid: string) {
+        this.title = title;//Имя роли.
+        this.roleUuid = roleUuid//Идентификатор роли в Облаке Эвотор в формате uuid4.
       }
 };
 ```
 
-Пример колбэк-функции, которая передаётся в аргумент метода и выводит список всех пользователей в лог.
+## Примеры
+
+Пример колбэк-функции, которая передаётся в аргумент метода.
 
 ```javascript
-const callback = (data) => {
-    console.log(data);
-};
+let allUsers;
+    const callback = (data: [User]) => {
+        allUsers = data;
+    };
+    UserApi.getAllUsers(callback);
 ```

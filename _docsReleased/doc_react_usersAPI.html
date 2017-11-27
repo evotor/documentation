@@ -505,6 +505,72 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
+        <a href="#">REACT SDK</a>
+        
+        <ul>
+            
+            
+            
+            <li><a href="doc_react_getting_started.html">Подготовка среды для разработки на React Native</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_manifest.html">Манифест React Native приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_navigationAPI.html">Открытие окон смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_app_installation.html">Установка приложения на смарт-терминал</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="doc_react_usersAPI.html">Работа с пользователями</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_receipt.html">Работа с чеками</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_devices.html">Работа с подключаемым оборудованием</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_inventoryAPI.html">Товароучёт</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        
         <a href="#">JavaScript SDK</a>
         
         <ul>
@@ -622,7 +688,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            <li><a href="doc_java_app_tutorial.html">Сборка и установка демонстрационного приложения</a></li>
             
             
             
@@ -788,62 +854,96 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>В разделе приведены методы для работы с пользователями смарт-терминала. Методы React Native обращаются к Java интерфейсу описанному в разделе <a href="./doc_java_app_users.html">“Работа с пользователями смарт-терминала”</a></p>
+  <p>В разделе приведены методы для работы с пользователями смарт-терминала. Методы React Native обращаются к Java интерфейсу описанному в разделе <a href="./doc_java_app_users.html">“Работа с пользователями смарт-терминала”</a>.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Так как выполнение запросов к Java API занимает много времени, методы React SDK требуется выполнять асинхронно. Для этого в аргумент метода требуется передать колбэк-функцию.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Так как выполнение запросов к Java API занимает много времени, методы React SDK требуется выполнять асинхронно. Для этого в качестве аргумента метода требуется передать колбэк-функцию.</div>
 
 <h2 id="section">Методы</h2>
 
 <h3 id="section-1">Получить данные всех пользователей</h3>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllUsers</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllUsers</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="p">(</span><span class="nx">User</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">UserModule</span><span class="p">.</span><span class="nx">getAllUsers</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 </div>
 
+<p>Где <code class="highlighter-rouge">User</code> – экземпляр класса с <a href="./doc_react_usersAPI.html#userData">данными о пользователе</a>.</p>
+
 <h3 id="section-2">Получить данные авторизованного пользователя</h3>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAuthenticatedUser</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAuthenticatedUser</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="p">(</span><span class="nx">User</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">UserModule</span><span class="p">.</span><span class="nx">getAuthenticatedUser</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 </div>
 
+<p>Где <code class="highlighter-rouge">User</code> – экземпляр класса с <a href="./doc_react_usersAPI.html#userData">данными о пользователе</a>.</p>
+
 <h3 id="section-3">Получить список всех доступных прав</h3>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllGrants</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllGrants</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="p">(</span><span class="nx">Grant</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">UserModule</span><span class="p">.</span><span class="nx">getAllGrants</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 </div>
 
+<p>Где <code class="highlighter-rouge">Grant</code> – экземпляр класса с <a href="./doc_react_usersAPI.html#roleData">данными о роли</a>.</p>
+
 <h3 id="section-4">Получить список прав авторизованного пользователя</h3>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getGrantsOfAuthenticatedUser</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getGrantsOfAuthenticatedUser</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="p">(</span><span class="nx">Grant</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">UserModule</span><span class="p">.</span><span class="nx">getGrantsOfAuthenticatedUser</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 </div>
 
-<h2 id="section-5">Примеры</h2>
+<p>Где <code class="highlighter-rouge">Grant</code> – экземпляр класса с <a href="./doc_react_usersAPI.html#roleData">данными о роли</a>.</p>
 
-<p>Пример использования метода для получения списка всех пользователей по нажатию на кнопку в интерфейсе приложения.</p>
+<h2 id="section-5">Возвращаемые данные</h2>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">onUsersSelect</span> <span class="o">=</span> <span class="p">(</span><span class="nx">actionIndex</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">switch</span> <span class="p">(</span><span class="nx">actionIndex</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">UserApi</span><span class="p">.</span><span class="nx">getAllUsers</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
+<h3 id="userData">Данные о пользователе</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">User</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">secondName</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">firstName</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">phone</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">pin</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">roleUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">roleTitle</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">uid</span> <span class="o">=</span> <span class="nx">uuid</span><span class="p">;</span><span class="c1">//Идентификатор пользователя в Облаке Эвотор.</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">secondName</span> <span class="o">=</span> <span class="nx">secondName</span><span class="p">;</span><span class="c1">//Фамилия пользователя.</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">=</span> <span class="nx">firstName</span><span class="p">;</span><span class="c1">//Имя пользователя.</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">phone</span> <span class="o">=</span> <span class="nx">phone</span><span class="p">;</span><span class="c1">//Номер телефона.</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">pin</span> <span class="o">=</span> <span class="nx">pin</span><span class="p">;</span><span class="c1">//ПИН для доступа к пользователю на смарт-терминале.</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">roleUuid</span> <span class="o">=</span> <span class="nx">roleUuid</span><span class="p">;</span><span class="c1">//Идентификатор присвоенной пользователю роли в формате uuid4.</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">roleTitle</span> <span class="o">=</span> <span class="nx">roleTitle</span><span class="p">;</span><span class="c1">//Имя присвоенной пользователю роли.</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+
+<h3 id="roleData">Данные о роли</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Grant</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">title</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">roleUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span><span class="c1">//Имя роли.</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">roleUuid</span> <span class="o">=</span> <span class="nx">roleUuid</span><span class="c1">//Идентификатор роли в Облаке Эвотор в формате uuid4.</span>
       <span class="p">}</span>
 <span class="p">};</span>
 </code></pre>
 </div>
 
-<p>Пример колбэк-функции, которая передаётся в аргумент метода и выводит список всех пользователей в лог.</p>
+<h2 id="section-6">Примеры</h2>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">callback</span> <span class="o">=</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">};</span>
+<p>Пример колбэк-функции, которая передаётся в аргумент метода.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">allUsers</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">callback</span> <span class="o">=</span> <span class="p">(</span><span class="nx">data</span><span class="err">:</span> <span class="p">[</span><span class="nx">User</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">allUsers</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="nx">UserApi</span><span class="p">.</span><span class="nx">getAllUsers</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
 </code></pre>
 </div>
 

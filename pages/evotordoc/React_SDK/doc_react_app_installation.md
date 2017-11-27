@@ -6,7 +6,7 @@ sidebar: evotordoc_sidebar
 permalink: doc_react_app_installation.html
 tags: [terminal, react]
 folder: react_SDK
-published: false
+published: true
 ---
 
 *Чтобы установить приложение на смарт-терминал:*

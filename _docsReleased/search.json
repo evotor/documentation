@@ -378,6 +378,17 @@
 
 
 {
+"title": "Сборка и установка демонстрационного приложения",
+"tags": "javaterminal",
+"keywords": "",
+"url": "doc_java_app_tutorial.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Работа с пользователями смарт-терминала",
 "tags": "javaterminal",
 "keywords": "API, пользователи, User, методы",
@@ -701,6 +712,94 @@
 "tags": "",
 "keywords": "",
 "url": "doc_payoff.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Установка приложения на смарт-терминал",
+"tags": "terminalreact",
+"keywords": "",
+"url": "doc_react_app_installation.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Работа с подключаемым оборудованием",
+"tags": "terminalreact",
+"keywords": "",
+"url": "doc_react_devices.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Подготовка среды для разработки на React Native",
+"tags": "terminalreact",
+"keywords": "",
+"url": "doc_react_getting_started.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Товароучёт",
+"tags": "terminalreact",
+"keywords": "",
+"url": "doc_react_inventoryAPI.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Манифест приложения на React Native",
+"tags": "terminalreact",
+"keywords": "",
+"url": "doc_react_manifest.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Вызов окон смарт-терминала",
+"tags": "terminalreact",
+"keywords": "",
+"url": "doc_react_navigationAPI.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Работа с чеком",
+"tags": "terminalreact",
+"keywords": "",
+"url": "doc_react_receipt.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Работа с чеком",
+"tags": "terminalreact",
+"keywords": "",
+"url": "doc_react_receipt.html",
 "summary": ""
 }
 ,

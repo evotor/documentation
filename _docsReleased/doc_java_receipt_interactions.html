@@ -505,6 +505,72 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
+        <a href="#">REACT SDK</a>
+        
+        <ul>
+            
+            
+            
+            <li><a href="doc_react_getting_started.html">Подготовка среды для разработки на React Native</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_manifest.html">Манифест React Native приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_navigationAPI.html">Открытие окон смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_app_installation.html">Установка приложения на смарт-терминал</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_usersAPI.html">Работа с пользователями</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_receipt.html">Работа с чеками</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_devices.html">Работа с подключаемым оборудованием</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_inventoryAPI.html">Товароучёт</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        
         <a href="#">JavaScript SDK</a>
         
         <ul>
@@ -622,7 +688,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            <li><a href="doc_java_app_tutorial.html">Сборка и установка демонстрационного приложения</a></li>
             
             
             
@@ -854,7 +920,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">alcoholProductKindCode</code> – код вида продукции ФСРАР. Может быть <code class="highlighter-rouge">null</code>.</li>
   <li><code class="highlighter-rouge">tareVolume</code> – объём тары. Может быть <code class="highlighter-rouge">null</code>.</li>
   <li>
-    <p><code class="highlighter-rouge">extraKeys</code> – метод, который позволяет добавлять к позиции в чеке дополнительные ключи (идентификаторы). Каждый ключ имеет описание (<code class="highlighter-rouge">description</code>), которое отображается в интерфейсе и печатается на чеке (можно передавать <code class="highlighter-rouge">null</code>), идентификатор (<code class="highlighter-rouge">identity</code>) и хранит данные о приложении, создавшем ключ (<code class="highlighter-rouge">appId</code>).</p>
+    <p><code class="highlighter-rouge">extraKeys</code> – дополнительные ключи (идентификаторы). Каждый ключ имеет описание (<code class="highlighter-rouge">description</code>), которое отображается в интерфейсе и печатается на чеке (можно передавать <code class="highlighter-rouge">null</code>), идентификатор (<code class="highlighter-rouge">identity</code>) и хранит данные о приложении, создавшем ключ (<code class="highlighter-rouge">appId</code>).</p>
 
     <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Приложение записывает дополнительные ключи в чек только под своим идентификатором.</div>
   </li>
@@ -1185,191 +1251,6 @@ $('#toc').on('click', 'a', function() {
 <span class="o">}</span>
 </code></pre>
 </div>
-
-<h2 id="section-1">Получение событий об открытии чека, обновлении базы товаров или результате изменения чека</h2>
-
-<p>Смарт-терминал не ждёт ответ от приложения на широковещательные сообщения. Чтобы получать сообщения о результате изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">ru</span><span class="o">.</span><span class="na">evotor</span><span class="o">.</span><span class="na">consumer</span><span class="o">.</span><span class="na">consumer</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.content.BroadcastReceiver</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Toast</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">ru.evotor.framework.core.action.event.receipt.position_edited.PositionAddedEvent</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AddPositionBroadcastReceiver</span> <span class="kd">extends</span> <span class="n">BroadcastReceiver</span> <span class="o">{</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceive</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span>
-        <span class="o">{</span> <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">"UUID: "</span> <span class="o">+</span> <span class="n">PositionAddedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">intent</span><span class="o">.</span><span class="na">getExtras</span><span class="o">()).</span><span class="na">getReceiptUuid</span><span class="o">(),</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span> <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<p>Объявите приёмник в манифесте приложения:</p>
-
-<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;receiver</span>
-        <span class="na">android:name=</span><span class="s">".AddPositionBroadcastReceiver"</span>
-        <span class="na">android:enabled=</span><span class="s">"true"</span>
-        <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;intent-filter&gt;</span>
-            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evotor.intent.action.receipt.sell.POSITION_ADDED"</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/intent-filter&gt;</span>
-    <span class="nt">&lt;/receiver&gt;</span>
-</code></pre>
-</div>
-
-<h2 id="section-2">Сообщения о результатах изменения чека</h2>
-
-<p>При открытии чека (продажи или возврата) приходит сообщение:</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ReceiptOpenedEvent</span> <span class="o">{</span>
-    <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.OPENED"</span><span class="o">;</span>
-    <span class="n">String</span> <span class="n">BROADCAST_ACTION_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.payback.OPENED"</span><span class="o">;</span>
-    <span class="n">String</span> <span class="n">KEY_UUID</span> <span class="o">=</span> <span class="s">"uuid"</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<p>При добавлении позиции приходит сообщение:</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionAddedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.POSITION_ADDED"</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.payback.POSITION_ADDED"</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">PositionAddedEvent</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">extras</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">extras</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="nf">PositionAddedEvent</span><span class="o">(</span><span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span> <span class="n">Position</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">,</span> <span class="n">position</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<p>При изменении позиции приходит сообщение:</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionEditedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.POSITION_EDITED"</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.payback.POSITION_EDITED"</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">PositionEditedEvent</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">extras</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">extras</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="nf">PositionEditedEvent</span><span class="o">(</span><span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span> <span class="n">Position</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">,</span> <span class="n">position</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<p>При удалении позиции приходит сообщение:</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionRemovedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.POSITION_REMOVED"</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.payback.POSITION_REMOVED"</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">PositionRemovedEvent</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">extras</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">extras</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="nf">PositionRemovedEvent</span><span class="o">(</span><span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span> <span class="n">Position</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">,</span> <span class="n">position</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<p>При обновлении базы товаров приходит сообщение:</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionRemovedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_PRODUCTS_UPDATED</span> <span class="o">=</span> <span class="s">"evotor.intent.action.inventory.PRODUCTS_UPDATED"</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">ProductsUpdatedEvent</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">extras</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">extras</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="nf">ProductsUpdatedEvent</span><span class="o">(</span><span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span> <span class="n">Position</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">,</span> <span class="n">position</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<p>При <a href="./doc_java_receipt_creation.html">очистке чека</a> приходит сообщение:</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReceiptClearedEvent</span> <span class="kd">extends</span> <span class="n">ReceiptEvent</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT_CLEARED</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.CLEARED"</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_PAYBACK_RECEIPT_CLEARED</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.payback.CLEARED"</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">ReceiptClearedEvent</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">String</span> <span class="n">receiptUuid</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Nullable</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">ReceiptClearedEvent</span> <span class="nf">create</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">bundle</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">bundle</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="n">String</span> <span class="n">receiptUuid</span> <span class="o">=</span> <span class="n">getReceiptUuid</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">receiptUuid</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">ReceiptClearedEvent</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<p>Прочие уведомления:</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyReceiver</span> <span class="kd">extends</span> <span class="n">BroadcastReceiver</span> <span class="o">{</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceive</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">action</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getAction</span><span class="o">();</span>
-        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getExtras</span><span class="o">();</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="n">action</span><span class="o">);</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.cashDrawer.OPEN"</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">CashDrawerOpenEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.cashOperation.IN"</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"total"</span> <span class="o">+</span> <span class="n">CashInEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getTotal</span><span class="o">().</span><span class="na">toPlainString</span><span class="o">());</span>
-            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">CashInEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getDocumentUuid</span><span class="o">());</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.cashOperation.CASH_OUT"</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"total"</span> <span class="o">+</span> <span class="n">CashOutEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getTotal</span><span class="o">().</span><span class="na">toPlainString</span><span class="o">());</span>
-            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">CashOutEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getDocumentUuid</span><span class="o">());</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.inventory.CARD_OPEN"</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">ProductCardOpenedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getProductUuid</span><span class="o">());</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.receipt.sell.CLEARED"</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">ReceiptClearedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getReceiptUuid</span><span class="o">());</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.receipt.payback.CLEARED"</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">ReceiptClearedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getReceiptUuid</span><span class="o">());</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.receipt.sell.RECEIPT_CLOSED"</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">ReceiptClosedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getReceiptUuid</span><span class="o">());</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.receipt.payback.RECEIPT_CLOSED"</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">ReceiptClosedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getReceiptUuid</span><span class="o">());</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.receipt.sell.OPENED"</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">ReceiptOpenedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getReceiptUuid</span><span class="o">());</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">action</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"evotor.intent.action.receipt.payback.OPENED"</span><span class="o">))</span> <span class="o">{</span>
-            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"QWEASD"</span><span class="o">,</span> <span class="s">"uuid"</span> <span class="o">+</span> <span class="n">ReceiptOpenedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">).</span><span class="na">getReceiptUuid</span><span class="o">());</span>
-        <span class="o">}</span>
-
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<p>Где:
-<code class="highlighter-rouge">CashInEvent</code> - внесение наличных.
-<code class="highlighter-rouge">CashDrawerOpenEvent</code> - открытие денежного ящика.
-<code class="highlighter-rouge">CashOutEvent</code> - выдача наличных.
-<code class="highlighter-rouge">ReceiptClosedEvent</code> - закрытие чека.</p>
 
 
     <div class="tags">
