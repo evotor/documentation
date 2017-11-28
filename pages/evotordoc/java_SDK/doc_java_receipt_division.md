@@ -116,6 +116,8 @@ fun getPaymentSystems(context: Context): List<Pair<PaymentSystem, List<PaymentAc
 
 ### Разделение платежей в чеке {#severalPayments}
 
+Пример разделения чека на несколько платежей в [демонстрационном приложении](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/SplitService.java).
+
 ```java
         processorMap.put(
                 PaymentSelectedEvent.NAME_SELL_RECEIPT,
@@ -146,6 +148,8 @@ fun getPaymentSystems(context: Context): List<Pair<PaymentSystem, List<PaymentAc
 ```
 
 ### Разделение чека на несколько печатных групп {#severalPrintGroups}
+
+Пример разделения чека на несколько печатных групп в [демонстрационном приложении](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/SplitGroupService.java).
 
 Пример печати квитанции (`INVOICE`)
 

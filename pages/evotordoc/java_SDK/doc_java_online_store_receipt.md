@@ -101,6 +101,8 @@ folder: java_SDK
 
 ## Пример
 
+Пример печати электронных чеков в [демонстрационном приложении](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/MainActivity.java).
+
 Существует также более детальный способ создания и передачи чека:
 
 ```java

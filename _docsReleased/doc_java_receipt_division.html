@@ -989,6 +989,8 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="severalPayments">Разделение платежей в чеке</h3>
 
+<p>Пример разделения чека на несколько платежей в <a href="https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/SplitService.java">демонстрационном приложении</a>.</p>
+
 <div class="language-java highlighter-rouge"><pre class="highlight"><code>        <span class="n">processorMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span>
                 <span class="n">PaymentSelectedEvent</span><span class="o">.</span><span class="na">NAME_SELL_RECEIPT</span><span class="o">,</span>
                 <span class="k">new</span> <span class="nf">PaymentSelectedEventProcessor</span><span class="o">()</span> <span class="o">{</span>
@@ -1019,6 +1021,8 @@ $('#toc').on('click', 'a', function() {
 </div>
 
 <h3 id="severalPrintGroups">Разделение чека на несколько печатных групп</h3>
+
+<p>Пример разделения чека на несколько печатных групп в <a href="https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/SplitGroupService.java">демонстрационном приложении</a>.</p>
 
 <p>Пример печати квитанции (<code class="highlighter-rouge">INVOICE</code>)</p>
 
