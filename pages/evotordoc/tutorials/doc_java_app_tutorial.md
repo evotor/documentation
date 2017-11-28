@@ -6,6 +6,7 @@ sidebar: evotordoc_sidebar
 permalink: doc_java_app_tutorial.html
 tags: [java, terminal, receipts, products]
 folder: tutorials
+published: false
 ---
 
 ### Требования

@@ -382,45 +382,45 @@ entries:
 #               REACT SDK                                      #
 ###############################################################
 
-  - title: REACT SDK
-    output: web
-    folderitems:
-    - title: Подготовка среды для разработки на React Native
-      url: /doc_react_getting_started.html
-      output: web
-
-    - title: Манифест React Native приложения
-      url: /doc_react_manifest.html
-      output: web
-
-    - title: Открытие окон смарт-терминала
-      url: /doc_react_navigationAPI.html
-      output: web
-
-    - title: Установка приложения на смарт-терминал
-      url: /doc_react_app_installation.html
-      output: web
-
-    - title: Работа с пользователями
-      url: /doc_react_usersAPI.html
-      output: web
-
-    - title: Работа с чеками
-      url: /doc_react_receipt.html
-      output: web
-
-    - title: Работа с подключаемым оборудованием
-      url: /doc_react_devices.html
-      output: web
-
-    - title: Товароучёт
-      url: /doc_react_inventoryAPI.html
-      output: web
+#  - title: REACT SDK
+#    output: web
+#    folderitems:
+#    - title: Подготовка среды для разработки на React Native
+#      url: /doc_react_getting_started.html
+#      output: web
+#
+#    - title: Манифест React Native приложения
+#      url: /doc_react_manifest.html
+#      output: web
+#
+#    - title: Открытие окон смарт-терминала
+#      url: /doc_react_navigationAPI.html
+#      output: web
+#
+#    - title: Установка приложения на смарт-терминал
+#      url: /doc_react_app_installation.html
+#      output: web
+#
+#    - title: Работа с пользователями
+#      url: /doc_react_usersAPI.html
+#      output: web
+#
+#    - title: Работа с чеками
+#      url: /doc_react_receipt.html
+#      output: web
+#
+#    - title: Работа с подключаемым оборудованием
+#      url: /doc_react_devices.html
+#      output: web
+#
+#    - title: Товароучёт
+#      url: /doc_react_inventoryAPI.html
+#      output: web
 
 ###############################################################
 #               JavaScript SDK                                #
 ###############################################################
-  - title: JavaScript SDK
+  - title: JavaScript SDK [DEPRECATED]
     output: web
     folderitems:
     - title: Подключение шаблона приложения
