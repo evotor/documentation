@@ -420,7 +420,7 @@ entries:
 ###############################################################
 #               JavaScript SDK                                #
 ###############################################################
-  - title: JavaScript SDK [DEPRECATED]
+  - title: JavaScript SDK
     output: web
     folderitems:
     - title: Подключение шаблона приложения
