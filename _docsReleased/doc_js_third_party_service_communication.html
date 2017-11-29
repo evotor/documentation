@@ -796,21 +796,25 @@ $('#toc').on('click', 'a', function() {
 
 <p>Смарт-терминал не поддерживает протокол WebSocket.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Установленные на смарт-терминале приложения могут обращаться только к сторонним сервисам. При этом, сторонние сервисы не должны быть в одной локальной сети со смарт-терминалом. Обращаться к REST API Облака Эвотор нельзя.</div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Установленные на смарт-терминале приложения могут обращаться только к сторонним сервисам. При этом, сторонние сервисы не должны быть в одной локальной сети со смарт-терминалом. Обращаться к REST API Облака Эвотор нельзя.</div>
 
 <h2 id="section">Подготовка к отправке запросов</h2>
 
 <p>Для отправки запросов требуется:</p>
 
 <ul>
-  <li>На портале <a href="https://dev.evotor.ru">dev.evotor.ru</a>, указать список разрешённых URL, к которым может обращаться приложение.</li>
+  <li>На портале dev.evotor.ru, <a href="doc_js_third_party_service_communication.html#urls">указать список разрешённых URL</a>, к которым может обращаться приложение.</li>
   <li>Поддержать возможность обращения к сторонним сервисам в приложении.</li>
-  <li>Установить приложение в <a href="./doc_app_installation.html#MarkeplaceAppInstallation">Магазине приложений</a>.</li>
+  <li>
+    <p><a href="./doc_app_installation.html#MarkeplaceAppInstallation">Установить приложение в Магазине приложений</a>.</p>
+
+    <p>В данном случае установка подразумевает активацию приложения в <a href="https://lk.evotor.ru">Личном кабинете</a> и необходима, чтобы применились URL, которые вы указали на сайте разработчиков.</p>
+  </li>
 </ul>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Если вы разрабатываете Java-приложение, смотрите раздел <a href="./doc_java_third_party_service_communication.html">Обмен сообщениями Java-приложения и стороннего сервиса</a>.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Если вы разрабатываете Java-приложение, смотрите раздел <a href="./doc_java_third_party_service_communication.html">“Обмен сообщениями Java-приложения и стороннего сервиса”</a>.</div>
 
-<h2 id="url">Настройка списка разрешённых URL</h2>
+<h2 id="urls">Настройка списка разрешённых URL</h2>
 
 <p>Чтобы настроить список разрешённых URL:</p>
 
@@ -829,7 +833,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Чтобы задавать маски веб-сайтов используйте <a href="http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum">регулярные выражения</a>.</div>
 
-<p>После создания списка, обмен сообщениями происходит по описанному ниже процессу.</p>
+<p>После создания списка и <a href="./doc_app_installation.html#MarkeplaceAppInstallation">установки приложения в Магазине приложений</a>, обмен сообщениями происходит по описанному ниже процессу.</p>
 
 <h2 id="http-">Шаг 1. Приложение отправляет HTTP-сообщение</h2>
 
@@ -896,7 +900,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Терминал перехватывает сообщение и передаёт его в облако Эвотор.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Убедитесь, что ваше приложение не использует перечисленные ниже заголовки. В противном случае, смарт-терминал перезапишет их содержимое.</div>
+<p>Заголовки, которые терминал добавляет к запросу вашего приложения:</p>
 
 <ul>
   <li><code class="highlighter-rouge">X-Device-ID</code></li>
@@ -916,6 +920,8 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Transfer-Encoding</code></li>
 </ul>
 
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Убедитесь, что ваше приложение не использует перечисленные заголовки. В противном случае, смарт-терминал перезапишет их содержимое.</div>
+
 <h2 id="section-2">Шаг 3. Облако передаёт сообщение адресату</h2>
 
 <p>Облако удаляет служебные заголовки, добавляет свои заголовки и передаёт сообщение адресату.</p>
@@ -926,7 +932,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">X-Evotor-Store-Uuid</code> – содержит идентификатор магазина в формате uuid4, к которому привязан терминал.</li>
   <li><code class="highlighter-rouge">X-Evotor-Device-UUID</code> – содержит идентификатор устройства в формате uuid4, полученный по запросу к <code class="highlighter-rouge">/api/v1/inventories/devices</code>.</li>
   <li><code class="highlighter-rouge">X-Evotor-User-Id</code> – содержит идентификатор пользователя в Облаке Эвотор.</li>
-  <li><code class="highlighter-rouge">Authorization</code> – содержит <a href="./doc_evotor_api_authorization.html#usersToken">токен пользователя</a>. Токен необходим для bearer-авторизации.</li>
+  <li><code class="highlighter-rouge">Authorization</code> – содержит <a href="./doc_evotor_api_authorization.html#usersToken">токен пользователя приложения стороннего сервиса</a>. Токен необходим для bearer-авторизации.</li>
 </ul>
 
 <p>Сторонний сервер получает сообщение от облака Эвотор и определяет отправителя с помощью заголовка Authorization.</p>
