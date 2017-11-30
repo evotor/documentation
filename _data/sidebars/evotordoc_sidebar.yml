@@ -358,6 +358,10 @@ entries:
       url: /doc_java_inventory.html
       output: web
 
+    - title: Обработка событий смарт-терминала
+      url: /doc_java_st_events.html
+      output: web
+
       subfolders:
       - title: Работа с оборудованием
         output: web

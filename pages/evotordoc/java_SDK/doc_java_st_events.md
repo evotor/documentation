@@ -1,17 +1,17 @@
 ---
 title: Обработка событий смарт-терминала
-keywords: позиция, чек, события, открыть, добавить, изменить
-summary: "Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека."
+keywords: позиция, чек, события
+summary: Приложение может добавлять, удалять и изменять позиции в чеке. Если вы хотите получать события изменения чека или обновления базы продуктов, например, для логирования и оповещения пользователей, используйте приёмник широковещательных сообщений. В этом случае смарт-терминал не ждёт ответа от приложения. События приходят как при продаже, так и при возврате товара.
 sidebar: evotordoc_sidebar
-permalink: doc_java_receipt_interactions.html
+permalink: doc_java_st_events.html
 tags: [terminal, java, Receipts]
 folder: java_SDK
-published: false
+published: true
 ---
 
 ## Получение событий об открытии чека, обновлении базы товаров или результате изменения чека
 
-Смарт-терминал не ждёт ответ от приложения на широковещательные сообщения. Чтобы получать сообщения о результате изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:
+Смарт-терминал не ждёт ответ от приложения на широковещательные сообщения. Чтобы получать сообщения о результате изменения позиций в чеке, зарегистрируйте приёмник широковещательных сообщений:
 
 ```java
 package ru.evotor.consumer.consumer;
@@ -48,6 +48,8 @@ public class AddPositionBroadcastReceiver extends BroadcastReceiver {
 
 ## Сообщения о результатах изменения чека
 
+### Событие открытия чека
+
 При открытии чека (продажи или возврата) приходит сообщение:
 
 ```java
@@ -57,6 +59,8 @@ public interface ReceiptOpenedEvent {
     String KEY_UUID = "uuid";
 }
 ```
+
+### Событие добавления позиции в чек
 
 При добавлении позиции приходит сообщение:
 
@@ -75,6 +79,8 @@ public class PositionAddedEvent extends PositionEvent {
 }
 ```
 
+### Событие изменения позиции в чеке
+
 При изменении позиции приходит сообщение:
 
 ```java
@@ -91,6 +97,8 @@ public class PositionEditedEvent extends PositionEvent {
     }
 }
 ```
+
+### Событие удаления позиции из чека
 
 При удалении позиции приходит сообщение:
 
@@ -109,6 +117,8 @@ public class PositionRemovedEvent extends PositionEvent {
 }
 ```
 
+### Событие обновления базы товаров
+
 При обновлении базы товаров приходит сообщение:
 
 ```java
@@ -124,6 +134,8 @@ public class PositionRemovedEvent extends PositionEvent {
     }
 }
 ```
+
+### Событие очистки чека
 
 При [очистке чека](./doc_java_receipt_creation.html) приходит сообщение:
 
@@ -150,7 +162,9 @@ public class ReceiptClearedEvent extends ReceiptEvent {
 }
 ```
 
-Прочие уведомления:
+## Логирование различных событий смарт-терминала
+
+Ниже представлен пример логирования событий, которые может распространять смарт-терминал. Для обработки таких событий также требуется создавать приёмник широковещательных сообщений.
 
 ```java
 public class MyReceiver extends BroadcastReceiver {
@@ -159,37 +173,31 @@ public class MyReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
         Bundle bundle = intent.getExtras();
-        Log.e("QWEASD", action);
+        Log.e("TAG", action);
         if (action.equals("evotor.intent.action.cashDrawer.OPEN")) {
-            CashDrawerOpenEvent.create(bundle);
+            CashDrawerOpenEvent.create(bundle);//Открытие денежного ящика.
         } else if (action.equals("evotor.intent.action.cashOperation.IN")) {
-            Log.e("QWEASD", "total" + CashInEvent.create(bundle).getTotal().toPlainString());
-            Log.e("QWEASD", "uuid" + CashInEvent.create(bundle).getDocumentUuid());
+            Log.e("TAG", "total" + CashInEvent.create(bundle).getTotal().toPlainString());//Внесение наличных.
+            Log.e("TAG", "uuid" + CashInEvent.create(bundle).getDocumentUuid());
         } else if (action.equals("evotor.intent.action.cashOperation.CASH_OUT")) {
-            Log.e("QWEASD", "total" + CashOutEvent.create(bundle).getTotal().toPlainString());
-            Log.e("QWEASD", "uuid" + CashOutEvent.create(bundle).getDocumentUuid());
+            Log.e("TAG", "total" + CashOutEvent.create(bundle).getTotal().toPlainString());//Изъятие наличных.
+            Log.e("TAG", "uuid" + CashOutEvent.create(bundle).getDocumentUuid());
         } else if (action.equals("evotor.intent.action.inventory.CARD_OPEN")) {
-            Log.e("QWEASD", "uuid" + ProductCardOpenedEvent.create(bundle).getProductUuid());
+            Log.e("TAG", "uuid" + ProductCardOpenedEvent.create(bundle).getProductUuid());//Открытие карточки товара.
         } else if (action.equals("evotor.intent.action.receipt.sell.CLEARED")) {
-            Log.e("QWEASD", "uuid" + ReceiptClearedEvent.create(bundle).getReceiptUuid());
+            Log.e("TAG", "uuid" + ReceiptClearedEvent.create(bundle).getReceiptUuid());//Очистка чека продажи (создание нового чека).
         } else if (action.equals("evotor.intent.action.receipt.payback.CLEARED")) {
-            Log.e("QWEASD", "uuid" + ReceiptClearedEvent.create(bundle).getReceiptUuid());
+            Log.e("TAG", "uuid" + ReceiptClearedEvent.create(bundle).getReceiptUuid());//Очистка чека возврата (создание нового чека).
         } else if (action.equals("evotor.intent.action.receipt.sell.RECEIPT_CLOSED")) {
-            Log.e("QWEASD", "uuid" + ReceiptClosedEvent.create(bundle).getReceiptUuid());
+            Log.e("TAG", "uuid" + ReceiptClosedEvent.create(bundle).getReceiptUuid());//Закрытие чека продажи.
         } else if (action.equals("evotor.intent.action.receipt.payback.RECEIPT_CLOSED")) {
-            Log.e("QWEASD", "uuid" + ReceiptClosedEvent.create(bundle).getReceiptUuid());
+            Log.e("TAG", "uuid" + ReceiptClosedEvent.create(bundle).getReceiptUuid());//Закрытие чека возврата.
         } else if (action.equals("evotor.intent.action.receipt.sell.OPENED")) {
-            Log.e("QWEASD", "uuid" + ReceiptOpenedEvent.create(bundle).getReceiptUuid());
+            Log.e("TAG", "uuid" + ReceiptOpenedEvent.create(bundle).getReceiptUuid());//Открытие чека продажи.
         } else if (action.equals("evotor.intent.action.receipt.payback.OPENED")) {
-            Log.e("QWEASD", "uuid" + ReceiptOpenedEvent.create(bundle).getReceiptUuid());
+            Log.e("TAG", "uuid" + ReceiptOpenedEvent.create(bundle).getReceiptUuid());//Открытие чека возврата.
         }
 
     }
 }
 ```
-
-Где:
-`CashInEvent` - внесение наличных.
-`CashDrawerOpenEvent` - открытие денежного ящика.
-`CashOutEvent` - выдача наличных.
-`ReceiptClosedEvent` - закрытие чека.
