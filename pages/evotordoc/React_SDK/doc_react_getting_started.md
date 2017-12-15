@@ -6,7 +6,7 @@ sidebar: evotordoc_sidebar
 permalink: doc_react_getting_started.html
 tags: [terminal, react]
 folder: react_SDK
-published: true
+published: false
 ---
 
 React Native - технология, которая позволяет использовать JavaScript для создания мобильных приложений. С помощью React Native вы можете обращаться к API написанному на Java используя только JavaScript.

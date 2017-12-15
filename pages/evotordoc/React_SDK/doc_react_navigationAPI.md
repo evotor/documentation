@@ -6,7 +6,7 @@ sidebar: evotordoc_sidebar
 permalink: doc_react_navigationAPI.html
 tags: [terminal, react]
 folder: react_SDK
-published: true
+published: false
 ---
 
 Для вызова окон смарт-терминала используйте класс [`NavigationApi`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/navigation/NavigationApi.kt).

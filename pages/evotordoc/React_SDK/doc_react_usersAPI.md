@@ -6,7 +6,7 @@ sidebar: evotordoc_sidebar
 permalink: doc_react_usersAPI.html
 tags: [terminal, react]
 folder: react_SDK
-published: true
+published: false
 ---
 
 В разделе приведены методы для работы с пользователями смарт-терминала. Методы React Native обращаются к Java интерфейсу описанному в разделе ["Работа с пользователями смарт-терминала"](./doc_java_app_users.html).

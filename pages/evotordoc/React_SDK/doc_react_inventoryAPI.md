@@ -6,7 +6,7 @@ sidebar: evotordoc_sidebar
 permalink: doc_react_inventoryAPI.html
 tags: [terminal, react]
 folder: react_SDK
-published: true
+published: false
 ---
 В разделе приведены методы для работы с базой товаров на смарт-терминале. Методы React Native обращаются к Java интерфейсу описанному в разделе ["Товароучёт"](./doc_java_inventory.html).
 

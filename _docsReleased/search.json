@@ -547,7 +547,7 @@
 "tags": "terminaljavaReceipts",
 "keywords": "позиция, чек, события, открыть, добавить, изменить",
 "url": "doc_java_receipt_interactions.html",
-"summary": "Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека."
+"summary": "Приложение может добавлять, удалять и изменять позиции в чеке. Если вы хотите работать с позициями в чеке используйте службу, чтобы получать события о намерении изменения чека. В этом случае, смарт-терминал ждёт ответа от приложения. События приходят как при продаже, так и при возврате товара."
 }
 ,
 
@@ -570,6 +570,17 @@
 "keywords": "оборудование, весы, вес, масса, метод",
 "url": "doc_java_scales.html",
 "summary": ""
+}
+,
+
+
+
+{
+"title": "Обработка событий смарт-терминала",
+"tags": "terminaljavaReceipts",
+"keywords": "позиция, чек, события",
+"url": "doc_java_st_events.html",
+"summary": "Приложение может добавлять, удалять и изменять позиции в чеке. Если вы хотите получать события изменения чека или обновления базы продуктов, например, для логирования и оповещения пользователей, используйте приёмник широковещательных сообщений. В этом случае смарт-терминал не ждёт ответа от приложения. События приходят как при продаже, так и при возврате товара."
 }
 ,
 
@@ -701,105 +712,6 @@
 "tags": "",
 "keywords": "",
 "url": "doc_payoff.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Установка приложения на смарт-терминал",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_app_installation.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Работа с подключаемым оборудованием",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_devices.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Подготовка среды для разработки на React Native",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_getting_started.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Товароучёт",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_inventoryAPI.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Манифест приложения на React Native",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_manifest.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Вызов окон смарт-терминала",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_navigationAPI.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Работа с чеком",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_receipt.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Работа с чеком",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_receipt.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Работа с пользователями смарт-терминала",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_usersAPI.html",
 "summary": ""
 }
 ,
