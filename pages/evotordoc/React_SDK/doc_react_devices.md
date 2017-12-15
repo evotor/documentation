@@ -6,7 +6,7 @@ sidebar: evotordoc_sidebar
 permalink: doc_react_devices.html
 tags: [terminal, react]
 folder: react_SDK
-published: true
+published: false
 ---
 
 ## Подключение оборудования
