@@ -1,0 +1,49 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+
+entries:
+- title: Интерфейсы React Native SDK
+  product:  Интерфейсы React Native SDK
+  version:
+  folders:
+
+  - title: Введение
+    url: /react_reference_introduction.html
+    output: web
+
+  - title: Интерфейсы
+    output: web
+    folderitems:
+
+      - title: User API
+        url: /react_reference_userapi.html
+        output: web
+
+      - title: Receipt API
+        url: /react_reference_receiptapi.html
+        output: web
+
+      - title: Inventory API
+        url: /react_reference_inventoryapi.html
+        output: web
+
+      - title: Navigation API
+        url: /react_reference_navigationapi.html
+        output: web
+
+      - title: Integration API
+        url: /react_reference_integrationapi.html
+        output: web
+
+      - title: Приёмники сообщений
+        url: /react_reference_broadcastreceivers.html
+        output: web
+
+      - title: Подключение устройств
+        url: /react_reference_devices.html
+        output: web
+
+#Может понадобиатся, если не понадобится в течение 2х месяцев - удалить. Сегодня 10.01.2018.
+#  - title: EventHolder (?)
+#    url: /react_reference_enums.html
+#    output: web
