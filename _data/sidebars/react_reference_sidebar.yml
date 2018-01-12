@@ -2,7 +2,7 @@
 
 
 entries:
-- title: Интерфейсы React Native SDK
+- title: React Native SDK
   product:  Интерфейсы React Native SDK
   version:
   folders:
@@ -31,16 +31,68 @@ entries:
         url: /react_reference_navigationapi.html
         output: web
 
-      - title: Integration API
+  - title: Службы
+    output: web
+    folderitems:
+
+      - title: Интеграционные службы
         url: /react_reference_integrationapi.html
         output: web
 
-      - title: Приёмники сообщений
+      - title: Приёмник сообщений
         url: /react_reference_broadcastreceivers.html
         output: web
 
+  - title: Устройства
+    output: web
+    folderitems:
+
       - title: Подключение устройств
-        url: /react_reference_devices.html
+        url: /react_reference_devicesconnection.html
+        output: web
+
+      - title: Принтер чеков
+        url: /react_reference_devicesprinter.html
+        output: web
+
+      - title: Сканер штрихкодов
+        url: /react_reference_devicescanner.html
+        output: web
+
+      - title: Весы
+        url: /react_reference_devicescales.html
+        output: web
+
+  - title: Параметры
+    output: web
+    folderitems:
+
+      - title: Чеки
+        url: /react_reference_parameters_receipt.html
+        output: web
+
+      - title: Устройства
+        url: /react_reference_parameters_device.html
+        output: web
+
+      - title: Товары
+        url: /react_reference_parameters_user.html
+        output: web
+
+      - title: Навигация
+        url: /react_reference_parameters_navigation.html
+        output: web
+
+      - title: Платежи
+        url: /react_reference_parameters_payments.html
+        output: web
+
+      - title: Службы
+        url: /react_reference_parameters_service.html
+        output: web
+
+      - title: Пользователи
+        url: /react_reference_parameters_user.html
         output: web
 
 #Может понадобиатся, если не понадобится в течение 2х месяцев - удалить. Сегодня 10.01.2018.

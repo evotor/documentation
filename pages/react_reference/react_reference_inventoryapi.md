@@ -1,5 +1,5 @@
 ---
-title:
+title: Inventory API
 keywords: react
 sidebar: react_reference_sidebar
 toc: true
@@ -19,7 +19,12 @@ static getAllBarcodesForProduct(productUuid: string, getter: (string[]) => void)
 
 **Описание**
 
+Получает все штрихкоды товара.
+
 **Параметры**
+
+* `productUuid`
+* `getter`
 
 **Возвращает**
 
@@ -31,7 +36,12 @@ static getProductByUuid(uuid: string, getter: (ProductItem | null) => void): voi
 
 **Описание**
 
+Получает товар по идентификатору (`uuid`)
+
 **Параметры**
+
+* `uuid`
+* `getter`
 
 **Возвращает**
 
@@ -43,7 +53,12 @@ static getField(fieldUuid: string, getter: (Field | null) => void): void
 
 **Описание**
 
+Получает поле.
+
 **Параметры**
+
+* `fieldUuid`
+* `getter`
 
 **Возвращает**
 
@@ -55,6 +70,11 @@ static getProductExtras(productUuid: string, getter: (ProductExtra[]) => void): 
 
 **Описание**
 
+Получает дополнительные поля товара.
+
 **Параметры**
+
+* `productUuid`
+* `getter`
 
 **Возвращает**

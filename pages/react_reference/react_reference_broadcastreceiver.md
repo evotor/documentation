@@ -1,5 +1,5 @@
 ---
-title:
+title: Приёмники широковещательных сообщений
 keywords: react
 sidebar: react_reference_sidebar
 toc: true
@@ -14,12 +14,16 @@ folder: react_reference
 ### addEventListener
 
 ```js
-static addEventListener(type: BroadcastReceiverEventType, listener?: BroadcastReceiveListener, isGlobal: boolean): void
+static addEventListener(type: BroadcastReceiverEventType, listener: BroadcastReceiverListener, isGlobal: boolean = true): void
 ```
 
 **Описание**
 
 **Параметры**
+
+* `type`
+* `listener`
+* `isGlobal`
 
 **Возвращает**
 
@@ -32,5 +36,8 @@ static removeEventListener(type: BroadcastReceiverEventType, listener?: Broadcas
 **Описание**
 
 **Параметры**
+
+* `type`
+* `listener?`
 
 **Возвращает**

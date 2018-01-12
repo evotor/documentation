@@ -1,5 +1,5 @@
 ---
-title:
+title: Navigation API
 keywords: react
 sidebar: react_reference_sidebar
 toc: true
@@ -19,6 +19,22 @@ static createIntentForSellReceiptEdit(): Intent
 
 **Описание**
 
+Создаёт намерение (`intent`) изменения чека продажи.
+
+**Параметры**
+
+**Возвращает**
+
+### createIntentForPaybackReceiptEdit
+
+```js
+static createIntentForPaybackReceiptEdit(): Intent
+```
+
+**Описание**
+
+Создаёт намерение (`intent`) изменения чека возврата.
+
 **Параметры**
 
 **Возвращает**
@@ -30,6 +46,8 @@ static createIntentForSellReceiptPayment(): Intent
 ```
 
 **Описание**
+
+Создаёт намерение (`intent`) оплаты по чеку продажи.
 
 **Параметры**
 
@@ -43,6 +61,8 @@ static createIntentForPaybackReceiptPayment(): Intent
 
 **Описание**
 
+Создаёт намерение (`intent`) оплаты по чеку возврата.
+
 **Параметры**
 
 **Возвращает**
@@ -54,6 +74,8 @@ static createIntentForCashReceiptSettings(): Intent
 ```
 
 **Описание**
+
+Создаёт намерение (`intent`) оплаты по чеку продажи.
 
 **Параметры**
 
@@ -79,7 +101,11 @@ static getIntent(getter: (Intent) => void)
 
 **Описание**
 
+Получает намерение (`intent`).
+
 **Параметры**
+
+* `getter`
 
 **Возвращает**
 
@@ -91,7 +117,11 @@ static startActivity(intent: Intent)
 
 **Описание**
 
+Запускает операцию (`activity`).
+
 **Параметры**
+
+* `intent`
 
 **Возвращает**
 
@@ -105,6 +135,9 @@ static startActivityForResult(intent: Intent, requestCode: number)
 
 **Параметры**
 
+* `intent`
+* `requestCode`
+
 **Возвращает**
 
 ### setResult
@@ -116,6 +149,22 @@ static setResult(resultCode: number)
 **Описание**
 
 **Параметры**
+
+* `resultCode`
+
+**Возвращает**
+
+### setIntegrationResult
+
+```js
+static setIntegrationResult(result: IntegrationEventResult)
+```
+
+**Описание**
+
+**Параметры**
+
+* `result`
 
 **Возвращает**
 
@@ -141,6 +190,9 @@ static addEventListener(type: NavigationEventType, listener: NavigationEventList
 
 **Параметры**
 
+* `type`
+* `listener`
+
 **Возвращает**
 
 ### removeEventListener
@@ -152,5 +204,8 @@ static removeEventListener(type: NavigationEventType, listener?: NavigationEvent
 **Описание**
 
 **Параметры**
+
+* `type`
+* `listener`
 
 **Возвращает**

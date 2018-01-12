@@ -3,7 +3,7 @@ title: User API
 keywords: react
 sidebar: react_reference_sidebar
 toc: true
-permalink: react_reference_userapi.html
+permalink: react_reference_parameters_service.html
 folder: react_reference
 ---
 

@@ -1,5 +1,5 @@
 ---
-title:
+title: Интерфейс интеграционных служб
 keywords: react
 sidebar: react_reference_sidebar
 toc: true
@@ -14,12 +14,16 @@ folder: react_reference
 ### addEventListener
 
 ```js
-static addEventListener(type: IntegrationEventType, listener: IntegrationEventListener, isGlobal: boolean): void
+static addEventListener(type: IntegrationEventType, listener: IntegrationEventListener, isGlobal: boolean = true): void
 ```
 
 **Описание**
 
 **Параметры**
+
+* `type`
+* `listener`
+* `isGlobal`
 
 **Возвращает**
 
@@ -33,16 +37,6 @@ static removeEventListener(type: IntegrationEventType): boolean
 
 **Параметры**
 
-**Возвращает**
-
-### setIntegrationResult
-
-```js
-static setIntegrationResult(result: IntegrationEventResult)
-```
-
-**Описание**
-
-**Параметры**
+* `type`
 
 **Возвращает**

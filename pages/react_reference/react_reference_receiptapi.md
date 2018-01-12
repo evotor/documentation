@@ -1,5 +1,5 @@
 ---
-title:
+title: Receipt API
 keywords: react
 sidebar: react_reference_sidebar
 toc: true
@@ -19,12 +19,12 @@ static getPositionByBarcode(barcode: string, getter: (Position[]) => void): void
 
 **Описание**
 
-Получить това
+Получает товарную позицию по значению штрихкода.
 
 **Параметры**
 
-* `barcode` –
-* `getter` –
+* `barcode`
+* `getter`
 
 **Возвращает**
 
@@ -36,7 +36,12 @@ static openReceipt(positions: Position[], extra: SetExtra | null): void
 
 **Описание**
 
+Открывает чек, сформированный в смарт-терминале.
+
 **Параметры**
+
+* `positions`
+* `extra`
 
 **Возвращает**
 
@@ -54,7 +59,17 @@ static sendReceipt(printReceipts: PrintReceipt[],
 
 **Описание**
 
+Передаёт чек, сформированный в приложении, в смарт-терминал.
+
 **Параметры**
+
+* `printReceipts`
+* `extra`
+* `phone`
+* `email`
+* `discount`
+* `onSuccess`
+* `onError`
 
 **Возвращает**
 
@@ -66,7 +81,12 @@ static getReceiptByType(type: ReceiptType, getter: (Receipt | null) => void): vo
 
 **Описание**
 
+Получает чек по типу: чек продажи (`SELL`) или чек возврата (`PAYBACK`).
+
 **Параметры**
+
+* `type`
+* `getter`
 
 **Возвращает**
 
@@ -78,7 +98,12 @@ static getReceiptByUuid(uuid: string, getter: (Receipt | null) => void): void
 
 **Описание**
 
+Получает чек по идентификатору (`uuid`).
+
 **Параметры**
+
+* `uuid`
+* `getter`
 
 **Возвращает**
 
@@ -90,6 +115,11 @@ static getReceiptHeaders(type: ReceiptType | null, getter: (ReceiptHeader[]) => 
 
 **Описание**
 
+Получает заголовки чека.
+
 **Параметры**
+
+* `type`
+* `getter`
 
 **Возвращает**
