@@ -2,13 +2,23 @@
 ## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
 topnav:
 - title: Topnav
-
   items:
     - title: Разработчикам
       external_url: https://dev.evotor.ru/
     - title: Справочник API
       external_url: https://api.evotor.ru/
-    - title: SDK смарт-терминала
-      url: /doc_java_integration_library_connection.html
+#    - title: SDK смарт-терминала
+#      url: /doc_java_integration_library_connection.html
     - title: Что нового
       url: /whats_new.html
+
+#Topnav dropdowns
+topnav_dropdowns:
+- title: Topnav dropdowns
+  folders:
+    - title: Справочники
+      folderitems:
+        - title: Java SDK
+          url: /java_reference_introduction.html
+        - title: React Ntive SDK
+          url: /react_reference_introduction.html
