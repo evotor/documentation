@@ -11,9 +11,7 @@ folder: react_reference
 
 ## Методы
 
-### `getAllUsers`
-
-#### getAllUsers
+### getAllUsers
 
 ```js
 static getAllUsers(getter: (User[]) => void): void
@@ -25,7 +23,7 @@ static getAllUsers(getter: (User[]) => void): void
 
 **Параметры**
 
-* `getter`
+* `getter` – функция, в параметры которой требуется передавать массив [пользователей](./react_reference_parameters_user.html#user).
 
 **Возвращает**
 
@@ -41,7 +39,7 @@ static getAuthenticatedUser(getter: (User | null) => void): void
 
 **Параметры**
 
-* `getter`
+* `getter` – функция, в параметры которой требуется передавать [пользователя](./react_reference_parameters_user.html#user).
 
 **Возвращает**
 
@@ -57,7 +55,7 @@ static getAllGrants(getter: (Grant[]) => void): void
 
 **Параметры**
 
-* `getter`
+* `getter` – функция, в параметры которой требуется передавать массив [прав пользователей](./react_reference_parameters_user.html#grant).
 
 **Возвращает**
 
@@ -73,6 +71,6 @@ static getGrantsOfAuthenticatedUser(getter: (Grant[]) => void): void
 
 **Параметры**
 
-* `getter`
+* `getter` – функция, в параметры которой требуется передавать [права пользователей](./react_reference_parameters_user.html#grant).
 
 **Возвращает**

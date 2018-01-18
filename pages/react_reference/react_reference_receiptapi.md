@@ -23,8 +23,8 @@ static getPositionByBarcode(barcode: string, getter: (Position[]) => void): void
 
 **Параметры**
 
-* `barcode`
-* `getter`
+* `barcode`– штрихкод товара. Строка.
+* `getter` – функция, в параметры которой передаётся массив [позиций](./react_reference_parameters_receipt.html#position).
 
 **Возвращает**
 
@@ -40,8 +40,8 @@ static openReceipt(positions: Position[], extra: SetExtra | null): void
 
 **Параметры**
 
-* `positions`
-* `extra`
+* `positions` – массив [позиций](./react_reference_parameters_receipt.html#position).
+* `extra` – указывает наличие [дополнительных полей](./react_reference_parameters_receipt.html#setextra) в чеке.
 
 **Возвращает**
 
@@ -63,11 +63,11 @@ static sendReceipt(printReceipts: PrintReceipt[],
 
 **Параметры**
 
-* `printReceipts`
-* `extra`
-* `phone`
-* `email`
-* `discount`
+* `printReceipts` – [массив](./react_reference_parameters_receipt.html#printreceipt)
+* `extra` – указывает наличие [дополнительных полей](./react_reference_parameters_receipt.html#setextra) в чеке.
+* `phone` – телефонный номер покупателя. Строка.
+* `email` – адрес электронной почты покупателя. Строка.
+* `discount` – скидка на чек. Число.
 * `onSuccess`
 * `onError`
 
@@ -85,8 +85,8 @@ static getReceiptByType(type: ReceiptType, getter: (Receipt | null) => void): vo
 
 **Параметры**
 
-* `type`
-* `getter`
+* `type` – тип чека: чек продажи (`SELL`) или чек возврата (`PAYBACK`).
+* `getter` – функция, в параметры которой передаётся чек.
 
 **Возвращает**
 
@@ -102,8 +102,8 @@ static getReceiptByUuid(uuid: string, getter: (Receipt | null) => void): void
 
 **Параметры**
 
-* `uuid`
-* `getter`
+* `uuid` – идентификатор чека. Строка.
+* `getter` – функция, в параметры которой передаётся чек.
 
 **Возвращает**
 
@@ -119,7 +119,7 @@ static getReceiptHeaders(type: ReceiptType | null, getter: (ReceiptHeader[]) => 
 
 **Параметры**
 
-* `type`
-* `getter`
+* `type` – тип чека: чек продажи (`SELL`) или чек возврата (`PAYBACK`).
+* `getter` – функция, в параметры которой передаётся массив [заголовков чека](./react_reference_parameters_receipt.html#receiptheader).
 
 **Возвращает**

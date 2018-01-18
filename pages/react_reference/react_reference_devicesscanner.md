@@ -1,9 +1,9 @@
 ---
-title: Сканер штрихкодов
+title: Scanner
 keywords: react
 sidebar: react_reference_sidebar
 toc: true
-permalink: react_reference_devices.html
+permalink: react_reference_devicescanner.html
 folder: react_reference
 ---
 
@@ -13,22 +13,19 @@ folder: react_reference
 
 ### addEventListener
 
-[Прослушивание событий]
-
-Тип события: ScannerEventType
-Тип ckeifntkz: ScannerEventListener
-
 ```js
 static addEventListener(type: ScannerEventType, listener: ScannerEventListener, isGlobal: boolean = true): void
 ```
 
 **Описание**
 
+Метод для [подписки приложения на события](./react_reference_introduction.html#eventslistening).
+
 **Параметры**
 
-* `type`
-* `listener`
-* `isGlobal`
+* `type` – тип события. Для получения данных от сканера штрихкодов указывайте тип `ScannerEventType`.
+* `listener` – тип слушателя. Для получения данных от сканера штрихкодов указывайте тип `ScannerEventListener`.
+* `isGlobal` – указывает глобальную доступность метода. По умолчанию `true`.
 
 **Возвращает**
 
@@ -40,14 +37,14 @@ static removeEventListener(type: ScannerEventType, listener?: ScannerEventListen
 
 **Описание**
 
+Метод для отмены подписки на события.
+
 **Параметры**
 
-* `type`
-* `listener`
-Параметр, кототрый отвечает за то, какие сообщения будут приниматься. Принимает значения в зависимости от того, какие сообщения буду приниматься:
-
+* `type` – тип события. Для отмены получения данных от сканера штрихкодов указывайте тип `ScannerEventType`.
+* `listener` – тип слушателя. Для отмены получения данных от сканера штрихкодов указывайте тип `ScannerEventListener`. Не передавайте параметр если хотите удалить все слушатели.
 
 **Возвращает**
 
-* `true` – если `listener` удалён.
-* `false` – если `listener` не удалён.
+* `true` – если слушатель удалён.
+* `false` – если слушатель не удалён.

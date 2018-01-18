@@ -7,72 +7,50 @@ permalink: react_reference_parameters_service.html
 folder: react_reference
 ---
 
-## Описание
-
-## Методы
-
-### `getAllUsers`
-
-#### getAllUsers
+## Класс BeforePositionsEditedEventResult
 
 ```js
-static getAllUsers(getter: (User[]) => void): void
+export class BeforePositionsEditedEventResult {
+    constructor(changes: PositionChange[] | null, extra: SetExtra | null) {}
+}
 ```
 
-**Описание**
-
-Получает список всех пользователей смарт-терминала.
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**
-
-### getAuthenticatedUser
+## Класс ReceiptDiscountEventResult
 
 ```js
-static getAuthenticatedUser(getter: (User | null) => void): void
+export class ReceiptDiscountEventResult {
+    constructor(discount: number, extra: SetExtra | null, changes: PositionChange[]) {}
+}
 ```
 
-**Описание**
-
-Получает данные авторизованного пользователя смарт-терминала.
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**
-
-### getAllGrants
+## Класс PaymentSelectedEventResult
 
 ```js
-static getAllGrants(getter: (Grant[]) => void): void
+export class PaymentSelectedEventResult {
+    constructor(extra: SetExtra | null, paymentParts: PaymentPurpose[]) {}
+}
 ```
 
-**Описание**
-
-Получает все [права](./doc_app_grants.html).
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**
-
-### getGrantsOfAuthenticatedUser
+## Класс PrintGroupRequiredEventResult
 
 ```js
-static getGrantsOfAuthenticatedUser(getter: (Grant[]) => void): void
+export class PrintGroupRequiredEventResult {
+    constructor(extra: SetExtra | null, setPrintGroups: SetPrintGroup[]) {}
+}
 ```
 
-**Описание**
+## Класс PrintExtraRequiredEventResult
 
-Получает [права](./doc_app_grants.html) авторизованного пользователя.
+```js
+export class PrintExtraRequiredEventResult {
+    constructor(extra: SetPrintExtra[]) {}
+}
+```
 
-**Параметры**
+## Класс BroadcastEvent
 
-* `getter`
-
-**Возвращает**
+```js
+export class BroadcastEvent {
+    constructor(action: string, total: string | null, uuid: string | null) {}
+}
+```

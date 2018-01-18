@@ -1,5 +1,5 @@
 ---
-title: Принетр чеков
+title: Printer
 keywords: react
 sidebar: react_reference_sidebar
 toc: true
@@ -15,9 +15,11 @@ static print(printables: [PrintableText, PrintableBarcode, PrintableImage])
 
 **Описание**
 
+Передаёт данные для печати на принтере смарт-терминала.
+
 **Параметры**
 
-* `printables`
+* `printables` – функция, в параметры которой требуется передать массив элементов для печати: [текст](./react_reference_parameters_device.html#PrintableText), [штрихкод](./react_reference_parameters_device.html#PrintableBarcode), [изображение](./react_reference_parameters_device.html#PrintableImage).
 
 **Возвращает**
 
@@ -29,9 +31,11 @@ static getAllowableSymbolsLineLength(getter: (number) => void)
 
 **Описание**
 
+Получает длину печатной строки в символах.
+
 **Параметры**
 
-* `getter`
+* `getter` – функция, в параметры которой передаётся число, указывающее длину печатной строки в символах.
 
 **Возвращает**
 
@@ -43,8 +47,10 @@ static getAllowablePixelLineLength(getter: (number) => void) Promise
 
 **Описание**
 
+Получает длину печатной строки в пикселях.
+
 **Параметры**
 
-* `getter`
+* `getter` – функция, в параметры которой передаётся число, указывающее длину печатной строки в пикселях.
 
 **Возвращает**

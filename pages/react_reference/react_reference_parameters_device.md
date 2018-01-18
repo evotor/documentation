@@ -1,5 +1,5 @@
 ---
-title: User API
+title: Устройства
 keywords: react
 sidebar: react_reference_sidebar
 toc: true
@@ -7,72 +7,52 @@ permalink: react_reference_parameters_device.html
 folder: react_reference
 ---
 
-## Описание
-
-## Методы
-
-### `getAllUsers`
-
-#### getAllUsers
+##  Класс PrintableText {#PrintableText}
 
 ```js
-static getAllUsers(getter: (User[]) => void): void
+export class PrintableText {
+    constructor(text: string) {
+        this.__name__ = 'PrintableText';
+        this.type = 'TEXT';
+        this.value = text;
+    }
+}
 ```
 
-**Описание**
-
-Получает список всех пользователей смарт-терминала.
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**
-
-### getAuthenticatedUser
+##  Класс PrintableBarcode {#PrintableBarcode}
 
 ```js
-static getAuthenticatedUser(getter: (User | null) => void): void
+export class PrintableBarcode {
+    constructor(barcodeValue: string, barcodeType: BarcodeType) {
+        this.__name__ = 'PrintableBarcode';
+        this.type = 'BARCODE';
+        this.value = barcodeValue;
+        this.barcodeType = barcodeType;
+    }
+}
 ```
 
-**Описание**
-
-Получает данные авторизованного пользователя смарт-терминала.
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**
-
-### getAllGrants
+##  Класс PrintableImage {#PrintableImage}
 
 ```js
-static getAllGrants(getter: (Grant[]) => void): void
+export class PrintableImage {
+    constructor(path: string) {
+        this.__name__ = 'PrintableImage';
+        this.type = 'IMAGE';
+        this.value = path;
+    }
+}
 ```
 
-**Описание**
-
-Получает все [права](./doc_app_grants.html).
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**
-
-### getGrantsOfAuthenticatedUser
+##  Класс Weight {#Weight}
 
 ```js
-static getGrantsOfAuthenticatedUser(getter: (Grant[]) => void): void
+export class Weight {
+    constructor(weightInGrams: number, supportStable: boolean, stable: boolean) {
+        this.__name__ = 'Weight';
+        this.weightInGrams = weightInGrams;
+        this.supportStable = supportStable;
+        this.stable = stable;
+    }
+}
 ```
-
-**Описание**
-
-Получает [права](./doc_app_grants.html) авторизованного пользователя.
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**

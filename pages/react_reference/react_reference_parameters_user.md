@@ -1,5 +1,5 @@
 ---
-title: User API
+title: Пользователи
 keywords: react
 sidebar: react_reference_sidebar
 toc: true
@@ -9,70 +9,24 @@ folder: react_reference
 
 ## Описание
 
-## Методы
-
-### `getAllUsers`
-
-#### getAllUsers
+## Класс User {#user}
 
 ```js
-static getAllUsers(getter: (User[]) => void): void
+export class User {
+    constructor(uuid: string,
+                secondName: string | null,
+                firstName: string | null,
+                phone: string | null,
+                pin: string | null,
+                roleUuid: string,
+                roleTitle: string) {}
+}
 ```
 
-**Описание**
-
-Получает список всех пользователей смарт-терминала.
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**
-
-### getAuthenticatedUser
+## Класс Grant {#grant}
 
 ```js
-static getAuthenticatedUser(getter: (User | null) => void): void
+export class Grant {
+    constructor(title: string, roleUuid: string) {}
+}
 ```
-
-**Описание**
-
-Получает данные авторизованного пользователя смарт-терминала.
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**
-
-### getAllGrants
-
-```js
-static getAllGrants(getter: (Grant[]) => void): void
-```
-
-**Описание**
-
-Получает все [права](./doc_app_grants.html).
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**
-
-### getGrantsOfAuthenticatedUser
-
-```js
-static getGrantsOfAuthenticatedUser(getter: (Grant[]) => void): void
-```
-
-**Описание**
-
-Получает [права](./doc_app_grants.html) авторизованного пользователя.
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**

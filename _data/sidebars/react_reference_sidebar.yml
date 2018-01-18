@@ -3,7 +3,7 @@
 
 entries:
 - title: React Native SDK
-  product:  Интерфейсы React Native SDK
+  product:  Классы React Native SDK
   version:
   folders:
 
@@ -11,23 +11,23 @@ entries:
     url: /react_reference_introduction.html
     output: web
 
-  - title: Интерфейсы
+  - title: API
     output: web
     folderitems:
 
-      - title: User API
+      - title: Пользователи
         url: /react_reference_userapi.html
         output: web
 
-      - title: Receipt API
+      - title: Чеки
         url: /react_reference_receiptapi.html
         output: web
 
-      - title: Inventory API
+      - title: Товароучёт
         url: /react_reference_inventoryapi.html
         output: web
 
-      - title: Navigation API
+      - title: Навигация
         url: /react_reference_navigationapi.html
         output: web
 
@@ -35,33 +35,33 @@ entries:
     output: web
     folderitems:
 
-      - title: Интеграционные службы
-        url: /react_reference_integrationapi.html
-        output: web
+              - title: Интеграционные службы
+                url: /react_reference_integrationapi.html
+                output: web
 
-      - title: Приёмник сообщений
-        url: /react_reference_broadcastreceivers.html
-        output: web
+              - title: Широковещательный приёмник
+                url: /react_reference_broadcastreceivers.html
+                output: web
 
   - title: Устройства
     output: web
     folderitems:
 
-      - title: Подключение устройств
-        url: /react_reference_devicesconnection.html
-        output: web
+              - title: Подключение устройств
+                url: /react_reference_devicesconnection.html
+                output: web
 
-      - title: Принтер чеков
-        url: /react_reference_devicesprinter.html
-        output: web
+              - title: Принтер
+                url: /react_reference_devicesprinter.html
+                output: web
 
-      - title: Сканер штрихкодов
-        url: /react_reference_devicescanner.html
-        output: web
+              - title: Сканер
+                url: /react_reference_devicescanner.html
+                output: web
 
-      - title: Весы
-        url: /react_reference_devicescales.html
-        output: web
+              - title: Весы
+                url: /react_reference_devicescales.html
+                output: web
 
   - title: Параметры
     output: web
@@ -76,7 +76,7 @@ entries:
         output: web
 
       - title: Товары
-        url: /react_reference_parameters_user.html
+        url: /react_reference_parameters_inventory.html
         output: web
 
       - title: Навигация
@@ -95,6 +95,17 @@ entries:
         url: /react_reference_parameters_user.html
         output: web
 
+      - title: Типы данных
+        url: /react_reference_parameters_types.html
+        output: web
+
+      - title: Перечисляемые типы данных
+        url: /react_reference_parameters_enumtypes.html
+        output: web
+
+      - title: Ошибки
+        url: /react_reference_parameters_errors.html
+        output: web
 #Может понадобиатся, если не понадобится в течение 2х месяцев - удалить. Сегодня 10.01.2018.
 #  - title: EventHolder (?)
 #    url: /react_reference_enums.html

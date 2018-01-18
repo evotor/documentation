@@ -1,5 +1,5 @@
 ---
-title: Приёмники широковещательных сообщений
+title: BroadcastReceiver
 keywords: react
 sidebar: react_reference_sidebar
 toc: true
@@ -19,11 +19,13 @@ static addEventListener(type: BroadcastReceiverEventType, listener: BroadcastRec
 
 **Описание**
 
+Метод для [подписки приложения на события](./react_reference_introduction.html#eventslistening).
+
 **Параметры**
 
-* `type`
-* `listener`
-* `isGlobal`
+* `type` – тип события. Для получения широковещательных сообщений указывайте тип `BroadcastReceiverEventType`.
+* `listener` – тип слушателя. Для получения широковещательных сообщений указывайте тип `BroadcastReceiverListener`.
+* `isGlobal` – указывает глобальную доступность метода. По умолчанию `true`.`
 
 **Возвращает**
 
@@ -35,9 +37,14 @@ static removeEventListener(type: BroadcastReceiverEventType, listener?: Broadcas
 
 **Описание**
 
+Метод для отмены подписки на события.
+
 **Параметры**
 
-* `type`
-* `listener?`
+* `type` – тип события. Для отмены получения широковещательных сообщений указывайте тип `BroadcastReceiverEventType`.
+* `listener` – тип слушателя. Для отмены получения широковещательных сообщений указывайте тип `BroadcastReceiveListener`. Не передавайте параметр если хотите удалить все слушатели.
 
 **Возвращает**
+
+* `true` – если слушатель удалён.
+* `false` – если слушатель не удалён.

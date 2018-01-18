@@ -188,10 +188,13 @@ static addEventListener(type: NavigationEventType, listener: NavigationEventList
 
 **Описание**
 
+Метод для [подписки приложения на события](./react_reference_introduction.html#eventslistening).
+
 **Параметры**
 
-* `type`
-* `listener`
+* `type` – тип события. Для получения данных о навигации указывайте тип `NavigationEventType`.
+* `listener` – тип слушателя. Для получения данных о навигации указывайте тип `NavigationEventListener`.
+* `isGlobal` – указывает глобальную доступность метода. По умолчанию `true`.
 
 **Возвращает**
 
@@ -203,9 +206,15 @@ static removeEventListener(type: NavigationEventType, listener?: NavigationEvent
 
 **Описание**
 
+Метод для отмены подписки на события.
+
 **Параметры**
 
-* `type`
-* `listener`
+
+* `type` – тип события. Для отмены получения данных о навигации указывайте тип `NavigationEventType`.
+* `listener` – тип слушателя. Для отмены получения данных о навигации указывайте тип `NavigationEventListener`. Не передавайте параметр если хотите удалить все слушатели.
 
 **Возвращает**
+
+* `true` – если слушатель удалён.
+* `false` – если слушатель не удалён.

@@ -23,8 +23,8 @@ static getAllBarcodesForProduct(productUuid: string, getter: (string[]) => void)
 
 **Параметры**
 
-* `productUuid`
-* `getter`
+* `productUuid` – идентификатор товара в формате `uuid4`. Строка.
+* `getter` – функция, в которую передаётся массив штрихкодов товара в виде строк.
 
 **Возвращает**
 
@@ -40,8 +40,8 @@ static getProductByUuid(uuid: string, getter: (ProductItem | null) => void): voi
 
 **Параметры**
 
-* `uuid`
-* `getter`
+* `uuid` – идентификатор товара. Строка.
+* `getter` – функция, в параметры которой передаётся [товар](./react_reference_parameters_inventory.html#productitem).
 
 **Возвращает**
 
@@ -57,8 +57,8 @@ static getField(fieldUuid: string, getter: (Field | null) => void): void
 
 **Параметры**
 
-* `fieldUuid`
-* `getter`
+* `fieldUuid` – идентификатор поля в формате `uuid4`. Строка.
+* `getter` – функция, в параметры которой передаётся [поле](./react_reference_parameters_inventory.html#field).
 
 **Возвращает**
 
@@ -74,7 +74,7 @@ static getProductExtras(productUuid: string, getter: (ProductExtra[]) => void): 
 
 **Параметры**
 
-* `productUuid`
-* `getter`
+* `productUuid` – идентификатор товара в формате `uuid4`. Строка.
+* `getter` – функция, в параметры которой передаётся массив [дополнительных полей товара](./react_reference_parameters_inventory.html#productextra).
 
 **Возвращает**

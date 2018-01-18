@@ -1,5 +1,5 @@
 ---
-title: User API
+title: Платежи
 keywords: react
 sidebar: react_reference_sidebar
 toc: true
@@ -7,72 +7,22 @@ permalink: react_reference_parameters_payments.html
 folder: react_reference
 ---
 
-## Описание
-
-## Методы
-
-### `getAllUsers`
-
-#### getAllUsers
+## Класс PaymentPurpose
 
 ```js
-static getAllUsers(getter: (User[]) => void): void
+export class PaymentPurpose {
+    constructor(identifier: string | null,
+                paymentSystemId: string | null,
+                total: number | null,
+                accountId: string | null,
+                userMessage: string | null) {}
+}
 ```
 
-**Описание**
-
-Получает список всех пользователей смарт-терминала.
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**
-
-### getAuthenticatedUser
+## Класс PaymentSystem
 
 ```js
-static getAuthenticatedUser(getter: (User | null) => void): void
+export class PaymentSystem {
+    constructor(paymentType: PaymentType, userDescription: string, paymentSystemId: string) {}
+}
 ```
-
-**Описание**
-
-Получает данные авторизованного пользователя смарт-терминала.
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**
-
-### getAllGrants
-
-```js
-static getAllGrants(getter: (Grant[]) => void): void
-```
-
-**Описание**
-
-Получает все [права](./doc_app_grants.html).
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**
-
-### getGrantsOfAuthenticatedUser
-
-```js
-static getGrantsOfAuthenticatedUser(getter: (Grant[]) => void): void
-```
-
-**Описание**
-
-Получает [права](./doc_app_grants.html) авторизованного пользователя.
-
-**Параметры**
-
-* `getter`
-
-**Возвращает**
