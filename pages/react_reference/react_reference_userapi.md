@@ -1,7 +1,7 @@
 ---
 title: User API
 keywords: react
-sidebar: react_reference_sidebar
+sidebar: evotordoc_sidebar
 toc: true
 permalink: react_reference_userapi.html
 folder: react_reference
@@ -23,7 +23,7 @@ static getAllUsers(getter: (User[]) => void): void
 
 **Параметры**
 
-* `getter` – функция, в параметры которой требуется передавать массив [пользователей](./react_reference_parameters_user.html#user).
+* `getter` – функция для [получения данных](./doc_react_getter.html). Тип данных – [`User[]`](./react_reference_userapi.html#user).
 
 **Возвращает**
 
@@ -39,7 +39,7 @@ static getAuthenticatedUser(getter: (User | null) => void): void
 
 **Параметры**
 
-* `getter` – функция, в параметры которой требуется передавать [пользователя](./react_reference_parameters_user.html#user).
+* `getter` – функция для [получения данных](./doc_react_getter.html). Тип данных – [`User`](./react_reference_userapi.html#user).
 
 **Возвращает**
 
@@ -55,7 +55,7 @@ static getAllGrants(getter: (Grant[]) => void): void
 
 **Параметры**
 
-* `getter` – функция, в параметры которой требуется передавать массив [прав пользователей](./react_reference_parameters_user.html#grant).
+* `getter` – функция для [получения данных](./doc_react_getter.html). Тип данных – [`Grant[]`](./react_reference_userapi.html#grant).
 
 **Возвращает**
 
@@ -71,6 +71,30 @@ static getGrantsOfAuthenticatedUser(getter: (Grant[]) => void): void
 
 **Параметры**
 
-* `getter` – функция, в параметры которой требуется передавать [права пользователей](./react_reference_parameters_user.html#grant).
+* `getter` – функция для [получения данных](./doc_react_getter.html). Тип данных – [`Grant[]`](./react_reference_userapi.html#grant).
 
 **Возвращает**
+
+## Параметры
+
+### Класс User {#user}
+
+```js
+export class User {
+    constructor(uuid: string,
+                secondName: string | null,
+                firstName: string | null,
+                phone: string | null,
+                pin: string | null,
+                roleUuid: string,
+                roleTitle: string) {}
+}
+```
+
+### Класс Grant {#grant}
+
+```js
+export class Grant {
+    constructor(title: string, roleUuid: string) {}
+}
+```

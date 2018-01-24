@@ -1,7 +1,7 @@
 ---
 title: Navigation API
 keywords: react
-sidebar: react_reference_sidebar
+sidebar: evotordoc_sidebar
 toc: true
 permalink: react_reference_navigationapi.html
 folder: react_reference
@@ -96,7 +96,7 @@ static createIntentForCashRegisterReport(): Intent
 ### getIntent
 
 ```js
-static getIntent(getter: (Intent) => void)
+static getIntent(getter: (Intent) => void): Promise
 ```
 
 **Описание**
@@ -112,7 +112,7 @@ static getIntent(getter: (Intent) => void)
 ### startActivity
 
 ```js
-static startActivity(intent: Intent)
+static startActivity(intent: Intent): Promise
 ```
 
 **Описание**
@@ -128,7 +128,7 @@ static startActivity(intent: Intent)
 ### startActivityForResult
 
 ```js
-static startActivityForResult(intent: Intent, requestCode: number)
+static startActivityForResult(intent: Intent, requestCode: number): Promise
 ```
 
 **Описание**
@@ -143,7 +143,7 @@ static startActivityForResult(intent: Intent, requestCode: number)
 ### setResult
 
 ```js
-static setResult(resultCode: number)
+static setResult(resultCode: number): Promise
 ```
 
 **Описание**
@@ -157,7 +157,7 @@ static setResult(resultCode: number)
 ### setIntegrationResult
 
 ```js
-static setIntegrationResult(result: IntegrationEventResult)
+static setIntegrationResult(result: IntegrationEventResult): Promise
 ```
 
 **Описание**
@@ -171,7 +171,7 @@ static setIntegrationResult(result: IntegrationEventResult)
 ### finish
 
 ```js
-static finish()
+static finish(): Promise
 ```
 
 **Описание**
@@ -183,16 +183,16 @@ static finish()
 ### addEventListener
 
 ```js
-static addEventListener(type: NavigationEventType, listener: NavigationEventListener, isGlobal: boolean): void
+static addEventListener(type: NavigationEventType, listener: NavigationEventListener, isGlobal: boolean = true): void
 ```
 
 **Описание**
 
-Метод для [подписки приложения на события](./react_reference_introduction.html#eventslistening).
+Регистрирует слушатель и [подписывает приложение на события](./doc_react_events_subscription.html).
 
 **Параметры**
 
-* `type` – тип события. Для получения данных о навигации указывайте тип `NavigationEventType`.
+* `type` – тип события. Для получения данных о навигации указывайте тип [`NavigationEventType`](./react_reference_navigationapi.html#navigationeventtype).
 * `listener` – тип слушателя. Для получения данных о навигации указывайте тип `NavigationEventListener`.
 * `isGlobal` – указывает глобальную доступность метода. По умолчанию `true`.
 
@@ -206,15 +206,45 @@ static removeEventListener(type: NavigationEventType, listener?: NavigationEvent
 
 **Описание**
 
-Метод для отмены подписки на события.
+Удаляет слушатель и отменяет [подписку на события](./doc_react_events_subscription.html).
 
 **Параметры**
 
 
-* `type` – тип события. Для отмены получения данных о навигации указывайте тип `NavigationEventType`.
+* `type` – тип события. Для отмены получения данных о навигации указывайте тип [`NavigationEventType`](./react_reference_navigationapi.html#navigationeventtype).
 * `listener` – тип слушателя. Для отмены получения данных о навигации указывайте тип `NavigationEventListener`. Не передавайте параметр если хотите удалить все слушатели.
 
 **Возвращает**
 
 * `true` – если слушатель удалён.
 * `false` – если слушатель не удалён.
+
+## Параметры
+
+## Класс NavigationError {#NavigationError}
+
+```js
+export class NavigationError extends Error {
+    constructor(message: NavigationErrorMessage) {}
+}
+```
+
+### Тип NavigationErrorMessage
+
+```js
+export enum NavigationErrorMessage {
+    CURRENT_ACTIVITY_IS_NULL = "CURRENT_ACTIVITY_IS_NULL",
+    MISSED_NECESSARY_INTENT_DATA = "MISSED_NECESSARY_INTENT_DATA",
+    TARGET_CLASS_NOT_FOUND = "TARGET_CLASS_NOT_FOUND",
+    TARGET_PACKAGE_NOT_FOUND = "TARGET_PACKAGE_NOT_FOUND",
+    TARGET_CLASS_NOT_EXPORTED = "TARGET_CLASS_NOT_EXPORTED"
+}
+```
+
+### Тип NavigationEventType {#navigationeventtype}
+
+```js
+export enum NavigationEventType {
+    ACTIVITY_RESULT = "ACTIVITY_RESULT"
+}
+```

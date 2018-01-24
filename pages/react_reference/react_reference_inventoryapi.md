@@ -1,7 +1,7 @@
 ---
 title: Inventory API
 keywords: react
-sidebar: react_reference_sidebar
+sidebar: evotordoc_sidebar
 toc: true
 permalink: react_reference_inventoryapi.html
 folder: react_reference
@@ -24,7 +24,7 @@ static getAllBarcodesForProduct(productUuid: string, getter: (string[]) => void)
 **Параметры**
 
 * `productUuid` – идентификатор товара в формате `uuid4`. Строка.
-* `getter` – функция, в которую передаётся массив штрихкодов товара в виде строк.
+* `getter` – функция для получения данных. Тип данных – массив строк, штрихкодов товара.
 
 **Возвращает**
 
@@ -41,7 +41,7 @@ static getProductByUuid(uuid: string, getter: (ProductItem | null) => void): voi
 **Параметры**
 
 * `uuid` – идентификатор товара. Строка.
-* `getter` – функция, в параметры которой передаётся [товар](./react_reference_parameters_inventory.html#productitem).
+* `getter` – функция для получения данных. Тип данных – [`ProductItem`](./react_reference_inventoryapi.html#productitem).
 
 **Возвращает**
 
@@ -58,7 +58,7 @@ static getField(fieldUuid: string, getter: (Field | null) => void): void
 **Параметры**
 
 * `fieldUuid` – идентификатор поля в формате `uuid4`. Строка.
-* `getter` – функция, в параметры которой передаётся [поле](./react_reference_parameters_inventory.html#field).
+* `getter` – функция для получения данных. Тип данных – [`Field`](./react_reference_inventoryapi.html#field).
 
 **Возвращает**
 
@@ -75,6 +75,54 @@ static getProductExtras(productUuid: string, getter: (ProductExtra[]) => void): 
 **Параметры**
 
 * `productUuid` – идентификатор товара в формате `uuid4`. Строка.
-* `getter` – функция, в параметры которой передаётся массив [дополнительных полей товара](./react_reference_parameters_inventory.html#productextra).
+* `getter` – функция для получения данных. Тип данных – [`ProductExtra[ ]`](./react_reference_inventoryapi.html#productextra).
 
 **Возвращает**
+
+### Параметры
+
+### Класс ProductItem {#productitem}
+
+```js
+export class ProductItem {
+    constructor(uuid: string,
+                parentUuid: string | null,
+                code: string | null,
+                name: string) {}
+}
+```
+
+### Класс Field {#field}
+
+```js
+export class Field {
+    constructor(name: string | null,
+                fieldUUID: string,
+                title: string | null,
+                type: string) {}
+}
+```
+
+### Класс ProductExtra {#productextra}
+
+```js
+export class ProductExtra {
+    constructor(uuid: string,
+                name: string | null,
+                commodityUUID: string,
+                fieldUUID: string,
+                fieldValue: string | null,
+                data: string | null) {}
+}
+```
+
+### Тип ProductType
+
+```js
+export enum ProductType {
+    NORMAL = "NORMAL",
+    ALCOHOL_MARKED = "ALCOHOL_MARKED",
+    ALCOHOL_NOT_MARKED = "ALCOHOL_NOT_MARKED",
+    SERVICE = "SERVICE"
+}
+```

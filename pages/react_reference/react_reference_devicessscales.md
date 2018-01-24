@@ -1,26 +1,46 @@
 ---
 title: Scales
 keywords: react
-sidebar: react_reference_sidebar
+sidebar: evotordoc_sidebar
 toc: true
 permalink: react_reference_devicescales.html
 folder: react_reference
 ---
+
+## Описание
 
 ## Методы
 
 ### getWeight
 
 ```js
-static getWeight(getter: (weight: Weight) => void)
+static getWeight(getter: (weight: Weight) => void): Promise
 ```
 
 **Описание**
 
-Получает вес товара от весов, подключённых к смарт-терминалу.
+Получает вес товара с помощью весов, подключённых к смарт-терминалу.
 
 **Параметры**
 
-* `getter` – функция, в параметры которой передаётся [вес товара](./react_reference_parameters_device.html#Weight).
+* `getter` – функция для [получения данных](./doc_react_getter.html). Тип данных – [Weight](./react_reference_devicescales.html#weight).
 
 **Возвращает**
+
+## Параметры
+
+## Класс DeviceError {#DeviceError}
+
+```js
+export class DeviceError extends Error {
+    constructor(message: string) {}
+}
+```
+
+### Класс Weight {#weight}
+
+```js
+export class Weight {
+    constructor(weightInGrams: number, supportStable: boolean, stable: boolean) {}
+}
+```

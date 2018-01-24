@@ -3,7 +3,7 @@ title: Вызов окон смарт-терминала
 keywords:
 summary:
 sidebar: evotordoc_sidebar
-permalink: doc_react_navigationAPI.html
+permalink: doc_react_navigation.html
 tags: [terminal, react]
 folder: react_SDK
 published: true
@@ -56,3 +56,6 @@ var IntentType;
     IntentType[IntentType["CASH_REGISTER_REPORT"] = 1] = "CASH_REGISTER_REPORT";//Окно доступа к кассовым отчётам.
 })(IntentType || (IntentType = {}));
 ```
+
+
+Для навигации и взаимодействия с приложениями смарт-терминала используйте класс [NavigationAPI](./react_reference_navigationapi.html).

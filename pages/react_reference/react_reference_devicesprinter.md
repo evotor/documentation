@@ -1,16 +1,20 @@
 ---
 title: Printer
 keywords: react
-sidebar: react_reference_sidebar
+sidebar: evotordoc_sidebar
 toc: true
 permalink: react_reference_devicesprinter.html
 folder: react_reference
 ---
 
+## Описание
+
+## Методы
+
 ### print
 
 ```js
-static print(printables: [PrintableText, PrintableBarcode, PrintableImage])
+static print(printables: [PrintableText, PrintableBarcode, PrintableImage]): Promise
 ```
 
 **Описание**
@@ -19,14 +23,14 @@ static print(printables: [PrintableText, PrintableBarcode, PrintableImage])
 
 **Параметры**
 
-* `printables` – функция, в параметры которой требуется передать массив элементов для печати: [текст](./react_reference_parameters_device.html#PrintableText), [штрихкод](./react_reference_parameters_device.html#PrintableBarcode), [изображение](./react_reference_parameters_device.html#PrintableImage).
+* `printables` – функция, в параметры которой передаётся массив элементов для печати: [`PrintableText`](.react_reference_devicesprinter.html#PrintableText), [PrintableBarcode](./react_reference_devicesprinter.html#PrintableBarcode), [PrintableImage](./react_reference_devicesprinter.html#PrintableImage).
 
 **Возвращает**
 
 ### getAllowableSymbolsLineLength
 
 ```js
-static getAllowableSymbolsLineLength(getter: (number) => void)
+static getAllowableSymbolsLineLength(getter: (number) => void): Promise
 ```
 
 **Описание**
@@ -35,14 +39,14 @@ static getAllowableSymbolsLineLength(getter: (number) => void)
 
 **Параметры**
 
-* `getter` – функция, в параметры которой передаётся число, указывающее длину печатной строки в символах.
+* `getter` – функция для [получения данных](./doc_react_getter.html), в параметры которой передаётся число, указывающее длину печатной строки в символах.
 
 **Возвращает**
 
 ### getAllowablePixelLineLength
 
 ```js
-static getAllowablePixelLineLength(getter: (number) => void) Promise
+static getAllowablePixelLineLength(getter: (number) => void): Promise
 ```
 
 **Описание**
@@ -51,6 +55,52 @@ static getAllowablePixelLineLength(getter: (number) => void) Promise
 
 **Параметры**
 
-* `getter` – функция, в параметры которой передаётся число, указывающее длину печатной строки в пикселях.
+* `getter` – функция для [получения данных](./doc_react_getter.html), в параметры которой передаётся число, указывающее длину печатной строки в пикселях.
 
 **Возвращает**
+
+
+## Параметры
+
+## Класс DeviceError {#DeviceError}
+
+```js
+export class DeviceError extends Error {
+    constructor(message: string) {}
+}
+```
+
+### Класс PrintableText {#PrintableText}
+
+```js
+export class PrintableText {
+    constructor(text: string) {}
+}
+```
+
+### Класс PrintableBarcode {#PrintableBarcode}
+
+```js
+export class PrintableBarcode {
+    constructor(barcodeValue: string, barcodeType: BarcodeType) {}
+}
+```
+
+### Класс PrintableImage {#PrintableImage}
+
+```js
+export class PrintableImage {
+    constructor(path: string) {}
+}
+```
+
+### Тип BarcodeType
+
+```js
+export enum BarcodeType {
+    EAN8,
+    UPCA,
+    EAN13,
+    CODE39
+}
+```

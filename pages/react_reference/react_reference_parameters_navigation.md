@@ -1,7 +1,7 @@
 ---
 title: Навигация
 keywords: react
-sidebar: react_reference_sidebar
+sidebar: evotordoc_sidebar
 toc: true
 permalink: react_reference_parameters_navigation.html
 folder: react_reference

@@ -13,12 +13,12 @@ topnav:
       url: /whats_new.html
 
 #Topnav dropdowns
-topnav_dropdowns:
-- title: Topnav dropdowns
-  folders:
-    - title: Справочники
-      folderitems:
-        - title: Java SDK
-          url: /java_reference_introduction.html
-        - title: React Ntive SDK
-          url: /react_reference_introduction.html
+#topnav_dropdowns:
+#- title: Topnav dropdowns
+#  folders:
+#    - title: Справочники
+#      folderitems:
+#        - title: Java SDK
+#          url: /java_reference_introduction.html
+#        - title: React Ntive SDK
+#          url: /react_reference_introduction.html

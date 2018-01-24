@@ -392,18 +392,82 @@ entries:
     - title: Подготовка среды для разработки на React Native
       url: /doc_react_getting_started.html
       output: web
-
-    - title: Манифест React Native приложения
-      url: /doc_react_manifest.html
+      subfolders:
+      - title: Взаимодействие с терминалом
+        output: web
+        subfolderitems:
+        - title: Получение данных
+          url: /doc_react_getter.html
+          output: web
+        - title: Команды
+          url: /doc_react_commands.html
+          output: web
+        - title: Колбэки
+          url: /doc_react_callbacks.html
+          output: web
+        - title: Широковещательные сообщения
+          url: /doc_react_broadcasts.html
+          output: web
+    - title: Подписка на события
+      url: /doc_react_events_subscription.html
       output: web
+    - title: Навигация
+      url: /doc_react_navigation.html
+      output: web
+
+#    - title: Манифест React Native приложения
+#      url: /doc_react_manifest.html
+#      output: web
 #
 #    - title: Открытие окон смарт-терминала
 #      url: /doc_react_navigationAPI.html
 #      output: web
 #
-    - title: Установка приложения на смарт-терминал
-      url: /doc_react_app_installation.html
-      output: web
+#    - title: Установка приложения на смарт-терминал
+#      url: /doc_react_app_installation.html
+#      output: web
+      subfolders:
+      - title: Основные API
+        output: web
+        subfolderitems:
+        - title: Пользователи
+          url: /react_reference_userapi.html
+          output: web
+        - title: Чеки
+          url: /react_reference_receiptapi.html
+          output: web
+        - title: Товароучёт
+          url: /react_reference_inventoryapi.html
+          output: web
+        - title: Навигация
+          url: /react_reference_navigationapi.html
+          output: web
+      - title: Службы
+        output: web
+        subfolderitems:
+        - title: Интеграционные службы
+          url: /react_reference_integrationapi.html
+          output: web
+        - title: Широковещательный приёмник
+          url: /react_reference_broadcastreceivers.html
+          output: web
+      - title: Устройства
+        output: web
+        subfolderitems:
+        - title: Подключение устройств
+          url: /react_reference_devicesconnection.html
+          output: web
+        - title: Принтер
+          url: /react_reference_devicesprinter.html
+          output: web
+        - title: Сканер
+          url: /react_reference_devicescanner.html
+          output: web
+        - title: Весы
+          url: /react_reference_devicescales.html
+          output: web
+
+
 #
 #    - title: Работа с пользователями
 #      url: /doc_react_usersAPI.html

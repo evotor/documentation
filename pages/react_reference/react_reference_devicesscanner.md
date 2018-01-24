@@ -1,7 +1,7 @@
 ---
 title: Scanner
 keywords: react
-sidebar: react_reference_sidebar
+sidebar: evotordoc_sidebar
 toc: true
 permalink: react_reference_devicescanner.html
 folder: react_reference
@@ -19,11 +19,11 @@ static addEventListener(type: ScannerEventType, listener: ScannerEventListener, 
 
 **Описание**
 
-Метод для [подписки приложения на события](./react_reference_introduction.html#eventslistening).
+Регистрирует слушатель и [подписывает приложение на события](./doc_react_events_subscription.html).
 
 **Параметры**
 
-* `type` – тип события. Для получения данных от сканера штрихкодов указывайте тип `ScannerEventType`.
+* `type` – тип события. Для получения данных от сканера штрихкодов указывайте тип [`ScannerEventType`](./react_reference_devicescanner.html#ScannerEventType).
 * `listener` – тип слушателя. Для получения данных от сканера штрихкодов указывайте тип `ScannerEventListener`.
 * `isGlobal` – указывает глобальную доступность метода. По умолчанию `true`.
 
@@ -37,14 +37,24 @@ static removeEventListener(type: ScannerEventType, listener?: ScannerEventListen
 
 **Описание**
 
-Метод для отмены подписки на события.
+Удаляет слушатель и отменяет [подписку на события](./doc_react_events_subscription.html).
 
 **Параметры**
 
-* `type` – тип события. Для отмены получения данных от сканера штрихкодов указывайте тип `ScannerEventType`.
+* `type` – тип события. Для отмены получения данных от сканера штрихкодов указывайте тип [`ScannerEventType`](./react_reference_devicescanner.html#ScannerEventType).
 * `listener` – тип слушателя. Для отмены получения данных от сканера штрихкодов указывайте тип `ScannerEventListener`. Не передавайте параметр если хотите удалить все слушатели.
 
 **Возвращает**
 
 * `true` – если слушатель удалён.
 * `false` – если слушатель не удалён.
+
+## Параметры
+
+### Тип ScannerEventType {#ScannerEventType}
+
+```js
+export enum ScannerEventType {
+    BARCODE_RECEIVED = "BARCODE_RECEIVED"
+}
+```
