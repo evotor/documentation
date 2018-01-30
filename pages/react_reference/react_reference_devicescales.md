@@ -23,7 +23,7 @@ static getWeight(getter: (weight: Weight) => void): Promise
 
 **Параметры**
 
-* `getter` – функция для [получения данных](./doc_react_getter.html). Тип данных – [Weight](./react_reference_devicescales.html#weight).
+* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [Weight](./react_reference_devicescales.html#weight).
 
 **Возвращает**
 

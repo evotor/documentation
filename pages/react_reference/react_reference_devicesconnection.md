@@ -33,7 +33,7 @@ static addEventListener(type: DeviceConnectionEventType, listener: DeviceConnect
 
 **Описание**
 
-Регистрирует слушатель и [подписывает приложение на события](./doc_react_events_subscription.html).
+Регистрирует слушатель и [подписывает приложение на события](./doc_react_interactiontypes.html#eventsubscription).
 
 **Параметры**
 
@@ -51,7 +51,7 @@ static removeEventListener(type: DeviceConnectionEventType, listener?: DeviceCon
 
 **Описание**
 
-Удаляет слушатель и отменяет [подписку на события](./doc_react_events_subscription.html).
+Удаляет слушатель и отменяет [подписку на события](./doc_react_interactiontypes.html#eventsubscription).
 
 **Параметры**
 

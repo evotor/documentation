@@ -23,7 +23,7 @@ static print(printables: [PrintableText, PrintableBarcode, PrintableImage]): Pro
 
 **Параметры**
 
-* `printables` – функция, в параметры которой передаётся массив элементов для печати: [`PrintableText`](.react_reference_devicesprinter.html#PrintableText), [PrintableBarcode](./react_reference_devicesprinter.html#PrintableBarcode), [PrintableImage](./react_reference_devicesprinter.html#PrintableImage).
+* `printables` – функция, в параметры которой передаётся массив элементов для печати: [`PrintableText`](./react_reference_devicesprinter.html#PrintableText), [PrintableBarcode](./react_reference_devicesprinter.html#PrintableBarcode), [PrintableImage](./react_reference_devicesprinter.html#PrintableImage).
 
 **Возвращает**
 
@@ -39,7 +39,7 @@ static getAllowableSymbolsLineLength(getter: (number) => void): Promise
 
 **Параметры**
 
-* `getter` – функция для [получения данных](./doc_react_getter.html), в параметры которой передаётся число, указывающее длину печатной строки в символах.
+* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter), в параметры которой передаётся число, указывающее длину печатной строки в символах.
 
 **Возвращает**
 
@@ -55,7 +55,7 @@ static getAllowablePixelLineLength(getter: (number) => void): Promise
 
 **Параметры**
 
-* `getter` – функция для [получения данных](./doc_react_getter.html), в параметры которой передаётся число, указывающее длину печатной строки в пикселях.
+* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter), в параметры которой передаётся число, указывающее длину печатной строки в пикселях.
 
 **Возвращает**
 

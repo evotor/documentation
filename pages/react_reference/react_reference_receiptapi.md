@@ -24,7 +24,7 @@ static getPositionByBarcode(barcode: string, getter: (Position[]) => void): void
 **Параметры**
 
 * `barcode`– штрихкод товара. Строка.
-* `getter` – функция для [получения данных](./doc_react_getter.html). Тип данных – [`Position[]`](./react_reference_receiptapi.html#position).
+* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`Position[]`](./react_reference_receiptapi.html#position).
 
 **Возвращает**
 
@@ -85,7 +85,7 @@ static getReceiptByType(type: ReceiptType, getter: (Receipt | null) => void): vo
 **Параметры**
 
 * `type` – тип чека: чек продажи (`SELL`) или чек возврата (`PAYBACK`).
-* `getter` – функция для [получения данных](./doc_react_getter.html). Тип данных – [`Receipt`](./react_reference_receiptapi.html#receipt).
+* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`Receipt`](./react_reference_receiptapi.html#receipt).
 
 **Возвращает**
 
@@ -102,7 +102,7 @@ static getReceiptByUuid(uuid: string, getter: (Receipt | null) => void): void
 **Параметры**
 
 * `uuid` – идентификатор чека. Строка.
-* `getter` – функция для [получения данных](./doc_react_getter.html). Тип данных – [`Receipt`](./react_reference_receiptapi.html#receipt).
+* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`Receipt`](./react_reference_receiptapi.html#receipt).
 
 **Возвращает**
 
@@ -119,7 +119,7 @@ static getReceiptHeaders(type: ReceiptType | null, getter: (ReceiptHeader[]) => 
 **Параметры**
 
 * `type` – тип чека: чек продажи (`SELL`) или чек возврата (`PAYBACK`).
-* `getter` – функция для [получения данных](./doc_react_getter.html). Тип данных – [`ReceiptHeader[]`](./react_reference_receiptapi.html#receiptheader).
+* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`ReceiptHeader[]`](./react_reference_receiptapi.html#receiptheader).
 
 **Возвращает**
 

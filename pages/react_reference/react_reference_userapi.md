@@ -23,7 +23,7 @@ static getAllUsers(getter: (User[]) => void): void
 
 **Параметры**
 
-* `getter` – функция для [получения данных](./doc_react_getter.html). Тип данных – [`User[]`](./react_reference_userapi.html#user).
+* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`User[]`](./react_reference_userapi.html#user).
 
 **Возвращает**
 
@@ -39,7 +39,7 @@ static getAuthenticatedUser(getter: (User | null) => void): void
 
 **Параметры**
 
-* `getter` – функция для [получения данных](./doc_react_getter.html). Тип данных – [`User`](./react_reference_userapi.html#user).
+* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`User`](./react_reference_userapi.html#user).
 
 **Возвращает**
 
@@ -55,7 +55,7 @@ static getAllGrants(getter: (Grant[]) => void): void
 
 **Параметры**
 
-* `getter` – функция для [получения данных](./doc_react_getter.html). Тип данных – [`Grant[]`](./react_reference_userapi.html#grant).
+* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`Grant[]`](./react_reference_userapi.html#grant).
 
 **Возвращает**
 
@@ -71,7 +71,7 @@ static getGrantsOfAuthenticatedUser(getter: (Grant[]) => void): void
 
 **Параметры**
 
-* `getter` – функция для [получения данных](./doc_react_getter.html). Тип данных – [`Grant[]`](./react_reference_userapi.html#grant).
+* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`Grant[]`](./react_reference_userapi.html#grant).
 
 **Возвращает**
 

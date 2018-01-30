@@ -6,7 +6,7 @@ sidebar: evotordoc_sidebar
 permalink: doc_react_manifest.html
 tags: [terminal, react]
 folder: react_SDK
-published: true
+published: false
 ---
 
 Ниже приведён пример манифеста React Native  приложения, которое вы создали при [подготовке среды к разработке приложения](./doc_react_getting_started.html).

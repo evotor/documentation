@@ -1,5 +1,5 @@
 ---
-title: IntegrationServices
+title: IntegrationCallback и IntegrationServices
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -9,7 +9,7 @@ folder: react_reference
 
 ## Описание
 
-## Методы
+## Методы класса IntegrationCallback (методы обратного вызова)
 
 ### onResult
 
@@ -51,6 +51,8 @@ skip(): Promise
 
 **Возвращает**
 
+## Методы для подписки на события
+
 ### addEventListener
 
 ```js
@@ -59,7 +61,7 @@ static addEventListener(type: IntegrationEventType, listener: IntegrationEventLi
 
 **Описание**
 
-Регистрирует слушатель и [подписывает приложение на события](./doc_react_events_subscription.html).
+Регистрирует слушатель и [подписывает приложение на события](./doc_react_interactiontypes.html#eventsubscription).
 
 **Параметры**
 
@@ -77,7 +79,7 @@ static removeEventListener(type: IntegrationEventType, listener: IntegrationEven
 
 **Описание**
 
-Удаляет слушатель и отменяет [подписку на события](./doc_react_events_subscription.html).
+Удаляет слушатель и отменяет [подписку на события](./doc_react_interactiontypes.html#eventsubscription).
 
 **Параметры**
 

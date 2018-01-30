@@ -19,7 +19,7 @@ static addEventListener(type: ScannerEventType, listener: ScannerEventListener, 
 
 **Описание**
 
-Регистрирует слушатель и [подписывает приложение на события](./doc_react_events_subscription.html).
+Регистрирует слушатель и [подписывает приложение на события](./doc_react_interactiontypes.html#eventsubscription).
 
 **Параметры**
 
@@ -37,7 +37,7 @@ static removeEventListener(type: ScannerEventType, listener?: ScannerEventListen
 
 **Описание**
 
-Удаляет слушатель и отменяет [подписку на события](./doc_react_events_subscription.html).
+Удаляет слушатель и отменяет [подписку на события](./doc_react_interactiontypes.html#eventsubscription).
 
 **Параметры**
 

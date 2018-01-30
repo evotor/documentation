@@ -386,33 +386,14 @@ entries:
 #               REACT SDK                                      #
 ###############################################################
 
-  - title: REACT SDK
+  - title: REACT NATIVE SDK
     output: web
     folderitems:
-    - title: Подготовка среды для разработки на React Native
-      url: /doc_react_getting_started.html
+    - title: Начало работы
+      url: /doc_react_gettingstarted.html
       output: web
-      subfolders:
-      - title: Взаимодействие с терминалом
-        output: web
-        subfolderitems:
-        - title: Получение данных
-          url: /doc_react_getter.html
-          output: web
-        - title: Команды
-          url: /doc_react_commands.html
-          output: web
-        - title: Колбэки
-          url: /doc_react_callbacks.html
-          output: web
-        - title: Широковещательные сообщения
-          url: /doc_react_broadcasts.html
-          output: web
-    - title: Подписка на события
-      url: /doc_react_events_subscription.html
-      output: web
-    - title: Навигация
-      url: /doc_react_navigation.html
+    - title: Типы взаиможействия со смарт-терминалом
+      url: /doc_react_interactiontypes.html
       output: web
 
 #    - title: Манифест React Native приложения

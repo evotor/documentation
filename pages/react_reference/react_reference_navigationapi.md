@@ -188,7 +188,7 @@ static addEventListener(type: NavigationEventType, listener: NavigationEventList
 
 **Описание**
 
-Регистрирует слушатель и [подписывает приложение на события](./doc_react_events_subscription.html).
+Регистрирует слушатель и [подписывает приложение на события](./doc_react_interactiontypes.html#eventsubscription).
 
 **Параметры**
 
@@ -206,7 +206,7 @@ static removeEventListener(type: NavigationEventType, listener?: NavigationEvent
 
 **Описание**
 
-Удаляет слушатель и отменяет [подписку на события](./doc_react_events_subscription.html).
+Удаляет слушатель и отменяет [подписку на события](./doc_react_interactiontypes.html#eventsubscription).
 
 **Параметры**
 

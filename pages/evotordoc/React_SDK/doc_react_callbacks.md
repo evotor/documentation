@@ -1,14 +1,12 @@
 ---
-title: Колбэки
+title: Методы обратного вызова
 keywords:
 summary:
 sidebar: evotordoc_sidebar
 permalink: doc_react_callbacks.html
 tags: [terminal, react]
 folder: react_SDK
-published: true
+published: false
 ---
 
-##### Изменять данные
-
-Приложения могут изменять данные, например применять скидку для уже созданных чеков с помощью [интеграционных служб](./react_reference_integrationapi.html).
+Методы обратного вызова, с помощью которых вы можете изменять данные, например, применять скидку к созданным чекам, представлены в классе [IntegrationCallback](react_reference_integrationapi.html).

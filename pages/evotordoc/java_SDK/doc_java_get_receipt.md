@@ -9,7 +9,7 @@ folder: java_SDK
 ---
 ## Методы
 
-Классы [`ReceiptApi`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/ReceiptApi.kt) и [`Receipt`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/Receipt.kt) содержат описанные ниже методы.
+Классы [`ReceiptApi`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/ReceiptApi.kt) и [`Receipt`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/Receipt.kt) содержат описанные ниже методы.
 
 ### Получить текущий открытый чек
 

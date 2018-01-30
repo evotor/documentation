@@ -6,7 +6,7 @@ sidebar: evotordoc_sidebar
 permalink: doc_react_getter.html
 tags: [terminal, react]
 folder: react_SDK
-published: true
+published: false
 ---
 
 Приложения получают данные от смарт-терминала с помощью методов `get*`.
@@ -19,4 +19,4 @@ published: true
 * [`Printer`](./react_reference_devicesprinter.html) – с помощью методов класса приложения получают допустимую длину строки для печати в символах или пикселях.
 * [`Scales`](./react_reference_devicesscales.html) – с помощью методов класса приложения получают вес товара, взвешиваемого на весах, подключённых к смарт-терминалу.
 
-{% include note.html content="Получение данных происходит асинхронно, поэтому все методы `get*` содержат в качестве параметра функцию `getter`, в которую передаётся результат вызова метода." %}
+{% include note.html content="Данные получаются асинхронно, поэтому все методы `get*` содержат в качестве параметра функцию `getter`, в которую передаётся результат вызова метода." %}

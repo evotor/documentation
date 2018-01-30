@@ -19,7 +19,7 @@ static addEventListener(type: BroadcastReceiverEventType, listener: BroadcastRec
 
 **Описание**
 
-Регистрирует широковещательный слушатель и [подписывает приложение на события](./doc_react_events_subscription.html).
+Регистрирует широковещательный слушатель и [подписывает приложение на события](./doc_react_interactiontypes.html#eventsubscription).
 
 **Параметры**
 
@@ -37,7 +37,7 @@ static removeEventListener(type: BroadcastReceiverEventType, listener?: Broadcas
 
 **Описание**
 
-Удаляет широковещательный слушатель и отменяет [подписку на события](./doc_react_events_subscription.html).
+Удаляет широковещательный слушатель и отменяет [подписку на события](./doc_react_interactiontypes.html#eventsubscription).
 
 **Параметры**
 
