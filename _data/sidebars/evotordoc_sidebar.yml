@@ -447,24 +447,13 @@ entries:
         - title: Весы
           url: /react_reference_devicescales.html
           output: web
+    - title: Обработка ошибок
+      url: /doc_react_errorshandling.html
+      output: web
+    - title: Создание и установка подписанного APK
+      url: /doc_react_generatingsignedapk.html
+      output: web
 
-
-#
-#    - title: Работа с пользователями
-#      url: /doc_react_usersAPI.html
-#      output: web
-#
-#    - title: Работа с чеками
-#      url: /doc_react_receipt.html
-#      output: web
-#
-#    - title: Работа с подключаемым оборудованием
-#      url: /doc_react_devices.html
-#      output: web
-#
-#    - title: Товароучёт
-#      url: /doc_react_inventoryAPI.html
-#      output: web
 
 ###############################################################
 #               JavaScript SDK                                #

@@ -17,10 +17,10 @@ published: true
 NavigationAPI.startActivity(intent).catch((e)=>{console.log(e.message)});
 ```
 
-Методы, которые возвращают обещание (`promise`):
+<!-- Методы, которые возвращают обещание (`promise`):
 
 * [Методы для работы с весами](./react_reference_devicescales.html);
 * [Методы для работы с принтером](./react_reference_devicesprinter.html);
 * [IntegrationCallback и IntegrationServices](./react_reference_integrationapi.html);
 * [Navigation API](./react_reference_navigationapi.html);
-* [Receipt API](./react_reference_receiptapi.html).
+* [Receipt API](./react_reference_receiptapi.html). -->

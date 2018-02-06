@@ -11,21 +11,20 @@ published: true
 
 ## Подготовка к разработке
 
-Перед разработкой установите следующее ПО:
+Убедитесь, что у вас установлено следующее ПО:
 
-* [Node.js](https://nodejs.org/en/download/)
-* [Java SE Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-* [Android Studio](https://developer.android.com/studio/install.html)
+* [Node.js](https://nodejs.org/en/download/);
+* [Yarn](https://yarnpkg.com/lang/en/docs/install/);
+* [Java SE Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html);
+* [Android Studio](https://developer.android.com/studio/install.html).
 
 ### Установка React Native CLI
 
-Для создания и работы с проектами React Native установите интерфейс командной строки React Native CLI.
+Для создания и работы с проектами React Native установите интерфейс командной строки React Native CLI:
 
-*Для этого, в командной строке, выполните команду:*
-
-   ```
-   npm install -g react-native-cli
-   ```
+```
+npm install -g react-native-cli
+```
 
 ### Создание проекта React Native
 
@@ -44,7 +43,7 @@ published: true
    ```
 
    Команда создаст проект со следующей структурой:
-   {% include image скриншот структуры проекта %}
+   {% include image.html file="eject_project_structure.png" url="images/eject_project_structure.png" caption="Структура проекта" %}
 
 3. Перейдите в папку проекта:
 
@@ -52,17 +51,19 @@ published: true
    cd YourAppName
    ```
 
-4. Выполните следующую команду, чтобы ваше React Native приложение могло обращаться к Java API:
+4. Чтобы ваше React Native приложение могло обращаться к Java API выполните следующую команду, :
 
    ```
    npm run eject
    ```
 
-{% include note.html content="Более подробную информацию смотрите в документации [React Native]()." %}
+   Ответьте на вопросы, которые появятся в командной строке. В результате выполнения команды, в папке проекта появится папка `Android`.
+
+{% include note.html content="Более подробную информацию смотрите в документации [React Native](https://facebook.github.io/react-native/docs/getting-started.html)." %}
 
 ### Установка библиотеки evotor-integration-library
 
-мы подготовили библиотеку evotor-integration-library, чтобы ваше React Native приложение могло взаимодействовать с Java API смарт-терминала.
+Мы подготовили библиотеку evotor-integration-library, чтобы ваше React Native приложение могло взаимодействовать с Java API смарт-терминала.
 
 Вам потребуется установить и связать библиотеку со своим приложением. Для этого, находясь в папке приложения, выполните следующие действия:
 
@@ -73,6 +74,29 @@ published: true
    ```
 
 2. Свяжите библиотеку со своим приложением:
+
+   ```
+   react-native link evotor-integration-library
+   ```
+
+#### Решение возможных проблем
+
+При привязывании библиотеки может возникнуть ошибка:
+
+   ```
+   Command `link` unrecognized. Make sure that you have run `npm install` and that you are inside a react-native project.
+   ```
+
+В этом случае:
+
+1. Удалите из проекта папку `node_modules`.
+2. Выполните команду:
+
+   ```
+   yarn
+   ```
+
+3. Повторно выполните команду:
 
    ```
    react-native link evotor-integration-library
@@ -91,7 +115,7 @@ published: true
             android:value="66998575-ee62-4e87-b191-89f351fdc572" />
    ```
 
-3. Подключитесь к смарт-терминалу в [режим разработчика](./doc_app_developer_mode.html).
+3. Подключитесь к смарт-терминалу в [режиме разработчика](./doc_app_developer_mode.html).
 
 4. Последовательно выполните команды:
 

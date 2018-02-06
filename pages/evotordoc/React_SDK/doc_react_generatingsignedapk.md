@@ -1,5 +1,5 @@
 ---
-title: Созданаие и установка подписанного APK
+title: Создание и установка подписанного APK
 keywords:
 summary:
 sidebar: evotordoc_sidebar
@@ -9,22 +9,33 @@ folder: react_SDK
 published: true
 ---
 
-## Подготовка к разработке
+## Создание ключа для подписи apk-файла приложения
 
-### Установка React Native CLI
+Чтобы пользователи могли установить ваше приложение на смарт-терминал вам необходимо создать подписанный apk-файл приложения. Для этого вам потребуется ключ, с помощью которого будет подписан apk-файл.
 
-### Создание проекта React Native
+*Чтобы создать ключ:*
 
+1. Перейдите в папку с установленным JDK.
 
-{% include note.html content="Более подробную информацию смотрите в документации [React Native]()." %}
+   ```
+   cd C:\Program Files\Java\jdkX.X.X_X\bin
+   ```
 
-### Установка библиотеки evotor-integration-library
+2. Создайте ключ с помощью команды:
 
-## Установка debug-версии приложения на смарт-терминал
+   ```
+   keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+   ```
 
-*Чтобы установить debug-версию приложения на смарт-терминал:*
+   В процессе создания ключа ответьте на вопросы, которые будут появляться в командной строке.
 
-1. В Android Studio откройте манифест приложения, размещённый по адресу `YourProjectName\android\app\src\AndroidManifest.xml`.
+3. Скопируйте ключ в папку `YourAppName\android\app`.
+
+## Создание apk-файла
+
+*Чтобы создать apk-файл приложения:*
+
+1. В Android Studio откройте манифест приложения, размещённый по адресу `YourAppName\android\app\src\AndroidManifest.xml`.
 2. В поле `app_uuid` элемента `<meta-data>` вместо текущего идентификатора укажите идентификатор приложения, который вы получили в [процессе подготовки приложения на сайте разработчиков](./doc_java_app_tutorial.html#devSiteSettingUp)
 
    ```xml
@@ -33,13 +44,16 @@ published: true
             android:value="66998575-ee62-4e87-b191-89f351fdc572" />
    ```
 
-3. Подключитесь к смарт-терминалу в [режим разработчика](./doc_app_developer_mode.html).
-
-4. Последовательно выполните команды:
+3. В командной строке перейдите в папку `YourAppName\android` и выполните команду:
 
    ```
-   cd YourProjectName
-   react-native run-Android
+   gradlew AssembleRelease
    ```
 
-   <!-- Попробуйте удалить приложение с терминала **Настройки** > **Память устройства** > **YourProjectName** > **Удалить** -->
+  Готовый apk-файл приложения будет размещён по адресу `YourAppName\android\app\build\outputs\apk\release`.
+
+
+
+## Установка приложения
+
+Вы можете установить приложение вручную, с помощью [командной строки или adb shell](./doc_app_installation.html#adb-shell) или из [Магазина приложений](./doc_app_installation.html#MarkeplaceAppInstallation).

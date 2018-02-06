@@ -14,7 +14,7 @@ folder: react_reference
 ### getAllBarcodesForProduct
 
 ```js
-static getAllBarcodesForProduct(productUuid: string, getter: (string[]) => void): void
+static getAllBarcodesForProduct(productUuid: string): Promise<string[]>
 ```
 
 **Описание**
@@ -24,14 +24,15 @@ static getAllBarcodesForProduct(productUuid: string, getter: (string[]) => void)
 **Параметры**
 
 * `productUuid` – идентификатор товара в формате `uuid4`. Строка.
-* `getter` – функция для получения данных. Тип данных – массив строк, штрихкодов товара.
 
 **Возвращает**
+
+* `Promise` – тип данных – массив строк, штрихкодов товара.
 
 ### getProductByUuid
 
 ```js
-static getProductByUuid(uuid: string, getter: (ProductItem | null) => void): void
+static getProductByUuid(uuid: string): Promise<ProductItem | null>
 ```
 
 **Описание**
@@ -41,14 +42,15 @@ static getProductByUuid(uuid: string, getter: (ProductItem | null) => void): voi
 **Параметры**
 
 * `uuid` – идентификатор товара. Строка.
-* `getter` – функция для получения данных. Тип данных – [`ProductItem`](./react_reference_inventoryapi.html#productitem).
 
 **Возвращает**
+
+* `Promise` – тип данных – [`ProductItem`](./react_reference_inventoryapi.html#productitem).
 
 ### getField
 
 ```js
-static getField(fieldUuid: string, getter: (Field | null) => void): void
+static getField(fieldUuid: string): Promise<Field | null>
 ```
 
 **Описание**
@@ -58,14 +60,15 @@ static getField(fieldUuid: string, getter: (Field | null) => void): void
 **Параметры**
 
 * `fieldUuid` – идентификатор поля в формате `uuid4`. Строка.
-* `getter` – функция для получения данных. Тип данных – [`Field`](./react_reference_inventoryapi.html#field).
 
 **Возвращает**
+
+* `Promise` – тип данных – [`Field`](./react_reference_inventoryapi.html#field).
 
 ### getProductExtras
 
 ```js
-static getProductExtras(productUuid: string, getter: (ProductExtra[]) => void): void
+static getProductExtras(productUuid: string): Promise<ProductExtra[]>
 ```
 
 **Описание**
@@ -75,9 +78,10 @@ static getProductExtras(productUuid: string, getter: (ProductExtra[]) => void): 
 **Параметры**
 
 * `productUuid` – идентификатор товара в формате `uuid4`. Строка.
-* `getter` – функция для получения данных. Тип данных – [`ProductExtra[ ]`](./react_reference_inventoryapi.html#productextra).
 
 **Возвращает**
+
+* `Promise` – тип данных – [`ProductExtra[ ]`](./react_reference_inventoryapi.html#productextra).
 
 ### Параметры
 

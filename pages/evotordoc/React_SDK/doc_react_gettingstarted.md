@@ -6,7 +6,7 @@ sidebar: evotordoc_sidebar
 permalink: doc_react_gettingstarted.html
 tags: [terminal, react]
 folder: react_SDK
-published: true
+published: false
 ---
 
 ## Введение
@@ -121,3 +121,10 @@ npm install evotor-integration-library --save
 ```
 react-native link evotor-integration-library
 ```
+
+убедитесь, что в файле build.gradle module app подключён doc_smart_terminal_inventory_api
+
+
+## Программные требования
+
+Убедитесь, что у вас установлены:

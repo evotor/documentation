@@ -14,7 +14,7 @@ folder: react_reference
 ### addEventListener
 
 ```js
-static addEventListener(type: BroadcastReceiverEventType, listener: BroadcastReceiverListener, isGlobal: boolean = true): void
+static addEventListener(type: BroadcastReceiverEventType, listener: BroadcastReceiveListener, isGlobal: boolean = true): void
 ```
 
 **Описание**
@@ -24,7 +24,7 @@ static addEventListener(type: BroadcastReceiverEventType, listener: BroadcastRec
 **Параметры**
 
 * `type` – тип события. Для получения широковещательных сообщений указывайте тип [`BroadcastReceiverEventType`](./react_reference_broadcastreceivers.html#BroadcastReceiverEventType).
-* `listener` – тип слушателя. Для получения широковещательных сообщений указывайте тип `BroadcastReceiverListener`.
+* `listener` – тип слушателя. Для получения широковещательных сообщений указывайте тип `BroadcastReceiveListener`.
 * `isGlobal` – указывает глобальную доступность метода. По умолчанию `true`.
 
 **Возвращает**
@@ -32,7 +32,7 @@ static addEventListener(type: BroadcastReceiverEventType, listener: BroadcastRec
 ### removeEventListener
 
 ```js
-static removeEventListener(type: BroadcastReceiverEventType, listener?: BroadcastReceiverListener): boolean
+static removeEventListener(type: BroadcastReceiverEventType, listener?: BroadcastReceiveListener): boolean
 ```
 
 **Описание**

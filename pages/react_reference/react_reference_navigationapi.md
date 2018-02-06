@@ -25,6 +25,8 @@ static createIntentForSellReceiptEdit(): Intent
 
 **Возвращает**
 
+* `Intent`
+
 ### createIntentForPaybackReceiptEdit
 
 ```js
@@ -38,6 +40,8 @@ static createIntentForPaybackReceiptEdit(): Intent
 **Параметры**
 
 **Возвращает**
+
+* `Intent`
 
 ### createIntentForSellReceiptPayment
 
@@ -53,6 +57,8 @@ static createIntentForSellReceiptPayment(): Intent
 
 **Возвращает**
 
+* `Intent`
+
 ### createIntentForPaybackReceiptPayment
 
 ```js
@@ -66,6 +72,8 @@ static createIntentForPaybackReceiptPayment(): Intent
 **Параметры**
 
 **Возвращает**
+
+* `Intent`
 
 ### createIntentForCashReceiptSettings
 
@@ -81,6 +89,8 @@ static createIntentForCashReceiptSettings(): Intent
 
 **Возвращает**
 
+* `Intent`
+
 ### createIntentForCashRegisterReport
 
 ```js
@@ -93,10 +103,12 @@ static createIntentForCashRegisterReport(): Intent
 
 **Возвращает**
 
+* `Intent`
+
 ### getIntent
 
 ```js
-static getIntent(getter: (Intent) => void): Promise
+static getIntent(): Promise<Intent>
 ```
 
 **Описание**
@@ -105,9 +117,9 @@ static getIntent(getter: (Intent) => void): Promise
 
 **Параметры**
 
-* `getter`
-
 **Возвращает**
+
+* `Promise` – возвращает объект с намерением.
 
 ### startActivity
 
@@ -125,6 +137,8 @@ static startActivity(intent: Intent): Promise
 
 **Возвращает**
 
+* `Promise`
+
 ### startActivityForResult
 
 ```js
@@ -140,10 +154,30 @@ static startActivityForResult(intent: Intent, requestCode: number): Promise
 
 **Возвращает**
 
+* `Promise`
+
+### startService
+
+```js
+static startService(intent: Intent): Promise
+```
+
+**Описание**
+
+Запускает службу.
+
+**Параметры**
+
+* `intent`
+
+**Возвращает**
+
+* `Promise`
+
 ### setResult
 
 ```js
-static setResult(resultCode: number): Promise
+static setResult(resultCode: number, data?: Intent): Promise
 ```
 
 **Описание**
@@ -154,10 +188,12 @@ static setResult(resultCode: number): Promise
 
 **Возвращает**
 
+* `Promise`
+
 ### setIntegrationResult
 
 ```js
-static setIntegrationResult(result: IntegrationEventResult): Promise
+static setIntegrationResult(result: IntegrationServiceEventResult): Promise
 ```
 
 **Описание**
@@ -167,6 +203,8 @@ static setIntegrationResult(result: IntegrationEventResult): Promise
 * `result`
 
 **Возвращает**
+
+* `Promise`
 
 ### finish
 
@@ -179,6 +217,8 @@ static finish(): Promise
 **Параметры**
 
 **Возвращает**
+
+* `Promise`
 
 ### addEventListener
 

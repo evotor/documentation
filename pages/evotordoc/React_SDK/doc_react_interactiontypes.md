@@ -20,7 +20,24 @@ published: true
 * [`Printer`](./react_reference_devicesprinter.html) – с помощью методов класса приложения получают допустимую длину строки для печати в символах или пикселях.
 * [`Scales`](./react_reference_devicescales.html) – с помощью методов класса приложения получают вес товара, взвешиваемого на весах, подключённых к смарт-терминалу.
 
-{% include note.html content="Данные получаются асинхронно, поэтому все методы `get*` содержат в качестве параметра функцию `getter`, в которую передаётся результат вызова метода." %}
+Данные получаются асинхронно, поэтому все методы `get*` возвращают обещание (`promise`).
+
+Пример использования метода, возвращающего обещание:
+
+```js
+workflow = async () => {
+    const users = await UserAPI.getAllUsers();
+    const qwiojdio = await UserAPI.getAllGrants();
+    console.log("REVOUT " + JSON.stringify(await UserAPI.getAllUsers()));
+    const intent = new Intent();
+    intent.packageName = 'com.revonavigatio';
+    try {
+        await NavigationAPI.startActivity(intent);
+    } catch (e) {
+        console.log("REVOUT " + e.message);
+    }
+};
+```
 
 ## Команды {#commands}
 
@@ -31,9 +48,9 @@ published: true
 * [`ReceiptAPI`](./react_reference_receiptapi.html) – с помощью методов класса приложения могут передавать чек для оплаты в смарт-терминале и отправить чек на email или телефон.
 * [`Printer`](./react_reference_devicesprinter.html) – с помощью методов класса приложения могут передавать данные для печати на принтере, встроенном в смарт-терминал.
 
-## Колбеки {#callbacks}
+## Коллбэки {#callbacks}
 
-Колбеки, с помощью которых вы можете изменять данные, например, применять скидку к созданным чекам, представлены в классе [IntegrationCallback](react_reference_integrationapi.html).
+Коллбэки, с помощью которых вы можете изменять данные, например, применять скидку к созданным чекам, представлены в классе [IntegrationCallback](react_reference_integrationapi.html).
 
 ## Подписка на события {#eventsubscription}
 

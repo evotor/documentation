@@ -1,5 +1,5 @@
 ---
-title: Printer
+title: Принтер
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -27,10 +27,12 @@ static print(printables: [PrintableText, PrintableBarcode, PrintableImage]): Pro
 
 **Возвращает**
 
+* `Promise`
+
 ### getAllowableSymbolsLineLength
 
 ```js
-static getAllowableSymbolsLineLength(getter: (number) => void): Promise
+static getAllowableSymbolsLineLength(): Promise<number>
 ```
 
 **Описание**
@@ -39,14 +41,14 @@ static getAllowableSymbolsLineLength(getter: (number) => void): Promise
 
 **Параметры**
 
-* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter), в параметры которой передаётся число, указывающее длину печатной строки в символах.
-
 **Возвращает**
+
+* `Promise` – объект, который содержит число, указывающее длину печатной строки в символах.
 
 ### getAllowablePixelLineLength
 
 ```js
-static getAllowablePixelLineLength(getter: (number) => void): Promise
+static getAllowablePixelLineLength(): Promise<number>
 ```
 
 **Описание**
@@ -55,10 +57,9 @@ static getAllowablePixelLineLength(getter: (number) => void): Promise
 
 **Параметры**
 
-* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter), в параметры которой передаётся число, указывающее длину печатной строки в пикселях.
-
 **Возвращает**
 
+* `Promise` – объект, который содержит число, указывающее длину печатной строки в пикселях.
 
 ## Параметры
 

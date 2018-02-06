@@ -14,7 +14,7 @@ folder: react_reference
 ### getAllUsers
 
 ```js
-static getAllUsers(getter: (User[]) => void): void
+static getAllUsers(): Promise<User[]>
 ```
 
 **Описание**
@@ -23,14 +23,14 @@ static getAllUsers(getter: (User[]) => void): void
 
 **Параметры**
 
-* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`User[]`](./react_reference_userapi.html#user).
-
 **Возвращает**
+
+* `Promise` – тип данных – [`User[]`](./react_reference_userapi.html#user)
 
 ### getAuthenticatedUser
 
 ```js
-static getAuthenticatedUser(getter: (User | null) => void): void
+static getAuthenticatedUser(): Promise<User | null>
 ```
 
 **Описание**
@@ -39,14 +39,14 @@ static getAuthenticatedUser(getter: (User | null) => void): void
 
 **Параметры**
 
-* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`User`](./react_reference_userapi.html#user).
-
 **Возвращает**
+
+* `Promise` – тип данных – [`User`](./react_reference_userapi.html#user).
 
 ### getAllGrants
 
 ```js
-static getAllGrants(getter: (Grant[]) => void): void
+static getAllGrants(): Promise<Grant[]>
 ```
 
 **Описание**
@@ -55,14 +55,14 @@ static getAllGrants(getter: (Grant[]) => void): void
 
 **Параметры**
 
-* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`Grant[]`](./react_reference_userapi.html#grant).
-
 **Возвращает**
+
+* `Promise` – тип данных – [`Grant[]`](./react_reference_userapi.html#grant).
 
 ### getGrantsOfAuthenticatedUser
 
 ```js
-static getGrantsOfAuthenticatedUser(getter: (Grant[]) => void): void
+static getGrantsOfAuthenticatedUser(): Promise<Grant[]>
 ```
 
 **Описание**
@@ -71,9 +71,9 @@ static getGrantsOfAuthenticatedUser(getter: (Grant[]) => void): void
 
 **Параметры**
 
-* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`Grant[]`](./react_reference_userapi.html#grant).
-
 **Возвращает**
+
+* `Promise` – тип данных – [`Grant[]`](./react_reference_userapi.html#grant).
 
 ## Параметры
 

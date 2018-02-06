@@ -1,5 +1,5 @@
 ---
-title: IntegrationCallback и IntegrationServices
+title: IntegrationCallback и ServicesAPI
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -9,7 +9,7 @@ folder: react_reference
 
 ## Описание
 
-## Методы класса IntegrationCallback (методы обратного вызова)
+## Методы класса IntegrationCallback
 
 ### onResult
 
@@ -21,7 +21,11 @@ onResult(result: IntegrationEventResult): Promise
 
 **Параметры**
 
+* `result`
+
 **Возвращает**
+
+* `Promise`
 
 ### startActivity
 
@@ -39,6 +43,8 @@ startActivity(intent: Intent): Promise
 
 **Возвращает**
 
+* `Promise`
+
 ### skip
 
 ```js
@@ -51,12 +57,14 @@ skip(): Promise
 
 **Возвращает**
 
+* `Promise`
+
 ## Методы для подписки на события
 
 ### addEventListener
 
 ```js
-static addEventListener(type: IntegrationEventType, listener: IntegrationEventListener, isGlobal: boolean = true): void
+static addEventListener(type: ServiceEventType, listener: ServiceEventListener, isGlobal: boolean = true): void
 ```
 
 **Описание**
@@ -66,7 +74,7 @@ static addEventListener(type: IntegrationEventType, listener: IntegrationEventLi
 **Параметры**
 
 * `type` – тип события. Для получения данных от интеграционных служб указывайте тип [`IntegrationEventType`](./react_reference_integrationapi.html#IntegrationEventType).
-* `listener` – тип слушателя. Для получения данных от интеграционных служб указывайте тип `IntegrationEventListener`.
+* `listener` – тип слушателя. Для получения данных от интеграционных служб указывайте тип `ServiceEventListener`.
 * `isGlobal` – указывает глобальную доступность метода. По умолчанию `true`.
 
 **Возвращает**
@@ -74,7 +82,7 @@ static addEventListener(type: IntegrationEventType, listener: IntegrationEventLi
 ### removeEventListener
 
 ```js
-static removeEventListener(type: IntegrationEventType, listener: IntegrationEventListener): boolean
+static removeEventListener(type: ServiceEventType, listener?: ServiceEventListener): boolean
 ```
 
 **Описание**
@@ -84,7 +92,7 @@ static removeEventListener(type: IntegrationEventType, listener: IntegrationEven
 **Параметры**
 
 * `type` – тип события. Для отмены получения данных от интеграционных служб указывайте тип [`IntegrationEventType`](./react_reference_integrationapi.html#IntegrationEventType).
-* `listener` – тип слушателя. Для отмены получения данных от интеграционных служб указывайте тип `IntegrationEventListener`. Не передавайте параметр если хотите удалить все слушатели.
+* `listener` – тип слушателя. Для отмены получения данных от интеграционных служб указывайте тип `ServiceEventListener`. Не передавайте параметр если хотите удалить все слушатели.
 
 **Возвращает**
 

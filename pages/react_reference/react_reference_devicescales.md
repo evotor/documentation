@@ -1,5 +1,5 @@
 ---
-title: Scales
+title: Весы
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -14,7 +14,7 @@ folder: react_reference
 ### getWeight
 
 ```js
-static getWeight(getter: (weight: Weight) => void): Promise
+static getWeight(): Promise<Weight>
 ```
 
 **Описание**
@@ -23,9 +23,9 @@ static getWeight(getter: (weight: Weight) => void): Promise
 
 **Параметры**
 
-* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [Weight](./react_reference_devicescales.html#weight).
-
 **Возвращает**
+
+* `Promise` – объект с данными о [весе товара (`Weight`)](./react_reference_devicescales.html#weight).
 
 ## Параметры
 

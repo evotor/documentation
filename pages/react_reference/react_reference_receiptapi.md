@@ -14,7 +14,7 @@ folder: react_reference
 ### getPositionByBarcode
 
 ```js
-static getPositionByBarcode(barcode: string, getter: (Position[]) => void): void
+static getPositionByBarcode(barcode: string): Promise<Position[]>
 ```
 
 **Описание**
@@ -24,9 +24,10 @@ static getPositionByBarcode(barcode: string, getter: (Position[]) => void): void
 **Параметры**
 
 * `barcode`– штрихкод товара. Строка.
-* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`Position[]`](./react_reference_receiptapi.html#position).
 
 **Возвращает**
+
+* `Promise` – тип данных – [`Position[]`](./react_reference_receiptapi.html#position).
 
 ### openReceipt
 
@@ -45,6 +46,8 @@ static openReceipt(positions: Position[], extra: SetExtra | null): Promise
 
 **Возвращает**
 
+* `Promise`
+
 ### sendElectronReceipt
 
 ```js
@@ -52,8 +55,7 @@ static sendElectronReceipt(printReceipts: PrintReceipt[],
                    extra: SetExtra | null,
                    phone: string | null,
                    email: string | null,
-                   discount: number | null,
-                   resultGetter: ((string) => void) | null): Promise
+                   discount: number | null): Promise<string>
 ```
 
 **Описание**
@@ -72,10 +74,12 @@ static sendElectronReceipt(printReceipts: PrintReceipt[],
 
 **Возвращает**
 
+* `Promise` – тип данных – строка.
+
 ### getReceiptByType
 
 ```js
-static getReceiptByType(type: ReceiptType, getter: (Receipt | null) => void): void
+static getReceiptByType(type: ReceiptType): Promise<Receipt | null>
 ```
 
 **Описание**
@@ -85,14 +89,15 @@ static getReceiptByType(type: ReceiptType, getter: (Receipt | null) => void): vo
 **Параметры**
 
 * `type` – тип чека: чек продажи (`SELL`) или чек возврата (`PAYBACK`).
-* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`Receipt`](./react_reference_receiptapi.html#receipt).
 
 **Возвращает**
+
+* `Promise` – тип данных – [`Receipt`](./react_reference_receiptapi.html#receipt).
 
 ### getReceiptByUuid
 
 ```js
-static getReceiptByUuid(uuid: string, getter: (Receipt | null) => void): void
+static getReceiptByUuid(uuid: string): Promise<Receipt | null>
 ```
 
 **Описание**
@@ -102,14 +107,15 @@ static getReceiptByUuid(uuid: string, getter: (Receipt | null) => void): void
 **Параметры**
 
 * `uuid` – идентификатор чека. Строка.
-* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`Receipt`](./react_reference_receiptapi.html#receipt).
 
 **Возвращает**
+
+* `Promise` – тип данных – [`Receipt`](./react_reference_receiptapi.html#receipt).
 
 ### getReceiptHeaders
 
 ```js
-static getReceiptHeaders(type: ReceiptType | null, getter: (ReceiptHeader[]) => void): void
+static getReceiptHeaders(type: ReceiptType | null): Promise<ReceiptHeader[]>
 ```
 
 **Описание**
@@ -119,10 +125,10 @@ static getReceiptHeaders(type: ReceiptType | null, getter: (ReceiptHeader[]) => 
 **Параметры**
 
 * `type` – тип чека: чек продажи (`SELL`) или чек возврата (`PAYBACK`).
-* `getter` – функция для [получения данных](./doc_react_interactiontypes.html#getter). Тип данных – [`ReceiptHeader[]`](./react_reference_receiptapi.html#receiptheader).
 
 **Возвращает**
 
+* `Promise` – тип данных – [`ReceiptHeader[]`](./react_reference_receiptapi.html#receiptheader).
 
 ## Параметры
 
