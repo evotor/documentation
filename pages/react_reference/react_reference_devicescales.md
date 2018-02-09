@@ -1,5 +1,5 @@
 ---
-title: Весы
+title: Класс Scales
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -8,6 +8,8 @@ folder: react_reference
 ---
 
 ## Описание
+
+Класс позволяет работать с весами, подключёнными к смарт-терминалу.
 
 ## Методы
 
@@ -19,25 +21,19 @@ static getWeight(): Promise<Weight>
 
 **Описание**
 
-Получает вес товара с помощью весов, подключённых к смарт-терминалу.
-
-**Параметры**
+Получает вес товара, установленного на весах.
 
 **Возвращает**
 
-* `Promise` – объект с данными о [весе товара (`Weight`)](./react_reference_devicescales.html#weight).
+* `Promise`, результат которого, - [вес товара](./react_reference_devicescales.html#weight).
+
+**Возможные ошибки**
+
+* [`DeviceError`](./doc_react_errorshandling.html#DeviceError)
 
 ## Параметры
 
-## Класс DeviceError {#DeviceError}
-
-```js
-export class DeviceError extends Error {
-    constructor(message: string) {}
-}
-```
-
-### Класс Weight {#weight}
+### Weight {#weight}
 
 ```js
 export class Weight {

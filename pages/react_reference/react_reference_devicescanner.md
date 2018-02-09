@@ -1,5 +1,5 @@
 ---
-title: Scanner
+title: Класс Scaner
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -8,6 +8,8 @@ folder: react_reference
 ---
 
 ## Описание
+
+Класс позволяет работать со сканером, подключённым к смарт-терминалу.
 
 ## Методы
 
@@ -23,11 +25,9 @@ static addEventListener(type: ScannerEventType, listener: ScannerEventListener, 
 
 **Параметры**
 
-* `type` – тип события. Для получения данных от сканера штрихкодов указывайте тип [`ScannerEventType`](./react_reference_devicescanner.html#ScannerEventType).
-* `listener` – тип слушателя. Для получения данных от сканера штрихкодов указывайте тип `ScannerEventListener`.
-* `isGlobal` – указывает глобальную доступность метода. По умолчанию `true`.
-
-**Возвращает**
+* `type` – событие типа  [`ScannerEventType`](./react_reference_devicescanner.html#ScannerEventType).
+* `listener` – слушатель типа  [`ScannerEventListener`](./react_reference_devicescanner.html#scannereventlistener).
+* `isGlobal` – [глобальная доступность метода](./doc_react_interactiontypes.html#eventsubscription).
 
 ### removeEventListener
 
@@ -41,8 +41,8 @@ static removeEventListener(type: ScannerEventType, listener?: ScannerEventListen
 
 **Параметры**
 
-* `type` – тип события. Для отмены получения данных от сканера штрихкодов указывайте тип [`ScannerEventType`](./react_reference_devicescanner.html#ScannerEventType).
-* `listener` – тип слушателя. Для отмены получения данных от сканера штрихкодов указывайте тип `ScannerEventListener`. Не передавайте параметр если хотите удалить все слушатели.
+* `type` – событие типа [`ScannerEventType`](./react_reference_devicescanner.html#ScannerEventType).
+* `listener` – слушатель типа [`ScannerEventListener`](./react_reference_devicescanner.html#scannereventlistener). Не передавайте параметр, если хотите удалить все слушатели.
 
 **Возвращает**
 
@@ -51,10 +51,22 @@ static removeEventListener(type: ScannerEventType, listener?: ScannerEventListen
 
 ## Параметры
 
-### Тип ScannerEventType {#ScannerEventType}
+### Перечисление ScannerEventType {#ScannerEventType}
 
 ```js
 export enum ScannerEventType {
     BARCODE_RECEIVED = "BARCODE_RECEIVED"
 }
+```
+
+### Тип ScannerEventListener {#scannereventlistener}
+
+```js
+export type ScannerEventListener = BarcodeReceiveListener;
+```
+
+### Тип BarcodeReceiveListener
+
+```js
+export type BarcodeReceiveListener = (barcode: string) => void;
 ```

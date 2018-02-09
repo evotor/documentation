@@ -1,5 +1,5 @@
 ---
-title: Принтер
+title: Класс Printer
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -9,25 +9,31 @@ folder: react_reference
 
 ## Описание
 
+Класс позволяет работать с принтером смарт-терминала.
+
 ## Методы
 
 ### print
 
 ```js
-static print(printables: [PrintableText, PrintableBarcode, PrintableImage]): Promise
+static print(printables: Printable[]): Promise
 ```
 
 **Описание**
 
-Передаёт данные для печати на принтере смарт-терминала.
+Вызывает команду печати.
 
 **Параметры**
 
-* `printables` – функция, в параметры которой передаётся массив элементов для печати: [`PrintableText`](./react_reference_devicesprinter.html#PrintableText), [PrintableBarcode](./react_reference_devicesprinter.html#PrintableBarcode), [PrintableImage](./react_reference_devicesprinter.html#PrintableImage).
+* `printables` – массив [ печатных элементов](./react_reference_devicesprinter.html#printable).
 
 **Возвращает**
 
 * `Promise`
+
+**Возможные ошибки**
+
+* [`DeviceError`](./doc_react_errorshandling.html#DeviceError)
 
 ### getAllowableSymbolsLineLength
 
@@ -37,13 +43,15 @@ static getAllowableSymbolsLineLength(): Promise<number>
 
 **Описание**
 
-Получает длину печатной строки в символах.
-
-**Параметры**
+Позволяет получить длину печатной строки в символах.
 
 **Возвращает**
 
-* `Promise` – объект, который содержит число, указывающее длину печатной строки в символах.
+* `Promise` – обещание, результат которого число.
+
+**Возможные ошибки**
+
+* [`DeviceError`](./doc_react_errorshandling.html#DeviceError)
 
 ### getAllowablePixelLineLength
 
@@ -53,37 +61,30 @@ static getAllowablePixelLineLength(): Promise<number>
 
 **Описание**
 
-Получает длину печатной строки в пикселях.
-
-**Параметры**
+Позволяет получить длину печатной строки в пикселях.
 
 **Возвращает**
 
-* `Promise` – объект, который содержит число, указывающее длину печатной строки в пикселях.
+* `Promise` – обещание, результат которого число.
+
+**Возможные ошибки**
+
+* [`DeviceError`](./doc_react_errorshandling.html#DeviceError)
 
 ## Параметры
 
-## Класс DeviceError {#DeviceError}
+### Тип Printable {#printable}
 
 ```js
-export class DeviceError extends Error {
-    constructor(message: string) {}
-}
+export type Printable = PrintableText | PrintableBarcode | PrintableImage;
 ```
+
 
 ### Класс PrintableText {#PrintableText}
 
 ```js
 export class PrintableText {
     constructor(text: string) {}
-}
-```
-
-### Класс PrintableBarcode {#PrintableBarcode}
-
-```js
-export class PrintableBarcode {
-    constructor(barcodeValue: string, barcodeType: BarcodeType) {}
 }
 ```
 
@@ -95,7 +96,15 @@ export class PrintableImage {
 }
 ```
 
-### Тип BarcodeType
+### Класс PrintableBarcode {#PrintableBarcode}
+
+```js
+export class PrintableBarcode {
+    constructor(barcodeValue: string, barcodeType: BarcodeType) {}
+}
+```
+
+### Перечисление BarcodeType
 
 ```js
 export enum BarcodeType {

@@ -1,5 +1,5 @@
 ---
-title: Inventory API
+title: InventoryAPI
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -8,6 +8,8 @@ folder: react_reference
 ---
 
 ## Описание
+
+С помощью методов класса приложения получают данные товаров, которые хранятся в базе смарт-терминала.
 
 ## Методы
 
@@ -23,11 +25,11 @@ static getAllBarcodesForProduct(productUuid: string): Promise<string[]>
 
 **Параметры**
 
-* `productUuid` – идентификатор товара в формате `uuid4`. Строка.
+* `productUuid` – идентификатор товара в формате `uuid4`.
 
 **Возвращает**
 
-* `Promise` – тип данных – массив строк, штрихкодов товара.
+* `Promise`, результат которого, –  массив строк, штрихкодов товара.
 
 ### getProductByUuid
 
@@ -41,11 +43,11 @@ static getProductByUuid(uuid: string): Promise<ProductItem | null>
 
 **Параметры**
 
-* `uuid` – идентификатор товара. Строка.
+* `uuid` – идентификатор товара в формате `uuid4`.
 
 **Возвращает**
 
-* `Promise` – тип данных – [`ProductItem`](./react_reference_inventoryapi.html#productitem).
+* `Promise`, результат которого, –  [товар](./react_reference_inventoryapi.html#productitem)  или `null`.
 
 ### getField
 
@@ -59,11 +61,11 @@ static getField(fieldUuid: string): Promise<Field | null>
 
 **Параметры**
 
-* `fieldUuid` – идентификатор поля в формате `uuid4`. Строка.
+* `fieldUuid` – идентификатор поля в формате `uuid4`.
 
 **Возвращает**
 
-* `Promise` – тип данных – [`Field`](./react_reference_inventoryapi.html#field).
+* `Promise`, результат которого, –  [`поле`](./react_reference_inventoryapi.html#field) или `null`.
 
 ### getProductExtras
 
@@ -77,11 +79,11 @@ static getProductExtras(productUuid: string): Promise<ProductExtra[]>
 
 **Параметры**
 
-* `productUuid` – идентификатор товара в формате `uuid4`. Строка.
+* `productUuid` – идентификатор товара в формате `uuid4`.
 
 **Возвращает**
 
-* `Promise` – тип данных – [`ProductExtra[ ]`](./react_reference_inventoryapi.html#productextra).
+* `Promise`, результат которого, –  массив [дополнительных полей](./react_reference_inventoryapi.html#productextra).
 
 ### Параметры
 
@@ -120,7 +122,7 @@ export class ProductExtra {
 }
 ```
 
-### Тип ProductType
+### Перечисление ProductType {#ProductType}
 
 ```js
 export enum ProductType {

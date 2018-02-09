@@ -9,7 +9,7 @@ folder: react_SDK
 published: true
 ---
 
-Вы можете отслеживать ошибки во всех методах, которые возвращают обещание (`promise`).
+Вы можете отслеживать ошибки в методах, которые возвращают обещание (`Promise`).
 
 Пример кода для отслеживания ошибок:
 
@@ -17,10 +17,62 @@ published: true
 NavigationAPI.startActivity(intent).catch((e)=>{console.log(e.message)});
 ```
 
-<!-- Методы, которые возвращают обещание (`promise`):
+## Ошибки
 
-* [Методы для работы с весами](./react_reference_devicescales.html);
-* [Методы для работы с принтером](./react_reference_devicesprinter.html);
-* [IntegrationCallback и IntegrationServices](./react_reference_integrationapi.html);
-* [Navigation API](./react_reference_navigationapi.html);
-* [Receipt API](./react_reference_receiptapi.html). -->
+### IntegrationError {#integrationerror}
+
+```js
+export class IntegrationError extends Error {
+    constructor(message: string) {}
+}
+```
+
+**Описание**
+
+Может возникнуть при работе с интеграционной службой, интеграционной операцией, а также при при открытии чека и отправке электронного чека.
+
+### NavigationError {#navigationerror}
+
+```js
+export class NavigationError extends Error {
+    constructor(message: NavigationErrorMessage) {}
+}
+```
+
+**Описание**
+
+Возникает если при навигации, если вы указали неверные данные.
+
+#### Тип NavigationErrorMessage
+
+```js
+export enum NavigationErrorMessage {
+    TARGET_CLASS_NOT_FOUND = "TARGET_CLASS_NOT_FOUND",
+    TARGET_PACKAGE_NOT_FOUND = "TARGET_PACKAGE_NOT_FOUND",
+    TARGET_CLASS_NOT_EXPORTED = "TARGET_CLASS_NOT_EXPORTED"
+}
+```
+
+### NoActivityError {#noactivityerror}
+
+```js
+export class NoActivityError extends Error {
+    constructor(message: string) {}
+}
+```
+
+**Описание**
+
+Возникает при обращении к операции закрытого приложения.
+
+### DeviceError {#DeviceError}
+
+```js
+export class DeviceError extends Error {
+    constructor(message: string) {}
+}
+```
+
+**Описание**
+
+Возникает при обращении к неподключённому устройству.

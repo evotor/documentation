@@ -1,5 +1,5 @@
 ---
-title: DeviceServiceConnector
+title: Класс DeviceServiceConnector
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -8,6 +8,8 @@ folder: react_reference
 ---
 
 ## Описание
+
+Класс подключает устройства (принтер чеков и весы) к смарт-терминалу.
 
 ## Методы
 
@@ -19,11 +21,8 @@ static startInitConnections(): void
 
 **Описание**
 
-Инициализирует оборудование подключённое к смарт-терминалу.
+Инициализирует подключение устройств.
 
-**Параметры**
-
-**Возвращает**
 
 ### addEventListener
 
@@ -37,11 +36,9 @@ static addEventListener(type: DeviceConnectionEventType, listener: DeviceConnect
 
 **Параметры**
 
-* `type` – тип события. Для получения данных от подключённого устройства указывайте тип [`DeviceConnectionEventType`](./react_reference_devicesconnection.html#DeviceConnectionEventType).
-* `listener` – тип слушателя. Для получения данных от подключённого устройства указывайте тип `DeviceConnectionEventListener`.
-* `isGlobal` – указывает глобальную доступность метода. По умолчанию `true`.
-
-**Возвращает**
+* `type` – событие типа [`DeviceConnectionEventType`](./react_reference_devicesconnection.html#DeviceConnectionEventType).
+* `listener` – слушатель типа [`DeviceConnectionEventListener`](./react_reference_devicesconnection.html#DeviceConnectionEventListener).
+* `isGlobal` – указывает [глобальную доступность метода](./doc_react_interactiontypes.html#eventsubscription).
 
 ### removeEventListener
 
@@ -55,8 +52,8 @@ static removeEventListener(type: DeviceConnectionEventType, listener?: DeviceCon
 
 **Параметры**
 
-* `type` – тип события. Для отмены получения данных от подключённого устройства указывайте тип [`DeviceConnectionEventType`](./react_reference_devicesconnection.html#DeviceConnectionEventType).
-* `listener` – тип слушателя. Для отмены получения данных от подключённого устройства указывайте тип `DeviceConnectionEventListener`. Не передавайте параметр если хотите удалить все слушатели.
+* `type` – событие типа [`DeviceConnectionEventType`](./react_reference_devicesconnection.html#DeviceConnectionEventType).
+* `listener` – слушатель типа [`DeviceConnectionEventListener`](./react_reference_devicesconnection.html#DeviceConnectionEventListener). Не передавайте параметр, если хотите удалить все слушатели.
 
 **Возвращает**
 
@@ -65,11 +62,17 @@ static removeEventListener(type: DeviceConnectionEventType, listener?: DeviceCon
 
 ## Параметры
 
-### Тип DeviceConnectionEventType {#DeviceConnectionEventType}
+### Перечисление DeviceConnectionEventType {#DeviceConnectionEventType}
 
 ```js
 export enum DeviceConnectionEventType {
     PRINTER_CONNECTION_CHANGED = "PRINTER_CONNECTION_CHANGED",
     SCALES_CONNECTION_CHANGED = "SCALES_CONNECTION_CHANGED"
 }
+```
+
+### Тип DeviceConnectionEventListener {#DeviceConnectionEventListener}
+
+```js
+export type DeviceConnectionEventListener = (connected: boolean) => void;
 ```

@@ -1,5 +1,5 @@
 ---
-title: User API
+title: UserAPI
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -8,6 +8,8 @@ folder: react_reference
 ---
 
 ## Описание
+
+С помощью методов класса приложения получают данные пользователей смарт-терминала.
 
 ## Методы
 
@@ -21,11 +23,9 @@ static getAllUsers(): Promise<User[]>
 
 Получает список всех пользователей смарт-терминала.
 
-**Параметры**
-
 **Возвращает**
 
-* `Promise` – тип данных – [`User[]`](./react_reference_userapi.html#user)
+* `Promise`, результат которого, –  массив [пользователей](./react_reference_userapi.html#user)
 
 ### getAuthenticatedUser
 
@@ -37,11 +37,9 @@ static getAuthenticatedUser(): Promise<User | null>
 
 Получает данные авторизованного пользователя смарт-терминала.
 
-**Параметры**
-
 **Возвращает**
 
-* `Promise` – тип данных – [`User`](./react_reference_userapi.html#user).
+* `Promise`, результат которого, – [`пользователь`](./react_reference_userapi.html#user).
 
 ### getAllGrants
 
@@ -57,7 +55,7 @@ static getAllGrants(): Promise<Grant[]>
 
 **Возвращает**
 
-* `Promise` – тип данных – [`Grant[]`](./react_reference_userapi.html#grant).
+* `Promise`, результат которого, –  массив [прав](./react_reference_userapi.html#grant).
 
 ### getGrantsOfAuthenticatedUser
 
@@ -73,7 +71,7 @@ static getGrantsOfAuthenticatedUser(): Promise<Grant[]>
 
 **Возвращает**
 
-* `Promise` – тип данных – [`Grant[]`](./react_reference_userapi.html#grant).
+* `Promise`, результат которого, –  массив [прав](./react_reference_userapi.html#grant).
 
 ## Параметры
 

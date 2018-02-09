@@ -426,6 +426,9 @@ entries:
       - title: Службы
         output: web
         subfolderitems:
+        - title: Инициализация служб
+          url: /react_reference_seviceapi.html
+          output: web
         - title: Интеграционные службы
           url: /react_reference_integrationapi.html
           output: web

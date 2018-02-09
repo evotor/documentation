@@ -9,6 +9,8 @@ folder: react_reference
 
 ## Описание
 
+Класс позволяет подписываться на широковещательные сообщения, которые рассылает смарт-терминал.
+
 ## Методы
 
 ### addEventListener
@@ -23,9 +25,9 @@ static addEventListener(type: BroadcastReceiverEventType, listener: BroadcastRec
 
 **Параметры**
 
-* `type` – тип события. Для получения широковещательных сообщений указывайте тип [`BroadcastReceiverEventType`](./react_reference_broadcastreceivers.html#BroadcastReceiverEventType).
-* `listener` – тип слушателя. Для получения широковещательных сообщений указывайте тип `BroadcastReceiveListener`.
-* `isGlobal` – указывает глобальную доступность метода. По умолчанию `true`.
+* `type` – событие типа [`BroadcastReceiverEventType`](./react_reference_broadcastreceivers.html#BroadcastReceiverEventType).
+* `listener` – слушатель типа `BroadcastReceiveListener`.
+* `isGlobal` – указывает [глобальную доступность метода](./doc_react_interactiontypes.html#eventsubscription).
 
 **Возвращает**
 
@@ -41,8 +43,8 @@ static removeEventListener(type: BroadcastReceiverEventType, listener?: Broadcas
 
 **Параметры**
 
-* `type` – тип события. Для отмены получения широковещательных сообщений указывайте тип [`BroadcastReceiverEventType`](./react_reference_broadcastreceivers.html#BroadcastReceiverEventType).
-* `listener` – тип слушателя. Для отмены получения широковещательных сообщений указывайте тип `BroadcastReceiveListener`. Не передавайте параметр если хотите удалить все слушатели.
+* `type` – событие типа [`BroadcastReceiverEventType`](./react_reference_broadcastreceivers.html#BroadcastReceiverEventType).
+* `listener` – слушатель типа `BroadcastReceiveListener`. Не передавайте параметр если хотите удалить все слушатели.
 
 **Возвращает**
 

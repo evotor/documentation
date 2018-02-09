@@ -1,5 +1,5 @@
 ---
-title: Receipt API
+title: ReceiptAPI
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -8,6 +8,8 @@ folder: react_reference
 ---
 
 ## Описание
+
+С помощью методов класса приложения получают данные о позициях для добавления в чек, получать чеки по `uuid`, а также получать заголовки чеков. Используя методы класса приложения также могут передавать чек для оплаты в смарт-терминале и отправить чек на email или телефон.
 
 ## Методы
 
@@ -19,15 +21,15 @@ static getPositionByBarcode(barcode: string): Promise<Position[]>
 
 **Описание**
 
-Получает товарную позицию по значению штрихкода.
+Получает массив позиций чека по значению штрихкода.
 
 **Параметры**
 
-* `barcode`– штрихкод товара. Строка.
+* `barcode`– штрихкод товара.
 
 **Возвращает**
 
-* `Promise` – тип данных – [`Position[]`](./react_reference_receiptapi.html#position).
+* `Promise`, результат которого, –  массив [позиций](./react_reference_receiptapi.html#position).
 
 ### openReceipt
 
@@ -41,7 +43,7 @@ static openReceipt(positions: Position[], extra: SetExtra | null): Promise
 
 **Параметры**
 
-* `positions` – [массив позиций](./react_reference_receiptapi.html#position).
+* `positions` – массив [позиций](./react_reference_receiptapi.html#position).
 * `extra` – указывает наличие [дополнительных полей](./react_reference_receiptapi.html#setextra) в чеке.
 
 **Возвращает**
@@ -64,17 +66,15 @@ static sendElectronReceipt(printReceipts: PrintReceipt[],
 
 **Параметры**
 
-* `printReceipts` – [массив](./react_reference_receiptapi.html#printreceipt)
+* `printReceipts` – массив [печатных форм чека](./react_reference_receiptapi.html#printreceipt).
 * `extra` – указывает наличие [дополнительных полей](./react_reference_receiptapi.html#setextra) в чеке.
-* `phone` – телефонный номер покупателя. Строка.
-* `email` – адрес электронной почты покупателя. Строка.
-* `discount` – скидка на чек. Число.
-* `onSuccess`
-* `onError`
+* `phone` – телефонный номер покупателя.
+* `email` – адрес электронной почты покупателя.
+* `discount` – скидка на чек.
 
 **Возвращает**
 
-* `Promise` – тип данных – строка.
+* `Promise`, результат которого, –  строка.
 
 ### getReceiptByType
 
@@ -88,11 +88,11 @@ static getReceiptByType(type: ReceiptType): Promise<Receipt | null>
 
 **Параметры**
 
-* `type` – тип чека: чек продажи (`SELL`) или чек возврата (`PAYBACK`).
+* `type` – [тип чека](./react_reference_receiptapi.html#receipttype).
 
 **Возвращает**
 
-* `Promise` – тип данных – [`Receipt`](./react_reference_receiptapi.html#receipt).
+* `Promise`, результат которого, –  [чек](./react_reference_receiptapi.html#receipt) или `null`.
 
 ### getReceiptByUuid
 
@@ -106,11 +106,11 @@ static getReceiptByUuid(uuid: string): Promise<Receipt | null>
 
 **Параметры**
 
-* `uuid` – идентификатор чека. Строка.
+* `uuid` – идентификатор чека.
 
 **Возвращает**
 
-* `Promise` – тип данных – [`Receipt`](./react_reference_receiptapi.html#receipt).
+* `Promise`, результат которого, –  [чек](./react_reference_receiptapi.html#receipt) или `null`.
 
 ### getReceiptHeaders
 
@@ -128,67 +128,130 @@ static getReceiptHeaders(type: ReceiptType | null): Promise<ReceiptHeader[]>
 
 **Возвращает**
 
-* `Promise` – тип данных – [`ReceiptHeader[]`](./react_reference_receiptapi.html#receiptheader).
+* `Promise`, результат которого, –  массив [заголовков чека](./react_reference_receiptapi.html#receiptheader).
 
 ## Параметры
 
-### Изменение чека
-
-#### Класс PositionAdd
+### Класс PositionAdd
 
 ```js
-export class PositionAdd {
+export class PositionAdd extends AbstractBundlable {
     constructor(position: Position) {}
 }
 ```
 
-#### Класс PositionEdit
+**См. также**
+
+* [`Position`](./react_reference_receiptapi.html#position)
+
+
+### Класс PositionEdit
 
 ```js
-export class PositionEdit {
+export class PositionEdit extends AbstractBundlable {
     constructor(position: Position) {}
 }
 ```
 
-#### Класс PositionRemove
+**См. также**
+
+* [`Position`](./react_reference_receiptapi.html#position)
+
+### Класс PositionRemove
 
 ```js
-export class PositionRemove {
+export class PositionRemove extends AbstractBundlable {
     constructor(positionUuid: string) {}
 }
 ```
 
-### Содержимое чека
-
-#### Класс SetExtra {#setextra}
+### Класс SetExtra {#setextra}
 
 ```js
-export class SetExtra {
-    constructor(extra: WritableObject) {}
+export class SetExtra extends AbstractBundlable {
+    constructor(extra: Object) {}
 }
 ```
 
-#### Класс SetPrintGroup
+### Класс SetPrintGroup {#SetPrintGroup}
 
 ```js
-export class SetPrintGroup {
+export class SetPrintGroup extends AbstractBundlable {
     constructor(printGroup: PrintGroup | null,
                 paymentPurposeIds: string[],
                 positionUuids: string[]) {}
 }
 ```
 
-#### Класс SetPrintExtra
+**См. также**
+
+* [`PrintGroup`](./react_reference_receiptapi.html#PrintGroup)
+
+### Класс SetPrintExtra {#SetPrintExtra}
 
 ```js
-export class SetPrintExtra {
+export class SetPrintExtra extends AbstractBundlable {
     constructor(printExtraPlace: PrintExtraPlace,
-                printGroupId: string,
-                printables: [PrintableText, PrintableBarcode, PrintableImage]) {}
+                printables: Printable[]) {}
 }
 ```
 
-#### Класс ExtraKey
+**См. также**
+
+* [`Printable`](./react_reference_devicesprinter.html#printable)
+
+### Тип PrintExtraPlace
+
+```js
+export type PrintExtraPlace =
+    PrintExtraPlacePrintGroupTop |
+    PrintExtraPlacePrintGroupHeader |
+    PrintExtraPlacePrintGroupSummary |
+    PrintExtraPlacePositionFooter |
+    PrintExtraPlacePositionAllSubpositionsFooter;
+```
+
+### Класс PrintExtraPlacePrintGroupTop
+
+```js
+export class PrintExtraPlacePrintGroupTop {
+    constructor(printGroupId?: string) {}
+}
+```
+
+### Класс PrintExtraPlacePrintGroupHeader
+
+```js
+export class PrintExtraPlacePrintGroupHeader {
+    constructor(printGroupId?: string) {}
+}
+```
+
+### Класс PrintExtraPlacePrintGroupSummary
+
+```js
+export class PrintExtraPlacePrintGroupSummary {
+    constructor(printGroupId?: string) {}
+}
+```
+
+### Класс PrintExtraPlacePositionFooter
+
+```js
+export class PrintExtraPlacePositionFooter {
+    constructor(positionUuid?: string) {}
+}
+```
+
+### Класс PrintExtraPlacePositionAllSubpositionsFooter
+
+```js
+export class PrintExtraPlacePositionAllSubpositionsFooter {
+    constructor(positionUuid?: string) {}
+}
+```
+
+### Класс ExtraKey {#ExtraKey}
 
 ```js
 export class ExtraKey {
@@ -196,11 +259,11 @@ export class ExtraKey {
 }
 ```
 
-#### Класс Position {#position}
+### Класс Position {#position}
 
 ```js
 export class Position {
-    constructor(uuid: string,
+    constructor(uuid: string | null,
                 productUuid: string | null,
                 productCode: string | null,
                 productType: ProductType,
@@ -212,7 +275,7 @@ export class Position {
                 priceWithDiscountPosition: number,
                 quantity: number,
                 barcode: string | null,
-                mark: string,
+                mark: string | null,
                 alcoholByVolume: number | null,
                 alcoholProductKindCode: number | null,
                 tareVolume: number | null,
@@ -221,7 +284,13 @@ export class Position {
 }
 ```
 
-#### Класс ReceiptHeader {#receiptheader}
+**См. также**
+
+* [`ProductType`](./react_reference_inventoryapi.html#ProductType)
+* [`TaxNumber`](./react_reference_receiptapi.html#TaxNumber)
+* [`ExtraKey`](./react_reference_receiptapi.html#ExtraKey)
+
+### Класс ReceiptHeader {#receiptheader}
 
 ```js
 export class ReceiptHeader {
@@ -235,7 +304,11 @@ export class ReceiptHeader {
 }
 ```
 
-#### Класс PrintGroup
+**См. также**
+
+* [`ReceiptType`](./react_reference_receiptapi.html#receipttype)
+
+### Класс PrintGroup {#PrintGroup}
 
 ```js
 export class PrintGroup {
@@ -249,7 +322,12 @@ export class PrintGroup {
 }
 ```
 
-#### Класс Payment {#payment}
+**См. также**
+
+* [`PrintGroupType`](./react_reference_receiptapi.html#PrintGroupType)
+* [`TaxationSystem`](./react_reference_receiptapi.html#TaxationSystem)
+
+### Класс Payment {#payment}
 
 ```js
 export class Payment {
@@ -262,7 +340,11 @@ export class Payment {
 }
 ```
 
-#### Класс PrintReceipt {#printreceipt}
+**См. также**
+
+* [`PaymentSystem`](./react_reference_receiptapi.html#PaymentSystem)
+
+### Класс PrintReceipt {#printreceipt}
 
 ```js
 export class PrintReceipt {
@@ -273,7 +355,12 @@ export class PrintReceipt {
 }
 ```
 
-#### Класс Receipt {#receipt}
+**См. также**
+
+* [`PrintGroup`](./react_reference_receiptapi.html#PrintGroup)
+* [`Position`](./react_reference_receiptapi.html#position)
+
+### Класс Receipt {#receipt}
 
 ```js
 export class Receipt {
@@ -282,6 +369,11 @@ export class Receipt {
                 printDocuments: PrintReceipt[]) {}
 }
 ```
+
+**См. также**
+
+* [`ReceiptHeader`](./react_reference_receiptapi.html#receiptheader)
+* [`PrintReceipt`](./react_reference_receiptapi.html#printreceipt)
 
 #### Методы класса
 
@@ -295,11 +387,9 @@ getPositions(): Position[]
 
 Возвращает массив позиций, добавленных в чек.
 
-**Параметры**
-
 **Возвращает**
 
-Метод возвращает [`Position[]`](./react_reference_receiptapi.html#position).
+Метод возвращает массив [позиций](./react_reference_receiptapi.html#position).
 
 ##### getPayments
 ```js
@@ -310,25 +400,23 @@ getPayments(): Payment[]
 
 Возвращает массив платежей, с помощью которых оплачен чек.
 
-**Параметры**
-
 **Возвращает**
 
-Метод возвращает [`Payment[]`](./react_reference_receiptapi.html#payment)
+Метод [массив платежей](./react_reference_receiptapi.html#payment)
 
-#### Класс PaymentPurpose
+### Класс PaymentPurpose {#PaymentPurpose}
 
 ```js
 export class PaymentPurpose {
     constructor(identifier: string | null,
                 paymentSystemId: string | null,
-                total: number | null,
+                total: number,
                 accountId: string | null,
                 userMessage: string | null) {}
 }
 ```
 
-#### Класс PaymentSystem
+### Класс PaymentSystem {#PaymentSystem}
 
 ```js
 export class PaymentSystem {
@@ -336,7 +424,11 @@ export class PaymentSystem {
 }
 ```
 
-#### Тип ReceiptType
+**См. также**
+
+* [`PaymentType`](./react_reference_receiptapi.html#PaymentType)
+
+### Перечисление ReceiptType {#receipttype}
 
 ```js
 export enum ReceiptType {
@@ -345,7 +437,7 @@ export enum ReceiptType {
 }
 ```
 
-#### Тип TaxNumber
+### Перечисление TaxNumber {#TaxNumber}
 
 ```js
 export enum TaxNumber {
@@ -358,7 +450,7 @@ export enum TaxNumber {
 }
 ```
 
-#### Тип TaxationSystem
+### Перечисление TaxationSystem {#TaxationSystem}
 
 ```js
 export enum TaxationSystem {
@@ -371,7 +463,7 @@ export enum TaxationSystem {
 }
 ```
 
-#### Тип PrintGroupType
+### Перечисление PrintGroupType {#PrintGroupType}
 
 ```js
 export enum PrintGroupType {
@@ -381,24 +473,23 @@ export enum PrintGroupType {
 }
 ```
 
-#### Тип PrintExtraPlace
-
-```js
-export enum PrintExtraPlace {
-    PrintExtraPlacePrintGroupTop = "PrintExtraPlacePrintGroupTop",
-    PrintExtraPlacePrintGroupHeader = "PrintExtraPlacePrintGroupHeader",
-    PrintExtraPlacePrintGroupSummary = "PrintExtraPlacePrintGroupSummary",
-    PrintExtraPlacePositionFooter = "PrintExtraPlacePositionFooter",
-    PrintExtraPlacePositionAllSubpositionsFooter = "PrintExtraPlacePositionAllSubpositionsFooter"
-}
-```
-
-#### Тип PaymentType
+### Перечисление PaymentType {#PaymentType}
 
 ```js
 export enum PaymentType {
     UNKNOWN = "UNKNOWN",
     CASH = "CASH",
     ELECTRON = "ELECTRON"
+}
+```
+
+### Перечисление PaymentSystemOperationType {#PaymentSystemOperationType}
+
+```js
+export enum PaymentSystemOperationType {
+    SELL = "SELL",
+    SELL_CANCEL = "SELL_CANCEL",
+    PAYBACK = "PAYBACK",
+    PAYBACK_CANCEL = "PAYBACK_CANCEL"
 }
 ```
