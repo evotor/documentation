@@ -27,7 +27,7 @@ static addEventListener(type: ScannerEventType, listener: ScannerEventListener, 
 
 * `type` – событие типа  [`ScannerEventType`](./react_reference_devicescanner.html#ScannerEventType).
 * `listener` – слушатель типа  [`ScannerEventListener`](./react_reference_devicescanner.html#scannereventlistener).
-* `isGlobal` – [глобальная доступность метода](./doc_react_interactiontypes.html#eventsubscription).
+* `isGlobal` – [глобальная доступность слушателя](./doc_react_interactiontypes.html#eventsubscription).
 
 ### removeEventListener
 

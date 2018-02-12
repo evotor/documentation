@@ -1,5 +1,5 @@
 ---
-title: NavigationAPI
+title: Класс NavigationAPI
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -9,7 +9,9 @@ folder: react_reference
 
 ## Описание
 
-Класс предоставляет доступ к нативной навигации андроида и позволяет запускать службы и операции. Внутри своего приложения вы можете запускать любые экспортированные операции других приложений.
+Класс предоставляет собой обёртку нативной навигации андроида.
+
+С помощью методов класса приложения запускают службы и операции. Внутри своего приложения вы можете запускать любые экспортированные операции других приложений.
 
 ## Методы
 
@@ -21,7 +23,7 @@ static createIntentForSellReceiptEdit(): Intent
 
 **Описание**
 
-Создаёт намерение (`Intent`) изменения чека продажи.
+Создаёт намерение (`Intent`) для формы наполнения чека продажи.
 
 **Возвращает**
 
@@ -35,7 +37,7 @@ static createIntentForPaybackReceiptEdit(): Intent
 
 **Описание**
 
-Создаёт намерение (`Intent`) изменения чека возврата.
+Создаёт намерение (`Intent`) для формы наполнения чека возврата.
 
 **Возвращает**
 
@@ -49,7 +51,7 @@ static createIntentForSellReceiptPayment(): Intent
 
 **Описание**
 
-Создаёт намерение (`Intent`) оплаты по чеку продажи.
+Создаёт намерение (`Intent`) для формы оплаты чека продажи.
 
 **Возвращает**
 
@@ -63,7 +65,7 @@ static createIntentForPaybackReceiptPayment(): Intent
 
 **Описание**
 
-Создаёт намерение (`Intent`) оплаты по чеку возврата.
+Создаёт намерение (`Intent`) для формы оплаты чека возврата.
 
 **Возвращает**
 
@@ -77,7 +79,7 @@ static createIntentForCashReceiptSettings(): Intent
 
 **Описание**
 
-Создаёт намерение (`Intent`) оплаты по чеку продажи.
+Создаёт намерение (`Intent`) для формы настроек кассового чека.
 
 **Возвращает**
 
@@ -91,6 +93,8 @@ static createIntentForCashRegisterReport(): Intent
 
 **Описание**
 
+Создаёт намерение (`Intent`) для формы кассового отчёта.
+
 **Возвращает**
 
 * `Intent`
@@ -103,11 +107,15 @@ static getIntent(): Promise<Intent>
 
 **Описание**
 
-Получает намерение (`Intent`).
+Получает намерение (`Intent`) для текущей операции.
 
 **Возвращает**
 
 * `Promise` – возвращает объект с намерением.
+
+**Возможные ошибки**
+
+* [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
 
 ### startActivity
 
@@ -121,19 +129,26 @@ static startActivity(intent: Intent): Promise
 
 **Параметры**
 
-* `Intent`
+* `intent`
 
 **Возвращает**
 
 * `Promise`
 
-### startActivityForResult
+**Возможные ошибки**
+
+* [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
+
+
+### startActivityForResult {#startActivityForResult}
 
 ```js
 static startActivityForResult(intent: Intent, requestCode: number): Promise
 ```
 
 **Описание**
+
+Запускает операцию для получения результата.
 
 **Параметры**
 
@@ -143,6 +158,11 @@ static startActivityForResult(intent: Intent, requestCode: number): Promise
 **Возвращает**
 
 * `Promise`
+
+**Возможные ошибки**
+
+* [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
+
 
 ### startService
 
@@ -162,6 +182,11 @@ static startService(intent: Intent): Promise
 
 * `Promise`
 
+**Возможные ошибки**
+
+* [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
+
+
 ### setResult
 
 ```js
@@ -170,15 +195,21 @@ static setResult(resultCode: number, data?: Intent): Promise
 
 **Описание**
 
-Устанавливает результат, если ваша активность была открыта методом [startActivityForResult](./).
+Устанавливает результат текущей операции, если она была запущена методом [startActivityForResult](./react_reference_navigationapi.html#startActivityForResult).
 
 **Параметры**
 
 * `resultCode`
+* `data`
 
 **Возвращает**
 
 * `Promise`
+
+**Возможные ошибки**
+
+* [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
+
 
 ### setIntegrationResult
 
@@ -188,7 +219,7 @@ static setIntegrationResult(result: IntegrationServiceEventResult): Promise
 
 **Описание**
 
-Устанавливает результат [интеграционного события](./).
+Устанавливает интеграционный результат текущей операции, если она унаследована от интеграционной операции.
 
 **Параметры**
 
@@ -198,6 +229,11 @@ static setIntegrationResult(result: IntegrationServiceEventResult): Promise
 
 * `Promise`
 
+**Возможные ошибки**
+
+* [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
+
+
 ### finish
 
 ```js
@@ -206,9 +242,16 @@ static finish(): Promise
 
 **Описание**
 
+Завершает текущую операцию.
+
 **Возвращает**
 
 * `Promise`
+
+**Возможные ошибки**
+
+* [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
+
 
 ### addEventListener
 
@@ -224,9 +267,7 @@ static addEventListener(type: NavigationEventType, listener: NavigationEventList
 
 * `type` – событие типа [`NavigationEventType`](./react_reference_navigationapi.html#navigationeventtype).
 * `listener` – слушатель типа `NavigationEventListener`.
-* `isGlobal` – указывает [глобальную доступность метода](./doc_react_interactiontypes.html#eventsubscription)
-
-**Возвращает**
+* `isGlobal` – [глобальная доступность слушателя](./doc_react_interactiontypes.html#eventsubscription)
 
 ### removeEventListener
 
@@ -258,10 +299,4 @@ export enum NavigationEventType {
     BACK_PRESSED = "BACK_PRESSED"
 }
 ```
-
-## Ошибки
-
-При вызове методов класса могут возникать ошибки класса [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
-
-
 <!-- tobundle - TODO -->

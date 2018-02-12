@@ -36,14 +36,14 @@ published: true
 *Чтобы создать apk-файл приложения:*
 
 1. В Android Studio откройте манифест приложения, размещённый по адресу `YourAppName\android\app\src\AndroidManifest.xml`.
-2. В поле `app_uuid` элемента `<meta-data>` вместо текущего идентификатора укажите идентификатор приложения, который вы получили в [процессе подготовки приложения на сайте разработчиков](./doc_java_app_tutorial.html#devSiteSettingUp)
+2. В раздел `<application>` добавьте следующий раздел:
 
    ```xml
    <meta-data
-            android:name="app_uuid"
-            android:value="66998575-ee62-4e87-b191-89f351fdc572" />
+       android:name="app_uuid"
+       android:value="<Идентификатор приложения>" />
    ```
-
+   Где требуется указать идентификатор приложения, который вы получили в [процессе подготовки приложения на сайте разработчиков](./doc_java_app_tutorial.html#devSiteSettingUp)
 3. В командной строке перейдите в папку `YourAppName\android` и выполните команду:
 
    ```

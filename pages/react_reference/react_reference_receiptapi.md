@@ -1,5 +1,5 @@
 ---
-title: ReceiptAPI
+title: Класс ReceiptAPI
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -9,7 +9,7 @@ folder: react_reference
 
 ## Описание
 
-С помощью методов класса приложения получают данные о позициях для добавления в чек, получать чеки по `uuid`, а также получать заголовки чеков. Используя методы класса приложения также могут передавать чек для оплаты в смарт-терминале и отправить чек на email или телефон.
+С помощью методов класса приложения получают данные чеков и передают их для обработки в смарт-терминал.
 
 ## Методы
 
@@ -29,7 +29,7 @@ static getPositionByBarcode(barcode: string): Promise<Position[]>
 
 **Возвращает**
 
-* `Promise`, результат которого, –  массив [позиций](./react_reference_receiptapi.html#position).
+* `Promise`, результат которого –  массив [позиций](./react_reference_receiptapi.html#position).
 
 ### openReceipt
 
@@ -39,7 +39,7 @@ static openReceipt(positions: Position[], extra: SetExtra | null): Promise
 
 **Описание**
 
-Открывает чек, сформированный в смарт-терминале.
+Формирует чек из полученных данных и открывает его в интерфейсе смарт-терминала.
 
 **Параметры**
 
@@ -62,19 +62,19 @@ static sendElectronReceipt(printReceipts: PrintReceipt[],
 
 **Описание**
 
-Передаёт чек, сформированный в приложении, в смарт-терминал.
+Формирует чек из полученных данных и отправляет его на электронную почту и/или телефон.
 
 **Параметры**
 
 * `printReceipts` – массив [печатных форм чека](./react_reference_receiptapi.html#printreceipt).
-* `extra` – указывает наличие [дополнительных полей](./react_reference_receiptapi.html#setextra) в чеке.
+* `extra` – [дополнительные поля](./react_reference_receiptapi.html#setextra) в чеке.
 * `phone` – телефонный номер покупателя.
 * `email` – адрес электронной почты покупателя.
 * `discount` – скидка на чек.
 
 **Возвращает**
 
-* `Promise`, результат которого, –  строка.
+* `Promise`, результат которого – строка.
 
 ### getReceiptByType
 
@@ -92,7 +92,7 @@ static getReceiptByType(type: ReceiptType): Promise<Receipt | null>
 
 **Возвращает**
 
-* `Promise`, результат которого, –  [чек](./react_reference_receiptapi.html#receipt) или `null`.
+* `Promise`, результат которого – [чек](./react_reference_receiptapi.html#receipt) или `null`.
 
 ### getReceiptByUuid
 
@@ -110,7 +110,7 @@ static getReceiptByUuid(uuid: string): Promise<Receipt | null>
 
 **Возвращает**
 
-* `Promise`, результат которого, –  [чек](./react_reference_receiptapi.html#receipt) или `null`.
+* `Promise`, результат которого –  [чек](./react_reference_receiptapi.html#receipt) или `null`.
 
 ### getReceiptHeaders
 
@@ -128,7 +128,7 @@ static getReceiptHeaders(type: ReceiptType | null): Promise<ReceiptHeader[]>
 
 **Возвращает**
 
-* `Promise`, результат которого, –  массив [заголовков чека](./react_reference_receiptapi.html#receiptheader).
+* `Promise`, результат которого –  массив [заголовков чека](./react_reference_receiptapi.html#receiptheader).
 
 ## Параметры
 
@@ -375,7 +375,7 @@ export class Receipt {
 * [`ReceiptHeader`](./react_reference_receiptapi.html#receiptheader)
 * [`PrintReceipt`](./react_reference_receiptapi.html#printreceipt)
 
-#### Методы класса
+#### Методы
 
 ##### getPositions
 
@@ -385,11 +385,11 @@ getPositions(): Position[]
 
 **Описание**
 
-Возвращает массив позиций, добавленных в чек.
+Получает позиции добавленные в чек.
 
 **Возвращает**
 
-Метод возвращает массив [позиций](./react_reference_receiptapi.html#position).
+* Массив [позиций](./react_reference_receiptapi.html#position).
 
 ##### getPayments
 ```js
@@ -398,11 +398,11 @@ getPayments(): Payment[]
 
 **Описание**
 
-Возвращает массив платежей, с помощью которых оплачен чек.
+Получает платежи, с помощью которых оплачен чек.
 
 **Возвращает**
 
-Метод [массив платежей](./react_reference_receiptapi.html#payment)
+* Массив [платежей](./react_reference_receiptapi.html#payment)
 
 ### Класс PaymentPurpose {#PaymentPurpose}
 

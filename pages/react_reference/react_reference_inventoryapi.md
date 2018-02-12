@@ -1,5 +1,5 @@
 ---
-title: InventoryAPI
+title: Класс InventoryAPI
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -29,7 +29,7 @@ static getAllBarcodesForProduct(productUuid: string): Promise<string[]>
 
 **Возвращает**
 
-* `Promise`, результат которого, –  массив строк, штрихкодов товара.
+* `Promise`, результат которого – массив строк, штрихкодов товара.
 
 ### getProductByUuid
 
@@ -47,7 +47,7 @@ static getProductByUuid(uuid: string): Promise<ProductItem | null>
 
 **Возвращает**
 
-* `Promise`, результат которого, –  [товар](./react_reference_inventoryapi.html#productitem)  или `null`.
+* `Promise`, результат которого –  [товар](./react_reference_inventoryapi.html#productitem)  или `null`.
 
 ### getField
 
@@ -57,7 +57,7 @@ static getField(fieldUuid: string): Promise<Field | null>
 
 **Описание**
 
-Получает поле.
+Получает дополнительное поле товара.
 
 **Параметры**
 
@@ -65,7 +65,7 @@ static getField(fieldUuid: string): Promise<Field | null>
 
 **Возвращает**
 
-* `Promise`, результат которого, –  [`поле`](./react_reference_inventoryapi.html#field) или `null`.
+* `Promise`, результат которого –  [`поле`](./react_reference_inventoryapi.html#field) или `null`.
 
 ### getProductExtras
 
@@ -75,7 +75,7 @@ static getProductExtras(productUuid: string): Promise<ProductExtra[]>
 
 **Описание**
 
-Получает дополнительные поля товара.
+Получает дополнительные данные товара.
 
 **Параметры**
 
@@ -83,9 +83,9 @@ static getProductExtras(productUuid: string): Promise<ProductExtra[]>
 
 **Возвращает**
 
-* `Promise`, результат которого, –  массив [дополнительных полей](./react_reference_inventoryapi.html#productextra).
+* `Promise`, результат которого –  массив [дополнительных полей](./react_reference_inventoryapi.html#productextra).
 
-### Параметры
+## Параметры
 
 ### Класс ProductItem {#productitem}
 

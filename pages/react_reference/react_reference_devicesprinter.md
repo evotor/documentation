@@ -47,7 +47,7 @@ static getAllowableSymbolsLineLength(): Promise<number>
 
 **Возвращает**
 
-* `Promise` – обещание, результат которого число.
+* `Promise`, результат которого – число.
 
 **Возможные ошибки**
 
@@ -65,7 +65,7 @@ static getAllowablePixelLineLength(): Promise<number>
 
 **Возвращает**
 
-* `Promise` – обещание, результат которого число.
+* `Promise`, результат которого – число.
 
 **Возможные ошибки**
 

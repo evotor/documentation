@@ -392,7 +392,7 @@ entries:
     - title: Начало работы
       url: /doc_react_gettingstarted.html
       output: web
-    - title: Типы взаиможействия со смарт-терминалом
+    - title: Типы взаимодействия со смарт-терминалом
       url: /doc_react_interactiontypes.html
       output: web
 

@@ -1,5 +1,5 @@
 ---
-title: UserAPI
+title: Класс UserAPI
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
@@ -25,7 +25,7 @@ static getAllUsers(): Promise<User[]>
 
 **Возвращает**
 
-* `Promise`, результат которого, –  массив [пользователей](./react_reference_userapi.html#user)
+* `Promise`, результат которого –  массив [пользователей](./react_reference_userapi.html#user)
 
 ### getAuthenticatedUser
 
@@ -39,7 +39,7 @@ static getAuthenticatedUser(): Promise<User | null>
 
 **Возвращает**
 
-* `Promise`, результат которого, – [`пользователь`](./react_reference_userapi.html#user).
+* `Promise`, результат которого – [пользователь](./react_reference_userapi.html#user).
 
 ### getAllGrants
 
@@ -51,11 +51,9 @@ static getAllGrants(): Promise<Grant[]>
 
 Получает все [права](./doc_app_grants.html).
 
-**Параметры**
-
 **Возвращает**
 
-* `Promise`, результат которого, –  массив [прав](./react_reference_userapi.html#grant).
+* `Promise`, результат которого –  массив [прав](./react_reference_userapi.html#grant).
 
 ### getGrantsOfAuthenticatedUser
 
@@ -71,7 +69,7 @@ static getGrantsOfAuthenticatedUser(): Promise<Grant[]>
 
 **Возвращает**
 
-* `Promise`, результат которого, –  массив [прав](./react_reference_userapi.html#grant).
+* `Promise`, результат которого –  массив [прав](./react_reference_userapi.html#grant).
 
 ## Параметры
 

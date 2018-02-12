@@ -38,7 +38,7 @@ static addEventListener(type: DeviceConnectionEventType, listener: DeviceConnect
 
 * `type` – событие типа [`DeviceConnectionEventType`](./react_reference_devicesconnection.html#DeviceConnectionEventType).
 * `listener` – слушатель типа [`DeviceConnectionEventListener`](./react_reference_devicesconnection.html#DeviceConnectionEventListener).
-* `isGlobal` – указывает [глобальную доступность метода](./doc_react_interactiontypes.html#eventsubscription).
+* `isGlobal` – [глобальная доступность слушателя](./doc_react_interactiontypes.html#eventsubscription).
 
 ### removeEventListener
 

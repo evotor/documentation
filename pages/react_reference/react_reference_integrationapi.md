@@ -3,7 +3,7 @@ title: Интеграционные службы
 keywords: react
 sidebar: evotordoc_sidebar
 toc: true
-permalink: react_reference_integrationapi.html#
+permalink: react_reference_integrationapi.html
 folder: react_reference
 ---
 
@@ -13,19 +13,23 @@ folder: react_reference
 
 {% include note.html content="Информацию о регистрации интеграционных служб смотрите в разделе [Инициализация служб](./react_reference_seviceapi.html)." %}
 
-## Применение результата
+Изменения вносятся с помощью методов класса `IntegrationCallback`, экземпляр которого передаётся в каждый слушатель интеграционной службы.
+
+## Методы класса IntegrationCallback
 
 ### onResult
 
 ```js
-onResult(result: IntegrationEventResult): Promise
+onResult(result: IntegrationServiceEventResult): Promise
 ```
 
 **Описание**
 
+Устанавливает результат события интеграционной службы.
+
 **Параметры**
 
-* `result`
+* `result` – [результат события интеграционной службы](./react_reference_integrationapi.html#IntegrationServiceEventResult).
 
 **Возвращает**
 
@@ -43,11 +47,11 @@ startActivity(intent: Intent): Promise
 
 **Описание**
 
-Запускает операцию при получении намерения.
+Запускает интеграционную операцию.
 
 **Параметры**
 
-* `Intent`
+* `intent`
 
 **Возвращает**
 
@@ -65,6 +69,8 @@ skip(): Promise
 
 **Описание**
 
+Завершает событие интеграционной службы без применения результата.
+
 **Возвращает**
 
 * `Promise`
@@ -74,6 +80,17 @@ skip(): Promise
 * [`IntegrationError`](./doc_react_errorshandling.html#integrationerror)
 
 ## Параметры
+
+### Тип IntegrationServiceEventResult {#IntegrationServiceEventResult}
+
+```js
+export type IntegrationServiceEventResult =
+    BeforePositionsEditedEventResult |
+    ReceiptDiscountEventResult |
+    PaymentSelectedEventResult |
+    PrintGroupRequiredEventResult |
+    PrintExtraRequiredEventResult;
+```
 
 ### Класс BeforePositionsEditedEventResult
 

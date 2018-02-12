@@ -9,7 +9,7 @@ folder: react_reference
 
 ## Описание
 
-С помощью методов класса вы можете создавать собственные службы, а также регистрировать [интеграционные служб](./react_reference_integrationapi.html).
+С помощью методов класса вы можете создавать собственные службы, а также регистрировать [интеграционные службы](./react_reference_integrationapi.html).
 
 ## Методы
 
@@ -27,7 +27,7 @@ static addEventListener(type: ServiceEventType, listener: ServiceEventListener, 
 
 * `type` – событие типа [`ServiceEventType`](./react_reference_integrationapi.html#ServiceEventType).
 * `listener` – слушатель типа [`ServiceEventListener`](./react_reference_integrationapi.html#ServiceEventListener).
-* `isGlobal` – указывает [глобальную доступность метода](./doc_react_interactiontypes.html#eventsubscription).
+* `isGlobal` – [глобальная доступность слушателя](./doc_react_interactiontypes.html#eventsubscription).
 
 ### removeEventListener
 
@@ -42,7 +42,7 @@ static removeEventListener(type: ServiceEventType, listener?: ServiceEventListen
 **Параметры**
 
 * `type` – событие типа [`ServiceEventType`](./react_reference_integrationapi.html#ServiceEventType).
-* `listener` – слушатель типа [`ServiceEventListener`](./react_reference_integrationapi.html#ServiceEventListener). Не передавайте параметр если хотите удалить все слушатели.
+* `listener` – слушатель типа [`ServiceEventListener`](./react_reference_integrationapi.html#ServiceEventListener). Не передавайте параметр, если хотите удалить все слушатели.
 
 **Возвращает**
 
@@ -56,8 +56,6 @@ static removeEventListener(type: ServiceEventType, listener?: ServiceEventListen
 ```js
 export type ServiceEventType = CustomServiceEventType | IntegrationServiceEventType;
 ```
-
-<!-- {% include note.html content="Используйте событие [`IntegrationServiceEventType`](./react_reference_seviceapi.html#IntegrationServiceEventType) для подписки на событие [интеграционной службы](./react_reference_integrationapi.html)." %} -->
 
 ### Тип CustomServiceEventType
 

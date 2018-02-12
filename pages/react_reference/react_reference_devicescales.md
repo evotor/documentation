@@ -25,7 +25,7 @@ static getWeight(): Promise<Weight>
 
 **Возвращает**
 
-* `Promise`, результат которого, - [вес товара](./react_reference_devicescales.html#weight).
+* `Promise`, результат которого - [вес товара](./react_reference_devicescales.html#weight).
 
 **Возможные ошибки**
 

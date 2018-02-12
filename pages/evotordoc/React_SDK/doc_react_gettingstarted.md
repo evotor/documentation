@@ -35,13 +35,13 @@ published: true
    create-react-native-app YourAppName
    ```
 
-3. Перейдите в папку проекта:
+3. Перейдите в корневую папку проекта:
 
    ```
    cd YourAppName
    ```
 
-4. Чтобы ваше React Native приложение могло обращаться к Java API выполните следующую команду, :
+4. Выполните следующую команду, чтобы получить возможность подключать к своему приложению нативный код:
 
    ```
    npm run eject
@@ -53,20 +53,51 @@ published: true
 
 ### Установка библиотеки evotor-integration-library
 
-Мы подготовили библиотеку evotor-integration-library, чтобы ваше React Native приложение могло взаимодействовать с Java API смарт-терминала.
+<!-- Мы подготовили библиотеку evotor-integration-library, чтобы ваше React Native приложение могло взаимодействовать с Java API смарт-терминала. -->
 
-Вам потребуется установить и связать библиотеку со своим приложением. Для этого, находясь в папке приложения, выполните следующие действия:
+1. В файле `YourAppName\android\build.gradle` измените следующие параметры:
 
-1. Установите библиотеку:
+   ```
+   compileSdkVersion 25
+   buildToolsVersion "25.0.3"
+   ```
+
+   ```
+   minSdkVersion 22
+   ```
+
+   ```
+   compile "com.android.support:appcompat-v7:25.3.1"
+   ```
+2. Установите библиотеку, выполнив следующую команду в корневой папке проекта:
 
    ```
    npm install evotor-integration-library --save
    ```
 
-2. Свяжите библиотеку со своим приложением:
+3. Свяжите библиотеку с вашим приложением:
+
+   * В корневой папке проекта выполните команду:
 
    ```
    react-native link evotor-integration-library
+   ```
+
+   * В файле `YourAppName\android\build.gradle`, в разделе `allprojects` добавьте репозиторий `maven { url 'https://jitpack.io' }`:
+
+   ```
+   allprojects {
+       repositories {
+           mavenLocal()
+           jcenter()
+           maven {
+               // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+               url "$rootDir/../node_modules/react-native/android"
+           }
+           maven { url 'https://jitpack.io' }
+           google()
+       }
+   }
    ```
 
 #### Решение возможных проблем
@@ -98,21 +129,22 @@ published: true
 *Чтобы установить debug-версию приложения на смарт-терминал:*
 
 1. В Android Studio откройте манифест приложения, размещённый по адресу `YourAppName\android\app\src\AndroidManifest.xml`.
-2. В поле `app_uuid` элемента `<meta-data>` вместо текущего идентификатора укажите идентификатор приложения, который вы получили в [процессе подготовки приложения на сайте разработчиков](./doc_java_app_tutorial.html#devSiteSettingUp)
+
+2. В раздел `<application>` добавьте следующий раздел:
 
    ```xml
    <meta-data
-            android:name="app_uuid"
-            android:value="66998575-ee62-4e87-b191-89f351fdc572" />
+       android:name="app_uuid"
+       android:value="<Идентификатор приложения>" />
    ```
+   Где требуется указать идентификатор приложения, который вы получили в [процессе подготовки приложения на сайте разработчиков](./doc_java_app_tutorial.html#devSiteSettingUp)
 
 3. Подключитесь к смарт-терминалу в [режиме разработчика](./doc_app_developer_mode.html).
 
-4. Последовательно выполните команды:
+4. Выполните следующую команду в корневой папке проекта:
 
    ```
-   cd YourAppName
-   react-native run-Android
+   react-native run-android
    ```
 
    <!-- Попробуйте удалить приложение с терминала **Настройки** > **Память устройства** > **YourAppName** > **Удалить** -->
