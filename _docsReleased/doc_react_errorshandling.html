@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content="terminalreact,  ">
-<title>Манифест приложения на React Native | Документация Эвотор</title>
+<title>Обработка ошибок | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -104,6 +104,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- entries without drop-downs appear here -->
+
+
+
                 
                 
                 
@@ -112,10 +115,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
-                
-                
-                
-                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -140,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Манифест приложения на React Native">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Обработка ошибок">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -396,7 +395,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
             
@@ -464,6 +463,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            
+            <li><a href="doc_java_st_events.html">Обработка событий смарт-терминала</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с оборудованием</a>
                 <ul>
@@ -495,6 +501,137 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        
+        <a href="#">REACT NATIVE SDK</a>
+        
+        <ul>
+            
+            
+            
+            <li><a href="doc_react_gettingstarted.html">Начало работы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_interactiontypes.html">Типы взаимодействия со смарт-терминалом</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Основные API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_userapi.html">Пользователи</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_receiptapi.html">Чеки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_inventoryapi.html">Товароучёт</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_navigationapi.html">Навигация</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Службы</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_seviceapi.html">Инициализация служб</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Устройства</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesprinter.html">Принтер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescanner.html">Сканер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="doc_react_errorshandling.html">Обработка ошибок</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_generatingsignedapk.html">Создание и установка подписанного APK</a></li>
             
             
             
@@ -746,7 +883,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Манифест приложения на React Native</h1>
+   <h1 class="post-title-main">Обработка ошибок</h1>
 </div>
 
 
@@ -784,62 +921,77 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_SDK/doc_react_manifest.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/react_SDK/doc_react_errorshandling.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p>Ниже приведён пример манифеста React Native  приложения, которое вы создали при <a href="./doc_react_getting_started.html">подготовке среды к разработке приложения</a>.</p>
+  <p>Вы можете отслеживать ошибки в методах, которые возвращают обещание (<code class="highlighter-rouge">Promise</code>).</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> В секции <code class="highlighter-rouge">application</code>, требуется указать элемент <code class="highlighter-rouge">meta-data</code>, который содержит идентификатор приложения – строка в формате <code class="highlighter-rouge">uuid4</code>. Идентификатор отображается в поле <strong>Идентификатор приложениия</strong> на вкладке <strong>APK</strong> вашего приложения, на сайте <a href="https://dev.evotor.ru">dev.evotor.ru</a>.</div>
+<p>Пример кода для отслеживания ошибок:</p>
 
-<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
-    <span class="na">package=</span><span class="s">"com.YourAppName"</span>
-    <span class="na">android:versionCode=</span><span class="s">"1"</span>
-    <span class="na">android:versionName=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
-
-    <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.SYSTEM_ALERT_WINDOW"</span><span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;uses-sdk</span>
-        <span class="na">android:minSdkVersion=</span><span class="s">"22"</span>
-        <span class="na">android:targetSdkVersion=</span><span class="s">"22"</span> <span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;application</span>
-      <span class="na">android:name=</span><span class="s">".MainApplication"</span>
-      <span class="na">android:allowBackup=</span><span class="s">"true"</span>
-      <span class="na">android:label=</span><span class="s">"@string/app_name"</span>
-      <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
-      <span class="na">android:theme=</span><span class="s">"@style/AppTheme"</span><span class="nt">&gt;</span>
-
-      <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"app_uuid"</span> <span class="na">android:value=</span><span class="s">"&lt;Идентификатор приложения&gt;"</span><span class="nt">/&gt;</span>
-
-      <span class="nt">&lt;activity</span>
-        <span class="na">android:name=</span><span class="s">".MainActivity"</span>
-        <span class="na">android:label=</span><span class="s">"@string/app_name"</span>
-        <span class="na">android:configChanges=</span><span class="s">"keyboard|keyboardHidden|orientation|screenSize"</span>
-        <span class="na">android:windowSoftInputMode=</span><span class="s">"adjustResize"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;meta-data</span>
-              <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.BACKGROUND_COLOR"</span>
-              <span class="na">android:value=</span><span class="s">"#133788"</span> <span class="nt">/&gt;</span>
-          <span class="nt">&lt;intent-filter&gt;</span>
-              <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
-              <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.EVOTOR"</span> <span class="nt">/&gt;</span>
-          <span class="nt">&lt;/intent-filter&gt;</span>
-          <span class="nt">&lt;intent-filter&gt;</span>
-            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/intent-filter&gt;</span>
-      <span class="nt">&lt;/activity&gt;</span>
-      <span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">"com.facebook.react.devsupport.DevSettingsActivity"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/application&gt;</span>
-
-<span class="nt">&lt;/manifest&gt;</span>
-
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">NavigationAPI</span><span class="p">.</span><span class="nx">startActivity</span><span class="p">(</span><span class="nx">intent</span><span class="p">).</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">)});</span>
 </code></pre>
 </div>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Все необходимые разрешения и службы объявлены в манифесте, размещённом по адресу <code class="highlighter-rouge">YourAppName/node_modules/evotor-integration-library/android/app/src/main</code>.</div>
+<h2 id="section">Ошибки</h2>
 
+<h3 id="integrationerror">IntegrationError</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">IntegrationError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Может возникнуть при работе с интеграционной службой, интеграционной операцией, а также при при открытии чека и отправке электронного чека.</p>
+
+<h3 id="navigationerror">NavigationError</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">NavigationError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">NavigationErrorMessage</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Возникает если при навигации, если вы указали неверные данные.</p>
+
+<h4 id="navigationerrormessage">Тип NavigationErrorMessage</h4>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">NavigationErrorMessage</span> <span class="p">{</span>
+    <span class="nx">TARGET_CLASS_NOT_FOUND</span> <span class="o">=</span> <span class="s2">"TARGET_CLASS_NOT_FOUND"</span><span class="p">,</span>
+    <span class="nx">TARGET_PACKAGE_NOT_FOUND</span> <span class="o">=</span> <span class="s2">"TARGET_PACKAGE_NOT_FOUND"</span><span class="p">,</span>
+    <span class="nx">TARGET_CLASS_NOT_EXPORTED</span> <span class="o">=</span> <span class="s2">"TARGET_CLASS_NOT_EXPORTED"</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="noactivityerror">NoActivityError</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">NoActivityError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Возникает при обращении к операции закрытого приложения.</p>
+
+<h3 id="DeviceError">DeviceError</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">DeviceError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Возникает при обращении к неподключённому устройству.</p>
 
 
     <div class="tags">
@@ -851,6 +1003,8 @@ $('#toc').on('click', 'a', function() {
         <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
         
         
+        
+        <a href="tag_react.html" class="btn btn-default navbar-btn cursorNorm" role="button">react</a>
         
         
         

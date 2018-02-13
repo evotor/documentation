@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="terminalreact,  ">
-<title>Работа с чеком | Документация Эвотор</title>
+<meta name="keywords" content="terminalreact,  react">
+<title>Класс Printer | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -104,6 +104,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- entries without drop-downs appear here -->
+
+
+
                 
                 
                 
@@ -112,10 +115,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
-                
-                
-                
-                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -140,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Работа с чеком">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Класс Printer">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -396,7 +395,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
             
@@ -464,6 +463,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            
+            <li><a href="doc_java_st_events.html">Обработка событий смарт-терминала</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с оборудованием</a>
                 <ul>
@@ -495,6 +501,137 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        
+        <a href="#">REACT NATIVE SDK</a>
+        
+        <ul>
+            
+            
+            
+            <li><a href="doc_react_gettingstarted.html">Начало работы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_interactiontypes.html">Типы взаимодействия со смарт-терминалом</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Основные API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_userapi.html">Пользователи</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_receiptapi.html">Чеки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_inventoryapi.html">Товароучёт</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_navigationapi.html">Навигация</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Службы</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_seviceapi.html">Инициализация служб</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Устройства</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li class="active"><a href="react_reference_devicesprinter.html">Принтер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescanner.html">Сканер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_errorshandling.html">Обработка ошибок</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_generatingsignedapk.html">Создание и установка подписанного APK</a></li>
             
             
             
@@ -746,7 +883,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Работа с чеком</h1>
+   <h1 class="post-title-main">Класс Printer</h1>
 </div>
 
 
@@ -784,73 +921,128 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_SDK/doc_react_receipt.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/react_reference/react_reference_devicesprinter.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <h2 id="section">Методы</h2>
+  <h2 id="section">Описание</h2>
 
-<h3 id="section-1">Получить по штрихкоду позицию для добавления в чек</h3>
+<p>Класс позволяет работать с принтером смарт-терминала.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllBarcodesForProduct</span><span class="p">(</span><span class="nx">productUuid</span><span class="err">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">InventoryModule</span><span class="p">.</span><span class="nx">getAllBarcodesForProduct</span><span class="p">(</span><span class="nx">productUuid</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<h2 id="section-1">Методы</h2>
+
+<h3 id="print">print</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">print</span><span class="p">(</span><span class="nx">printables</span><span class="err">:</span> <span class="nx">Printable</span><span class="p">[])</span><span class="err">:</span> <span class="nx">Promise</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Вызывает команду печати.</p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">printables</code> – массив <a href="./react_reference_devicesprinter.html#printable"> печатных элементов</a>.</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code></li>
+</ul>
+
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#DeviceError"><code class="highlighter-rouge">DeviceError</code></a></li>
+</ul>
+
+<h3 id="getallowablesymbolslinelength">getAllowableSymbolsLineLength</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllowableSymbolsLineLength</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Позволяет получить длину печатной строки в символах.</p>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code>, результат которого – число.</li>
+</ul>
+
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#DeviceError"><code class="highlighter-rouge">DeviceError</code></a></li>
+</ul>
+
+<h3 id="getallowablepixellinelength">getAllowablePixelLineLength</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllowablePixelLineLength</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Позволяет получить длину печатной строки в пикселях.</p>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code>, результат которого – число.</li>
+</ul>
+
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#DeviceError"><code class="highlighter-rouge">DeviceError</code></a></li>
+</ul>
+
+<h2 id="section-2">Параметры</h2>
+
+<h3 id="printable">Тип Printable</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">Printable</span> <span class="o">=</span> <span class="nx">PrintableText</span> <span class="o">|</span> <span class="nx">PrintableBarcode</span> <span class="o">|</span> <span class="nx">PrintableImage</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<h3 id="PrintableText">Класс PrintableText</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintableText</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">text</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
 </code></pre>
 </div>
 
-<h3 id="section-2">Открыть чек в приложении</h3>
+<h3 id="PrintableImage">Класс PrintableImage</h3>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">openReceipt</span><span class="p">(</span><span class="nx">positions</span><span class="err">:</span> <span class="p">[</span><span class="nx">Position</span><span class="p">],</span> <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ReceiptModule</span><span class="p">.</span><span class="nx">openReceipt</span><span class="p">(</span><span class="nx">positions</span><span class="p">,</span> <span class="nx">extra</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintableImage</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">path</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
 </code></pre>
 </div>
 
-<h3 id="section-3">Отправить чек</h3>
+<h3 id="PrintableBarcode">Класс PrintableBarcode</h3>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">sendReceipt</span><span class="p">(</span><span class="nx">printReceipts</span><span class="err">:</span> <span class="p">[</span><span class="nx">Receipt</span><span class="p">.</span><span class="nx">PrintReceipt</span><span class="p">],</span> <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span><span class="p">,</span> <span class="nx">phone</span><span class="err">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">email</span><span class="err">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">discount</span><span class="err">:</span> <span class="nb">Number</span><span class="p">,</span> <span class="nx">success</span><span class="err">:</span> <span class="nb">Function</span><span class="p">,</span> <span class="nx">error</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ReceiptModule</span><span class="p">.</span><span class="nx">sendReceipt</span><span class="p">(</span><span class="nx">printReceipts</span><span class="p">,</span> <span class="nx">extra</span><span class="p">,</span> <span class="nx">phone</span><span class="p">,</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">discount</span><span class="p">,</span> <span class="nx">success</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintableBarcode</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">barcodeValue</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">barcodeType</span><span class="err">:</span> <span class="nx">BarcodeType</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
 </code></pre>
 </div>
 
-<h3 id="section-4">Получить сформированный чек</h3>
+<h3 id="barcodetype">Перечисление BarcodeType</h3>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceipt</span><span class="p">(</span><span class="nx">findBy</span><span class="err">:</span> <span class="nx">Receipt</span><span class="p">.</span><span class="nx">FindBy</span><span class="p">,</span> <span class="nx">value</span><span class="err">:</span> <span class="nx">Receipt</span><span class="p">.</span><span class="nx">Type</span> <span class="o">|</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ReceiptModule</span><span class="p">.</span><span class="nx">getReceipt</span><span class="p">(</span><span class="nx">findBy</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">BarcodeType</span> <span class="p">{</span>
+    <span class="nx">EAN8</span><span class="p">,</span>
+    <span class="nx">UPCA</span><span class="p">,</span>
+    <span class="nx">EAN13</span><span class="p">,</span>
+    <span class="nx">CODE39</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
-<h3 id="section-5">Получить позиции сформированного чека</h3>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getPositions</span><span class="p">(</span><span class="nx">findBy</span><span class="err">:</span> <span class="nx">Receipt</span><span class="p">.</span><span class="nx">FindBy</span><span class="p">,</span> <span class="nx">value</span><span class="err">:</span> <span class="nx">Receipt</span><span class="p">.</span><span class="nx">Type</span> <span class="o">|</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ReceiptModule</span><span class="p">.</span><span class="nx">getPositions</span><span class="p">(</span><span class="nx">findBy</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<h3 id="getpayments">Получить getPayments</h3>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getPayments</span><span class="p">(</span><span class="nx">findBy</span><span class="err">:</span> <span class="nx">Receipt</span><span class="p">.</span><span class="nx">FindBy</span><span class="p">,</span> <span class="nx">value</span><span class="err">:</span> <span class="nx">Receipt</span><span class="p">.</span><span class="nx">Type</span> <span class="o">|</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ReceiptModule</span><span class="p">.</span><span class="nx">getPayments</span><span class="p">(</span><span class="nx">findBy</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<h3 id="section-6">Получить заголовки сформированного чека</h3>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptHeaders</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">Receipt</span><span class="p">.</span><span class="nx">Type</span><span class="p">,</span> <span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ReceiptModule</span><span class="p">.</span><span class="nx">getReceiptHeaders</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<h2 id="section-7">Пример</h2>
-
-<p>В примере представлены все методы, доступные в API.</p>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
 </code></pre>
 </div>
 
@@ -864,6 +1056,8 @@ $('#toc').on('click', 'a', function() {
         <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
         
         
+        
+        <a href="tag_react.html" class="btn btn-default navbar-btn cursorNorm" role="button">react</a>
         
         
         

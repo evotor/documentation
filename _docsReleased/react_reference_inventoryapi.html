@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="terminalreact,  ">
-<title>Работа с пользователями смарт-терминала | Документация Эвотор</title>
+<meta name="keywords" content="terminalreact,  react">
+<title>Класс InventoryAPI | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -104,6 +104,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- entries without drop-downs appear here -->
+
+
+
                 
                 
                 
@@ -112,10 +115,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
-                
-                
-                
-                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -140,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Работа с пользователями смарт-терминала">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Класс InventoryAPI">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -396,7 +395,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
             
@@ -464,6 +463,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            
+            <li><a href="doc_java_st_events.html">Обработка событий смарт-терминала</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с оборудованием</a>
                 <ul>
@@ -495,6 +501,137 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        
+        <a href="#">REACT NATIVE SDK</a>
+        
+        <ul>
+            
+            
+            
+            <li><a href="doc_react_gettingstarted.html">Начало работы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_interactiontypes.html">Типы взаимодействия со смарт-терминалом</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Основные API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_userapi.html">Пользователи</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_receiptapi.html">Чеки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li class="active"><a href="react_reference_inventoryapi.html">Товароучёт</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_navigationapi.html">Навигация</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Службы</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_seviceapi.html">Инициализация служб</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Устройства</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesprinter.html">Принтер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescanner.html">Сканер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_errorshandling.html">Обработка ошибок</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_generatingsignedapk.html">Создание и установка подписанного APK</a></li>
             
             
             
@@ -746,7 +883,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Работа с пользователями смарт-терминала</h1>
+   <h1 class="post-title-main">Класс InventoryAPI</h1>
 </div>
 
 
@@ -784,100 +921,149 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_SDK/doc_react_usersAPI.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/react_reference/react_reference_inventoryapi.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p>В разделе приведены методы для работы с пользователями смарт-терминала. Методы React Native обращаются к Java интерфейсу описанному в разделе <a href="./doc_java_app_users.html">“Работа с пользователями смарт-терминала”</a>.</p>
+  <h2 id="section">Описание</h2>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Так как выполнение запросов к Java API занимает много времени, методы React SDK требуется выполнять асинхронно. Для этого в качестве аргумента метода требуется передать колбэк-функцию.</div>
+<p>С помощью методов класса приложения получают данные товаров, которые хранятся в базе смарт-терминала.</p>
 
-<h2 id="section">Методы</h2>
+<h2 id="section-1">Методы</h2>
 
-<h3 id="section-1">Получить данные всех пользователей</h3>
+<h3 id="getallbarcodesforproduct">getAllBarcodesForProduct</h3>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllUsers</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="p">(</span><span class="nx">User</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">UserModule</span><span class="p">.</span><span class="nx">getAllUsers</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllBarcodesForProduct</span><span class="p">(</span><span class="nx">productUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">string</span><span class="p">[]</span><span class="o">&gt;</span>
 </code></pre>
 </div>
 
-<p>Где <code class="highlighter-rouge">User</code> – экземпляр класса с <a href="./doc_react_usersAPI.html#userData">данными о пользователе</a>.</p>
+<p><strong>Описание</strong></p>
 
-<h3 id="section-2">Получить данные авторизованного пользователя</h3>
+<p>Получает все штрихкоды товара.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAuthenticatedUser</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="p">(</span><span class="nx">User</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">UserModule</span><span class="p">.</span><span class="nx">getAuthenticatedUser</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
-<span class="p">}</span>
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">productUuid</code> – идентификатор товара в формате <code class="highlighter-rouge">uuid4</code>.</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code>, результат которого – массив строк, штрихкодов товара.</li>
+</ul>
+
+<h3 id="getproductbyuuid">getProductByUuid</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getProductByUuid</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">ProductItem</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
 </code></pre>
 </div>
 
-<p>Где <code class="highlighter-rouge">User</code> – экземпляр класса с <a href="./doc_react_usersAPI.html#userData">данными о пользователе</a>.</p>
+<p><strong>Описание</strong></p>
 
-<h3 id="section-3">Получить список всех доступных прав</h3>
+<p>Получает товар по идентификатору (<code class="highlighter-rouge">uuid</code>)</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllGrants</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="p">(</span><span class="nx">Grant</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">UserModule</span><span class="p">.</span><span class="nx">getAllGrants</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
-<span class="p">}</span>
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">uuid</code> – идентификатор товара в формате <code class="highlighter-rouge">uuid4</code>.</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code>, результат которого – <a href="./react_reference_inventoryapi.html#productitem">товар</a>  или <code class="highlighter-rouge">null</code>.</li>
+</ul>
+
+<h3 id="getfield">getField</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getField</span><span class="p">(</span><span class="nx">fieldUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">Field</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
 </code></pre>
 </div>
 
-<p>Где <code class="highlighter-rouge">Grant</code> – экземпляр класса с <a href="./doc_react_usersAPI.html#roleData">данными о роли</a>.</p>
+<p><strong>Описание</strong></p>
 
-<h3 id="section-4">Получить список прав авторизованного пользователя</h3>
+<p>Получает дополнительное поле товара.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getGrantsOfAuthenticatedUser</span><span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="p">(</span><span class="nx">Grant</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">UserModule</span><span class="p">.</span><span class="nx">getGrantsOfAuthenticatedUser</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
-<span class="p">}</span>
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">fieldUuid</code> – идентификатор поля в формате <code class="highlighter-rouge">uuid4</code>.</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code>, результат которого – <a href="./react_reference_inventoryapi.html#field"><code class="highlighter-rouge">поле</code></a> или <code class="highlighter-rouge">null</code>.</li>
+</ul>
+
+<h3 id="getproductextras">getProductExtras</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getProductExtras</span><span class="p">(</span><span class="nx">productUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">ProductExtra</span><span class="p">[]</span><span class="o">&gt;</span>
 </code></pre>
 </div>
 
-<p>Где <code class="highlighter-rouge">Grant</code> – экземпляр класса с <a href="./doc_react_usersAPI.html#roleData">данными о роли</a>.</p>
+<p><strong>Описание</strong></p>
 
-<h2 id="section-5">Возвращаемые данные</h2>
+<p>Получает дополнительные данные товара.</p>
 
-<h3 id="userData">Данные о пользователе</h3>
+<p><strong>Параметры</strong></p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">User</span> <span class="p">{</span>
+<ul>
+  <li><code class="highlighter-rouge">productUuid</code> – идентификатор товара в формате <code class="highlighter-rouge">uuid4</code>.</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code>, результат которого – массив <a href="./react_reference_inventoryapi.html#productextra">дополнительных полей</a>.</li>
+</ul>
+
+<h2 id="section-2">Параметры</h2>
+
+<h3 id="productitem">Класс ProductItem</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ProductItem</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
-                <span class="nx">secondName</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">firstName</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">phone</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">pin</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
-                <span class="nx">roleUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
-                <span class="nx">roleTitle</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">uid</span> <span class="o">=</span> <span class="nx">uuid</span><span class="p">;</span><span class="c1">//Идентификатор пользователя в Облаке Эвотор.</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">secondName</span> <span class="o">=</span> <span class="nx">secondName</span><span class="p">;</span><span class="c1">//Фамилия пользователя.</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">=</span> <span class="nx">firstName</span><span class="p">;</span><span class="c1">//Имя пользователя.</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">phone</span> <span class="o">=</span> <span class="nx">phone</span><span class="p">;</span><span class="c1">//Номер телефона.</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">pin</span> <span class="o">=</span> <span class="nx">pin</span><span class="p">;</span><span class="c1">//ПИН для доступа к пользователю на смарт-терминале.</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">roleUuid</span> <span class="o">=</span> <span class="nx">roleUuid</span><span class="p">;</span><span class="c1">//Идентификатор присвоенной пользователю роли в формате uuid4.</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">roleTitle</span> <span class="o">=</span> <span class="nx">roleTitle</span><span class="p">;</span><span class="c1">//Имя присвоенной пользователю роли.</span>
-    <span class="p">}</span>
-<span class="p">};</span>
+                <span class="nx">parentUuid</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">code</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">name</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 
-<h3 id="roleData">Данные о роли</h3>
+<h3 id="field">Класс Field</h3>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Grant</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">title</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">roleUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span><span class="c1">//Имя роли.</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">roleUuid</span> <span class="o">=</span> <span class="nx">roleUuid</span><span class="c1">//Идентификатор роли в Облаке Эвотор в формате uuid4.</span>
-      <span class="p">}</span>
-<span class="p">};</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Field</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">fieldUUID</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">title</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">type</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 
-<h2 id="section-6">Примеры</h2>
+<h3 id="productextra">Класс ProductExtra</h3>
 
-<p>Пример колбэк-функции, которая передаётся в аргумент метода.</p>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ProductExtra</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">name</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">commodityUUID</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">fieldUUID</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">fieldValue</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">data</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">allUsers</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">callback</span> <span class="o">=</span> <span class="p">(</span><span class="nx">data</span><span class="err">:</span> <span class="p">[</span><span class="nx">User</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">allUsers</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
-    <span class="p">};</span>
-    <span class="nx">UserApi</span><span class="p">.</span><span class="nx">getAllUsers</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+<h3 id="ProductType">Перечисление ProductType</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">ProductType</span> <span class="p">{</span>
+    <span class="nx">NORMAL</span> <span class="o">=</span> <span class="s2">"NORMAL"</span><span class="p">,</span>
+    <span class="nx">ALCOHOL_MARKED</span> <span class="o">=</span> <span class="s2">"ALCOHOL_MARKED"</span><span class="p">,</span>
+    <span class="nx">ALCOHOL_NOT_MARKED</span> <span class="o">=</span> <span class="s2">"ALCOHOL_NOT_MARKED"</span><span class="p">,</span>
+    <span class="nx">SERVICE</span> <span class="o">=</span> <span class="s2">"SERVICE"</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 
@@ -891,6 +1077,8 @@ $('#toc').on('click', 'a', function() {
         <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
         
         
+        
+        <a href="tag_react.html" class="btn btn-default navbar-btn cursorNorm" role="button">react</a>
         
         
         
