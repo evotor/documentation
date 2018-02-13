@@ -35,8 +35,48 @@ published: true
 
 *Чтобы создать apk-файл приложения:*
 
-1. В Android Studio откройте манифест приложения, размещённый по адресу `YourAppName\android\app\src\AndroidManifest.xml`.
-2. В раздел `<application>` добавьте следующий раздел:
+
+1. В файле `YourAppName\android\app\build.gradle` измените следующие параметры:
+
+   ```
+   compileSdkVersion 25
+   buildToolsVersion "25.0.3"
+   ```
+
+   ```
+   minSdkVersion 22
+   ```
+
+   ```
+   compile "com.android.support:appcompat-v7:25.3.1"
+   ```
+
+2. В файле `YourAppName\android\build.gradle`, в разделе `allprojects` добавьте репозиторий `maven { url 'https://jitpack.io' }`:
+
+   ```
+   allprojects {
+       repositories {
+           mavenLocal()
+           jcenter()
+           maven {
+               // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+               url "$rootDir/../node_modules/react-native/android"
+           }
+           maven { url 'https://jitpack.io' }
+           google()
+       }
+   }
+   ```
+
+3. В Android Studio откройте манифест приложения, размещённый по адресу `YourAppName\android\app\src\main\AndroidManifest.xml`.
+
+4. В разделе `<uses-sdk>` измените параметр:
+
+   ```xml
+   android:minSdkVersion="22"
+   ```
+
+5. После раздела `<application>` добавьте следующий раздел:
 
    ```xml
    <meta-data
@@ -44,7 +84,7 @@ published: true
        android:value="<Идентификатор приложения>" />
    ```
    Где требуется указать идентификатор приложения, который вы получили в [процессе подготовки приложения на сайте разработчиков](./doc_java_app_tutorial.html#devSiteSettingUp)
-3. В командной строке перейдите в папку `YourAppName\android` и выполните команду:
+6. В командной строке перейдите в папку `YourAppName\android` и выполните команду:
 
    ```
    gradlew AssembleRelease

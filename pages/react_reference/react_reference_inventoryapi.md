@@ -4,6 +4,7 @@ keywords: react
 sidebar: evotordoc_sidebar
 toc: true
 permalink: react_reference_inventoryapi.html
+tags: [terminal, react]
 folder: react_reference
 ---
 
@@ -47,7 +48,7 @@ static getProductByUuid(uuid: string): Promise<ProductItem | null>
 
 **Возвращает**
 
-* `Promise`, результат которого –  [товар](./react_reference_inventoryapi.html#productitem)  или `null`.
+* `Promise`, результат которого – [товар](./react_reference_inventoryapi.html#productitem)  или `null`.
 
 ### getField
 
@@ -65,7 +66,7 @@ static getField(fieldUuid: string): Promise<Field | null>
 
 **Возвращает**
 
-* `Promise`, результат которого –  [`поле`](./react_reference_inventoryapi.html#field) или `null`.
+* `Promise`, результат которого – [`поле`](./react_reference_inventoryapi.html#field) или `null`.
 
 ### getProductExtras
 
@@ -83,7 +84,7 @@ static getProductExtras(productUuid: string): Promise<ProductExtra[]>
 
 **Возвращает**
 
-* `Promise`, результат которого –  массив [дополнительных полей](./react_reference_inventoryapi.html#productextra).
+* `Promise`, результат которого – массив [дополнительных полей](./react_reference_inventoryapi.html#productextra).
 
 ## Параметры
 

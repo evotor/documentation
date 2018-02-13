@@ -4,6 +4,7 @@ keywords: react
 sidebar: evotordoc_sidebar
 toc: true
 permalink: react_reference_integrationapi.html
+tags: [terminal, react]
 folder: react_reference
 ---
 

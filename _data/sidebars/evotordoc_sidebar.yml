@@ -310,7 +310,7 @@ entries:
       url: /doc_java_navigation.html
       output: web
 
-    - title: Платёжные системы
+    - title: Способы оплаты
       url: /doc_java_payment_systems.html
       output: web
 

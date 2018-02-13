@@ -53,9 +53,9 @@ published: true
 
 ### Установка библиотеки evotor-integration-library
 
-<!-- Мы подготовили библиотеку evotor-integration-library, чтобы ваше React Native приложение могло взаимодействовать с Java API смарт-терминала. -->
+*Чтобы установить библиотеку evotor-integration-library:*
 
-1. В файле `YourAppName\android\build.gradle` измените следующие параметры:
+1. В файле `YourAppName\android\app\build.gradle` измените следующие параметры:
 
    ```
    compileSdkVersion 25
@@ -95,7 +95,6 @@ published: true
                url "$rootDir/../node_modules/react-native/android"
            }
            maven { url 'https://jitpack.io' }
-           google()
        }
    }
    ```
@@ -128,9 +127,15 @@ published: true
 
 *Чтобы установить debug-версию приложения на смарт-терминал:*
 
-1. В Android Studio откройте манифест приложения, размещённый по адресу `YourAppName\android\app\src\AndroidManifest.xml`.
+1. В Android Studio откройте манифест приложения, размещённый по адресу `YourAppName\android\app\src\main\AndroidManifest.xml`.
 
-2. В раздел `<application>` добавьте следующий раздел:
+2. В разделе `<uses-sdk>` измените параметр:
+
+   ```xml
+   android:minSdkVersion="22"
+   ```
+
+3. После раздела `<application>` добавьте следующий раздел:
 
    ```xml
    <meta-data
@@ -139,12 +144,31 @@ published: true
    ```
    Где требуется указать идентификатор приложения, который вы получили в [процессе подготовки приложения на сайте разработчиков](./doc_java_app_tutorial.html#devSiteSettingUp)
 
-3. Подключитесь к смарт-терминалу в [режиме разработчика](./doc_app_developer_mode.html).
+4. Подключитесь к смарт-терминалу в [режиме разработчика](./doc_app_developer_mode.html).
 
-4. Выполните следующую команду в корневой папке проекта:
+5. Выполните следующую команду в корневой папке проекта:
 
    ```
    react-native run-android
    ```
 
-   <!-- Попробуйте удалить приложение с терминала **Настройки** > **Память устройства** > **YourAppName** > **Удалить** -->
+6. Запустите установленное приложение.
+
+   На экране терминала откроется окно с ошибкой:
+
+   {% include image.html file="react-error.png" url="images/react-error.png" %}
+
+7. Чтобы исправить ошибку, выполните команду, которая открывает **Меню разработчика** (**Developer Menu**):
+
+   ```
+   adb shell input keyevent 82
+   ```
+
+8. В **Меню разработчика** выберите пункты **Dev Settings** → **Debug server host & port for device**.
+9. В открывшемся окне укажите:
+
+   ```
+   <IP-адрес вашего компьютера>:8081
+   ```
+
+10. Повторно откройте **Меню разработчика** и выберите пункт **Reload**.

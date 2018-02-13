@@ -4,6 +4,7 @@ keywords: react
 sidebar: evotordoc_sidebar
 toc: true
 permalink: react_reference_userapi.html
+tags: [terminal, react]
 folder: react_reference
 ---
 
@@ -53,7 +54,7 @@ static getAllGrants(): Promise<Grant[]>
 
 **Возвращает**
 
-* `Promise`, результат которого –  массив [прав](./react_reference_userapi.html#grant).
+* `Promise`, результат которого – массив [прав](./react_reference_userapi.html#grant).
 
 ### getGrantsOfAuthenticatedUser
 
@@ -69,7 +70,7 @@ static getGrantsOfAuthenticatedUser(): Promise<Grant[]>
 
 **Возвращает**
 
-* `Promise`, результат которого –  массив [прав](./react_reference_userapi.html#grant).
+* `Promise`, результат которого – массив [прав](./react_reference_userapi.html#grant).
 
 ## Параметры
 

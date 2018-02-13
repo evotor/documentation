@@ -4,6 +4,7 @@ keywords: react
 sidebar: evotordoc_sidebar
 toc: true
 permalink: react_reference_receiptapi.html
+tags: [terminal, react]
 folder: react_reference
 ---
 
@@ -29,7 +30,7 @@ static getPositionByBarcode(barcode: string): Promise<Position[]>
 
 **Возвращает**
 
-* `Promise`, результат которого –  массив [позиций](./react_reference_receiptapi.html#position).
+* `Promise`, результат которого – массив [позиций](./react_reference_receiptapi.html#position).
 
 ### openReceipt
 
@@ -110,7 +111,7 @@ static getReceiptByUuid(uuid: string): Promise<Receipt | null>
 
 **Возвращает**
 
-* `Promise`, результат которого –  [чек](./react_reference_receiptapi.html#receipt) или `null`.
+* `Promise`, результат которого – [чек](./react_reference_receiptapi.html#receipt) или `null`.
 
 ### getReceiptHeaders
 
