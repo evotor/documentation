@@ -32,10 +32,10 @@ static getPositionByBarcode(barcode: string): Promise<Position[]>
 
 * `Promise`, результат которого – массив [позиций](./react_reference_receiptapi.html#position).
 
-### openReceipt
+### openSellReceipt
 
 ```js
-static openReceipt(positions: Position[], extra: SetExtra | null): Promise
+static openSellReceipt(positions: Position[], extra: SetExtra | null): Promise
 ```
 
 **Описание**
