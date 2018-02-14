@@ -464,7 +464,7 @@ entries:
 ###############################################################
 #               JavaScript SDK                                #
 ###############################################################
-  - title: JavaScript SDK
+  - title: JavaScript SDK <b>DEPRECATED</b>
     output: web
     folderitems:
     - title: Подключение шаблона приложения
