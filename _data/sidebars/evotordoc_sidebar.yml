@@ -423,6 +423,9 @@ entries:
         - title: Навигация
           url: /react_reference_navigationapi.html
           output: web
+        - title: Смены
+          url: /react_reference_sessionapi.html
+          output: web
       - title: Службы
         output: web
         subfolderitems:

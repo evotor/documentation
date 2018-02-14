@@ -21,7 +21,7 @@ folder: react_reference
 ### onResult
 
 ```js
-onResult(result: IntegrationServiceEventResult): Promise
+onResult(result: IntegrationServiceEventResult): Promise<void>
 ```
 
 **Описание**
@@ -43,7 +43,7 @@ onResult(result: IntegrationServiceEventResult): Promise
 ### startActivity
 
 ```js
-startActivity(intent: Intent): Promise
+startActivity(intent: Intent): Promise<void>
 ```
 
 **Описание**
@@ -65,7 +65,7 @@ startActivity(intent: Intent): Promise
 ### skip
 
 ```js
-skip(): Promise
+skip(): Promise<void>
 ```
 
 **Описание**

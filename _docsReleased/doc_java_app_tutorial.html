@@ -104,6 +104,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- entries without drop-downs appear here -->
+
+
+
                 
                 
                 
@@ -112,10 +115,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
-                
-                
-                
-                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -396,7 +395,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
             
@@ -464,6 +463,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            
+            <li><a href="doc_java_st_events.html">Обработка событий смарт-терминала</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с оборудованием</a>
                 <ul>
@@ -495,6 +501,143 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        
+        <a href="#">REACT NATIVE SDK</a>
+        
+        <ul>
+            
+            
+            
+            <li><a href="doc_react_gettingstarted.html">Начало работы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_interactiontypes.html">Типы взаимодействия со смарт-терминалом</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Основные API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_userapi.html">Пользователи</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_receiptapi.html">Чеки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_inventoryapi.html">Товароучёт</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_navigationapi.html">Навигация</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_sessionapi.html">Смены</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Службы</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_seviceapi.html">Инициализация служб</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Устройства</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesprinter.html">Принтер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescanner.html">Сканер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_errorshandling.html">Обработка ошибок</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_generatingsignedapk.html">Создание и установка подписанного APK</a></li>
             
             
             
@@ -784,7 +927,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/tutorials/doc_java_app_tutorial.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/tutorials/doc_java_app_tutorial.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
@@ -800,7 +943,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>В разделе представлена информация, необходимая для установки на смарт-терминал <a href="https://github.com/evotor/evotor-api-example">демонстрационного приложения</a>.</p>
 
-<h2 id="section">Требования</h2>
+<h2 id="Требования">Требования</h2>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Приведённая ниже инструкция актуальна для платформы Windows 10.</div>
 
@@ -822,7 +965,7 @@ JAVA_HOME = &lt;ПУТЬ_К_КАТАЛОГУ_JDK&gt;, например C:\Progra
   </li>
 </ul>
 
-<h2 id="section-1">Сборка приложения</h2>
+<h2 id="Сборка-приложения">Сборка приложения</h2>
 
 <ol>
   <li>
@@ -847,7 +990,7 @@ JAVA_HOME = &lt;ПУТЬ_К_КАТАЛОГУ_JDK&gt;, например C:\Progra
 
 <p>Вам потребуется изменить <code class="highlighter-rouge">packageName</code> и <code class="highlighter-rouge">app_uuid</code> полученного проекта.</p>
 
-<h3 id="packagename">Замена packageName</h3>
+<h3 id="Замена-packagename">Замена packageName</h3>
 
 <p><em>Чтобы заменить packageName:</em></p>
 
@@ -863,7 +1006,7 @@ JAVA_HOME = &lt;ПУТЬ_К_КАТАЛОГУ_JDK&gt;, например C:\Progra
   </li>
   <li>В контекстном меню выберите <strong>Refactor &gt; Rename</strong> и укажите новое имя пакета.</li>
   <li>
-    <p>В файле <strong>build.gradle (Module: app)</strong> замените имя пакета в параметре <strong>applicationId</strong>.</p>
+    <p>В файле <code class="highlighter-rouge">build.gradle (Module: app)</code> замените имя пакета в параметре <code class="highlighter-rouge">applicationId</code>.</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>android {
     compileSdkVersion 25
@@ -927,11 +1070,11 @@ JAVA_HOME = &lt;ПУТЬ_К_КАТАЛОГУ_JDK&gt;, например C:\Progra
   <li>
     <p>Перейдите на вкладку <strong>APK</strong>. Скопируйте параметр <strong>app_uuid</strong> и <a href="./doc_java_app_tutorial.html#appUuidReplacement">укажите его в файле <code class="highlighter-rouge">AndroidManifest.xml</code></a></p>
 
-    <figure class="center-image"><a class="no_icon" href="images/app_uuid.png.png"><img class="docimage center-image" id="imageborder" src="images/app_uuid.png" alt="" /></a><figcaption>Идентификатор приложения</figcaption></figure>
+    <figure class="center-image"><a class="no_icon" href="images/app_uuid.png"><img class="docimage center-image" id="imageborder" src="images/app_uuid.png" alt="" /></a><figcaption>Идентификатор приложения</figcaption></figure>
   </li>
 </ol>
 
-<h2 id="section-2">Установка приложения</h2>
+<h2 id="Установка-приложения">Установка приложения</h2>
 
 <p>Вы можете установить приложение вручную, с помощью <a href="./doc_app_installation.html#adb-shell">командной строки или adb shell</a> или из <a href="./doc_app_installation.html#MarkeplaceAppInstallation">Магазина приложений</a>.</p>
 

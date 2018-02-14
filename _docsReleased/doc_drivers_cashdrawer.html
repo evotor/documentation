@@ -104,6 +104,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- entries without drop-downs appear here -->
+
+
+
                 
                 
                 
@@ -112,10 +115,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
-                
-                
-                
-                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -396,7 +395,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
             
@@ -464,6 +463,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            
+            <li><a href="doc_java_st_events.html">Обработка событий смарт-терминала</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с оборудованием</a>
                 <ul>
@@ -495,6 +501,143 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        
+        <a href="#">REACT NATIVE SDK</a>
+        
+        <ul>
+            
+            
+            
+            <li><a href="doc_react_gettingstarted.html">Начало работы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_interactiontypes.html">Типы взаимодействия со смарт-терминалом</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Основные API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_userapi.html">Пользователи</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_receiptapi.html">Чеки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_inventoryapi.html">Товароучёт</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_navigationapi.html">Навигация</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_sessionapi.html">Смены</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Службы</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_seviceapi.html">Инициализация служб</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Устройства</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesprinter.html">Принтер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescanner.html">Сканер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_errorshandling.html">Обработка ошибок</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_generatingsignedapk.html">Создание и установка подписанного APK</a></li>
             
             
             
@@ -784,11 +927,11 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/drivers/doc_drivers_cashdrawer.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/drivers/doc_drivers_cashdrawer.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <h3 id="androidmanifestxml">Определение внешнего сервиса в AndroidManifest.xml</h3>
+  <h3 id="Определение-внешнего-сервиса-в-androidmanifestxml">Определение внешнего сервиса в AndroidManifest.xml</h3>
 
 <p>Укажите хотя бы один <code class="highlighter-rouge">Intent filter</code>: <code class="highlighter-rouge">INTENT_FILTER_DRIVER_MANAGER</code> или <code class="highlighter-rouge">INTENT_FILTER_VIRTUAL_DRIVER_MANAGER</code>.</p>
 
@@ -851,7 +994,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Экземпляр такого драйвера пользователь может создать исключительно вручную через настройки оборудования. В этом случае, все работы по подключению к нужному устройству берёт на себя производитель драйвера.</div>
 
-<h3 id="section">Определение роли и категории устройства</h3>
+<h3 id="Определение-роли-и-категории-устройства">Определение роли и категории устройства</h3>
 
 <p>Чтобы устройство было распознано как денежный ящик, используйте <code class="highlighter-rouge">Intent filter</code>:</p>
 
@@ -869,7 +1012,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Можно указать сразу несколько ролей устройству: <code class="highlighter-rouge">SCALES|PRICEPRINTER|CASHDRAWER|OTHER</code>(весы | принтер чеков | денежный ящик | другое оборудование).</div>
 
-<h3 id="section-1">Присвоение картинки для драйвера</h3>
+<h3 id="Присвоение-картинки-для-драйвера">Присвоение картинки для драйвера</h3>
 
 <p>Укажите в манифесте приложения у сервиса:</p>
 
@@ -905,7 +1048,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> MinSdkVersion должна быть не выше версии 22.</div>
 
-<h3 id="action">Подключение к сервису всех action</h3>
+<h3 id="Подключение-к-сервису-всех-action">Подключение к сервису всех action</h3>
 
 <p>В реализации метода подключения к сервису для всех <code class="highlighter-rouge">action</code>, указанных в интент-фильтрах укажите соответствующие Binder’ы:</p>
 
@@ -956,7 +1099,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>В этом же сервисе можно определить <code class="highlighter-rouge">Map</code> для хранения списка нескольких активных экземпляров драйверов, т.к. обращаться к нему придётся из всех указанных Stub’ов.</p>
 
-<h3 id="binder">Описание указанных Binder’ов</h3>
+<h3 id="Описание-указанных-binderов">Описание указанных Binder’ов</h3>
 
 <p>Если нельзя выполнить действие, используйте исключение (<code class="highlighter-rouge">Exception</code>) одного из следующих типов:</p>
 
@@ -969,10 +1112,10 @@ $('#toc').on('click', 'a', function() {
   <li><a href="https://developer.android.com/reference/android/os/NetworkOnMainThreadException.html"><code class="highlighter-rouge">NetworkOnMainThreadException</code></a>.</li>
 </ul>
 
-<p>Пример:
-<code class="highlighter-rouge">java
-throw new IllegalStateException();
-</code></p>
+<p>Пример:</p>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalStateException</span><span class="o">();</span>
+</code></pre>
+</div>
 
 <p><code class="highlighter-rouge">IUsbDriverManagerService.Stub</code> – класс для управления драйверами usb-устройств: подключение и отключение устройств происходят здесь. Требуется реализовать методы <code class="highlighter-rouge">addUsbDevice</code> и <code class="highlighter-rouge">destroy</code>.</p>
 
@@ -1079,7 +1222,7 @@ throw new IllegalStateException();
 
 <p>Метод <code class="highlighter-rouge">openCashDrawer</code> принимает на вход номер экземпляра драйвера и открывает указанный денежный ящик.</p>
 
-<h3 id="section-2">Описание класса для работы с оборудованием</h3>
+<h3 id="Описание-класса-для-работы-с-оборудованием">Описание класса для работы с оборудованием</h3>
 
 <p>Пример для денежного ящика с USB-подключением:</p>
 
@@ -1109,7 +1252,7 @@ throw new IllegalStateException();
 
 <p>Банковский терминал – <code class="highlighter-rouge">ru.evotor.devices.drivers.paysystem.IPaySystem</code>.</p>
 
-<h3 id="section-3">Завершение работы</h3>
+<h3 id="Завершение-работы">Завершение работы</h3>
 
 <p>Загрузите приложение на смарт-терминал, чтобы работать с драйвером.</p>
 
