@@ -488,7 +488,7 @@
 
 
 {
-"title": "Платёжные системы",
+"title": "Способы оплаты",
 "tags": "terminaljava",
 "keywords": "чек, печатная, группа, платёжные, системы, манифест",
 "url": "doc_java_payment_systems.html",
@@ -547,7 +547,7 @@
 "tags": "terminaljavaReceipts",
 "keywords": "позиция, чек, события, открыть, добавить, изменить",
 "url": "doc_java_receipt_interactions.html",
-"summary": "Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека."
+"summary": "Приложение может добавлять, удалять и изменять позиции в чеке. Если вы хотите работать с позициями в чеке используйте службу, чтобы получать события о намерении изменения чека. В этом случае, смарт-терминал ждёт ответа от приложения. События приходят как при продаже, так и при возврате товара."
 }
 ,
 
@@ -570,6 +570,17 @@
 "keywords": "оборудование, весы, вес, масса, метод",
 "url": "doc_java_scales.html",
 "summary": ""
+}
+,
+
+
+
+{
+"title": "Обработка событий смарт-терминала",
+"tags": "terminaljavaReceipts",
+"keywords": "позиция, чек, события",
+"url": "doc_java_st_events.html",
+"summary": "Приложение может добавлять, удалять и изменять позиции в чеке. Если вы хотите получать события изменения чека или обновления базы продуктов, например, для логирования и оповещения пользователей, используйте приёмник широковещательных сообщений. В этом случае смарт-терминал не ждёт ответа от приложения. События приходят как при продаже, так и при возврате товара."
 }
 ,
 
@@ -719,10 +730,10 @@
 
 
 {
-"title": "Работа с подключаемым оборудованием",
+"title": "Обработка ошибок",
 "tags": "terminalreact",
 "keywords": "",
-"url": "doc_react_devices.html",
+"url": "doc_react_errorshandling.html",
 "summary": ""
 }
 ,
@@ -730,10 +741,10 @@
 
 
 {
-"title": "Подготовка среды для разработки на React Native",
+"title": "Создание и установка подписанного APK",
 "tags": "terminalreact",
 "keywords": "",
-"url": "doc_react_getting_started.html",
+"url": "doc_react_generatingsignedapk.html",
 "summary": ""
 }
 ,
@@ -741,10 +752,10 @@
 
 
 {
-"title": "Товароучёт",
+"title": "Начало работы",
 "tags": "terminalreact",
 "keywords": "",
-"url": "doc_react_inventoryAPI.html",
+"url": "doc_react_gettingstarted.html",
 "summary": ""
 }
 ,
@@ -752,54 +763,10 @@
 
 
 {
-"title": "Манифест приложения на React Native",
+"title": "Типы взаимодействия со смарт-терминалом",
 "tags": "terminalreact",
 "keywords": "",
-"url": "doc_react_manifest.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Вызов окон смарт-терминала",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_navigationAPI.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Работа с чеком",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_receipt.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Работа с чеком",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_receipt.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Работа с пользователями смарт-терминала",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_usersAPI.html",
+"url": "doc_react_interactiontypes.html",
 "summary": ""
 }
 ,
@@ -873,6 +840,17 @@
 
 
 {
+"title": "Справочник по Java SDK платформы Эвотор",
+"tags": "",
+"keywords": "java",
+"url": "java_reference_introduction.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Что нового",
 "tags": "",
 "keywords": "новости, блог, обновления, release notes, изменения",
@@ -891,6 +869,129 @@
 "summary": ""
 }
 ,
+
+
+
+{
+"title": "BroadcastReceiver",
+"tags": "terminalreact",
+"keywords": "react",
+"url": "react_reference_broadcastreceivers.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Класс Scales",
+"tags": "terminalreact",
+"keywords": "react",
+"url": "react_reference_devicescales.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Класс Scaner",
+"tags": "terminalreact",
+"keywords": "react",
+"url": "react_reference_devicescanner.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Класс DeviceServiceConnector",
+"tags": "terminalreact",
+"keywords": "react",
+"url": "react_reference_devicesconnection.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Класс Printer",
+"tags": "terminalreact",
+"keywords": "react",
+"url": "react_reference_devicesprinter.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Интеграционные службы",
+"tags": "terminalreact",
+"keywords": "react",
+"url": "react_reference_integrationapi.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Класс InventoryAPI",
+"tags": "terminalreact",
+"keywords": "react",
+"url": "react_reference_inventoryapi.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Класс NavigationAPI",
+"tags": "terminalreact",
+"keywords": "react",
+"url": "react_reference_navigationapi.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Класс ReceiptAPI",
+"tags": "terminalreact",
+"keywords": "react",
+"url": "react_reference_receiptapi.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Класс ServiceAPI",
+"tags": "terminalreact",
+"keywords": "react",
+"url": "react_reference_seviceapi.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Класс UserAPI",
+"tags": "terminalreact",
+"keywords": "react",
+"url": "react_reference_userapi.html",
+"summary": ""
+}
+,
+
+
 
 
 

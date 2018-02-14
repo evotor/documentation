@@ -14,10 +14,10 @@ folder: react_reference
 
 ## Методы
 
-### getPositionByBarcode
+### getPositionsByBarcode
 
 ```js
-static getPositionByBarcode(barcode: string): Promise<Position[]>
+static getPositionsByBarcode(barcode: string): Promise<Position[]>
 ```
 
 **Описание**
