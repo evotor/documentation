@@ -69,7 +69,7 @@ published: true
      package="ru.qualitylab.evotor.evotortest6">
    ```
 3. В контекстном меню выберите **Refactor > Rename** и укажите новое имя пакета.
-4. В файле **build.gradle (Module: app)** замените имя пакета в параметре **applicationId**.
+4. В файле `build.gradle (Module: app)` замените имя пакета в параметре `applicationId`.
 
    ```
    android {
@@ -121,7 +121,7 @@ published: true
 
 4. Перейдите на вкладку **APK**. Скопируйте параметр **app_uuid** и [укажите его в файле `AndroidManifest.xml`](./doc_java_app_tutorial.html#appUuidReplacement)
 
-   {% include image.html file="app_uuid.png" url="images/app_uuid.png.png" caption="Идентификатор приложения" %}
+   {% include image.html file="app_uuid.png" url="images/app_uuid.png" caption="Идентификатор приложения" %}
 
 ## Установка приложения
 

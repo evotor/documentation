@@ -13,6 +13,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- entries without drop-downs appear here -->
+{% assign topnav = site.data[page.topnav] %}
+{% assign topnav_dropdowns = site.data[page.topnav].topnav_dropdowns %}
+
                 {% for entry in site.data.topnav.topnav %}
                 {% for item in entry.items %}
                 {% if item.external_url %}
