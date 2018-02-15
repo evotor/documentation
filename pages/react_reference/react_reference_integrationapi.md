@@ -1,50 +1,164 @@
 ---
-title: IntegrationServices
+title: Интеграционные службы
 keywords: react
-sidebar: react_reference_sidebar
+sidebar: evotordoc_sidebar
 toc: true
 permalink: react_reference_integrationapi.html
+tags: [terminal, react]
 folder: react_reference
 ---
 
 ## Описание
 
-## Методы
+С помощью интеграционных служб вы можете подписываться на события при формировании чека и вносить свои изменения.
 
-### addEventListener
+{% include note.html content="Информацию о регистрации интеграционных служб смотрите в разделе [Инициализация служб](./react_reference_seviceapi.html)." %}
+
+Изменения вносятся с помощью методов класса `IntegrationCallback`, экземпляр которого передаётся в каждый слушатель интеграционной службы.
+
+## Методы класса IntegrationCallback
+
+### onResult
 
 ```js
-static addEventListener(type: IntegrationEventType, listener: IntegrationEventListener, isGlobal: boolean = true): void
+onResult(result: IntegrationServiceEventResult): Promise<void>
 ```
 
 **Описание**
 
-Метод для [подписки приложения на события](./react_reference_introduction.html#eventslistening).
+Устанавливает результат события интеграционной службы.
 
 **Параметры**
 
-* `type` – тип события. Для получения данных от интеграционных служб указывайте тип `IntegrationEventType`.
-* `listener` – тип слушателя. Для получения данных от интеграционных служб указывайте тип `IntegrationEventListener`.
-* `isGlobal` – указывает глобальную доступность метода. По умолчанию `true`.
+* `result` – [результат события интеграционной службы](./react_reference_integrationapi.html#IntegrationServiceEventResult).
 
 **Возвращает**
 
-### removeEventListener
+* `Promise`
+
+**Возможные ошибки**
+
+* [`IntegrationError`](./doc_react_errorshandling.html#integrationerror)
+
+### startActivity
 
 ```js
-static removeEventListener(type: IntegrationEventType, listener: IntegrationEventListener): boolean
+startActivity(intent: Intent): Promise<void>
 ```
 
 **Описание**
 
-Метод для отмены подписки на события.
+Запускает интеграционную операцию.
 
 **Параметры**
 
-* `type` – тип события. Для отмены получения данных от интеграционных служб указывайте тип `IntegrationEventType`.
-* `listener` – тип слушателя. Для отмены получения данных от интеграционных служб указывайте тип `IntegrationEventListener`. Не передавайте параметр если хотите удалить все слушатели.
+* `intent`
 
 **Возвращает**
 
-* `true` – если слушатель удалён.
-* `false` – если слушатель не удалён.
+* `Promise`
+
+**Возможные ошибки**
+
+* [`IntegrationError`](./doc_react_errorshandling.html#integrationerror)
+
+### skip
+
+```js
+skip(): Promise<void>
+```
+
+**Описание**
+
+Завершает событие интеграционной службы без применения результата.
+
+**Возвращает**
+
+* `Promise`
+
+**Возможные ошибки**
+
+* [`IntegrationError`](./doc_react_errorshandling.html#integrationerror)
+
+## Параметры
+
+### Тип IntegrationServiceEventResult {#IntegrationServiceEventResult}
+
+```js
+export type IntegrationServiceEventResult =
+    BeforePositionsEditedEventResult |
+    ReceiptDiscountEventResult |
+    PaymentSelectedEventResult |
+    PrintGroupRequiredEventResult |
+    PrintExtraRequiredEventResult;
+```
+
+### Класс BeforePositionsEditedEventResult
+
+```js
+export class BeforePositionsEditedEventResult {
+    constructor(changes: PositionChange[] | null, extra: SetExtra | null) {}
+}
+```
+
+**См. также**
+
+* [`PositionChange`](./react_reference_integrationapi.html#PositionChange)
+
+### Класс ReceiptDiscountEventResult
+
+```js
+export class ReceiptDiscountEventResult {
+    constructor(discount: number, extra: SetExtra | null, changes: PositionChange[]) {}
+}
+```
+
+**См. также**
+
+* [`SetExtra`](./react_reference_receiptapi.html#setextra)
+* [`PositionChange`](./react_reference_integrationapi.html#PositionChange)
+
+### Класс PaymentSelectedEventResult
+
+```js
+export class PaymentSelectedEventResult {
+    constructor(extra: SetExtra | null, paymentParts: PaymentPurpose[]) {}
+}
+```
+
+**См. также**
+
+* [`SetExtra`](./react_reference_receiptapi.html#setextra)
+* [`PaymentPurpose`](./react_reference_receiptapi.html#PaymentPurpose)
+
+
+### Класс PrintGroupRequiredEventResult
+
+```js
+export class PrintGroupRequiredEventResult {
+    constructor(extra: SetExtra | null, setPrintGroups: SetPrintGroup[]) {}
+}
+```
+
+**См. также**
+
+* [`SetExtra`](./react_reference_receiptapi.html#setextra)
+* [`SetPrintGroup`](./react_reference_receiptapi.html#SetPrintGroup)
+
+### Класс PrintExtraRequiredEventResult
+
+```js
+export class PrintExtraRequiredEventResult {
+    constructor(extra: SetPrintExtra[]) {}
+}
+```
+
+**См. также**
+
+* [`SetPrintExtra`](./react_reference_receiptapi.html#SetPrintExtra)
+
+### Тип PositionChange {#PositionChange}
+
+```js
+export type PositionChange = PositionAdd | PositionEdit | PositionRemove
+```

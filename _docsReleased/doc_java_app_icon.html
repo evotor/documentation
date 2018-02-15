@@ -104,6 +104,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- entries without drop-downs appear here -->
+
+
+
                 
                 
                 
@@ -112,10 +115,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
-                
-                
-                
-                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -396,7 +395,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
             
@@ -464,6 +463,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            
+            <li><a href="doc_java_st_events.html">Обработка событий смарт-терминала</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с оборудованием</a>
                 <ul>
@@ -505,7 +511,144 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">JavaScript SDK</a>
+        <a href="#">REACT NATIVE SDK</a>
+        
+        <ul>
+            
+            
+            
+            <li><a href="doc_react_gettingstarted.html">Начало работы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_interactiontypes.html">Типы взаимодействия со смарт-терминалом</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Основные API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_userapi.html">Пользователи</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_receiptapi.html">Чеки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_inventoryapi.html">Товароучёт</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_navigationapi.html">Навигация</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_sessionapi.html">Смены</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Службы</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_seviceapi.html">Инициализация служб</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Устройства</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesprinter.html">Принтер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescanner.html">Сканер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_errorshandling.html">Обработка ошибок</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_generatingsignedapk.html">Создание и установка подписанного APK</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        
+        <a href="#">JavaScript SDK <b>DEPRECATED</b></a>
         
         <ul>
             
@@ -788,7 +931,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/java_SDK/doc_java_app_icon.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/java_SDK/doc_java_app_icon.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
@@ -804,7 +947,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Вы можете интегрировать своё приложение в существующий процесс смарт-терминала, например, продажу или работу с оборудованием, или добавить плитку приложения на главный экран. Плиток может быть несколько, если приложение реализует независимые действия, например, плитки “Продать товар” и “Вернуть товар”.</p>
 
-<h2 id="section">Рекомендации по добавлению плитки</h2>
+<h2 id="Рекомендации-по-добавлению-плитки">Рекомендации по добавлению плитки</h2>
 
 <p>Добавляйте плитку если:</p>
 
@@ -829,7 +972,7 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ul>
 
-<h2 id="section-1">Иконка приложения на главном экране смарт-терминала</h2>
+<h2 id="Иконка-приложения-на-главном-экране-смарт-терминала">Иконка приложения на главном экране смарт-терминала</h2>
 
 <p><em>Чтобы добавить иконку приложения на главный экран смарт-терминала:</em></p>
 
@@ -958,7 +1101,7 @@ $('#toc').on('click', 'a', function() {
 
 <figure class="center-image"><a class="no_icon" href="images/template_plugin_applied.png"><img class="docimage center-image" id="imageborder" src="images/template_plugin_applied.png" alt="" /></a><figcaption>Приложение на экране оплаты смарт-терминала</figcaption></figure>
 
-<h2 id="section-2">Замена кнопки <strong>Продажа</strong> на главном экране смарт-терминала</h2>
+<h2 id="Замена-кнопки-Продажа-на-главном-экране-смарт-терминала">Замена кнопки <strong>Продажа</strong> на главном экране смарт-терминала</h2>
 
 <p>Вы можете заменить кнопку <strong>Продажа</strong>, расположенную на главном экране смарт-терминала, на кнопку своего приложения:</p>
 

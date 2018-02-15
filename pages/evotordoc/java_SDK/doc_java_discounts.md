@@ -88,7 +88,7 @@ try {callback.onResult(
 
 ## Скидка на позицию {#discountPosition}
 
-Чтобы добавить скидку на позицию, вам потребуется передать значение цены с учётом скидки в поле `priceWithDiscountPosition`. Если скидки на позицию нет, передавайте `null`. Список полей позиции описан в классе [`position.java`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/Position.java).
+Чтобы добавить скидку на позицию, вам потребуется передать значение цены с учётом скидки в поле `priceWithDiscountPosition`. Если скидки на позицию нет, передавайте `null`. Список полей позиции описан в классе [`position.java`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/Position.java).
 
 Передать поле можно в любой момент, когда доступно редактирование существующих или добавление новых позиций в чек:
 

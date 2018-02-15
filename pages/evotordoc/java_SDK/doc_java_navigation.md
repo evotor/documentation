@@ -8,7 +8,7 @@ tags: [terminal, java]
 folder: java_SDK
 ---
 
-Для вызова окон смарт-терминала используйте класс [`NavigationApi`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/navigation/NavigationApi.kt).
+Для вызова окон смарт-терминала используйте класс [`NavigationApi`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/navigation/NavigationApi.kt).
 
 Ваше приложение может вызывать следующие окна смарт-терминала:
 

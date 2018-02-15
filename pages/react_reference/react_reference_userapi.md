@@ -1,68 +1,65 @@
 ---
-title: User API
+title: Класс UserAPI
 keywords: react
-sidebar: react_reference_sidebar
+sidebar: evotordoc_sidebar
 toc: true
 permalink: react_reference_userapi.html
+tags: [terminal, react]
 folder: react_reference
 ---
 
 ## Описание
+
+С помощью методов класса приложения получают данные пользователей смарт-терминала.
 
 ## Методы
 
 ### getAllUsers
 
 ```js
-static getAllUsers(getter: (User[]) => void): void
+static getAllUsers(): Promise<User[]>
 ```
 
 **Описание**
 
 Получает список всех пользователей смарт-терминала.
 
-**Параметры**
-
-* `getter` – функция, в параметры которой требуется передавать массив [пользователей](./react_reference_parameters_user.html#user).
-
 **Возвращает**
+
+* `Promise`, результат которого –  массив [пользователей](./react_reference_userapi.html#user)
 
 ### getAuthenticatedUser
 
 ```js
-static getAuthenticatedUser(getter: (User | null) => void): void
+static getAuthenticatedUser(): Promise<User | null>
 ```
 
 **Описание**
 
 Получает данные авторизованного пользователя смарт-терминала.
 
-**Параметры**
-
-* `getter` – функция, в параметры которой требуется передавать [пользователя](./react_reference_parameters_user.html#user).
-
 **Возвращает**
+
+* `Promise`, результат которого – [пользователь](./react_reference_userapi.html#user).
 
 ### getAllGrants
 
 ```js
-static getAllGrants(getter: (Grant[]) => void): void
+static getAllGrants(): Promise<Grant[]>
 ```
 
 **Описание**
 
 Получает все [права](./doc_app_grants.html).
 
-**Параметры**
-
-* `getter` – функция, в параметры которой требуется передавать массив [прав пользователей](./react_reference_parameters_user.html#grant).
-
 **Возвращает**
+
+* `Promise`, результат которого – массив [прав](./react_reference_userapi.html#grant).
 
 ### getGrantsOfAuthenticatedUser
 
 ```js
-static getGrantsOfAuthenticatedUser(getter: (Grant[]) => void): void
+static getGrantsOfAuthenticatedUser(): Promise<Grant[]>
 ```
 
 **Описание**
@@ -71,6 +68,30 @@ static getGrantsOfAuthenticatedUser(getter: (Grant[]) => void): void
 
 **Параметры**
 
-* `getter` – функция, в параметры которой требуется передавать [права пользователей](./react_reference_parameters_user.html#grant).
-
 **Возвращает**
+
+* `Promise`, результат которого – массив [прав](./react_reference_userapi.html#grant).
+
+## Параметры
+
+### Класс User {#user}
+
+```js
+export class User {
+    constructor(uuid: string,
+                secondName: string | null,
+                firstName: string | null,
+                phone: string | null,
+                pin: string | null,
+                roleUuid: string,
+                roleTitle: string) {}
+}
+```
+
+### Класс Grant {#grant}
+
+```js
+export class Grant {
+    constructor(title: string, roleUuid: string) {}
+}
+```

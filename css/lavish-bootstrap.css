@@ -434,7 +434,8 @@ h4,
 }
 h5,
 .h5 {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: bold;
 }
 h6,
 .h6 {
@@ -513,10 +514,10 @@ dd {
   .dl-horizontal dd:after {
     content: " ";
     /* 1 */
-  
+
     display: table;
     /* 2 */
-  
+
   }
   .dl-horizontal dd:after {
     clear: both;
@@ -525,10 +526,10 @@ dd {
   .dl-horizontal dd:after {
     content: " ";
     /* 1 */
-  
+
     display: table;
     /* 2 */
-  
+
   }
   .dl-horizontal dd:after {
     clear: both;

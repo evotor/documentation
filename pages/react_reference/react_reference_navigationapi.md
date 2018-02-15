@@ -1,13 +1,18 @@
 ---
-title: Navigation API
+title: Класс NavigationAPI
 keywords: react
-sidebar: react_reference_sidebar
+sidebar: evotordoc_sidebar
 toc: true
 permalink: react_reference_navigationapi.html
+tags: [terminal, react]
 folder: react_reference
 ---
 
 ## Описание
+
+Класс предоставляет собой обёртку нативной навигации андроида.
+
+С помощью методов класса приложения запускают службы и операции. Внутри своего приложения вы можете запускать любые экспортированные операции других приложений.
 
 ## Методы
 
@@ -19,11 +24,11 @@ static createIntentForSellReceiptEdit(): Intent
 
 **Описание**
 
-Создаёт намерение (`intent`) изменения чека продажи.
-
-**Параметры**
+Создаёт намерение (`Intent`) для формы наполнения чека продажи.
 
 **Возвращает**
+
+* `Intent`
 
 ### createIntentForPaybackReceiptEdit
 
@@ -33,11 +38,11 @@ static createIntentForPaybackReceiptEdit(): Intent
 
 **Описание**
 
-Создаёт намерение (`intent`) изменения чека возврата.
-
-**Параметры**
+Создаёт намерение (`Intent`) для формы наполнения чека возврата.
 
 **Возвращает**
+
+* `Intent`
 
 ### createIntentForSellReceiptPayment
 
@@ -47,11 +52,11 @@ static createIntentForSellReceiptPayment(): Intent
 
 **Описание**
 
-Создаёт намерение (`intent`) оплаты по чеку продажи.
-
-**Параметры**
+Создаёт намерение (`Intent`) для формы оплаты чека продажи.
 
 **Возвращает**
+
+* `Intent`
 
 ### createIntentForPaybackReceiptPayment
 
@@ -61,11 +66,11 @@ static createIntentForPaybackReceiptPayment(): Intent
 
 **Описание**
 
-Создаёт намерение (`intent`) оплаты по чеку возврата.
-
-**Параметры**
+Создаёт намерение (`Intent`) для формы оплаты чека возврата.
 
 **Возвращает**
+
+* `Intent`
 
 ### createIntentForCashReceiptSettings
 
@@ -75,11 +80,11 @@ static createIntentForCashReceiptSettings(): Intent
 
 **Описание**
 
-Создаёт намерение (`intent`) оплаты по чеку продажи.
-
-**Параметры**
+Создаёт намерение (`Intent`) для формы настроек кассового чека.
 
 **Возвращает**
+
+* `Intent`
 
 ### createIntentForCashRegisterReport
 
@@ -89,30 +94,34 @@ static createIntentForCashRegisterReport(): Intent
 
 **Описание**
 
-**Параметры**
+Создаёт намерение (`Intent`) для формы кассового отчёта.
 
 **Возвращает**
+
+* `Intent`
 
 ### getIntent
 
 ```js
-static getIntent(getter: (Intent) => void)
+static getIntent(): Promise<Intent>
 ```
 
 **Описание**
 
-Получает намерение (`intent`).
-
-**Параметры**
-
-* `getter`
+Получает намерение (`Intent`) для текущей операции.
 
 **Возвращает**
+
+* `Promise` – возвращает объект с намерением.
+
+**Возможные ошибки**
+
+* [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
 
 ### startActivity
 
 ```js
-static startActivity(intent: Intent)
+static startActivity(intent: Intent): Promise<void>
 ```
 
 **Описание**
@@ -125,13 +134,22 @@ static startActivity(intent: Intent)
 
 **Возвращает**
 
-### startActivityForResult
+* `Promise`
+
+**Возможные ошибки**
+
+* [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
+
+
+### startActivityForResult {#startActivityForResult}
 
 ```js
-static startActivityForResult(intent: Intent, requestCode: number)
+static startActivityForResult(intent: Intent, requestCode: number): Promise<void>
 ```
 
 **Описание**
+
+Запускает операцию для получения результата.
 
 **Параметры**
 
@@ -140,27 +158,69 @@ static startActivityForResult(intent: Intent, requestCode: number)
 
 **Возвращает**
 
-### setResult
+* `Promise`
+
+**Возможные ошибки**
+
+* [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
+
+
+### startService
 
 ```js
-static setResult(resultCode: number)
+static startService(intent: Intent): Promise<void>
 ```
 
 **Описание**
+
+Запускает службу.
+
+**Параметры**
+
+* `intent`
+
+**Возвращает**
+
+* `Promise`
+
+**Возможные ошибки**
+
+* [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
+
+
+### setResult
+
+```js
+static setResult(resultCode: number, data?: Intent): Promise<void>
+```
+
+**Описание**
+
+Устанавливает результат текущей операции, если она была запущена методом [startActivityForResult](./react_reference_navigationapi.html#startActivityForResult).
 
 **Параметры**
 
 * `resultCode`
+* `data`
 
 **Возвращает**
+
+* `Promise`
+
+**Возможные ошибки**
+
+* [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
+
 
 ### setIntegrationResult
 
 ```js
-static setIntegrationResult(result: IntegrationEventResult)
+static setIntegrationResult(result: IntegrationServiceEventResult): Promise<void>
 ```
 
 **Описание**
+
+Устанавливает интеграционный результат текущей операции, если она унаследована от интеграционной операции.
 
 **Параметры**
 
@@ -168,35 +228,47 @@ static setIntegrationResult(result: IntegrationEventResult)
 
 **Возвращает**
 
+* `Promise`
+
+**Возможные ошибки**
+
+* [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
+
+
 ### finish
 
 ```js
-static finish()
+static finish(): Promise<void>
 ```
 
 **Описание**
 
-**Параметры**
+Завершает текущую операцию.
 
 **Возвращает**
+
+* `Promise`
+
+**Возможные ошибки**
+
+* [`NavigationError`](./doc_react_errorshandling.html#navigationerror).
+
 
 ### addEventListener
 
 ```js
-static addEventListener(type: NavigationEventType, listener: NavigationEventListener, isGlobal: boolean): void
+static addEventListener(type: NavigationEventType, listener: NavigationEventListener, isGlobal: boolean = true): void
 ```
 
 **Описание**
 
-Метод для [подписки приложения на события](./react_reference_introduction.html#eventslistening).
+Регистрирует слушатель и [подписывает приложение на события](./doc_react_interactiontypes.html#eventsubscription).
 
 **Параметры**
 
-* `type` – тип события. Для получения данных о навигации указывайте тип `NavigationEventType`.
-* `listener` – тип слушателя. Для получения данных о навигации указывайте тип `NavigationEventListener`.
-* `isGlobal` – указывает глобальную доступность метода. По умолчанию `true`.
-
-**Возвращает**
+* `type` – событие типа [`NavigationEventType`](./react_reference_navigationapi.html#navigationeventtype).
+* `listener` – слушатель типа `NavigationEventListener`.
+* `isGlobal` – [глобальная доступность слушателя](./doc_react_interactiontypes.html#eventsubscription)
 
 ### removeEventListener
 
@@ -206,15 +278,26 @@ static removeEventListener(type: NavigationEventType, listener?: NavigationEvent
 
 **Описание**
 
-Метод для отмены подписки на события.
+Удаляет слушатель и отменяет [подписку на события](./doc_react_interactiontypes.html#eventsubscription).
 
 **Параметры**
 
-
-* `type` – тип события. Для отмены получения данных о навигации указывайте тип `NavigationEventType`.
-* `listener` – тип слушателя. Для отмены получения данных о навигации указывайте тип `NavigationEventListener`. Не передавайте параметр если хотите удалить все слушатели.
+* `type` – событие типа [`NavigationEventType`](./react_reference_navigationapi.html#navigationeventtype).
+* `listener` – слушатель типа `NavigationEventListener`. Не передавайте параметр если хотите удалить все слушатели.
 
 **Возвращает**
 
 * `true` – если слушатель удалён.
 * `false` – если слушатель не удалён.
+
+## Параметры
+
+### Тип NavigationEventType {#navigationeventtype}
+
+```js
+export enum NavigationEventType {
+    ACTIVITY_RESULT = "ACTIVITY_RESULT",
+    BACK_PRESSED = "BACK_PRESSED"
+}
+```
+<!-- tobundle - TODO -->

@@ -104,6 +104,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- entries without drop-downs appear here -->
+
+
+
                 
                 
                 
@@ -112,10 +115,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
-                
-                
-                
-                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -396,7 +395,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
+            <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
             
@@ -464,6 +463,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            
+            <li><a href="doc_java_st_events.html">Обработка событий смарт-терминала</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с оборудованием</a>
                 <ul>
@@ -505,7 +511,144 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">JavaScript SDK</a>
+        <a href="#">REACT NATIVE SDK</a>
+        
+        <ul>
+            
+            
+            
+            <li><a href="doc_react_gettingstarted.html">Начало работы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_interactiontypes.html">Типы взаимодействия со смарт-терминалом</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Основные API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_userapi.html">Пользователи</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_receiptapi.html">Чеки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_inventoryapi.html">Товароучёт</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_navigationapi.html">Навигация</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_sessionapi.html">Смены</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Службы</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_seviceapi.html">Инициализация служб</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Устройства</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesprinter.html">Принтер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescanner.html">Сканер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_errorshandling.html">Обработка ошибок</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_generatingsignedapk.html">Создание и установка подписанного APK</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        
+        <a href="#">JavaScript SDK <b>DEPRECATED</b></a>
         
         <ul>
             
@@ -788,19 +931,19 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/js_SDK/doc_js_receipt_interactions.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/js_SDK/doc_js_receipt_interactions.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <h2 id="section">Подготовка к работе</h2>
+  <h2 id="Подготовка-к-работе">Подготовка к работе</h2>
 
 <p>Вы можете взаимодействовать как с чеком продажи, так и с чеком возврата.</p>
 
 <p>Для работы с чеком вызывайте указанные методы у объекта <code class="highlighter-rouge">receipt</code>. Объект <code class="highlighter-rouge">receipt</code> доступен всегда, его не требуется получать с помощью функции <code class="highlighter-rouge">require()</code>.</p>
 
-<h2 id="section-1">Методы для работы с чеком</h2>
+<h2 id="Методы-для-работы-с-чеком">Методы для работы с чеком</h2>
 
-<h3 id="section-2">Задать скидку на чек</h3>
+<h3 id="Задать-скидку-на-чек">Задать скидку на чек</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">receipt</span><span class="p">.</span><span class="nx">applyReceiptDiscount</span><span class="p">(</span><span class="nx">discountvalue</span><span class="p">)</span>
 </code></pre>
@@ -808,7 +951,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>В аргументе функции требуется передать строку с данными о скидке, которая применяется к чеку.</p>
 
-<h3 id="section-3">Получить чек</h3>
+<h3 id="Получить-чек">Получить чек</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">receipt</span><span class="p">.</span><span class="nx">getReceipt</span><span class="p">()</span>
 </code></pre>
@@ -816,7 +959,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Функция возвращает идентификатор чека в формате <code class="highlighter-rouge">uuid4</code> и JSON-объект с позициями чека.</p>
 
-<h3 id="section-4">Записать в чек дополнительные данные</h3>
+<h3 id="Записать-в-чек-дополнительные-данные">Записать в чек дополнительные данные</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">receipt</span><span class="p">.</span><span class="nx">addReceiptExtra</span><span class="p">(</span><span class="nx">extradata</span><span class="p">)</span>
 </code></pre>
@@ -824,9 +967,9 @@ $('#toc').on('click', 'a', function() {
 
 <p>В аргументе функции требуется передать строку с дополнительными данными, которые добавятся к чеку.</p>
 
-<h3 id="section-5">Работа с позициями чека</h3>
+<h3 id="Работа-с-позициями-чека">Работа с позициями чека</h3>
 
-<h4 id="section-6">Описание позиции</h4>
+<h4 id="Описание-позиции">Описание позиции</h4>
 
 <p>Позиция представляет JSON-объект с обязательным набором полей:</p>
 
@@ -847,7 +990,7 @@ $('#toc').on('click', 'a', function() {
 }
 </code></pre>
 
-<h3 id="section-7">Добавить позицию в чек</h3>
+<h3 id="Добавить-позицию-в-чек">Добавить позицию в чек</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">receipt</span><span class="p">.</span><span class="nx">addPosition</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span>
 </code></pre>
@@ -876,7 +1019,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Чтобы добавить позицию в чек, соответствующий плагин требуется подписать на <a href="doc_app_integration_points.html#Callbacks">получение события</a> <code class="highlighter-rouge">evo.v2.receipt.sell.beforePositionsEdited</code>. Плагин требуется подписывать в <a href="./doc_js_app_manifest.html">манифесете JS-приложения</a>.</div>
 
-<h3 id="section-8">Редактировать позицию в чеке</h3>
+<h3 id="Редактировать-позицию-в-чеке">Редактировать позицию в чеке</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">receipt</span><span class="p">.</span><span class="nx">editPosition</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span>
 </code></pre>
@@ -884,7 +1027,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>В аргументе функции требуется передать строку с данными позиции, которые требуется изменить.</p>
 
-<h3 id="section-9">Удалить позицию из чека</h3>
+<h3 id="Удалить-позицию-из-чека">Удалить позицию из чека</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">receipt</span><span class="p">.</span><span class="nx">removePosition</span><span class="p">(</span><span class="nx">uuid</span><span class="p">)</span>
 </code></pre>

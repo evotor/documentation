@@ -5,7 +5,7 @@ summary:
 sidebar: evotordoc_sidebar
 permalink: doc_app_version_lifespan.html
 tags: []
-folder: tutorials
+folder: evotor_about
 ---
 
 На сайте разработчиков [dev.evotor.ru](https://dev.evotor.ru) вы можете одновременно работать с несколькими версиями приложения.

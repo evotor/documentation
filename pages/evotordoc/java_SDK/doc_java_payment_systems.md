@@ -1,5 +1,5 @@
 ---
-title: Платёжные системы
+title: Способы оплаты
 keywords: чек, печатная, группа, платёжные, системы, манифест
 summary:
 sidebar: evotordoc_sidebar

@@ -12,7 +12,7 @@ site_title: Документация Эвотор
 company_name: Эвотор
 # this appears in the footer
 
-github_editme_path: evotor/documentation/tree/comments/
+github_editme_path: evotor/documentation/tree/master/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 disqus_shortname:
@@ -24,7 +24,7 @@ disqus_shortname:
 host: 127.0.0.1
 # the preview server used. Leave as is.
 
-port: 4001
+port: 4000
 # the port where the preview is rendered. You can leave this as is unless you have other Jekyll builds using this same port that might cause conflicts. in that case, use another port such as 4006.
 
 exclude:
