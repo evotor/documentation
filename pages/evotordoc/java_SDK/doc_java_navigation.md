@@ -208,7 +208,7 @@ public class PushSampleActivity extends IntegrationAppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         // вызов суперкласса onCreate, создающего операцию.
         super.onCreate(savedInstanceState);
-        // NavigationApi.createIntentForNewProduct() открывает окно создания товара с указанным штрихкодом.
+        // NavigationApi.createIntentForNewProduct() создаёт намерение на открытие окна создания товара с указанным штрихкодом.
         startActivityForResult(NavigationApi.createIntentForNewProduct(
                 new NavigationApi.NewProductIntentBuilder().setBarcode("111")), REQUEST_CODE_FOR_NEW_PRODUCT);
     }
