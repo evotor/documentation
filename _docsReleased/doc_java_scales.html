@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_session.html">Кассовые смены</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -948,11 +955,9 @@ $('#toc').on('click', 'a', function() {
 
     <p>Метод не может быть <code class="highlighter-rouge">null</code> и в случае успеха возвращает объект <code class="highlighter-rouge">ru.evotor.devices.commons.IScalesServiceWrapper</code>.</p>
 
-    <p>Метод может вернуть следующие исключения (<code class="highlighter-rouge">exception</code>):</p>
-    <ul>
-      <li><code class="highlighter-rouge">ru.evotor.devices.commons.exception.ServiceNotConnectedException</code> возвращается в результате серии неудачных попыток подключиться к весам.</li>
-      <li><code class="highlighter-rouge">ru.evotor.devices.commons.exception.DeviceServiceException</code> – наследованое исключение.</li>
-    </ul>
+    <p>Метод может вернуть следующие исключения (<code class="highlighter-rouge">exception</code>):
+ * <code class="highlighter-rouge">ru.evotor.devices.commons.exception.ServiceNotConnectedException</code> возвращается в результате серии неудачных попыток подключиться к весам.
+ * <code class="highlighter-rouge">ru.evotor.devices.commons.exception.DeviceServiceException</code> – наследованое исключение.</p>
   </li>
   <li>
     <p>С помощью метода <code class="highlighter-rouge">Weight getWeight(int deviceId)</code>, объекта <code class="highlighter-rouge">ru.evotor.devices.commons.IScalesService</code>, вы можете получить вес товара <code class="highlighter-rouge">Weight</code>.</p>

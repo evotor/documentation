@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_session.html">Кассовые смены</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -931,11 +938,11 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="Описание">Описание</h2>
+  <h2 id="section">Описание</h2>
 
 <p>С помощью методов класса приложения получают данные чеков и передают их для обработки в смарт-терминал.</p>
 
-<h2 id="Методы">Методы</h2>
+<h2 id="section-1">Методы</h2>
 
 <h3 id="getpositionsbybarcode">getPositionsByBarcode</h3>
 
@@ -1101,9 +1108,9 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Promise</code>, результат которого –  массив <a href="./react_reference_receiptapi.html#receiptheader">заголовков чека</a>.</li>
 </ul>
 
-<h2 id="Параметры">Параметры</h2>
+<h2 id="section-2">Параметры</h2>
 
-<h3 id="Класс-positionadd">Класс PositionAdd</h3>
+<h3 id="positionadd">Класс PositionAdd</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PositionAdd</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">position</span><span class="err">:</span> <span class="nx">Position</span><span class="p">)</span> <span class="p">{}</span>
@@ -1117,7 +1124,7 @@ $('#toc').on('click', 'a', function() {
   <li><a href="./react_reference_receiptapi.html#position"><code class="highlighter-rouge">Position</code></a></li>
 </ul>
 
-<h3 id="Класс-positionedit">Класс PositionEdit</h3>
+<h3 id="positionedit">Класс PositionEdit</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PositionEdit</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">position</span><span class="err">:</span> <span class="nx">Position</span><span class="p">)</span> <span class="p">{}</span>
@@ -1131,7 +1138,7 @@ $('#toc').on('click', 'a', function() {
   <li><a href="./react_reference_receiptapi.html#position"><code class="highlighter-rouge">Position</code></a></li>
 </ul>
 
-<h3 id="Класс-positionremove">Класс PositionRemove</h3>
+<h3 id="positionremove">Класс PositionRemove</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PositionRemove</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">positionUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
@@ -1178,7 +1185,7 @@ $('#toc').on('click', 'a', function() {
   <li><a href="./react_reference_devicesprinter.html#printable"><code class="highlighter-rouge">Printable</code></a></li>
 </ul>
 
-<h3 id="Тип-printextraplace">Тип PrintExtraPlace</h3>
+<h3 id="printextraplace">Тип PrintExtraPlace</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">PrintExtraPlace</span> <span class="o">=</span>
     <span class="nx">PrintExtraPlacePrintGroupTop</span> <span class="o">|</span>
@@ -1189,7 +1196,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Класс-printextraplaceprintgrouptop">Класс PrintExtraPlacePrintGroupTop</h3>
+<h3 id="printextraplaceprintgrouptop">Класс PrintExtraPlacePrintGroupTop</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePrintGroupTop</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroupId</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
@@ -1197,7 +1204,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Класс-printextraplaceprintgroupheader">Класс PrintExtraPlacePrintGroupHeader</h3>
+<h3 id="printextraplaceprintgroupheader">Класс PrintExtraPlacePrintGroupHeader</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePrintGroupHeader</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroupId</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
@@ -1205,7 +1212,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Класс-printextraplaceprintgroupsummary">Класс PrintExtraPlacePrintGroupSummary</h3>
+<h3 id="printextraplaceprintgroupsummary">Класс PrintExtraPlacePrintGroupSummary</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePrintGroupSummary</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroupId</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
@@ -1213,7 +1220,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Класс-printextraplacepositionfooter">Класс PrintExtraPlacePositionFooter</h3>
+<h3 id="printextraplacepositionfooter">Класс PrintExtraPlacePositionFooter</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePositionFooter</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">positionUuid</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
@@ -1221,7 +1228,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Класс-printextraplacepositionallsubpositionsfooter">Класс PrintExtraPlacePositionAllSubpositionsFooter</h3>
+<h3 id="printextraplacepositionallsubpositionsfooter">Класс PrintExtraPlacePositionAllSubpositionsFooter</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePositionAllSubpositionsFooter</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">positionUuid</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
@@ -1365,7 +1372,7 @@ $('#toc').on('click', 'a', function() {
   <li><a href="./react_reference_receiptapi.html#printreceipt"><code class="highlighter-rouge">PrintReceipt</code></a></li>
 </ul>
 
-<h4 id="Методы-1">Методы</h4>
+<h4 id="section-3">Методы</h4>
 
 <h5 id="getpositions">getPositions</h5>
 

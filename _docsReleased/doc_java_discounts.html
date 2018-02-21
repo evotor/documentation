@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_session.html">Кассовые смены</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -933,7 +940,7 @@ $('#toc').on('click', 'a', function() {
 
   <p>Вы можете добавлять скидку как на <a href="./doc_java_discounts.html#discountPosition">каждую позицию отдельно</a>, так и на весь чек (см. ниже).</p>
 
-<h2 id="Скидка-на-чек">Скидка на чек</h2>
+<h2 id="section">Назначение скидки на чек</h2>
 
 <p>Приложение не может автоматически применять скидку, перед этим его требуется вручную вызвать с помощью <a href="./doc_java_app_icon.html#SalesScreen">иконки на экране оплаты смарт-терминала</a>.</p>
 
@@ -999,10 +1006,8 @@ $('#toc').on('click', 'a', function() {
   </li>
   <li>
     <p>Запросите результат <code class="highlighter-rouge">ReceiptDiscountEventResult</code>.</p>
-  </li>
-</ol>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="k">try</span> <span class="o">{</span><span class="n">callback</span><span class="o">.</span><span class="na">onResult</span><span class="o">(</span>
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="k">try</span> <span class="o">{</span><span class="n">callback</span><span class="o">.</span><span class="na">onResult</span><span class="o">(</span>
   <span class="k">new</span> <span class="nf">ReceiptDiscountEventResult</span><span class="o">(</span>
       <span class="n">discount</span><span class="o">,</span>
       <span class="k">new</span> <span class="nf">SetExtra</span><span class="o">(</span><span class="n">extra</span><span class="o">),</span>
@@ -1014,19 +1019,21 @@ $('#toc').on('click', 'a', function() {
             <span class="o">}</span>
 
 </code></pre>
-</div>
+    </div>
 
-<p>Где:</p>
+    <p>Где:</p>
 
-<ul>
-  <li><code class="highlighter-rouge">discount</code> – значение скидки в валюте.</li>
-  <li><code class="highlighter-rouge">new SetExtra(extra)</code> – команда для <a href="./doc_java_receipt_extras.html">создания дополнительных полей в чеке</a>. Если дополнительные поля создавать не требуется вы можете передать <code class="highlighter-rouge">null</code>.</li>
-  <li><code class="highlighter-rouge">changes</code> – список изменений по позициям.</li>
-</ul>
+    <ul>
+      <li><code class="highlighter-rouge">discount</code> – значение скидки в валюте.</li>
+      <li><code class="highlighter-rouge">new SetExtra(extra)</code> – команда для <a href="./doc_java_receipt_extras.html">создания дополнительных полей в чеке</a>. Если дополнительные поля создавать не требуется вы можете передать <code class="highlighter-rouge">null</code>.</li>
+      <li><code class="highlighter-rouge">changes</code> – список изменений по позициям.</li>
+    </ul>
+  </li>
+</ol>
 
-<h2 id="discountPosition">Скидка на позицию</h2>
+<h2 id="discountPosition">Назначение скидки на позицию</h2>
 
-<p>Чтобы добавить скидку на позицию, вам потребуется передать значение цены с учётом скидки в поле <code class="highlighter-rouge">priceWithDiscountPosition</code>. Если скидки на позицию нет, передавайте <code class="highlighter-rouge">null</code>. Список полей позиции описан в классе <a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/Position.java"><code class="highlighter-rouge">position.java</code></a>.</p>
+<p>Чтобы добавить скидку на позицию, вам потребуется передать значение цены с учётом скидки в поле <code class="highlighter-rouge">priceWithDiscountPosition</code>. Если скидки на позицию нет, передавайте <code class="highlighter-rouge">null</code>. Список полей позиции описан в классе <a href="https://github.com/evotor/integration-library/blob/develop/src/main/java/ru/evotor/framework/receipt/Position.java"><code class="highlighter-rouge">position.java</code></a>.</p>
 
 <p>Передать поле можно в любой момент, когда доступно редактирование существующих или добавление новых позиций в чек:</p>
 
@@ -1036,7 +1043,7 @@ $('#toc').on('click', 'a', function() {
   <li>В списке изменений по позициям (см. выше)</li>
 </ul>
 
-<h3 id="Пример-скидки-на-позицию">Пример скидки на позицию</h3>
+<h3 id="section-1">Пример скидки на позицию</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">List</span><span class="o">&lt;</span><span class="n">PositionAdd</span><span class="o">&gt;</span> <span class="n">positionAddList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
         <span class="n">positionAddList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span>
@@ -1064,9 +1071,72 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h2 id="Пример">Пример</h2>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Вы можете найти пример начисления скидок в <a href="https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/MyDiscountService.java">демонстрационном приложении</a>.</div>
 
-<p>Пример работы со скидками в <a href="https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/MyDiscountService.java">демонстрационном приложении</a>.</p>
+<h2 id="getdiscount">Получение скидок</h2>
+
+<p>Получение скидки потребуется вам чтобы точно определить сумму уплаченную по чеку. Вы можете узнавать скидку начисленную как на открытый, так и на ранее сохранённые чеки.</p>
+
+<p>Узнать значение скидки вы можете с помощью методов:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getDiscount</span><span class="o">():</span> <span class="n">BigDecimal</span>
+</code></pre>
+</div>
+
+<p>Где <code class="highlighter-rouge">BigDecimal</code> – абсолютное значение скидки в рублях.</p>
+
+<p>Методы принадлежат классу <a href=""><code class="highlighter-rouge">Receipt.kt</code></a></p>
+
+<h3 id="section-2">Скидка на чек</h3>
+
+<p>Метод <code class="highlighter-rouge">getDiscount()</code>, вызванный в классе <code class="highlighter-rouge">Receipt</code> возвращает абсолютное значение скидки на чек.</p>
+
+<h3 id="section-3">Сумма скидок для текущей группы</h3>
+
+<p>Метод <code class="highlighter-rouge">getDiscount()</code>, вызванный в классе <code class="highlighter-rouge">Receipt.PrintReceipt</code> возвращает абсолютное значение скидки на текущую печатную группу, без учёта скидки на чек.</p>
+
+<h3 id="section-4">Пример получения скидок</h3>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Приведённую в примере службу требуется объявить в манифесте приложения.</div>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">example</span><span class="o">.</span><span class="na">dfabrichnyi</span><span class="o">.</span><span class="na">integration_lib_test</span>
+
+<span class="kn">import</span> <span class="nn">ru.evotor.framework.core.IntegrationService</span>
+<span class="kn">import</span> <span class="nn">ru.evotor.framework.core.action.event.receipt.print_extra.PrintExtraRequiredEvent</span>
+<span class="kn">import</span> <span class="nn">ru.evotor.framework.core.action.event.receipt.print_extra.PrintExtraRequiredEventProcessor</span>
+<span class="kn">import</span> <span class="nn">ru.evotor.framework.core.action.processor.ActionProcessor</span>
+<span class="kn">import</span> <span class="nn">ru.evotor.framework.receipt.Receipt</span>
+<span class="kn">import</span> <span class="nn">ru.evotor.framework.receipt.ReceiptApi</span>
+<span class="kn">import</span> <span class="nn">java.math.BigDecimal</span>
+
+<span class="kd">class</span> <span class="nc">TestIntegrationService</span> <span class="o">:</span> <span class="n">IntegrationService</span><span class="o">()</span> <span class="o">{</span>
+
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">createProcessors</span><span class="o">():</span> <span class="n">MutableMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">ActionProcessor</span><span class="o">&gt;</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nf">hashMapOf</span><span class="o">(</span>
+                <span class="n">Pair</span><span class="o">(</span><span class="n">PrintExtraRequiredEvent</span><span class="o">.</span><span class="na">NAME_SELL_RECEIPT</span><span class="o">,</span> <span class="n">object</span> <span class="o">:</span> <span class="n">PrintExtraRequiredEventProcessor</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="n">override</span> <span class="n">fun</span> <span class="nf">call</span><span class="o">(</span><span class="nl">action:</span> <span class="n">String</span><span class="o">,</span> <span class="nl">event:</span> <span class="n">PrintExtraRequiredEvent</span><span class="o">,</span> <span class="nl">callback:</span> <span class="n">Callback</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="c1">//Возвращает текущий открытый чек.</span>
+                        <span class="n">val</span> <span class="n">receipt</span> <span class="o">=</span> <span class="n">ReceiptApi</span><span class="o">.</span><span class="na">getReceipt</span><span class="o">(</span><span class="k">this</span><span class="nd">@TestIntegrationService</span><span class="o">,</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">SELL</span><span class="o">)!!</span>
+
+                        <span class="n">val</span> <span class="n">receiptDiscount</span> <span class="o">=</span> <span class="n">receipt</span><span class="o">.</span><span class="na">getDiscount</span><span class="o">()</span>
+                        <span class="n">println</span><span class="o">(</span><span class="s">"Скидка на чек. Без учета скидок на позиции: $receiptDiscount"</span><span class="o">)</span>
+
+                        <span class="n">var</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">BigDecimal</span><span class="o">.</span><span class="na">ZERO</span>
+
+                        <span class="nf">for</span> <span class="o">(</span><span class="n">document</span> <span class="n">in</span> <span class="n">receipt</span><span class="o">.</span><span class="na">printDocuments</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="n">sum</span> <span class="o">+=</span> <span class="n">document</span><span class="o">.</span><span class="na">getDiscount</span><span class="o">()</span>
+                        <span class="o">}</span>
+
+                        <span class="n">println</span><span class="o">(</span><span class="s">"Сумма скидок для текущей группы: $sum"</span><span class="o">)</span>
+
+                        <span class="n">callback</span><span class="o">.</span><span class="na">skip</span><span class="o">()</span>
+                    <span class="o">}</span>
+                <span class="o">})</span>
+        <span class="o">)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 
     <div class="tags">

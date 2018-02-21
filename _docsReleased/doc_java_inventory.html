@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_session.html">Кассовые смены</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -931,11 +938,11 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="Методы">Методы</h2>
+  <h2 id="section">Методы</h2>
 
 <p>Класс <a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/inventory/InventoryApi.kt"><code class="highlighter-rouge">InventoryApi</code></a> содержит методы, описанные ниже.</p>
 
-<h3 id="Получить-все-штрихкоды-товара">Получить все штрихкоды товара:</h3>
+<h3 id="section-1">Получить все штрихкоды товара:</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAllBarcodesForProduct</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">productUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span>
 </code></pre>
@@ -949,7 +956,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">List&lt;String&gt;</code> – список всех штрихкодов товара.</li>
 </ul>
 
-<h3 id="Поиск-товара-по-идентификатору">Поиск товара по идентификатору:</h3>
+<h3 id="section-2">Поиск товара по идентификатору:</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getProductByUuid</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">uuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">ProductItem</span><span class="o">?</span>
 </code></pre>
@@ -987,7 +994,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">tareVolume</code> – объём тары алкогольной продукции.</li>
 </ul>
 
-<h3 id="Получить-возможные-дополнительные-поля">Получить возможные дополнительные поля:</h3>
+<h3 id="section-3">Получить возможные дополнительные поля:</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getField</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">fieldUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">Field</span><span class="o">?</span>
 </code></pre>
@@ -1022,7 +1029,7 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ul>
 
-<h3 id="Получить-значения-дополнительных-полей-товара">Получить значения дополнительных полей товара:</h3>
+<h3 id="section-4">Получить значения дополнительных полей товара:</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getProductExtras</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">productUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ProductExtra</span><span class="o">&gt;</span>
 </code></pre>
@@ -1052,7 +1059,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">data</code> - дополнительные данные от приложения.</li>
 </ul>
 
-<h2 id="Пример">Пример</h2>
+<h2 id="section-5">Пример</h2>
 
 <p>Пример работы с Inventory API в <a href="https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/InventoryApiActivity.java">демонстрационном приложении</a>.</p>
 

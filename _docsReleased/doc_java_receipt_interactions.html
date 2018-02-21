@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_session.html">Кассовые смены</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -935,7 +942,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="Использование-службы-и-получение-событий-о-намерении-изменения-чека">Использование службы и получение событий о намерении изменения чека</h2>
+  <h2 id="section">Использование службы и получение событий о намерении изменения чека</h2>
 
 <ol>
   <li>
@@ -1008,7 +1015,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Где вместо null вы можете передать <code class="highlighter-rouge">new SetExtra(extra)</code>, команду для <a href="./doc_java_receipt_extras.html">создания дополнительных полей в чеке</a>.</p>
 
-<h3 id="Описание-события-beforepositionseditedevent">Описание события <code class="highlighter-rouge">BeforePositionsEditedEvent</code></h3>
+<h3 id="beforepositionseditedevent">Описание события <code class="highlighter-rouge">BeforePositionsEditedEvent</code></h3>
 
 <p>О намерении изменения чека сообщает событие <a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.java"><code class="highlighter-rouge">beforePositionsEditedEvent</code></a>:</p>
 
@@ -1136,7 +1143,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">subPositions</code> – список подпозиций.</li>
 </ul>
 
-<h3 id="Позиция-с-подпозицией">Позиция с подпозицией</h3>
+<h3 id="section-1">Позиция с подпозицией</h3>
 
 <p>Пример позиции чека с подпозицией (у позиции и подпозиции есть <code class="highlighter-rouge">uuid</code> товара):</p>
 
@@ -1167,7 +1174,7 @@ $('#toc').on('click', 'a', function() {
 <p>Вы можете использовать подпозиции <code class="highlighter-rouge">subPosition</code> для добавления опций к товару.
 Например, к товару “Кофе” можно добавить подпозицию “Молоко”. Подпозиция удаляется вместе с основной позицией товара.</p>
 
-<h3 id="Свободно-заданная-позиция">Свободно заданная позиция</h3>
+<h3 id="section-2">Свободно заданная позиция</h3>
 
 <p>Пример свободно заданной позиции (<code class="highlighter-rouge">uuid</code> товара – <code class="highlighter-rouge">null</code>):</p>
 

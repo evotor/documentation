@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_session.html">Кассовые смены</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -931,11 +938,11 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="Описание">Описание</h2>
+  <h2 id="section">Описание</h2>
 
 <p>Класс позволяет подписываться на широковещательные сообщения, которые рассылает смарт-терминал.</p>
 
-<h2 id="Методы">Методы</h2>
+<h2 id="section-1">Методы</h2>
 
 <h3 id="addeventlistener">addEventListener</h3>
 
@@ -979,9 +986,9 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">false</code> – если слушатель не удалён.</li>
 </ul>
 
-<h2 id="Параметры">Параметры</h2>
+<h2 id="section-2">Параметры</h2>
 
-<h3 id="Тип-broadcasteventtype">Тип BroadcastEventType</h3>
+<h3 id="broadcasteventtype">Тип BroadcastEventType</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">BroadcastEventType</span> <span class="o">=</span>
     <span class="nx">ProductEventType</span> <span class="o">|</span>
@@ -992,7 +999,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Перечисление-producteventtype">Перечисление ProductEventType</h3>
+<h3 id="producteventtype">Перечисление ProductEventType</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">ProductEventType</span> <span class="p">{</span>
     <span class="nx">PRODUCT_CARD_OPEN</span> <span class="o">=</span> <span class="s2">"PRODUCT_CARD_OPEN"</span>
@@ -1000,7 +1007,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Перечисление-receipteventtype">Перечисление ReceiptEventType</h3>
+<h3 id="receipteventtype">Перечисление ReceiptEventType</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">ReceiptEventType</span> <span class="p">{</span>
     <span class="nx">SELL_RECEIPT_OPENED</span> <span class="o">=</span> <span class="s2">"SELL_RECEIPT_OPENED"</span><span class="p">,</span>
@@ -1013,7 +1020,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Перечисление-positioneventtype">Перечисление PositionEventType</h3>
+<h3 id="positioneventtype">Перечисление PositionEventType</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">PositionEventType</span> <span class="p">{</span>
     <span class="nx">SELL_RECEIPT_POSITION_ADDED</span> <span class="o">=</span> <span class="s2">"SELL_RECEIPT_POSITION_ADDED"</span><span class="p">,</span>
@@ -1026,7 +1033,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Перечисление-cashdrawereventtype">Перечисление CashDrawerEventType</h3>
+<h3 id="cashdrawereventtype">Перечисление CashDrawerEventType</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">CashDrawerEventType</span> <span class="p">{</span>
     <span class="nx">CASH_DRAWER_OPEN</span> <span class="o">=</span> <span class="s2">"CASH_DRAWER_OPEN"</span>
@@ -1034,7 +1041,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Перечисление-cashoperationeventtype">Перечисление CashOperationEventType</h3>
+<h3 id="cashoperationeventtype">Перечисление CashOperationEventType</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">CashOperationEventType</span> <span class="p">{</span>
     <span class="nx">CASH_IN</span> <span class="o">=</span> <span class="s2">"CASH_IN"</span><span class="p">,</span>
@@ -1054,37 +1061,37 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Тип-producteventlistener">Тип ProductEventListener</h3>
+<h3 id="producteventlistener">Тип ProductEventListener</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">ProductEventListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="err">:</span> <span class="nx">ProductEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
 </code></pre>
 </div>
 
-<h3 id="Тип-receipteventlistener">Тип ReceiptEventListener</h3>
+<h3 id="receipteventlistener">Тип ReceiptEventListener</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">ReceiptEventListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="err">:</span> <span class="nx">ReceiptEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
 </code></pre>
 </div>
 
-<h3 id="Тип-positioneventlistener">Тип PositionEventListener</h3>
+<h3 id="positioneventlistener">Тип PositionEventListener</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">PositionEventListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="err">:</span> <span class="nx">PositionEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
 </code></pre>
 </div>
 
-<h3 id="Тип-cashdrawereventlistener">Тип CashDrawerEventListener</h3>
+<h3 id="cashdrawereventlistener">Тип CashDrawerEventListener</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">CashDrawerEventListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="err">:</span> <span class="nx">CashDrawerEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
 </code></pre>
 </div>
 
-<h3 id="Тип-cashoperationeventlistener">Тип CashOperationEventListener</h3>
+<h3 id="cashoperationeventlistener">Тип CashOperationEventListener</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">CashOperationEventListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="err">:</span> <span class="nx">CashOperationEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
 </code></pre>
 </div>
 
-<h3 id="Класс-productevent">Класс ProductEvent</h3>
+<h3 id="productevent">Класс ProductEvent</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ProductEvent</span> <span class="kr">extends</span> <span class="nx">BroadcastEvent</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">action</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">productUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
@@ -1092,7 +1099,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Класс-receiptevent">Класс ReceiptEvent</h3>
+<h3 id="receiptevent">Класс ReceiptEvent</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ReceiptEvent</span> <span class="kr">extends</span> <span class="nx">BroadcastEvent</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">action</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">receiptUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
@@ -1100,7 +1107,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Класс-positionevent">Класс PositionEvent</h3>
+<h3 id="positionevent">Класс PositionEvent</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PositionEvent</span> <span class="kr">extends</span> <span class="nx">BroadcastEvent</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">action</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">receiptUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">position</span><span class="err">:</span> <span class="nx">Position</span><span class="p">)</span> <span class="p">{}</span>
@@ -1108,7 +1115,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Класс-cashdrawerevent">Класс CashDrawerEvent</h3>
+<h3 id="cashdrawerevent">Класс CashDrawerEvent</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">CashDrawerEvent</span> <span class="kr">extends</span> <span class="nx">BroadcastEvent</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">action</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">cashDrawerId</span><span class="err">:</span> <span class="nx">number</span><span class="p">)</span> <span class="p">{}</span>
@@ -1116,7 +1123,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Класс-cashoperationevent">Класс CashOperationEvent</h3>
+<h3 id="cashoperationevent">Класс CashOperationEvent</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">CashOperationEvent</span> <span class="kr">extends</span> <span class="nx">BroadcastEvent</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">action</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">total</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">documentUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>

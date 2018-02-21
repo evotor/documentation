@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_session.html">Кассовые смены</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -939,11 +946,11 @@ $('#toc').on('click', 'a', function() {
 
 <p>Для работы используйте класс <a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/users/UserApi.kt"><code class="highlighter-rouge">UserAPI</code></a>.</p>
 
-<h2 id="Методы">Методы</h2>
+<h2 id="section">Методы</h2>
 
 <p>Класс <code class="highlighter-rouge">UserAPI</code> содержит следующие методы:</p>
 
-<h3 id="Получить-данные-всех-пользователей">Получить данные всех пользователей</h3>
+<h3 id="section-1">Получить данные всех пользователей</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAllUsers</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span>
 </code></pre>
@@ -956,7 +963,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">List&lt;User&gt;</code> – список всех пользователей смарт-терминала.</li>
 </ul>
 
-<h3 id="Получить-данные-авторизованного-пользователя">Получить данные авторизованного пользователя</h3>
+<h3 id="section-2">Получить данные авторизованного пользователя</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAuthenticatedUser</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">User</span>
 </code></pre>
@@ -969,7 +976,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">User</code> – пользователь авторизованный на смарт-терминале. Если пользователь не авторизован, возвращается <code class="highlighter-rouge">null</code>.</li>
 </ul>
 
-<h3 id="Получить-список-всех-доступных-прав">Получить список всех доступных прав</h3>
+<h3 id="section-3">Получить список всех доступных прав</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAllGrants</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Grant</span><span class="o">&gt;</span>
 </code></pre>
@@ -982,7 +989,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">List&lt;Grant&gt;</code> – список всех возможных прав.</li>
 </ul>
 
-<h3 id="Получить-список-прав-авторизованного-пользователя">Получить список прав авторизованного пользователя</h3>
+<h3 id="section-4">Получить список прав авторизованного пользователя</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getGrantsOfAuthenticatedUser</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Grant</span><span class="o">&gt;</span>
 </code></pre>
@@ -995,7 +1002,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">List&lt;Grant&gt;</code> – список всех прав авторизованного пользователя.</li>
 </ul>
 
-<h2 id="Пример">Пример</h2>
+<h2 id="section-5">Пример</h2>
 
 <p>Пример использования User API в <a href="https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/UserApiActivity.java">демонстрационном приложении</a>.</p>
 

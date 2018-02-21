@@ -9,7 +9,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит инструкцию по переходу к элементам управления смарт-терминалом.">
+<meta name="description" content="Раздел содержит описание методов класса NavigationApi, а так же пример вызова окон смарт-терминала.">
 <meta name="keywords" content="terminaljava,  интерфейс, окно, методы, навигация">
 <title>Вызов окон смарт-терминала | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
@@ -389,6 +389,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li class="active"><a href="doc_java_navigation.html">Вызов окон смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_session.html">Кассовые смены</a></li>
             
             
             
@@ -895,7 +902,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
- <div class="summary">Раздел содержит инструкцию по переходу к элементам управления смарт-терминалом.</div>
+ <div class="summary">Раздел содержит описание методов класса NavigationApi, а так же пример вызова окон смарт-терминала.</div>
 
 
 
@@ -926,7 +933,7 @@ $('#toc').on('click', 'a', function() {
 <div class="post-content">
 
    <!-- 
-    <div class="summary">Раздел содержит инструкцию по переходу к элементам управления смарт-терминалом.</div>
+    <div class="summary">Раздел содержит описание методов класса NavigationApi, а так же пример вызова окон смарт-терминала.</div>
     -->
 
     
@@ -935,39 +942,270 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Для вызова окон смарт-терминала используйте класс <a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/navigation/NavigationApi.kt"><code class="highlighter-rouge">NavigationApi</code></a>.</p>
+  <h2 id="section">Описание</h2>
 
-<p>Ваше приложение может вызывать следующие окна смарт-терминала:</p>
+<p>С помощью методов класса <a href="https://github.com/evotor/integration-library/blob/develop/src/main/java/ru/evotor/framework/navigation/NavigationApi.kt"><code class="highlighter-rouge">NavigationApi</code></a> приложения вызывают различные окна смарт-терминала.</p>
 
-<ul>
-  <li>
-    <p>окно редактирования клише чека (<strong>Настройки</strong> → <strong>Кассовый чек</strong>);</p>
+<h2 id="section-1">Методы</h2>
 
-    <p class="center-image"><img src="images\receiptsettings.png" alt="" /></p>
-  </li>
-  <li>
-    <p>окно доступа к кассовым отчётам (<strong>Отчёты</strong> → <strong>Кассовый отчёт</strong>).</p>
+<h3 id="createintentforsellreceiptedit">createIntentForSellReceiptEdit</h3>
 
-    <p class="center-image"><img src="images\CashRegisterReport.png" alt="" /></p>
-  </li>
-</ul>
-
-<h2 id="Вызов-окон-смарт-терминала">Вызов окон смарт-терминала</h2>
-
-<p><em>Чтобы вызывать необходимое окно выполните код:</em></p>
-
-<ul>
-  <li>Если вы хотите вызвать окно настройки клише выполните код:</li>
-</ul>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">startActivity</span><span class="o">(</span><span class="n">NavigationApi</span><span class="o">.</span><span class="na">createIntentForCashReceiptSettings</span><span class="o">());</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>fun createIntentForSellReceiptEdit(): Intent
 </code></pre>
 </div>
+
+<p><strong>Описание</strong></p>
+
+<p>Открывает окно редактирования чека продажи.</p>
+
+<p><strong>Возвращает</strong></p>
+
 <ul>
-  <li>Если вы хотите вызвать окно доступа к кассовым отчётам выполните код:</li>
+  <li><code class="highlighter-rouge">Intent</code></li>
 </ul>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">startActivity</span><span class="o">(</span><span class="n">NavigationApi</span><span class="o">.</span><span class="na">createIntentForCashRegisterReport</span><span class="o">());</span>
+<h3 id="createintentforpaybackreceiptedit">createIntentForPaybackReceiptEdit</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fun createIntentForPaybackReceiptEdit(): Intent
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Открывает окно редактирования чека возврата.</p>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Intent</code></li>
+</ul>
+
+<h3 id="createintentforsellreceiptpayment">createIntentForSellReceiptPayment</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fun createIntentForSellReceiptPayment(): Intent
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Открывает окно оплаты чека продажи.</p>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Intent</code></li>
+</ul>
+
+<h3 id="createintentforcashreceiptsettings">createIntentForCashReceiptSettings</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fun createIntentForCashReceiptSettings(): Intent
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Открывает окно редактирования клише чека (<strong>Настройки</strong> → <strong>Кассовый чек</strong>).</p>
+
+<p class="center-image"><img src="images\receiptsettings.png" alt="" /></p>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Intent</code></li>
+</ul>
+
+<h3 id="createintentforcashregisterreport">createIntentForCashRegisterReport</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fun createIntentForCashRegisterReport(): Intent
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Открывает окно доступа к кассовым отчётам (<strong>Отчёты</strong> → <strong>Кассовый отчёт</strong>).</p>
+
+<p class="center-image"><img src="images\CashRegisterReport.png" alt="" /></p>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Intent</code></li>
+</ul>
+
+<h3 id="createintentforchangeuser">createIntentForChangeUser</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fun createIntentForChangeUser(): Intent
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Открывает окно смены пользователей.</p>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Intent</code></li>
+</ul>
+
+<h3 id="createintentfornewproduct">createIntentForNewProduct</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fun createIntentForNewProduct(productBuilder: NewProductIntentBuilder): Intent
+
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Открывает окно создания нового товара.</p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">productBuilder</code></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>   class NewProductIntentBuilder {
+       private var barcode: String? = null
+
+       fun setBarcode(barcode: String?): NewProductIntentBuilder {
+           this.barcode = barcode
+           return this
+       }
+
+       @JvmSynthetic
+       internal fun build() = Intent(ACTION_EDIT_PRODUCT).apply {
+           barcode?.let {
+               putExtra(EXTRA_BARCODE, it)
+           }
+       }
+   }
+</code></pre>
+</div>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Intent</code></li>
+</ul>
+
+<h3 id="createintentforeditproduct">createIntentForEditProduct</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fun createIntentForEditProduct(productBuilder: EditProductIntentBuilder): Intent
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Открывает окно редактирования товара.</p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">productBuilder</code></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>   class EditProductIntentBuilder {
+       private lateinit var uuid: String
+
+       fun setUuid(uuid: String): EditProductIntentBuilder {
+           this.uuid = uuid
+           return this
+       }
+
+       @JvmSynthetic
+       internal fun build() = Intent(ACTION_EDIT_PRODUCT).apply {
+           putExtra(EXTRA_PRODUCT_UUID, uuid)
+       }
+   }
+</code></pre>
+</div>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Intent</code></li>
+</ul>
+
+<h3 id="getproductuuid">getProductUuid</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>fun getProductUuid(intent: Intent): String?
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Получает идентификатор товара при успешном добавлении.</p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">intent</code></li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">String</code></li>
+</ul>
+
+<h2 id="section-2">Пример</h2>
+
+<p>Пример вызова окон добавления и редактирования товара.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">evotor</span><span class="o">.</span><span class="na">ru</span><span class="o">.</span><span class="na">pushsample</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.support.annotation.Nullable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.widget.Toast</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">ru.evotor.framework.core.IntegrationAppCompatActivity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">ru.evotor.framework.navigation.NavigationApi</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleActivity</span> <span class="kd">extends</span> <span class="n">IntegrationAppCompatActivity</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">REQUEST_CODE_FOR_NEW_PRODUCT</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">REQUEST_CODE_FOR_EDIT_PRODUCT</span> <span class="o">=</span> <span class="mi">11</span><span class="o">;</span>
+    <span class="nd">@Override</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//Вызов суперкласса onCreate, создающего операцию.</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="c1">//NavigationApi.createIntentForNewProduct() создает намерение (Intent) на создание товара с указанным штрихкодом.</span>
+        <span class="n">startActivityForResult</span><span class="o">(</span><span class="n">NavigationApi</span><span class="o">.</span><span class="na">createIntentForNewProduct</span><span class="o">(</span>
+                <span class="k">new</span> <span class="n">NavigationApi</span><span class="o">.</span><span class="na">NewProductIntentBuilder</span><span class="o">().</span><span class="na">setBarcode</span><span class="o">(</span><span class="s">"111"</span><span class="o">)),</span> <span class="n">REQUEST_CODE_FOR_NEW_PRODUCT</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onActivityResult</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestCode</span><span class="o">,</span> <span class="kt">int</span> <span class="n">resultCode</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">REQUEST_CODE_FOR_NEW_PRODUCT</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="n">RESULT_OK</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">//Toast.makeText() выводит на экран смарт-терминала сообщение</span>
+            <span class="c1">//с идентификатором нового товара.</span>
+            <span class="c1">//getProductUuid(data) получает идентификатор (uuid)</span>
+            <span class="c1">//нового товара.</span>
+            <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"UUID of new product: "</span> <span class="o">+</span> <span class="n">getProductUuid</span><span class="o">(</span><span class="n">data</span><span class="o">)</span>
+                    <span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+
+            <span class="c1">//NavigationApi.createIntentForEditProduct() создает намерение (Intent) на редактирование товара.</span>
+            <span class="c1">//.setUuid(getProductUuid(data)) задаёт идентификатор редактируемого товара.</span>
+            <span class="n">startActivityForResult</span><span class="o">(</span><span class="n">NavigationApi</span><span class="o">.</span><span class="na">createIntentForEditProduct</span><span class="o">(</span>
+                    <span class="k">new</span> <span class="n">NavigationApi</span><span class="o">.</span><span class="na">EditProductIntentBuilder</span><span class="o">()</span>
+                            <span class="o">.</span><span class="na">setUuid</span><span class="o">(</span><span class="n">getProductUuid</span><span class="o">(</span><span class="n">data</span><span class="o">))),</span> <span class="n">REQUEST_CODE_FOR_EDIT_PRODUCT</span><span class="o">);</span>
+
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">requestCode</span> <span class="o">==</span> <span class="n">REQUEST_CODE_FOR_EDIT_PRODUCT</span> <span class="o">&amp;&amp;</span> <span class="n">resultCode</span> <span class="o">==</span> <span class="n">RESULT_OK</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">//Toast.makeText() выводит на экран смарт-терминала сообщение</span>
+            <span class="c1">//об успешном редактировании товара.</span>
+            <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"Товар отредактирован пользователем"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">resultCode</span> <span class="o">==</span> <span class="n">RESULT_CANCELED</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">//Toast.makeText() выводит на экран смарт-терминала сообщение</span>
+            <span class="c1">//об отмене создания нового товара.</span>
+            <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"Отменено пользователем"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="kd">super</span><span class="o">.</span><span class="na">onActivityResult</span><span class="o">(</span><span class="n">requestCode</span><span class="o">,</span> <span class="n">resultCode</span><span class="o">,</span> <span class="n">data</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre>
 </div>
 

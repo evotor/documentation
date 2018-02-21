@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_session.html">Кассовые смены</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -939,12 +946,12 @@ $('#toc').on('click', 'a', function() {
 
 <figure class="center-image"><a class="no_icon" href="images/EventSequenceDiagram.png"><img class="docimage center-image" id="imageborder" src="images/EventSequenceDiagram.png" alt="" /></a><figcaption>Обмен событиями, которые требуют ответа</figcaption></figure>
 
-<h2 id="Подготовка-манифеста-приложения">Подготовка манифеста приложения</h2>
+<h2 id="section">Подготовка манифеста приложения</h2>
 <p>В зависимости от типа точки интеграции, вам потребуется соответствующим образом изменить <a href="./doc_about_manifest.html">манифест приложения</a>. Так, если вы используете службы или приёмники сообщений, вам необходимо объявить их в манифесте приложения.</p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Если ваше приложение передаёт в смарт-терминал команды, манифест изменять не требуется.</div>
 
-<h3 id="Объявление-службы-в-манифесте-java-приложения">Объявление службы в манифесте java-приложения</h3>
+<h3 id="java-">Объявление службы в манифесте java-приложения</h3>
 
 <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;service</span>
             <span class="na">android:name=</span><span class="s">".YourService"</span>
@@ -958,7 +965,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Объявление-приёмника-широковещательных-сообщений-в-манифесте-java-приложения">Объявление приёмника широковещательных сообщений в манифесте java-приложения</h3>
+<h3 id="java--1">Объявление приёмника широковещательных сообщений в манифесте java-приложения</h3>
 
 <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;receiver</span>
  <span class="na">android:name=</span><span class="s">".YourBroadcastReceiver"</span>
@@ -972,7 +979,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Объявление-плагина-службы-в-манифесте-js-приложения">Объявление плагина (службы) в манифесте JS-приложения</h3>
+<h3 id="js-">Объявление плагина (службы) в манифесте JS-приложения</h3>
 
 <div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">plugins</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">plugin1</span>
@@ -982,7 +989,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="Объявление-демона-приёмника-широковещательных-сообщений-в-манифесте-js-приложения">Объявление демона (приёмника широковещательных сообщений) в манифесте JS-приложения</h3>
+<h3 id="js--1">Объявление демона (приёмника широковещательных сообщений) в манифесте JS-приложения</h3>
 
 <div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">daemons</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">daemon1</span>
@@ -992,7 +999,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h2 id="Список-точек-интеграции">Список точек интеграции</h2>
+<h2 id="section-1">Список точек интеграции</h2>
 
 <p>Ниже приведены таблицы с описанием всех точек интеграции приложения и смарт-терминала.</p>
 

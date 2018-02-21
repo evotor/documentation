@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_session.html">Кассовые смены</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -941,7 +948,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Установленные на смарт-терминале приложения могут обращаться только к сторонним сервисам. При этом, сторонние сервисы не должны быть в одной локальной сети со смарт-терминалом. Обращаться к REST API Облака Эвотор нельзя.</div>
 
-<h2 id="Подготовка-к-отправке-запросов">Подготовка к отправке запросов</h2>
+<h2 id="section">Подготовка к отправке запросов</h2>
 
 <p>Для отправки запросов требуется:</p>
 
@@ -978,7 +985,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>После создания списка и <a href="./doc_app_installation.html#MarkeplaceAppInstallation">установки приложения в Магазине приложений</a>, обмен сообщениями происходит по описанному ниже процессу.</p>
 
-<h2 id="Шаг-1-Приложение-отправляет-http-сообщение">Шаг 1. Приложение отправляет HTTP-сообщение</h2>
+<h2 id="http-">Шаг 1. Приложение отправляет HTTP-сообщение</h2>
 
 <p>Приложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. Вы можете воспользоваться любым удобным способом отправки сообщения.</p>
 
@@ -1023,7 +1030,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Во view.html вы также можете использовать ajax или другие способы обмена сообщениями.</div>
 
-<h3 id="Метод-для-get-запроса">Метод для GET-запроса</h3>
+<h3 id="get-">Метод для GET-запроса</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="err">:</span> <span class="nb">String</span><span class="p">)</span>
 </code></pre>
@@ -1031,7 +1038,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>В аргументе метода требуется передать URL, по которому выполняется GET-запрос.</p>
 
-<h3 id="Метод-для-post-запроса">Метод для POST-запроса</h3>
+<h3 id="post-">Метод для POST-запроса</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">http</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">url</span><span class="err">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">payload</span><span class="err">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">mediaType</span><span class="err">:</span> <span class="nb">String</span><span class="p">)</span>
 </code></pre>
@@ -1039,7 +1046,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>В аргументе метода требуется передать URL, по-которому выполняется POST-запрос и тело запроса.</p>
 
-<h2 id="Шаг-2-Смарт-терминал-передаёт-сообщение-в-облако">Шаг 2. Смарт-терминал передаёт сообщение в облако</h2>
+<h2 id="section-1">Шаг 2. Смарт-терминал передаёт сообщение в облако</h2>
 
 <p>Терминал перехватывает сообщение и передаёт его в облако Эвотор.</p>
 
@@ -1065,7 +1072,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Убедитесь, что ваше приложение не использует перечисленные заголовки. В противном случае, смарт-терминал перезапишет их содержимое.</div>
 
-<h2 id="Шаг-3-Облако-передаёт-сообщение-адресату">Шаг 3. Облако передаёт сообщение адресату</h2>
+<h2 id="section-2">Шаг 3. Облако передаёт сообщение адресату</h2>
 
 <p>Облако удаляет служебные заголовки, добавляет свои заголовки и передаёт сообщение адресату.</p>
 
@@ -1080,7 +1087,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Сторонний сервер получает сообщение от облака Эвотор и определяет отправителя с помощью заголовка Authorization.</p>
 
-<h2 id="Шаг-4-Ответ-стороннего-сервиса">Шаг 4. Ответ стороннего сервиса</h2>
+<h2 id="section-3">Шаг 4. Ответ стороннего сервиса</h2>
 
 <p>Ответ стороннего сервиса передаётся приложению в обратном порядке.</p>
 

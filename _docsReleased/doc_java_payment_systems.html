@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_session.html">Кассовые смены</a></li>
+            
+            
+            
+            
+            
+            
             <li class="active"><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -935,7 +942,7 @@ $('#toc').on('click', 'a', function() {
 
 <p class="center-image"><img src="images/payment_system.png" alt="" /></p>
 
-<h2 id="Служба-для-взаимодействия-со-сторонними-платёжными-системами">Служба для взаимодействия со сторонними платёжными системами</h2>
+<h2 id="section">Служба для взаимодействия со сторонними платёжными системами</h2>
 
 <p><em>Чтобы добавить поддержку сторонней платёжной системы:</em></p>
 
@@ -1024,11 +1031,11 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ol>
 
-<h2 id="События">События</h2>
+<h2 id="section-1">События</h2>
 
 <p>В зависимости от операции на смарт-терминале в службу могут поступать четыре типа событий.</p>
 
-<h3 id="Продажа">Продажа</h3>
+<h3 id="section-2">Продажа</h3>
 
 <p>При продаже товара приходит событие <code class="highlighter-rouge">PaymentSystemSellEvent.kt</code>:</p>
 
@@ -1050,7 +1057,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">description</code> – текстовое описание. Поле может быть указано любым приложением, например, при разделении чека. В приложении требуется предусмотреть возможность отображения этого поля.</li>
 </ul>
 
-<h3 id="Отмена-продажи">Отмена продажи</h3>
+<h3 id="section-3">Отмена продажи</h3>
 
 <p>При отмене продажи приходит событие <code class="highlighter-rouge">PaymentSystemSellCancelEvent.kt</code>:</p>
 
@@ -1074,7 +1081,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">description</code> – текстовое описание. Поле может быть указано любым приложением, например, при разделении чека. В приложении требуется предусмотреть возможность отображения этого поля.</li>
 </ul>
 
-<h3 id="Возврат">Возврат</h3>
+<h3 id="section-4">Возврат</h3>
 
 <p>При возврате товара приходит событие <code class="highlighter-rouge">PaymentSystemPaybackEvent.kt</code>:</p>
 
@@ -1098,7 +1105,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">description</code> – текстовое описание. Поле может быть указано любым приложением, например, при разделении чека. В приложении требуется предусмотреть возможность отображения этого поля.</li>
 </ul>
 
-<h3 id="Отмена-возврата">Отмена возврата</h3>
+<h3 id="section-5">Отмена возврата</h3>
 
 <p>При отмене возврата приходит событие <code class="highlighter-rouge">PaymentSystemPaybackCancelEvent.kt</code>:</p>
 
@@ -1122,7 +1129,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">description</code> – текстовое описание. Поле может быть указано любым приложением, например, при разделении чека. В приложении требуется предусмотреть возможность отображения этого поля.</li>
 </ul>
 
-<h2 id="Результаты">Результаты</h2>
+<h2 id="section-6">Результаты</h2>
 
 <h3 id="okResult">Успешная обработка события</h3>
 
@@ -1162,7 +1169,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">errorDescription</code> – описание ошибки.</li>
 </ul>
 
-<h2 id="Пример-службы-paymentservice">Пример службы <code class="highlighter-rouge">PaymentService</code></h2>
+<h2 id="paymentservice">Пример службы <code class="highlighter-rouge">PaymentService</code></h2>
 
 <p>Пример работы с PaymentSystem API в <a href="https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/PayApiActivity.java">демонстрационном приложении</a>.</p>
 
@@ -1235,7 +1242,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h2 id="Пример-операции-paymentactivity">Пример операции PaymentActivity</h2>
+<h2 id="paymentactivity">Пример операции PaymentActivity</h2>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">ru</span><span class="o">.</span><span class="na">apptest</span><span class="o">.</span><span class="na">test</span><span class="o">.</span><span class="na">testapplication</span><span class="o">;</span>
 

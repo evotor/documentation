@@ -470,7 +470,7 @@
 "tags": "terminaljava",
 "keywords": "интерфейс, окно, методы, навигация",
 "url": "doc_java_navigation.html",
-"summary": "Раздел содержит инструкцию по переходу к элементам управления смарт-терминалом."
+"summary": "Раздел содержит описание методов класса NavigationApi, а так же пример вызова окон смарт-терминала."
 }
 ,
 
@@ -569,6 +569,17 @@
 "tags": "javaterminalequipment",
 "keywords": "оборудование, весы, вес, масса, метод",
 "url": "doc_java_scales.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Кассовые смены",
+"tags": "terminaljava",
+"keywords": "",
+"url": "doc_java_session.html",
 "summary": ""
 }
 ,
