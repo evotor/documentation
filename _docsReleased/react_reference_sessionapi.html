@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="javaterminalequipment,  ">
-<title>Подготовка к разработке | Документация Эвотор</title>
+<meta name="keywords" content="terminalreact,  react">
+<title>Класс SessionAPI | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Подготовка к разработке">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Класс SessionAPI">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -565,7 +565,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="react_reference_sessionapi.html">Смены</a></li>
+                    <li class="active"><a href="react_reference_sessionapi.html">Смены</a></li>
                     
                     
                     
@@ -734,7 +734,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="active"><a href="doc_drivers_library_connection.html">Подготовка к разработке</a></li>
+            <li><a href="doc_drivers_library_connection.html">Подготовка к разработке</a></li>
             
             
             
@@ -896,7 +896,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Подготовка к разработке</h1>
+   <h1 class="post-title-main">Класс SessionAPI</h1>
 </div>
 
 
@@ -934,33 +934,31 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/drivers/doc_drivers_library_connection.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/react_reference/react_reference_sessionapi.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p>Для начала разработки подключите библиотеку для работы с оборудованием.</p>
+  <h2 id="section">Описание</h2>
 
-<p>Добавьте ссылку на репозиторий на репозиторий <code class="highlighter-rouge">jitpack</code> в <code class="highlighter-rouge">build.gradle</code> проекта.</p>
+<p>С помощью методов класса приложения работают с данными кассовой смены.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>     allprojects {
-repositories {
-    jcenter()
-    maven { url 'https://jitpack.io' }
-    }
-}
+<h2 id="section-1">Методы</h2>
+
+<h3 id="printzreport">printZReport</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">printZReport</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span>
 </code></pre>
 </div>
 
-<p>В модуле <code class="highlighter-rouge">build.gradle</code> добавьте зависимость и укажите точную версию:</p>
+<p><strong>Описание</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    dependencies {
-    compile 'com.github.evotor:device-drivers:v2.0.1+'
-    }
-</code></pre>
-</div>
+<p>Печатает Z-отчёт.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Все имена констант указаны из <code class="highlighter-rouge">ru.evotor.devices.drivers.Constants</code>.</div>
+<p><strong>Возвращает</strong></p>
 
+<ul>
+  <li><code class="highlighter-rouge">Promise</code>, результат которого – <code class="highlighter-rouge">void</code></li>
+</ul>
 
 
     <div class="tags">
@@ -969,15 +967,11 @@ repositories {
         
         
         
-        <a href="tag_java.html" class="btn btn-default navbar-btn cursorNorm" role="button">java</a>
-        
-        
-        
         <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
         
         
         
-        <a href="tag_equipment.html" class="btn btn-default navbar-btn cursorNorm" role="button">equipment</a>
+        <a href="tag_react.html" class="btn btn-default navbar-btn cursorNorm" role="button">react</a>
         
         
         

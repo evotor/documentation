@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_session.html">Кассовые смены</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -556,6 +563,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    
+                    
+                    <li><a href="react_reference_sessionapi.html">Смены</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -642,7 +655,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">JavaScript SDK</a>
+        <a href="#">JavaScript SDK <b>DEPRECATED</b></a>
         
         <ul>
             
@@ -1038,7 +1051,16 @@ $('#toc').on('click', 'a', function() {
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
                 <span class="nx">fieldUUID</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
                 <span class="nx">title</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">type</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+                <span class="nx">type</span><span class="err">:</span> <span class="nx">FieldType</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="fieldtype">Перечисление FieldType</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">FieldType</span> <span class="p">{</span>
+    <span class="nx">TEXT_FIELD</span> <span class="o">=</span> <span class="s2">"TEXT_FIELD"</span><span class="p">,</span>
+    <span class="nx">DICTIONARY_FIELD</span> <span class="o">=</span> <span class="s2">"DICTIONARY_FIELD"</span>
 <span class="p">}</span>
 </code></pre>
 </div>

@@ -35,12 +35,31 @@ static getPositionsByBarcode(barcode: string): Promise<Position[]>
 ### openSellReceipt
 
 ```js
-static openSellReceipt(positions: Position[], extra: SetExtra | null): Promise
+static openSellReceipt(positions?: Position[] | null, extra?: SetExtra): Promise<OpenReceiptCommandResult>
 ```
 
 **Описание**
 
-Формирует чек из полученных данных и открывает его в интерфейсе смарт-терминала.
+Формирует чек продажи из полученных данных и открывает его в интерфейсе смарт-терминала.
+
+**Параметры**
+
+* `positions` – массив [позиций](./react_reference_receiptapi.html#position).
+* `extra` – указывает наличие [дополнительных полей](./react_reference_receiptapi.html#setextra) в чеке.
+
+**Возвращает**
+
+* `Promise`
+
+### openPaybackReceipt
+
+```js
+static openPaybackReceipt(positions?: Position[] | null, extra?: SetExtra): Promise<OpenReceiptCommandResult>
+```
+
+**Описание**
+
+Формирует чек возврата из полученных данных и открывает его в интерфейсе смарт-терминала.
 
 **Параметры**
 
@@ -55,10 +74,10 @@ static openSellReceipt(positions: Position[], extra: SetExtra | null): Promise
 
 ```js
 static sendElectronReceipt(printReceipts: PrintReceipt[],
-                   extra: SetExtra | null,
-                   phone: string | null,
-                   email: string | null,
-                   discount: number | null): Promise<string>
+                           extra: SetExtra | null,
+                           phone: string | null,
+                           email: string | null,
+                           discount?: number): Promise<SendElectronReceiptCommandResult>
 ```
 
 **Описание**
@@ -116,7 +135,7 @@ static getReceiptByUuid(uuid: string): Promise<Receipt | null>
 ### getReceiptHeaders
 
 ```js
-static getReceiptHeaders(type: ReceiptType | null): Promise<ReceiptHeader[]>
+static getReceiptHeaders(type?: ReceiptType): Promise<ReceiptHeader[] | null>
 ```
 
 **Описание**

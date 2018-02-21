@@ -106,7 +106,16 @@ export class Field {
     constructor(name: string | null,
                 fieldUUID: string,
                 title: string | null,
-                type: string) {}
+                type: FieldType) {}
+}
+```
+
+### Перечисление FieldType
+
+```js
+export enum FieldType {
+    TEXT_FIELD = "TEXT_FIELD",
+    DICTIONARY_FIELD = "DICTIONARY_FIELD"
 }
 ```
 

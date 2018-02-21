@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_session.html">Кассовые смены</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -556,6 +563,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    
+                    
+                    <li><a href="react_reference_sessionapi.html">Смены</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -642,7 +655,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">JavaScript SDK</a>
+        <a href="#">JavaScript SDK <b>DEPRECATED</b></a>
         
         <ul>
             
@@ -1269,6 +1282,12 @@ $('#toc').on('click', 'a', function() {
      
         
      
+   
+    
+        
+     
+        
+     
         
      
    
@@ -1501,7 +1520,7 @@ $('#toc').on('click', 'a', function() {
 
         <tr><td><a href="react_reference_devicesprinter.html">Класс Printer</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Описание Класс позволяет работать с принтером смарт-терминала. Методы print static print(printables: Printable[]): Promise   Описание Вызывает команду печати. Параметры  printables – массив  печатных элементов.  Возвращает  Promise ... </td>
+          <td> Описание Класс позволяет работать с принтером смарт-терминала. Методы print static print(printables: Printable[]): Promise&lt;void&gt;   Описание Вызывает команду печати. Параметры  printables – массив  печатных элементов.  Возвращает ... </td>
         </tr>
         
      
@@ -1562,6 +1581,39 @@ $('#toc').on('click', 'a', function() {
         <tr><td><a href="react_reference_seviceapi.html">Класс ServiceAPI</a></td>
             <td><span class="label label-default">Страница</span></td>
           <td> Описание С помощью методов класса вы можете создавать собственные службы, а также регистрировать интеграционные службы. Методы addEventListener static addEventListener(type: ServiceEventType, listener: ServiceEventListener, isGlobal: boolean = true)&lt;span... </td>
+        </tr>
+        
+     
+   
+    
+        
+     
+        
+
+        <tr><td><a href="react_reference_sessionapi.html">Класс SessionAPI</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Описание
+
+С помощью методов класса приложения работают с данными кассовой смены.
+
+Методы
+
+printZReport
+
+static printZReport(): Promise&lt;void&gt;
+
+
+
+Описание
+
+Печатает Z-отчёт.
+
+Возвращает
+
+
+  Promise, результат которого – void
+
+ </td>
         </tr>
         
      

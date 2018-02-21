@@ -10,7 +10,7 @@ folder: java_SDK
 
 Вы можете добавлять скидку как на [каждую позицию отдельно](./doc_java_discounts.html#discountPosition), так и на весь чек (см. ниже).
 
-## Скидка на чек
+## Назначение скидки на чек
 
 Приложение не может автоматически применять скидку, перед этим его требуется вручную вызвать с помощью [иконки на экране оплаты смарт-терминала](./doc_java_app_icon.html#SalesScreen).
 
@@ -66,29 +66,29 @@ folder: java_SDK
 
 2. Запросите результат `ReceiptDiscountEventResult`.
 
-```java
-try {callback.onResult(
-  new ReceiptDiscountEventResult(
-      discount,
-      new SetExtra(extra),
-      changes
-));
-    }
-        catch (RemoteException exc) {
-                exc.printStackTrace();
-            }
+   ```java
+   try {callback.onResult(
+     new ReceiptDiscountEventResult(
+         discount,
+         new SetExtra(extra),
+         changes
+   ));
+       }
+           catch (RemoteException exc) {
+                   exc.printStackTrace();
+               }
 
-```
+   ```
 
-Где:
+   Где:
 
-* `discount` – значение скидки в валюте.
-* `new SetExtra(extra)` – команда для [создания дополнительных полей в чеке](./doc_java_receipt_extras.html). Если дополнительные поля создавать не требуется вы можете передать `null`.
-* `changes` – список изменений по позициям.
+   * `discount` – значение скидки в валюте.
+   * `new SetExtra(extra)` – команда для [создания дополнительных полей в чеке](./doc_java_receipt_extras.html). Если дополнительные поля создавать не требуется вы можете передать `null`.
+   * `changes` – список изменений по позициям.
 
-## Скидка на позицию {#discountPosition}
+## Назначение скидки на позицию {#discountPosition}
 
-Чтобы добавить скидку на позицию, вам потребуется передать значение цены с учётом скидки в поле `priceWithDiscountPosition`. Если скидки на позицию нет, передавайте `null`. Список полей позиции описан в классе [`position.java`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/Position.java).
+Чтобы добавить скидку на позицию, вам потребуется передать значение цены с учётом скидки в поле `priceWithDiscountPosition`. Если скидки на позицию нет, передавайте `null`. Список полей позиции описан в классе [`position.java`](https://github.com/evotor/integration-library/blob/develop/src/main/java/ru/evotor/framework/receipt/Position.java).
 
 Передать поле можно в любой момент, когда доступно редактирование существующих или добавление новых позиций в чек:
 
@@ -124,6 +124,70 @@ List<PositionAdd> positionAddList = new ArrayList<>();
         );
 ```
 
-## Пример
+{% include note.html content="Вы можете найти пример начисления скидок в [демонстрационном приложении](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/MyDiscountService.java)." %}
 
-Пример работы со скидками в [демонстрационном приложении](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/MyDiscountService.java).
+## Получение скидок {#getdiscount}
+
+Получение скидки потребуется вам чтобы точно определить сумму уплаченную по чеку. Вы можете узнавать скидку начисленную как на открытый, так и на ранее сохранённые чеки.
+
+Узнать значение скидки вы можете с помощью методов:
+
+```java
+fun getDiscount(): BigDecimal
+```
+
+Где `BigDecimal` – абсолютное значение скидки в рублях.
+
+Методы принадлежат классу [`Receipt.kt`]()
+
+### Скидка на чек
+
+Метод `getDiscount()`, вызванный в классе `Receipt` возвращает абсолютное значение скидки на чек.
+
+### Сумма скидок для текущей группы
+
+Метод `getDiscount()`, вызванный в классе `Receipt.PrintReceipt` возвращает абсолютное значение скидки на текущую печатную группу, без учёта скидки на чек.
+
+
+### Пример получения скидок
+
+{% include note.html content="Приведённую в примере службу требуется объявить в манифесте приложения." %}
+
+```java
+package com.example.dfabrichnyi.integration_lib_test
+
+import ru.evotor.framework.core.IntegrationService
+import ru.evotor.framework.core.action.event.receipt.print_extra.PrintExtraRequiredEvent
+import ru.evotor.framework.core.action.event.receipt.print_extra.PrintExtraRequiredEventProcessor
+import ru.evotor.framework.core.action.processor.ActionProcessor
+import ru.evotor.framework.receipt.Receipt
+import ru.evotor.framework.receipt.ReceiptApi
+import java.math.BigDecimal
+
+class TestIntegrationService : IntegrationService() {
+
+    override fun createProcessors(): MutableMap<String, ActionProcessor> {
+        return hashMapOf(
+                Pair(PrintExtraRequiredEvent.NAME_SELL_RECEIPT, object : PrintExtraRequiredEventProcessor() {
+                    override fun call(action: String, event: PrintExtraRequiredEvent, callback: Callback) {
+                        //Возвращает текущий открытый чек.
+                        val receipt = ReceiptApi.getReceipt(this@TestIntegrationService, Receipt.Type.SELL)!!
+
+                        val receiptDiscount = receipt.getDiscount()
+                        println("Скидка на чек. Без учета скидок на позиции: $receiptDiscount")
+
+                        var sum = BigDecimal.ZERO
+
+                        for (document in receipt.printDocuments) {
+                            sum += document.getDiscount()
+                        }
+
+                        println("Сумма скидок для текущей группы: $sum")
+
+                        callback.skip()
+                    }
+                })
+        )
+    }
+}
+```

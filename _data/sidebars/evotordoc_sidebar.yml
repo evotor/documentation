@@ -310,6 +310,10 @@ entries:
       url: /doc_java_navigation.html
       output: web
 
+    - title: Кассовые смены
+      url: /doc_java_session.html
+      output: web
+
     - title: Способы оплаты
       url: /doc_java_payment_systems.html
       output: web
@@ -423,6 +427,9 @@ entries:
         - title: Навигация
           url: /react_reference_navigationapi.html
           output: web
+        - title: Смены
+          url: /react_reference_sessionapi.html
+          output: web
       - title: Службы
         output: web
         subfolderitems:
@@ -461,7 +468,7 @@ entries:
 ###############################################################
 #               JavaScript SDK                                #
 ###############################################################
-  - title: JavaScript SDK
+  - title: JavaScript SDK <b>DEPRECATED</b>
     output: web
     folderitems:
     - title: Подключение шаблона приложения

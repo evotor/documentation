@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_session.html">Кассовые смены</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -556,6 +563,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    
+                    
+                    <li><a href="react_reference_sessionapi.html">Смены</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -642,7 +655,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">JavaScript SDK</a>
+        <a href="#">JavaScript SDK <b>DEPRECATED</b></a>
         
         <ul>
             
@@ -955,13 +968,36 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="opensellreceipt">openSellReceipt</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">openSellReceipt</span><span class="p">(</span><span class="nx">positions</span><span class="err">:</span> <span class="nx">Position</span><span class="p">[],</span> <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">openSellReceipt</span><span class="p">(</span><span class="nx">positions</span><span class="p">?:</span> <span class="nx">Position</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">extra</span><span class="p">?:</span> <span class="nx">SetExtra</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">OpenReceiptCommandResult</span><span class="o">&gt;</span>
 </code></pre>
 </div>
 
 <p><strong>Описание</strong></p>
 
-<p>Формирует чек из полученных данных и открывает его в интерфейсе смарт-терминала.</p>
+<p>Формирует чек продажи из полученных данных и открывает его в интерфейсе смарт-терминала.</p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">positions</code> – массив <a href="./react_reference_receiptapi.html#position">позиций</a>.</li>
+  <li><code class="highlighter-rouge">extra</code> – указывает наличие <a href="./react_reference_receiptapi.html#setextra">дополнительных полей</a> в чеке.</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code></li>
+</ul>
+
+<h3 id="openpaybackreceipt">openPaybackReceipt</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">openPaybackReceipt</span><span class="p">(</span><span class="nx">positions</span><span class="p">?:</span> <span class="nx">Position</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">extra</span><span class="p">?:</span> <span class="nx">SetExtra</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">OpenReceiptCommandResult</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Формирует чек возврата из полученных данных и открывает его в интерфейсе смарт-терминала.</p>
 
 <p><strong>Параметры</strong></p>
 
@@ -979,10 +1015,10 @@ $('#toc').on('click', 'a', function() {
 <h3 id="sendelectronreceipt">sendElectronReceipt</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">sendElectronReceipt</span><span class="p">(</span><span class="nx">printReceipts</span><span class="err">:</span> <span class="nx">PrintReceipt</span><span class="p">[],</span>
-                   <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                   <span class="nx">phone</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                   <span class="nx">email</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                   <span class="nx">discount</span><span class="err">:</span> <span class="nx">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span>
+                           <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nx">phone</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nx">email</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nx">discount</span><span class="p">?:</span> <span class="nx">number</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">SendElectronReceiptCommandResult</span><span class="o">&gt;</span>
 </code></pre>
 </div>
 
@@ -1052,7 +1088,7 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="getreceiptheaders">getReceiptHeaders</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptHeaders</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">ReceiptType</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">ReceiptHeader</span><span class="p">[]</span><span class="o">&gt;</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptHeaders</span><span class="p">(</span><span class="nx">type</span><span class="p">?:</span> <span class="nx">ReceiptType</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">ReceiptHeader</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
 </code></pre>
 </div>
 
