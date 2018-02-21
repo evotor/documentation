@@ -310,6 +310,10 @@ entries:
       url: /doc_java_navigation.html
       output: web
 
+    - title: Кассовые смены
+      url: /doc_java_session.html
+      output: web
+
     - title: Способы оплаты
       url: /doc_java_payment_systems.html
       output: web

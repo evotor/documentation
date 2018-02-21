@@ -199,16 +199,26 @@ fun getProductUuid(intent: Intent): String?
 Пример вызова окон добавления и редактирования товара.
 
 ```java
-public class PushSampleActivity extends IntegrationAppCompatActivity {
+package evotor.ru.pushsample;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.widget.Toast;
+
+import ru.evotor.framework.core.IntegrationAppCompatActivity;
+import ru.evotor.framework.navigation.NavigationApi;
+
+public class SampleActivity extends IntegrationAppCompatActivity {
 
     public static final int REQUEST_CODE_FOR_NEW_PRODUCT = 10;
     public static final int REQUEST_CODE_FOR_EDIT_PRODUCT = 11;
     @Override
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        // вызов суперкласса onCreate, создающего операцию.
+        //Вызов суперкласса onCreate, создающего операцию.
         super.onCreate(savedInstanceState);
-        // NavigationApi.createIntentForNewProduct() создаёт намерение на открытие окна создания товара с указанным штрихкодом.
+        //NavigationApi.createIntentForNewProduct() создает намерение (Intent) на создание товара с указанным штрихкодом.
         startActivityForResult(NavigationApi.createIntentForNewProduct(
                 new NavigationApi.NewProductIntentBuilder().setBarcode("111")), REQUEST_CODE_FOR_NEW_PRODUCT);
     }
@@ -218,37 +228,28 @@ public class PushSampleActivity extends IntegrationAppCompatActivity {
         if (requestCode == REQUEST_CODE_FOR_NEW_PRODUCT && resultCode == RESULT_OK) {
             //Toast.makeText() выводит на экран смарт-терминала сообщение
             //с идентификатором нового товара.
-            //data.getStringExtra(NavigationApi.EXTRA_ADDED_PRODUCT_UUID) получает идентификатор
+            //getProductUuid(data) получает идентификатор (uuid)
             //нового товара.
-            Toast.makeText(this, "UUID : " + data.getStringExtra(NavigationApi.EXTRA_ADDED_PRODUCT_UUID)
+            Toast.makeText(this, "UUID of new product: " + getProductUuid(data)
                     , Toast.LENGTH_SHORT).show();
 
-            //NavigationApi.createIntentForEditProduct() открывает окно редактирования товара.
-            //.setUuid(data.getStringExtra(NavigationApi.EXTRA_ADDED_PRODUCT_UUID)) задаёт идентификатор
-            //редактируемого товара.
+            //NavigationApi.createIntentForEditProduct() создает намерение (Intent) на редактирование товара.
+            //.setUuid(getProductUuid(data)) задаёт идентификатор редактируемого товара.
             startActivityForResult(NavigationApi.createIntentForEditProduct(
                     new NavigationApi.EditProductIntentBuilder()
-                            .setUuid(data.getStringExtra(NavigationApi.EXTRA_ADDED_PRODUCT_UUID))), REQUEST_CODE_FOR_EDIT_PRODUCT);
+                            .setUuid(getProductUuid(data))), REQUEST_CODE_FOR_EDIT_PRODUCT);
 
+        } else if (requestCode == REQUEST_CODE_FOR_EDIT_PRODUCT && resultCode == RESULT_OK) {
+            //Toast.makeText() выводит на экран смарт-терминала сообщение
+            //об успешном редактировании товара.
+            Toast.makeText(this, "Товар отредактирован пользователем", Toast.LENGTH_SHORT).show();
         } else if (resultCode == RESULT_CANCELED) {
             //Toast.makeText() выводит на экран смарт-терминала сообщение
             //об отмене создания нового товара.
-            Toast.makeText(this, "CANCELED"
-                    , Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Отменено пользователем", Toast.LENGTH_SHORT).show();
         }
-        if (requestCode == 11 && resultCode == RESULT_OK) {
-            //Toast.makeText() выводит на экран смарт-терминала сообщение
-            //об удачном создании и редактировании товара.
-            Toast.makeText(this, "GG WP", Toast.LENGTH_SHORT).show();
-        }
+
         super.onActivityResult(requestCode, resultCode, data);
     }
-
-    @Override
-    protected void onDestroy() {
-        Toast.makeText(this, "OnDestroy", Toast.LENGTH_SHORT).show();
-        super.onDestroy();
-    }
-
 }
 ```
