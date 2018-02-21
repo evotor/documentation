@@ -88,10 +88,42 @@ try {callback.onResult(
 
 ## Скидка на позицию {#discountPosition}
 
-Чтобы добавить скидку на позицию, вам потребуется передать значение цены с учётом скидки в поле `priceWithDiscountPosition`. Если скидки на позицию нет, передавайте `null`. Список полей позиции описан в классе [`position.java`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/receipt/Position.java).
+Чтобы добавить скидку на позицию, вам потребуется передать значение цены с учётом скидки в поле `priceWithDiscountPosition`. Если скидки на позицию нет, передавайте `null`. Список полей позиции описан в классе [`position.java`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/Position.java).
 
 Передать поле можно в любой момент, когда доступно редактирование существующих или добавление новых позиций в чек:
 
 * [При создании чека в приложении](./doc_java_receipt_creation.html).
 * [В списке изменений changes, при работе с чеком](./doc_java_receipt_interactions.html).
 * В списке изменений по позициям (см. выше)
+
+### Пример скидки на позицию
+
+```java
+List<PositionAdd> positionAddList = new ArrayList<>();
+        positionAddList.add(
+                new PositionAdd(
+                        Position.Builder.newInstance(
+                                //идентификатор (uuid) позиции
+                                UUID.randomUUID().toString(),
+                                //идентификатор (uuid) товара
+                                null,
+                                //Наименование товара
+                                "Зубочистки",
+                                //Наименование единицы измерения
+                                "кг",
+                                //Точность единицы измерения
+                                0,
+                                //Цена без скидок
+                                new BigDecimal(200),
+                                //Количество
+                                new BigDecimal(1)
+                                //Добавление цены с учетом скидки на позицию. Итог = price - priceWithDiscountPosition
+                        ).setPriceWithDiscountPosition(new BigDecimal(100))
+                                .setExtraKeys(set).build()
+                )
+        );
+```
+
+## Пример
+
+Пример работы со скидками в [демонстрационном приложении](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/MyDiscountService.java).

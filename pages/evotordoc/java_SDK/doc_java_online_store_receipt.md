@@ -58,7 +58,7 @@ folder: java_SDK
 
    Где:
 
-   * `PaymentType` – задаёт [способ оплаты](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/payment/PaymentType.java).
+   * `PaymentType` – задаёт [способ оплаты](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/payment/PaymentType.java).
 
 4. Создайте команду для передачи чека и вызовите метод `.process`:
 
@@ -96,10 +96,12 @@ folder: java_SDK
 
     {% include tip.html content="Чтобы передать чек возврата, вместо команды `PrintSellReceiptCommand` используйте команду `PrintPaybackReceiptCommand`." %}
 
-Команда возвращает результат, описанный в классе [PrintReceiptCommandResult](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/core/action/command/print_receipt_command/PrintReceiptCommandResult.java).
+Команда возвращает результат, описанный в классе [PrintReceiptCommandResult](https://github.com/evotor/integration-library/blob/develop/src/main/java/ru/evotor/framework/core/action/command/print_receipt_command/PrintReceiptCommandResult.java).
 
 
 ## Пример
+
+Пример печати электронных чеков в [демонстрационном приложении](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/MainActivity.java).
 
 Существует также более детальный способ создания и передачи чека:
 

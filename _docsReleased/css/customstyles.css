@@ -257,11 +257,13 @@ ul#results-container a:hover {
 div#toc ul li {
     margin: 8px 0px 8px 22px;
     font-size: 90%;
-    list-style: square;
+    list-style: round;
+    color: #555;
 }
 div#toc ul {
     background-color: whitesmoke;
     padding: 5px;
+    border: 1px solid lightgray;
     border-radius: 5px;
     max-width: 300px;
     color: gray;
@@ -269,17 +271,20 @@ div#toc ul {
 
 div#toc ul li ul {
     padding-left:8px;
+    border: none;
 
 }
 
 div#toc ul li ul li::before {
-    content: "–  ";
+    content: "-  ";
+    /*margin-right: 6px;
+    font-size: 6px;*/
 }
 
 div#toc >ul::before {
     content: "Содержание";
-    font-weight: 500;
-    color: #555;
+    font-weight: bolder;
+    color: gray;
     text-align:center;
     margin-left:auto;
     margin-right:auto;
@@ -337,6 +342,7 @@ a.accordion-toggle, a.accordion-collapsed {
     /* padding: 4px;*/
     padding:0px;
     margin: 0px;
+    position: sticky;
 }
 
 .nav > li {
@@ -358,17 +364,18 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 .nav li > a > span {
-    float: right;
-    font-size: 19px;
+    float: left;
+    font-size: 15px;
     font-weight: bolder;
+    margin-right: 5px;
 }
 
 
 .nav li > a > span:after {
-    content: '\25be';
+    content: '\002B';
 }
 .nav li.active > a > span:after {
-    content: '\25b4';
+    content: '\2212';
 }
 
 .nav a:hover, .nav li.active > a {
@@ -1181,4 +1188,11 @@ h4.panel-title {
 .center-image
 {
     text-align: center;
+}
+
+/*image borders*/
+#imageborder
+{
+    border: 1.5px solid lightgray;
+    border-radius: 7px;
 }

@@ -74,6 +74,8 @@ folder: java_SDK
 
 ### Пример
 
+Печать внутри кассового [чека продажи](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/MyPrintService.java) и [возврата](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/MyPrintPaybackService.java) в демонстрационном приложении.
+
 Ниже приведена служба, которая передаёт данные для печати с помощью всех доступных методов:
 
 ```java

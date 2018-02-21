@@ -1,117 +1,12 @@
 ---
 title: Работа с позициями чека
 keywords: позиция, чек, события, открыть, добавить, изменить
-summary: "Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека."
+summary: Приложение может добавлять, удалять и изменять позиции в чеке. Если вы хотите работать с позициями в чеке используйте службу, чтобы получать события о намерении изменения чека. В этом случае, смарт-терминал ждёт ответа от приложения. События приходят как при продаже, так и при возврате товара.
 sidebar: evotordoc_sidebar
 permalink: doc_java_receipt_interactions.html
 tags: [terminal, java, Receipts]
 folder: java_SDK
 ---
-
-Приложение может добавлять, удалять и изменять позиции в чеке, а так же получать информацию о том, что чек был изменён:
-
-* Если вы хотите работать с позициями в чеке используйте службу, чтобы получать события о намерении изменения чека. В этом случае, смарт-терминал ждёт ответа от приложения. События приходят как при продаже, так и при возврате товара.
-
-* Если вы хотите получать сообщения об изменении чека или обновлении базы продуктов, например, для логирования и оповещения пользователей, используйте приёмник широковещательных сообщений. В этом случае смарт-терминал не ждёт ответа от приложения. События приходят как при продаже, так и при возврате товара.
-
-## Описание позиции {#Position}
-
-Вы можете добавить в чек как позицию соответствующую товару в базе терминала, так и задать свободную позицию.
-
-Конструкторы позиций описаны  в классе [`Position.java`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/Position.java).
-
-Пример конструктора позиции чека, соответствующей товару в терминале (у позиции есть `uuid` товара):
-
-```java
-public Position(
-        String uuid,
-        String productUuid,
-        String productCode,
-        ProductType productType,
-        String name,
-        String measureName,
-        int measurePrecision,
-        TaxNumber taxNumber,
-        BigDecimal price,
-        BigDecimal priceWithDiscountPosition,
-        BigDecimal quantity,
-        String barcode,
-        String mark,
-        BigDecimal alcoholByVolume,
-        Long alcoholProductKindCode,
-        BigDecimal tareVolume,
-        Set<ExtraKey> extraKeys,
-        List<Position> subPositions
-)
-```
-
-Где:
-
-* `uuid` – идентификатор позиции в формате uuid4.
-* `productUuid` – идентификатор товара в формате uuid4, полученный из локальной базы товаров смарт-терминала.
-* `productCode` – Код товара. Может быть `null`.
-* `productType` – Вид товара.
-* `name` – наименование товара из локальной базы товаров смарт-терминала.
-* `measureName` – единицы измерения товара, полученные из локальной базы товаров смарт-терминала.
-* `measurePrecision` – точность измерения единиц товара, выраженная в количестве знаков после запятой.
-* `taxNumber` – налоговая ставка. Может быть `null`. Доступные значения описаны в классе [`TaxNumber.java`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/TaxNumber.java). Если поле не задано, смарт-терминал обращается за налоговой ставкой в Облако. Если в Облаке нет информации о налоговой ставке для позиции, смарт-терминал использует значение, заданное в настройках.
-* `price` – цена продукта, полученная из локальной базы товаров смарт-терминала.
-* `priceWithDiscountPosition` – цена позиции с учётом скидки.
-* `quantity` – количество добавленного товара.
-* `barcode` – штрихкод, по которому найден товар. Может быть `null`.
-* `mark` – алкогольная марка.
-* `alcoholByVolume` – крепость алкогольной продукции. Может быть `null`.
-* `alcoholProductKindCode` – код вида продукции ФСРАР. Может быть `null`.
-* `tareVolume` – объём тары. Может быть `null`.
-* `extraKeys` – метод, который позволяет добавлять к позиции в чеке дополнительные ключи (идентификаторы). Каждый ключ имеет описание (`description`), которое отображается в интерфейсе и печатается на чеке (можно передавать `null`), идентификатор (`identity`) и хранит данные о приложении, создавшем ключ (`appId`).
-
-  {% include note.html content="Приложение записывает дополнительные ключи в чек только под своим идентификатором." %}
-
-* `subPositions` – список подпозиций.
-
-Пример позиции чека с подпозицией (у позиции и подпозиции есть `uuid` товара):
-
-```java
-val positionFromProduct = Position.Builder.newInstance(
-                UUID.randomUUID().toString(),
-                product.uuid,
-                product.name,
-                product.measureName,
-                product.measurePrecision,
-                product.price,
-                BigDecimal.ONE
-        ).build()
-
-        positionFromProduct.subPosition.add(
-                Position.Builder.newInstance(
-                                UUID.randomUUID().toString(),
-                                product.uuid,
-                                product.name,
-                                product.measureName,
-                                product.measurePrecision,
-                                product.price,
-                                BigDecimal.ONE
-                        ).build()
-                )
-```
-
-Вы можете использовать подпозиции `subPosition` для добавления опций к товару.
-Например, к товару "Кофе" можно добавить подпозицию "Молоко". Подпозиция удаляется вместе с основной позицией товара.
-
-
-Пример свободно заданной позиции (`uuid` товара – `null`):
-
-```java
-val freeProductPosition = Position.Builder.newInstance(
-                UUID.randomUUID().toString(),
-                null,
-                "Товар",
-                "шт",
-                0,
-                BigDecimal(100),
-                BigDecimal(100)
-        ).build()
-```
 
 ## Использование службы и получение событий о намерении изменения чека
 
@@ -187,7 +82,7 @@ setIntegrationResult(new BeforePositionsEditedEventResult(changes, null));
 
 ### Описание события `BeforePositionsEditedEvent`
 
-О намерении изменения чека сообщает событие `beforePositionsEditedEvent`:
+О намерении изменения чека сообщает событие [`beforePositionsEditedEvent`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.java):
 
 ```java
 public class BeforePositionsEditedEvent implements IBundlable {
@@ -253,6 +148,108 @@ public class BeforePositionsEditedEvent implements IBundlable {
         return changes;
     }
 }
+```
+
+## Описание позиции {#Position}
+
+Вы можете добавить в чек как позицию соответствующую товару в базе терминала, так и задать свободную позицию.
+
+Конструкторы позиций описаны  в классе [`Position.java`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/Position.java).
+
+Пример конструктора позиции чека, соответствующей товару в терминале (у позиции есть `uuid` товара):
+
+```java
+public Position(
+        String uuid,
+        String productUuid,
+        String productCode,
+        ProductType productType,
+        String name,
+        String measureName,
+        int measurePrecision,
+        TaxNumber taxNumber,
+        BigDecimal price,
+        BigDecimal priceWithDiscountPosition,
+        BigDecimal quantity,
+        String barcode,
+        String mark,
+        BigDecimal alcoholByVolume,
+        Long alcoholProductKindCode,
+        BigDecimal tareVolume,
+        Set<ExtraKey> extraKeys,
+        List<Position> subPositions
+)
+```
+
+Где:
+
+* `uuid` – идентификатор позиции в формате uuid4.
+* `productUuid` – идентификатор товара в формате uuid4, полученный из локальной базы товаров смарт-терминала.
+* `productCode` – Код товара. Может быть `null`.
+* `productType` – Вид товара.
+* `name` – наименование товара из локальной базы товаров смарт-терминала.
+* `measureName` – единицы измерения товара, полученные из локальной базы товаров смарт-терминала.
+* `measurePrecision` – точность измерения единиц товара, выраженная в количестве знаков после запятой.
+* `taxNumber` – налоговая ставка. Может быть `null`. Доступные значения описаны в классе [`TaxNumber.java`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/TaxNumber.java). Если поле не задано, смарт-терминал обращается за налоговой ставкой в Облако. Если в Облаке нет информации о налоговой ставке для позиции, смарт-терминал использует значение, заданное в настройках.
+* `price` – цена продукта, полученная из локальной базы товаров смарт-терминала.
+* `priceWithDiscountPosition` – цена позиции с учётом скидки.
+* `quantity` – количество добавленного товара.
+* `barcode` – штрихкод, по которому найден товар. Может быть `null`.
+* `mark` – алкогольная марка.
+* `alcoholByVolume` – крепость алкогольной продукции. Может быть `null`.
+* `alcoholProductKindCode` – код вида продукции ФСРАР. Может быть `null`.
+* `tareVolume` – объём тары. Может быть `null`.
+* `extraKeys` – дополнительные ключи (идентификаторы). Каждый ключ имеет описание (`description`), которое отображается в интерфейсе и печатается на чеке (можно передавать `null`), идентификатор (`identity`) и хранит данные о приложении, создавшем ключ (`appId`).
+
+  {% include note.html content="Приложение записывает дополнительные ключи в чек только под своим идентификатором." %}
+
+* `subPositions` – список подпозиций.
+
+### Позиция с подпозицией
+
+Пример позиции чека с подпозицией (у позиции и подпозиции есть `uuid` товара):
+
+```java
+val positionFromProduct = Position.Builder.newInstance(
+                UUID.randomUUID().toString(),
+                product.uuid,
+                product.name,
+                product.measureName,
+                product.measurePrecision,
+                product.price,
+                BigDecimal.ONE
+        ).build()
+
+        positionFromProduct.subPosition.add(
+                Position.Builder.newInstance(
+                                UUID.randomUUID().toString(),
+                                product.uuid,
+                                product.name,
+                                product.measureName,
+                                product.measurePrecision,
+                                product.price,
+                                BigDecimal.ONE
+                        ).build()
+                )
+```
+
+Вы можете использовать подпозиции `subPosition` для добавления опций к товару.
+Например, к товару "Кофе" можно добавить подпозицию "Молоко". Подпозиция удаляется вместе с основной позицией товара.
+
+### Свободно заданная позиция
+
+Пример свободно заданной позиции (`uuid` товара – `null`):
+
+```java
+val freeProductPosition = Position.Builder.newInstance(
+                UUID.randomUUID().toString(),
+                null,
+                "Товар",
+                "шт",
+                0,
+                BigDecimal(100),
+                BigDecimal(100)
+        ).build()
 ```
 
 ## Добавление, изменение и удаление позиций {#PositionAltering}
@@ -388,188 +385,3 @@ data class PositionRemove(
     }
 }
 ```
-
-## Получение событий об открытии чека, обновлении базы продуктов или результате изменения чека
-
-Смарт терминал не ждёт ответ от приложения на широковещательные сообщения. Чтобы получать сообщения о результате изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:
-
-```java
-package ru.evotor.consumer.consumer;
-
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.widget.Toast;
-
-import ru.evotor.framework.core.action.event.receipt.position_edited.PositionAddedEvent;
-
-public class AddPositionBroadcastReceiver extends BroadcastReceiver {
-
-    @Override
-    public void onReceive(Context context, Intent intent)
-        { Toast.makeText(context, "UUID: " + PositionAddedEvent.create(intent.getExtras()).getReceiptUuid(), Toast.LENGTH_LONG).show(); }
-    }
-}
-```
-
-Объявите приёмник в манифесте приложения:
-
-```xml
-<receiver
-        android:name=".AddPositionBroadcastReceiver"
-        android:enabled="true"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="evotor.intent.action.receipt.sell.POSITION_ADDED" />
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
-    </receiver>
-```
-
-## Сообщения о результатах изменения чека
-
-При открытии чека (продажи или возврата) приходит сообщение:
-
-```java
-public interface ReceiptOpenedEvent {
-    String BROADCAST_ACTION_SELL_RECEIPT = "evotor.intent.action.receipt.sell.OPENED";
-    String BROADCAST_ACTION_PAYBACK_RECEIPT = "evotor.intent.action.receipt.payback.OPENED";
-    String KEY_UUID = "uuid";
-}
-```
-
-При добавлении позиции приходит сообщение:
-
-```java
-public class PositionAddedEvent extends PositionEvent {
-    public static final String BROADCAST_ACTION_SELL_RECEIPT = "evotor.intent.action.receipt.sell.POSITION_ADDED";
-    public static final String BROADCAST_ACTION_PAYBACK_RECEIPT = "evotor.intent.action.receipt.payback.POSITION_ADDED";
-
-    public PositionAddedEvent(Bundle extras) {
-        super(extras);
-    }
-
-    public PositionAddedEvent(String receiptUuid, Position position) {
-        super(receiptUuid, position);
-    }
-}
-```
-
-При изменении позиции приходит сообщение:
-
-```java
-public class PositionEditedEvent extends PositionEvent {
-    public static final String BROADCAST_ACTION_SELL_RECEIPT = "evotor.intent.action.receipt.sell.POSITION_EDITED";
-    public static final String BROADCAST_ACTION_PAYBACK_RECEIPT = "evotor.intent.action.receipt.payback.POSITION_EDITED";
-
-    public PositionEditedEvent(Bundle extras) {
-        super(extras);
-    }
-
-    public PositionEditedEvent(String receiptUuid, Position position) {
-        super(receiptUuid, position);
-    }
-}
-```
-
-При удалении позиции приходит сообщение:
-
-```java
-public class PositionRemovedEvent extends PositionEvent {
-    public static final String BROADCAST_ACTION_SELL_RECEIPT = "evotor.intent.action.receipt.sell.POSITION_REMOVED";
-    public static final String BROADCAST_ACTION_PAYBACK_RECEIPT = "evotor.intent.action.receipt.payback.POSITION_REMOVED";
-
-    public PositionRemovedEvent(Bundle extras) {
-        super(extras);
-    }
-
-    public PositionRemovedEvent(String receiptUuid, Position position) {
-        super(receiptUuid, position);
-    }
-}
-```
-
-При обновлении базы товаров приходит сообщение:
-
-```java
-public class PositionRemovedEvent extends PositionEvent {
-    public static final String BROADCAST_ACTION_PRODUCTS_UPDATED = "evotor.intent.action.inventory.PRODUCTS_UPDATED";
-
-    public ProductsUpdatedEvent(Bundle extras) {
-        super(extras);
-    }
-
-    public ProductsUpdatedEvent(String receiptUuid, Position position) {
-        super(receiptUuid, position);
-    }
-}
-```
-
-При [очистке чека](./doc_java_receipt_creation.html) приходит сообщение:
-
-```java
-public class ReceiptClearedEvent extends ReceiptEvent {
-    public static final String BROADCAST_ACTION_SELL_RECEIPT_CLEARED = "evotor.intent.action.receipt.sell.CLEARED";
-    public static final String BROADCAST_ACTION_PAYBACK_RECEIPT_CLEARED = "evotor.intent.action.receipt.payback.CLEARED";
-
-    public ReceiptClearedEvent(@NonNull String receiptUuid) {
-        super(receiptUuid);
-    }
-
-    @Nullable
-    public static ReceiptClearedEvent create(@Nullable Bundle bundle) {
-        if (bundle == null) {
-            return null;
-        }
-        String receiptUuid = getReceiptUuid(bundle);
-        if (receiptUuid == null) {
-            return null;
-        }
-        return new ReceiptClearedEvent(receiptUuid);
-    }
-}
-```
-
-Прочие уведомления:
-
-```java
-public class MyReceiver extends BroadcastReceiver {
-
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        String action = intent.getAction();
-        Bundle bundle = intent.getExtras();
-        Log.e("QWEASD", action);
-        if (action.equals("evotor.intent.action.cashDrawer.OPEN")) {
-            CashDrawerOpenEvent.create(bundle);
-        } else if (action.equals("evotor.intent.action.cashOperation.IN")) {
-            Log.e("QWEASD", "total" + CashInEvent.create(bundle).getTotal().toPlainString());
-            Log.e("QWEASD", "uuid" + CashInEvent.create(bundle).getDocumentUuid());
-        } else if (action.equals("evotor.intent.action.cashOperation.CASH_OUT")) {
-            Log.e("QWEASD", "total" + CashOutEvent.create(bundle).getTotal().toPlainString());
-            Log.e("QWEASD", "uuid" + CashOutEvent.create(bundle).getDocumentUuid());
-        } else if (action.equals("evotor.intent.action.inventory.CARD_OPEN")) {
-            Log.e("QWEASD", "uuid" + ProductCardOpenedEvent.create(bundle).getProductUuid());
-        } else if (action.equals("evotor.intent.action.receipt.sell.CLEARED")) {
-            Log.e("QWEASD", "uuid" + ReceiptClearedEvent.create(bundle).getReceiptUuid());
-        } else if (action.equals("evotor.intent.action.receipt.payback.CLEARED")) {
-            Log.e("QWEASD", "uuid" + ReceiptClearedEvent.create(bundle).getReceiptUuid());
-        } else if (action.equals("evotor.intent.action.receipt.sell.RECEIPT_CLOSED")) {
-            Log.e("QWEASD", "uuid" + ReceiptClosedEvent.create(bundle).getReceiptUuid());
-        } else if (action.equals("evotor.intent.action.receipt.payback.RECEIPT_CLOSED")) {
-            Log.e("QWEASD", "uuid" + ReceiptClosedEvent.create(bundle).getReceiptUuid());
-        } else if (action.equals("evotor.intent.action.receipt.sell.OPENED")) {
-            Log.e("QWEASD", "uuid" + ReceiptOpenedEvent.create(bundle).getReceiptUuid());
-        } else if (action.equals("evotor.intent.action.receipt.payback.OPENED")) {
-            Log.e("QWEASD", "uuid" + ReceiptOpenedEvent.create(bundle).getReceiptUuid());
-        }
-
-    }
-}
-```
-
-Где:
-`CashInEvent` - внесение наличных.
-`CashDrawerOpenEvent` - открытие денежного ящика.
-`CashOutEvent` - выдача наличных.
-`ReceiptClosedEvent` - закрытие чека.

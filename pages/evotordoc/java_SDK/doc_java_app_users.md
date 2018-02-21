@@ -11,7 +11,7 @@ published: true
 
 С помощью User API вы можете узнать данные всех пользователей или пользователя, который авторизован на смарт-терминале в данный момент. Например, список прав авторизованного пользователя.
 
-Для работы используйте класс [`UserAPI`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/users/UserApi.kt).
+Для работы используйте класс [`UserAPI`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/users/UserApi.kt).
 
 ## Методы
 
@@ -60,3 +60,7 @@ fun getGrantsOfAuthenticatedUser(context: Context): List<Grant>
 
 * `context` – контекст приложения.
 * `List<Grant>` – список всех прав авторизованного пользователя.
+
+## Пример
+
+Пример использования User API в [демонстрационном приложении](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/UserApiActivity.java).

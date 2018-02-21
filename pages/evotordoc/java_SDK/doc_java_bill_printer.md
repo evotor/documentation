@@ -56,7 +56,8 @@ folder: java_SDK
     * Штрихкоды – `ru.evotor.devices.commons.printer.printable.PrintableBarcode`;
     * Картинки – `ru.evotor.devices.commons.printer.printable.PrintableImage`.
 
-{% include note.html content="Работа с удалённым сервисом может занимать длительное время, поэтому не вызывайте перечисленные методы в главном потоке приложения. Работа из главного потока приложения приведет к выбросу исключения DeviceServiceOperationOnMainThreadException" %}
+{% include important.html content="Работа с удалённым сервисом может занимать длительное время, поэтому не вызывайте перечисленные методы в главном потоке приложения.<br/>
+Вызов методов из главного потока приложения вернёт исключение `DeviceServiceOperationOnMainThreadException`." %}
 
 ## Примеры
 
@@ -75,3 +76,5 @@ try {
 
 }
 ```
+
+Пример работы с принтером чеков в [демонстрационном приложении](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/PrintActivity.java).

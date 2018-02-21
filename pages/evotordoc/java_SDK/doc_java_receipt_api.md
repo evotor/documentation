@@ -25,3 +25,7 @@ fun getPositionsByBarcode(context: Context, barcode: String): List<Position>
 * `context` – контекст приложения.
 * `barcode` – штрихкод товара.
 * `List<Position>` – список позиций
+
+## Пример
+
+Пример поиска товара по штрихкоду в [демонстрационном приложении](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/InventoryApiActivity.java).

@@ -9,7 +9,7 @@ folder: java_SDK
 ---
 ## Методы
 
-Класс [`InventoryApi`](https://github.com/evotor/integration-library/blob/develop/app/src/main/java/ru/evotor/framework/inventory/InventoryApi.kt) содержит методы, описанные ниже.
+Класс [`InventoryApi`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/inventory/InventoryApi.kt) содержит методы, описанные ниже.
 
 ### Получить все штрихкоды товара:
 
@@ -104,3 +104,7 @@ fun getProductExtras(context: Context, productUuid: String): List<ProductExtra>
     * для поля из словаря – массив uuid элементов (["61bff019-5040-40cd-bedf-d854ac935f6c","b993bd2a-8f6a-4fbc-b916-2d9786cd5def"]).
 
 * `data` - дополнительные данные от приложения.
+
+## Пример
+
+Пример работы с Inventory API в [демонстрационном приложении](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/InventoryApiActivity.java).

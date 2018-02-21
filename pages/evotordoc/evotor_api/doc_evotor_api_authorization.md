@@ -8,32 +8,32 @@ tags: [cloud]
 folder: evotor_api
 ---
 
-Облако Эвотор авторизует запросы с помощью заголовка `X-Authorization`, который содержит [токен приложения](./doc_authorization.html).
+Облако Эвотор авторизует запросы с помощью заголовка `X-Authorization`, который содержит [токен Облака Эвотор](./doc_authorization.html).
 
 Запросы Облака к стороннему сервису требуется авторизовать в зависимости от типа запроса:
 
 
-* *Вебхуки-запросы*. Сторонний сервис авторизует такие запросы с помощью [токена стороннего сервиса](./doc_evotor_api_authorization.html#serverToken), который вы указываете в соответствующих параметрах, на вкладке **Интеграция**, в [Личном кабинете](https://dev.evotor.ru) на сайте разработчиков.
-* *Вебхуки-уведомления*. Все уведомления, кроме [*Событий подписки*](https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost) и [*Событий установки и удаления приложений*](https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost), сторонний сервис должен авторизовать с помощью [токена пользователя](./doc_evotor_api_authorization.html#usersToken), который Облако получает от стороннего сервиса при регистрации или авторизации пользователей.
+* *Вебхуки-запросы*. Сторонний сервис авторизует такие запросы с помощью [токена приложения стороннего сервиса](./doc_evotor_api_authorization.html#serverToken), который вы указываете в соответствующих параметрах, на вкладке **Интеграция**, в Личном кабинете на [сайте разработчиков](https://dev.evotor.ru).
+* *Вебхуки-уведомления*. Все уведомления, кроме [*Событий подписки*](https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost) и [*Событий установки и удаления приложений*](https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost), сторонний сервис должен авторизовать с помощью [токена пользователя приложения стороннего сервиса](./doc_evotor_api_authorization.html#usersToken), который Облако получает от стороннего сервиса при регистрации или авторизации пользователей.
 
-  {% include note.html content="События подписки и события установки и удаления приложений авторизуются с помощью токена стороннего сервиса." %}
+  {% include note.html content="События подписки и события установки и удаления приложений авторизуются с помощью токена приложения стороннего сервиса." %}
 
-## Токен стороннего сервиса {#serverToken}
+## Токен приложения стороннего сервиса {#serverToken}
 
-Токен стороннего сервиса необходим для авторизации следующих запросов и уведомлений Облака:
+Токен приложения стороннего сервиса необходим для авторизации следующих запросов и уведомлений Облака:
 
 * [Регистрация новой учётной записи](https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1create%2Fpost);
 * [Авторизация существующего пользователя](https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost);
 * [События подписки](https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost);
 * [События установки и удаления приложений](https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v2~1installation~1event%2Fpost);
-* [Передача токена приложения](https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost).
+* [Передача токена Облака Эвотор](https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost).
 
-*Чтобы задать токен стороннего сервиса:*
+*Чтобы задать токен приложения стороннего сервиса:*
 
 1. На сайте dev.evotor.ru выберите приложение для которого требуется задать токен.
 2. На вкладке **Интеграция** выберите необходимый параметр (например, **Регистрация учётной записи в стороннем сервисе**) и укажите один из вариантов:
 
-   * Если вы указали **С помощью токена**. В поле **Токен**, укажите токен стороннего сервиса в формате `uuid4`.
+   * Если вы указали **С помощью токена**. В поле **Токен**, укажите токен приложения стороннего сервиса в формате `uuid4`.
 
      Облако передаёт токен в заголовке `Authorization`.
 
@@ -43,13 +43,13 @@ folder: evotor_api
 
 В ответ на вебхуки-запросы [Регистрация новой учётной записи](https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1create%2Fpost) и [Авторизация существующего пользователя](https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost) сторонний сервис возвращает в Облако токен пользователя.
 
-## Токен пользователя {#usersToken}
+## Токен пользователя приложения стороннего сервиса {#usersToken}
 
-При [создании нового](https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1create%2Fpost) или [авторизации существующего](https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost) пользователя, сторонний сервис возвращает в Облако уникальный токен пользователя. Облако передаёт токен в заголовке `Authorization` вебхуков-уведомлений.
+При [создании нового](https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1create%2Fpost) или [авторизации существующего](https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost) пользователя, сторонний сервис возвращает в Облако уникальный токен пользователя приложения стороннего сервиса. Облако передаёт токен в заголовке `Authorization` вебхуков-уведомлений.
 
-С помощью токена пользователя вы можете определить пользователя своего приложения.
+С помощью токена пользователя приложения стороннего сервиса вы можете определить пользователя своего приложения.
 
-Облако передаёт токен пользователя в следующих вебхуках-уведомлениях:
+Облако передаёт токен пользователя приложения стороннего сервиса в следующих вебхуках-уведомлениях:
 
 * [Создать товары](https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1inventories~1stores~1%7BstoreUuid%7D~1products%2Fpost);
 * [Передать документы](https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1inventories~1stores~1%7BstoreUuid%7D~1documents%2Fput);

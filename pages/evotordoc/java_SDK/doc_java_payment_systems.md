@@ -1,5 +1,5 @@
 ---
-title: Платёжные системы
+title: Способы оплаты
 keywords: чек, печатная, группа, платёжные, системы, манифест
 summary:
 sidebar: evotordoc_sidebar
@@ -34,7 +34,7 @@ folder: java_SDK
       * `OperationType.PAYBACK` – возврат;
       * `OperationType.PAYBACK_CANCEL` – отмена возврата.
 
-   Каждому типу операции соответствует событие и метод, который его обрабатывает. Методы представленны в классе `PaymentSystemProcessor.kt`:
+   Каждому типу операции соответствует событие и метод, который его обрабатывает. Методы представлены в классе `PaymentSystemProcessor.kt`:
 
    ```kotlin
    abstract class PaymentSystemProcessor : ActionProcessor() {
@@ -77,7 +77,7 @@ folder: java_SDK
    Где:
 
    * Элемент `ru.evotor.sales_screen.BACKGROUND_COLOR` задаёт цвет кнопки платёжной системы.
-   * Элемент `ru.evotor.paymentSystem.PAYMENT_SYSTEM_ID` задаёт уникальный идентификатор приложения. Уникальность идентификатора необходима, чтобы смарт-терминал всегда мог определить с какой платёжной системой он взаимодействует. Идентификатор остаётся неизменным даже, если при обновлении приложения изменилось название службы.
+   * Элемент `ru.evotor.paymentSystem.PAYMENT_SYSTEM_ID` задаёт уникальный идентификатор приложения. Уникальность идентификатора необходима, чтобы смарт-терминал всегда мог определить с какой платёжной системой он взаимодействует. Идентификатор остаётся неизменным даже, если название службы изменилось при обновлении приложения.
 
    {% include tip.html content="Хорошей практикой является использование packageName приложения в идентификаторе." %}
 
@@ -216,6 +216,8 @@ class PaymentSystemPaymentErrorResult(
 * `errorDescription` – описание ошибки.
 
 ## Пример службы `PaymentService`
+
+Пример работы с PaymentSystem API в [демонстрационном приложении](https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/PayApiActivity.java).
 
 Пример службы `PaymentService`, которая поддерживает все методы класса `PaymentSystemProcessor.kt`:
 

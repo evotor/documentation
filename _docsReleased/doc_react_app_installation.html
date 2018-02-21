@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="cloud,  ">
-<title>Модифицирование товаров | Документация Эвотор</title>
+<meta name="keywords" content="terminalreact,  ">
+<title>Установка приложения на смарт-терминал | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -99,11 +99,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
+            <a class="navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- entries without drop-downs appear here -->
+
+
+
                 
                 
                 
@@ -112,10 +115,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
-                
-                
-                
-                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -140,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Модифицирование товаров">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Установка приложения на смарт-терминал">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -393,6 +392,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            
+            <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с чеком</a>
                 <ul>
@@ -457,6 +463,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            
+            <li><a href="doc_java_st_events.html">Обработка событий смарт-терминала</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с оборудованием</a>
                 <ul>
@@ -498,7 +511,144 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">JavaScript SDK</a>
+        <a href="#">REACT NATIVE SDK</a>
+        
+        <ul>
+            
+            
+            
+            <li><a href="doc_react_gettingstarted.html">Начало работы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_interactiontypes.html">Типы взаимодействия со смарт-терминалом</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Основные API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_userapi.html">Пользователи</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_receiptapi.html">Чеки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_inventoryapi.html">Товароучёт</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_navigationapi.html">Навигация</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_sessionapi.html">Смены</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Службы</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_seviceapi.html">Инициализация служб</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Устройства</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesprinter.html">Принтер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescanner.html">Сканер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_errorshandling.html">Обработка ошибок</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_generatingsignedapk.html">Создание и установка подписанного APK</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        
+        <a href="#">JavaScript SDK <b>DEPRECATED</b></a>
         
         <ul>
             
@@ -615,7 +765,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            <li><a href="doc_java_app_tutorial.html">Сборка и установка демонстрационного приложения</a></li>
             
             
             
@@ -706,13 +856,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">FAQ</a>
+        <a href="#">Вопросы и устранение проблем</a>
         
         <ul>
             
             
             
             <li><a href="doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
             
             
             
@@ -732,8 +889,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Модифицирование товаров</h1>
+   <h1 class="post-title-main">Установка приложения на смарт-терминал</h1>
 </div>
+
+
 
 
 
@@ -764,93 +923,52 @@ $('#toc').on('click', 'a', function() {
 
 <div class="post-content">
 
-   
-
-    
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
+   <!--  -->
 
     
 
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/react_SDK/doc_react_app_installation.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/evotor_api/doc_tutorials_products_modifications.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+  <p><em>Чтобы установить приложение на смарт-терминал:</em></p>
 
-    
+<ol>
+  <li>
+    <p>Включите на смарт-терминале <a href="./doc_app_developer_mode.html">режим разработчика</a>.</p>
 
-  <p>В повседневной практике магазины не всегда торгуют товарами в общем виде, такими как , например, просто ботинки. Ботинки отличаются размером, цветом, могут быть мужскими или женскими, или обладать другими характеристиками. Товар для которого указаны характеристики является <em>модификацией</em> родительского товара. Модификации товаров позволяют контролировать закупочные цены (если товар поступил от разных поставщиков), остатки товаров с теми или иными характеристиками, а также другие атрибуты товаров.</p>
+    <p>При включении режима разработчика выберите опцию <strong>Ввести ID пакета вручную</strong> и укажите packageName приложения, которое вы собираетесь устанавливать на смарт-терминал, например, <code class="highlighter-rouge">com.ProjectName</code>.</p>
+  </li>
+  <li>
+    <p>Подключитесь к смарт-терминалу с помощью команды</p>
 
-<p>Многие ТУ позволяют создавать и хранить различные модификации товаров. Для поддержки этой функциональности в схеме товара, хранящегося в Облаке Эвотор, есть поле <code class="highlighter-rouge">hasVariants</code>, которое может иметь значения <code class="highlighter-rouge">true</code> или <code class="highlighter-rouge">false</code>, а также поле <code class="highlighter-rouge">attributes</code>, необходимое для модификаций товаров. Поле <code class="highlighter-rouge">attributes</code> содержит пары ключ-значение с названиями и описаниями характеристик.</p>
-
-<p>Таким образом, чтобы создать товары с различными характеристиками, с помощью метода <a href="./">Создать товар или группу товаров</a> вы создаёте родительский товар и привязываете к нему различные модификации.</p>
-
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Чтобы привязать модификацию товара к родительскому товару, в поле <code class="highlighter-rouge">parentUuid</code> модификации товара требуется указать идентификатор родительского товара (значение поля <code class="highlighter-rouge">uuid</code>).</div>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Родительский товар является <em>группой товаров</em>, поэтому на него распространяются те же ограничения, что и на группы, товаров. Например, вы можете продавать только модификации товара, но не родительский товар. Учёт остатков также ведётся для каждой модификации отдельно.</div>
-
-<h2 id="section">Примеры схем данных</h2>
-
-<h3 id="section-1">Пример схемы данных родительского товара</h3>
-
-<pre><code class="language-JSON">{
-  "uuid": "01ba18b6-8707-5f47-3d9c-4db058054cb2",
-  "name": "Ботинки",
-  "group": true,
-  "parentUuid": null,
-  "hasVariants": true
-}
+    <div class="highlighter-rouge"><pre class="highlight"><code>adb connect &lt;IP-адрес смарт-терминала&gt;:2111
 </code></pre>
+    </div>
+  </li>
+  <li>Запустите командную строку от имени Администратора.</li>
+  <li>Перейдите в папку C:\Program Files\Java\jdk1.8.0_121\bin&gt;</li>
+  <li>
+    <p>Выполните команды:</p>
 
-<h3 id="section-2">Пример схемы данных модификации товара</h3>
-
-<pre><code class="language-JSON">{
-  "uuid": "1ddea16b-971b-dee5-3798-1b29a7aa2e27",
-  "name": "Ботинки (Синий, 42)",
-  "group": false,
-  "parentUuid": "01ba18b6-8707-5f47-3d9c-4db058054cb2",
-  "type": "NORMAL",
-  "quantity": 12,
-  "measureName": "шт",
-  "price": 123.12,
-  "tax": "VAT_18",
-  "allowToSell": true,
-  "costPrice": 100.123,
-  "description": "Очень удобные ботинки",
-  "articleNumber": "бот123",
-  "code": "6",
-  "barCodes": [
-     "2000000000060"
-   ],
-  "attributes": {
-    "цвет": "Синий",
-		"размер": "42"
-  }
-}
+    <div class="highlighter-rouge"><pre class="highlight"><code>keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 </code></pre>
+    </div>
+  </li>
+  <li>
+    <p>В папке <ProjectName>\аndroid выполните команды:</ProjectName></p>
 
-<h2 id="section-3">Смарт-терминал и модификации товаров</h2>
+    <div class="highlighter-rouge"><pre class="highlight"><code>gradlew assembleRelease
+</code></pre>
+    </div>
 
-<p>По умолчанию, функциональность смарт-терминала в области работы с родительскими товарами и модификациями ограничена. Например, модификации товара в интерфейсе смарт-терминала отображаются как обычный товар, для которого в скобках указаны значения характеристики. Так же редактирование родительских товаров и модификаций на смарт-терминале запрещено, до тех пор, пока в ТУ системе не будет задано обратного.</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>adb install -r &lt;ProjectName&gt;\android\app\build\outputs\apk\release\app-release.apk
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<p>Ваше приложение будет установлено на смарт-терминал. Проверить это вы можете тут ещё&gt;память&gt;приложения (или как-то так).</p>
 
 
     <div class="tags">
@@ -859,7 +977,11 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_cloud.html" class="btn btn-default navbar-btn cursorNorm" role="button">cloud</a>
+        <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
+        
+        
+        
+        <a href="tag_react.html" class="btn btn-default navbar-btn cursorNorm" role="button">react</a>
         
         
         

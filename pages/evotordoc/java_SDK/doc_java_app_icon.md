@@ -18,9 +18,6 @@ folder: java_SDK
 
 Вы можете интегрировать своё приложение в существующий процесс смарт-терминала, например, продажу или работу с оборудованием, или добавить плитку приложения на главный экран. Плиток может быть несколько, если приложение реализует независимые действия, например, плитки "Продать товар" и "Вернуть товар".
 
-{: .center-image}
-![Пример плитки](images\Tile_example.png)
-
 ## Рекомендации по добавлению плитки
 
 Добавляйте плитку если:
@@ -65,6 +62,8 @@ folder: java_SDK
    Атрибут `android:name="ru.evotor.sales_screen.BACKGROUND_COLOR"` задаёт фон, на котором отображается иконка приложения.
 
    Элемент `<action android:name="android.intent.action.MAIN" />` указывает, что иконка приложения будет отображаться на главном экране смарт-терминала.
+
+{% include image.html file="Tile_example.png" url="images/Tile_example.png" caption="Приложение на главном экране смарт-терминала" %}
 
 ## Иконка приложения на экране оплаты {#SalesScreen}
 
@@ -159,12 +158,13 @@ folder: java_SDK
 </manifest>
 ```
 
+{% include image.html file="template_plugin_applied.png" url="images/template_plugin_applied.png" caption="Приложение на экране оплаты смарт-терминала" %}
+
 ## Замена кнопки **Продажа** на главном экране смарт-терминала
 
 Вы можете заменить кнопку **Продажа**, расположенную на главном экране смарт-терминала, на кнопку своего приложения:
 
-{: .center-image}
-![](images\sale_button_changed.png)
+{% include image.html file="sale_button_changed.png" url="images/sale_button_changed.png" caption="Изменение кнопки **Продажа**" %}
 
 _Чтобы заменить кнопку **Продажа**:_
 

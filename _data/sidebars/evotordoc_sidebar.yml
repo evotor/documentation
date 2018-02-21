@@ -310,9 +310,9 @@ entries:
       url: /doc_java_navigation.html
       output: web
 
-#    - title: Платёжные системы
-#      url: /doc_java_navigation.html
-#      output: web
+    - title: Способы оплаты
+      url: /doc_java_payment_systems.html
+      output: web
 
       subfolders:
       - title: Работа с чеком
@@ -358,6 +358,10 @@ entries:
       url: /doc_java_inventory.html
       output: web
 
+    - title: Обработка событий смарт-терминала
+      url: /doc_java_st_events.html
+      output: web
+
       subfolders:
       - title: Работа с оборудованием
         output: web
@@ -379,9 +383,88 @@ entries:
       output: web
 
 ###############################################################
+#               REACT SDK                                      #
+###############################################################
+
+  - title: REACT NATIVE SDK
+    output: web
+    folderitems:
+    - title: Начало работы
+      url: /doc_react_gettingstarted.html
+      output: web
+    - title: Типы взаимодействия со смарт-терминалом
+      url: /doc_react_interactiontypes.html
+      output: web
+
+#    - title: Манифест React Native приложения
+#      url: /doc_react_manifest.html
+#      output: web
+#
+#    - title: Открытие окон смарт-терминала
+#      url: /doc_react_navigationAPI.html
+#      output: web
+#
+#    - title: Установка приложения на смарт-терминал
+#      url: /doc_react_app_installation.html
+#      output: web
+      subfolders:
+      - title: Основные API
+        output: web
+        subfolderitems:
+        - title: Пользователи
+          url: /react_reference_userapi.html
+          output: web
+        - title: Чеки
+          url: /react_reference_receiptapi.html
+          output: web
+        - title: Товароучёт
+          url: /react_reference_inventoryapi.html
+          output: web
+        - title: Навигация
+          url: /react_reference_navigationapi.html
+          output: web
+        - title: Смены
+          url: /react_reference_sessionapi.html
+          output: web
+      - title: Службы
+        output: web
+        subfolderitems:
+        - title: Инициализация служб
+          url: /react_reference_seviceapi.html
+          output: web
+        - title: Интеграционные службы
+          url: /react_reference_integrationapi.html
+          output: web
+        - title: Широковещательный приёмник
+          url: /react_reference_broadcastreceivers.html
+          output: web
+      - title: Устройства
+        output: web
+        subfolderitems:
+        - title: Подключение устройств
+          url: /react_reference_devicesconnection.html
+          output: web
+        - title: Принтер
+          url: /react_reference_devicesprinter.html
+          output: web
+        - title: Сканер
+          url: /react_reference_devicescanner.html
+          output: web
+        - title: Весы
+          url: /react_reference_devicescales.html
+          output: web
+    - title: Обработка ошибок
+      url: /doc_react_errorshandling.html
+      output: web
+    - title: Создание и установка подписанного APK
+      url: /doc_react_generatingsignedapk.html
+      output: web
+
+
+###############################################################
 #               JavaScript SDK                                #
 ###############################################################
-  - title: JavaScript SDK
+  - title: JavaScript SDK <b>DEPRECATED</b>
     output: web
     folderitems:
     - title: Подключение шаблона приложения
@@ -494,7 +577,7 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Разработка Java-приложения
+    - title: Сборка и установка демонстрационного приложения
       url: /doc_java_app_tutorial.html
       output: web, pdf
 
@@ -521,8 +604,6 @@ entries:
     - title: Черновики, модерация и публикация приложения
       url: /doc_app_review.html
       output: web, pdf
-
-
 
 ###############################################################
 #                    Биллинг                                  #
@@ -572,9 +653,13 @@ entries:
 #                      FAQ                                    #
 ###############################################################
 
-  - title: FAQ
+  - title: Вопросы и устранение проблем
     output: web, pdf
     folderitems:
     - title: Часто задаваемые вопросы
       url: /doc_faq.html
+      output: web
+
+    - title: Устранение проблем с установкой приложения
+      url: /doc_installation_troubleshooting.html
       output: web
