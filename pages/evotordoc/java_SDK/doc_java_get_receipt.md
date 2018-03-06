@@ -9,7 +9,7 @@ folder: java_SDK
 ---
 ## Методы
 
-Классы [`ReceiptApi`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/ReceiptApi.kt) и [`Receipt`](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/receipt/Receipt.kt) содержат описанные ниже методы.
+Классы [`ReceiptApi`](https://github.com/evotor/integration-library/blob/develop/src/main/java/ru/evotor/framework/receipt/ReceiptApi.kt) и [`Receipt`](https://github.com/evotor/integration-library/blob/develop/src/main/java/ru/evotor/framework/receipt/Receipt.kt) содержат описанные ниже методы.
 
 ### Получить текущий открытый чек
 
@@ -20,7 +20,11 @@ fun getReceipt(context: Context, type: Receipt.Type): Receipt?
 Где:
 
 * `context` – контекст приложения.
-* `type` – тип чека: продажи (`SELL`) или возврата (`PAYBACK`).
+* `type` – тип чека:
+   * `SELL` – продажа товара;
+   * `BUY` – покупка товара;
+   * `PAYBACK` – возврат проданного товара;
+   * `BUYBACK` – возврат купленного товара.
 * `Receipt` – текущий открытый чек.
 
 Метод возвращает чек или `null`, если чек закрыт.
@@ -89,14 +93,18 @@ fun getReceiptHeaders(context: Context, type: Receipt.Type? = null): ru.evotor.f
 Где:
 
 * `context` – контекст приложения.
-* `type` – тип чека: продажи (`SELL`) или возврата (`PAYBACK`).
+* `type` – тип чека:
+   * `SELL` – продажа товара;
+   * `BUY` – покупка товара;
+   * `PAYBACK` – возврат проданного товара;
+   * `BUYBACK` – возврат купленного товара.
 * `ru.evotor.framework.Cursor<Receipt.Header?>` – курсор с заголовками чека.
 
 Метод возвращает заголовки созданных чеков, которые хранятся на терминале.
 
 ## Пример
 
-Получить список позиций открытого чека:
+Получить список позиций открытого чека продажи:
 
 ``` java
 List<Position> positions = ReceiptApi.getReceipt(context, Receipt.Type.SELL).getPositions();

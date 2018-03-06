@@ -36,7 +36,35 @@ fun createIntentForPaybackReceiptEdit(): Intent
 
 **Описание**
 
-Открывает окно редактирования чека возврата.
+Открывает окно редактирования чека возврата проданного товара.
+
+**Возвращает**
+
+* `Intent`
+
+### createIntentForBuyReceiptEdit
+
+```
+fun createIntentForBuyReceiptEdit(): Intent
+```
+
+**Описание**
+
+Открывает окно редактирования чека покупки.
+
+**Возвращает**
+
+* `Intent`
+
+### createIntentForBuybackReceiptEdit
+
+```
+fun createIntentForBuybackReceiptEdit(): Intent
+```
+
+**Описание**
+
+Открывает окно редактирования чека возврата купленного товара.
 
 **Возвращает**
 
@@ -51,6 +79,48 @@ fun createIntentForSellReceiptPayment(): Intent
 **Описание**
 
 Открывает окно оплаты чека продажи.
+
+**Возвращает**
+
+* `Intent`
+
+### createIntentForPaybackReceiptPayment
+
+```
+fun createIntentForPaybackReceiptPayment(): Intent
+```
+
+**Описание**
+
+Открывает окно оплаты чека возврата проданного товара.
+
+**Возвращает**
+
+* `Intent`
+
+### createIntentForBuyReceiptPayment
+
+```
+fun createIntentForBuyReceiptPayment(): Intent
+```
+
+**Описание**
+
+Открывает окно оплаты чека покупки.
+
+**Возвращает**
+
+* `Intent`
+
+### createIntentForBuybackReceiptPayment
+
+```
+fun createIntentForBuybackReceiptPayment(): Intent
+```
+
+**Описание**
+
+Открывает окно оплаты чека возврата купленного товара.
 
 **Возвращает**
 

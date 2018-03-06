@@ -44,7 +44,7 @@ static createIntentForPaybackReceiptEdit(): Intent
 
 * `Intent`
 
-### createIntentForSellReceiptPayment
+### createIntentForSellReceiptPayment {#createIntentForSellReceiptPayment}
 
 ```js
 static createIntentForSellReceiptPayment(): Intent
@@ -58,7 +58,7 @@ static createIntentForSellReceiptPayment(): Intent
 
 * `Intent`
 
-### createIntentForPaybackReceiptPayment
+### createIntentForPaybackReceiptPayment {#createIntentForPaybackReceiptPayment}
 
 ```js
 static createIntentForPaybackReceiptPayment(): Intent

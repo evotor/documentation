@@ -40,7 +40,7 @@ static openSellReceipt(positions?: Position[] | null, extra?: SetExtra): Promise
 
 **Описание**
 
-Формирует чек продажи из полученных данных и открывает его в интерфейсе смарт-терминала.
+Формирует чек продажи из полученных данных. Вы можете передать чек на оплату с помощью [метода NavigationAPI](./react_reference_navigationapi.html#createIntentForSellReceiptPayment)
 
 **Параметры**
 
@@ -59,7 +59,7 @@ static openPaybackReceipt(positions?: Position[] | null, extra?: SetExtra): Prom
 
 **Описание**
 
-Формирует чек возврата из полученных данных и открывает его в интерфейсе смарт-терминала.
+Формирует чек возврата из полученных данных. Вы можете передать чек на оплату с помощью [метода NavigationAPI](./react_reference_navigationapi.html#createIntentForPaybackReceiptPayment)
 
 **Параметры**
 
