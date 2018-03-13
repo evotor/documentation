@@ -37,12 +37,8 @@ folder: java_SDK
                                    try {
                                        IntegrationManagerFuture.Result result = integrationManagerFuture.getResult();
                                        if (result.getType() == IntegrationManagerFuture.Result.Type.OK) {
-                                           //Возможны следующие варианты намерений:
-                                           //evotor.intent.action.payment.SELL
-                                           //evotor.intent.action.payment.PAYBACK
-                                           //evotor.intent.action.payment.BUY
-                                           //evotor.intent.action.payment.BUYBACK
-                                           startActivity(new Intent("evotor.intent.action.payment.SELL"));
+                                           //Чтобы открыть другие документы используйте методы NavigationApi.
+                                           startActivity(NavigationApi.createIntentForSellReceiptPayment());
                                        }
                                    } catch (IOException e) {
                                        e.printStackTrace();
