@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '. ~/.rvm/scripts/rvm && bundle exec jekyll build'
+        sh '''#!/usr/bin/bash
+             . ~/.rvm/scripts/rvm && bundle exec jekyll build
+        '''
       }
     }
   }
