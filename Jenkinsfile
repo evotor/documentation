@@ -20,8 +20,8 @@ pipeline {
                 cd /srv/www/docs2
                 rm -rf /srv/www/docs2/*
                 tar xzf /srv/www/docs-arch/${arch}
-                rm /srv/www/docs-arch/${arch}
-              EOF
+                find /srv/www/docs-arch/ -name "docs_*" -mtime +60 -exec rm {} \\;
+EOF
               rm ${arch}
         '''
       }
