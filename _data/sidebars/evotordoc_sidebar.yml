@@ -318,6 +318,10 @@ entries:
       url: /doc_java_payment_systems.html
       output: web
 
+    - title: Печать Z-отчёта
+      url: /doc_java_z_report.html
+      output: web
+
       subfolders:
       - title: Работа с чеком
         output: web

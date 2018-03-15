@@ -13,7 +13,10 @@ folder: java_SDK
 *Чтобы приложение печатало свои данные на чеке, выполните следующие действия:*
 
 1. В манифесте приложения укажите следующий элемент:
-    `<uses-permission android:name="ru.evotor.permission.receipt.printExtra.SET" />`
+
+   ```xml
+   <uses-permission android:name="ru.evotor.permission.receipt.printExtra.SET" />
+   ```
 
 2. В колбэке `onCreate()` или при запуске операции (`activity`) инициализируйте класс `ru.evotor.devices.commons.DeviceServiceConnector`:
 

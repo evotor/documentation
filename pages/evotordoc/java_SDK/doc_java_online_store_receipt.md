@@ -10,7 +10,7 @@ folder: java_SDK
 
 Приложение может создавать чеки и передавать их для оформления в смарт-терминал. Такие чеки являются фискальными.
 
-С помощью команд [PrintSellReceiptCommand и PrintPaybackReceiptCommand](./doc_app_integration_points.html#Commands) смарт-терминал может автоматически передавать созданные чеки на указанный адрес электронной почты (email) и / или номер телефона. Передача чеков актуальна, например, для интернет-магазинов.
+С помощью команд [`PrintSellReceiptCommand` и `PrintPaybackReceiptCommand`](./doc_app_integration_points.html#Commands) смарт-терминал может автоматически передавать созданные чеки на указанный адрес электронной почты (email) и / или номер телефона. Передача чеков актуальна, например, для интернет-магазинов.
 
 ## Передача чека на email и номер телефона
 
@@ -58,7 +58,7 @@ folder: java_SDK
 
    Где:
 
-   * `PaymentType` – задаёт [способ оплаты](https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/payment/PaymentType.java).
+   * `PaymentType` – задаёт [способ оплаты](https://github.com/evotor/integration-library/blob/develop/src/main/java/ru/evotor/framework/payment/PaymentType.java).
 
 4. Создайте команду для передачи чека и вызовите метод `.process`:
 
