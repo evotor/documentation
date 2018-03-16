@@ -17,8 +17,8 @@ pipeline {
               echo "Deploing to ${SERVER_NAME}..."
               scp ${arch} ${SERVER_USER}@${SERVER_NAME}:/srv/www/docs-arch
               ssh -T ${SERVER_USER}@${SERVER_NAME}  << EOF
-                cd /srv/www/docs2
-                rm -rf /srv/www/docs2/*
+                cd /srv/www/docs
+                rm -rf /srv/www/docs/*
                 tar xzf /srv/www/docs-arch/${arch}
                 find /srv/www/docs-arch/ -name "docs_*" -mtime +60 -exec rm {} \\;
 EOF
