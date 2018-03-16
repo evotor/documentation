@@ -13,7 +13,7 @@ pipeline {
         sh '''#!/usr/bin/bash
               set -e
               arch=docs_${BUILD_TIMESTAMP}.tgz
-              tar -czf ${arch} -C _site .
+              tar -czf ${arch} --exclude-from=tar_exclude -C _site .
               echo "Deploing to ${SERVER_NAME}..."
               scp ${arch} ${SERVER_USER}@${SERVER_NAME}:/srv/www/docs-arch
               ssh -T ${SERVER_USER}@${SERVER_NAME}  << EOF
