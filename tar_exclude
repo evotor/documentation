@@ -1,0 +1,6 @@
+Dockerfile
+Gemfile
+Gemfile.lock
+Jenkinsfile
+update.sh
+tar_exclude
