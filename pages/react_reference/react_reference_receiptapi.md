@@ -70,7 +70,7 @@ static openPaybackReceipt(positions?: Position[] | null, extra?: SetExtra): Prom
 
 * `Promise`
 
-### sendElectronReceipt
+### sendElectronReceipt **Deprecated**
 
 ```js
 static sendElectronReceipt(printReceipts: PrintReceipt[],
@@ -82,7 +82,61 @@ static sendElectronReceipt(printReceipts: PrintReceipt[],
 
 **Описание**
 
+{% include important.html content="Метод устарел, используйте методы [`registerSellReceipt`](./react_reference_receiptapi.html#registerSellReceipt) и [`registerPaybackReceipt`](./react_reference_receiptapi.html#registerPaybackReceipt)." %}
+
 Формирует чек из полученных данных и отправляет его на электронную почту и/или телефон.
+
+**Параметры**
+
+* `printReceipts` – массив [печатных форм чека](./react_reference_receiptapi.html#printreceipt).
+* `extra` – [дополнительные поля](./react_reference_receiptapi.html#setextra) в чеке.
+* `phone` – телефонный номер покупателя.
+* `email` – адрес электронной почты покупателя.
+* `discount` – скидка на чек.
+
+**Возвращает**
+
+* `Promise`, результат которого – строка.
+
+### registerSellReceipt {#registerSellReceipt}
+
+```js
+static registerSellReceipt(printReceipts: PrintReceipt[],
+                           extra: SetExtra | null,
+                           phone: string | null,
+                           email: string | null,
+                           discount?: number): Promise<RegisterReceiptCommandResult>
+```
+
+**Описание**
+
+Формирует чек продажи из полученных данных и отправляет его на электронную почту и/или телефон.
+
+**Параметры**
+
+* `printReceipts` – массив [печатных форм чека](./react_reference_receiptapi.html#printreceipt).
+* `extra` – [дополнительные поля](./react_reference_receiptapi.html#setextra) в чеке.
+* `phone` – телефонный номер покупателя.
+* `email` – адрес электронной почты покупателя.
+* `discount` – скидка на чек.
+
+**Возвращает**
+
+* `Promise`, результат которого – строка.
+
+### registerPaybackReceipt {#registerPaybackReceipt}
+
+```js
+static registerPaybackReceipt(printReceipts: PrintReceipt[],
+                           extra: SetExtra | null,
+                           phone: string | null,
+                           email: string | null,
+                           discount?: number): Promise<RegisterReceiptCommandResult>
+```
+
+**Описание**
+
+Формирует чек возврата из полученных данных и отправляет его на электронную почту и/или телефон.
 
 **Параметры**
 
