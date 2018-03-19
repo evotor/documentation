@@ -51,6 +51,25 @@ static openSellReceipt(positions?: Position[] | null, extra?: SetExtra): Promise
 
 * `Promise`
 
+### openBuyReceipt
+
+```js
+static openBuyReceipt(positions?: Position[] | null, extra?: SetExtra): Promise<OpenReceiptCommandResult>
+```
+
+**Описание**
+
+Формирует чек покупки из полученных данных. Вы можете передать чек на оплату с помощью [метода NavigationAPI](./react_reference_navigationapi.html#createIntentForSellReceiptPayment)
+
+**Параметры**
+
+* `positions` – массив [позиций](./react_reference_receiptapi.html#position).
+* `extra` – указывает наличие [дополнительных полей](./react_reference_receiptapi.html#setextra) в чеке.
+
+**Возвращает**
+
+* `Promise`
+
 ### openPaybackReceipt
 
 ```js
@@ -59,7 +78,26 @@ static openPaybackReceipt(positions?: Position[] | null, extra?: SetExtra): Prom
 
 **Описание**
 
-Формирует чек возврата из полученных данных. Вы можете передать чек на оплату с помощью [метода NavigationAPI](./react_reference_navigationapi.html#createIntentForPaybackReceiptPayment)
+Формирует чек возврата проданного товара из полученных данных. Вы можете передать чек на оплату с помощью [метода NavigationAPI](./react_reference_navigationapi.html#createIntentForPaybackReceiptPayment)
+
+**Параметры**
+
+* `positions` – массив [позиций](./react_reference_receiptapi.html#position).
+* `extra` – указывает наличие [дополнительных полей](./react_reference_receiptapi.html#setextra) в чеке.
+
+**Возвращает**
+
+* `Promise`
+
+### openBuybackReceipt
+
+```js
+static openBuybackReceipt(positions?: Position[] | null, extra?: SetExtra): Promise<OpenReceiptCommandResult>
+```
+
+**Описание**
+
+Формирует чек возврата купленного товара из полученных данных. Вы можете передать чек на оплату с помощью [метода NavigationAPI](./react_reference_navigationapi.html#createIntentForPaybackReceiptPayment)
 
 **Параметры**
 
@@ -82,7 +120,7 @@ static sendElectronReceipt(printReceipts: PrintReceipt[],
 
 **Описание**
 
-{% include important.html content="Метод устарел, используйте методы [`registerSellReceipt`](./react_reference_receiptapi.html#registerSellReceipt) и [`registerPaybackReceipt`](./react_reference_receiptapi.html#registerPaybackReceipt)." %}
+{% include important.html content="Метод устарел начиная с версии библиотеки 3.3.3, используйте методы [`registerSellReceipt`](./react_reference_receiptapi.html#registerSellReceipt) и [`registerPaybackReceipt`](./react_reference_receiptapi.html#registerPaybackReceipt)." %}
 
 Формирует чек из полученных данных и отправляет его на электронную почту и/или телефон.
 
