@@ -257,7 +257,7 @@ static finish(): Promise<void>
 ### addEventListener
 
 ```js
-static addEventListener(type: NavigationEventType, listener: NavigationEventListener, isGlobal: boolean = true): void
+static addEventListener(type: NavigationEventType, listener: NavigationEventListener): void
 ```
 
 **Описание**
@@ -268,7 +268,6 @@ static addEventListener(type: NavigationEventType, listener: NavigationEventList
 
 * `type` – событие типа [`NavigationEventType`](./react_reference_navigationapi.html#navigationeventtype).
 * `listener` – слушатель типа `NavigationEventListener`.
-* `isGlobal` – [глобальная доступность слушателя](./doc_react_interactiontypes.html#eventsubscription)
 
 ### removeEventListener
 

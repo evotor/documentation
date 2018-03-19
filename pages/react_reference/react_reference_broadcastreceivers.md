@@ -17,7 +17,7 @@ folder: react_reference
 ### addEventListener
 
 ```js
-static addEventListener(type: BroadcastReceiverEventType, listener: BroadcastReceiveListener, isGlobal: boolean = true): void
+static addEventListener(type: BroadcastReceiverEventType, listener: BroadcastReceiveListener): void
 ```
 
 **Описание**
@@ -28,7 +28,6 @@ static addEventListener(type: BroadcastReceiverEventType, listener: BroadcastRec
 
 * `type` – событие типа [`BroadcastReceiverEventType`](./react_reference_broadcastreceivers.html#BroadcastReceiverEventType).
 * `listener` – слушатель типа [`BroadcastReceiveListener`](./react_reference_broadcastreceivers.html#BroadcastEventListener).
-* `isGlobal` – [глобальная доступность слушателя](./doc_react_interactiontypes.html#eventsubscription).
 
 ### removeEventListener
 
