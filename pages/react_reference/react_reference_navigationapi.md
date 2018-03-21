@@ -44,7 +44,7 @@ static createIntentForPaybackReceiptEdit(): Intent
 
 * `Intent`
 
-### createIntentForSellReceiptPayment
+### createIntentForSellReceiptPayment {#createIntentForSellReceiptPayment}
 
 ```js
 static createIntentForSellReceiptPayment(): Intent
@@ -58,7 +58,7 @@ static createIntentForSellReceiptPayment(): Intent
 
 * `Intent`
 
-### createIntentForPaybackReceiptPayment
+### createIntentForPaybackReceiptPayment {#createIntentForPaybackReceiptPayment}
 
 ```js
 static createIntentForPaybackReceiptPayment(): Intent
@@ -121,7 +121,7 @@ static getIntent(): Promise<Intent>
 ### startActivity
 
 ```js
-static startActivity(intent: Intent): Promise
+static startActivity(intent: Intent): Promise<void>
 ```
 
 **Описание**
@@ -144,7 +144,7 @@ static startActivity(intent: Intent): Promise
 ### startActivityForResult {#startActivityForResult}
 
 ```js
-static startActivityForResult(intent: Intent, requestCode: number): Promise
+static startActivityForResult(intent: Intent, requestCode: number): Promise<void>
 ```
 
 **Описание**
@@ -168,7 +168,7 @@ static startActivityForResult(intent: Intent, requestCode: number): Promise
 ### startService
 
 ```js
-static startService(intent: Intent): Promise
+static startService(intent: Intent): Promise<void>
 ```
 
 **Описание**
@@ -191,7 +191,7 @@ static startService(intent: Intent): Promise
 ### setResult
 
 ```js
-static setResult(resultCode: number, data?: Intent): Promise
+static setResult(resultCode: number, data?: Intent): Promise<void>
 ```
 
 **Описание**
@@ -215,7 +215,7 @@ static setResult(resultCode: number, data?: Intent): Promise
 ### setIntegrationResult
 
 ```js
-static setIntegrationResult(result: IntegrationServiceEventResult): Promise
+static setIntegrationResult(result: IntegrationServiceEventResult): Promise<void>
 ```
 
 **Описание**
@@ -238,7 +238,7 @@ static setIntegrationResult(result: IntegrationServiceEventResult): Promise
 ### finish
 
 ```js
-static finish(): Promise
+static finish(): Promise<void>
 ```
 
 **Описание**
@@ -257,7 +257,7 @@ static finish(): Promise
 ### addEventListener
 
 ```js
-static addEventListener(type: NavigationEventType, listener: NavigationEventListener, isGlobal: boolean = true): void
+static addEventListener(type: NavigationEventType, listener: NavigationEventListener): void
 ```
 
 **Описание**
@@ -268,7 +268,6 @@ static addEventListener(type: NavigationEventType, listener: NavigationEventList
 
 * `type` – событие типа [`NavigationEventType`](./react_reference_navigationapi.html#navigationeventtype).
 * `listener` – слушатель типа `NavigationEventListener`.
-* `isGlobal` – [глобальная доступность слушателя](./doc_react_interactiontypes.html#eventsubscription)
 
 ### removeEventListener
 

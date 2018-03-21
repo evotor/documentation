@@ -8,9 +8,9 @@ tags: [terminal, java, receipts]
 folder: java_SDK
 ---
 
-*Чтобы открыть чек в смарт-терминале:*
+*Чтобы открыть чек продажи в смарт-терминале:*
 
-1. Составьте список позиций, который требуется добавить в чек, наполните список
+1. Составьте список позиций, который требуется добавить в чек, и наполните его:
 
    ```java
    public void openReceipt() {
@@ -37,7 +37,8 @@ folder: java_SDK
                                    try {
                                        IntegrationManagerFuture.Result result = integrationManagerFuture.getResult();
                                        if (result.getType() == IntegrationManagerFuture.Result.Type.OK) {
-                                           startActivity(new Intent("evotor.intent.action.payment.SELL"));
+                                           //Чтобы открыть другие документы используйте методы NavigationApi.
+                                           startActivity(NavigationApi.createIntentForSellReceiptPayment());
                                        }
                                    } catch (IOException e) {
                                        e.printStackTrace();
@@ -49,6 +50,13 @@ folder: java_SDK
    ```
 
    Где вместо null вы можете передать `new SetExtra(extra)`, команду для [создания дополнительных полей в чеке](./doc_java_receipt_extras.html).
+
+   Чтобы открыть чек другого типа используйте соответствующую команду. Возможные команды:
+
+   * `OpenSellReceiptCommand` – команда открытия чека продажи.
+   * `OpenPaybackReceiptCommand` – команда открытия чека возврата проданного товара.
+   * `OpenBuyReceiptCommand` – команда открытия чека покупки.
+   * `OpenBuybackReceiptCommand` – команда открытия чека возврата купленного товара.
 
    {% include tip.html content="Замените `SELL` на `PAYBACK`, если хотите открыть чек возврата." %}
 

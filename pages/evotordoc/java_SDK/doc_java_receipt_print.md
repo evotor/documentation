@@ -22,7 +22,7 @@ folder: java_SDK
 
 *Чтобы приложение печатало данные внутри кассового чека:*
 
-1. В [манифесте приложения](./doc_java_app_manifest.html), наделите приложение необходимыми правами:
+1. В [манифесте приложения](./doc_java_app_manifest.html), укажите права приложения:
 
    ```xml
    <uses-permission android:name="ru.evotor.permission.receipt.printExtra.SET" />
@@ -32,17 +32,20 @@ folder: java_SDK
 3. Объявите службу в манифесте приложения и укажите `intent-filter`:
 
    ```xml
-   <action android:name="evo.v2.receipt.sell.printExtra.REQUIRED" />
+   <action android:name="<Событие>" />
    ```
 
-   Где:
-
-   Событие `evo.v2.receipt.sell.printExtra.REQUIRED` – сообщает о возможности печати внутри кассового чека продажи. Для печати внутри кассового чека возврата подпишитесь на событие `evo.v2.receipt.payback.printExtra.REQUIRED`.
+   где необходимо указать событие, при которое определяет тип чека, в котором будут напечатаны данные. Возможны следующие события:
+   * `evo.v2.receipt.sell.printExtra.REQUIRED` – печать внутри кассового чека продажи товара.
+   * `evo.v2.receipt.buy.printExtra.REQUIRED`  – печать внутри кассового чека покупки товара.
+   * `evo.v2.receipt.payback.printExtra.REQUIRED` – печать внутри кассового чека возврата проданного товара.
+   * `evo.v2.receipt.buyback.printExtra.REQUIRED` – печать внутри кассового чека возврата купленного товара.
 
 4. В службе, подпишите процессор `PrintExtraRequiredEventProcessor` на событие:
 
    ```java
    processorMap.put(
+                   //NAME_SELL_RECEIPT – имя события, которое указывает тип чека, где будут напечатаны данные.
                    PrintExtraRequiredEvent.NAME_SELL_RECEIPT,
                    new PrintExtraRequiredEventProcessor() {
                    }

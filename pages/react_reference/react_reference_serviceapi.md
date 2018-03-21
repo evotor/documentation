@@ -17,7 +17,7 @@ folder: react_reference
 ### addEventListener
 
 ```js
-static addEventListener(type: ServiceEventType, listener: ServiceEventListener, isGlobal: boolean = true): void
+static addEventListener(type: ServiceEventType, listener: ServiceEventListener): void
 ```
 
 **Описание**
@@ -28,7 +28,6 @@ static addEventListener(type: ServiceEventType, listener: ServiceEventListener, 
 
 * `type` – событие типа [`ServiceEventType`](./react_reference_integrationapi.html#ServiceEventType).
 * `listener` – слушатель типа [`ServiceEventListener`](./react_reference_integrationapi.html#ServiceEventListener).
-* `isGlobal` – [глобальная доступность слушателя](./doc_react_interactiontypes.html#eventsubscription).
 
 ### removeEventListener
 

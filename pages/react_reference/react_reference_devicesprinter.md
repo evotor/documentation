@@ -17,7 +17,7 @@ folder: react_reference
 ### print
 
 ```js
-static print(printables: Printable[]): Promise
+static print(printables: Printable[]): Promise<void>
 ```
 
 **Описание**

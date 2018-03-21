@@ -35,12 +35,12 @@ static getPositionsByBarcode(barcode: string): Promise<Position[]>
 ### openSellReceipt
 
 ```js
-static openSellReceipt(positions: Position[], extra: SetExtra | null): Promise
+static openSellReceipt(positions?: Position[] | null, extra?: SetExtra): Promise<OpenReceiptCommandResult>
 ```
 
 **Описание**
 
-Формирует чек из полученных данных и открывает его в интерфейсе смарт-терминала.
+Формирует чек продажи из полученных данных. Вы можете передать чек на оплату с помощью [метода NavigationAPI](./react_reference_navigationapi.html#createIntentForSellReceiptPayment)
 
 **Параметры**
 
@@ -51,19 +51,130 @@ static openSellReceipt(positions: Position[], extra: SetExtra | null): Promise
 
 * `Promise`
 
-### sendElectronReceipt
+### openBuyReceipt
 
 ```js
-static sendElectronReceipt(printReceipts: PrintReceipt[],
-                   extra: SetExtra | null,
-                   phone: string | null,
-                   email: string | null,
-                   discount: number | null): Promise<string>
+static openBuyReceipt(positions?: Position[] | null, extra?: SetExtra): Promise<OpenReceiptCommandResult>
 ```
 
 **Описание**
 
+Формирует чек покупки из полученных данных. Вы можете передать чек на оплату с помощью [метода NavigationAPI](./react_reference_navigationapi.html#createIntentForSellReceiptPayment)
+
+**Параметры**
+
+* `positions` – массив [позиций](./react_reference_receiptapi.html#position).
+* `extra` – указывает наличие [дополнительных полей](./react_reference_receiptapi.html#setextra) в чеке.
+
+**Возвращает**
+
+* `Promise`
+
+### openPaybackReceipt
+
+```js
+static openPaybackReceipt(positions?: Position[] | null, extra?: SetExtra): Promise<OpenReceiptCommandResult>
+```
+
+**Описание**
+
+Формирует чек возврата проданного товара из полученных данных. Вы можете передать чек на оплату с помощью [метода NavigationAPI](./react_reference_navigationapi.html#createIntentForPaybackReceiptPayment)
+
+**Параметры**
+
+* `positions` – массив [позиций](./react_reference_receiptapi.html#position).
+* `extra` – указывает наличие [дополнительных полей](./react_reference_receiptapi.html#setextra) в чеке.
+
+**Возвращает**
+
+* `Promise`
+
+### openBuybackReceipt
+
+```js
+static openBuybackReceipt(positions?: Position[] | null, extra?: SetExtra): Promise<OpenReceiptCommandResult>
+```
+
+**Описание**
+
+Формирует чек возврата купленного товара из полученных данных. Вы можете передать чек на оплату с помощью [метода NavigationAPI](./react_reference_navigationapi.html#createIntentForPaybackReceiptPayment)
+
+**Параметры**
+
+* `positions` – массив [позиций](./react_reference_receiptapi.html#position).
+* `extra` – указывает наличие [дополнительных полей](./react_reference_receiptapi.html#setextra) в чеке.
+
+**Возвращает**
+
+* `Promise`
+
+### sendElectronReceipt **Deprecated**
+
+```js
+static sendElectronReceipt(printReceipts: PrintReceipt[],
+                           extra: SetExtra | null,
+                           phone: string | null,
+                           email: string | null,
+                           discount?: number): Promise<SendElectronReceiptCommandResult>
+```
+
+**Описание**
+
+{% include important.html content="Метод устарел начиная с версии библиотеки 3.3.3, используйте методы [`registerSellReceipt`](./react_reference_receiptapi.html#registerSellReceipt) и [`registerPaybackReceipt`](./react_reference_receiptapi.html#registerPaybackReceipt)." %}
+
 Формирует чек из полученных данных и отправляет его на электронную почту и/или телефон.
+
+**Параметры**
+
+* `printReceipts` – массив [печатных форм чека](./react_reference_receiptapi.html#printreceipt).
+* `extra` – [дополнительные поля](./react_reference_receiptapi.html#setextra) в чеке.
+* `phone` – телефонный номер покупателя.
+* `email` – адрес электронной почты покупателя.
+* `discount` – скидка на чек.
+
+**Возвращает**
+
+* `Promise`, результат которого – строка.
+
+### registerSellReceipt {#registerSellReceipt}
+
+```js
+static registerSellReceipt(printReceipts: PrintReceipt[],
+                           extra: SetExtra | null,
+                           phone: string | null,
+                           email: string | null,
+                           discount?: number): Promise<RegisterReceiptCommandResult>
+```
+
+**Описание**
+
+Формирует чек продажи из полученных данных, регистрирует его в фискальном накопителе и отправляет на электронную почту и/или телефон.
+
+**Параметры**
+
+* `printReceipts` – массив [печатных форм чека](./react_reference_receiptapi.html#printreceipt).
+* `extra` – [дополнительные поля](./react_reference_receiptapi.html#setextra) в чеке.
+* `phone` – телефонный номер покупателя.
+* `email` – адрес электронной почты покупателя.
+* `discount` – скидка на чек.
+
+**Возвращает**
+
+* `Promise`, результат которого – строка.
+
+### registerPaybackReceipt {#registerPaybackReceipt}
+
+```js
+static registerPaybackReceipt(printReceipts: PrintReceipt[],
+                           extra: SetExtra | null,
+                           phone: string | null,
+                           email: string | null,
+                           discount?: number): Promise<RegisterReceiptCommandResult>
+```
+
+**Описание**
+
+Формирует чек возврата из полученных данных, регистрирует его в фискальном накопителе и отправляет на электронную почту и/или телефон.
 
 **Параметры**
 
@@ -116,7 +227,7 @@ static getReceiptByUuid(uuid: string): Promise<Receipt | null>
 ### getReceiptHeaders
 
 ```js
-static getReceiptHeaders(type: ReceiptType | null): Promise<ReceiptHeader[]>
+static getReceiptHeaders(type?: ReceiptType): Promise<ReceiptHeader[] | null>
 ```
 
 **Описание**

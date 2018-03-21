@@ -17,7 +17,7 @@ folder: react_reference
 ### addEventListener
 
 ```js
-static addEventListener(type: ScannerEventType, listener: ScannerEventListener, isGlobal: boolean = true): void
+static addEventListener(type: ScannerEventType, listener: ScannerEventListener): void
 ```
 
 **Описание**
@@ -28,7 +28,6 @@ static addEventListener(type: ScannerEventType, listener: ScannerEventListener, 
 
 * `type` – событие типа  [`ScannerEventType`](./react_reference_devicescanner.html#ScannerEventType).
 * `listener` – слушатель типа  [`ScannerEventListener`](./react_reference_devicescanner.html#scannereventlistener).
-* `isGlobal` – [глобальная доступность слушателя](./doc_react_interactiontypes.html#eventsubscription).
 
 ### removeEventListener
 
