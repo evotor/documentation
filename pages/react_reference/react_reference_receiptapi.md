@@ -10,9 +10,23 @@ folder: react_reference
 
 ## Описание
 
-С помощью методов класса приложения получают данные чеков и передают их для обработки в смарт-терминал.
+С помощью методов класса `ReceiptAPI` приложения получают данные чеков и передают их для обработки в смарт-терминал.
 
-## Методы
+Для добавления позиций в чек используйте класс `PositionBuilder`.
+
+Пример добавления позиции в чек:
+
+```js
+const position = PositionBuilder.newInstance(product)
+    .setPrice(123)
+    .setTaxNumber(TaxNumber.NO_VAT)
+    .setUuid(UuidGenerator.v4())
+    .setQuantity(2)
+    .toNormal()
+    .build();
+```
+
+## Методы класса ReceiptAPI
 
 ### getPositionsByBarcode
 
