@@ -176,7 +176,7 @@ public class MyReceiver extends BroadcastReceiver {
         Log.e("TAG", action);
         if (action.equals("evotor.intent.action.cashDrawer.OPEN")) {
             CashDrawerOpenEvent.create(bundle);//Открытие денежного ящика.
-        } else if (action.equals("evotor.intent.action.cashOperation.IN")) {
+        } else if (action.equals("evotor.intent.action.cashOperation.CASH_IN")) {
             Log.e("TAG", "total" + CashInEvent.create(bundle).getTotal().toPlainString());//Внесение наличных.
             Log.e("TAG", "uuid" + CashInEvent.create(bundle).getDocumentUuid());
         } else if (action.equals("evotor.intent.action.cashOperation.CASH_OUT")) {
