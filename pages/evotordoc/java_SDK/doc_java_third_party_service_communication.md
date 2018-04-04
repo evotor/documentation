@@ -3,7 +3,7 @@ title: Обмен сообщениями Java-приложения и сторо
 keywords: обмен, сообщения, HTTP, сторонний, сервис, проксирование
 summary:
 sidebar: evotordoc_sidebar
-permalink: doc_java_third_party_service_communication.html#cloudproxy
+permalink: doc_java_third_party_service_communication.html
 tags: [terminal, java]
 folder: java_SDK
 ---
